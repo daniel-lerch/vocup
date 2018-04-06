@@ -1,0 +1,381 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{004AE06A-96F3-4B2E-9AF4-524835814A36}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vocup</RootNamespace>
+    <AssemblyName>Vocup</AssemblyName>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <SignAssembly>false</SignAssembly>
+    <SignManifests>false</SignManifests>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\visual studio express\SharpZipLib_0855_Bin\net-20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="K_Updater, Version=1.2.0.0, Culture=neutral, PublicKeyToken=f9082c8bf73e2593, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Programme\K_Updater\K_Updater.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.DirectoryServices">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="backup_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="backup_add.Designer.cs">
+      <DependentUpon>backup_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="backup_restore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="backup_restore.Designer.cs">
+      <DependentUpon>backup_restore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="choose_vocables_for_print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="choose_vocables_for_print.Designer.cs">
+      <DependentUpon>choose_vocables_for_print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="donation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="donation.Designer.cs">
+      <DependentUpon>donation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="icons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>icons.resx</DependentUpon>
+    </Compile>
+    <Compile Include="infos_dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="infos_dialog.Designer.cs">
+      <DependentUpon>infos_dialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="merge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="merge.Designer.cs">
+      <DependentUpon>merge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="print_cards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="print_cards.Designer.cs">
+      <DependentUpon>print_cards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\language.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>language.resx</DependentUpon>
+    </Compile>
+    <Compile Include="new_and_settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="new_and_settings.Designer.cs">
+      <DependentUpon>new_and_settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="new_file_and_settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="new_file_and_settings.Designer.cs">
+      <DependentUpon>new_file_and_settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="optionen_dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="optionen_dialog.Designer.cs">
+      <DependentUpon>optionen_dialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="practise_dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="practise_dialog.Designer.cs">
+      <DependentUpon>practise_dialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="program_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="program_form.Designer.cs">
+      <DependentUpon>program_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutBox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="backup_add.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>backup_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="backup_restore.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>backup_restore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="choose_vocables_for_print.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>choose_vocables_for_print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="donation.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>donation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="icons.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>icons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="infos_dialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>infos_dialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="merge.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>merge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="new_and_settings.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>new_and_settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="new_file_and_settings.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>new_file_and_settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="optionen_dialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>optionen_dialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="practise_dialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>practise_dialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="print_cards.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>print_cards.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="program_form.resx">
+      <DependentUpon>program_form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\language.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>language.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="practise_result_list.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>practise_result_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.cs" />
+    <EmbeddedResource Include="specialchars.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>specialchars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="specialchars_manage.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>specialchars_manage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="splashscreen.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>splashscreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="update_windows.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>update_windows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vokabel_count_practise_dialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>vokabel_count_practise_dialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="practise_result_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="practise_result_list.Designer.cs">
+      <DependentUpon>practise_result_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SendFileTo.cs" />
+    <Compile Include="AudioVideoPlay.cs" />
+    <Compile Include="specialchars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="specialchars.Designer.cs">
+      <DependentUpon>specialchars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="specialchars_manage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="specialchars_manage.Designer.cs">
+      <DependentUpon>specialchars_manage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="splashscreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="splashscreen.Designer.cs">
+      <DependentUpon>splashscreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="update_windows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update_windows.Designer.cs">
+      <DependentUpon>update_windows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vokabel_count_practise_dialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vokabel_count_practise_dialog.Designer.cs">
+      <DependentUpon>vokabel_count_practise_dialog.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\question_mark.png" />
+    <None Include="Resources\open.png" />
+    <None Include="Resources\folder.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\print.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blank_file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import.png" />
+    <None Include="Resources\export.png" />
+    <None Include="Resources\merge.png" />
+    <None Include="Resources\settings_file.png" />
+    <None Include="Resources\update.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\practise.png" />
+    <None Include="Resources\statistics.png" />
+    <None Include="Resources\email_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <None Include="Resources\btn_donate_LG.gif" />
+    <None Include="Resources\splash_back.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\quit.png" />
+    <None Include="Resources\backup_add.png" />
+    <None Include="Resources\backup_go.png" />
+    <None Include="Resources\backup.png" />
+    <None Include="Resources\lock_add.png" />
+    <None Include="Resources\lock_go.png" />
+    <None Include="Resources\char.png" />
+    <None Include="Resources\icon_rand_grau_splash .png" />
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
