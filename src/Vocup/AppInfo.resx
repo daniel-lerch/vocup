@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -112,21 +112,24 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAAEAAADICAYAAAAp8ov1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALEQAA
-        CxEBf2RfkQAAAQNJREFUOE99yNVuwwAQRNH7/98WjoMOMznMNHWrSptunczDke6geBjP51N85vF4iLfc
-        73eRxO12E0lcr1fhuFwuIonz+Swcp9NJOI7Ho3AcDgdh7Pd7Yex2O2Fst1vh2Gw2wliv18KxWq2EsVwu
-        hRFFkXAsFgthzOdzYcxmM2FMp1PhmEwmwhiPx8IYjUbCMRwOhTEYDITR7/eF0ev1hKPb7Qqj0+kIo91u
-        C6PVaglHs9kURqPREEYYhsJRr9eFUavVhKNarQqjUqkIR7lcFj+USqV/BEH8BUHxm+CXYjFOR6FQEEnk
-        83nhyOVyIolsNiuSyGQy4pX0a6bTcX4mlUqJv3wBJgzg8tGPCqEAAAAASUVORK5CYII=
-</value>
+  <data name="Copyright" xml:space="preserve">
+    <value>Copyright © 2011 Florian Amstutz, © 2018 Daniel Lerch.</value>
+  </data>
+  <data name="ProjectEMail" xml:space="preserve">
+    <value>daniel.p.lerch@gmail.com</value>
+  </data>
+  <data name="ProjectLicense" xml:space="preserve">
+    <value>AGPL-3.0</value>
+  </data>
+  <data name="ProjectWebsite" xml:space="preserve">
+    <value>Vocup auf GitHub</value>
+  </data>
+  <data name="ProjectWebsiteUrl" xml:space="preserve">
+    <value>https://github.com/daniel-lerch/vocup</value>
   </data>
 </root>

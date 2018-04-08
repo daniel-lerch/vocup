@@ -22,14 +22,12 @@ namespace Vocup
         {
             //Sonderzeichentabellen einlesen
 
-            string file_path = Properties.Settings.Default.path_vhr + "\\specialchar";
+            string file_path = Path.Combine(Properties.Settings.Default.path_vhr, "specialchar");
 
             DirectoryInfo directory_info = new DirectoryInfo(file_path);
 
             if (directory_info.Exists == true)
             {
-
-
                 FileInfo[] files = directory_info.GetFiles();
 
                 //Listbox füllen
@@ -223,11 +221,7 @@ namespace Vocup
             //Buttons etc. deaktivieren, falls keine Items mehr vorhanden sind
             if (listbox_vokabelhefte.SelectedItems.Count < 1)
             {
-               
                 delete_vokabelheft_button.Enabled = false;
-
-               
-
             }
             if (listbox_vokabelhefte.Items.Count < 1)
             {
@@ -284,20 +278,14 @@ namespace Vocup
             //Falls Daten zum wiederherstellen vorhanden sind
             else
             {
-
                 //Speichern-Dialog anzeigen
 
                 SaveFileDialog save = new SaveFileDialog();
                 save.Title = Properties.language.save_title_backup;
 
-
-
-
-
                 if (Properties.Settings.Default.backup_folder == "" || Properties.Settings.Default.backup_folder == null)
                 {
                     save.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-
                 }
                 else
                 {

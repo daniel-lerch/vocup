@@ -1,4 +1,4 @@
-﻿namespace Vocup
+﻿namespace Vocup.Forms
 {
     partial class AboutBox
     {
@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
-            this.os = new System.Windows.Forms.Label();
-            this.framework = new System.Windows.Forms.Label();
-            this.button = new System.Windows.Forms.Button();
-            this.version = new System.Windows.Forms.Label();
-            this.copyright = new System.Windows.Forms.Label();
+            this.LbOS = new System.Windows.Forms.Label();
+            this.LbNetFramwork = new System.Windows.Forms.Label();
+            this.BtnOK = new System.Windows.Forms.Button();
+            this.LbVersion = new System.Windows.Forms.Label();
+            this.LbCopyright = new System.Windows.Forms.Label();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.LbProjectLicense = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.LlbProjectWebsite = new System.Windows.Forms.LinkLabel();
+            this.LlbProjectEMail = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
@@ -46,10 +46,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.komp = new System.Windows.Forms.TabPage();
             this.komponenten = new System.Windows.Forms.ListView();
-            this.name = new System.Windows.Forms.ColumnHeader();
-            this.software_version = new System.Windows.Forms.ColumnHeader();
-            this.lizenz = new System.Windows.Forms.ColumnHeader();
-            this.url = new System.Windows.Forms.ColumnHeader();
+            this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.software_version = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lizenz = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.url = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.spenden = new System.Windows.Forms.TabPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.spende_text = new System.Windows.Forms.Label();
@@ -67,51 +67,51 @@
             ((System.ComponentModel.ISupportInitialize)(this.spende_button)).BeginInit();
             this.SuspendLayout();
             // 
-            // os
+            // LbOS
             // 
-            resources.ApplyResources(this.os, "os");
-            this.os.Name = "os";
+            resources.ApplyResources(this.LbOS, "LbOS");
+            this.LbOS.Name = "LbOS";
             // 
-            // framework
+            // LbNetFramwork
             // 
-            resources.ApplyResources(this.framework, "framework");
-            this.framework.Name = "framework";
+            resources.ApplyResources(this.LbNetFramwork, "LbNetFramwork");
+            this.LbNetFramwork.Name = "LbNetFramwork";
             // 
-            // button
+            // BtnOK
             // 
-            resources.ApplyResources(this.button, "button");
-            this.button.Name = "button";
-            this.button.UseVisualStyleBackColor = true;
-            this.button.Click += new System.EventHandler(this.button_Click);
+            resources.ApplyResources(this.BtnOK, "BtnOK");
+            this.BtnOK.Name = "BtnOK";
+            this.BtnOK.UseVisualStyleBackColor = true;
+            this.BtnOK.Click += new System.EventHandler(this.BtnOK_Click);
             // 
-            // version
+            // LbVersion
             // 
-            resources.ApplyResources(this.version, "version");
-            this.version.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.version.Name = "version";
+            resources.ApplyResources(this.LbVersion, "LbVersion");
+            this.LbVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.LbVersion.Name = "LbVersion";
             // 
-            // copyright
+            // LbCopyright
             // 
-            resources.ApplyResources(this.copyright, "copyright");
-            this.copyright.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.copyright.Name = "copyright";
+            resources.ApplyResources(this.LbCopyright, "LbCopyright");
+            this.LbCopyright.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.LbCopyright.Name = "LbCopyright";
             // 
             // tableLayoutPanel
             // 
             resources.ApplyResources(this.tableLayoutPanel, "tableLayoutPanel");
-            this.tableLayoutPanel.Controls.Add(this.label6, 0, 2);
+            this.tableLayoutPanel.Controls.Add(this.LbProjectLicense, 0, 2);
             this.tableLayoutPanel.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel.Controls.Add(this.linkLabel1, 1, 0);
-            this.tableLayoutPanel.Controls.Add(this.linkLabel2, 1, 1);
+            this.tableLayoutPanel.Controls.Add(this.LlbProjectWebsite, 1, 0);
+            this.tableLayoutPanel.Controls.Add(this.LlbProjectEMail, 1, 1);
             this.tableLayoutPanel.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel.Controls.Add(this.label5, 0, 2);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             // 
-            // label6
+            // LbProjectLicense
             // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.label6.Name = "label6";
+            resources.ApplyResources(this.LbProjectLicense, "LbProjectLicense");
+            this.LbProjectLicense.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.LbProjectLicense.Name = "LbProjectLicense";
             // 
             // label2
             // 
@@ -119,25 +119,23 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
             this.label2.Name = "label2";
             // 
-            // linkLabel1
+            // LlbProjectWebsite
             // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            resources.ApplyResources(this.linkLabel1, "linkLabel1");
-            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.LlbProjectWebsite.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            resources.ApplyResources(this.LlbProjectWebsite, "LlbProjectWebsite");
+            this.LlbProjectWebsite.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.LlbProjectWebsite.Name = "LlbProjectWebsite";
+            this.LlbProjectWebsite.TabStop = true;
+            this.LlbProjectWebsite.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
             // 
-            // linkLabel2
+            // LlbProjectEMail
             // 
-            this.linkLabel2.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            resources.ApplyResources(this.linkLabel2, "linkLabel2");
-            this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.LlbProjectEMail.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            resources.ApplyResources(this.LlbProjectEMail, "LlbProjectEMail");
+            this.LlbProjectEMail.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.LlbProjectEMail.Name = "LlbProjectEMail";
+            this.LlbProjectEMail.TabStop = true;
+            this.LlbProjectEMail.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
             // 
             // label3
             // 
@@ -164,8 +162,8 @@
             // 
             this.info.BackColor = System.Drawing.Color.White;
             this.info.Controls.Add(this.pictureBox1);
-            this.info.Controls.Add(this.version);
-            this.info.Controls.Add(this.copyright);
+            this.info.Controls.Add(this.LbVersion);
+            this.info.Controls.Add(this.LbCopyright);
             this.info.Controls.Add(this.tableLayoutPanel);
             resources.ApplyResources(this.info, "info");
             this.info.Name = "info";
@@ -274,13 +272,13 @@
             // 
             // AboutBox
             // 
-            this.AcceptButton = this.button;
+            this.AcceptButton = this.BtnOK;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
             this.Controls.Add(this.tabControl);
-            this.Controls.Add(this.button);
-            this.Controls.Add(this.framework);
-            this.Controls.Add(this.os);
+            this.Controls.Add(this.BtnOK);
+            this.Controls.Add(this.LbNetFramwork);
+            this.Controls.Add(this.LbOS);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -305,16 +303,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Label os;
-        private System.Windows.Forms.Label framework;
-        private System.Windows.Forms.Button button;
-        private System.Windows.Forms.Label version;
-        private System.Windows.Forms.Label copyright;
+        private System.Windows.Forms.Label LbOS;
+        private System.Windows.Forms.Label LbNetFramwork;
+        private System.Windows.Forms.Button BtnOK;
+        private System.Windows.Forms.Label LbVersion;
+        private System.Windows.Forms.Label LbCopyright;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label LbProjectLicense;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel LlbProjectWebsite;
+        private System.Windows.Forms.LinkLabel LlbProjectEMail;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         public  System.Windows.Forms.TabControl tabControl;
