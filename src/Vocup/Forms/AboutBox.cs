@@ -16,6 +16,7 @@ namespace Vocup.Forms
         public AboutBox()
         {
             InitializeComponent();
+            Icon = Icon.FromHandle(icons.info.GetHicon());
         }
 
         private async void AboutBox_Load(object sender, EventArgs e)

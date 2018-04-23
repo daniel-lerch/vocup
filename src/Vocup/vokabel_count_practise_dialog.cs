@@ -21,7 +21,6 @@ namespace Vocup
         public int anzahl_richtig;
         public int anzahl_gesamt;
 
-        
 
         //Variabel "Button" wird geschrieben
 
@@ -168,7 +167,6 @@ namespace Vocup
                 zeitlich_kuerzlich.Enabled = true;
                 zeitlich_laengst.Enabled = true;
             }
-            
         }
 
         private void art_falsch_CheckedChanged(object sender, EventArgs e)
@@ -201,7 +199,6 @@ namespace Vocup
                     vokabeln_30.Enabled = false;
                     vokabeln_40.Enabled = false;
                 }
-
             }
         }
 
@@ -235,7 +232,6 @@ namespace Vocup
                     vokabeln_30.Enabled = false;
                     vokabeln_40.Enabled = false;
                 }
-
             }
         }
 
@@ -263,9 +259,6 @@ namespace Vocup
                 {
                     art_richtig_CheckedChanged(sender, e);
                 }
-
-
-
             }
         }
 
@@ -287,10 +280,6 @@ namespace Vocup
                     art_richtig_CheckedChanged(sender, e);
                 }
             }
-
-
-
         }
-
     }
 }

@@ -126,11 +126,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>icons.resx</DependentUpon>
     </Compile>
-    <Compile Include="infos_dialog.cs">
+    <Compile Include="Forms\EvaluationInfoDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="infos_dialog.Designer.cs">
-      <DependentUpon>infos_dialog.cs</DependentUpon>
+    <Compile Include="Forms\EvaluationInfoDialog.Designer.cs">
+      <DependentUpon>EvaluationInfoDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="merge.cs">
       <SubType>Form</SubType>
@@ -210,9 +210,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>icons.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="infos_dialog.resx">
+    <EmbeddedResource Include="Forms\EvaluationInfoDialog.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>infos_dialog.cs</DependentUpon>
+      <DependentUpon>EvaluationInfoDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="merge.resx">
       <SubType>Designer</SubType>
@@ -316,6 +316,7 @@
       <DependentUpon>update_windows.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\AppInfo.cs" />
+    <Compile Include="Util\StringExtensions.cs" />
     <Compile Include="Util\SystemInfo.cs" />
     <Compile Include="vokabel_count_practise_dialog.cs">
       <SubType>Form</SubType>

@@ -6,18 +6,14 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Vocup
+namespace Vocup.Forms
 {
-    public partial class infos_dialog : Form
+    public partial class EvaluationInfoDialog : Form
     {
-        public infos_dialog()
+        public EvaluationInfoDialog()
         {
             InitializeComponent();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
+            Icon = Icon.FromHandle(icons.info.GetHicon());
         }
     }
 }
