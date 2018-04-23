@@ -20,19 +20,14 @@ namespace Vocup
 
         protected virtual void on_choose_char(object sender, EventArgs e)
         {
-            EventHandler choose_char_ = choose_char;
-            if (choose_char_ != null)
-            {
-                choose_char_(sender, e);
-            }
-        
+            choose_char?.Invoke(sender, e);
         }
-        
+
         //TabPage laden
 
         private void sonderzeichen_Load(object sender, EventArgs e)
         {
-            
+
             //Tabpages Name in gewünschter Sprache zuordnen
 
             tabPage.TabPages[0].Text = Properties.language.de;
@@ -40,31 +35,31 @@ namespace Vocup
             tabPage.TabPages[2].Text = Properties.language.it;
             tabPage.TabPages[3].Text = Properties.language.es;
             tabPage.TabPages[4].Text = Properties.language.ro;
-            
-            
+
+
             try
             {
                 //Im char-Ordner nach Sonderzeichen-Verzeichnissen suchen
 
-                string file_path = Properties.Settings.Default.path_vhr +  "\\specialchar";
-                
+                string file_path = Properties.Settings.Default.path_vhr + "\\specialchar";
+
                 DirectoryInfo directory_info = new DirectoryInfo(file_path);
 
                 FileInfo[] files = directory_info.GetFiles();
 
                 for (int i = 0; i < files.Length; i++)
                 {
-                   try
-                   {
-                        
+                    try
+                    {
+
 
                         if (files[i].Extension == ".txt")
                         {
                             //Name definieren
-                            
-                            StreamReader reader = new StreamReader(files[i].FullName,Encoding.UTF8);
-                           
-                            string [] characters = reader.ReadToEnd().Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+
+                            StreamReader reader = new StreamReader(files[i].FullName, Encoding.UTF8);
+
+                            string[] characters = reader.ReadToEnd().Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
 
                             reader.Close();
 
@@ -93,16 +88,13 @@ namespace Vocup
                                 {
                                     if (characters[y].Length > 1)
                                     {
-                                        button.Text = characters[y].Replace(" ","").Remove(1);
+                                        button.Text = characters[y].Replace(" ", "").Remove(1);
                                         button.Name = characters[y].Replace(" ", "").Remove(1).ToLower();
                                     }
                                     else
                                     {
-                                        button.Text = characters[y].Replace(" ","");
-                                        button.Name = characters[y].Replace(" ","");
-
-                                        
-
+                                        button.Text = characters[y].Replace(" ", "");
+                                        button.Name = characters[y].Replace(" ", "");
                                     }
 
                                     button.UseVisualStyleBackColor = true;
@@ -145,7 +137,7 @@ namespace Vocup
             }
             catch
             {
-            
+
             }
 
             //Versucht die zuletzt geöffnete Registerkarte auszuwählen
@@ -155,7 +147,7 @@ namespace Vocup
             }
             catch
             {
-            
+
             }
         }
 
@@ -174,8 +166,6 @@ namespace Vocup
             //Clipboard.SetText(aktuellerButton.Text);
 
             on_choose_char(sender, e);
-
-
         }
 
 
@@ -183,9 +173,6 @@ namespace Vocup
         {
             Properties.Settings.Default.sonderzeichen_registerkarte = tabPage.SelectedTab.Name;
             Properties.Settings.Default.Save();
-
         }
-
-        
     }
 }
