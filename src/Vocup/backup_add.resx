@@ -112,16 +112,16 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="folgende_vokabelhefte.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="folgende_vokabelhefte.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 42</value>
   </data>
@@ -138,7 +138,7 @@
     <value>folgende_vokabelhefte</value>
   </data>
   <data name="&gt;&gt;folgende_vokabelhefte.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;folgende_vokabelhefte.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -165,7 +165,7 @@
     <value>alle_vokabelhefte</value>
   </data>
   <data name="&gt;&gt;alle_vokabelhefte.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;alle_vokabelhefte.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -192,7 +192,7 @@
     <value>add_vokabelheft_button</value>
   </data>
   <data name="&gt;&gt;add_vokabelheft_button.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;add_vokabelheft_button.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -219,7 +219,7 @@
     <value>delete_vokabelheft_button</value>
   </data>
   <data name="&gt;&gt;delete_vokabelheft_button.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;delete_vokabelheft_button.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -246,7 +246,7 @@
     <value>listbox_vokabelhefte</value>
   </data>
   <data name="&gt;&gt;listbox_vokabelhefte.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;listbox_vokabelhefte.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -270,7 +270,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -294,7 +294,7 @@
     <value>cancel_button</value>
   </data>
   <data name="&gt;&gt;cancel_button.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cancel_button.Parent" xml:space="preserve">
     <value>$this</value>
@@ -318,7 +318,7 @@
     <value>create_backup_button</value>
   </data>
   <data name="&gt;&gt;create_backup_button.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;create_backup_button.Parent" xml:space="preserve">
     <value>$this</value>
@@ -345,7 +345,7 @@
     <value>keine_ergebnisse</value>
   </data>
   <data name="&gt;&gt;keine_ergebnisse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;keine_ergebnisse.Parent" xml:space="preserve">
     <value>groupBox2</value>
@@ -372,7 +372,7 @@
     <value>gewaehlte_ergebnisse</value>
   </data>
   <data name="&gt;&gt;gewaehlte_ergebnisse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;gewaehlte_ergebnisse.Parent" xml:space="preserve">
     <value>groupBox2</value>
@@ -399,7 +399,7 @@
     <value>alle_ergebnisse</value>
   </data>
   <data name="&gt;&gt;alle_ergebnisse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;alle_ergebnisse.Parent" xml:space="preserve">
     <value>groupBox2</value>
@@ -417,13 +417,13 @@
     <value>1</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>Welche Übungsergebnisse sollen gesichtert werden?</value>
+    <value>Welche Übungsergebnisse sollen gesichert werden?</value>
   </data>
   <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
     <value>$this</value>
@@ -447,7 +447,7 @@
     <value>listbox_special_chars</value>
   </data>
   <data name="&gt;&gt;listbox_special_chars.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;listbox_special_chars.Parent" xml:space="preserve">
     <value>groupBox3</value>
@@ -465,13 +465,13 @@
     <value>2</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
-    <value>Welche Sonderzeichentabellen, sollen gesichert werden?</value>
+    <value>Welche Sonderzeichentabellen sollen gesichert werden?</value>
   </data>
   <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
     <value>$this</value>
@@ -479,13 +479,13 @@
   <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>324, 468</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
@@ -496,6 +496,6 @@
     <value>backup_add</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
