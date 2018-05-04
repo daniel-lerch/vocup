@@ -51,8 +51,6 @@ namespace Vocup
                 {
                     try
                     {
-
-
                         if (files[i].Extension == ".txt")
                         {
                             //Name definieren
@@ -72,7 +70,7 @@ namespace Vocup
                             page.AutoScroll = true;
                             page.UseVisualStyleBackColor = true;
 
-                            page.Font = new System.Drawing.Font("Arial", 9.75F);
+                            page.Font = new Font("Arial", 9.75F);
 
                             //TabPage füllen
 
@@ -99,13 +97,13 @@ namespace Vocup
 
                                     button.UseVisualStyleBackColor = true;
 
-                                    button.Size = new System.Drawing.Size(25, 25);
+                                    button.Size = new Size(25, 25);
 
                                     //Position
 
-                                    button.Location = new System.Drawing.Point(8 + (position - 1) * 31, 6 * row + 25 * (row - 1));
+                                    button.Location = new Point(8 + (position - 1) * 31, 6 * row + 25 * (row - 1));
 
-                                    button.Click += new System.EventHandler(button_Click);
+                                    button.Click += button_Click;
 
                                     page.Controls.Add(button);
 
@@ -124,16 +122,12 @@ namespace Vocup
                             tabPage.TabPages.Add(page);
 
                         }
-
-
                     }
                     catch
                     {
 
                     }
-
                 }
-
             }
             catch
             {

@@ -267,9 +267,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>specialchars.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="specialchars_manage.resx">
+    <EmbeddedResource Include="Forms\SpecialCharManage.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>specialchars_manage.cs</DependentUpon>
+      <DependentUpon>SpecialCharManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SplashScreen.resx">
       <SubType>Designer</SubType>
@@ -297,11 +297,11 @@
     <Compile Include="specialchars.Designer.cs">
       <DependentUpon>specialchars.cs</DependentUpon>
     </Compile>
-    <Compile Include="specialchars_manage.cs">
+    <Compile Include="Forms\SpecialCharManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="specialchars_manage.Designer.cs">
-      <DependentUpon>specialchars_manage.cs</DependentUpon>
+    <Compile Include="Forms\SpecialCharManage.Designer.cs">
+      <DependentUpon>SpecialCharManage.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SplashScreen.cs">
       <SubType>Form</SubType>

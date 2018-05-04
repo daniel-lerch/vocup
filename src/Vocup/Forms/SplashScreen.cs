@@ -19,7 +19,8 @@ namespace Vocup.Forms
         {
             using (Pen grayPen = new Pen(Brushes.Gray, 2))
             {
-                //Linien zeichnen
+                // Draw window border
+
                 e.Graphics.DrawLine(grayPen, new Point(0, 0), new Point(0, 200));
                 e.Graphics.DrawLine(grayPen, new Point(0, 0), new Point(450, 0));
                 e.Graphics.DrawLine(grayPen, new Point(0, 200), new Point(450, 200));
@@ -29,7 +30,7 @@ namespace Vocup.Forms
 
         private void SplashScreen_Load(object sender, EventArgs e)
         {
-            //Version anzeigen
+            // Display version and copyright
 
             LbVersion.Text = Util.AppInfo.GetVersion(3);
             LbCopyright.Text = AppInfo.Copyright;
