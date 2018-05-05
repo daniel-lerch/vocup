@@ -161,11 +161,11 @@
     <Compile Include="new_file_and_settings.Designer.cs">
       <DependentUpon>new_file_and_settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="optionen_dialog.cs">
+    <Compile Include="Forms\SettingsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="optionen_dialog.Designer.cs">
-      <DependentUpon>optionen_dialog.cs</DependentUpon>
+    <Compile Include="Forms\SettingsDialog.Designer.cs">
+      <DependentUpon>SettingsDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="practise_dialog.cs">
       <SubType>Form</SubType>
@@ -226,9 +226,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>new_file_and_settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="optionen_dialog.resx">
+    <EmbeddedResource Include="Forms\SettingsDialog.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>optionen_dialog.cs</DependentUpon>
+      <DependentUpon>SettingsDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="practise_dialog.resx">
       <SubType>Designer</SubType>
