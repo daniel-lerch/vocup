@@ -16,6 +16,7 @@ namespace Vocup
         public merge()
         {
             InitializeComponent();
+            Icon = Icon.FromHandle(icons.merge.GetHicon());
         }
 
         //Focus

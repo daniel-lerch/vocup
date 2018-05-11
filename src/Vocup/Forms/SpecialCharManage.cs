@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -15,7 +13,7 @@ namespace Vocup.Forms
     {
         private const string InvalidChars = "#=:\\/|<>*?\"";
         private readonly Color redBgColor = Color.FromArgb(255, 192, 203);
-        private string file_path = Properties.Settings.Default.path_vhr + "\\specialchar";
+        private string specialCharDir = Util.AppInfo.SpecialCharDirectory;
 
         public SpecialCharManage()
         {
@@ -34,11 +32,11 @@ namespace Vocup.Forms
         {
             const string name = "Neue Sprache";
 
-            DirectoryInfo dirInfo = new DirectoryInfo(file_path);
+            DirectoryInfo dirInfo = new DirectoryInfo(specialCharDir);
             if (!dirInfo.Exists)
                 dirInfo.Create();
 
-            FileInfo fileInfo = new FileInfo(Path.Combine(file_path, name + ".txt"));
+            FileInfo fileInfo = new FileInfo(Path.Combine(specialCharDir, name + ".txt"));
 
             if (fileInfo.Exists)
             {
@@ -86,7 +84,7 @@ namespace Vocup.Forms
                 string language = listBox.Items[listBox.SelectedIndex].ToString();
 
                 //Datei mit den Sonderzeichen löschen
-                FileInfo info = new FileInfo(Path.Combine(file_path, language + ".txt"));
+                FileInfo info = new FileInfo(Path.Combine(specialCharDir, language + ".txt"));
                 if (info.Exists)
                     info.Delete();
 
@@ -105,11 +103,11 @@ namespace Vocup.Forms
         {
             try
             {
-                DirectoryInfo dirInfo = new DirectoryInfo(file_path);
+                DirectoryInfo dirInfo = new DirectoryInfo(specialCharDir);
                 if (!dirInfo.Exists)
                     dirInfo.Create();
 
-                using (StreamWriter writer = new StreamWriter(Path.Combine(file_path, TbLanguage.Text + ".txt")))
+                using (StreamWriter writer = new StreamWriter(Path.Combine(specialCharDir, TbLanguage.Text + ".txt")))
                 {
                     TbChars.Text = TbChars.Text.Replace(" ", "");
                     writer.Write(string.Join(Environment.NewLine, TbChars.Text.ToCharArray()));
@@ -118,7 +116,7 @@ namespace Vocup.Forms
                 // Delete old file if language was changed
                 if (TbLanguage.Text != listBox.Items[listBox.SelectedIndex].ToString())
                 {
-                    FileInfo info = new FileInfo(Path.Combine(file_path, listBox.Items[listBox.SelectedIndex].ToString() + ".txt"));
+                    FileInfo info = new FileInfo(Path.Combine(specialCharDir, listBox.Items[listBox.SelectedIndex].ToString() + ".txt"));
                     info.Delete();
 
                     listBox.Items[listBox.SelectedIndex] = TbLanguage.Text;
@@ -161,28 +159,32 @@ namespace Vocup.Forms
             }
         }
 
+        /// <summary>
+        /// Clears the ListBox items and reloads all existing entries from disk.
+        /// </summary>
         private void RefreshListbox()
         {
-            //Im char-Ordner nach Sonderzeichen-Verzeichnissen suchen
+            listBox.BeginUpdate();
             listBox.Items.Clear();
 
-            DirectoryInfo directory_info = new DirectoryInfo(file_path);
+            DirectoryInfo directory_info = new DirectoryInfo(specialCharDir);
             if (!directory_info.Exists)
                 directory_info.Create();
 
-            //Listbox füllen
             FileInfo[] files = directory_info.GetFiles();
             listBox.Items.AddRange(files
                 .Where(x => x.Extension == ".txt")
                 .Select(x => Path.GetFileNameWithoutExtension(x.FullName))
                 .ToArray());
+
+            listBox.EndUpdate();
         }
 
         private void LoadLanguage()
         {
             try
             {
-                FileInfo info = new FileInfo(Path.Combine(file_path, listBox.Items[listBox.SelectedIndex].ToString() + ".txt"));
+                FileInfo info = new FileInfo(Path.Combine(specialCharDir, listBox.Items[listBox.SelectedIndex].ToString() + ".txt"));
 
                 if (info.Exists)
                 {

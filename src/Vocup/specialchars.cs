@@ -63,14 +63,16 @@ namespace Vocup
 
                             //Neue Tabpage erstellen
 
-                            TabPage page = new TabPage();
-                            page.Name = Path.GetFileNameWithoutExtension(files[i].FullName).ToLower();
-                            page.Text = Path.GetFileNameWithoutExtension(files[i].FullName);
+                            TabPage page = new TabPage
+                            {
+                                Name = Path.GetFileNameWithoutExtension(files[i].FullName).ToLower(),
+                                Text = Path.GetFileNameWithoutExtension(files[i].FullName),
 
-                            page.AutoScroll = true;
-                            page.UseVisualStyleBackColor = true;
+                                AutoScroll = true,
+                                UseVisualStyleBackColor = true,
 
-                            page.Font = new Font("Arial", 9.75F);
+                                Font = new Font("Arial", 9.75F)
+                            };
 
                             //TabPage füllen
 
@@ -116,11 +118,10 @@ namespace Vocup
                                     {
                                         position++;
                                     }
-
                                 }
                             }
-                            tabPage.TabPages.Add(page);
 
+                            tabPage.TabPages.Add(page);
                         }
                     }
                     catch

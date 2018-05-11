@@ -39,9 +39,9 @@ namespace Vocup
 
                 //Events festlegen
 
-                sonderzeichen_dialog.choose_char += new System.EventHandler(add_special_char);
+                sonderzeichen_dialog.choose_char += add_special_char;
 
-                sonderzeichen_dialog.FormClosed += new System.Windows.Forms.FormClosedEventHandler(sonderzeichen_dialog_closed);
+                sonderzeichen_dialog.FormClosed += sonderzeichen_dialog_closed;
 
                 //Setzt die mForm als Besitzer
 
@@ -57,7 +57,6 @@ namespace Vocup
 
         private void ok_button_Click(object sender, EventArgs e)
         {
-            
             Close();
         }
 
@@ -76,7 +75,6 @@ namespace Vocup
             {
                 if (ok_button.Enabled == false)
                 {
-
                     ok_button.Enabled = true;
                 }
             }
@@ -89,7 +87,6 @@ namespace Vocup
 
             if (own_language.Text.Contains("#") == true || own_language.Text.Contains("=") == true)
             {
-
                 own_language.BackColor = Color.FromArgb(255, 192, 203);
             }
             else
@@ -128,7 +125,6 @@ namespace Vocup
             {
                 if (ok_button.Enabled == false)
                 {
-
                     ok_button.Enabled = true;
                 }
             }
@@ -141,7 +137,6 @@ namespace Vocup
 
             if (foreign_language.Text.Contains("#") == true || foreign_language.Text.Contains("=") == true)
             {
-
                 foreign_language.BackColor = Color.FromArgb(255, 192, 203);
             }
             else
@@ -162,13 +157,11 @@ namespace Vocup
                 cancel_button.TabIndex = 0;
                 AcceptButton = cancel_button;
             }
-
         }
 
         private void foreign_language_2_TextChanged(object sender, EventArgs e)
         {
             //Überprüfen, ob Mutter- und Fremdsprache identisch sind
-
 
             if (own_language.Text != "" &&
                foreign_language.Text != "" &&
@@ -179,7 +172,6 @@ namespace Vocup
             {
                 if (ok_button.Enabled == false)
                 {
-
                     ok_button.Enabled = true;
                 }
             }
@@ -192,7 +184,6 @@ namespace Vocup
 
             if (foreign_language_2.Text.Contains("#") == true || foreign_language_2.Text.Contains("=") == true)
             {
-
                 foreign_language_2.BackColor = Color.FromArgb(255, 192, 203);
             }
             else
@@ -247,9 +238,9 @@ namespace Vocup
 
                 //Events definieren
 
-                sonderzeichen_dialog.choose_char += new System.EventHandler(add_special_char);
+                sonderzeichen_dialog.choose_char += add_special_char;
                       
-                sonderzeichen_dialog.FormClosed += new System.Windows.Forms.FormClosedEventHandler(sonderzeichen_dialog_closed);
+                sonderzeichen_dialog.FormClosed += sonderzeichen_dialog_closed;
 
 
                 show_specialchars_dialog = true;
@@ -287,7 +278,7 @@ namespace Vocup
 
         private void add_special_char(object sender, EventArgs e)
         {
-            System.Windows.Forms.Button aktuellerButton = (System.Windows.Forms.Button)sender;
+            Button aktuellerButton = (Button)sender;
 
             // Button-Text in die Zwischenablage und in das Textfeld kopieren kopieren
 

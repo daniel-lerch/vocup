@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace Vocup.Util
     /// </summary>
     public static class AppInfo
     {
+        public static string SpecialCharDirectory { get; } = Path.Combine(Properties.Settings.Default.path_vhr, "specialchar");
+
         /// <summary>
         /// Returns the product version of the currently running instance.
         /// </summary>

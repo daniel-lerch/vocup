@@ -14,6 +14,7 @@ namespace Vocup
         public backup_add()
         {
             InitializeComponent();
+            Icon = Icon.FromHandle(icons.backup_add.GetHicon());
         }
 
         public string pfad;
@@ -51,7 +52,6 @@ namespace Vocup
                             groupBox3.Enabled = false;
                             listbox_special_chars.Enabled = false;
                         }
-
                     }
                     catch
                     {
@@ -174,8 +174,6 @@ namespace Vocup
             //Falls auf öffnen geklickt wurde
             if (add_file.ShowDialog() == DialogResult.OK)
             {
-                
-
                 for (int i = 0; i < add_file.FileNames.Length; i++)
                 {
                     //Fügt das Item zur Liste hinzu, falls es noch nicht existiert
@@ -187,7 +185,6 @@ namespace Vocup
                         if (create_backup_button.Enabled == false && listbox_vokabelhefte.Items.Count > 0)
                         {
                             create_backup_button.Enabled = true;
-
                         }
 
                         if (listbox_vokabelhefte.Items.Count == 0 && alle_vokabelhefte.Checked == false)
@@ -203,10 +200,8 @@ namespace Vocup
                         {
                             gewaehlte_ergebnisse.Enabled = true;
                         }
-
                     }
                 }
-
             }
         }
 
@@ -242,9 +237,7 @@ namespace Vocup
                 {
                     gewaehlte_ergebnisse.Enabled = true;
                 }
-            
             }
-
         }
 
         private void listbox_vokabelhefte_SelectedIndexChanged(object sender, EventArgs e)
