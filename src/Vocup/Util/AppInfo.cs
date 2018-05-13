@@ -13,6 +13,9 @@ namespace Vocup.Util
     /// </summary>
     public static class AppInfo
     {
+        /// <summary>
+        /// Gets the directory where custom special char files are stored.
+        /// </summary>
         public static string SpecialCharDirectory { get; } = Path.Combine(Properties.Settings.Default.path_vhr, "specialchar");
 
         /// <summary>

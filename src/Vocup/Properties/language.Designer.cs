@@ -403,7 +403,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bei diesem Vokabelheft handelt es sich um eine Kopie, dessenn Inhalt mit der Orginaldatei nicht identisch ist. Die Ergebnisse der Übungen werden bei dieser Datei gelöscht..
+        ///   Looks up a localized string similar to Bei diesem Vokabelheft handelt es sich um eine Kopie, dessen Inhalt mit der Orginaldatei nicht identisch ist. Die Ergebnisse der Übungen werden bei dieser Datei gelöscht..
         /// </summary>
         internal static string messagebox_file_copy {
             get {

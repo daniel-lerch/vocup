@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="add_title" xml:space="preserve">
     <value>Vokabelhefte hinzufügen</value>
@@ -128,13 +128,13 @@
   <data name="backup" xml:space="preserve">
     <value>Vocup Backup-Datei</value>
   </data>
-  <data name="can_not_import" xml:space="preserve">
-    <value>Beim Importieren der Datei ist ein Fehler aufgetreten.</value>
-    <comment>Nachricht</comment>
-  </data>
   <data name="cancel" xml:space="preserve">
     <value>Abbrechen</value>
     <comment>new_and_settings</comment>
+  </data>
+  <data name="can_not_import" xml:space="preserve">
+    <value>Beim Importieren der Datei ist ein Fehler aufgetreten.</value>
+    <comment>Nachricht</comment>
   </data>
   <data name="de" xml:space="preserve">
     <value>Deutsch</value>
@@ -261,7 +261,7 @@
     <comment>Nachricht</comment>
   </data>
   <data name="messagebox_file_copy" xml:space="preserve">
-    <value>Bei diesem Vokabelheft handelt es sich um eine Kopie, dessenn Inhalt mit der Orginaldatei nicht identisch ist. Die Ergebnisse der Übungen werden bei dieser Datei gelöscht.</value>
+    <value>Bei diesem Vokabelheft handelt es sich um eine Kopie, dessen Inhalt mit der Orginaldatei nicht identisch ist. Die Ergebnisse der Übungen werden bei dieser Datei gelöscht.</value>
     <comment>Nachricht</comment>
   </data>
   <data name="messagebox_new_program_version" xml:space="preserve">
@@ -342,6 +342,10 @@ damit sie als gelernt eingestuft wird.
     <value>Synonym</value>
     <comment>-</comment>
   </data>
+  <data name="translated" xml:space="preserve">
+    <value>Geübt</value>
+    <comment>practise_dialog</comment>
+  </data>
   <data name="translate_from" xml:space="preserve">
     <value>Übersetzen Sie von</value>
     <comment>practise_dialog</comment>
@@ -350,16 +354,16 @@ damit sie als gelernt eingestuft wird.
     <value>nach</value>
     <comment>practise_dialog</comment>
   </data>
-  <data name="translated" xml:space="preserve">
-    <value>Geübt</value>
-    <comment>practise_dialog</comment>
-  </data>
   <data name="treeview_doesnt_exists" xml:space="preserve">
     <value>Das gewählte Vokabelheft existiert nicht mehr.</value>
   </data>
   <data name="vocable" xml:space="preserve">
     <value>Vokabeln</value>
     <comment>-</comment>
+  </data>
+  <data name="vocables_in_all" xml:space="preserve">
+    <value>Gesamthaft</value>
+    <comment>practise_result_list</comment>
   </data>
   <data name="vocable_edit_title" xml:space="preserve">
     <value>Vokabel bearbeiten</value>
@@ -371,10 +375,6 @@ damit sie als gelernt eingestuft wird.
   </data>
   <data name="vocable_file_name" xml:space="preserve">
     <value>Vokabelheft</value>
-  </data>
-  <data name="vocables_in_all" xml:space="preserve">
-    <value>Gesamthaft</value>
-    <comment>practise_result_list</comment>
   </data>
   <data name="wrong_text" xml:space="preserve">
     <value>Falsche Eingabe</value>
