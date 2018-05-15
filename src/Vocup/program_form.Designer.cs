@@ -126,6 +126,7 @@
             ((System.ComponentModel.ISupportInitialize)(this._0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._1)).BeginInit();
             this.sidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
@@ -605,11 +606,11 @@
             this.listView_vokabeln.Sorting = System.Windows.Forms.SortOrder.Descending;
             this.listView_vokabeln.UseCompatibleStateImageBehavior = false;
             this.listView_vokabeln.View = System.Windows.Forms.View.Details;
-            this.listView_vokabeln.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView_vokabeln_MouseDoubleClick);
-            this.listView_vokabeln.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listView_vokabeln_ColumnWidthChanged);
             this.listView_vokabeln.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView_vokabeln_ColumnClick);
-            this.listView_vokabeln.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView_vokabeln_ItemSelectionChanged);
+            this.listView_vokabeln.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listView_vokabeln_ColumnWidthChanged);
             this.listView_vokabeln.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.listView_vokabeln_ColumnWidthChanging);
+            this.listView_vokabeln.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView_vokabeln_ItemSelectionChanged);
+            this.listView_vokabeln.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView_vokabeln_MouseDoubleClick);
             // 
             // listview_imagelist
             // 
@@ -702,7 +703,6 @@
             // 
             this._2.Image = global::Vocup.icons.richtig_geübt;
             resources.ApplyResources(this._2, "_2");
-            this._2.InitialImage = null;
             this._2.Name = "_2";
             this._2.TabStop = false;
             // 
@@ -710,7 +710,6 @@
             // 
             this._3.Image = global::Vocup.icons.übung_abgeschlossen;
             resources.ApplyResources(this._3, "_3");
-            this._3.InitialImage = null;
             this._3.Name = "_3";
             this._3.TabStop = false;
             // 
@@ -718,7 +717,6 @@
             // 
             this._0.Image = global::Vocup.icons.noch_nicht_geübt;
             resources.ApplyResources(this._0, "_0");
-            this._0.InitialImage = null;
             this._0.Name = "_0";
             this._0.TabStop = false;
             // 
@@ -726,7 +724,6 @@
             // 
             this._1.Image = global::Vocup.icons.falsch_geübt;
             resources.ApplyResources(this._1, "_1");
-            this._1.InitialImage = null;
             this._1.Name = "_1";
             this._1.TabStop = false;
             // 
@@ -765,18 +762,18 @@
             this.treeView.Name = "treeView";
             this.treeView.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterCollapse);
             this.treeView.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeView_BeforeExpand);
-            this.treeView.Enter += new System.EventHandler(this.treeView_Enter);
             this.treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterSelect);
+            this.treeView.Enter += new System.EventHandler(this.treeView_Enter);
             // 
             // printDocument_cards
             // 
-            this.printDocument_cards.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_cards_PrintPage);
             this.printDocument_cards.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.printDocument_cards_BeginPrint);
+            this.printDocument_cards.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_cards_PrintPage);
             // 
             // printDocument_list
             // 
-            this.printDocument_list.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_list_PrintPage);
             this.printDocument_list.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.printDocument_list_BeginPrint);
+            this.printDocument_list.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_list_PrintPage);
             // 
             // program_form
             // 
@@ -790,10 +787,10 @@
             this.Controls.Add(this.sidebar);
             this.MainMenuStrip = this.menuStrip;
             this.Name = "program_form";
-            this.Load += new System.EventHandler(this.program_form_Load);
-            this.SizeChanged += new System.EventHandler(this.program_form_SizeChanged);
-            this.Shown += new System.EventHandler(this.program_form_Shown);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.program_form_FormClosing);
+            this.Load += new System.EventHandler(this.program_form_Load);
+            this.Shown += new System.EventHandler(this.program_form_Shown);
+            this.SizeChanged += new System.EventHandler(this.program_form_SizeChanged);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);
@@ -811,6 +808,7 @@
             this.sidebar.ResumeLayout(false);
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

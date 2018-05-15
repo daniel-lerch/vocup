@@ -138,6 +138,8 @@
     <Compile Include="merge.Designer.cs">
       <DependentUpon>merge.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\VocabularyBook.cs" />
+    <Compile Include="Models\VocabularyWord.cs" />
     <Compile Include="print_cards.cs">
       <SubType>Form</SubType>
     </Compile>
