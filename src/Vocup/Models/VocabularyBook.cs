@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Vocup.Models
 {
@@ -10,9 +12,17 @@ namespace Vocup.Models
     {
         public VocabularyBook()
         {
-            Words = new List<VocabularyWord>();
+            var words = new ObservableCollection<VocabularyWord>();
+            words.CollectionChanged += Words_CollectionChanged;
+            Words = words;
         }
 
-        List<VocabularyWord> Words { get; }
+        IList<VocabularyWord> Words { get; }
+        ListView ListViewControl { get; set; }
+
+        private void Words_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
