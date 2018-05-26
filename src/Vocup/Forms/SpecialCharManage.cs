@@ -56,11 +56,7 @@ namespace Vocup.Forms
         {
             //Überprüfen, das Textfeld nicht erlaubte zeichen enthält
             bool charsValid = !TbLanguage.Text.ContainsAny(InvalidChars);
-
-            if (charsValid)
-                TbLanguage.BackColor = Color.White;
-            else
-                TbLanguage.BackColor = redBgColor;
+            TbLanguage.BackColor = charsValid ? Color.White : redBgColor;
 
             if (!string.IsNullOrWhiteSpace(TbLanguage.Text) &&
                 !string.IsNullOrWhiteSpace(TbChars.Text) &&

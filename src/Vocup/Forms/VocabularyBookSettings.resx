@@ -112,62 +112,47 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="sonderzeichen_button.Location" type="System.Drawing.Point, System.Drawing">
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="BtnSpecialChar.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 213</value>
   </data>
-  <data name="sonderzeichen_button.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BtnSpecialChar.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 23</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="sonderzeichen_button.TabIndex" type="System.Int32, mscorlib">
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BtnSpecialChar.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="sonderzeichen_button.Text" xml:space="preserve">
+  <data name="BtnSpecialChar.Text" xml:space="preserve">
     <value>Sonderzeichen</value>
   </data>
-  <data name="&gt;&gt;sonderzeichen_button.Name" xml:space="preserve">
-    <value>sonderzeichen_button</value>
+  <data name="&gt;&gt;BtnSpecialChar.Name" xml:space="preserve">
+    <value>BtnSpecialChar</value>
   </data>
-  <data name="&gt;&gt;sonderzeichen_button.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;BtnSpecialChar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;sonderzeichen_button.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BtnSpecialChar.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;sonderzeichen_button.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BtnSpecialChar.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="reset_vocabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;CbResetResults.Name" xml:space="preserve">
+    <value>CbResetResults</value>
   </data>
-  <data name="reset_vocabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 23</value>
+  <data name="&gt;&gt;CbResetResults.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="reset_vocabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 17</value>
-  </data>
-  <data name="reset_vocabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="reset_vocabel.Text" xml:space="preserve">
-    <value>Ergebnisse aller Vokabeln zurücksetzen</value>
-  </data>
-  <data name="&gt;&gt;reset_vocabel.Name" xml:space="preserve">
-    <value>reset_vocabel</value>
-  </data>
-  <data name="&gt;&gt;reset_vocabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;reset_vocabel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;CbResetResults.Parent" xml:space="preserve">
     <value>option_box</value>
   </data>
-  <data name="&gt;&gt;reset_vocabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;CbResetResults.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="option_box.Location" type="System.Drawing.Point, System.Drawing">
@@ -186,7 +171,7 @@
     <value>option_box</value>
   </data>
   <data name="&gt;&gt;option_box.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;option_box.Parent" xml:space="preserve">
     <value>$this</value>
@@ -194,79 +179,106 @@
   <data name="&gt;&gt;option_box.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="cancel_button.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="CbResetResults.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbResetResults.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 23</value>
+  </data>
+  <data name="CbResetResults.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 17</value>
+  </data>
+  <data name="CbResetResults.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="CbResetResults.Text" xml:space="preserve">
+    <value>Ergebnisse aller Vokabeln zurücksetzen</value>
+  </data>
+  <data name="&gt;&gt;CbResetResults.Name" xml:space="preserve">
+    <value>CbResetResults</value>
+  </data>
+  <data name="&gt;&gt;CbResetResults.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbResetResults.Parent" xml:space="preserve">
+    <value>option_box</value>
+  </data>
+  <data name="&gt;&gt;CbResetResults.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="BtnCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>203, 213</value>
   </data>
-  <data name="cancel_button.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BtnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="cancel_button.TabIndex" type="System.Int32, mscorlib">
+  <data name="BtnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="cancel_button.Text" xml:space="preserve">
+  <data name="BtnCancel.Text" xml:space="preserve">
     <value>Abbrechen</value>
   </data>
-  <data name="&gt;&gt;cancel_button.Name" xml:space="preserve">
-    <value>cancel_button</value>
+  <data name="&gt;&gt;BtnCancel.Name" xml:space="preserve">
+    <value>BtnCancel</value>
   </data>
-  <data name="&gt;&gt;cancel_button.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;BtnCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cancel_button.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BtnCancel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;cancel_button.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BtnCancel.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="ok_button.Enabled" type="System.Boolean, mscorlib">
+  <data name="BtnOK.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="ok_button.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="BtnOK.Location" type="System.Drawing.Point, System.Drawing">
     <value>122, 213</value>
   </data>
-  <data name="ok_button.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BtnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="ok_button.TabIndex" type="System.Int32, mscorlib">
+  <data name="BtnOK.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="ok_button.Text" xml:space="preserve">
+  <data name="BtnOK.Text" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="&gt;&gt;ok_button.Name" xml:space="preserve">
-    <value>ok_button</value>
+  <data name="&gt;&gt;BtnOK.Name" xml:space="preserve">
+    <value>BtnOK</value>
   </data>
-  <data name="&gt;&gt;ok_button.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;BtnOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ok_button.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BtnOK.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;ok_button.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BtnOK.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="muttersprache_text.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="TbMotherTongue.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="muttersprache_text.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="TbMotherTongue.Location" type="System.Drawing.Point, System.Drawing">
     <value>113, 16</value>
   </data>
-  <data name="muttersprache_text.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TbMotherTongue.Size" type="System.Drawing.Size, System.Drawing">
     <value>165, 22</value>
   </data>
-  <data name="muttersprache_text.TabIndex" type="System.Int32, mscorlib">
+  <data name="TbMotherTongue.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;muttersprache_text.Name" xml:space="preserve">
-    <value>muttersprache_text</value>
+  <data name="&gt;&gt;TbMotherTongue.Name" xml:space="preserve">
+    <value>TbMotherTongue</value>
   </data>
-  <data name="&gt;&gt;muttersprache_text.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;TbMotherTongue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;muttersprache_text.Parent" xml:space="preserve">
+  <data name="&gt;&gt;TbMotherTongue.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;muttersprache_text.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TbMotherTongue.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="muttersprache.AutoSize" type="System.Boolean, mscorlib">
@@ -288,7 +300,7 @@
     <value>muttersprache</value>
   </data>
   <data name="&gt;&gt;muttersprache.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;muttersprache.Parent" xml:space="preserve">
     <value>$this</value>
@@ -315,7 +327,7 @@
     <value>fremdsprache</value>
   </data>
   <data name="&gt;&gt;fremdsprache.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;fremdsprache.Parent" xml:space="preserve">
     <value>$this</value>
@@ -323,82 +335,52 @@
   <data name="&gt;&gt;fremdsprache.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="fremdsprache_text.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="TbForeignTongue.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="fremdsprache_text.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="TbForeignTongue.Location" type="System.Drawing.Point, System.Drawing">
     <value>113, 43</value>
   </data>
-  <data name="fremdsprache_text.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TbForeignTongue.Size" type="System.Drawing.Size, System.Drawing">
     <value>165, 22</value>
   </data>
-  <data name="fremdsprache_text.TabIndex" type="System.Int32, mscorlib">
+  <data name="TbForeignTongue.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;fremdsprache_text.Name" xml:space="preserve">
-    <value>fremdsprache_text</value>
+  <data name="&gt;&gt;TbForeignTongue.Name" xml:space="preserve">
+    <value>TbForeignTongue</value>
   </data>
-  <data name="&gt;&gt;fremdsprache_text.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;TbForeignTongue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;fremdsprache_text.Parent" xml:space="preserve">
+  <data name="&gt;&gt;TbForeignTongue.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;fremdsprache_text.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TbForeignTongue.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="fremd_mutter.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;RbModeAskMotherTongue.Name" xml:space="preserve">
+    <value>RbModeAskMotherTongue</value>
   </data>
-  <data name="fremd_mutter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 42</value>
+  <data name="&gt;&gt;RbModeAskMotherTongue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="fremd_mutter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 17</value>
-  </data>
-  <data name="fremd_mutter.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="fremd_mutter.Text" xml:space="preserve">
-    <value>Fremdsprache --&gt; Muttersprache</value>
-  </data>
-  <data name="&gt;&gt;fremd_mutter.Name" xml:space="preserve">
-    <value>fremd_mutter</value>
-  </data>
-  <data name="&gt;&gt;fremd_mutter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fremd_mutter.Parent" xml:space="preserve">
+  <data name="&gt;&gt;RbModeAskMotherTongue.Parent" xml:space="preserve">
     <value>uebersetzungsrichtung</value>
   </data>
-  <data name="&gt;&gt;fremd_mutter.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;RbModeAskMotherTongue.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="mutter_fremd.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;RbModeAskForeignTongue.Name" xml:space="preserve">
+    <value>RbModeAskForeignTongue</value>
   </data>
-  <data name="mutter_fremd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 19</value>
+  <data name="&gt;&gt;RbModeAskForeignTongue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="mutter_fremd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 17</value>
-  </data>
-  <data name="mutter_fremd.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="mutter_fremd.Text" xml:space="preserve">
-    <value>Muttersprache --&gt; Fremdsprache</value>
-  </data>
-  <data name="&gt;&gt;mutter_fremd.Name" xml:space="preserve">
-    <value>mutter_fremd</value>
-  </data>
-  <data name="&gt;&gt;mutter_fremd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mutter_fremd.Parent" xml:space="preserve">
+  <data name="&gt;&gt;RbModeAskForeignTongue.Parent" xml:space="preserve">
     <value>uebersetzungsrichtung</value>
   </data>
-  <data name="&gt;&gt;mutter_fremd.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;RbModeAskForeignTongue.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="uebersetzungsrichtung.Location" type="System.Drawing.Point, System.Drawing">
@@ -417,7 +399,7 @@
     <value>uebersetzungsrichtung</value>
   </data>
   <data name="&gt;&gt;uebersetzungsrichtung.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;uebersetzungsrichtung.Parent" xml:space="preserve">
     <value>$this</value>
@@ -425,13 +407,67 @@
   <data name="&gt;&gt;uebersetzungsrichtung.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="RbModeAskMotherTongue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RbModeAskMotherTongue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 42</value>
+  </data>
+  <data name="RbModeAskMotherTongue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 17</value>
+  </data>
+  <data name="RbModeAskMotherTongue.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="RbModeAskMotherTongue.Text" xml:space="preserve">
+    <value>Fremdsprache --&gt; Muttersprache</value>
+  </data>
+  <data name="&gt;&gt;RbModeAskMotherTongue.Name" xml:space="preserve">
+    <value>RbModeAskMotherTongue</value>
+  </data>
+  <data name="&gt;&gt;RbModeAskMotherTongue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbModeAskMotherTongue.Parent" xml:space="preserve">
+    <value>uebersetzungsrichtung</value>
+  </data>
+  <data name="&gt;&gt;RbModeAskMotherTongue.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="RbModeAskForeignTongue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RbModeAskForeignTongue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 19</value>
+  </data>
+  <data name="RbModeAskForeignTongue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 17</value>
+  </data>
+  <data name="RbModeAskForeignTongue.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="RbModeAskForeignTongue.Text" xml:space="preserve">
+    <value>Muttersprache --&gt; Fremdsprache</value>
+  </data>
+  <data name="&gt;&gt;RbModeAskForeignTongue.Name" xml:space="preserve">
+    <value>RbModeAskForeignTongue</value>
+  </data>
+  <data name="&gt;&gt;RbModeAskForeignTongue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbModeAskForeignTongue.Parent" xml:space="preserve">
+    <value>uebersetzungsrichtung</value>
+  </data>
+  <data name="&gt;&gt;RbModeAskForeignTongue.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>290, 248</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
@@ -442,6 +478,6 @@
     <value>new_file_and_settings</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

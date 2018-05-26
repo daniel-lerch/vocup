@@ -194,7 +194,7 @@ namespace Vocup
         {
             //Dialog öffnen
 
-            specialchars sonderzeichen_dialog = new specialchars();
+            SpecialCharKeyboard sonderzeichen_dialog = new SpecialCharKeyboard();
             DialogResult result = sonderzeichen_dialog.ShowDialog();
             // TODO: ShowDialog does not work here. Chars do not get inserted.
 

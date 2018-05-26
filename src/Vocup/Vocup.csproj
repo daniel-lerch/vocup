@@ -157,11 +157,11 @@
     <Compile Include="new_and_settings.Designer.cs">
       <DependentUpon>new_and_settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="new_file_and_settings.cs">
+    <Compile Include="Forms\VocabularyBookSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="new_file_and_settings.Designer.cs">
-      <DependentUpon>new_file_and_settings.cs</DependentUpon>
+    <Compile Include="Forms\VocabularyBookSettings.Designer.cs">
+      <DependentUpon>VocabularyBookSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SettingsDialog.cs">
       <SubType>Form</SubType>
@@ -224,9 +224,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>new_and_settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="new_file_and_settings.resx">
+    <EmbeddedResource Include="Forms\VocabularyBookSettings.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>new_file_and_settings.cs</DependentUpon>
+      <DependentUpon>VocabularyBookSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsDialog.resx">
       <SubType>Designer</SubType>
@@ -265,9 +265,9 @@
       <DependentUpon>practise_result_list.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.cs" />
-    <EmbeddedResource Include="specialchars.resx">
+    <EmbeddedResource Include="Forms\SpecialCharKeyboard.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>specialchars.cs</DependentUpon>
+      <DependentUpon>SpecialCharKeyboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SpecialCharManage.resx">
       <SubType>Designer</SubType>
@@ -293,11 +293,11 @@
     </Compile>
     <Compile Include="SendFileTo.cs" />
     <Compile Include="AudioVideoPlay.cs" />
-    <Compile Include="specialchars.cs">
+    <Compile Include="Forms\SpecialCharKeyboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="specialchars.Designer.cs">
-      <DependentUpon>specialchars.cs</DependentUpon>
+    <Compile Include="Forms\SpecialCharKeyboard.Designer.cs">
+      <DependentUpon>SpecialCharKeyboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SpecialCharManage.cs">
       <SubType>Form</SubType>

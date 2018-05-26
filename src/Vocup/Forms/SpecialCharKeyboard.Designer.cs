@@ -1,6 +1,6 @@
-﻿namespace Vocup
+﻿namespace Vocup.Forms
 {
-    partial class specialchars
+    partial class SpecialCharKeyboard
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.Titel = new System.Windows.Forms.Label();
-            this.tabPage = new System.Windows.Forms.TabControl();
-            this.deutsch = new System.Windows.Forms.TabPage();
+            this.TcMain = new System.Windows.Forms.TabControl();
+            this.Deutsch = new System.Windows.Forms.TabPage();
             this.doppel_s = new System.Windows.Forms.Button();
             this.ue_big = new System.Windows.Forms.Button();
             this.ae_big = new System.Windows.Forms.Button();
@@ -38,7 +38,7 @@
             this.oe_big = new System.Windows.Forms.Button();
             this.ue = new System.Windows.Forms.Button();
             this.ae = new System.Windows.Forms.Button();
-            this.französisch = new System.Windows.Forms.TabPage();
+            this.Französisch = new System.Windows.Forms.TabPage();
             this.û_big = new System.Windows.Forms.Button();
             this.ÿ = new System.Windows.Forms.Button();
             this.ÿ_big = new System.Windows.Forms.Button();
@@ -69,7 +69,7 @@
             this.Â_big = new System.Windows.Forms.Button();
             this.æ = new System.Windows.Forms.Button();
             this.à = new System.Windows.Forms.Button();
-            this.italienisch = new System.Windows.Forms.TabPage();
+            this.Italienisch = new System.Windows.Forms.TabPage();
             this.ú_big = new System.Windows.Forms.Button();
             this.ù_it = new System.Windows.Forms.Button();
             this.ù_it_big = new System.Windows.Forms.Button();
@@ -90,7 +90,7 @@
             this.é_it = new System.Windows.Forms.Button();
             this.à_it_big = new System.Windows.Forms.Button();
             this.à_it = new System.Windows.Forms.Button();
-            this.spanisch = new System.Windows.Forms.TabPage();
+            this.Spanisch = new System.Windows.Forms.TabPage();
             this.um_frag = new System.Windows.Forms.Button();
             this.umg_ausr = new System.Windows.Forms.Button();
             this.º = new System.Windows.Forms.Button();
@@ -109,7 +109,7 @@
             this.é_sp = new System.Windows.Forms.Button();
             this.é_sp_big = new System.Windows.Forms.Button();
             this.á = new System.Windows.Forms.Button();
-            this.rumaenisch = new System.Windows.Forms.TabPage();
+            this.Rumaenisch = new System.Windows.Forms.TabPage();
             this.ţ_ro_big = new System.Windows.Forms.Button();
             this.ţ_ro = new System.Windows.Forms.Button();
             this.ş_ro_big = new System.Windows.Forms.Button();
@@ -120,12 +120,12 @@
             this.ă_ro = new System.Windows.Forms.Button();
             this.â_ro_big = new System.Windows.Forms.Button();
             this.â_ro = new System.Windows.Forms.Button();
-            this.tabPage.SuspendLayout();
-            this.deutsch.SuspendLayout();
-            this.französisch.SuspendLayout();
-            this.italienisch.SuspendLayout();
-            this.spanisch.SuspendLayout();
-            this.rumaenisch.SuspendLayout();
+            this.TcMain.SuspendLayout();
+            this.Deutsch.SuspendLayout();
+            this.Französisch.SuspendLayout();
+            this.Italienisch.SuspendLayout();
+            this.Spanisch.SuspendLayout();
+            this.Rumaenisch.SuspendLayout();
             this.SuspendLayout();
             // 
             // Titel
@@ -136,39 +136,39 @@
             this.Titel.Size = new System.Drawing.Size(0, 13);
             this.Titel.TabIndex = 1;
             // 
-            // tabPage
+            // TcMain
             // 
-            this.tabPage.Controls.Add(this.deutsch);
-            this.tabPage.Controls.Add(this.französisch);
-            this.tabPage.Controls.Add(this.italienisch);
-            this.tabPage.Controls.Add(this.spanisch);
-            this.tabPage.Controls.Add(this.rumaenisch);
-            this.tabPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPage.Font = new System.Drawing.Font("Arial", 8.25F);
-            this.tabPage.Location = new System.Drawing.Point(0, 0);
-            this.tabPage.Name = "tabPage";
-            this.tabPage.SelectedIndex = 0;
-            this.tabPage.Size = new System.Drawing.Size(404, 126);
-            this.tabPage.TabIndex = 0;
+            this.TcMain.Controls.Add(this.Deutsch);
+            this.TcMain.Controls.Add(this.Französisch);
+            this.TcMain.Controls.Add(this.Italienisch);
+            this.TcMain.Controls.Add(this.Spanisch);
+            this.TcMain.Controls.Add(this.Rumaenisch);
+            this.TcMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TcMain.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.TcMain.Location = new System.Drawing.Point(0, 0);
+            this.TcMain.Name = "TcMain";
+            this.TcMain.SelectedIndex = 0;
+            this.TcMain.Size = new System.Drawing.Size(404, 126);
+            this.TcMain.TabIndex = 0;
             // 
-            // deutsch
+            // Deutsch
             // 
-            this.deutsch.AutoScroll = true;
-            this.deutsch.Controls.Add(this.doppel_s);
-            this.deutsch.Controls.Add(this.ue_big);
-            this.deutsch.Controls.Add(this.ae_big);
-            this.deutsch.Controls.Add(this.oe);
-            this.deutsch.Controls.Add(this.oe_big);
-            this.deutsch.Controls.Add(this.ue);
-            this.deutsch.Controls.Add(this.ae);
-            this.deutsch.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.deutsch.Location = new System.Drawing.Point(4, 23);
-            this.deutsch.Name = "deutsch";
-            this.deutsch.Padding = new System.Windows.Forms.Padding(3);
-            this.deutsch.Size = new System.Drawing.Size(396, 99);
-            this.deutsch.TabIndex = 0;
-            this.deutsch.Text = "Deutsch";
-            this.deutsch.UseVisualStyleBackColor = true;
+            this.Deutsch.AutoScroll = true;
+            this.Deutsch.Controls.Add(this.doppel_s);
+            this.Deutsch.Controls.Add(this.ue_big);
+            this.Deutsch.Controls.Add(this.ae_big);
+            this.Deutsch.Controls.Add(this.oe);
+            this.Deutsch.Controls.Add(this.oe_big);
+            this.Deutsch.Controls.Add(this.ue);
+            this.Deutsch.Controls.Add(this.ae);
+            this.Deutsch.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.Deutsch.Location = new System.Drawing.Point(4, 23);
+            this.Deutsch.Name = "Deutsch";
+            this.Deutsch.Padding = new System.Windows.Forms.Padding(3);
+            this.Deutsch.Size = new System.Drawing.Size(396, 99);
+            this.Deutsch.TabIndex = 0;
+            this.Deutsch.Text = "Deutsch";
+            this.Deutsch.UseVisualStyleBackColor = true;
             // 
             // doppel_s
             // 
@@ -178,7 +178,7 @@
             this.doppel_s.TabIndex = 6;
             this.doppel_s.Text = "ß";
             this.doppel_s.UseVisualStyleBackColor = true;
-            this.doppel_s.Click += new System.EventHandler(this.button_Click);
+            this.doppel_s.Click += new System.EventHandler(this.Button_Click);
             // 
             // ue_big
             // 
@@ -188,7 +188,7 @@
             this.ue_big.TabIndex = 5;
             this.ue_big.Text = "Ü";
             this.ue_big.UseVisualStyleBackColor = true;
-            this.ue_big.Click += new System.EventHandler(this.button_Click);
+            this.ue_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ae_big
             // 
@@ -198,7 +198,7 @@
             this.ae_big.TabIndex = 1;
             this.ae_big.Text = "Ä";
             this.ae_big.UseVisualStyleBackColor = true;
-            this.ae_big.Click += new System.EventHandler(this.button_Click);
+            this.ae_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // oe
             // 
@@ -208,7 +208,7 @@
             this.oe.TabIndex = 2;
             this.oe.Text = "ö";
             this.oe.UseVisualStyleBackColor = true;
-            this.oe.Click += new System.EventHandler(this.button_Click);
+            this.oe.Click += new System.EventHandler(this.Button_Click);
             // 
             // oe_big
             // 
@@ -218,7 +218,7 @@
             this.oe_big.TabIndex = 3;
             this.oe_big.Text = "Ö";
             this.oe_big.UseVisualStyleBackColor = true;
-            this.oe_big.Click += new System.EventHandler(this.button_Click);
+            this.oe_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ue
             // 
@@ -229,7 +229,7 @@
             this.ue.TabIndex = 4;
             this.ue.Text = "ü";
             this.ue.UseVisualStyleBackColor = true;
-            this.ue.Click += new System.EventHandler(this.button_Click);
+            this.ue.Click += new System.EventHandler(this.Button_Click);
             // 
             // ae
             // 
@@ -239,49 +239,49 @@
             this.ae.TabIndex = 0;
             this.ae.Text = "ä";
             this.ae.UseVisualStyleBackColor = true;
-            this.ae.Click += new System.EventHandler(this.button_Click);
+            this.ae.Click += new System.EventHandler(this.Button_Click);
             // 
-            // französisch
+            // Französisch
             // 
-            this.französisch.AutoScroll = true;
-            this.französisch.Controls.Add(this.û_big);
-            this.französisch.Controls.Add(this.ÿ);
-            this.französisch.Controls.Add(this.ÿ_big);
-            this.französisch.Controls.Add(this.û);
-            this.französisch.Controls.Add(this.ù_big);
-            this.französisch.Controls.Add(this.œ);
-            this.französisch.Controls.Add(this.œ_big);
-            this.französisch.Controls.Add(this.ù);
-            this.französisch.Controls.Add(this.ô_big);
-            this.französisch.Controls.Add(this.ô);
-            this.französisch.Controls.Add(this.î_big);
-            this.französisch.Controls.Add(this.ï);
-            this.französisch.Controls.Add(this.ï_big);
-            this.französisch.Controls.Add(this.î);
-            this.französisch.Controls.Add(this.ë_big);
-            this.französisch.Controls.Add(this.ê);
-            this.französisch.Controls.Add(this.ê_big);
-            this.französisch.Controls.Add(this.ë);
-            this.französisch.Controls.Add(this.é_big);
-            this.französisch.Controls.Add(this.ç_big);
-            this.französisch.Controls.Add(this.è);
-            this.französisch.Controls.Add(this.è_big);
-            this.französisch.Controls.Add(this.é);
-            this.französisch.Controls.Add(this.ç);
-            this.französisch.Controls.Add(this.æ_big);
-            this.französisch.Controls.Add(this.à_big);
-            this.französisch.Controls.Add(this.â);
-            this.französisch.Controls.Add(this.Â_big);
-            this.französisch.Controls.Add(this.æ);
-            this.französisch.Controls.Add(this.à);
-            this.französisch.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.französisch.Location = new System.Drawing.Point(4, 23);
-            this.französisch.Name = "französisch";
-            this.französisch.Padding = new System.Windows.Forms.Padding(3);
-            this.französisch.Size = new System.Drawing.Size(396, 99);
-            this.französisch.TabIndex = 1;
-            this.französisch.Text = "Französisch";
-            this.französisch.UseVisualStyleBackColor = true;
+            this.Französisch.AutoScroll = true;
+            this.Französisch.Controls.Add(this.û_big);
+            this.Französisch.Controls.Add(this.ÿ);
+            this.Französisch.Controls.Add(this.ÿ_big);
+            this.Französisch.Controls.Add(this.û);
+            this.Französisch.Controls.Add(this.ù_big);
+            this.Französisch.Controls.Add(this.œ);
+            this.Französisch.Controls.Add(this.œ_big);
+            this.Französisch.Controls.Add(this.ù);
+            this.Französisch.Controls.Add(this.ô_big);
+            this.Französisch.Controls.Add(this.ô);
+            this.Französisch.Controls.Add(this.î_big);
+            this.Französisch.Controls.Add(this.ï);
+            this.Französisch.Controls.Add(this.ï_big);
+            this.Französisch.Controls.Add(this.î);
+            this.Französisch.Controls.Add(this.ë_big);
+            this.Französisch.Controls.Add(this.ê);
+            this.Französisch.Controls.Add(this.ê_big);
+            this.Französisch.Controls.Add(this.ë);
+            this.Französisch.Controls.Add(this.é_big);
+            this.Französisch.Controls.Add(this.ç_big);
+            this.Französisch.Controls.Add(this.è);
+            this.Französisch.Controls.Add(this.è_big);
+            this.Französisch.Controls.Add(this.é);
+            this.Französisch.Controls.Add(this.ç);
+            this.Französisch.Controls.Add(this.æ_big);
+            this.Französisch.Controls.Add(this.à_big);
+            this.Französisch.Controls.Add(this.â);
+            this.Französisch.Controls.Add(this.Â_big);
+            this.Französisch.Controls.Add(this.æ);
+            this.Französisch.Controls.Add(this.à);
+            this.Französisch.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.Französisch.Location = new System.Drawing.Point(4, 23);
+            this.Französisch.Name = "Französisch";
+            this.Französisch.Padding = new System.Windows.Forms.Padding(3);
+            this.Französisch.Size = new System.Drawing.Size(396, 99);
+            this.Französisch.TabIndex = 1;
+            this.Französisch.Text = "Französisch";
+            this.Französisch.UseVisualStyleBackColor = true;
             // 
             // û_big
             // 
@@ -291,7 +291,7 @@
             this.û_big.TabIndex = 28;
             this.û_big.Text = "Û";
             this.û_big.UseVisualStyleBackColor = true;
-            this.û_big.Click += new System.EventHandler(this.button_Click);
+            this.û_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ÿ
             // 
@@ -301,7 +301,7 @@
             this.ÿ.TabIndex = 29;
             this.ÿ.Text = "ÿ";
             this.ÿ.UseVisualStyleBackColor = true;
-            this.ÿ.Click += new System.EventHandler(this.button_Click);
+            this.ÿ.Click += new System.EventHandler(this.Button_Click);
             // 
             // ÿ_big
             // 
@@ -311,7 +311,7 @@
             this.ÿ_big.TabIndex = 30;
             this.ÿ_big.Text = "Ÿ";
             this.ÿ_big.UseVisualStyleBackColor = true;
-            this.ÿ_big.Click += new System.EventHandler(this.button_Click);
+            this.ÿ_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // û
             // 
@@ -321,7 +321,7 @@
             this.û.TabIndex = 27;
             this.û.Text = "û";
             this.û.UseVisualStyleBackColor = true;
-            this.û.Click += new System.EventHandler(this.button_Click);
+            this.û.Click += new System.EventHandler(this.Button_Click);
             // 
             // ù_big
             // 
@@ -331,7 +331,7 @@
             this.ù_big.TabIndex = 26;
             this.ù_big.Text = "Ù";
             this.ù_big.UseVisualStyleBackColor = true;
-            this.ù_big.Click += new System.EventHandler(this.button_Click);
+            this.ù_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // œ
             // 
@@ -341,7 +341,7 @@
             this.œ.TabIndex = 23;
             this.œ.Text = "œ";
             this.œ.UseVisualStyleBackColor = true;
-            this.œ.Click += new System.EventHandler(this.button_Click);
+            this.œ.Click += new System.EventHandler(this.Button_Click);
             // 
             // œ_big
             // 
@@ -351,7 +351,7 @@
             this.œ_big.TabIndex = 24;
             this.œ_big.Text = "Œ";
             this.œ_big.UseVisualStyleBackColor = true;
-            this.œ_big.Click += new System.EventHandler(this.button_Click);
+            this.œ_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ù
             // 
@@ -361,7 +361,7 @@
             this.ù.TabIndex = 25;
             this.ù.Text = "ù";
             this.ù.UseVisualStyleBackColor = true;
-            this.ù.Click += new System.EventHandler(this.button_Click);
+            this.ù.Click += new System.EventHandler(this.Button_Click);
             // 
             // ô_big
             // 
@@ -371,7 +371,7 @@
             this.ô_big.TabIndex = 22;
             this.ô_big.Text = "Ô";
             this.ô_big.UseVisualStyleBackColor = true;
-            this.ô_big.Click += new System.EventHandler(this.button_Click);
+            this.ô_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ô
             // 
@@ -381,7 +381,7 @@
             this.ô.TabIndex = 21;
             this.ô.Text = "ô";
             this.ô.UseVisualStyleBackColor = true;
-            this.ô.Click += new System.EventHandler(this.button_Click);
+            this.ô.Click += new System.EventHandler(this.Button_Click);
             // 
             // î_big
             // 
@@ -391,7 +391,7 @@
             this.î_big.TabIndex = 18;
             this.î_big.Text = "Î";
             this.î_big.UseVisualStyleBackColor = true;
-            this.î_big.Click += new System.EventHandler(this.button_Click);
+            this.î_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ï
             // 
@@ -401,7 +401,7 @@
             this.ï.TabIndex = 19;
             this.ï.Text = "ï";
             this.ï.UseVisualStyleBackColor = true;
-            this.ï.Click += new System.EventHandler(this.button_Click);
+            this.ï.Click += new System.EventHandler(this.Button_Click);
             // 
             // ï_big
             // 
@@ -411,7 +411,7 @@
             this.ï_big.TabIndex = 20;
             this.ï_big.Text = "Ï";
             this.ï_big.UseVisualStyleBackColor = true;
-            this.ï_big.Click += new System.EventHandler(this.button_Click);
+            this.ï_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // î
             // 
@@ -421,7 +421,7 @@
             this.î.TabIndex = 17;
             this.î.Text = "î";
             this.î.UseVisualStyleBackColor = true;
-            this.î.Click += new System.EventHandler(this.button_Click);
+            this.î.Click += new System.EventHandler(this.Button_Click);
             // 
             // ë_big
             // 
@@ -431,7 +431,7 @@
             this.ë_big.TabIndex = 16;
             this.ë_big.Text = "Ë";
             this.ë_big.UseVisualStyleBackColor = true;
-            this.ë_big.Click += new System.EventHandler(this.button_Click);
+            this.ë_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ê
             // 
@@ -441,7 +441,7 @@
             this.ê.TabIndex = 13;
             this.ê.Text = "ê";
             this.ê.UseVisualStyleBackColor = true;
-            this.ê.Click += new System.EventHandler(this.button_Click);
+            this.ê.Click += new System.EventHandler(this.Button_Click);
             // 
             // ê_big
             // 
@@ -451,7 +451,7 @@
             this.ê_big.TabIndex = 14;
             this.ê_big.Text = "Ê";
             this.ê_big.UseVisualStyleBackColor = true;
-            this.ê_big.Click += new System.EventHandler(this.button_Click);
+            this.ê_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ë
             // 
@@ -461,7 +461,7 @@
             this.ë.TabIndex = 15;
             this.ë.Text = "ë";
             this.ë.UseVisualStyleBackColor = true;
-            this.ë.Click += new System.EventHandler(this.button_Click);
+            this.ë.Click += new System.EventHandler(this.Button_Click);
             // 
             // é_big
             // 
@@ -471,7 +471,7 @@
             this.é_big.TabIndex = 12;
             this.é_big.Text = "É";
             this.é_big.UseVisualStyleBackColor = true;
-            this.é_big.Click += new System.EventHandler(this.button_Click);
+            this.é_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ç_big
             // 
@@ -481,7 +481,7 @@
             this.ç_big.TabIndex = 8;
             this.ç_big.Text = "Ç";
             this.ç_big.UseVisualStyleBackColor = true;
-            this.ç_big.Click += new System.EventHandler(this.button_Click);
+            this.ç_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // è
             // 
@@ -491,7 +491,7 @@
             this.è.TabIndex = 9;
             this.è.Text = "è";
             this.è.UseVisualStyleBackColor = true;
-            this.è.Click += new System.EventHandler(this.button_Click);
+            this.è.Click += new System.EventHandler(this.Button_Click);
             // 
             // è_big
             // 
@@ -501,7 +501,7 @@
             this.è_big.TabIndex = 10;
             this.è_big.Text = "È";
             this.è_big.UseVisualStyleBackColor = true;
-            this.è_big.Click += new System.EventHandler(this.button_Click);
+            this.è_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // é
             // 
@@ -511,7 +511,7 @@
             this.é.TabIndex = 11;
             this.é.Text = "é";
             this.é.UseVisualStyleBackColor = true;
-            this.é.Click += new System.EventHandler(this.button_Click);
+            this.é.Click += new System.EventHandler(this.Button_Click);
             // 
             // ç
             // 
@@ -521,7 +521,7 @@
             this.ç.TabIndex = 7;
             this.ç.Text = "ç";
             this.ç.UseVisualStyleBackColor = true;
-            this.ç.Click += new System.EventHandler(this.button_Click);
+            this.ç.Click += new System.EventHandler(this.Button_Click);
             // 
             // æ_big
             // 
@@ -531,7 +531,7 @@
             this.æ_big.TabIndex = 6;
             this.æ_big.Text = "Æ";
             this.æ_big.UseVisualStyleBackColor = true;
-            this.æ_big.Click += new System.EventHandler(this.button_Click);
+            this.æ_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // à_big
             // 
@@ -541,7 +541,7 @@
             this.à_big.TabIndex = 2;
             this.à_big.Text = "À";
             this.à_big.UseVisualStyleBackColor = true;
-            this.à_big.Click += new System.EventHandler(this.button_Click);
+            this.à_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // â
             // 
@@ -551,7 +551,7 @@
             this.â.TabIndex = 3;
             this.â.Text = "â";
             this.â.UseVisualStyleBackColor = true;
-            this.â.Click += new System.EventHandler(this.button_Click);
+            this.â.Click += new System.EventHandler(this.Button_Click);
             // 
             // Â_big
             // 
@@ -561,7 +561,7 @@
             this.Â_big.TabIndex = 4;
             this.Â_big.Text = "Â";
             this.Â_big.UseVisualStyleBackColor = true;
-            this.Â_big.Click += new System.EventHandler(this.button_Click);
+            this.Â_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // æ
             // 
@@ -571,7 +571,7 @@
             this.æ.TabIndex = 5;
             this.æ.Text = "æ";
             this.æ.UseVisualStyleBackColor = true;
-            this.æ.Click += new System.EventHandler(this.button_Click);
+            this.æ.Click += new System.EventHandler(this.Button_Click);
             // 
             // à
             // 
@@ -581,39 +581,39 @@
             this.à.TabIndex = 1;
             this.à.Text = "à";
             this.à.UseVisualStyleBackColor = true;
-            this.à.Click += new System.EventHandler(this.button_Click);
+            this.à.Click += new System.EventHandler(this.Button_Click);
             // 
-            // italienisch
+            // Italienisch
             // 
-            this.italienisch.AutoScroll = true;
-            this.italienisch.Controls.Add(this.ú_big);
-            this.italienisch.Controls.Add(this.ù_it);
-            this.italienisch.Controls.Add(this.ù_it_big);
-            this.italienisch.Controls.Add(this.ú);
-            this.italienisch.Controls.Add(this.ó_big);
-            this.italienisch.Controls.Add(this.ò);
-            this.italienisch.Controls.Add(this.ò_big);
-            this.italienisch.Controls.Add(this.ó);
-            this.italienisch.Controls.Add(this.í_big);
-            this.italienisch.Controls.Add(this.ì);
-            this.italienisch.Controls.Add(this.Ì_big);
-            this.italienisch.Controls.Add(this.í);
-            this.italienisch.Controls.Add(this.ï_it_big);
-            this.italienisch.Controls.Add(this.ï_it);
-            this.italienisch.Controls.Add(this.é_it_big);
-            this.italienisch.Controls.Add(this.è_it);
-            this.italienisch.Controls.Add(this.è_it_big);
-            this.italienisch.Controls.Add(this.é_it);
-            this.italienisch.Controls.Add(this.à_it_big);
-            this.italienisch.Controls.Add(this.à_it);
-            this.italienisch.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.italienisch.Location = new System.Drawing.Point(4, 23);
-            this.italienisch.Name = "italienisch";
-            this.italienisch.Padding = new System.Windows.Forms.Padding(3);
-            this.italienisch.Size = new System.Drawing.Size(396, 99);
-            this.italienisch.TabIndex = 2;
-            this.italienisch.Text = "Italienisch";
-            this.italienisch.UseVisualStyleBackColor = true;
+            this.Italienisch.AutoScroll = true;
+            this.Italienisch.Controls.Add(this.ú_big);
+            this.Italienisch.Controls.Add(this.ù_it);
+            this.Italienisch.Controls.Add(this.ù_it_big);
+            this.Italienisch.Controls.Add(this.ú);
+            this.Italienisch.Controls.Add(this.ó_big);
+            this.Italienisch.Controls.Add(this.ò);
+            this.Italienisch.Controls.Add(this.ò_big);
+            this.Italienisch.Controls.Add(this.ó);
+            this.Italienisch.Controls.Add(this.í_big);
+            this.Italienisch.Controls.Add(this.ì);
+            this.Italienisch.Controls.Add(this.Ì_big);
+            this.Italienisch.Controls.Add(this.í);
+            this.Italienisch.Controls.Add(this.ï_it_big);
+            this.Italienisch.Controls.Add(this.ï_it);
+            this.Italienisch.Controls.Add(this.é_it_big);
+            this.Italienisch.Controls.Add(this.è_it);
+            this.Italienisch.Controls.Add(this.è_it_big);
+            this.Italienisch.Controls.Add(this.é_it);
+            this.Italienisch.Controls.Add(this.à_it_big);
+            this.Italienisch.Controls.Add(this.à_it);
+            this.Italienisch.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.Italienisch.Location = new System.Drawing.Point(4, 23);
+            this.Italienisch.Name = "Italienisch";
+            this.Italienisch.Padding = new System.Windows.Forms.Padding(3);
+            this.Italienisch.Size = new System.Drawing.Size(396, 99);
+            this.Italienisch.TabIndex = 2;
+            this.Italienisch.Text = "Italienisch";
+            this.Italienisch.UseVisualStyleBackColor = true;
             // 
             // ú_big
             // 
@@ -623,7 +623,7 @@
             this.ú_big.TabIndex = 20;
             this.ú_big.Text = "Ú";
             this.ú_big.UseVisualStyleBackColor = true;
-            this.ú_big.Click += new System.EventHandler(this.button_Click);
+            this.ú_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ù_it
             // 
@@ -633,7 +633,7 @@
             this.ù_it.TabIndex = 17;
             this.ù_it.Text = "ù";
             this.ù_it.UseVisualStyleBackColor = true;
-            this.ù_it.Click += new System.EventHandler(this.button_Click);
+            this.ù_it.Click += new System.EventHandler(this.Button_Click);
             // 
             // ù_it_big
             // 
@@ -643,7 +643,7 @@
             this.ù_it_big.TabIndex = 18;
             this.ù_it_big.Text = "Ù";
             this.ù_it_big.UseVisualStyleBackColor = true;
-            this.ù_it_big.Click += new System.EventHandler(this.button_Click);
+            this.ù_it_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ú
             // 
@@ -653,7 +653,7 @@
             this.ú.TabIndex = 19;
             this.ú.Text = "ú";
             this.ú.UseVisualStyleBackColor = true;
-            this.ú.Click += new System.EventHandler(this.button_Click);
+            this.ú.Click += new System.EventHandler(this.Button_Click);
             // 
             // ó_big
             // 
@@ -663,7 +663,7 @@
             this.ó_big.TabIndex = 16;
             this.ó_big.Text = "Ó";
             this.ó_big.UseVisualStyleBackColor = true;
-            this.ó_big.Click += new System.EventHandler(this.button_Click);
+            this.ó_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ò
             // 
@@ -673,7 +673,7 @@
             this.ò.TabIndex = 13;
             this.ò.Text = "ò";
             this.ò.UseVisualStyleBackColor = true;
-            this.ò.Click += new System.EventHandler(this.button_Click);
+            this.ò.Click += new System.EventHandler(this.Button_Click);
             // 
             // ò_big
             // 
@@ -683,7 +683,7 @@
             this.ò_big.TabIndex = 14;
             this.ò_big.Text = "Ò";
             this.ò_big.UseVisualStyleBackColor = true;
-            this.ò_big.Click += new System.EventHandler(this.button_Click);
+            this.ò_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ó
             // 
@@ -693,7 +693,7 @@
             this.ó.TabIndex = 15;
             this.ó.Text = "ó";
             this.ó.UseVisualStyleBackColor = true;
-            this.ó.Click += new System.EventHandler(this.button_Click);
+            this.ó.Click += new System.EventHandler(this.Button_Click);
             // 
             // í_big
             // 
@@ -703,7 +703,7 @@
             this.í_big.TabIndex = 10;
             this.í_big.Text = "Í";
             this.í_big.UseVisualStyleBackColor = true;
-            this.í_big.Click += new System.EventHandler(this.button_Click);
+            this.í_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ì
             // 
@@ -713,7 +713,7 @@
             this.ì.TabIndex = 7;
             this.ì.Text = "ì";
             this.ì.UseVisualStyleBackColor = true;
-            this.ì.Click += new System.EventHandler(this.button_Click);
+            this.ì.Click += new System.EventHandler(this.Button_Click);
             // 
             // Ì_big
             // 
@@ -723,7 +723,7 @@
             this.Ì_big.TabIndex = 8;
             this.Ì_big.Text = "Ì";
             this.Ì_big.UseVisualStyleBackColor = true;
-            this.Ì_big.Click += new System.EventHandler(this.button_Click);
+            this.Ì_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // í
             // 
@@ -733,7 +733,7 @@
             this.í.TabIndex = 9;
             this.í.Text = "í";
             this.í.UseVisualStyleBackColor = true;
-            this.í.Click += new System.EventHandler(this.button_Click);
+            this.í.Click += new System.EventHandler(this.Button_Click);
             // 
             // ï_it_big
             // 
@@ -743,7 +743,7 @@
             this.ï_it_big.TabIndex = 12;
             this.ï_it_big.Text = "Ï";
             this.ï_it_big.UseVisualStyleBackColor = true;
-            this.ï_it_big.Click += new System.EventHandler(this.button_Click);
+            this.ï_it_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ï_it
             // 
@@ -754,7 +754,7 @@
             this.ï_it.TabIndex = 11;
             this.ï_it.Text = "ï";
             this.ï_it.UseVisualStyleBackColor = true;
-            this.ï_it.Click += new System.EventHandler(this.button_Click);
+            this.ï_it.Click += new System.EventHandler(this.Button_Click);
             // 
             // é_it_big
             // 
@@ -764,7 +764,7 @@
             this.é_it_big.TabIndex = 6;
             this.é_it_big.Text = "É";
             this.é_it_big.UseVisualStyleBackColor = true;
-            this.é_it_big.Click += new System.EventHandler(this.button_Click);
+            this.é_it_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // è_it
             // 
@@ -774,7 +774,7 @@
             this.è_it.TabIndex = 3;
             this.è_it.Text = "è";
             this.è_it.UseVisualStyleBackColor = true;
-            this.è_it.Click += new System.EventHandler(this.button_Click);
+            this.è_it.Click += new System.EventHandler(this.Button_Click);
             // 
             // è_it_big
             // 
@@ -784,7 +784,7 @@
             this.è_it_big.TabIndex = 4;
             this.è_it_big.Text = "È";
             this.è_it_big.UseVisualStyleBackColor = true;
-            this.è_it_big.Click += new System.EventHandler(this.button_Click);
+            this.è_it_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // é_it
             // 
@@ -794,7 +794,7 @@
             this.é_it.TabIndex = 5;
             this.é_it.Text = "é";
             this.é_it.UseVisualStyleBackColor = true;
-            this.é_it.Click += new System.EventHandler(this.button_Click);
+            this.é_it.Click += new System.EventHandler(this.Button_Click);
             // 
             // à_it_big
             // 
@@ -804,7 +804,7 @@
             this.à_it_big.TabIndex = 2;
             this.à_it_big.Text = "À";
             this.à_it_big.UseVisualStyleBackColor = true;
-            this.à_it_big.Click += new System.EventHandler(this.button_Click);
+            this.à_it_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // à_it
             // 
@@ -814,37 +814,37 @@
             this.à_it.TabIndex = 1;
             this.à_it.Text = "à";
             this.à_it.UseVisualStyleBackColor = true;
-            this.à_it.Click += new System.EventHandler(this.button_Click);
+            this.à_it.Click += new System.EventHandler(this.Button_Click);
             // 
-            // spanisch
+            // Spanisch
             // 
-            this.spanisch.AutoScroll = true;
-            this.spanisch.Controls.Add(this.um_frag);
-            this.spanisch.Controls.Add(this.umg_ausr);
-            this.spanisch.Controls.Add(this.º);
-            this.spanisch.Controls.Add(this.ú_sp_big);
-            this.spanisch.Controls.Add(this.ü_sp);
-            this.spanisch.Controls.Add(this.ª);
-            this.spanisch.Controls.Add(this.ú_sp);
-            this.spanisch.Controls.Add(this.ñ);
-            this.spanisch.Controls.Add(this.ñ_big);
-            this.spanisch.Controls.Add(this.ó_sp);
-            this.spanisch.Controls.Add(this.ó_sp_big);
-            this.spanisch.Controls.Add(this.í_sp_big);
-            this.spanisch.Controls.Add(this.í_sp);
-            this.spanisch.Controls.Add(this.á_big);
-            this.spanisch.Controls.Add(this.ç_sp);
-            this.spanisch.Controls.Add(this.é_sp);
-            this.spanisch.Controls.Add(this.é_sp_big);
-            this.spanisch.Controls.Add(this.á);
-            this.spanisch.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.spanisch.Location = new System.Drawing.Point(4, 23);
-            this.spanisch.Name = "spanisch";
-            this.spanisch.Padding = new System.Windows.Forms.Padding(3);
-            this.spanisch.Size = new System.Drawing.Size(396, 99);
-            this.spanisch.TabIndex = 3;
-            this.spanisch.Text = "Spanisch";
-            this.spanisch.UseVisualStyleBackColor = true;
+            this.Spanisch.AutoScroll = true;
+            this.Spanisch.Controls.Add(this.um_frag);
+            this.Spanisch.Controls.Add(this.umg_ausr);
+            this.Spanisch.Controls.Add(this.º);
+            this.Spanisch.Controls.Add(this.ú_sp_big);
+            this.Spanisch.Controls.Add(this.ü_sp);
+            this.Spanisch.Controls.Add(this.ª);
+            this.Spanisch.Controls.Add(this.ú_sp);
+            this.Spanisch.Controls.Add(this.ñ);
+            this.Spanisch.Controls.Add(this.ñ_big);
+            this.Spanisch.Controls.Add(this.ó_sp);
+            this.Spanisch.Controls.Add(this.ó_sp_big);
+            this.Spanisch.Controls.Add(this.í_sp_big);
+            this.Spanisch.Controls.Add(this.í_sp);
+            this.Spanisch.Controls.Add(this.á_big);
+            this.Spanisch.Controls.Add(this.ç_sp);
+            this.Spanisch.Controls.Add(this.é_sp);
+            this.Spanisch.Controls.Add(this.é_sp_big);
+            this.Spanisch.Controls.Add(this.á);
+            this.Spanisch.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.Spanisch.Location = new System.Drawing.Point(4, 23);
+            this.Spanisch.Name = "Spanisch";
+            this.Spanisch.Padding = new System.Windows.Forms.Padding(3);
+            this.Spanisch.Size = new System.Drawing.Size(396, 99);
+            this.Spanisch.TabIndex = 3;
+            this.Spanisch.Text = "Spanisch";
+            this.Spanisch.UseVisualStyleBackColor = true;
             // 
             // um_frag
             // 
@@ -854,7 +854,7 @@
             this.um_frag.TabIndex = 18;
             this.um_frag.Text = "¿";
             this.um_frag.UseVisualStyleBackColor = true;
-            this.um_frag.Click += new System.EventHandler(this.button_Click);
+            this.um_frag.Click += new System.EventHandler(this.Button_Click);
             // 
             // umg_ausr
             // 
@@ -864,7 +864,7 @@
             this.umg_ausr.TabIndex = 17;
             this.umg_ausr.Text = "¡";
             this.umg_ausr.UseVisualStyleBackColor = true;
-            this.umg_ausr.Click += new System.EventHandler(this.button_Click);
+            this.umg_ausr.Click += new System.EventHandler(this.Button_Click);
             // 
             // º
             // 
@@ -874,7 +874,7 @@
             this.º.TabIndex = 16;
             this.º.Text = "º";
             this.º.UseVisualStyleBackColor = true;
-            this.º.Click += new System.EventHandler(this.button_Click);
+            this.º.Click += new System.EventHandler(this.Button_Click);
             // 
             // ú_sp_big
             // 
@@ -884,7 +884,7 @@
             this.ú_sp_big.TabIndex = 13;
             this.ú_sp_big.Text = "Ú";
             this.ú_sp_big.UseVisualStyleBackColor = true;
-            this.ú_sp_big.Click += new System.EventHandler(this.button_Click);
+            this.ú_sp_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ü_sp
             // 
@@ -894,7 +894,7 @@
             this.ü_sp.TabIndex = 14;
             this.ü_sp.Text = "ü";
             this.ü_sp.UseVisualStyleBackColor = true;
-            this.ü_sp.Click += new System.EventHandler(this.button_Click);
+            this.ü_sp.Click += new System.EventHandler(this.Button_Click);
             // 
             // ª
             // 
@@ -905,7 +905,7 @@
             this.ª.TabIndex = 15;
             this.ª.Text = "ª";
             this.ª.UseVisualStyleBackColor = true;
-            this.ª.Click += new System.EventHandler(this.button_Click);
+            this.ª.Click += new System.EventHandler(this.Button_Click);
             // 
             // ú_sp
             // 
@@ -915,7 +915,7 @@
             this.ú_sp.TabIndex = 12;
             this.ú_sp.Text = "ú";
             this.ú_sp.UseVisualStyleBackColor = true;
-            this.ú_sp.Click += new System.EventHandler(this.button_Click);
+            this.ú_sp.Click += new System.EventHandler(this.Button_Click);
             // 
             // ñ
             // 
@@ -925,7 +925,7 @@
             this.ñ.TabIndex = 8;
             this.ñ.Text = "ñ";
             this.ñ.UseVisualStyleBackColor = true;
-            this.ñ.Click += new System.EventHandler(this.button_Click);
+            this.ñ.Click += new System.EventHandler(this.Button_Click);
             // 
             // ñ_big
             // 
@@ -935,7 +935,7 @@
             this.ñ_big.TabIndex = 9;
             this.ñ_big.Text = "Ñ";
             this.ñ_big.UseVisualStyleBackColor = true;
-            this.ñ_big.Click += new System.EventHandler(this.button_Click);
+            this.ñ_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ó_sp
             // 
@@ -946,7 +946,7 @@
             this.ó_sp.TabIndex = 10;
             this.ó_sp.Text = "ó";
             this.ó_sp.UseVisualStyleBackColor = true;
-            this.ó_sp.Click += new System.EventHandler(this.button_Click);
+            this.ó_sp.Click += new System.EventHandler(this.Button_Click);
             // 
             // ó_sp_big
             // 
@@ -956,7 +956,7 @@
             this.ó_sp_big.TabIndex = 11;
             this.ó_sp_big.Text = "Ó";
             this.ó_sp_big.UseVisualStyleBackColor = true;
-            this.ó_sp_big.Click += new System.EventHandler(this.button_Click);
+            this.ó_sp_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // í_sp_big
             // 
@@ -966,7 +966,7 @@
             this.í_sp_big.TabIndex = 7;
             this.í_sp_big.Text = "Í";
             this.í_sp_big.UseVisualStyleBackColor = true;
-            this.í_sp_big.Click += new System.EventHandler(this.button_Click);
+            this.í_sp_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // í_sp
             // 
@@ -976,7 +976,7 @@
             this.í_sp.TabIndex = 6;
             this.í_sp.Text = "í";
             this.í_sp.UseVisualStyleBackColor = true;
-            this.í_sp.Click += new System.EventHandler(this.button_Click);
+            this.í_sp.Click += new System.EventHandler(this.Button_Click);
             // 
             // á_big
             // 
@@ -986,7 +986,7 @@
             this.á_big.TabIndex = 2;
             this.á_big.Text = "Á";
             this.á_big.UseVisualStyleBackColor = true;
-            this.á_big.Click += new System.EventHandler(this.button_Click);
+            this.á_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ç_sp
             // 
@@ -996,7 +996,7 @@
             this.ç_sp.TabIndex = 3;
             this.ç_sp.Text = "ç";
             this.ç_sp.UseVisualStyleBackColor = true;
-            this.ç_sp.Click += new System.EventHandler(this.button_Click);
+            this.ç_sp.Click += new System.EventHandler(this.Button_Click);
             // 
             // é_sp
             // 
@@ -1007,7 +1007,7 @@
             this.é_sp.TabIndex = 4;
             this.é_sp.Text = "é";
             this.é_sp.UseVisualStyleBackColor = true;
-            this.é_sp.Click += new System.EventHandler(this.button_Click);
+            this.é_sp.Click += new System.EventHandler(this.Button_Click);
             // 
             // é_sp_big
             // 
@@ -1017,7 +1017,7 @@
             this.é_sp_big.TabIndex = 5;
             this.é_sp_big.Text = "É";
             this.é_sp_big.UseVisualStyleBackColor = true;
-            this.é_sp_big.Click += new System.EventHandler(this.button_Click);
+            this.é_sp_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // á
             // 
@@ -1027,29 +1027,29 @@
             this.á.TabIndex = 1;
             this.á.Text = "á";
             this.á.UseVisualStyleBackColor = true;
-            this.á.Click += new System.EventHandler(this.button_Click);
+            this.á.Click += new System.EventHandler(this.Button_Click);
             // 
-            // rumaenisch
+            // Rumaenisch
             // 
-            this.rumaenisch.AutoScroll = true;
-            this.rumaenisch.Controls.Add(this.ţ_ro_big);
-            this.rumaenisch.Controls.Add(this.ţ_ro);
-            this.rumaenisch.Controls.Add(this.ş_ro_big);
-            this.rumaenisch.Controls.Add(this.ş_ro);
-            this.rumaenisch.Controls.Add(this.î_ro_big);
-            this.rumaenisch.Controls.Add(this.î_ro);
-            this.rumaenisch.Controls.Add(this.ă_ro_big);
-            this.rumaenisch.Controls.Add(this.ă_ro);
-            this.rumaenisch.Controls.Add(this.â_ro_big);
-            this.rumaenisch.Controls.Add(this.â_ro);
-            this.rumaenisch.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.rumaenisch.Location = new System.Drawing.Point(4, 23);
-            this.rumaenisch.Name = "rumaenisch";
-            this.rumaenisch.Padding = new System.Windows.Forms.Padding(3);
-            this.rumaenisch.Size = new System.Drawing.Size(396, 99);
-            this.rumaenisch.TabIndex = 4;
-            this.rumaenisch.Text = "Rumänisch";
-            this.rumaenisch.UseVisualStyleBackColor = true;
+            this.Rumaenisch.AutoScroll = true;
+            this.Rumaenisch.Controls.Add(this.ţ_ro_big);
+            this.Rumaenisch.Controls.Add(this.ţ_ro);
+            this.Rumaenisch.Controls.Add(this.ş_ro_big);
+            this.Rumaenisch.Controls.Add(this.ş_ro);
+            this.Rumaenisch.Controls.Add(this.î_ro_big);
+            this.Rumaenisch.Controls.Add(this.î_ro);
+            this.Rumaenisch.Controls.Add(this.ă_ro_big);
+            this.Rumaenisch.Controls.Add(this.ă_ro);
+            this.Rumaenisch.Controls.Add(this.â_ro_big);
+            this.Rumaenisch.Controls.Add(this.â_ro);
+            this.Rumaenisch.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.Rumaenisch.Location = new System.Drawing.Point(4, 23);
+            this.Rumaenisch.Name = "Rumaenisch";
+            this.Rumaenisch.Padding = new System.Windows.Forms.Padding(3);
+            this.Rumaenisch.Size = new System.Drawing.Size(396, 99);
+            this.Rumaenisch.TabIndex = 4;
+            this.Rumaenisch.Text = "Rumänisch";
+            this.Rumaenisch.UseVisualStyleBackColor = true;
             // 
             // ţ_ro_big
             // 
@@ -1060,7 +1060,7 @@
             this.ţ_ro_big.TabIndex = 9;
             this.ţ_ro_big.Text = "Ţ";
             this.ţ_ro_big.UseVisualStyleBackColor = true;
-            this.ţ_ro_big.Click += new System.EventHandler(this.button_Click);
+            this.ţ_ro_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ţ_ro
             // 
@@ -1071,7 +1071,7 @@
             this.ţ_ro.TabIndex = 8;
             this.ţ_ro.Text = "ţ";
             this.ţ_ro.UseVisualStyleBackColor = true;
-            this.ţ_ro.Click += new System.EventHandler(this.button_Click);
+            this.ţ_ro.Click += new System.EventHandler(this.Button_Click);
             // 
             // ş_ro_big
             // 
@@ -1082,7 +1082,7 @@
             this.ş_ro_big.TabIndex = 7;
             this.ş_ro_big.Text = "Ş";
             this.ş_ro_big.UseVisualStyleBackColor = true;
-            this.ş_ro_big.Click += new System.EventHandler(this.button_Click);
+            this.ş_ro_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ş_ro
             // 
@@ -1093,7 +1093,7 @@
             this.ş_ro.TabIndex = 6;
             this.ş_ro.Text = "ş";
             this.ş_ro.UseVisualStyleBackColor = true;
-            this.ş_ro.Click += new System.EventHandler(this.button_Click);
+            this.ş_ro.Click += new System.EventHandler(this.Button_Click);
             // 
             // î_ro_big
             // 
@@ -1104,7 +1104,7 @@
             this.î_ro_big.TabIndex = 5;
             this.î_ro_big.Text = "Î";
             this.î_ro_big.UseVisualStyleBackColor = true;
-            this.î_ro_big.Click += new System.EventHandler(this.button_Click);
+            this.î_ro_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // î_ro
             // 
@@ -1115,7 +1115,7 @@
             this.î_ro.TabIndex = 4;
             this.î_ro.Text = "î";
             this.î_ro.UseVisualStyleBackColor = true;
-            this.î_ro.Click += new System.EventHandler(this.button_Click);
+            this.î_ro.Click += new System.EventHandler(this.Button_Click);
             // 
             // ă_ro_big
             // 
@@ -1126,7 +1126,7 @@
             this.ă_ro_big.TabIndex = 3;
             this.ă_ro_big.Text = "Ă";
             this.ă_ro_big.UseVisualStyleBackColor = true;
-            this.ă_ro_big.Click += new System.EventHandler(this.button_Click);
+            this.ă_ro_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // ă_ro
             // 
@@ -1137,7 +1137,7 @@
             this.ă_ro.TabIndex = 2;
             this.ă_ro.Text = "ă";
             this.ă_ro.UseVisualStyleBackColor = true;
-            this.ă_ro.Click += new System.EventHandler(this.button_Click);
+            this.ă_ro.Click += new System.EventHandler(this.Button_Click);
             // 
             // â_ro_big
             // 
@@ -1148,7 +1148,7 @@
             this.â_ro_big.TabIndex = 1;
             this.â_ro_big.Text = "Â";
             this.â_ro_big.UseVisualStyleBackColor = true;
-            this.â_ro_big.Click += new System.EventHandler(this.button_Click);
+            this.â_ro_big.Click += new System.EventHandler(this.Button_Click);
             // 
             // â_ro
             // 
@@ -1159,7 +1159,7 @@
             this.â_ro.TabIndex = 0;
             this.â_ro.Text = "â";
             this.â_ro.UseVisualStyleBackColor = true;
-            this.â_ro.Click += new System.EventHandler(this.button_Click);
+            this.â_ro.Click += new System.EventHandler(this.Button_Click);
             // 
             // specialchars
             // 
@@ -1167,7 +1167,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(404, 126);
-            this.Controls.Add(this.tabPage);
+            this.Controls.Add(this.TcMain);
             this.Controls.Add(this.Titel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
@@ -1176,14 +1176,14 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Sonderzeichen";
-            this.Load += new System.EventHandler(this.sonderzeichen_Load);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.sonderzeichen_FormClosing);
-            this.tabPage.ResumeLayout(false);
-            this.deutsch.ResumeLayout(false);
-            this.französisch.ResumeLayout(false);
-            this.italienisch.ResumeLayout(false);
-            this.spanisch.ResumeLayout(false);
-            this.rumaenisch.ResumeLayout(false);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
+            this.Load += new System.EventHandler(this.Form_Load);
+            this.TcMain.ResumeLayout(false);
+            this.Deutsch.ResumeLayout(false);
+            this.Französisch.ResumeLayout(false);
+            this.Italienisch.ResumeLayout(false);
+            this.Spanisch.ResumeLayout(false);
+            this.Rumaenisch.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1192,11 +1192,11 @@
         #endregion
 
         private System.Windows.Forms.Label Titel;
-        private System.Windows.Forms.TabControl tabPage;
-        private System.Windows.Forms.TabPage deutsch;
-        private System.Windows.Forms.TabPage französisch;
-        private System.Windows.Forms.TabPage italienisch;
-        private System.Windows.Forms.TabPage spanisch;
+        private System.Windows.Forms.TabControl TcMain;
+        private System.Windows.Forms.TabPage Deutsch;
+        private System.Windows.Forms.TabPage Französisch;
+        private System.Windows.Forms.TabPage Italienisch;
+        private System.Windows.Forms.TabPage Spanisch;
         private System.Windows.Forms.Button ue_big;
         private System.Windows.Forms.Button ae_big;
         private System.Windows.Forms.Button oe;
@@ -1271,7 +1271,7 @@
         private System.Windows.Forms.Button é_sp;
         private System.Windows.Forms.Button é_sp_big;
         private System.Windows.Forms.Button á;
-        private System.Windows.Forms.TabPage rumaenisch;
+        private System.Windows.Forms.TabPage Rumaenisch;
         private System.Windows.Forms.Button â_ro;
         private System.Windows.Forms.Button â_ro_big;
         private System.Windows.Forms.Button ţ_ro_big;

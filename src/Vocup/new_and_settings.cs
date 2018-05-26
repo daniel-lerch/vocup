@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Vocup.Forms;
 
 namespace Vocup
 {
@@ -12,12 +13,11 @@ namespace Vocup
     {
         string reset_fokus = "";
 
-
         //Sonderzeichen-Dialog vorbereiten
 
         public bool show_specialchars_dialog;
 
-        public specialchars sonderzeichen_dialog = new specialchars();
+        public SpecialCharKeyboard sonderzeichen_dialog = new SpecialCharKeyboard();
 
         
 
@@ -272,7 +272,7 @@ namespace Vocup
 
                 sonderzeichen_button.Enabled = true;
 
-                sonderzeichen_dialog = new specialchars();
+                sonderzeichen_dialog = new SpecialCharKeyboard();
             }
         }
 
@@ -315,8 +315,6 @@ namespace Vocup
 
                     break;
             }
-            
         }
-
     }
 }
