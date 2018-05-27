@@ -19,9 +19,20 @@ namespace Vocup.Forms
         [Obsolete("", false)]
         public event EventHandler choose_char;
 
+        public void Initialize(Form owner)
+        {
+            Owner = owner;
+            Owner.Move += Owner_MoveResize;
+            Owner.Resize += Owner_MoveResize;
+            Owner_MoveResize(Owner, null);
+        }
+
         public void RegisterTextBox(TextBox control)
         {
+            if (textBox != null)
+                textBox.EnabledChanged -= TextBox_EnabledChanged;
             textBox = control;
+            textBox.EnabledChanged += TextBox_EnabledChanged;
         }
 
         private void Form_Load(object sender, EventArgs e)
@@ -102,15 +113,32 @@ namespace Vocup.Forms
                 textBox.SelectionStart = textBox.TextLength;
                 textBox.Focus();
             }
-            
+
             // For compatibility
             choose_char?.Invoke(sender, e);
+        }
+
+        private void TextBox_EnabledChanged(object sender, EventArgs e)
+        {
+            Visible = textBox.Enabled;
+        }
+
+        private void Owner_MoveResize(object sender, EventArgs e)
+        {
+            Left = Owner.Left + (Owner.Width - Width) / 2;
+            Top = Owner.Top + Owner.Height;
         }
 
         private void Form_FormClosing(object sender, FormClosingEventArgs e)
         {
             Properties.Settings.Default.sonderzeichen_registerkarte = TcMain.SelectedTab.Name;
             Properties.Settings.Default.Save();
+
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                Visible = false;
+            }
         }
     }
 }

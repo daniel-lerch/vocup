@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -14,19 +12,19 @@ namespace Vocup.Forms
         private const string InvalidChars = "#=:\\/|<>*?\"";
         private readonly Color redBgColor = Color.FromArgb(255, 192, 203);
         private SpecialCharKeyboard specialCharDialog;
-        private TextBox currentInput;
 
         public VocabularyBookSettings()
         {
             InitializeComponent();
-            currentInput = TbMotherTongue;
+            specialCharDialog = new SpecialCharKeyboard();
+            specialCharDialog.Initialize(this);
+            specialCharDialog.VisibleChanged += (a0, a1) => BtnSpecialChar.Enabled = true;
+            specialCharDialog.RegisterTextBox(TbMotherTongue);
         }
 
         private void TextBox_Enter(object sender, EventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            currentInput = textBox;
-            specialCharDialog?.RegisterTextBox(textBox);
+            specialCharDialog.RegisterTextBox((TextBox)sender);
         }
 
         private void TextBox_TextChanged(object sender, EventArgs e)
@@ -53,27 +51,8 @@ namespace Vocup.Forms
 
         private void BtnSpecialChar_Click(object sender, EventArgs e)
         {
-            specialCharDialog = new SpecialCharKeyboard();
-            specialCharDialog.RegisterTextBox(currentInput);
-
-            //Events definieren
-            specialCharDialog.FormClosed += (a0, a1) => BtnSpecialChar.Enabled = true;
-
-            //Position des Fensters festlegen
-            specialCharDialog.Left = this.Left + (this.Width - specialCharDialog.Width) / 2;
-            specialCharDialog.Top = this.Top + this.Height + 10;
-
-            //Setzt die Form als Besitzer
-            specialCharDialog.Owner = this.Owner;
             specialCharDialog.Show();
-
-            //Sonderzeichen-Button deaktivieren
             BtnSpecialChar.Enabled = false;
-        }
-
-        private void Form_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            specialCharDialog?.Close();
         }
     }
 }

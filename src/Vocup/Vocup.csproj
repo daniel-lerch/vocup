@@ -132,11 +132,11 @@
     <Compile Include="Forms\EvaluationInfoDialog.Designer.cs">
       <DependentUpon>EvaluationInfoDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="merge.cs">
+    <Compile Include="Forms\MergeFiles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="merge.Designer.cs">
-      <DependentUpon>merge.cs</DependentUpon>
+    <Compile Include="Forms\MergeFiles.Designer.cs">
+      <DependentUpon>MergeFiles.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\VocabularyBook.cs" />
     <Compile Include="Models\VocabularyWord.cs" />
@@ -216,9 +216,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>EvaluationInfoDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="merge.resx">
+    <EmbeddedResource Include="Forms\MergeFiles.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>merge.cs</DependentUpon>
+      <DependentUpon>MergeFiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="new_and_settings.resx">
       <SubType>Designer</SubType>

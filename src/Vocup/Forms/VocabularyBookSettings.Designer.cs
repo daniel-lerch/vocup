@@ -126,7 +126,7 @@
             this.RbModeAskForeignTongue.TabStop = true;
             this.RbModeAskForeignTongue.UseVisualStyleBackColor = true;
             // 
-            // new_file_and_settings
+            // VocabularyBookSettings
             // 
             this.AcceptButton = this.BtnOK;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -144,9 +144,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "new_file_and_settings";
+            this.Name = "VocabularyBookSettings";
             this.ShowInTaskbar = false;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_FormClosed);
             this.option_box.ResumeLayout(false);
             this.option_box.PerformLayout();
             this.uebersetzungsrichtung.ResumeLayout(false);
