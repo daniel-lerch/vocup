@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Vocup
 {
-    public partial class print_cards : Form
+    public partial class PrintCardsDialog : Form
     {
-        public print_cards()
+        public PrintCardsDialog()
         {
             InitializeComponent();
         }

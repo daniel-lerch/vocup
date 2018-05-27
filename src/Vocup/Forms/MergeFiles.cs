@@ -10,7 +10,7 @@ namespace Vocup.Forms
 {
     public partial class MergeFiles : Form
     {
-        public const string InvalidChars = "#=:\\/|<>*?\"";
+        private const string InvalidChars = "#=:\\/|<>*?\"";
         private readonly Color redBgColor = Color.FromArgb(255, 192, 203);
         private SpecialCharKeyboard specialCharDialog;
         private bool textsValid;

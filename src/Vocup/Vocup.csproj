@@ -140,11 +140,11 @@
     </Compile>
     <Compile Include="Models\VocabularyBook.cs" />
     <Compile Include="Models\VocabularyWord.cs" />
-    <Compile Include="print_cards.cs">
+    <Compile Include="PrintCardsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="print_cards.Designer.cs">
-      <DependentUpon>print_cards.cs</DependentUpon>
+    <Compile Include="PrintCardsDialog.Designer.cs">
+      <DependentUpon>PrintCardsDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\language.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -236,9 +236,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>practise_dialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="print_cards.resx">
+    <EmbeddedResource Include="PrintCardsDialog.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>print_cards.cs</DependentUpon>
+      <DependentUpon>PrintCardsDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="program_form.resx">
       <DependentUpon>program_form.cs</DependentUpon>

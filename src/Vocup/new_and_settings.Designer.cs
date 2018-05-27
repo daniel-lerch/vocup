@@ -53,7 +53,6 @@
             resources.ApplyResources(this.ok_button, "ok_button");
             this.ok_button.Name = "ok_button";
             this.ok_button.UseVisualStyleBackColor = true;
-            this.ok_button.Click += new System.EventHandler(this.ok_button_Click);
             // 
             // cancel_button
             // 
@@ -66,15 +65,15 @@
             // 
             resources.ApplyResources(this.foreign_language_2, "foreign_language_2");
             this.foreign_language_2.Name = "foreign_language_2";
-            this.foreign_language_2.TextChanged += new System.EventHandler(this.foreign_language_2_TextChanged);
-            this.foreign_language_2.Enter += new System.EventHandler(this.foreign_language_2_Enter);
+            this.foreign_language_2.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            this.foreign_language_2.Enter += new System.EventHandler(this.TextBox_Enter);
             // 
             // foreign_language
             // 
             resources.ApplyResources(this.foreign_language, "foreign_language");
             this.foreign_language.Name = "foreign_language";
-            this.foreign_language.TextChanged += new System.EventHandler(this.foreign_language_TextChanged);
-            this.foreign_language.Enter += new System.EventHandler(this.foreign_language_Enter);
+            this.foreign_language.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            this.foreign_language.Enter += new System.EventHandler(this.TextBox_Enter);
             // 
             // foreign_language_text
             // 
@@ -121,8 +120,8 @@
             this.own_language.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.own_language, "own_language");
             this.own_language.Name = "own_language";
-            this.own_language.TextChanged += new System.EventHandler(this.own_language_TextChanged);
-            this.own_language.Enter += new System.EventHandler(this.own_language_Enter);
+            this.own_language.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            this.own_language.Enter += new System.EventHandler(this.TextBox_Enter);
             // 
             // own_language_text
             // 

@@ -112,109 +112,12 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;vokabel_synonym.Name" xml:space="preserve">
-    <value>vokabel_synonym</value>
-  </data>
-  <data name="&gt;&gt;vokabel_synonym.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;vokabel_synonym.Parent" xml:space="preserve">
-    <value>practise_groupbox</value>
-  </data>
-  <data name="&gt;&gt;vokabel_synonym.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;vokabel_foreign_language.Name" xml:space="preserve">
-    <value>vokabel_foreign_language</value>
-  </data>
-  <data name="&gt;&gt;vokabel_foreign_language.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;vokabel_foreign_language.Parent" xml:space="preserve">
-    <value>practise_groupbox</value>
-  </data>
-  <data name="&gt;&gt;vokabel_foreign_language.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;vokabel_own_language.Name" xml:space="preserve">
-    <value>vokabel_own_language</value>
-  </data>
-  <data name="&gt;&gt;vokabel_own_language.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;vokabel_own_language.Parent" xml:space="preserve">
-    <value>practise_groupbox</value>
-  </data>
-  <data name="&gt;&gt;vokabel_own_language.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;synonym_text.Name" xml:space="preserve">
-    <value>synonym_text</value>
-  </data>
-  <data name="&gt;&gt;synonym_text.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;synonym_text.Parent" xml:space="preserve">
-    <value>practise_groupbox</value>
-  </data>
-  <data name="&gt;&gt;synonym_text.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;foreign_language_text.Name" xml:space="preserve">
-    <value>foreign_language_text</value>
-  </data>
-  <data name="&gt;&gt;foreign_language_text.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;foreign_language_text.Parent" xml:space="preserve">
-    <value>practise_groupbox</value>
-  </data>
-  <data name="&gt;&gt;foreign_language_text.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;own_language_text.Name" xml:space="preserve">
-    <value>own_language_text</value>
-  </data>
-  <data name="&gt;&gt;own_language_text.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;own_language_text.Parent" xml:space="preserve">
-    <value>practise_groupbox</value>
-  </data>
-  <data name="&gt;&gt;own_language_text.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="practise_groupbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="practise_groupbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>470, 118</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="practise_groupbox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="practise_groupbox.Text" xml:space="preserve">
-    <value>Übersetzen Sie von Sprache nach Sprache:</value>
-  </data>
-  <data name="&gt;&gt;practise_groupbox.Name" xml:space="preserve">
-    <value>practise_groupbox</value>
-  </data>
-  <data name="&gt;&gt;practise_groupbox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;practise_groupbox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;practise_groupbox.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="vokabel_synonym.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
@@ -224,6 +127,7 @@
   <data name="vokabel_synonym.Size" type="System.Drawing.Size, System.Drawing">
     <value>325, 22</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="vokabel_synonym.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
@@ -231,7 +135,7 @@
     <value>vokabel_synonym</value>
   </data>
   <data name="&gt;&gt;vokabel_synonym.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;vokabel_synonym.Parent" xml:space="preserve">
     <value>practise_groupbox</value>
@@ -255,7 +159,7 @@
     <value>vokabel_foreign_language</value>
   </data>
   <data name="&gt;&gt;vokabel_foreign_language.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;vokabel_foreign_language.Parent" xml:space="preserve">
     <value>practise_groupbox</value>
@@ -279,7 +183,7 @@
     <value>vokabel_own_language</value>
   </data>
   <data name="&gt;&gt;vokabel_own_language.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;vokabel_own_language.Parent" xml:space="preserve">
     <value>practise_groupbox</value>
@@ -306,7 +210,7 @@
     <value>synonym_text</value>
   </data>
   <data name="&gt;&gt;synonym_text.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;synonym_text.Parent" xml:space="preserve">
     <value>practise_groupbox</value>
@@ -333,7 +237,7 @@
     <value>foreign_language_text</value>
   </data>
   <data name="&gt;&gt;foreign_language_text.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;foreign_language_text.Parent" xml:space="preserve">
     <value>practise_groupbox</value>
@@ -360,7 +264,7 @@
     <value>own_language_text</value>
   </data>
   <data name="&gt;&gt;own_language_text.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;own_language_text.Parent" xml:space="preserve">
     <value>practise_groupbox</value>
@@ -368,185 +272,29 @@
   <data name="&gt;&gt;own_language_text.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;anzahl_falsch.Name" xml:space="preserve">
-    <value>anzahl_falsch</value>
+  <data name="practise_groupbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
   </data>
-  <data name="&gt;&gt;anzahl_falsch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="practise_groupbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 118</value>
   </data>
-  <data name="&gt;&gt;anzahl_falsch.Parent" xml:space="preserve">
-    <value>statistik_groupbox</value>
-  </data>
-  <data name="&gt;&gt;anzahl_falsch.ZOrder" xml:space="preserve">
+  <data name="practise_groupbox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
+  <data name="practise_groupbox.Text" xml:space="preserve">
+    <value>Übersetzen Sie von Sprache nach Sprache:</value>
   </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;practise_groupbox.Name" xml:space="preserve">
+    <value>practise_groupbox</value>
   </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>statistik_groupbox</value>
+  <data name="&gt;&gt;practise_groupbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;anzahl_teilweise.Name" xml:space="preserve">
-    <value>anzahl_teilweise</value>
-  </data>
-  <data name="&gt;&gt;anzahl_teilweise.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;anzahl_teilweise.Parent" xml:space="preserve">
-    <value>statistik_groupbox</value>
-  </data>
-  <data name="&gt;&gt;anzahl_teilweise.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>statistik_groupbox</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>statistik_groupbox</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;anzahl_richtig.Name" xml:space="preserve">
-    <value>anzahl_richtig</value>
-  </data>
-  <data name="&gt;&gt;anzahl_richtig.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;anzahl_richtig.Parent" xml:space="preserve">
-    <value>statistik_groupbox</value>
-  </data>
-  <data name="&gt;&gt;anzahl_richtig.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>statistik_groupbox</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>statistik_groupbox</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>statistik_groupbox</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;anzahl_geübt.Name" xml:space="preserve">
-    <value>anzahl_geübt</value>
-  </data>
-  <data name="&gt;&gt;anzahl_geübt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;anzahl_geübt.Parent" xml:space="preserve">
-    <value>statistik_groupbox</value>
-  </data>
-  <data name="&gt;&gt;anzahl_geübt.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;anzahl_noch_nicht.Name" xml:space="preserve">
-    <value>anzahl_noch_nicht</value>
-  </data>
-  <data name="&gt;&gt;anzahl_noch_nicht.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;anzahl_noch_nicht.Parent" xml:space="preserve">
-    <value>statistik_groupbox</value>
-  </data>
-  <data name="&gt;&gt;anzahl_noch_nicht.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;anzahl_üben.Name" xml:space="preserve">
-    <value>anzahl_üben</value>
-  </data>
-  <data name="&gt;&gt;anzahl_üben.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;anzahl_üben.Parent" xml:space="preserve">
-    <value>statistik_groupbox</value>
-  </data>
-  <data name="&gt;&gt;anzahl_üben.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;progressBar.Name" xml:space="preserve">
-    <value>progressBar</value>
-  </data>
-  <data name="&gt;&gt;progressBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;progressBar.Parent" xml:space="preserve">
-    <value>statistik_groupbox</value>
-  </data>
-  <data name="&gt;&gt;progressBar.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="statistik_groupbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 200</value>
-  </data>
-  <data name="statistik_groupbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>470, 97</value>
-  </data>
-  <data name="statistik_groupbox.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="statistik_groupbox.Text" xml:space="preserve">
-    <value>Statistik</value>
-  </data>
-  <data name="&gt;&gt;statistik_groupbox.Name" xml:space="preserve">
-    <value>statistik_groupbox</value>
-  </data>
-  <data name="&gt;&gt;statistik_groupbox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;statistik_groupbox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;practise_groupbox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;statistik_groupbox.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;practise_groupbox.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="anzahl_falsch.Location" type="System.Drawing.Point, System.Drawing">
     <value>422, 71</value>
@@ -557,7 +305,7 @@
   <data name="anzahl_falsch.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="anzahl_falsch.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -565,7 +313,7 @@
     <value>anzahl_falsch</value>
   </data>
   <data name="&gt;&gt;anzahl_falsch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;anzahl_falsch.Parent" xml:space="preserve">
     <value>statistik_groupbox</value>
@@ -592,7 +340,7 @@
     <value>label6</value>
   </data>
   <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label6.Parent" xml:space="preserve">
     <value>statistik_groupbox</value>
@@ -616,7 +364,7 @@
     <value>anzahl_teilweise</value>
   </data>
   <data name="&gt;&gt;anzahl_teilweise.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;anzahl_teilweise.Parent" xml:space="preserve">
     <value>statistik_groupbox</value>
@@ -643,7 +391,7 @@
     <value>label5</value>
   </data>
   <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label5.Parent" xml:space="preserve">
     <value>statistik_groupbox</value>
@@ -670,7 +418,7 @@
     <value>label4</value>
   </data>
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>statistik_groupbox</value>
@@ -694,7 +442,7 @@
     <value>anzahl_richtig</value>
   </data>
   <data name="&gt;&gt;anzahl_richtig.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;anzahl_richtig.Parent" xml:space="preserve">
     <value>statistik_groupbox</value>
@@ -721,7 +469,7 @@
     <value>label3</value>
   </data>
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label3.Parent" xml:space="preserve">
     <value>statistik_groupbox</value>
@@ -748,7 +496,7 @@
     <value>label2</value>
   </data>
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>statistik_groupbox</value>
@@ -775,7 +523,7 @@
     <value>label1</value>
   </data>
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>statistik_groupbox</value>
@@ -799,7 +547,7 @@
     <value>anzahl_geübt</value>
   </data>
   <data name="&gt;&gt;anzahl_geübt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;anzahl_geübt.Parent" xml:space="preserve">
     <value>statistik_groupbox</value>
@@ -823,7 +571,7 @@
     <value>anzahl_noch_nicht</value>
   </data>
   <data name="&gt;&gt;anzahl_noch_nicht.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;anzahl_noch_nicht.Parent" xml:space="preserve">
     <value>statistik_groupbox</value>
@@ -847,7 +595,7 @@
     <value>anzahl_üben</value>
   </data>
   <data name="&gt;&gt;anzahl_üben.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;anzahl_üben.Parent" xml:space="preserve">
     <value>statistik_groupbox</value>
@@ -868,13 +616,37 @@
     <value>progressBar</value>
   </data>
   <data name="&gt;&gt;progressBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;progressBar.Parent" xml:space="preserve">
     <value>statistik_groupbox</value>
   </data>
   <data name="&gt;&gt;progressBar.ZOrder" xml:space="preserve">
     <value>12</value>
+  </data>
+  <data name="statistik_groupbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 200</value>
+  </data>
+  <data name="statistik_groupbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 97</value>
+  </data>
+  <data name="statistik_groupbox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="statistik_groupbox.Text" xml:space="preserve">
+    <value>Statistik</value>
+  </data>
+  <data name="&gt;&gt;statistik_groupbox.Name" xml:space="preserve">
+    <value>statistik_groupbox</value>
+  </data>
+  <data name="&gt;&gt;statistik_groupbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statistik_groupbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;statistik_groupbox.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="abbrechen_button.Location" type="System.Drawing.Point, System.Drawing">
     <value>382, 164</value>
@@ -892,7 +664,7 @@
     <value>abbrechen_button</value>
   </data>
   <data name="&gt;&gt;abbrechen_button.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;abbrechen_button.Parent" xml:space="preserve">
     <value>$this</value>
@@ -916,7 +688,7 @@
     <value>fortfahren_button</value>
   </data>
   <data name="&gt;&gt;fortfahren_button.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;fortfahren_button.Parent" xml:space="preserve">
     <value>$this</value>
@@ -943,7 +715,7 @@
     <value>correction_box</value>
   </data>
   <data name="&gt;&gt;correction_box.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;correction_box.Parent" xml:space="preserve">
     <value>$this</value>
@@ -967,7 +739,7 @@
     <value>sonderzeichen_button</value>
   </data>
   <data name="&gt;&gt;sonderzeichen_button.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;sonderzeichen_button.Parent" xml:space="preserve">
     <value>$this</value>
@@ -997,7 +769,7 @@
     <value>radio_teilweise_korrekt</value>
   </data>
   <data name="&gt;&gt;radio_teilweise_korrekt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;radio_teilweise_korrekt.Parent" xml:space="preserve">
     <value>selber_bewerten_groupbox</value>
@@ -1027,7 +799,7 @@
     <value>radio_falsch</value>
   </data>
   <data name="&gt;&gt;radio_falsch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;radio_falsch.Parent" xml:space="preserve">
     <value>selber_bewerten_groupbox</value>
@@ -1057,7 +829,7 @@
     <value>radio_korrekt</value>
   </data>
   <data name="&gt;&gt;radio_korrekt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;radio_korrekt.Parent" xml:space="preserve">
     <value>selber_bewerten_groupbox</value>
@@ -1081,7 +853,7 @@
     <value>selber_bewerten_groupbox</value>
   </data>
   <data name="&gt;&gt;selber_bewerten_groupbox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;selber_bewerten_groupbox.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1089,7 +861,7 @@
   <data name="&gt;&gt;selber_bewerten_groupbox.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
@@ -1105,6 +877,6 @@
     <value>practise_dialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

@@ -16,9 +16,6 @@ namespace Vocup.Forms
             InitializeComponent();
         }
 
-        [Obsolete("", false)]
-        public event EventHandler choose_char;
-
         public void Initialize(Form owner)
         {
             Owner = owner;
@@ -109,13 +106,11 @@ namespace Vocup.Forms
             if (textBox != null)
             {
                 Button button = (Button)sender;
-                textBox.Text += button.Text;
+                if (textBox.Enabled && !textBox.ReadOnly)
+                    textBox.Text += button.Text;
                 textBox.SelectionStart = textBox.TextLength;
                 textBox.Focus();
             }
-
-            // For compatibility
-            choose_char?.Invoke(sender, e);
         }
 
         private void TextBox_EnabledChanged(object sender, EventArgs e)

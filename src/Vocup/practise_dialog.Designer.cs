@@ -79,19 +79,19 @@
             // 
             resources.ApplyResources(this.vokabel_synonym, "vokabel_synonym");
             this.vokabel_synonym.Name = "vokabel_synonym";
-            this.vokabel_synonym.Enter += new System.EventHandler(this.vokabel_synonym_Enter);
+            this.vokabel_synonym.Enter += new System.EventHandler(this.TextBox_Enter);
             // 
             // vokabel_foreign_language
             // 
             resources.ApplyResources(this.vokabel_foreign_language, "vokabel_foreign_language");
             this.vokabel_foreign_language.Name = "vokabel_foreign_language";
-            this.vokabel_foreign_language.Enter += new System.EventHandler(this.vokabel_foreign_language_Enter);
+            this.vokabel_foreign_language.Enter += new System.EventHandler(this.TextBox_Enter);
             // 
             // vokabel_own_language
             // 
             resources.ApplyResources(this.vokabel_own_language, "vokabel_own_language");
             this.vokabel_own_language.Name = "vokabel_own_language";
-            this.vokabel_own_language.Enter += new System.EventHandler(this.vokabel_own_language_Enter);
+            this.vokabel_own_language.Enter += new System.EventHandler(this.TextBox_Enter);
             // 
             // synonym_text
             // 
@@ -286,8 +286,8 @@
             this.MinimizeBox = false;
             this.Name = "practise_dialog";
             this.ShowInTaskbar = false;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_FormClosed);
             this.Load += new System.EventHandler(this.practise_dialog_Load);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.practise_dialog_FormClosed);
             this.practise_groupbox.ResumeLayout(false);
             this.practise_groupbox.PerformLayout();
             this.statistik_groupbox.ResumeLayout(false);
