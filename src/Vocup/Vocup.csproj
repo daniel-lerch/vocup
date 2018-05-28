@@ -115,12 +115,6 @@
     <Compile Include="choose_vocables_for_print.Designer.cs">
       <DependentUpon>choose_vocables_for_print.cs</DependentUpon>
     </Compile>
-    <Compile Include="donation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="donation.Designer.cs">
-      <DependentUpon>donation.cs</DependentUpon>
-    </Compile>
     <Compile Include="icons.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -138,6 +132,7 @@
     <Compile Include="Forms\MergeFiles.Designer.cs">
       <DependentUpon>MergeFiles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\PracticeState.cs" />
     <Compile Include="Models\VocabularyBook.cs" />
     <Compile Include="Models\VocabularyWord.cs" />
     <Compile Include="PrintCardsDialog.cs">
@@ -202,10 +197,6 @@
     <EmbeddedResource Include="choose_vocables_for_print.resx">
       <SubType>Designer</SubType>
       <DependentUpon>choose_vocables_for_print.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="donation.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>donation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="icons.resx">
       <SubType>Designer</SubType>

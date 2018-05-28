@@ -45,13 +45,21 @@ namespace Vocup
                 !foreign_language.Text.ContainsAny(InvalidChars) &&
                 !foreign_language_2.Text.ContainsAny(InvalidChars);
 
-            // Überprüfen, ob nicht zugelassene Zeichen verwendet wurden
+            // Visual feedback for invalid chars.
             own_language.BackColor = own_language.Text.ContainsAny(InvalidChars) ? redBgColor : Color.White;
             foreign_language.BackColor = foreign_language.Text.ContainsAny(InvalidChars) ? redBgColor : Color.White;
             foreign_language_2.BackColor = foreign_language_2.Text.ContainsAny(InvalidChars) ? redBgColor : Color.White;
 
             // TODO: Redesign this part in order to fix new bug
-            //Falls Fertig, Abbrechen anzeigen
+            /*
+             * This section is about setting button texts and disabling continuation.
+             * An input field has three model states:
+             * 1. Started - Input data is incomplete; only first TextBox contains data.
+             * 2. Valid - Input data is complete; first and second TextBox contain data.
+             * 3. Aborted - Input data was complete but is no longer.
+             */
+
+
             if (own_language.Text != "" && cancel_button.Text == Properties.language.fertig)
             {
                 cancel_button.Text = Properties.language.cancel;

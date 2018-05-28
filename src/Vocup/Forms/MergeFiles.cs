@@ -67,13 +67,13 @@ namespace Vocup.Forms
         {
             bool mValid = !TbMotherTongue.Text.ContainsAny(InvalidChars);
             TbMotherTongue.BackColor = mValid ? Color.White : redBgColor;
-            bool fValid = !TbForeignTongue.Text.ContainsAny(InvalidChars);
-            TbForeignTongue.BackColor = fValid ? Color.White : redBgColor;
+            bool fValid = !TbForeignLang.Text.ContainsAny(InvalidChars);
+            TbForeignLang.BackColor = fValid ? Color.White : redBgColor;
 
             textsValid = mValid && fValid &&
                 !string.IsNullOrWhiteSpace(TbMotherTongue.Text) &&
-                !string.IsNullOrWhiteSpace(TbForeignTongue.Text) &&
-                TbMotherTongue.Text != TbForeignTongue.Text;
+                !string.IsNullOrWhiteSpace(TbForeignLang.Text) &&
+                TbMotherTongue.Text != TbForeignLang.Text;
 
             ValidateInput();
         }
@@ -113,7 +113,7 @@ namespace Vocup.Forms
             SaveFileDialog save = new SaveFileDialog
             {
                 Title = Properties.language.save_title,
-                FileName = TbMotherTongue.Text + " - " + TbForeignTongue.Text,
+                FileName = TbMotherTongue.Text + " - " + TbForeignLang.Text,
                 InitialDirectory = Properties.Settings.Default.path_vhf,
                 Filter = Properties.language.personal_directory + " (*.vhf)|*.vhf"
             };

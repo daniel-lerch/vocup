@@ -31,13 +31,13 @@ namespace Vocup.Forms
         {
             bool mValid = !TbMotherTongue.Text.ContainsAny(InvalidChars);
             TbMotherTongue.BackColor = mValid ? Color.White : redBgColor;
-            bool fValid = !TbForeignTongue.Text.ContainsAny(InvalidChars);
-            TbForeignTongue.BackColor = fValid ? Color.White : redBgColor;
+            bool fValid = !TbForeignLang.Text.ContainsAny(InvalidChars);
+            TbForeignLang.BackColor = fValid ? Color.White : redBgColor;
 
             if (mValid && fValid &&
                 !string.IsNullOrWhiteSpace(TbMotherTongue.Text) &&
-                !string.IsNullOrWhiteSpace(TbForeignTongue.Text) &&
-                TbMotherTongue.Text != TbForeignTongue.Text)
+                !string.IsNullOrWhiteSpace(TbForeignLang.Text) &&
+                TbMotherTongue.Text != TbForeignLang.Text)
             {
                 BtnOK.Enabled = true;
                 AcceptButton = BtnOK;

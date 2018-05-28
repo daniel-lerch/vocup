@@ -323,28 +323,28 @@
   <data name="&gt;&gt;fremdsprache.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="TbForeignTongue.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="TbForeignLang.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="TbForeignTongue.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="TbForeignLang.Location" type="System.Drawing.Point, System.Drawing">
     <value>113, 43</value>
   </data>
-  <data name="TbForeignTongue.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TbForeignLang.Size" type="System.Drawing.Size, System.Drawing">
     <value>165, 22</value>
   </data>
-  <data name="TbForeignTongue.TabIndex" type="System.Int32, mscorlib">
+  <data name="TbForeignLang.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;TbForeignTongue.Name" xml:space="preserve">
-    <value>TbForeignTongue</value>
+  <data name="&gt;&gt;TbForeignLang.Name" xml:space="preserve">
+    <value>TbForeignLang</value>
   </data>
-  <data name="&gt;&gt;TbForeignTongue.Type" xml:space="preserve">
+  <data name="&gt;&gt;TbForeignLang.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TbForeignTongue.Parent" xml:space="preserve">
+  <data name="&gt;&gt;TbForeignLang.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;TbForeignTongue.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TbForeignLang.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="RbModeAskMotherTongue.AutoSize" type="System.Boolean, mscorlib">

@@ -38,7 +38,7 @@
             this.GroupMotherTongue = new System.Windows.Forms.GroupBox();
             this.TbMotherTongue = new System.Windows.Forms.TextBox();
             this.GroupForeignTongue = new System.Windows.Forms.GroupBox();
-            this.TbForeignTongue = new System.Windows.Forms.TextBox();
+            this.TbForeignLang = new System.Windows.Forms.TextBox();
             this.BtnSpecialChar = new System.Windows.Forms.Button();
             this.GroupMotherTongue.SuspendLayout();
             this.GroupForeignTongue.SuspendLayout();
@@ -102,17 +102,17 @@
             // 
             // GroupForeignTongue
             // 
-            this.GroupForeignTongue.Controls.Add(this.TbForeignTongue);
+            this.GroupForeignTongue.Controls.Add(this.TbForeignLang);
             resources.ApplyResources(this.GroupForeignTongue, "GroupForeignTongue");
             this.GroupForeignTongue.Name = "GroupForeignTongue";
             this.GroupForeignTongue.TabStop = false;
             // 
-            // TbForeignTongue
+            // TbForeignLang
             // 
-            resources.ApplyResources(this.TbForeignTongue, "TbForeignTongue");
-            this.TbForeignTongue.Name = "TbForeignTongue";
-            this.TbForeignTongue.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
-            this.TbForeignTongue.Enter += new System.EventHandler(this.TextBox_Enter);
+            resources.ApplyResources(this.TbForeignLang, "TbForeignLang");
+            this.TbForeignLang.Name = "TbForeignLang";
+            this.TbForeignLang.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            this.TbForeignLang.Enter += new System.EventHandler(this.TextBox_Enter);
             // 
             // BtnSpecialChar
             // 
@@ -121,7 +121,7 @@
             this.BtnSpecialChar.UseVisualStyleBackColor = true;
             this.BtnSpecialChar.Click += new System.EventHandler(this.BtnSpecialChar_Click);
             // 
-            // merge
+            // MergeFiles
             // 
             this.AcceptButton = this.BtnSave;
             resources.ApplyResources(this, "$this");
@@ -139,7 +139,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "merge";
+            this.Name = "MergeFiles";
             this.ShowInTaskbar = false;
             this.GroupMotherTongue.ResumeLayout(false);
             this.GroupMotherTongue.PerformLayout();
@@ -161,7 +161,7 @@
         private System.Windows.Forms.GroupBox GroupMotherTongue;
         private System.Windows.Forms.GroupBox GroupForeignTongue;
         public System.Windows.Forms.TextBox TbMotherTongue;
-        public System.Windows.Forms.TextBox TbForeignTongue;
+        public System.Windows.Forms.TextBox TbForeignLang;
         private System.Windows.Forms.Button BtnSpecialChar;
     }
 }

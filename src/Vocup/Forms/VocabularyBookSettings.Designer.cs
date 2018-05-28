@@ -37,7 +37,7 @@
             this.TbMotherTongue = new System.Windows.Forms.TextBox();
             this.muttersprache = new System.Windows.Forms.Label();
             this.fremdsprache = new System.Windows.Forms.Label();
-            this.TbForeignTongue = new System.Windows.Forms.TextBox();
+            this.TbForeignLang = new System.Windows.Forms.TextBox();
             this.uebersetzungsrichtung = new System.Windows.Forms.GroupBox();
             this.RbModeAskMotherTongue = new System.Windows.Forms.RadioButton();
             this.RbModeAskForeignTongue = new System.Windows.Forms.RadioButton();
@@ -96,12 +96,12 @@
             resources.ApplyResources(this.fremdsprache, "fremdsprache");
             this.fremdsprache.Name = "fremdsprache";
             // 
-            // TbForeignTongue
+            // TbForeignLang
             // 
-            resources.ApplyResources(this.TbForeignTongue, "TbForeignTongue");
-            this.TbForeignTongue.Name = "TbForeignTongue";
-            this.TbForeignTongue.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
-            this.TbForeignTongue.Enter += new System.EventHandler(this.TextBox_Enter);
+            resources.ApplyResources(this.TbForeignLang, "TbForeignLang");
+            this.TbForeignLang.Name = "TbForeignLang";
+            this.TbForeignLang.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+            this.TbForeignLang.Enter += new System.EventHandler(this.TextBox_Enter);
             // 
             // uebersetzungsrichtung
             // 
@@ -134,7 +134,7 @@
             resources.ApplyResources(this, "$this");
             this.Controls.Add(this.uebersetzungsrichtung);
             this.Controls.Add(this.fremdsprache);
-            this.Controls.Add(this.TbForeignTongue);
+            this.Controls.Add(this.TbForeignLang);
             this.Controls.Add(this.muttersprache);
             this.Controls.Add(this.TbMotherTongue);
             this.Controls.Add(this.BtnSpecialChar);
@@ -165,7 +165,7 @@
         public System.Windows.Forms.TextBox TbMotherTongue;
         private System.Windows.Forms.Label muttersprache;
         private System.Windows.Forms.Label fremdsprache;
-        public System.Windows.Forms.TextBox TbForeignTongue;
+        public System.Windows.Forms.TextBox TbForeignLang;
         private System.Windows.Forms.GroupBox uebersetzungsrichtung;
         public System.Windows.Forms.RadioButton RbModeAskMotherTongue;
         public System.Windows.Forms.RadioButton RbModeAskForeignTongue;
