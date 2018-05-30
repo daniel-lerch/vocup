@@ -134,7 +134,9 @@
     </Compile>
     <Compile Include="Models\PracticeState.cs" />
     <Compile Include="Models\VocabularyBook.cs" />
+    <Compile Include="Models\VocabularyBookController.cs" />
     <Compile Include="Models\VocabularyWord.cs" />
+    <Compile Include="Models\VocabularyWordController.cs" />
     <Compile Include="PrintCardsDialog.cs">
       <SubType>Form</SubType>
     </Compile>

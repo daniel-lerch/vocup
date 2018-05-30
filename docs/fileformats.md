@@ -2,10 +2,10 @@
 
 Vocup uses different proprietary formats:
 
-| Extension | Name                | Usage            |
-|-----------|---------------------|------------------|
-| .vhf      | Vokabelheft file    | Vocabulary data  |
-| .vhr      | Vokabelheft results | Practice results |
+| Extension | Name                            | Usage            |
+|-----------|---------------------------------|------------------|
+| .vhf      | **V**okabel**h**eft **f**ile    | Vocabulary data  |
+| .vhr      | **V**okabel**h**eft **r**esults | Practice results |
 
 ## .vhf
 

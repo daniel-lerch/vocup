@@ -2,38 +2,63 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Vocup.Models
 {
-    public class VocabularyBook
+    public class VocabularyBook : INotifyPropertyChanged
     {
-        private ListView _listViewControl;
+        private string _fileVersion;
+        private string _vhrCode;
+        private string _motherTongue;
+        private string _foreignLang;
 
         public VocabularyBook()
         {
             var words = new ObservableCollection<VocabularyWord>();
-            words.CollectionChanged += Words_CollectionChanged;
+            words.CollectionChanged += OnCollectionChanged;
             Words = words;
         }
 
-        IList<VocabularyWord> Words { get; }
-        ListView ListViewControl => _listViewControl ?? RegisterListView(new ListView());
-        // TODO: Push changes to ListView
-        public string FileVersion { get; set; }
-        public string VhrCode { get; set; }
-        public string MotherTongue { get; set; }
-        public string ForeignLang { get; set; }
-
-        public ListView RegisterListView(ListView control)
+        public string FileVersion
         {
-            _listViewControl = control;
-            foreach (VocabularyWord word in Words) // Load current items
-                _listViewControl.Items.Add(word.ListViewItem);
-            return control;
+            get => _fileVersion;
+            set { _fileVersion = value; OnPropertyChanged(); }
+        }
+        public string VhrCode
+        {
+            get => _vhrCode;
+            set { _vhrCode = value; OnPropertyChanged(); }
+        }
+        public string MotherTongue
+        {
+            get => _motherTongue;
+            set { _motherTongue = value; OnPropertyChanged(); }
+        }
+        public string ForeignLang
+        {
+            get => _foreignLang;
+            set { _foreignLang = value; OnPropertyChanged(); }
+        }
+        IList<VocabularyWord> Words { get; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChanged([CallerMemberName] string name = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
+
+        private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            CollectionChanged?.Invoke(sender, e);
         }
 
         public void ReadFile(string path)
@@ -44,50 +69,6 @@ namespace Vocup.Models
         public void WriteFile(string path)
         {
 
-        }
-
-        private void Words_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            switch (e.Action)
-            {
-                case NotifyCollectionChangedAction.Add:
-                    foreach (VocabularyWord word in e.NewItems)
-                    {
-                        word.Owner = this;
-                        _listViewControl?.Items.Add(word.ListViewItem);
-                    }
-                    break;
-
-                case NotifyCollectionChangedAction.Remove:
-                    foreach (VocabularyWord word in e.OldItems)
-                    {
-                        word.Owner = null;
-                        _listViewControl?.Items.Remove(word.ListViewItem);
-                    }
-                    break;
-
-                case NotifyCollectionChangedAction.Replace:
-                    foreach (VocabularyWord word in e.OldItems)
-                    {
-                        word.Owner = null;
-                        _listViewControl?.Items.Remove(word.ListViewItem);
-                    }
-                    foreach (VocabularyWord word in e.NewItems)
-                    {
-                        word.Owner = this;
-                        _listViewControl?.Items.Add(word.ListViewItem);
-                    }
-                    break;
-
-                case NotifyCollectionChangedAction.Move:
-                    break; // sort will be done on UI layer
-
-                case NotifyCollectionChangedAction.Reset:
-                    foreach (VocabularyWord word in e.OldItems)
-                        word.Owner = null;
-                    _listViewControl?.Items.Clear();
-                    break;
-            }
         }
     }
 }
