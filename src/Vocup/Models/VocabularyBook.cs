@@ -3,20 +3,24 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vocup.Util;
 
 namespace Vocup.Models
 {
     public class VocabularyBook : INotifyPropertyChanged
     {
+        private string _filePath;
         private string _fileVersion;
         private string _vhrCode;
         private string _motherTongue;
         private string _foreignLang;
+        private PracticeMode _practiceMode;
 
         public VocabularyBook()
         {
@@ -25,6 +29,11 @@ namespace Vocup.Models
             Words = words;
         }
 
+        public string FilePath
+        {
+            get => _filePath;
+            set { _filePath = value; OnPropertyChanged(); }
+        }
         public string FileVersion
         {
             get => _fileVersion;
@@ -45,6 +54,11 @@ namespace Vocup.Models
             get => _foreignLang;
             set { _foreignLang = value; OnPropertyChanged(); }
         }
+        public PracticeMode PracticeMode
+        {
+            get => _practiceMode;
+            set { _practiceMode = value; OnPropertyChanged(); }
+        }
         IList<VocabularyWord> Words { get; }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -59,16 +73,6 @@ namespace Vocup.Models
         private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             CollectionChanged?.Invoke(sender, e);
-        }
-
-        public void ReadFile(string path)
-        {
-
-        }
-
-        public void WriteFile(string path)
-        {
-
         }
     }
 }

@@ -16,6 +16,14 @@ namespace Vocup.Util
             IV = new byte[8] { 3, 1, 3, 4, 6, 3, 4, 8 }
         };
 
+        /// <summary>
+        /// Decrypts a base64 string using DES and a hard-coded key.
+        /// </summary>
+        /// <param name="base64"></param>
+        /// <returns>The UTF8 encoded plaintext.</returns>
+        /// <exception cref="ArgumentNullException"/>
+        /// <exception cref="FormatException"/>
+        /// <exception cref="CryptographicException"/>
         public static string Decrypt(string base64)
         {
             byte[] ciphertext = Convert.FromBase64String(base64);
@@ -30,6 +38,12 @@ namespace Vocup.Util
             }
         }
 
+        /// <summary>
+        /// Encrypts a string using UTF8 and DES with a hard-coded key.
+        /// </summary>
+        /// <param name="plaintext"></param>
+        /// <returns>The base64 encoded ciphertext.</returns>
+        /// <exception cref="ArgumentNullException"/>
         public static string Encrypt(string plaintext)
         {
             byte[] plainbuffer = Encoding.UTF8.GetBytes(plaintext);

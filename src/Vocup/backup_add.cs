@@ -250,7 +250,6 @@ namespace Vocup
             {
                 delete_vokabelheft_button.Enabled = true;
             }
-
         }
 
         //Save-Dialog starten

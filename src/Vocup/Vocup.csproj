@@ -132,6 +132,7 @@
     <Compile Include="Forms\MergeFiles.Designer.cs">
       <DependentUpon>MergeFiles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\PracticeMode.cs" />
     <Compile Include="Models\PracticeState.cs" />
     <Compile Include="Models\VocabularyBook.cs" />
     <Compile Include="Models\VocabularyBookController.cs" />
