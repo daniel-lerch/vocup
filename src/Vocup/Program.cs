@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
 using System.IO;
 using System.Threading;
+using System.Windows.Forms;
 using Vocup.Forms;
 
 namespace Vocup
@@ -10,95 +9,75 @@ namespace Vocup
     static class Program
     {
         /// <summary>
-        /// Der Haupteinstiegspunkt für die Anwendung.
+        /// The main entry-point for the application.
         /// </summary>
         [STAThread]
         static void Main(string[] args)
         {
-            //----------------------
-            //Überprüfen, ob der Ordner Vokabelhefte im Ordner "Eigene Dateien", oder im selbst bestimmten Ordner vorhanden ist
-
-            string personal = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-
-            if (Properties.Settings.Default.path_vhf == "" || Properties.Settings.Default.path_vhf == personal + "\\" + Properties.language.personal_directory)
-            {
-
-                DirectoryInfo check_personal = new DirectoryInfo(personal + "\\" + Properties.language.personal_directory);
-                if (!check_personal.Exists)
-                {
-                    Directory.CreateDirectory(personal + "\\" + Properties.language.personal_directory);
-                }
-
-                if (Properties.Settings.Default.path_vhf == "")
-                {
-                    Properties.Settings.Default.path_vhf = personal + "\\" + Properties.language.personal_directory;
-                    Properties.Settings.Default.Save();
-                }
-            }
-            else
-            {
-                DirectoryInfo check_path = new DirectoryInfo(Properties.Settings.Default.path_vhf);
-                if (!check_path.Exists)
-                {
-                    Directory.CreateDirectory(Properties.Settings.Default.path_vhf);
-                }
-            }
-
-
-            //----------------------
-            //----------------------
-            //Überprüfen, ob der Ordner Vocup im Ordner "Andwendungsdaten" vorhanden ist
-
-            string app_data = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-
-            if (Properties.Settings.Default.path_vhr == "" || Properties.Settings.Default.path_vhr == app_data + "\\" + Properties.language.name)
-            {
-                DirectoryInfo check_appdata = new DirectoryInfo(app_data + "\\" + Properties.language.name);
-                if (!check_appdata.Exists)
-                {
-                    Directory.CreateDirectory(app_data + "\\" + Properties.language.name);
-                }
-
-                if (Properties.Settings.Default.path_vhr == "")
-                {
-                    Properties.Settings.Default.path_vhr = app_data + "\\" + Properties.language.name;
-                    Properties.Settings.Default.Save();
-                }
-            }
-            else
-            {
-                DirectoryInfo check_path = new DirectoryInfo(Properties.Settings.Default.path_vhr);
-                if (!check_path.Exists)
-                {
-                    Directory.CreateDirectory(Properties.Settings.Default.path_vhr);
-                }
-            }
-
-            //----------------------
-
-            //Verhindert eine Fehlerhafte Installation falls das Programm geöffnet ist
-
+            // Verhindert eine Fehlerhafte Installation falls das Programm geöffnet ist
             Mutex mutex = new Mutex(false, Properties.language.name, out bool newinstance);
-
-            //----------------------
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Splash-Screen starten
-
+            // Start SplashScreen first to do other things while loading
             SplashScreen splash = new SplashScreen();
-
             splash.Show();
-
             Application.DoEvents();
 
+            Properties.Settings settings = Properties.Settings.Default;
 
+            CreateVhfFolder(settings);
+            Application.DoEvents();
+
+            CreateVhrFolder(settings);
+            Application.DoEvents();
+
+            settings.Save();
+            program_form form = new program_form(args);
+            Application.DoEvents();
             Thread.Sleep(1250);
 
             splash.Close();
+            Application.Run(form);
+        }
 
-            Application.Run(new program_form(args));
+        /// <summary>
+        /// Checks the currently configured folder for .vhf files and creates it if not existing.
+        /// </summary>
+        static void CreateVhfFolder(Properties.Settings settings)
+        {
+            string personal = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            string folder = Path.Combine(personal, Properties.language.personal_directory); // default path
+
+            if (string.IsNullOrWhiteSpace(settings.path_vhf) || settings.path_vhf.Equals(folder, StringComparison.OrdinalIgnoreCase))
+            {
+                Directory.CreateDirectory(folder);
+                settings.path_vhf = folder;
+            }
+            else
+            {
+                Directory.CreateDirectory(Properties.Settings.Default.path_vhf);
+            }
+        }
+
+        /// <summary>
+        /// Checks the currently configured folder for .vhr files and creates it if not existing.
+        /// </summary>
+        static void CreateVhrFolder(Properties.Settings settings)
+        {
+            string appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string folder = Path.Combine(appdata, Properties.language.name); // default path
+
+            if (string.IsNullOrWhiteSpace(settings.path_vhr) || settings.path_vhr.Equals(folder, StringComparison.OrdinalIgnoreCase))
+            {
+                Directory.CreateDirectory(folder);
+                Properties.Settings.Default.path_vhr = folder;
+            }
+            else
+            {
+                Directory.CreateDirectory(Properties.Settings.Default.path_vhr);
+            }
         }
     }
 }

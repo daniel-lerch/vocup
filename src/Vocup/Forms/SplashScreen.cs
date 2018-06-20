@@ -15,7 +15,7 @@ namespace Vocup.Forms
 
         private void SplashScreen_Paint(object sender, PaintEventArgs e)
         {
-            using (Pen grayPen = new Pen(Brushes.Gray, 2))
+            using (Pen grayPen = new Pen(Brushes.Gray, width: 2.0f))
             {
                 // Draw window border
 

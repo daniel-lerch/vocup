@@ -1,11 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using System.IO;
 
 namespace Vocup
 {
@@ -297,17 +295,14 @@ namespace Vocup
                 {
                     pfad = save.FileName;
 
-
                     FileInfo get_folder_path = new FileInfo(save.FileName);
 
                     Properties.Settings.Default.backup_folder = get_folder_path.DirectoryName;
-
 
                     Properties.Settings.Default.Save();
 
                     DialogResult = DialogResult.OK;
                 }
-
             }
         }
     }
