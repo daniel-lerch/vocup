@@ -32,6 +32,32 @@ namespace Vocup.Models
             get => _foreignLangSynonym;
             set { _foreignLangSynonym = value; OnPropertyChanged(); }
         }
+        public string ForeignLangText
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(_foreignLangSynonym))
+                    return _foreignLang;
+                else
+                    return _foreignLang + "=" + _foreignLangSynonym;
+            }
+            set
+            {
+                int idx = value.LastIndexOf('=');
+                if (idx == -1)
+                {
+                    _foreignLang = value;
+                    _foreignLangSynonym = null;
+                }
+                else
+                {
+                    _foreignLang = value.Remove(idx);
+                    _foreignLangSynonym = value.Substring(idx + 1);
+                }
+                OnPropertyChanged();
+            }
+        }
+
         public PracticeState PracticeState
         {
             get => _practiceState;

@@ -57,6 +57,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CsvHelper, Version=7.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CsvHelper.7.1.1\lib\net45\CsvHelper.dll</HintPath>
+    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
@@ -64,6 +67,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Library\K_Updater.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System">
       <Private>False</Private>
     </Reference>
@@ -132,6 +136,11 @@
     <Compile Include="Forms\MergeFiles.Designer.cs">
       <DependentUpon>MergeFiles.cs</DependentUpon>
     </Compile>
+    <Compile Include="IO\CsvFile.cs" />
+    <Compile Include="IO\VhfFile.cs" />
+    <Compile Include="IO\VhrFile.cs" />
+    <Compile Include="IO\VocabularyFile.cs" />
+    <Compile Include="IO\VocupFile.cs" />
     <Compile Include="Models\PracticeMode.cs" />
     <Compile Include="Models\PracticeState.cs" />
     <Compile Include="Models\VocabularyBook.cs" />
@@ -244,7 +253,9 @@
       <LastGenOutput>language.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -313,6 +324,7 @@
     </Compile>
     <Compile Include="Util\AppInfo.cs" />
     <Compile Include="Util\Crypto.cs" />
+    <Compile Include="Util\RewriteHelper.cs" />
     <Compile Include="Util\StringExtensions.cs" />
     <Compile Include="Util\SystemInfo.cs" />
     <Compile Include="vokabel_count_practise_dialog.cs">
@@ -390,6 +402,7 @@
     <None Include="Resources\icon_rand_grau_splash .png" />
     <None Include="Resources\logo.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

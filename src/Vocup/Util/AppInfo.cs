@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,6 +32,11 @@ namespace Vocup.Util
             for (int i = 0; i < 4 - length; i++)
                 version = version.Remove(version.LastIndexOf('.'));
             return version;
+        }
+
+        public static Version GetFileVersion()
+        {
+            return new Version(1, 0);
         }
     }
 }

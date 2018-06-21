@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vocup.Util
+namespace Vocup.IO.Internal
 {
-    [Obsolete("Vocup.Util.Crypto is deprecated. Please use Vocup.IO instead", false)]
-    public static class Crypto
+    /// <summary>
+    /// Represents an encrypted, Vocup specific file.
+    /// </summary>
+    internal abstract class VocupFile
     {
         private static readonly DES csp = new DESCryptoServiceProvider
         {
@@ -18,16 +19,21 @@ namespace Vocup.Util
         };
 
         /// <summary>
-        /// Decrypts a base64 string using DES and a hard-coded key.
+        /// Decrypts Vocup specific file using DES and a hard-coded key.
         /// </summary>
-        /// <param name="base64"></param>
+        /// <param name="path"></param>
         /// <returns>The UTF8 encoded plaintext.</returns>
+        /// <exception cref="ArgumentException"/>
         /// <exception cref="ArgumentNullException"/>
+        /// <exception cref="FileNotFoundException"/>
+        /// <exception cref="DirectoryNotFoundException"/>
         /// <exception cref="FormatException"/>
         /// <exception cref="CryptographicException"/>
-        public static string Decrypt(string base64)
+        protected string ReadFile(string path)
         {
-            byte[] ciphertext = Convert.FromBase64String(base64);
+            byte[] ciphertext;
+            using (StreamReader reader = new StreamReader(path, Encoding.UTF8))
+                ciphertext = Convert.FromBase64String(reader.ReadToEnd());
 
             using (MemoryStream plainstream = new MemoryStream())
             using (ICryptoTransform transform = csp.CreateDecryptor())
@@ -40,22 +46,26 @@ namespace Vocup.Util
         }
 
         /// <summary>
-        /// Encrypts a string using UTF8 and DES with a hard-coded key.
+        /// Encrypts a Vocup specific file using UTF8 and DES with a hard-coded key.
         /// </summary>
-        /// <param name="plaintext"></param>
-        /// <returns>The base64 encoded ciphertext.</returns>
+        /// <param name="path"></param>
+        /// <param name="content"></param>
+        /// <exception cref="ArgumentException"/>
         /// <exception cref="ArgumentNullException"/>
-        public static string Encrypt(string plaintext)
+        /// <exception cref="DirectoryNotFoundException"/>
+        /// <exception cref="IOException"/>
+        protected void WriteFile(string path, string content)
         {
-            byte[] plainbuffer = Encoding.UTF8.GetBytes(plaintext);
+            byte[] buffer = Encoding.UTF8.GetBytes(content);
 
+            using (StreamWriter writer = new StreamWriter(path, false, Encoding.UTF8))
             using (MemoryStream cipherstream = new MemoryStream())
             using (ICryptoTransform transform = csp.CreateEncryptor())
             using (CryptoStream plainstream = new CryptoStream(cipherstream, transform, CryptoStreamMode.Write))
             {
-                plainstream.Write(plainbuffer, 0, plainbuffer.Length);
+                plainstream.Write(buffer, 0, buffer.Length);
                 plainstream.FlushFinalBlock();
-                return Convert.ToBase64String(cipherstream.ToArray());
+                writer.Write(Convert.ToBase64String(cipherstream.ToArray()));
             }
         }
     }

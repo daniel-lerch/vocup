@@ -35,12 +35,7 @@ namespace Vocup.Models
             ListViewItem.ImageIndex = (int)VocabularyWord.PracticeState;
 
             motherTongueColumn.Text = VocabularyWord.MotherTongue;
-
-            if (string.IsNullOrWhiteSpace(VocabularyWord.ForeignLangSynonym))
-                foreignLangColumn.Text = VocabularyWord.ForeignLang;
-            else
-                foreignLangColumn.Text = $"{VocabularyWord.ForeignLang}={VocabularyWord.ForeignLangSynonym}";
-
+            foreignLangColumn.Text = VocabularyWord.ForeignLangText;
             praticeDateColumn.Text = (VocabularyWord.PracticeDate == default(DateTime)) ? "" : VocabularyWord.PracticeDate.ToString("dd.MM.yyyy HH:mm");
         }
     }
