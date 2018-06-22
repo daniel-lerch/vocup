@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Vocup.Forms;
+using Vocup.Properties;
 using Vocup.Util;
 
 namespace Vocup.Forms
@@ -18,7 +19,7 @@ namespace Vocup.Forms
         public MergeFiles()
         {
             InitializeComponent();
-            Icon = Icon.FromHandle(icons.merge.GetHicon());
+            Icon = Icon.FromHandle(Icons.merge.GetHicon());
             specialCharDialog = new SpecialCharKeyboard();
             specialCharDialog.Initialize(this);
             specialCharDialog.VisibleChanged += (a0, a1) => ValidateInput();
@@ -32,9 +33,9 @@ namespace Vocup.Forms
         {
             OpenFileDialog addFile = new OpenFileDialog
             {
-                Title = Properties.language.add_title,
-                InitialDirectory = Properties.Settings.Default.path_vhf,
-                Filter = Properties.language.personal_directory + " (*.vhf)|*.vhf",
+                Title = language.add_title,
+                InitialDirectory = Settings.Default.path_vhf,
+                Filter = language.personal_directory + " (*.vhf)|*.vhf",
                 Multiselect = true
             };
 
@@ -112,10 +113,10 @@ namespace Vocup.Forms
         {
             SaveFileDialog save = new SaveFileDialog
             {
-                Title = Properties.language.save_title,
+                Title = language.save_title,
                 FileName = TbMotherTongue.Text + " - " + TbForeignLang.Text,
-                InitialDirectory = Properties.Settings.Default.path_vhf,
-                Filter = Properties.language.personal_directory + " (*.vhf)|*.vhf"
+                InitialDirectory = Settings.Default.path_vhf,
+                Filter = language.personal_directory + " (*.vhf)|*.vhf"
             };
 
             if (save.ShowDialog() == DialogResult.OK)

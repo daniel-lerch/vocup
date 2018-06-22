@@ -96,11 +96,6 @@
     <Compile Include="Forms\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppInfo.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppInfo.resx</DependentUpon>
-    </Compile>
     <Compile Include="backup_add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,11 +113,6 @@
     </Compile>
     <Compile Include="choose_vocables_for_print.Designer.cs">
       <DependentUpon>choose_vocables_for_print.cs</DependentUpon>
-    </Compile>
-    <Compile Include="icons.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>icons.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\EvaluationInfoDialog.cs">
       <SubType>Form</SubType>
@@ -147,11 +137,16 @@
     <Compile Include="Models\VocabularyBookController.cs" />
     <Compile Include="Models\VocabularyWord.cs" />
     <Compile Include="Models\VocabularyWordController.cs" />
-    <Compile Include="PrintCardsDialog.cs">
+    <Compile Include="Forms\PrintCardsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PrintCardsDialog.Designer.cs">
+    <Compile Include="Forms\PrintCardsDialog.Designer.cs">
       <DependentUpon>PrintCardsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Icons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Icons.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\language.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -194,10 +189,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppInfo.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>AppInfo.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="backup_add.resx">
       <SubType>Designer</SubType>
       <DependentUpon>backup_add.cs</DependentUpon>
@@ -210,10 +201,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>choose_vocables_for_print.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="icons.resx">
+    <EmbeddedResource Include="Properties\Icons.resx">
       <SubType>Designer</SubType>
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>icons.Designer.cs</LastGenOutput>
+      <LastGenOutput>Icons.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EvaluationInfoDialog.resx">
       <SubType>Designer</SubType>
@@ -239,7 +230,7 @@
       <SubType>Designer</SubType>
       <DependentUpon>practise_dialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PrintCardsDialog.resx">
+    <EmbeddedResource Include="Forms\PrintCardsDialog.resx">
       <SubType>Designer</SubType>
       <DependentUpon>PrintCardsDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,7 +260,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>practise_result_list.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Settings.cs" />
     <EmbeddedResource Include="Forms\SpecialCharKeyboard.resx">
       <SubType>Designer</SubType>
       <DependentUpon>SpecialCharKeyboard.cs</DependentUpon>
@@ -389,7 +379,7 @@
   <ItemGroup>
     <Content Include="icon.ico" />
     <Content Include="Library\K_Updater.dll" />
-    <None Include="Resources\btn_donate_LG.gif" />
+    <None Include="Resources\logo_splash.png" />
     <None Include="Resources\splash_back.png" />
     <None Include="Resources\close.png" />
     <None Include="Resources\quit.png" />
@@ -399,7 +389,6 @@
     <None Include="Resources\lock_add.png" />
     <None Include="Resources\lock_go.png" />
     <None Include="Resources\char.png" />
-    <None Include="Resources\icon_rand_grau_splash .png" />
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup />

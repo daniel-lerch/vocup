@@ -11,12 +11,12 @@ namespace Vocup.IO.Internal
     {
         public bool Read(VocabularyBook book)
         {
-
+            return false;
         }
 
         public bool Write(VocabularyBook book)
         {
-
+            return false;
         }
     }
 }

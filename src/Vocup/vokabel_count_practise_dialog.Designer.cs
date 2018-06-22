@@ -188,21 +188,21 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Vocup.icons.richtig_geübt;
+            this.pictureBox3.Image = global::Vocup.Properties.Icons.richtig_geübt;
             resources.ApplyResources(this.pictureBox3, "pictureBox3");
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Vocup.icons.falsch_geübt;
+            this.pictureBox2.Image = global::Vocup.Properties.Icons.falsch_geübt;
             resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Vocup.icons.noch_nicht_geübt;
+            this.pictureBox1.Image = global::Vocup.Properties.Icons.noch_nicht_geübt;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;

@@ -11,7 +11,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Vocup")]
-[assembly: AssemblyCopyright("© Copyright 2011 Florian Amstutz. All Rights Reserved.")]
+[assembly: AssemblyCopyright("Copyright © 2011 Florian Amstutz, © 2018 Daniel Lerch.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,4 +32,4 @@ using System.Resources;
 //
 [assembly: AssemblyVersion("1.4.3.0")]
 [assembly: AssemblyFileVersion("1.4.3.0")]
-[assembly: NeutralResourcesLanguageAttribute("de")]
+[assembly: NeutralResourcesLanguage("de")]

@@ -26,7 +26,7 @@ namespace Vocup.IO.Internal
                     // TODO: mbox invalid file
                     return false;
                 }
-                else if (versionObj.CompareTo(Util.AppInfo.GetFileVersion()) == 1)
+                else if (versionObj.CompareTo(Util.AppInfo.FileVersion) == 1)
                 {
                     // TODO: mbox newer version needed
                     return false;
@@ -52,6 +52,26 @@ namespace Vocup.IO.Internal
 
                 book.MotherTongue = motherTongue;
                 book.ForeignLang = foreignLang;
+
+                while (true)
+                {
+                    string line = reader.ReadLine();
+                    if (line == null) break;
+                    string[] columns = line.Split('#');
+                    if (columns.Length < 3)
+                    {
+                        // TODO: mbox invalid file
+                        return false;
+                    }
+                    VocabularyWord word = new VocabularyWord()
+                    {
+                        Owner = book,
+                        MotherTongue = columns[0],
+                        ForeignLang = columns[1],
+                        ForeignLangSynonym = columns[2]
+                    };
+                    book.Words.Add(word);
+                }
             }
 
             return true;
@@ -59,7 +79,7 @@ namespace Vocup.IO.Internal
 
         public bool Write(string path, VocabularyBook book)
         {
-
+            return false;
         }
     }
 }

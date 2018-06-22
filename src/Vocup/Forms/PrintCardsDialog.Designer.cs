@@ -1,4 +1,4 @@
-﻿namespace Vocup
+﻿namespace Vocup.Forms
 {
     partial class PrintCardsDialog
     {
@@ -31,22 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrintCardsDialog));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.anzahl_seiten_field = new System.Windows.Forms.TextBox();
+            this.LbPaperCount = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.print_foreside = new System.Windows.Forms.Button();
+            this.BtnPrintForeside = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.print_backside = new System.Windows.Forms.Button();
+            this.BtnPrintBackside = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.radioButton_hinten = new System.Windows.Forms.RadioButton();
-            this.radioButton_vorne = new System.Windows.Forms.RadioButton();
+            this.RbRearSide = new System.Windows.Forms.RadioButton();
+            this.RbFrontSide = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -63,18 +63,18 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.anzahl_seiten_field);
+            this.groupBox1.Controls.Add(this.LbPaperCount);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
-            // anzahl_seiten_field
+            // LbPaperCount
             // 
-            resources.ApplyResources(this.anzahl_seiten_field, "anzahl_seiten_field");
-            this.anzahl_seiten_field.Name = "anzahl_seiten_field";
-            this.anzahl_seiten_field.ReadOnly = true;
+            resources.ApplyResources(this.LbPaperCount, "LbPaperCount");
+            this.LbPaperCount.Name = "LbPaperCount";
+            this.LbPaperCount.ReadOnly = true;
             // 
             // label3
             // 
@@ -89,7 +89,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.print_foreside);
+            this.groupBox2.Controls.Add(this.BtnPrintForeside);
             resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
@@ -99,13 +99,13 @@
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
             // 
-            // print_foreside
+            // BtnPrintForeside
             // 
-            this.print_foreside.DialogResult = System.Windows.Forms.DialogResult.Ignore;
-            this.print_foreside.Image = global::Vocup.icons.print;
-            resources.ApplyResources(this.print_foreside, "print_foreside");
-            this.print_foreside.Name = "print_foreside";
-            this.print_foreside.UseVisualStyleBackColor = true;
+            this.BtnPrintForeside.DialogResult = System.Windows.Forms.DialogResult.Ignore;
+            this.BtnPrintForeside.Image = global::Vocup.Properties.Icons.print;
+            resources.ApplyResources(this.BtnPrintForeside, "BtnPrintForeside");
+            this.BtnPrintForeside.Name = "BtnPrintForeside";
+            this.BtnPrintForeside.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -132,18 +132,18 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.label7);
-            this.groupBox5.Controls.Add(this.print_backside);
+            this.groupBox5.Controls.Add(this.BtnPrintBackside);
             resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.TabStop = false;
             // 
-            // print_backside
+            // BtnPrintBackside
             // 
-            this.print_backside.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.print_backside.Image = global::Vocup.icons.print;
-            resources.ApplyResources(this.print_backside, "print_backside");
-            this.print_backside.Name = "print_backside";
-            this.print_backside.UseVisualStyleBackColor = true;
+            this.BtnPrintBackside.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BtnPrintBackside.Image = global::Vocup.Properties.Icons.print;
+            resources.ApplyResources(this.BtnPrintBackside, "BtnPrintBackside");
+            this.BtnPrintBackside.Name = "BtnPrintBackside";
+            this.BtnPrintBackside.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
@@ -154,35 +154,35 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.radioButton_hinten);
-            this.groupBox4.Controls.Add(this.radioButton_vorne);
+            this.groupBox4.Controls.Add(this.RbRearSide);
+            this.groupBox4.Controls.Add(this.RbFrontSide);
             this.groupBox4.Controls.Add(this.label5);
             resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
             // 
-            // radioButton_hinten
+            // RbRearSide
             // 
-            resources.ApplyResources(this.radioButton_hinten, "radioButton_hinten");
-            this.radioButton_hinten.Name = "radioButton_hinten";
-            this.radioButton_hinten.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.RbRearSide, "RbRearSide");
+            this.RbRearSide.Name = "RbRearSide";
+            this.RbRearSide.UseVisualStyleBackColor = true;
             // 
-            // radioButton_vorne
+            // RbFrontSide
             // 
-            resources.ApplyResources(this.radioButton_vorne, "radioButton_vorne");
-            this.radioButton_vorne.Checked = true;
-            this.radioButton_vorne.Name = "radioButton_vorne";
-            this.radioButton_vorne.TabStop = true;
-            this.radioButton_vorne.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.RbFrontSide, "RbFrontSide");
+            this.RbFrontSide.Checked = true;
+            this.RbFrontSide.Name = "RbFrontSide";
+            this.RbFrontSide.TabStop = true;
+            this.RbFrontSide.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
             resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
             // 
-            // print_cards
+            // PrintCardsDialog
             // 
-            this.AcceptButton = this.print_foreside;
+            this.AcceptButton = this.BtnPrintForeside;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
             this.Controls.Add(this.groupBox4);
@@ -195,7 +195,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "print_cards";
+            this.Name = "PrintCardsDialog";
             this.ShowInTaskbar = false;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -219,10 +219,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        public  System.Windows.Forms.TextBox anzahl_seiten_field;
+        public System.Windows.Forms.TextBox LbPaperCount;
         private System.Windows.Forms.Label label3;
-        public  System.Windows.Forms.Button print_backside;
-        public System.Windows.Forms.Button print_foreside;
+        public System.Windows.Forms.Button BtnPrintBackside;
+        public System.Windows.Forms.Button BtnPrintForeside;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -233,7 +233,7 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label5;
-        public  System.Windows.Forms.RadioButton radioButton_hinten;
-        public  System.Windows.Forms.RadioButton radioButton_vorne;
+        public System.Windows.Forms.RadioButton RbRearSide;
+        public System.Windows.Forms.RadioButton RbFrontSide;
     }
 }

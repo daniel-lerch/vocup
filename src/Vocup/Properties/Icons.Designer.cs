@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Vocup {
+namespace Vocup.Properties {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Vocup {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class icons {
+    internal class Icons {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal icons() {
+        internal Icons() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Vocup {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Vocup.icons", typeof(icons).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Vocup.Properties.Icons", typeof(Icons).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -106,16 +106,6 @@ namespace Vocup {
         internal static System.Drawing.Bitmap blank_file {
             get {
                 object obj = ResourceManager.GetObject("blank_file", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap btn_donate_LG {
-            get {
-                object obj = ResourceManager.GetObject("btn_donate_LG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,16 +193,6 @@ namespace Vocup {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_rand_grau_splash {
-            get {
-                object obj = ResourceManager.GetObject("icon_rand_grau_splash", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap import {
             get {
                 object obj = ResourceManager.GetObject("import", resourceCulture);
@@ -236,6 +216,16 @@ namespace Vocup {
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_splash {
+            get {
+                object obj = ResourceManager.GetObject("logo_splash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -356,16 +346,6 @@ namespace Vocup {
         internal static System.Drawing.Bitmap settings_file {
             get {
                 object obj = ResourceManager.GetObject("settings_file", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap splash_back {
-            get {
-                object obj = ResourceManager.GetObject("splash_back", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -223,7 +223,7 @@
     <value>0</value>
   </data>
   <data name="LbVersion.Text" xml:space="preserve">
-    <value>%Version%</value>
+    <value>Version {0}</value>
   </data>
   <data name="LbVersion.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -289,13 +289,13 @@
     <value>58, 50</value>
   </data>
   <data name="LbProjectLicense.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 14</value>
+    <value>54, 14</value>
   </data>
   <data name="LbProjectLicense.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="LbProjectLicense.Text" xml:space="preserve">
-    <value>%ProjectLicense%</value>
+    <value>AGPL-3.0</value>
   </data>
   <data name="LbProjectLicense.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -361,13 +361,13 @@
     <value>58, 0</value>
   </data>
   <data name="LlbProjectWebsite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 14</value>
+    <value>92, 14</value>
   </data>
   <data name="LlbProjectWebsite.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="LlbProjectWebsite.Text" xml:space="preserve">
-    <value>%ProjectWebsite%</value>
+    <value>Vocup auf GitHub</value>
   </data>
   <data name="LlbProjectWebsite.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -397,13 +397,13 @@
     <value>58, 25</value>
   </data>
   <data name="LlbProjectEMail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 14</value>
+    <value>129, 14</value>
   </data>
   <data name="LlbProjectEMail.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="LlbProjectEMail.Text" xml:space="preserve">
-    <value>%ProjectEMail%</value>
+    <value>daniel.p.lerch@gmail.com</value>
   </data>
   <data name="LlbProjectEMail.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -994,164 +994,26 @@
   <data name="&gt;&gt;info.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;komponenten.Name" xml:space="preserve">
-    <value>komponenten</value>
+  <data name="name.Text" xml:space="preserve">
+    <value>Name</value>
   </data>
-  <data name="&gt;&gt;komponenten.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="name.Width" type="System.Int32, mscorlib">
+    <value>70</value>
   </data>
-  <data name="&gt;&gt;komponenten.Parent" xml:space="preserve">
-    <value>komp</value>
+  <data name="software_version.Text" xml:space="preserve">
+    <value>Version</value>
   </data>
-  <data name="&gt;&gt;komponenten.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="software_version.Width" type="System.Int32, mscorlib">
+    <value>50</value>
   </data>
-  <data name="komp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+  <data name="lizenz.Text" xml:space="preserve">
+    <value>Lizenz</value>
   </data>
-  <data name="komp.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="url.Text" xml:space="preserve">
+    <value>URL</value>
   </data>
-  <data name="komp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>327, 244</value>
-  </data>
-  <data name="komp.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="komp.Text" xml:space="preserve">
-    <value>Komponenten</value>
-  </data>
-  <data name="&gt;&gt;komp.Name" xml:space="preserve">
-    <value>komp</value>
-  </data>
-  <data name="&gt;&gt;komp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;komp.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;komp.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
-    <value>pictureBox2</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
-    <value>spenden</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;spende_text.Name" xml:space="preserve">
-    <value>spende_text</value>
-  </data>
-  <data name="&gt;&gt;spende_text.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spende_text.Parent" xml:space="preserve">
-    <value>spenden</value>
-  </data>
-  <data name="&gt;&gt;spende_text.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;spende_titel.Name" xml:space="preserve">
-    <value>spende_titel</value>
-  </data>
-  <data name="&gt;&gt;spende_titel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spende_titel.Parent" xml:space="preserve">
-    <value>spenden</value>
-  </data>
-  <data name="&gt;&gt;spende_titel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;spender.Name" xml:space="preserve">
-    <value>spender</value>
-  </data>
-  <data name="&gt;&gt;spender.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spender.Parent" xml:space="preserve">
-    <value>spenden</value>
-  </data>
-  <data name="&gt;&gt;spender.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;waehrung.Name" xml:space="preserve">
-    <value>waehrung</value>
-  </data>
-  <data name="&gt;&gt;waehrung.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;waehrung.Parent" xml:space="preserve">
-    <value>spenden</value>
-  </data>
-  <data name="&gt;&gt;waehrung.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;spende_button.Name" xml:space="preserve">
-    <value>spende_button</value>
-  </data>
-  <data name="&gt;&gt;spende_button.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spende_button.Parent" xml:space="preserve">
-    <value>spenden</value>
-  </data>
-  <data name="&gt;&gt;spende_button.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="spenden.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="spenden.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="spenden.Size" type="System.Drawing.Size, System.Drawing">
-    <value>327, 244</value>
-  </data>
-  <data name="spenden.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="spenden.Text" xml:space="preserve">
-    <value>Spenden</value>
-  </data>
-  <data name="&gt;&gt;spenden.Name" xml:space="preserve">
-    <value>spenden</value>
-  </data>
-  <data name="&gt;&gt;spenden.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spenden.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;spenden.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 5</value>
-  </data>
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 270</value>
-  </data>
-  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="url.Width" type="System.Int32, mscorlib">
+    <value>136</value>
   </data>
   <data name="komponenten.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1254,194 +1116,53 @@
   <data name="&gt;&gt;komponenten.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="name.Text" xml:space="preserve">
-    <value>Name</value>
+  <data name="komp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
   </data>
-  <data name="name.Width" type="System.Int32, mscorlib">
-    <value>70</value>
+  <data name="komp.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
-  <data name="software_version.Text" xml:space="preserve">
-    <value>Version</value>
+  <data name="komp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>327, 244</value>
   </data>
-  <data name="software_version.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="lizenz.Text" xml:space="preserve">
-    <value>Lizenz</value>
-  </data>
-  <data name="url.Text" xml:space="preserve">
-    <value>URL</value>
-  </data>
-  <data name="url.Width" type="System.Int32, mscorlib">
-    <value>136</value>
-  </data>
-  <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>204, 19</value>
-  </data>
-  <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="pictureBox2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>AutoSize</value>
-  </data>
-  <data name="pictureBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
-    <value>pictureBox2</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
-    <value>spenden</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="spende_text.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="spende_text.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 49</value>
-  </data>
-  <data name="spende_text.Size" type="System.Drawing.Size, System.Drawing">
-    <value>305, 91</value>
-  </data>
-  <data name="spende_text.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="spende_text.Text" xml:space="preserve">
-    <value>Vocup wird für den privaten Gebrauch kostenlos angeboten.
- 
-Als Hobby-Programmierer und Schüler zahle ich die anfallenden
-Umkosten aus der eigenen Tasche.
- 
-Wenn Ihnen das Programm gefällt, bin ich für jede Spende 
-dankbar.</value>
-  </data>
-  <data name="&gt;&gt;spende_text.Name" xml:space="preserve">
-    <value>spende_text</value>
-  </data>
-  <data name="&gt;&gt;spende_text.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spende_text.Parent" xml:space="preserve">
-    <value>spenden</value>
-  </data>
-  <data name="&gt;&gt;spende_text.ZOrder" xml:space="preserve">
+  <data name="komp.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="spende_titel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="komp.Text" xml:space="preserve">
+    <value>Komponenten</value>
   </data>
-  <data name="spende_titel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt, style=Bold</value>
+  <data name="&gt;&gt;komp.Name" xml:space="preserve">
+    <value>komp</value>
   </data>
-  <data name="spende_titel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 20</value>
+  <data name="&gt;&gt;komp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="spende_titel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 15</value>
+  <data name="&gt;&gt;komp.Parent" xml:space="preserve">
+    <value>tabControl</value>
   </data>
-  <data name="spende_titel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="spende_titel.Text" xml:space="preserve">
-    <value>Helfen Sie mit einer Spende!</value>
-  </data>
-  <data name="&gt;&gt;spende_titel.Name" xml:space="preserve">
-    <value>spende_titel</value>
-  </data>
-  <data name="&gt;&gt;spende_titel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spende_titel.Parent" xml:space="preserve">
-    <value>spenden</value>
-  </data>
-  <data name="&gt;&gt;spende_titel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="spender.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="spender.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 204</value>
-  </data>
-  <data name="spender.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 13</value>
-  </data>
-  <data name="spender.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="spender.Text" xml:space="preserve">
-    <value>Spender anzeigen</value>
-  </data>
-  <data name="&gt;&gt;spender.Name" xml:space="preserve">
-    <value>spender</value>
-  </data>
-  <data name="&gt;&gt;spender.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spender.Parent" xml:space="preserve">
-    <value>spenden</value>
-  </data>
-  <data name="&gt;&gt;spender.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="waehrung.Items" xml:space="preserve">
-    <value>CHF</value>
-  </data>
-  <data name="waehrung.Items1" xml:space="preserve">
-    <value>EUR</value>
-  </data>
-  <data name="waehrung.Items2" xml:space="preserve">
-    <value>USD</value>
-  </data>
-  <data name="waehrung.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 161</value>
-  </data>
-  <data name="waehrung.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 21</value>
-  </data>
-  <data name="waehrung.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;komp.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;waehrung.Name" xml:space="preserve">
-    <value>waehrung</value>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 5</value>
   </data>
-  <data name="&gt;&gt;waehrung.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>335, 270</value>
   </data>
-  <data name="&gt;&gt;waehrung.Parent" xml:space="preserve">
-    <value>spenden</value>
-  </data>
-  <data name="&gt;&gt;waehrung.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="spende_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>98, 156</value>
-  </data>
-  <data name="spende_button.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 26</value>
-  </data>
-  <data name="spende_button.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>AutoSize</value>
-  </data>
-  <data name="spende_button.TabIndex" type="System.Int32, mscorlib">
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;spende_button.Name" xml:space="preserve">
-    <value>spende_button</value>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
   </data>
-  <data name="&gt;&gt;spende_button.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;spende_button.Parent" xml:space="preserve">
-    <value>spenden</value>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;spende_button.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

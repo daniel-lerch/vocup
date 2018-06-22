@@ -70,7 +70,6 @@
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
             this.nachUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
-            this.spendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ÜberVTrainingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.new_vokabelheft = new System.Windows.Forms.ToolStripButton();
@@ -167,14 +166,14 @@
             // 
             // neueVokabeldateiToolStripMenuItem
             // 
-            this.neueVokabeldateiToolStripMenuItem.Image = global::Vocup.icons.blank_file;
+            this.neueVokabeldateiToolStripMenuItem.Image = global::Vocup.Properties.Icons.blank_file;
             this.neueVokabeldateiToolStripMenuItem.Name = "neueVokabeldateiToolStripMenuItem";
             resources.ApplyResources(this.neueVokabeldateiToolStripMenuItem, "neueVokabeldateiToolStripMenuItem");
             this.neueVokabeldateiToolStripMenuItem.Click += new System.EventHandler(this.neueVocabeldateiToolStripMenuItem_Click);
             // 
             // vokabelheftToolStripMenuItem
             // 
-            this.vokabelheftToolStripMenuItem.Image = global::Vocup.icons.open;
+            this.vokabelheftToolStripMenuItem.Image = global::Vocup.Properties.Icons.open;
             this.vokabelheftToolStripMenuItem.Name = "vokabelheftToolStripMenuItem";
             resources.ApplyResources(this.vokabelheftToolStripMenuItem, "vokabelheftToolStripMenuItem");
             this.vokabelheftToolStripMenuItem.Click += new System.EventHandler(this.vokabelheftToolStripMenuItem_Click);
@@ -193,14 +192,14 @@
             // SpeichernToolStripMenuItem
             // 
             resources.ApplyResources(this.SpeichernToolStripMenuItem, "SpeichernToolStripMenuItem");
-            this.SpeichernToolStripMenuItem.Image = global::Vocup.icons.save;
+            this.SpeichernToolStripMenuItem.Image = global::Vocup.Properties.Icons.save;
             this.SpeichernToolStripMenuItem.Name = "SpeichernToolStripMenuItem";
             this.SpeichernToolStripMenuItem.Click += new System.EventHandler(this.SpeichernToolStripMenuItem_Click);
             // 
             // SpeichernUnterToolStripMenuItem
             // 
             resources.ApplyResources(this.SpeichernUnterToolStripMenuItem, "SpeichernUnterToolStripMenuItem");
-            this.SpeichernUnterToolStripMenuItem.Image = global::Vocup.icons.save;
+            this.SpeichernUnterToolStripMenuItem.Image = global::Vocup.Properties.Icons.save;
             this.SpeichernUnterToolStripMenuItem.Name = "SpeichernUnterToolStripMenuItem";
             this.SpeichernUnterToolStripMenuItem.Click += new System.EventHandler(this.SpeichernUnterToolStripMenuItem_Click);
             // 
@@ -211,7 +210,7 @@
             // 
             // importierenToolStripMenuItem
             // 
-            this.importierenToolStripMenuItem.Image = global::Vocup.icons.import;
+            this.importierenToolStripMenuItem.Image = global::Vocup.Properties.Icons.import;
             this.importierenToolStripMenuItem.Name = "importierenToolStripMenuItem";
             resources.ApplyResources(this.importierenToolStripMenuItem, "importierenToolStripMenuItem");
             this.importierenToolStripMenuItem.Click += new System.EventHandler(this.importierenToolStripMenuItem_Click);
@@ -219,7 +218,7 @@
             // exportierenToolStripMenuItem
             // 
             resources.ApplyResources(this.exportierenToolStripMenuItem, "exportierenToolStripMenuItem");
-            this.exportierenToolStripMenuItem.Image = global::Vocup.icons.export;
+            this.exportierenToolStripMenuItem.Image = global::Vocup.Properties.Icons.export;
             this.exportierenToolStripMenuItem.Name = "exportierenToolStripMenuItem";
             this.exportierenToolStripMenuItem.Click += new System.EventHandler(this.exportierenToolStripMenuItem_Click);
             // 
@@ -231,7 +230,7 @@
             // vokabelheftSendenToolStripMenuItem
             // 
             resources.ApplyResources(this.vokabelheftSendenToolStripMenuItem, "vokabelheftSendenToolStripMenuItem");
-            this.vokabelheftSendenToolStripMenuItem.Image = global::Vocup.icons.email_go;
+            this.vokabelheftSendenToolStripMenuItem.Image = global::Vocup.Properties.Icons.email_go;
             this.vokabelheftSendenToolStripMenuItem.Name = "vokabelheftSendenToolStripMenuItem";
             this.vokabelheftSendenToolStripMenuItem.Click += new System.EventHandler(this.vokabelheftSendenToolStripMenuItem_Click);
             // 
@@ -243,7 +242,7 @@
             // druckenToolStripMenuItem
             // 
             resources.ApplyResources(this.druckenToolStripMenuItem, "druckenToolStripMenuItem");
-            this.druckenToolStripMenuItem.Image = global::Vocup.icons.print;
+            this.druckenToolStripMenuItem.Image = global::Vocup.Properties.Icons.print;
             this.druckenToolStripMenuItem.Name = "druckenToolStripMenuItem";
             this.druckenToolStripMenuItem.Click += new System.EventHandler(this.druckenToolStripMenuItem_Click);
             // 
@@ -257,20 +256,20 @@
             this.datensicherungToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.datensicherungErstellenToolStripMenuItem,
             this.datensicherungWiederherstellenToolStripMenuItem});
-            this.datensicherungToolStripMenuItem.Image = global::Vocup.icons.backup;
+            this.datensicherungToolStripMenuItem.Image = global::Vocup.Properties.Icons.backup;
             this.datensicherungToolStripMenuItem.Name = "datensicherungToolStripMenuItem";
             resources.ApplyResources(this.datensicherungToolStripMenuItem, "datensicherungToolStripMenuItem");
             // 
             // datensicherungErstellenToolStripMenuItem
             // 
-            this.datensicherungErstellenToolStripMenuItem.Image = global::Vocup.icons.backup_add;
+            this.datensicherungErstellenToolStripMenuItem.Image = global::Vocup.Properties.Icons.backup_add;
             this.datensicherungErstellenToolStripMenuItem.Name = "datensicherungErstellenToolStripMenuItem";
             resources.ApplyResources(this.datensicherungErstellenToolStripMenuItem, "datensicherungErstellenToolStripMenuItem");
             this.datensicherungErstellenToolStripMenuItem.Click += new System.EventHandler(this.datensicherungErstellenToolStripMenuItem_Click);
             // 
             // datensicherungWiederherstellenToolStripMenuItem
             // 
-            this.datensicherungWiederherstellenToolStripMenuItem.Image = global::Vocup.icons.backup_go;
+            this.datensicherungWiederherstellenToolStripMenuItem.Image = global::Vocup.Properties.Icons.backup_go;
             this.datensicherungWiederherstellenToolStripMenuItem.Name = "datensicherungWiederherstellenToolStripMenuItem";
             resources.ApplyResources(this.datensicherungWiederherstellenToolStripMenuItem, "datensicherungWiederherstellenToolStripMenuItem");
             this.datensicherungWiederherstellenToolStripMenuItem.Click += new System.EventHandler(this.datensicherungWiederherstellenToolStripMenuItem_Click);
@@ -282,7 +281,7 @@
             // 
             // beendenToolStripMenuItem
             // 
-            this.beendenToolStripMenuItem.Image = global::Vocup.icons.quit;
+            this.beendenToolStripMenuItem.Image = global::Vocup.Properties.Icons.quit;
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
             resources.ApplyResources(this.beendenToolStripMenuItem, "beendenToolStripMenuItem");
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
@@ -299,21 +298,21 @@
             // neueVokabelHinzufügenToolStripMenuItem
             // 
             resources.ApplyResources(this.neueVokabelHinzufügenToolStripMenuItem, "neueVokabelHinzufügenToolStripMenuItem");
-            this.neueVokabelHinzufügenToolStripMenuItem.Image = global::Vocup.icons.add;
+            this.neueVokabelHinzufügenToolStripMenuItem.Image = global::Vocup.Properties.Icons.add;
             this.neueVokabelHinzufügenToolStripMenuItem.Name = "neueVokabelHinzufügenToolStripMenuItem";
             this.neueVokabelHinzufügenToolStripMenuItem.Click += new System.EventHandler(this.neueVokabelHinzufügenToolStripMenuItem_Click);
             // 
             // vokabelBearbeitenToolStripMenuItem
             // 
             resources.ApplyResources(this.vokabelBearbeitenToolStripMenuItem, "vokabelBearbeitenToolStripMenuItem");
-            this.vokabelBearbeitenToolStripMenuItem.Image = global::Vocup.icons.edit;
+            this.vokabelBearbeitenToolStripMenuItem.Image = global::Vocup.Properties.Icons.edit;
             this.vokabelBearbeitenToolStripMenuItem.Name = "vokabelBearbeitenToolStripMenuItem";
             this.vokabelBearbeitenToolStripMenuItem.Click += new System.EventHandler(this.vokabelBearbeitenToolStripMenuItem_Click);
             // 
             // vokabelLöschenToolStripMenuItem
             // 
             resources.ApplyResources(this.vokabelLöschenToolStripMenuItem, "vokabelLöschenToolStripMenuItem");
-            this.vokabelLöschenToolStripMenuItem.Image = global::Vocup.icons.delete;
+            this.vokabelLöschenToolStripMenuItem.Image = global::Vocup.Properties.Icons.delete;
             this.vokabelLöschenToolStripMenuItem.Name = "vokabelLöschenToolStripMenuItem";
             this.vokabelLöschenToolStripMenuItem.Click += new System.EventHandler(this.vokabelLöschenToolStripMenuItem_Click);
             // 
@@ -334,14 +333,14 @@
             // vokabelnÜbenToolStripMenuItem
             // 
             resources.ApplyResources(this.vokabelnÜbenToolStripMenuItem, "vokabelnÜbenToolStripMenuItem");
-            this.vokabelnÜbenToolStripMenuItem.Image = global::Vocup.icons.practise;
+            this.vokabelnÜbenToolStripMenuItem.Image = global::Vocup.Properties.Icons.practise;
             this.vokabelnÜbenToolStripMenuItem.Name = "vokabelnÜbenToolStripMenuItem";
             this.vokabelnÜbenToolStripMenuItem.Click += new System.EventHandler(this.vokabelnÜbenToolStripMenuItem_Click);
             // 
             // vokabelheftOptionenToolStripMenuItem
             // 
             resources.ApplyResources(this.vokabelheftOptionenToolStripMenuItem, "vokabelheftOptionenToolStripMenuItem");
-            this.vokabelheftOptionenToolStripMenuItem.Image = global::Vocup.icons.settings_file;
+            this.vokabelheftOptionenToolStripMenuItem.Image = global::Vocup.Properties.Icons.settings_file;
             this.vokabelheftOptionenToolStripMenuItem.Name = "vokabelheftOptionenToolStripMenuItem";
             this.vokabelheftOptionenToolStripMenuItem.Click += new System.EventHandler(this.vokabelheftOptionenToolStripMenuItem_Click);
             // 
@@ -352,7 +351,7 @@
             // 
             // vokabelhefteZusammenführenToolStripMenuItem
             // 
-            this.vokabelhefteZusammenführenToolStripMenuItem.Image = global::Vocup.icons.merge;
+            this.vokabelhefteZusammenführenToolStripMenuItem.Image = global::Vocup.Properties.Icons.merge;
             this.vokabelhefteZusammenführenToolStripMenuItem.Name = "vokabelhefteZusammenführenToolStripMenuItem";
             resources.ApplyResources(this.vokabelhefteZusammenführenToolStripMenuItem, "vokabelhefteZusammenführenToolStripMenuItem");
             this.vokabelhefteZusammenführenToolStripMenuItem.Click += new System.EventHandler(this.vokabelhefteZusammenführenToolStripMenuItem_Click);
@@ -364,7 +363,7 @@
             // 
             // sonderzeichenVerwaltenToolStripMenuItem
             // 
-            this.sonderzeichenVerwaltenToolStripMenuItem.Image = global::Vocup.icons.character;
+            this.sonderzeichenVerwaltenToolStripMenuItem.Image = global::Vocup.Properties.Icons.character;
             this.sonderzeichenVerwaltenToolStripMenuItem.Name = "sonderzeichenVerwaltenToolStripMenuItem";
             resources.ApplyResources(this.sonderzeichenVerwaltenToolStripMenuItem, "sonderzeichenVerwaltenToolStripMenuItem");
             this.sonderzeichenVerwaltenToolStripMenuItem.Click += new System.EventHandler(this.sonderzeichenVerwaltenToolStripMenuItem_Click);
@@ -376,7 +375,7 @@
             // 
             // optionenToolStripMenuItem
             // 
-            this.optionenToolStripMenuItem.Image = global::Vocup.icons.settings;
+            this.optionenToolStripMenuItem.Image = global::Vocup.Properties.Icons.settings;
             this.optionenToolStripMenuItem.Name = "optionenToolStripMenuItem";
             resources.ApplyResources(this.optionenToolStripMenuItem, "optionenToolStripMenuItem");
             this.optionenToolStripMenuItem.Click += new System.EventHandler(this.optionenToolStripMenuItem_Click);
@@ -389,21 +388,20 @@
             this.toolStripMenuItem8,
             this.nachUpdatesToolStripMenuItem,
             this.infoToolStripMenuItem,
-            this.spendenToolStripMenuItem,
             this.ÜberVTrainingToolStripMenuItem});
             this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
             resources.ApplyResources(this.hilfeToolStripMenuItem, "hilfeToolStripMenuItem");
             // 
             // hilfeToolStripMenuItem1
             // 
-            this.hilfeToolStripMenuItem1.Image = global::Vocup.icons.question_mark;
+            this.hilfeToolStripMenuItem1.Image = global::Vocup.Properties.Icons.question_mark;
             this.hilfeToolStripMenuItem1.Name = "hilfeToolStripMenuItem1";
             resources.ApplyResources(this.hilfeToolStripMenuItem1, "hilfeToolStripMenuItem1");
             this.hilfeToolStripMenuItem1.Click += new System.EventHandler(this.hilfeToolStripMenuItem1_Click);
             // 
             // infosZurBewertungToolStripMenuItem
             // 
-            this.infosZurBewertungToolStripMenuItem.Image = global::Vocup.icons.info;
+            this.infosZurBewertungToolStripMenuItem.Image = global::Vocup.Properties.Icons.info;
             this.infosZurBewertungToolStripMenuItem.Name = "infosZurBewertungToolStripMenuItem";
             resources.ApplyResources(this.infosZurBewertungToolStripMenuItem, "infosZurBewertungToolStripMenuItem");
             this.infosZurBewertungToolStripMenuItem.Click += new System.EventHandler(this.infosZurBewertungToolStripMenuItem_Click);
@@ -415,7 +413,7 @@
             // 
             // nachUpdatesToolStripMenuItem
             // 
-            this.nachUpdatesToolStripMenuItem.Image = global::Vocup.icons.update;
+            this.nachUpdatesToolStripMenuItem.Image = global::Vocup.Properties.Icons.update;
             this.nachUpdatesToolStripMenuItem.Name = "nachUpdatesToolStripMenuItem";
             resources.ApplyResources(this.nachUpdatesToolStripMenuItem, "nachUpdatesToolStripMenuItem");
             this.nachUpdatesToolStripMenuItem.Click += new System.EventHandler(this.nachUpdatesToolStripMenuItem_Click);
@@ -425,16 +423,9 @@
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
             resources.ApplyResources(this.infoToolStripMenuItem, "infoToolStripMenuItem");
             // 
-            // spendenToolStripMenuItem
-            // 
-            this.spendenToolStripMenuItem.Image = global::Vocup.icons.heart;
-            this.spendenToolStripMenuItem.Name = "spendenToolStripMenuItem";
-            resources.ApplyResources(this.spendenToolStripMenuItem, "spendenToolStripMenuItem");
-            this.spendenToolStripMenuItem.Click += new System.EventHandler(this.spendenToolStripMenuItem_Click);
-            // 
             // ÜberVTrainingToolStripMenuItem
             // 
-            this.ÜberVTrainingToolStripMenuItem.Image = global::Vocup.icons.info;
+            this.ÜberVTrainingToolStripMenuItem.Image = global::Vocup.Properties.Icons.info;
             this.ÜberVTrainingToolStripMenuItem.Name = "ÜberVTrainingToolStripMenuItem";
             resources.ApplyResources(this.ÜberVTrainingToolStripMenuItem, "ÜberVTrainingToolStripMenuItem");
             this.ÜberVTrainingToolStripMenuItem.Click += new System.EventHandler(this.infoÜberVTrainingToolStripMenuItem_Click);
@@ -456,7 +447,7 @@
             // new_vokabelheft
             // 
             this.new_vokabelheft.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.new_vokabelheft.Image = global::Vocup.icons.blank_file;
+            this.new_vokabelheft.Image = global::Vocup.Properties.Icons.blank_file;
             resources.ApplyResources(this.new_vokabelheft, "new_vokabelheft");
             this.new_vokabelheft.Name = "new_vokabelheft";
             this.new_vokabelheft.Click += new System.EventHandler(this.new_vokabelheft_Click);
@@ -464,7 +455,7 @@
             // open_vokabelheft
             // 
             this.open_vokabelheft.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.open_vokabelheft.Image = global::Vocup.icons.open;
+            this.open_vokabelheft.Image = global::Vocup.Properties.Icons.open;
             resources.ApplyResources(this.open_vokabelheft, "open_vokabelheft");
             this.open_vokabelheft.Name = "open_vokabelheft";
             this.open_vokabelheft.Click += new System.EventHandler(this.open_vokabelheft_Click);
@@ -473,7 +464,7 @@
             // 
             this.save_vokabelheft.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.save_vokabelheft, "save_vokabelheft");
-            this.save_vokabelheft.Image = global::Vocup.icons.save;
+            this.save_vokabelheft.Image = global::Vocup.Properties.Icons.save;
             this.save_vokabelheft.Name = "save_vokabelheft";
             this.save_vokabelheft.Click += new System.EventHandler(this.save_vokabelheft_Click);
             // 
@@ -486,7 +477,7 @@
             // 
             this.print_vokabelheft.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.print_vokabelheft, "print_vokabelheft");
-            this.print_vokabelheft.Image = global::Vocup.icons.print;
+            this.print_vokabelheft.Image = global::Vocup.Properties.Icons.print;
             this.print_vokabelheft.Name = "print_vokabelheft";
             this.print_vokabelheft.Click += new System.EventHandler(this.print_vokabelheft_Click);
             // 
@@ -494,7 +485,7 @@
             // 
             this.infos.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.infos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.infos.Image = global::Vocup.icons.info;
+            this.infos.Image = global::Vocup.Properties.Icons.info;
             resources.ApplyResources(this.infos, "infos");
             this.infos.Name = "infos";
             this.infos.Click += new System.EventHandler(this.infos_Click);
@@ -522,7 +513,7 @@
             // 
             // vokabelheft_optionen
             // 
-            this.vokabelheft_optionen.Image = global::Vocup.icons.settings_file;
+            this.vokabelheft_optionen.Image = global::Vocup.Properties.Icons.settings_file;
             resources.ApplyResources(this.vokabelheft_optionen, "vokabelheft_optionen");
             this.vokabelheft_optionen.Name = "vokabelheft_optionen";
             this.vokabelheft_optionen.UseVisualStyleBackColor = true;
@@ -530,7 +521,7 @@
             // 
             // practice_vokabelheft
             // 
-            this.practice_vokabelheft.Image = global::Vocup.icons.practise;
+            this.practice_vokabelheft.Image = global::Vocup.Properties.Icons.practise;
             resources.ApplyResources(this.practice_vokabelheft, "practice_vokabelheft");
             this.practice_vokabelheft.Name = "practice_vokabelheft";
             this.practice_vokabelheft.UseVisualStyleBackColor = true;
@@ -547,7 +538,7 @@
             // search_vokabel_button
             // 
             resources.ApplyResources(this.search_vokabel_button, "search_vokabel_button");
-            this.search_vokabel_button.Image = global::Vocup.icons.search;
+            this.search_vokabel_button.Image = global::Vocup.Properties.Icons.search;
             this.search_vokabel_button.Name = "search_vokabel_button";
             this.search_vokabel_button.UseVisualStyleBackColor = true;
             this.search_vokabel_button.Click += new System.EventHandler(this.search_vokabel_button_Click);
@@ -563,7 +554,7 @@
             // 
             // insert_vokabel
             // 
-            this.insert_vokabel.Image = global::Vocup.icons.add;
+            this.insert_vokabel.Image = global::Vocup.Properties.Icons.add;
             resources.ApplyResources(this.insert_vokabel, "insert_vokabel");
             this.insert_vokabel.Name = "insert_vokabel";
             this.insert_vokabel.UseVisualStyleBackColor = true;
@@ -572,7 +563,7 @@
             // delet_vokabel
             // 
             resources.ApplyResources(this.delet_vokabel, "delet_vokabel");
-            this.delet_vokabel.Image = global::Vocup.icons.delete;
+            this.delet_vokabel.Image = global::Vocup.Properties.Icons.delete;
             this.delet_vokabel.Name = "delet_vokabel";
             this.delet_vokabel.UseVisualStyleBackColor = true;
             this.delet_vokabel.Click += new System.EventHandler(this.delet_vokabel_Click);
@@ -580,7 +571,7 @@
             // edit_vokabel
             // 
             resources.ApplyResources(this.edit_vokabel, "edit_vokabel");
-            this.edit_vokabel.Image = global::Vocup.icons.edit;
+            this.edit_vokabel.Image = global::Vocup.Properties.Icons.edit;
             this.edit_vokabel.Name = "edit_vokabel";
             this.edit_vokabel.UseVisualStyleBackColor = true;
             this.edit_vokabel.Click += new System.EventHandler(this.edit_vokabel_Click);
@@ -701,28 +692,28 @@
             // 
             // _2
             // 
-            this._2.Image = global::Vocup.icons.richtig_geübt;
+            this._2.Image = global::Vocup.Properties.Icons.richtig_geübt;
             resources.ApplyResources(this._2, "_2");
             this._2.Name = "_2";
             this._2.TabStop = false;
             // 
             // _3
             // 
-            this._3.Image = global::Vocup.icons.übung_abgeschlossen;
+            this._3.Image = global::Vocup.Properties.Icons.übung_abgeschlossen;
             resources.ApplyResources(this._3, "_3");
             this._3.Name = "_3";
             this._3.TabStop = false;
             // 
             // _0
             // 
-            this._0.Image = global::Vocup.icons.noch_nicht_geübt;
+            this._0.Image = global::Vocup.Properties.Icons.noch_nicht_geübt;
             resources.ApplyResources(this._0, "_0");
             this._0.Name = "_0";
             this._0.TabStop = false;
             // 
             // _1
             // 
-            this._1.Image = global::Vocup.icons.falsch_geübt;
+            this._1.Image = global::Vocup.Properties.Icons.falsch_geübt;
             resources.ApplyResources(this._1, "_1");
             this._1.Name = "_1";
             this._1.TabStop = false;
@@ -898,7 +889,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem vokabelheftSchliessenToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem11;
-        private System.Windows.Forms.ToolStripMenuItem spendenToolStripMenuItem;
         private System.Drawing.Printing.PrintDocument printDocument_cards;
         private System.Drawing.Printing.PrintDocument printDocument_list;
         private System.Windows.Forms.ToolStripMenuItem infosZurBewertungToolStripMenuItem;

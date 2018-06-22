@@ -151,28 +151,28 @@ korrekt auszudrucken.</value>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="anzahl_seiten_field.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LbPaperCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>134, 48</value>
   </data>
-  <data name="anzahl_seiten_field.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LbPaperCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 20</value>
   </data>
-  <data name="anzahl_seiten_field.TabIndex" type="System.Int32, mscorlib">
+  <data name="LbPaperCount.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="anzahl_seiten_field.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+  <data name="LbPaperCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <data name="&gt;&gt;anzahl_seiten_field.Name" xml:space="preserve">
-    <value>anzahl_seiten_field</value>
+  <data name="&gt;&gt;LbPaperCount.Name" xml:space="preserve">
+    <value>LbPaperCount</value>
   </data>
-  <data name="&gt;&gt;anzahl_seiten_field.Type" xml:space="preserve">
+  <data name="&gt;&gt;LbPaperCount.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;anzahl_seiten_field.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LbPaperCount.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="&gt;&gt;anzahl_seiten_field.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LbPaperCount.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
@@ -290,34 +290,34 @@ Ihres Druckers.</value>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="print_foreside.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="BtnPrintForeside.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="print_foreside.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="BtnPrintForeside.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="print_foreside.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="BtnPrintForeside.Location" type="System.Drawing.Point, System.Drawing">
     <value>151, 11</value>
   </data>
-  <data name="print_foreside.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BtnPrintForeside.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 23</value>
   </data>
-  <data name="print_foreside.TabIndex" type="System.Int32, mscorlib">
+  <data name="BtnPrintForeside.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="print_foreside.Text" xml:space="preserve">
+  <data name="BtnPrintForeside.Text" xml:space="preserve">
     <value>Drucken</value>
   </data>
-  <data name="&gt;&gt;print_foreside.Name" xml:space="preserve">
-    <value>print_foreside</value>
+  <data name="&gt;&gt;BtnPrintForeside.Name" xml:space="preserve">
+    <value>BtnPrintForeside</value>
   </data>
-  <data name="&gt;&gt;print_foreside.Type" xml:space="preserve">
+  <data name="&gt;&gt;BtnPrintForeside.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;print_foreside.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BtnPrintForeside.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
-  <data name="&gt;&gt;print_foreside.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BtnPrintForeside.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
@@ -467,34 +467,34 @@ betreffenden Vokabeln nochmals ausdrucken.</value>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="print_backside.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="BtnPrintBackside.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="print_backside.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="BtnPrintBackside.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="print_backside.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="BtnPrintBackside.Location" type="System.Drawing.Point, System.Drawing">
     <value>152, 11</value>
   </data>
-  <data name="print_backside.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BtnPrintBackside.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 23</value>
   </data>
-  <data name="print_backside.TabIndex" type="System.Int32, mscorlib">
+  <data name="BtnPrintBackside.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="print_backside.Text" xml:space="preserve">
+  <data name="BtnPrintBackside.Text" xml:space="preserve">
     <value>Drucken</value>
   </data>
-  <data name="&gt;&gt;print_backside.Name" xml:space="preserve">
-    <value>print_backside</value>
+  <data name="&gt;&gt;BtnPrintBackside.Name" xml:space="preserve">
+    <value>BtnPrintBackside</value>
   </data>
-  <data name="&gt;&gt;print_backside.Type" xml:space="preserve">
+  <data name="&gt;&gt;BtnPrintBackside.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;print_backside.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BtnPrintBackside.Parent" xml:space="preserve">
     <value>groupBox5</value>
   </data>
-  <data name="&gt;&gt;print_backside.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BtnPrintBackside.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
@@ -545,58 +545,58 @@ betreffenden Vokabeln nochmals ausdrucken.</value>
   <data name="&gt;&gt;groupBox6.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="radioButton_hinten.AutoSize" type="System.Boolean, mscorlib">
+  <data name="RbRearSide.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="radioButton_hinten.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="RbRearSide.Location" type="System.Drawing.Point, System.Drawing">
     <value>69, 32</value>
   </data>
-  <data name="radioButton_hinten.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="RbRearSide.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 17</value>
   </data>
-  <data name="radioButton_hinten.TabIndex" type="System.Int32, mscorlib">
+  <data name="RbRearSide.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="radioButton_hinten.Text" xml:space="preserve">
+  <data name="RbRearSide.Text" xml:space="preserve">
     <value>Hinten</value>
   </data>
-  <data name="&gt;&gt;radioButton_hinten.Name" xml:space="preserve">
-    <value>radioButton_hinten</value>
+  <data name="&gt;&gt;RbRearSide.Name" xml:space="preserve">
+    <value>RbRearSide</value>
   </data>
-  <data name="&gt;&gt;radioButton_hinten.Type" xml:space="preserve">
+  <data name="&gt;&gt;RbRearSide.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;radioButton_hinten.Parent" xml:space="preserve">
+  <data name="&gt;&gt;RbRearSide.Parent" xml:space="preserve">
     <value>groupBox4</value>
   </data>
-  <data name="&gt;&gt;radioButton_hinten.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;RbRearSide.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="radioButton_vorne.AutoSize" type="System.Boolean, mscorlib">
+  <data name="RbFrontSide.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="radioButton_vorne.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="RbFrontSide.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 32</value>
   </data>
-  <data name="radioButton_vorne.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="RbFrontSide.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 17</value>
   </data>
-  <data name="radioButton_vorne.TabIndex" type="System.Int32, mscorlib">
+  <data name="RbFrontSide.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="radioButton_vorne.Text" xml:space="preserve">
+  <data name="RbFrontSide.Text" xml:space="preserve">
     <value>Vorne</value>
   </data>
-  <data name="&gt;&gt;radioButton_vorne.Name" xml:space="preserve">
-    <value>radioButton_vorne</value>
+  <data name="&gt;&gt;RbFrontSide.Name" xml:space="preserve">
+    <value>RbFrontSide</value>
   </data>
-  <data name="&gt;&gt;radioButton_vorne.Type" xml:space="preserve">
+  <data name="&gt;&gt;RbFrontSide.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;radioButton_vorne.Parent" xml:space="preserve">
+  <data name="&gt;&gt;RbFrontSide.Parent" xml:space="preserve">
     <value>groupBox4</value>
   </data>
-  <data name="&gt;&gt;radioButton_vorne.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;RbFrontSide.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
@@ -663,7 +663,7 @@ betreffenden Vokabeln nochmals ausdrucken.</value>
     <value>Kärtchen drucken</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>print_cards</value>
+    <value>PrintCardsDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

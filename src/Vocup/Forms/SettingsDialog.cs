@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Vocup.Properties;
 
 namespace Vocup
 {
     public partial class SettingsDialog : Form
     {
-        private Properties.Settings settings;
+        private Settings settings;
 
         public SettingsDialog()
         {
             InitializeComponent();
-            Icon = Icon.FromHandle(icons.settings.GetHicon());
-            settings = Properties.Settings.Default;
+            Icon = Icon.FromHandle(Icons.settings.GetHicon());
+            settings = Settings.Default;
         }
 
         private void SettingsDialog_Load(object sender, EventArgs e)

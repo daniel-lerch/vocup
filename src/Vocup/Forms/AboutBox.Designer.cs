@@ -50,21 +50,11 @@
             this.software_version = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lizenz = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.url = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.spenden = new System.Windows.Forms.TabPage();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.spende_text = new System.Windows.Forms.Label();
-            this.spende_titel = new System.Windows.Forms.Label();
-            this.spender = new System.Windows.Forms.LinkLabel();
-            this.waehrung = new System.Windows.Forms.ComboBox();
-            this.spende_button = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.info.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.komp.SuspendLayout();
-            this.spenden.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spende_button)).BeginInit();
             this.SuspendLayout();
             // 
             // LbOS
@@ -153,7 +143,6 @@
             // 
             this.tabControl.Controls.Add(this.info);
             this.tabControl.Controls.Add(this.komp);
-            this.tabControl.Controls.Add(this.spenden);
             resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -214,62 +203,6 @@
             // 
             resources.ApplyResources(this.url, "url");
             // 
-            // spenden
-            // 
-            this.spenden.BackColor = System.Drawing.Color.White;
-            this.spenden.Controls.Add(this.pictureBox2);
-            this.spenden.Controls.Add(this.spende_text);
-            this.spenden.Controls.Add(this.spende_titel);
-            this.spenden.Controls.Add(this.spender);
-            this.spenden.Controls.Add(this.waehrung);
-            this.spenden.Controls.Add(this.spende_button);
-            resources.ApplyResources(this.spenden, "spenden");
-            this.spenden.Name = "spenden";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Vocup.icons.heart;
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
-            // 
-            // spende_text
-            // 
-            resources.ApplyResources(this.spende_text, "spende_text");
-            this.spende_text.Name = "spende_text";
-            // 
-            // spende_titel
-            // 
-            resources.ApplyResources(this.spende_titel, "spende_titel");
-            this.spende_titel.Name = "spende_titel";
-            // 
-            // spender
-            // 
-            resources.ApplyResources(this.spender, "spender");
-            this.spender.Name = "spender";
-            this.spender.TabStop = true;
-            this.spender.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.spender_LinkClicked);
-            // 
-            // waehrung
-            // 
-            this.waehrung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.waehrung.FormattingEnabled = true;
-            this.waehrung.Items.AddRange(new object[] {
-            resources.GetString("waehrung.Items"),
-            resources.GetString("waehrung.Items1"),
-            resources.GetString("waehrung.Items2")});
-            resources.ApplyResources(this.waehrung, "waehrung");
-            this.waehrung.Name = "waehrung";
-            // 
-            // spende_button
-            // 
-            this.spende_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.spende_button.Image = global::Vocup.icons.btn_donate_LG;
-            resources.ApplyResources(this.spende_button, "spende_button");
-            this.spende_button.Name = "spende_button";
-            this.spende_button.TabStop = false;
-            this.spende_button.Click += new System.EventHandler(this.spende_button_Click);
-            // 
             // AboutBox
             // 
             this.AcceptButton = this.BtnOK;
@@ -292,10 +225,6 @@
             this.info.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.komp.ResumeLayout(false);
-            this.spenden.ResumeLayout(false);
-            this.spenden.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spende_button)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,18 +248,11 @@
         private System.Windows.Forms.TabPage info;
         private System.Windows.Forms.PictureBox pictureBox1;
         public  System.Windows.Forms.TabPage komp;
-        public  System.Windows.Forms.TabPage spenden;
         public  System.Windows.Forms.ListView komponenten;
         private System.Windows.Forms.ColumnHeader name;
         private System.Windows.Forms.ColumnHeader software_version;
         private System.Windows.Forms.ColumnHeader lizenz;
         private System.Windows.Forms.ColumnHeader url;
-        private System.Windows.Forms.PictureBox spende_button;
-        private System.Windows.Forms.ComboBox waehrung;
-        private System.Windows.Forms.LinkLabel spender;
-        private System.Windows.Forms.Label spende_titel;
-        private System.Windows.Forms.Label spende_text;
-        private System.Windows.Forms.PictureBox pictureBox2;
 
     }
 }

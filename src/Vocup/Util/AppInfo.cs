@@ -34,9 +34,9 @@ namespace Vocup.Util
             return version;
         }
 
-        public static Version GetFileVersion()
-        {
-            return new Version(1, 0);
-        }
+        public static Version FileVersion => new Version(1, 0);
+
+        public static string CopyrightInfo 
+            => Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyCopyrightAttribute>()?.Copyright;
     }
 }

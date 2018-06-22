@@ -9,7 +9,7 @@ using System.IO;
 using System.Collections;
 using ICSharpCode.SharpZipLib.Zip;
 using ICSharpCode.SharpZipLib.Core;
-
+using Vocup.Properties;
 
 namespace Vocup
 {
@@ -18,7 +18,7 @@ namespace Vocup
         public backup_restore()
         {
             InitializeComponent();
-            Icon = Icon.FromHandle(icons.backup_go.GetHicon());
+            Icon = Icon.FromHandle(Icons.backup_go.GetHicon());
         }
 
         public string path_backup;
@@ -48,10 +48,9 @@ namespace Vocup
             OpenFileDialog open = new OpenFileDialog();
 
             open.Title = Properties.language.restore_backup;
+            open.Filter = Properties.language.backup + " (*.vdp)|*.vdp";
 
-
-
-            if (Properties.Settings.Default.backup_folder == "" || Properties.Settings.Default.backup_folder == null)
+            if (string.IsNullOrWhiteSpace(Settings.Default.backup_folder))
             {
                 open.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             }
@@ -64,9 +63,6 @@ namespace Vocup
                     open.InitialDirectory = Properties.Settings.Default.backup_folder;
                 }
             }
-
-
-            open.Filter = Properties.language.backup + " (*.vdp)|*.vdp";
 
             if (open.ShowDialog() == DialogResult.OK)
             {
@@ -405,7 +401,6 @@ namespace Vocup
 
                     AcceptButton = path_button;
                 }
-
             }
             else
             {
@@ -427,7 +422,6 @@ namespace Vocup
         {
             for (int i = 0; i < listbox_vhf.Items.Count; i++)
             {
-
                 //Sucht im Log-Array nach dem richtigen Eintrag
                 string new_text = "";
 
@@ -435,7 +429,6 @@ namespace Vocup
                 {
                     if (Convert.ToInt32(vhf_vhr_log[j, 3]) == i)
                     {
-
                         if (exact_path.Checked == true)
                         {
                             new_text = vhf_vhr_log[j, 1];
@@ -445,7 +438,6 @@ namespace Vocup
                             new_text = Path.GetFileNameWithoutExtension(vhf_vhr_log[j, 1]);
                         }
                         break;
-
                     }
                 }
 
@@ -527,7 +519,6 @@ namespace Vocup
             {
                 restore_button.Enabled = false;
             }
-
         }
 
 

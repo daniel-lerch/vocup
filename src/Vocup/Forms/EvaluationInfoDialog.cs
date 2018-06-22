@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Vocup.Properties;
 
 namespace Vocup.Forms
 {
@@ -13,7 +14,7 @@ namespace Vocup.Forms
         public EvaluationInfoDialog()
         {
             InitializeComponent();
-            Icon = Icon.FromHandle(icons.info.GetHicon());
+            Icon = Icon.FromHandle(Icons.info.GetHicon());
         }
     }
 }

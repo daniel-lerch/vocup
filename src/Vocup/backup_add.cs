@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using Vocup.Properties;
 
 namespace Vocup
 {
@@ -12,7 +13,7 @@ namespace Vocup
         public backup_add()
         {
             InitializeComponent();
-            Icon = Icon.FromHandle(icons.backup_add.GetHicon());
+            Icon = Icon.FromHandle(Icons.backup_add.GetHicon());
         }
 
         public string pfad;

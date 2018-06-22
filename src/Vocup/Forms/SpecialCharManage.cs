@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Vocup.Properties;
 using Vocup.Util;
 
 namespace Vocup.Forms
@@ -18,7 +19,7 @@ namespace Vocup.Forms
         public SpecialCharManage()
         {
             InitializeComponent();
-            Icon = Icon.FromHandle(icons.character.GetHicon());
+            Icon = Icon.FromHandle(Icons.character.GetHicon());
         }
 
         //Laden

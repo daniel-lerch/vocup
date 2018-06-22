@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SplashScreen));
             this.LbCopyright = new System.Windows.Forms.Label();
             this.PbLogo = new System.Windows.Forms.PictureBox();
             this.PbTitle = new System.Windows.Forms.PictureBox();
@@ -44,13 +43,14 @@
             this.LbCopyright.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.LbCopyright.Location = new System.Drawing.Point(12, 178);
             this.LbCopyright.Name = "LbCopyright";
-            this.LbCopyright.Size = new System.Drawing.Size(266, 13);
+            this.LbCopyright.Size = new System.Drawing.Size(67, 13);
             this.LbCopyright.TabIndex = 0;
-            this.LbCopyright.Text = "© Copyright 2011 Florian Amstutz. All Rights Reserved.";
+            this.LbCopyright.Text = "%Copyright%";
             // 
             // PbLogo
             // 
-            this.PbLogo.Image = global::Vocup.icons.icon_rand_grau_splash;
+            this.PbLogo.BackColor = System.Drawing.Color.Transparent;
+            this.PbLogo.Image = global::Vocup.Properties.Icons.logo_splash;
             this.PbLogo.Location = new System.Drawing.Point(57, 63);
             this.PbLogo.Name = "PbLogo";
             this.PbLogo.Size = new System.Drawing.Size(75, 75);
@@ -61,7 +61,7 @@
             // PbTitle
             // 
             this.PbTitle.BackColor = System.Drawing.Color.Transparent;
-            this.PbTitle.Image = global::Vocup.icons.logo;
+            this.PbTitle.Image = global::Vocup.Properties.Icons.logo;
             this.PbTitle.Location = new System.Drawing.Point(146, 60);
             this.PbTitle.Name = "PbTitle";
             this.PbTitle.Size = new System.Drawing.Size(248, 80);
@@ -76,18 +76,15 @@
             this.LbVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.LbVersion.Location = new System.Drawing.Point(370, 178);
             this.LbVersion.Name = "LbVersion";
-            this.LbVersion.Size = new System.Drawing.Size(48, 13);
+            this.LbVersion.Size = new System.Drawing.Size(62, 13);
             this.LbVersion.TabIndex = 1;
-            this.LbVersion.Text = "Version: ";
+            this.LbVersion.Text = "Version: {0}";
             this.LbVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // splashscreen
+            // SplashScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(450, 200);
             this.ControlBox = false;
             this.Controls.Add(this.LbVersion);
@@ -96,7 +93,7 @@
             this.Controls.Add(this.PbTitle);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "splashscreen";
+            this.Name = "SplashScreen";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
