@@ -48,7 +48,7 @@ namespace Vocup
         static void CreateVhfFolder(Properties.Settings settings)
         {
             string personal = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string folder = Path.Combine(personal, Properties.language.personal_directory); // default path
+            string folder = Path.Combine(personal, Properties.Words.VocabularyBooks); // default path
 
             if (string.IsNullOrWhiteSpace(settings.path_vhf) || settings.path_vhf.Equals(folder, StringComparison.OrdinalIgnoreCase))
             {

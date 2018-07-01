@@ -60,45 +60,45 @@ namespace Vocup
              */
 
 
-            if (own_language.Text != "" && cancel_button.Text == Properties.language.fertig)
+            if (own_language.Text != "" && cancel_button.Text == Properties.Words.Finish)
             {
-                cancel_button.Text = Properties.language.cancel;
+                cancel_button.Text = Properties.Words.Cancel;
                 cancel_button.TabIndex = 5;
                 ok_button.TabIndex = 0;
                 AcceptButton = ok_button;
             }
-            else if (own_language.Text == "" && cancel_button.Text != Properties.language.fertig && option_box.Enabled == false)
+            else if (own_language.Text == "" && cancel_button.Text != Properties.Words.Finish && option_box.Enabled == false)
             {
-                cancel_button.Text = Properties.language.fertig;
+                cancel_button.Text = Properties.Words.Finish;
                 cancel_button.TabIndex = 0;
                 AcceptButton = cancel_button;
             }
 
             //Falls Fertig, Abbrechen anzeigen
-            if (foreign_language.Text != "" && cancel_button.Text == Properties.language.fertig)
+            if (foreign_language.Text != "" && cancel_button.Text == Properties.Words.Finish)
             {
-                cancel_button.Text = Properties.language.cancel;
+                cancel_button.Text = Properties.Words.Cancel;
                 cancel_button.TabIndex = 5;
                 ok_button.TabIndex = 0;
                 AcceptButton = ok_button;
             }
-            else if (foreign_language.Text == "" && cancel_button.Text != Properties.language.fertig && option_box.Enabled == false)
+            else if (foreign_language.Text == "" && cancel_button.Text != Properties.Words.Finish && option_box.Enabled == false)
             {
-                cancel_button.Text = Properties.language.fertig;
+                cancel_button.Text = Properties.Words.Finish;
                 cancel_button.TabIndex = 0;
                 AcceptButton = cancel_button;
             }
 
             //Falls Fertig, Abbrechen anzeigen
-            if (foreign_language_2.Text != "" && cancel_button.Text == Properties.language.fertig)
+            if (foreign_language_2.Text != "" && cancel_button.Text == Properties.Words.Finish)
             {
-                cancel_button.Text = Properties.language.cancel;
+                cancel_button.Text = Properties.Words.Cancel;
                 cancel_button.TabIndex = 5;
                 AcceptButton = ok_button;
             }
-            else if (foreign_language_2.Text == "" && cancel_button.Text != Properties.language.fertig && option_box.Enabled == false)
+            else if (foreign_language_2.Text == "" && cancel_button.Text != Properties.Words.Finish && option_box.Enabled == false)
             {
-                cancel_button.Text = Properties.language.fertig;
+                cancel_button.Text = Properties.Words.Finish;
                 cancel_button.TabIndex = 0;
                 AcceptButton = cancel_button;
             }

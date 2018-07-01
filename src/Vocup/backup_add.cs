@@ -74,7 +74,7 @@ namespace Vocup
             {
                 listbox_vokabelhefte.Enabled = true;
                 add_vokabelheft_button.Enabled = true;
-                
+
             }
             else
             {
@@ -110,7 +110,7 @@ namespace Vocup
         private void alle_vokabelhefte_CheckedChanged(object sender, EventArgs e)
         {
             coordinater();
-            
+
             if (listbox_vokabelhefte.Items.Count == 0 && alle_vokabelhefte.Checked == false)
             {
                 gewaehlte_ergebnisse.Enabled = false;
@@ -160,15 +160,13 @@ namespace Vocup
         {
             //Neuer Öffnen-Dialog
 
-            OpenFileDialog add_file = new OpenFileDialog();
-            add_file.Title = Properties.language.add_title;
-            
-            //add_file.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\" + Properties.language.personal_directory;
-
-            add_file.InitialDirectory = Properties.Settings.Default.path_vhf;
-            
-            add_file.Filter = Properties.language.personal_directory + " (*.vhf)|*.vhf";
-            add_file.Multiselect = true;
+            OpenFileDialog add_file = new OpenFileDialog
+            {
+                Title = Words.AddVocabularyBooks,
+                InitialDirectory = Properties.Settings.Default.path_vhf,
+                Filter = Words.VocupVocabularyBookFile + " (*.vhf)|*.vhf",
+                Multiselect = true
+            };
 
             //Falls auf öffnen geklickt wurde
             if (add_file.ShowDialog() == DialogResult.OK)
@@ -211,7 +209,7 @@ namespace Vocup
             {
                 listbox_vokabelhefte.Items.Remove(listbox_vokabelhefte.SelectedItems[0]);
             }
-            
+
             //Buttons etc. deaktivieren, falls keine Items mehr vorhanden sind
             if (listbox_vokabelhefte.SelectedItems.Count < 1)
             {
@@ -271,37 +269,27 @@ namespace Vocup
             {
                 //Speichern-Dialog anzeigen
 
-                SaveFileDialog save = new SaveFileDialog();
-                save.Title = Properties.language.save_title_backup;
+                SaveFileDialog save = new SaveFileDialog
+                {
+                    Title = Words.SaveBackup,
+                    Filter = Words.VocupBackupFile + " (*.vdp)|*.vdp"
+                };
 
-                if (Properties.Settings.Default.backup_folder == "" || Properties.Settings.Default.backup_folder == null)
+                if (string.IsNullOrWhiteSpace(Properties.Settings.Default.backup_folder) ||
+                    !Directory.Exists(Properties.Settings.Default.backup_folder))
                 {
                     save.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
                 }
                 else
                 {
-                    DirectoryInfo info = new DirectoryInfo(Properties.Settings.Default.backup_folder);
-
-                    if (info.Exists == true)
-                    {
-                        save.InitialDirectory = Properties.Settings.Default.backup_folder;
-                    }
+                    save.InitialDirectory = Properties.Settings.Default.backup_folder;
                 }
-
-
-                save.Filter = Properties.language.backup + " (*.vdp)|*.vdp";
-
 
                 if (save.ShowDialog() == DialogResult.OK)
                 {
                     pfad = save.FileName;
-
-                    FileInfo get_folder_path = new FileInfo(save.FileName);
-
-                    Properties.Settings.Default.backup_folder = get_folder_path.DirectoryName;
-
+                    Properties.Settings.Default.backup_folder = new FileInfo(save.FileName).DirectoryName;
                     Properties.Settings.Default.Save();
-
                     DialogResult = DialogResult.OK;
                 }
             }

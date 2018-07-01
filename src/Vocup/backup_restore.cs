@@ -45,10 +45,11 @@ namespace Vocup
         {
             //Neuer Dialog erstellen
 
-            OpenFileDialog open = new OpenFileDialog();
-
-            open.Title = Properties.language.restore_backup;
-            open.Filter = Properties.language.backup + " (*.vdp)|*.vdp";
+            OpenFileDialog open = new OpenFileDialog
+            {
+                Title = Words.SaveBackup,
+                Filter = Words.VocupBackupFile + " (*.vdp)|*.vdp"
+            };
 
             if (string.IsNullOrWhiteSpace(Settings.Default.backup_folder))
             {

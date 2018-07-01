@@ -61,33 +61,6 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vokabelhefte hinzufügen.
-        /// </summary>
-        internal static string add_title {
-            get {
-                return ResourceManager.GetString("add_title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to und.
-        /// </summary>
-        internal static string and {
-            get {
-                return ResourceManager.GetString("and", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Vocup Backup-Datei.
-        /// </summary>
-        internal static string backup {
-            get {
-                return ResourceManager.GetString("backup", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Beim Importieren der Datei ist ein Fehler aufgetreten..
         /// </summary>
         internal static string can_not_import {
@@ -97,83 +70,11 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Abbrechen.
-        /// </summary>
-        internal static string cancel {
-            get {
-                return ResourceManager.GetString("cancel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Deutsch.
-        /// </summary>
-        internal static string de {
-            get {
-                return ResourceManager.GetString("de", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string error {
             get {
                 return ResourceManager.GetString("error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spanisch.
-        /// </summary>
-        internal static string es {
-            get {
-                return ResourceManager.GetString("es", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Exportieren.
-        /// </summary>
-        internal static string export {
-            get {
-                return ResourceManager.GetString("export", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fertig.
-        /// </summary>
-        internal static string fertig {
-            get {
-                return ResourceManager.GetString("fertig", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Beenden.
-        /// </summary>
-        internal static string finish {
-            get {
-                return ResourceManager.GetString("finish", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fremdsprache.
-        /// </summary>
-        internal static string foreign_language {
-            get {
-                return ResourceManager.GetString("foreign_language", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Französisch.
-        /// </summary>
-        internal static string fr {
-            get {
-                return ResourceManager.GetString("fr", resourceCulture);
             }
         }
         
@@ -192,33 +93,6 @@ namespace Vocup.Properties {
         internal static string have_to_save_mail {
             get {
                 return ResourceManager.GetString("have_to_save_mail", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Importieren.
-        /// </summary>
-        internal static string import {
-            get {
-                return ResourceManager.GetString("import", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Italienisch.
-        /// </summary>
-        internal static string it {
-            get {
-                return ResourceManager.GetString("it", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Zuletzt geübt am.
-        /// </summary>
-        internal static string last_practise {
-            get {
-                return ResourceManager.GetString("last_practise", resourceCulture);
             }
         }
         
@@ -470,87 +344,6 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to OK.
-        /// </summary>
-        internal static string ok {
-            get {
-                return ResourceManager.GetString("ok", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Vokabelheft öffnen.
-        /// </summary>
-        internal static string open_title {
-            get {
-                return ResourceManager.GetString("open_title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Muttersprache.
-        /// </summary>
-        internal static string own_language {
-            get {
-                return ResourceManager.GetString("own_language", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Vokabelhefte.
-        /// </summary>
-        internal static string personal_directory {
-            get {
-                return ResourceManager.GetString("personal_directory", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Falsch! (richtig wäre: .
-        /// </summary>
-        internal static string practise_false {
-            get {
-                return ResourceManager.GetString("practise_false", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Teilweise korrekt! (Richtig wäre: .
-        /// </summary>
-        internal static string practise_nearly_right {
-            get {
-                return ResourceManager.GetString("practise_nearly_right", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Korrekt!.
-        /// </summary>
-        internal static string practise_right {
-            get {
-                return ResourceManager.GetString("practise_right", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Datensicherung öffnen.
-        /// </summary>
-        internal static string restore_backup {
-            get {
-                return ResourceManager.GetString("restore_backup", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Rumänisch.
-        /// </summary>
-        internal static string ro {
-            get {
-                return ResourceManager.GetString("ro", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Möchten Sie das Vokabelheft speichern bevor sie fortfahren? Alle nicht gespeicherten Daten gehen verloren..
         /// </summary>
         internal static string save_before_update {
@@ -560,128 +353,11 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vokabelheft speichern.
-        /// </summary>
-        internal static string save_title {
-            get {
-                return ResourceManager.GetString("save_title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Datensicherung speichern.
-        /// </summary>
-        internal static string save_title_backup {
-            get {
-                return ResourceManager.GetString("save_title_backup", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Seite.
-        /// </summary>
-        internal static string site {
-            get {
-                return ResourceManager.GetString("site", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Synonym.
-        /// </summary>
-        internal static string synonym {
-            get {
-                return ResourceManager.GetString("synonym", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Übersetzen Sie von.
-        /// </summary>
-        internal static string translate_from {
-            get {
-                return ResourceManager.GetString("translate_from", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to nach.
-        /// </summary>
-        internal static string translate_to {
-            get {
-                return ResourceManager.GetString("translate_to", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Geübt.
-        /// </summary>
-        internal static string translated {
-            get {
-                return ResourceManager.GetString("translated", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Das gewählte Vokabelheft existiert nicht mehr..
         /// </summary>
         internal static string treeview_doesnt_exists {
             get {
                 return ResourceManager.GetString("treeview_doesnt_exists", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Vokabeln.
-        /// </summary>
-        internal static string vocable {
-            get {
-                return ResourceManager.GetString("vocable", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Vokabel bearbeiten.
-        /// </summary>
-        internal static string vocable_edit_title {
-            get {
-                return ResourceManager.GetString("vocable_edit_title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Vokabelheft bearbeiten.
-        /// </summary>
-        internal static string vocable_file_edit_title {
-            get {
-                return ResourceManager.GetString("vocable_file_edit_title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Vokabelheft.
-        /// </summary>
-        internal static string vocable_file_name {
-            get {
-                return ResourceManager.GetString("vocable_file_name", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Gesamthaft.
-        /// </summary>
-        internal static string vocables_in_all {
-            get {
-                return ResourceManager.GetString("vocables_in_all", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Falsche Eingabe.
-        /// </summary>
-        internal static string wrong_text {
-            get {
-                return ResourceManager.GetString("wrong_text", resourceCulture);
             }
         }
     }

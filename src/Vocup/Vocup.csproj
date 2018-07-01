@@ -272,6 +272,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Words.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Words.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="update_windows.resx">
       <SubType>Designer</SubType>
       <DependentUpon>update_windows.cs</DependentUpon>
@@ -285,6 +289,11 @@
     </Compile>
     <Compile Include="practise_result_list.Designer.cs">
       <DependentUpon>practise_result_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Words.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Words.resx</DependentUpon>
     </Compile>
     <Compile Include="SendFileTo.cs" />
     <Compile Include="AudioVideoPlay.cs" />

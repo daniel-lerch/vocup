@@ -33,9 +33,9 @@ namespace Vocup.Forms
         {
             OpenFileDialog addFile = new OpenFileDialog
             {
-                Title = language.add_title,
+                Title = Words.AddVocabularyBooks,
                 InitialDirectory = Settings.Default.path_vhf,
-                Filter = language.personal_directory + " (*.vhf)|*.vhf",
+                Filter = Words.VocupVocabularyBookFile + " (*.vhf)|*.vhf",
                 Multiselect = true
             };
 
@@ -113,10 +113,10 @@ namespace Vocup.Forms
         {
             SaveFileDialog save = new SaveFileDialog
             {
-                Title = language.save_title,
+                Title = Words.SaveVocabularyBook,
                 FileName = TbMotherTongue.Text + " - " + TbForeignLang.Text,
                 InitialDirectory = Settings.Default.path_vhf,
-                Filter = language.personal_directory + " (*.vhf)|*.vhf"
+                Filter = Words.VocupVocabularyBookFile + " (*.vhf)|*.vhf"
             };
 
             if (save.ShowDialog() == DialogResult.OK)

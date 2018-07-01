@@ -10,20 +10,20 @@ namespace Vocup
 {
     public partial class practise_result_list : Form
     {
-       public  string[,] result_list;
-       public int anzahl;
+        public string[,] result_list;
+        public int anzahl;
 
         public string own_language;
         public string foreign_language;
-        
+
         public practise_result_list()
         {
             InitializeComponent();
         }
 
         //ListView Spaltenbreite festlegen
-       
-         private void listView_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+
+        private void listView_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
         {
             // Garantiert, dass die Spaltenbreite von Column 0 immer gleich bleibt
 
@@ -38,7 +38,7 @@ namespace Vocup
         }
 
         private void listView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
-         {
+        {
             //Verhindert, dass die Spaltenbreite von column 0 geändert werden kann
 
             if (listView.Enabled == true)
@@ -51,9 +51,9 @@ namespace Vocup
 
             }
         }
-        
-            //OK Button
-        
+
+        //OK Button
+
         private void ok_button_Click(object sender, EventArgs e)
         {
             Close();
@@ -61,17 +61,14 @@ namespace Vocup
 
         private void practise_result_list_Load(object sender, EventArgs e)
         {
-            
             //Listview vorbereiten
             listView.BeginUpdate();
 
             listView.Columns.Add("", 20);
             listView.Columns.Add(own_language, 153);
             listView.Columns.Add(foreign_language, 153);
-            listView.Columns.Add(Properties.language.wrong_text, 153);
+            listView.Columns.Add(Properties.Words.Misentry, 153);
 
-            
-            
             //Gitternetz
             if (Properties.Settings.Default.GridLines == false)
             {
@@ -81,7 +78,7 @@ namespace Vocup
             {
                 listView.GridLines = true;
             }
-            
+
             listView.EndUpdate();
 
             listView.BeginUpdate();

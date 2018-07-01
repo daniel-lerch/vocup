@@ -117,51 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="add_title" xml:space="preserve">
-    <value>Vokabelhefte hinzufügen</value>
-    <comment>merge</comment>
-  </data>
-  <data name="and" xml:space="preserve">
-    <value>und</value>
-    <comment>-</comment>
-  </data>
-  <data name="backup" xml:space="preserve">
-    <value>Vocup Backup-Datei</value>
-  </data>
-  <data name="cancel" xml:space="preserve">
-    <value>Abbrechen</value>
-    <comment>new_and_settings</comment>
-  </data>
   <data name="can_not_import" xml:space="preserve">
     <value>Beim Importieren der Datei ist ein Fehler aufgetreten.</value>
     <comment>Nachricht</comment>
   </data>
-  <data name="de" xml:space="preserve">
-    <value>Deutsch</value>
-  </data>
   <data name="error" xml:space="preserve">
     <value>Error</value>
     <comment>Nachrichten</comment>
-  </data>
-  <data name="es" xml:space="preserve">
-    <value>Spanisch</value>
-  </data>
-  <data name="export" xml:space="preserve">
-    <value>Exportieren</value>
-  </data>
-  <data name="fertig" xml:space="preserve">
-    <value>Fertig</value>
-    <comment>new_and_settings</comment>
-  </data>
-  <data name="finish" xml:space="preserve">
-    <value>Beenden</value>
-    <comment>practise_dialog</comment>
-  </data>
-  <data name="foreign_language" xml:space="preserve">
-    <value>Fremdsprache</value>
-  </data>
-  <data name="fr" xml:space="preserve">
-    <value>Französisch</value>
   </data>
   <data name="have_to_save" xml:space="preserve">
     <value>Speichern Sie bitte das Vokabelheft vor dem Drucken ab.</value>
@@ -169,16 +131,6 @@
   </data>
   <data name="have_to_save_mail" xml:space="preserve">
     <value>Speichern Sie bitte das Vokabelheft vor dem Versenden ab.</value>
-  </data>
-  <data name="import" xml:space="preserve">
-    <value>Importieren</value>
-  </data>
-  <data name="it" xml:space="preserve">
-    <value>Italienisch</value>
-  </data>
-  <data name="last_practise" xml:space="preserve">
-    <value>Zuletzt geübt am</value>
-    <comment>-</comment>
   </data>
   <data name="merge_error" xml:space="preserve">
     <value>Beim Zusammenführen der Vokabelhefte ist ein Fehler aufgetreten.</value>
@@ -291,93 +243,10 @@ damit sie als gelernt eingestuft wird.
 </value>
     <comment>practise_dialog</comment>
   </data>
-  <data name="ok" xml:space="preserve">
-    <value>OK</value>
-    <comment>-</comment>
-  </data>
-  <data name="open_title" xml:space="preserve">
-    <value>Vokabelheft öffnen</value>
-    <comment>Öffnen</comment>
-  </data>
-  <data name="own_language" xml:space="preserve">
-    <value>Muttersprache</value>
-  </data>
-  <data name="personal_directory" xml:space="preserve">
-    <value>Vokabelhefte</value>
-    <comment>-</comment>
-  </data>
-  <data name="practise_false" xml:space="preserve">
-    <value>Falsch! (richtig wäre: </value>
-    <comment>practise_dialog</comment>
-  </data>
-  <data name="practise_nearly_right" xml:space="preserve">
-    <value>Teilweise korrekt! (Richtig wäre: </value>
-    <comment>practise_dialog</comment>
-  </data>
-  <data name="practise_right" xml:space="preserve">
-    <value>Korrekt!</value>
-    <comment>practise_dialog</comment>
-  </data>
-  <data name="restore_backup" xml:space="preserve">
-    <value>Datensicherung öffnen</value>
-  </data>
-  <data name="ro" xml:space="preserve">
-    <value>Rumänisch</value>
-  </data>
   <data name="save_before_update" xml:space="preserve">
     <value>Möchten Sie das Vokabelheft speichern bevor sie fortfahren? Alle nicht gespeicherten Daten gehen verloren.</value>
   </data>
-  <data name="save_title" xml:space="preserve">
-    <value>Vokabelheft speichern</value>
-    <comment>Speichern</comment>
-  </data>
-  <data name="save_title_backup" xml:space="preserve">
-    <value>Datensicherung speichern</value>
-  </data>
-  <data name="site" xml:space="preserve">
-    <value>Seite</value>
-    <comment>print</comment>
-  </data>
-  <data name="synonym" xml:space="preserve">
-    <value>Synonym</value>
-    <comment>-</comment>
-  </data>
-  <data name="translated" xml:space="preserve">
-    <value>Geübt</value>
-    <comment>practise_dialog</comment>
-  </data>
-  <data name="translate_from" xml:space="preserve">
-    <value>Übersetzen Sie von</value>
-    <comment>practise_dialog</comment>
-  </data>
-  <data name="translate_to" xml:space="preserve">
-    <value>nach</value>
-    <comment>practise_dialog</comment>
-  </data>
   <data name="treeview_doesnt_exists" xml:space="preserve">
     <value>Das gewählte Vokabelheft existiert nicht mehr.</value>
-  </data>
-  <data name="vocable" xml:space="preserve">
-    <value>Vokabeln</value>
-    <comment>-</comment>
-  </data>
-  <data name="vocables_in_all" xml:space="preserve">
-    <value>Gesamthaft</value>
-    <comment>practise_result_list</comment>
-  </data>
-  <data name="vocable_edit_title" xml:space="preserve">
-    <value>Vokabel bearbeiten</value>
-    <comment>new_and_settings</comment>
-  </data>
-  <data name="vocable_file_edit_title" xml:space="preserve">
-    <value>Vokabelheft bearbeiten</value>
-    <comment>new_file_and_settings</comment>
-  </data>
-  <data name="vocable_file_name" xml:space="preserve">
-    <value>Vokabelheft</value>
-  </data>
-  <data name="wrong_text" xml:space="preserve">
-    <value>Falsche Eingabe</value>
-    <comment>practise_result_list</comment>
   </data>
 </root>
