@@ -4,7 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Vocup.Models;
+using Vocup.Properties;
 
 namespace Vocup.IO.Internal
 {
@@ -23,7 +25,7 @@ namespace Vocup.IO.Internal
 
                 if (string.IsNullOrWhiteSpace(version) || !Version.TryParse(version, out Version versionObj))
                 {
-                    // TODO: mbox invalid file
+                    MessageBox.Show(Messages.VhfInvalidVersion, Messages.VhfInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
                 else if (versionObj.CompareTo(Util.AppInfo.FileVersion) == 1)
@@ -34,19 +36,17 @@ namespace Vocup.IO.Internal
 
                 if (vhrCode == null)
                 {
-                    // TODO: mbox invalid file
+                    MessageBox.Show(Messages.VhfInvalidVhrCode, Messages.VhfInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                else
-                {
-                    book.VhrCode = vhrCode;
-                }
+
+                book.VhrCode = vhrCode;
 
                 if (string.IsNullOrWhiteSpace(motherTongue) || 
                     string.IsNullOrWhiteSpace(foreignLang) ||
                     motherTongue == foreignLang)
                 {
-                    // TODO: mbox invalid file
+                    MessageBox.Show(Messages.VhfInvalidLanguages, Messages.VhfInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
 

@@ -3,6 +3,7 @@ using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using Vocup.Forms;
+using Vocup.Util;
 
 namespace Vocup
 {
@@ -15,7 +16,7 @@ namespace Vocup
         static void Main(string[] args)
         {
             // Verhindert eine Fehlerhafte Installation falls das Programm geöffnet ist
-            Mutex mutex = new Mutex(false, Properties.language.name, out bool newinstance);
+            Mutex mutex = new Mutex(false, AppInfo.ProductName, out bool newinstance);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -67,7 +68,7 @@ namespace Vocup
         static void CreateVhrFolder(Properties.Settings settings)
         {
             string appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            string folder = Path.Combine(appdata, Properties.language.name); // default path
+            string folder = Path.Combine(appdata, AppInfo.ProductName); // default path
 
             if (string.IsNullOrWhiteSpace(settings.path_vhr) || settings.path_vhr.Equals(folder, StringComparison.OrdinalIgnoreCase))
             {

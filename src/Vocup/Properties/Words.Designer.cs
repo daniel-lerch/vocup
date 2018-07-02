@@ -304,6 +304,15 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vocup.
+        /// </summary>
+        internal static string Vocup {
+            get {
+                return ResourceManager.GetString("Vocup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vocup Backup-Datei.
         /// </summary>
         internal static string VocupBackupFile {

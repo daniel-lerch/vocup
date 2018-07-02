@@ -232,9 +232,6 @@
     <value>Die Vokabel ist bereits vorhanden!</value>
     <comment>Nachricht</comment>
   </data>
-  <data name="name" xml:space="preserve">
-    <value>Vocup</value>
-  </data>
   <data name="no_vocables_to_learn" xml:space="preserve">
     <value>Herzlichen Glückwunsch! Sie haben bereits alle Vokabeln mehrmals hintereinander richtig übersetzt.
 	

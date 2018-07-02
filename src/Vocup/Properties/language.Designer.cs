@@ -322,15 +322,6 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vocup.
-        /// </summary>
-        internal static string name {
-            get {
-                return ResourceManager.GetString("name", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Herzlichen Glückwunsch! Sie haben bereits alle Vokabeln mehrmals hintereinander richtig übersetzt.
         ///	
         ///Tipp: Unter Optionen können Sie festlegen, wie oft eine Vokabel richtig hintereinander übersetzt werden muss, 

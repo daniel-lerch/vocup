@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Vocup.Models;
+using Vocup.Properties;
 using Vocup.Util;
 
 namespace Vocup.IO.Internal
@@ -29,19 +31,20 @@ namespace Vocup.IO.Internal
                 {
                     if (!reader.Read() || !reader.ReadHeader())
                     {
-                        // TODO: mbox could not read header
+                        MessageBox.Show(Messages.CsvInvalidHeader, Messages.CsvInvalidHeaderT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
 
                     if (helper.SourceItems.Count != 2)
                     {
-                        // TODO: mbox invalid column count
+                        MessageBox.Show(string.Format(Messages.CsvInvalidHeaderColumns, helper.SourceItems.Count), Messages.CsvInvalidHeaderT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
 
                     if (helper.SourceItems[0] != book.MotherTongue || helper.SourceItems[1] != book.ForeignLang)
                     {
-                        // TODO: mbox ask to continue with these settings
+                        if (MessageBox.Show(string.Format(Messages.CsvInvalidLanguages, helper.SourceItems[0], helper.SourceItems[1]), Messages.CsvInvalidHeaderT, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                            return false;
                     }
 
                     foreach (Entry entry in reader.GetRecords<Entry>())
@@ -62,7 +65,7 @@ namespace Vocup.IO.Internal
             }
             catch (Exception ex)
             {
-                // TODO: mbox show error
+                MessageBox.Show(string.Format(Messages.CsvImportError, ex), Messages.UnexpectedErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return false;
         }
@@ -87,7 +90,7 @@ namespace Vocup.IO.Internal
             }
             catch (Exception ex)
             {
-                // TODO: mbox show error
+                MessageBox.Show(string.Format(Messages.CsvExportError, ex), Messages.UnexpectedErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return false;
         }
