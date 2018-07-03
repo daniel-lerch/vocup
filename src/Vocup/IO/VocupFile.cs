@@ -46,10 +46,10 @@ namespace Vocup.IO.Internal
         }
 
         /// <summary>
-        /// Encrypts a Vocup specific file using UTF8 and DES with a hard-coded key.
+        /// Encrypts a Vocup specific file using UTF-8 and DES with a hard-coded key.
         /// </summary>
-        /// <param name="path"></param>
-        /// <param name="content"></param>
+        /// <param name="path">The path where to save the encrypted file.</param>
+        /// <param name="content">The context text that will be encoded with UTF-8 before encryption.</param>
         /// <exception cref="ArgumentException"/>
         /// <exception cref="ArgumentNullException"/>
         /// <exception cref="DirectoryNotFoundException"/>

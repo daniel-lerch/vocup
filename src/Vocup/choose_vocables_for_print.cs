@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Vocup.Properties;
 
 namespace Vocup
 {
@@ -13,44 +12,33 @@ namespace Vocup
         public choose_vocables_for_print()
         {
             InitializeComponent();
+            Icon = Icon.FromHandle(Icons.print.GetHicon());
         }
 
         //Array, das die Status-Informationen der Vokabeln enthält
 
         public int[] vocable_state;
-        
 
-        private void check_all_Click(object sender, EventArgs e)
+
+        private void check_all_Click(object sender, EventArgs e) //Falls auf alle Auswählen geklickt wurde
         {
-            //Falls auf alle Auswählen geklickt wurde
-            
-            int anzahl = listbox.Items.Count;
-
-            for (int i = 0; i < anzahl; i++)
+            for (int i = 0; i < listbox.Items.Count; i++)
             {
                 listbox.SetItemChecked(i, true);
             }
 
             print_button.Enabled = true;
-
-            //Fokus auf weiter-Button
-
-            print_button.Focus();
+            print_button.Focus(); //Fokus auf weiter-Button
         }
 
-        private void discheck_all_Click(object sender, EventArgs e)
+        private void discheck_all_Click(object sender, EventArgs e) //Falls auf alle Abwählen geklickt wurde
         {
-            //Falls auf alle Abwählen geklickt wurde
-            
-            int anzahl = listbox.Items.Count;
-
-            for (int i = 0; i < anzahl; i++)
+            for (int i = 0; i < listbox.Items.Count; i++)
             {
                 listbox.SetItemChecked(i, false);
             }
 
             print_button.Enabled = false;
-
         }
 
         private void cancel_button_Click(object sender, EventArgs e)
@@ -68,8 +56,8 @@ namespace Vocup
             {
                 DialogResult = DialogResult.OK;
             }
-
         }
+
         private void print_button_MouseEnter(object sender, EventArgs e)
         {
             if (listbox.CheckedItems.Count == 0)
@@ -77,11 +65,11 @@ namespace Vocup
                 print_button.Enabled = false;
             }
         }
-       
+
 
         private void radioButton_liste_CheckedChanged(object sender, EventArgs e)
         {
-            
+
             //Schaut ob das GroupBox-Element aktiviert oder deaktiviert werden soll
 
             if (radioButton_liste.Checked == true)
@@ -108,9 +96,7 @@ namespace Vocup
             }
         }
 
-
         //Nur Vokabeln üben die,
-
 
         //Noch nie geübt wurden
         private void checkBox_noch_nie_CheckedChanged(object sender, EventArgs e)
@@ -128,39 +114,36 @@ namespace Vocup
 
                 check_all.Enabled = false;
                 discheck_all.Enabled = false;
-
-
             }
 
 
-                if (checkBox_noch_nie.Checked == true)
+            if (checkBox_noch_nie.Checked == true)
+            {
+
+                for (int i = 0; i < listbox.Items.Count; i++)
                 {
-
-                    for (int i = 0; i < listbox.Items.Count; i++)
+                    if (vocable_state[i] == 0)
                     {
-                        if (vocable_state[i] == 0)
-                        {
-                            listbox.SetItemChecked(i, true);
-                        }
-
+                        listbox.SetItemChecked(i, true);
                     }
 
-                    print_button.Enabled = true;
                 }
-                else
-                {
-                    for (int i = 0; i < listbox.Items.Count; i++)
-                    {
-                        if (vocable_state[i] == 0)
-                        {
-                            listbox.SetItemChecked(i, false);
-                        }
 
+                print_button.Enabled = true;
+            }
+            else
+            {
+                for (int i = 0; i < listbox.Items.Count; i++)
+                {
+                    if (vocable_state[i] == 0)
+                    {
+                        listbox.SetItemChecked(i, false);
                     }
                 }
+            }
 
 
-                if (checkBox_falsch.Checked == false && checkBox_mindestens_einmal.Checked == false && checkBox_noch_nie.Checked == false && checkBox_fertig.Checked == false)
+            if (checkBox_falsch.Checked == false && checkBox_mindestens_einmal.Checked == false && checkBox_noch_nie.Checked == false && checkBox_fertig.Checked == false)
             {
                 check_all.Enabled = true;
                 discheck_all.Enabled = true;
@@ -189,33 +172,32 @@ namespace Vocup
 
             }
 
-                if (checkBox_falsch.Checked == true)
+            if (checkBox_falsch.Checked == true)
+            {
+
+                for (int i = 0; i < listbox.Items.Count; i++)
                 {
-
-                    for (int i = 0; i < listbox.Items.Count; i++)
+                    if (vocable_state[i] == 1)
                     {
-                        if (vocable_state[i] == 1)
-                        {
-                            listbox.SetItemChecked(i, true);
-                        }
-
+                        listbox.SetItemChecked(i, true);
                     }
 
-                    print_button.Enabled = true;
                 }
-                else
-                {
-                    for (int i = 0; i < listbox.Items.Count; i++)
-                    {
-                        if (vocable_state[i] == 1)
-                        {
-                            listbox.SetItemChecked(i, false);
-                        }
 
+                print_button.Enabled = true;
+            }
+            else
+            {
+                for (int i = 0; i < listbox.Items.Count; i++)
+                {
+                    if (vocable_state[i] == 1)
+                    {
+                        listbox.SetItemChecked(i, false);
                     }
                 }
+            }
 
-                if (checkBox_falsch.Checked == false && checkBox_mindestens_einmal.Checked == false && checkBox_noch_nie.Checked == false && checkBox_fertig.Checked == false)
+            if (checkBox_falsch.Checked == false && checkBox_mindestens_einmal.Checked == false && checkBox_noch_nie.Checked == false && checkBox_fertig.Checked == false)
             {
                 check_all.Enabled = true;
                 discheck_all.Enabled = true;
@@ -223,7 +205,7 @@ namespace Vocup
                 check_all_Click(sender, e);
             }
         }
-        
+
         //mindestens einmal richtig geübt wurden
         private void checkBox_mindestens_einmal_CheckedChanged(object sender, EventArgs e)
         {
@@ -240,36 +222,32 @@ namespace Vocup
 
                 check_all.Enabled = false;
                 discheck_all.Enabled = false;
-
             }
+
             if (checkBox_mindestens_einmal.Checked == true)
             {
-                
-
-                    for (int i = 0; i < listbox.Items.Count; i++)
-                    {
-                        if (vocable_state[i] > 1 && vocable_state[i] <= Properties.Settings.Default.max)
-                        {
-                            listbox.SetItemChecked(i, true);
-                        }
-
-                    }
-                    print_button.Enabled = true;
-                }
-                else
+                for (int i = 0; i < listbox.Items.Count; i++)
                 {
-                    for (int i = 0; i < listbox.Items.Count; i++)
+                    if (vocable_state[i] > 1 && vocable_state[i] <= Properties.Settings.Default.max)
                     {
-                        if (vocable_state[i] > 1 && vocable_state[i] <= Properties.Settings.Default.max)
-                        {
-                            listbox.SetItemChecked(i, false);
-                        }
-
+                        listbox.SetItemChecked(i, true);
                     }
                 }
+                print_button.Enabled = true;
+            }
+            else
+            {
+                for (int i = 0; i < listbox.Items.Count; i++)
+                {
+                    if (vocable_state[i] > 1 && vocable_state[i] <= Properties.Settings.Default.max)
+                    {
+                        listbox.SetItemChecked(i, false);
+                    }
+                }
+            }
 
 
-                if (checkBox_falsch.Checked == false && checkBox_mindestens_einmal.Checked == false && checkBox_noch_nie.Checked == false && checkBox_fertig.Checked == false)
+            if (checkBox_falsch.Checked == false && checkBox_mindestens_einmal.Checked == false && checkBox_noch_nie.Checked == false && checkBox_fertig.Checked == false)
             {
                 check_all.Enabled = true;
                 discheck_all.Enabled = true;
@@ -285,43 +263,37 @@ namespace Vocup
             {
                 //Falls auf alle Abwählen geklickt wurde
 
-                int anzahl = listbox.Items.Count;
-
-                for (int i = 0; i < anzahl; i++)
+                for (int i = 0; i < listbox.Items.Count; i++)
                 {
                     listbox.SetItemChecked(i, false);
                 }
 
                 check_all.Enabled = false;
                 discheck_all.Enabled = false;
-
             }
+
             if (checkBox_fertig.Checked == true)
             {
-
-
                 for (int i = 0; i < listbox.Items.Count; i++)
                 {
-                    if (vocable_state[i] >= Properties.Settings.Default.max+1)
+                    if (vocable_state[i] >= Properties.Settings.Default.max + 1)
                     {
                         listbox.SetItemChecked(i, true);
                     }
-
                 }
+
                 print_button.Enabled = true;
             }
             else
             {
                 for (int i = 0; i < listbox.Items.Count; i++)
                 {
-                    if (vocable_state[i] >= Properties.Settings.Default.max+1)
+                    if (vocable_state[i] >= Properties.Settings.Default.max + 1)
                     {
                         listbox.SetItemChecked(i, false);
                     }
-
                 }
             }
-
 
             if (checkBox_falsch.Checked == false && checkBox_mindestens_einmal.Checked == false && checkBox_noch_nie.Checked == false && checkBox_fertig.Checked == false)
             {

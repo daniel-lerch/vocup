@@ -12,7 +12,7 @@ namespace Vocup.IO.Internal
 {
     internal class VhfFile : VocupFile
     {
-        public bool Read(string path, VocabularyBook book)
+        public bool Read(string path, VocabularyBook book) // TODO: Add exception handling
         {
             string plaintext = ReadFile(path);
 
@@ -30,7 +30,7 @@ namespace Vocup.IO.Internal
                 }
                 else if (versionObj.CompareTo(Util.AppInfo.FileVersion) == 1)
                 {
-                    // TODO: mbox newer version needed
+                    MessageBox.Show(Messages.VhfMustUpdate, Messages.VhfMustUpdateT, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return false;
                 }
 
@@ -42,7 +42,7 @@ namespace Vocup.IO.Internal
 
                 book.VhrCode = vhrCode;
 
-                if (string.IsNullOrWhiteSpace(motherTongue) || 
+                if (string.IsNullOrWhiteSpace(motherTongue) ||
                     string.IsNullOrWhiteSpace(foreignLang) ||
                     motherTongue == foreignLang)
                 {
@@ -60,7 +60,7 @@ namespace Vocup.IO.Internal
                     string[] columns = line.Split('#');
                     if (columns.Length < 3)
                     {
-                        // TODO: mbox invalid file
+                        MessageBox.Show(Messages.VhfInvalidRow, Messages.VhfInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                     VocabularyWord word = new VocabularyWord()
@@ -77,9 +77,32 @@ namespace Vocup.IO.Internal
             return true;
         }
 
-        public bool Write(string path, VocabularyBook book)
+        public bool Write(string path, VocabularyBook book) // TODO: Add exception handling
         {
-            return false;
+            string raw;
+
+            using (StringWriter writer = new StringWriter())
+            {
+                writer.WriteLine("1.0");
+                writer.WriteLine(book.VhrCode);
+                writer.WriteLine(book.MotherTongue);
+                writer.WriteLine(book.ForeignLang);
+
+                foreach (VocabularyWord word in book.Words)
+                {
+                    writer.Write(word.MotherTongue);
+                    writer.Write('#');
+                    writer.Write(word.ForeignLang);
+                    writer.Write('#');
+                    writer.WriteLine(word.ForeignLangSynonym ?? "");
+                }
+
+                raw = writer.ToString();
+            }
+
+            WriteFile(path, raw);
+
+            return true;
         }
     }
 }

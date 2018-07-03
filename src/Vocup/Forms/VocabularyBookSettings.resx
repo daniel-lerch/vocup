@@ -354,13 +354,13 @@
     <value>19, 42</value>
   </data>
   <data name="RbModeAskMotherTongue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 17</value>
+    <value>177, 17</value>
   </data>
   <data name="RbModeAskMotherTongue.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="RbModeAskMotherTongue.Text" xml:space="preserve">
-    <value>Fremdsprache --&gt; Muttersprache</value>
+    <value>Fremdsprache → Muttersprache</value>
   </data>
   <data name="&gt;&gt;RbModeAskMotherTongue.Name" xml:space="preserve">
     <value>RbModeAskMotherTongue</value>
@@ -381,13 +381,13 @@
     <value>19, 19</value>
   </data>
   <data name="RbModeAskForeignTongue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 17</value>
+    <value>177, 17</value>
   </data>
   <data name="RbModeAskForeignTongue.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="RbModeAskForeignTongue.Text" xml:space="preserve">
-    <value>Muttersprache --&gt; Fremdsprache</value>
+    <value>Muttersprache → Fremdsprache</value>
   </data>
   <data name="&gt;&gt;RbModeAskForeignTongue.Name" xml:space="preserve">
     <value>RbModeAskForeignTongue</value>

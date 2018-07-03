@@ -148,6 +148,15 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ein Eintrag dieser Vokabelheft-Datei ist ungültig. Die Datei kann deshalb nicht gelesen werden..
+        /// </summary>
+        internal static string VhfInvalidRow {
+            get {
+                return ResourceManager.GetString("VhfInvalidRow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Die Version der Vokabelheft-Datei konnte nicht gelesen werden.
         ///Bitte stellen Sie sicher, dass die Datei nicht leer ist..
         /// </summary>
@@ -164,6 +173,24 @@ namespace Vocup.Properties {
         internal static string VhfInvalidVhrCode {
             get {
                 return ResourceManager.GetString("VhfInvalidVhrCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Die Vokabelheft-Datei erfordert eine neuere Version von Vocup. Sie können entweder im Programm oder im Internet nach Updates suchen..
+        /// </summary>
+        internal static string VhfMustUpdate {
+            get {
+                return ResourceManager.GetString("VhfMustUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update erforderlich.
+        /// </summary>
+        internal static string VhfMustUpdateT {
+            get {
+                return ResourceManager.GetString("VhfMustUpdateT", resourceCulture);
             }
         }
     }
