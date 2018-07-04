@@ -14,7 +14,7 @@ namespace Vocup.Models
         private string _motherTongue;
         private string _foreignLang;
         private string _foreignLangSynonym;
-        private PracticeState _practiceState;
+        private int _practiceStateNumber;
         private DateTime _practiceDate;
 
         public string MotherTongue
@@ -58,10 +58,12 @@ namespace Vocup.Models
             }
         }
 
-        public PracticeState PracticeState
+        public PracticeState PracticeState => PracticeStateHelper.Parse(_practiceStateNumber);
+
+        public int PracticeStateNumber
         {
-            get => _practiceState;
-            set { _practiceState = value; OnPropertyChanged(); }
+            get => _practiceStateNumber;
+            set { _practiceStateNumber = value; OnPropertyChanged(); }
         }
         public DateTime PracticeDate
         {

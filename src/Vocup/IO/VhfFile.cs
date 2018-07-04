@@ -58,7 +58,7 @@ namespace Vocup.IO.Internal
                     string line = reader.ReadLine();
                     if (line == null) break;
                     string[] columns = line.Split('#');
-                    if (columns.Length < 3)
+                    if (columns.Length != 3)
                     {
                         MessageBox.Show(Messages.VhfInvalidRow, Messages.VhfInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;

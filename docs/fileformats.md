@@ -61,8 +61,11 @@ The second line is the `PracticeMode`. `1` means that the user has to enter each
 
 Each word then has its own line:
 ```
-practice state#dd.MM.yyyy HH:mm
+practice state number#dd.MM.yyyy HH:mm
 ```
+The `PracticeStateNumber` is associated with the `PracticeState` enum
+but is basically a counter with an offset of `1` because this value means wrongly practiced.
+Depending on the user's settings we reach the state of `FullyPracticed` earlier or later.
 
 ### Example
 ```
