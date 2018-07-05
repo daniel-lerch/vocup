@@ -171,4 +171,10 @@ Stellen Sie sicher, dass die Datei nicht leer ist.</value>
   <data name="VhfMustUpdateT" xml:space="preserve">
     <value>Update erforderlich</value>
   </data>
+  <data name="VhrInvalidFile" xml:space="preserve">
+    <value>Die Ergbnisdatei ist fehlerhaft und wird gelöscht. Die Übungsergebnisse gehen deshalb verloren.</value>
+  </data>
+  <data name="VhrInvalidFileT" xml:space="preserve">
+    <value>Fehlerhafte Ergebnis-Datei</value>
+  </data>
 </root>

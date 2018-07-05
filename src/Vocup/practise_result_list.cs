@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Vocup.Properties;
 
 namespace Vocup
 {
@@ -19,6 +18,7 @@ namespace Vocup
         public practise_result_list()
         {
             InitializeComponent();
+            Icon = Icon.FromHandle(Icons.statistics.GetHicon());
         }
 
         //ListView Spaltenbreite festlegen
@@ -27,13 +27,9 @@ namespace Vocup
         {
             // Garantiert, dass die Spaltenbreite von Column 0 immer gleich bleibt
 
-            if (listView.Enabled == true)
+            if (listView.Enabled && e.ColumnIndex == 0)
             {
-                if (e.ColumnIndex == 0)
-                {
-                    listView.Columns[0].Width = 20;
-
-                }
+                listView.Columns[0].Width = 20;
             }
         }
 
@@ -41,14 +37,9 @@ namespace Vocup
         {
             //Verhindert, dass die Spaltenbreite von column 0 geändert werden kann
 
-            if (listView.Enabled == true)
+            if (listView.Enabled && e.ColumnIndex == 0)
             {
-                if (e.ColumnIndex == 0)
-                {
-
-                    e.Cancel = true;
-                }
-
+                e.Cancel = true;
             }
         }
 
@@ -70,14 +61,7 @@ namespace Vocup
             listView.Columns.Add(Properties.Words.Misentry, 153);
 
             //Gitternetz
-            if (Properties.Settings.Default.GridLines == false)
-            {
-                listView.GridLines = false;
-            }
-            else
-            {
-                listView.GridLines = true;
-            }
+            listView.GridLines = Properties.Settings.Default.GridLines;
 
             listView.EndUpdate();
 
@@ -90,7 +74,6 @@ namespace Vocup
                 {
                     listView.Items.Add(new ListViewItem(new string[] { "", result_list[i, 2], result_list[i, 3] + "=" + result_list[i, 4], result_list[i, 7] }));
                 }
-
                 else
                 {
                     listView.Items.Add(new ListViewItem(new string[] { "", result_list[i, 2], result_list[i, 3], result_list[i, 7] }));
@@ -101,7 +84,6 @@ namespace Vocup
                 {
                     listView.Items[i].ImageIndex = 0;
                 }
-
                 else if (result_list[i, 6] == "false")
                 {
                     listView.Items[i].ImageIndex = 1;
@@ -110,17 +92,14 @@ namespace Vocup
                 {
                     listView.Items[i].ImageIndex = 2;
                 }
-
                 else if (result_list[i, 6] == "right")
                 {
                     listView.Items[i].ImageIndex = 3;
                 }
-
             }
-            listView.EndUpdate();
 
+            listView.EndUpdate();
             listView.Enabled = true;
         }
-
     }
 }

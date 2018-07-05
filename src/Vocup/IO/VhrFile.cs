@@ -4,66 +4,133 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Vocup.Models;
+using Vocup.Properties;
 
 namespace Vocup.IO.Internal
 {
     internal class VhrFile : VocupFile
     {
-        public bool Read(VocabularyBook book)
+        public bool Read(VocabularyBook book) // TODO: Add exception handling
         {
-            string plaintext = ReadFile(Path.Combine(Properties.Settings.Default.path_vhr, book.VhrCode + ".vhr"));
+            FileInfo vhrInfo = new FileInfo(Path.Combine(Properties.Settings.Default.path_vhr, book.VhrCode + ".vhr"));
+            if (!vhrInfo.Exists)
+                return false;
+
+            string plaintext = ReadFile(vhrInfo.FullName);
 
             using (StringReader reader = new StringReader(plaintext))
             {
                 string path = reader.ReadLine();
                 string mode = reader.ReadLine();
 
-                if (string.IsNullOrWhiteSpace(path))
+                if (string.IsNullOrWhiteSpace(path) ||
+                    string.IsNullOrWhiteSpace(mode) || !int.TryParse(mode, out int imode) || !((PracticeMode)imode).IsValid())
                 {
-                    // TODO: mbox
+                    DeleteInvalidFile(vhrInfo.FullName);
                     return false;
                 }
 
-                if (string.IsNullOrWhiteSpace(mode) || !int.TryParse(mode, out int imode) || !((PracticeMode)imode).IsValid())
-                {
-                    // TODO: mbox
-                    return false;
-                }
-
-                List<Tuple<PracticeState, DateTime>> results = new List<Tuple<PracticeState, DateTime>>();
+                List<Tuple<int, DateTime>> results = new List<Tuple<int, DateTime>>();
 
                 while (true)
                 {
                     string line = reader.ReadLine();
                     if (line == null) break;
                     string[] columns = line.Split('#');
-                    if (columns.Length != 2 || !int.TryParse(columns[0], out int state) || !((PracticeState)state).IsValid())
+                    if (columns.Length != 2 || !int.TryParse(columns[0], out int state) || !PracticeStateHelper.Parse(state).IsValid())
                     {
-                        // TODO: mbox
+                        DeleteInvalidFile(vhrInfo.FullName);
                         return false;
                     }
                     DateTime time = DateTime.MinValue;
                     // DateTime.Parse() does work with the format dd.MM.yyyy HH:mm
                     if (!string.IsNullOrWhiteSpace(columns[1]) && !DateTime.TryParse(columns[1], out time))
                     {
+                        DeleteInvalidFile(vhrInfo.FullName);
+                        return false;
+                    }
+                    results.Add(new Tuple<int, DateTime>(state, time));
+                }
+
+                bool countMatch = book.Words.Count == results.Count;
+
+                FileInfo vhfInfo = new FileInfo(book.FilePath);
+                FileInfo pathInfo = new FileInfo(path);
+
+                if (vhfInfo.FullName.Equals(pathInfo.FullName, StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!countMatch)
+                    {
+                        // TODO: mbox and delete old file
+                        return false;
+                    }
+                }
+                else
+                {
+                    if (!countMatch)
+                    {
                         // TODO: mbox
                         return false;
                     }
-                    results.Add(new Tuple<PracticeState, DateTime>((PracticeState)state, time));
+
+                    if (pathInfo.Exists)
+                        book.GenerateVhrCode(); // Save new results file if old one is in use by another file
+
+                    // TODO: Set unsafed changes true
                 }
 
-                // TODO: Check property count and apply properties
                 book.FilePath = path;
                 book.PracticeMode = (PracticeMode)imode;
+
+                for (int i = 0; i < book.Words.Count; i++)
+                {
+                    VocabularyWord word = book.Words[i];
+                    Tuple<int, DateTime> result = results[i];
+                    word.PracticeStateNumber = result.Item1;
+                    word.PracticeDate = result.Item2;
+                }
             }
 
             return false;
         }
 
-        public bool Write(VocabularyBook book)
+        public bool Write(VocabularyBook book) // TODO: Add exception handling
         {
-            return false;
+            string raw;
+
+            using (StringWriter writer = new StringWriter())
+            {
+                writer.WriteLine(book.FilePath);
+                writer.Write((int)book.PracticeMode);
+
+                foreach (VocabularyWord word in book.Words)
+                {
+                    writer.WriteLine();
+
+                    writer.Write(word.PracticeStateNumber);
+                    writer.Write('#');
+                    if (word.PracticeDate != DateTime.MinValue)
+                        writer.Write(word.PracticeDate.ToString("dd.MM.yyyy HH:mm"));
+                }
+
+                raw = writer.ToString();
+            }
+
+            WriteFile(Path.Combine(Properties.Settings.Default.path_vhr, book.VhrCode + ".vhr"), raw);
+
+            return true;
+        }
+
+        private void DeleteInvalidFile(string path)
+        {
+            MessageBox.Show(Messages.VhrInvalidFile, Messages.VhrInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            try
+            {
+                File.Delete(path);
+            }
+            catch { }
         }
     }
 }

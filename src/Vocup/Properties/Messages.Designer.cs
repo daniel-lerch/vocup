@@ -193,5 +193,23 @@ namespace Vocup.Properties {
                 return ResourceManager.GetString("VhfMustUpdateT", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Die Ergbnisdatei ist fehlerhaft und wird gelöscht. Die Übungsergebnisse gehen deshalb verloren..
+        /// </summary>
+        internal static string VhrInvalidFile {
+            get {
+                return ResourceManager.GetString("VhrInvalidFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fehlerhafte Ergebnis-Datei.
+        /// </summary>
+        internal static string VhrInvalidFileT {
+            get {
+                return ResourceManager.GetString("VhrInvalidFileT", resourceCulture);
+            }
+        }
     }
 }
