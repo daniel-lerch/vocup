@@ -28,7 +28,7 @@ namespace Vocup.IO.Internal
                 if (string.IsNullOrWhiteSpace(path) ||
                     string.IsNullOrWhiteSpace(mode) || !int.TryParse(mode, out int imode) || !((PracticeMode)imode).IsValid())
                 {
-                    DeleteInvalidFile(vhrInfo.FullName);
+                    DeleteInvalidFile(vhrInfo);
                     return false;
                 }
 
@@ -41,14 +41,14 @@ namespace Vocup.IO.Internal
                     string[] columns = line.Split('#');
                     if (columns.Length != 2 || !int.TryParse(columns[0], out int state) || !PracticeStateHelper.Parse(state).IsValid())
                     {
-                        DeleteInvalidFile(vhrInfo.FullName);
+                        DeleteInvalidFile(vhrInfo);
                         return false;
                     }
                     DateTime time = DateTime.MinValue;
                     // DateTime.Parse() does work with the format dd.MM.yyyy HH:mm
                     if (!string.IsNullOrWhiteSpace(columns[1]) && !DateTime.TryParse(columns[1], out time))
                     {
-                        DeleteInvalidFile(vhrInfo.FullName);
+                        DeleteInvalidFile(vhrInfo);
                         return false;
                     }
                     results.Add(new Tuple<int, DateTime>(state, time));
@@ -63,7 +63,8 @@ namespace Vocup.IO.Internal
                 {
                     if (!countMatch)
                     {
-                        // TODO: mbox and delete old file
+                        MessageBox.Show(Messages.VhrInvalidRowCount, Messages.VhrInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        try { vhrInfo.Delete(); } catch { }
                         return false;
                     }
                 }
@@ -71,14 +72,14 @@ namespace Vocup.IO.Internal
                 {
                     if (!countMatch)
                     {
-                        // TODO: mbox
+                        MessageBox.Show(Messages.VhrInvalidRowCountAndOtherFile, Messages.VhrInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return false;
                     }
 
                     if (pathInfo.Exists)
                         book.GenerateVhrCode(); // Save new results file if old one is in use by another file
 
-                    // TODO: Set unsafed changes true
+                    book.UnsavedChanges = true;
                 }
 
                 book.FilePath = path;
@@ -123,12 +124,12 @@ namespace Vocup.IO.Internal
             return true;
         }
 
-        private void DeleteInvalidFile(string path)
+        private void DeleteInvalidFile(FileInfo info)
         {
             MessageBox.Show(Messages.VhrInvalidFile, Messages.VhrInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
             try
             {
-                File.Delete(path);
+                info.Delete();
             }
             catch { }
         }

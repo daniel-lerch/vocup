@@ -44,11 +44,7 @@
             this.GroupVhfPath = new System.Windows.Forms.GroupBox();
             this.BtnVhfPath = new System.Windows.Forms.Button();
             this.TbVhfPath = new System.Windows.Forms.TextBox();
-            this.GroupEvaluation = new System.Windows.Forms.GroupBox();
-            this.CbEvaluationSystem = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.CbPracticeResult = new System.Windows.Forms.CheckBox();
-            this.update = new System.Windows.Forms.GroupBox();
+            this.GroupUpdate = new System.Windows.Forms.GroupBox();
             this.CbAutoUpdate = new System.Windows.Forms.CheckBox();
             this.GroupSave = new System.Windows.Forms.GroupBox();
             this.CbAutoSave = new System.Windows.Forms.CheckBox();
@@ -88,6 +84,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.TrbRepetitions = new System.Windows.Forms.TrackBar();
+            this.GroupEvaluation = new System.Windows.Forms.GroupBox();
+            this.CbEvaluationSystem = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.CbPracticeResult = new System.Windows.Forms.CheckBox();
+            this.BtnResetStartScreen = new System.Windows.Forms.Button();
+            this.GroupVocabularyList = new System.Windows.Forms.GroupBox();
+            this.CbGridLines = new System.Windows.Forms.CheckBox();
             this.GroupStartScreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TrbWrongRigtht)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrbUnknown)).BeginInit();
@@ -95,8 +98,7 @@
             this.TabGeneral.SuspendLayout();
             this.GroupVhrPath.SuspendLayout();
             this.GroupVhfPath.SuspendLayout();
-            this.GroupEvaluation.SuspendLayout();
-            this.update.SuspendLayout();
+            this.GroupUpdate.SuspendLayout();
             this.GroupSave.SuspendLayout();
             this.TabPractice.SuspendLayout();
             this.GroupManualCheck.SuspendLayout();
@@ -113,6 +115,8 @@
             this.GroupRepetitions.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TrbRepetitions)).BeginInit();
+            this.GroupEvaluation.SuspendLayout();
+            this.GroupVocabularyList.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnOk
@@ -124,14 +128,15 @@
             // 
             // BtnCancel
             // 
-            this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.BtnCancel, "BtnCancel");
+            this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.UseVisualStyleBackColor = true;
             // 
             // GroupStartScreen
             // 
             this.GroupStartScreen.BackColor = System.Drawing.Color.Transparent;
+            this.GroupStartScreen.Controls.Add(this.BtnResetStartScreen);
             this.GroupStartScreen.Controls.Add(this.RbEmptyStart);
             this.GroupStartScreen.Controls.Add(this.RbRecentFile);
             resources.ApplyResources(this.GroupStartScreen, "GroupStartScreen");
@@ -186,10 +191,10 @@
             // TabGeneral
             // 
             this.TabGeneral.BackColor = System.Drawing.Color.White;
+            this.TabGeneral.Controls.Add(this.GroupVocabularyList);
             this.TabGeneral.Controls.Add(this.GroupVhrPath);
             this.TabGeneral.Controls.Add(this.GroupVhfPath);
-            this.TabGeneral.Controls.Add(this.GroupEvaluation);
-            this.TabGeneral.Controls.Add(this.update);
+            this.TabGeneral.Controls.Add(this.GroupUpdate);
             this.TabGeneral.Controls.Add(this.GroupSave);
             this.TabGeneral.Controls.Add(this.GroupStartScreen);
             resources.ApplyResources(this.TabGeneral, "TabGeneral");
@@ -237,45 +242,13 @@
             this.TbVhfPath.Name = "TbVhfPath";
             this.TbVhfPath.ReadOnly = true;
             // 
-            // GroupEvaluation
+            // GroupUpdate
             // 
-            this.GroupEvaluation.Controls.Add(this.CbEvaluationSystem);
-            this.GroupEvaluation.Controls.Add(this.label8);
-            this.GroupEvaluation.Controls.Add(this.CbPracticeResult);
-            resources.ApplyResources(this.GroupEvaluation, "GroupEvaluation");
-            this.GroupEvaluation.Name = "GroupEvaluation";
-            this.GroupEvaluation.TabStop = false;
-            // 
-            // CbEvaluationSystem
-            // 
-            this.CbEvaluationSystem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CbEvaluationSystem.Items.AddRange(new object[] {
-            resources.GetString("CbEvaluationSystem.Items"),
-            resources.GetString("CbEvaluationSystem.Items1")});
-            resources.ApplyResources(this.CbEvaluationSystem, "CbEvaluationSystem");
-            this.CbEvaluationSystem.Name = "CbEvaluationSystem";
-            // 
-            // label8
-            // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.Name = "label8";
-            // 
-            // CbPracticeResult
-            // 
-            resources.ApplyResources(this.CbPracticeResult, "CbPracticeResult");
-            this.CbPracticeResult.Checked = true;
-            this.CbPracticeResult.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CbPracticeResult.Name = "CbPracticeResult";
-            this.CbPracticeResult.UseVisualStyleBackColor = true;
-            this.CbPracticeResult.CheckedChanged += new System.EventHandler(this.CbPracticeResult_CheckedChanged);
-            // 
-            // update
-            // 
-            this.update.BackColor = System.Drawing.Color.Transparent;
-            this.update.Controls.Add(this.CbAutoUpdate);
-            resources.ApplyResources(this.update, "update");
-            this.update.Name = "update";
-            this.update.TabStop = false;
+            this.GroupUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.GroupUpdate.Controls.Add(this.CbAutoUpdate);
+            resources.ApplyResources(this.GroupUpdate, "GroupUpdate");
+            this.GroupUpdate.Name = "GroupUpdate";
+            this.GroupUpdate.TabStop = false;
             // 
             // CbAutoUpdate
             // 
@@ -300,6 +273,7 @@
             // TabPractice
             // 
             this.TabPractice.BackColor = System.Drawing.Color.White;
+            this.TabPractice.Controls.Add(this.GroupEvaluation);
             this.TabPractice.Controls.Add(this.GroupManualCheck);
             this.TabPractice.Controls.Add(this.GroupSounds);
             this.TabPractice.Controls.Add(this.GroupContinueButton);
@@ -561,6 +535,57 @@
             this.TrbRepetitions.Name = "TrbRepetitions";
             this.TrbRepetitions.Value = 3;
             // 
+            // GroupEvaluation
+            // 
+            this.GroupEvaluation.Controls.Add(this.CbEvaluationSystem);
+            this.GroupEvaluation.Controls.Add(this.label8);
+            this.GroupEvaluation.Controls.Add(this.CbPracticeResult);
+            resources.ApplyResources(this.GroupEvaluation, "GroupEvaluation");
+            this.GroupEvaluation.Name = "GroupEvaluation";
+            this.GroupEvaluation.TabStop = false;
+            // 
+            // CbEvaluationSystem
+            // 
+            this.CbEvaluationSystem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbEvaluationSystem.Items.AddRange(new object[] {
+            resources.GetString("CbEvaluationSystem.Items"),
+            resources.GetString("CbEvaluationSystem.Items1")});
+            resources.ApplyResources(this.CbEvaluationSystem, "CbEvaluationSystem");
+            this.CbEvaluationSystem.Name = "CbEvaluationSystem";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
+            // CbPracticeResult
+            // 
+            resources.ApplyResources(this.CbPracticeResult, "CbPracticeResult");
+            this.CbPracticeResult.Checked = true;
+            this.CbPracticeResult.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CbPracticeResult.Name = "CbPracticeResult";
+            this.CbPracticeResult.UseVisualStyleBackColor = true;
+            // 
+            // BtnResetStartScreen
+            // 
+            resources.ApplyResources(this.BtnResetStartScreen, "BtnResetStartScreen");
+            this.BtnResetStartScreen.Name = "BtnResetStartScreen";
+            this.BtnResetStartScreen.UseVisualStyleBackColor = true;
+            // 
+            // GroupVocabularyList
+            // 
+            this.GroupVocabularyList.BackColor = System.Drawing.Color.Transparent;
+            this.GroupVocabularyList.Controls.Add(this.CbGridLines);
+            resources.ApplyResources(this.GroupVocabularyList, "GroupVocabularyList");
+            this.GroupVocabularyList.Name = "GroupVocabularyList";
+            this.GroupVocabularyList.TabStop = false;
+            // 
+            // CbGridLines
+            // 
+            resources.ApplyResources(this.CbGridLines, "CbGridLines");
+            this.CbGridLines.Name = "CbGridLines";
+            this.CbGridLines.UseVisualStyleBackColor = true;
+            // 
             // SettingsDialog
             // 
             this.AcceptButton = this.BtnOk;
@@ -586,10 +611,8 @@
             this.GroupVhrPath.PerformLayout();
             this.GroupVhfPath.ResumeLayout(false);
             this.GroupVhfPath.PerformLayout();
-            this.GroupEvaluation.ResumeLayout(false);
-            this.GroupEvaluation.PerformLayout();
-            this.update.ResumeLayout(false);
-            this.update.PerformLayout();
+            this.GroupUpdate.ResumeLayout(false);
+            this.GroupUpdate.PerformLayout();
             this.GroupSave.ResumeLayout(false);
             this.GroupSave.PerformLayout();
             this.TabPractice.ResumeLayout(false);
@@ -615,6 +638,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TrbRepetitions)).EndInit();
+            this.GroupEvaluation.ResumeLayout(false);
+            this.GroupEvaluation.PerformLayout();
+            this.GroupVocabularyList.ResumeLayout(false);
+            this.GroupVocabularyList.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -653,7 +680,7 @@
         private System.Windows.Forms.CheckBox CbAutoSave;
         private System.Windows.Forms.GroupBox GroupSave;
         private System.Windows.Forms.CheckBox CbAutoUpdate;
-        private System.Windows.Forms.GroupBox update;
+        private System.Windows.Forms.GroupBox GroupUpdate;
         private System.Windows.Forms.TabPage TabPractice;
         private System.Windows.Forms.GroupBox GroupInputFields;
         private System.Windows.Forms.CheckBox CbColoredTextfield;
@@ -666,10 +693,6 @@
         private System.Windows.Forms.CheckBox checkbox_synonyme;
         private System.Windows.Forms.GroupBox GroupContinueButton;
         private System.Windows.Forms.CheckBox CbSingleContinueButton;
-        private System.Windows.Forms.GroupBox GroupEvaluation;
-        private System.Windows.Forms.ComboBox CbEvaluationSystem;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.CheckBox CbPracticeResult;
         private System.Windows.Forms.GroupBox GroupSounds;
         private System.Windows.Forms.CheckBox CbAcousticFeedback;
         private System.Windows.Forms.GroupBox GroupManualCheck;
@@ -680,5 +703,12 @@
         private System.Windows.Forms.GroupBox GroupVhrPath;
         private System.Windows.Forms.Button BtnVhrPath;
         private System.Windows.Forms.TextBox TbVhrPath;
+        private System.Windows.Forms.GroupBox GroupEvaluation;
+        private System.Windows.Forms.ComboBox CbEvaluationSystem;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox CbPracticeResult;
+        private System.Windows.Forms.Button BtnResetStartScreen;
+        private System.Windows.Forms.GroupBox GroupVocabularyList;
+        private System.Windows.Forms.CheckBox CbGridLines;
     }
 }

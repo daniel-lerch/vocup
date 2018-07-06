@@ -211,5 +211,23 @@ namespace Vocup.Properties {
                 return ResourceManager.GetString("VhrInvalidFileT", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Die referenzierte Ergebnisdatei passt nicht zu diesem Vokabelheft. Die Ergebnisse werden gelöscht..
+        /// </summary>
+        internal static string VhrInvalidRowCount {
+            get {
+                return ResourceManager.GetString("VhrInvalidRowCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Die referenzierte Ergebnisdatei wird von einem anderen Vokabelheft verwendet und passt nicht zu diesem. Daher werden keine Ergebnisse geladen..
+        /// </summary>
+        internal static string VhrInvalidRowCountAndOtherFile {
+            get {
+                return ResourceManager.GetString("VhrInvalidRowCountAndOtherFile", resourceCulture);
+            }
+        }
     }
 }

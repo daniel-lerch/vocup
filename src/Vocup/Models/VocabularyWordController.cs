@@ -9,7 +9,6 @@ namespace Vocup.Models
 {
     public class VocabularyWordController
     {
-        private readonly ListViewItem.ListViewSubItem imageColumn;
         private readonly ListViewItem.ListViewSubItem motherTongueColumn;
         private readonly ListViewItem.ListViewSubItem foreignLangColumn;
         private readonly ListViewItem.ListViewSubItem praticeDateColumn;
@@ -17,11 +16,10 @@ namespace Vocup.Models
         public VocabularyWordController(VocabularyWord vocabularyWord)
         {
             ListViewItem = new ListViewItem();
-            imageColumn = new ListViewItem.ListViewSubItem(ListViewItem, "");
-            motherTongueColumn = new ListViewItem.ListViewSubItem(ListViewItem, "");
-            foreignLangColumn = new ListViewItem.ListViewSubItem(ListViewItem, "");
-            praticeDateColumn = new ListViewItem.ListViewSubItem(ListViewItem, "");
-            ListViewItem.SubItems.AddRange(new[] { imageColumn, motherTongueColumn, foreignLangColumn, praticeDateColumn });
+            motherTongueColumn = ListViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(ListViewItem, ""));
+            foreignLangColumn = ListViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(ListViewItem, ""));
+            praticeDateColumn = ListViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(ListViewItem, ""));
+
             VocabularyWord = vocabularyWord;
             VocabularyWord.PropertyChanged += (a0, a1) => UpdateUI();
             UpdateUI();

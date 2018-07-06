@@ -41,6 +41,7 @@ namespace Vocup.IO.Internal
                 }
 
                 book.VhrCode = vhrCode;
+                book.FilePath = path;
 
                 if (string.IsNullOrWhiteSpace(motherTongue) ||
                     string.IsNullOrWhiteSpace(foreignLang) ||

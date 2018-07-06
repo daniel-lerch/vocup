@@ -29,20 +29,14 @@ namespace Vocup
             // Automatisches Update
             CbAutoUpdate.Checked = settings.auto_update;
 
-            // Auswertung
-            CbPracticeResult.Checked = settings.show_practise_result_list;
+            // list view grid lines
+            CbGridLines.Checked = settings.GridLines;
 
             // Pfad Vokabelhefte
             TbVhfPath.Text = settings.path_vhf;
 
             // Pfad Ergebnisse
             TbVhrPath.Text = settings.path_vhr;
-
-            // Notensystem
-            if (settings.notensystem == "de")
-                CbEvaluationSystem.SelectedItem = "Deutschland";
-            else
-                CbEvaluationSystem.SelectedItem = "Schweiz";
 
             // Selber bewerten
             CbManualCheck.Checked = settings.selber_bewerten;
@@ -63,9 +57,18 @@ namespace Vocup
             // Klänge
             CbAcousticFeedback.Checked = settings.sound;
 
+            // Auswertung
+            CbPracticeResult.Checked = settings.show_practise_result_list;
+
+            // Notensystem
+            if (settings.notensystem == "de")
+                CbEvaluationSystem.SelectedItem = "Deutschland";
+            else
+                CbEvaluationSystem.SelectedItem = "Schweiz";
+
+
             // Anzahl richtig
             TrbRepetitions.Value = settings.max;
-
 
             // Max von trackbar-anzahl_richtig_falsch ermitteln
             TrbWrongRigtht.Maximum = 10 - TrbUnknown.Value;
@@ -98,21 +101,17 @@ namespace Vocup
             // Automatisches Update
             settings.auto_update = CbAutoUpdate.Checked;
 
-            // Auswertung
-            settings.show_practise_result_list = CbPracticeResult.Checked;
+            // list view grid lines
+            settings.GridLines = CbGridLines.Checked;
 
             // Pfad Vokabelhefte
-            // TODO: Are these checks neccessary to avoid reloading?
-            if (TbVhfPath.Text != settings.path_vhf)
-            {
-                settings.path_vhf = TbVhfPath.Text;
-            }
+            settings.path_vhf = TbVhfPath.Text;
 
             // Pfad Ergebnisse
-            if (TbVhrPath.Text != settings.path_vhr)
-            {
-                settings.path_vhr = TbVhrPath.Text;
-            }
+            settings.path_vhr = TbVhrPath.Text;
+
+            // Auswertung
+            settings.show_practise_result_list = CbPracticeResult.Checked;
 
             // Notensystem
             if (CbEvaluationSystem.SelectedItem.ToString() == "Deutschland")
@@ -156,6 +155,12 @@ namespace Vocup
 
             // Dialogfenster beenden
             Close();
+        }
+
+        private void BtnResetStartScreen_Click(object sender, EventArgs e)
+        {
+            settings.startscreen = "willkommensbild";
+            RbRecentFile.Checked = true;
         }
 
         private void BtnResetPractice_Click(object sender, EventArgs e)

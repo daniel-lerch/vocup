@@ -117,70 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CsvExportError" xml:space="preserve">
-    <value>Beim Exportieren einer CSV Datei ist ein unerwarteter Fehler aufgetreten.
-Details:
-{0}</value>
-    <comment>{0}: ErrorDetails</comment>
-  </data>
-  <data name="CsvImportError" xml:space="preserve">
-    <value>Beim Importieren einer CSV Datei ist ein unerwarteter Fehler aufgetreten.
-Details:
-{0}</value>
-    <comment>{0}: ErrorDetails</comment>
-  </data>
-  <data name="CsvInvalidHeader" xml:space="preserve">
-    <value>Der CSV Header konnte nicht gelesen werden.
-Bitte stellen Sie sicher, dass die Datei nicht leer ist.</value>
-  </data>
-  <data name="CsvInvalidHeaderColumns" xml:space="preserve">
-    <value>Der CSV Header verfügt über {0} Spalten, muss aber aus genau 2 Spalten bestehen</value>
-    <comment>{0}: Count of columns</comment>
-  </data>
-  <data name="CsvInvalidHeaderT" xml:space="preserve">
-    <value>Fehlerhafter CSV Header</value>
-  </data>
-  <data name="CsvInvalidLanguages" xml:space="preserve">
-    <value>Möchten Sie ein {0} - {1} Vokabelheft importieren, obwohl die Sprachen nicht übereinstimmen?</value>
-    <comment>{0}: Source, {1}: Target</comment>
-  </data>
-  <data name="UnexpectedErrorT" xml:space="preserve">
-    <value>Unerwarteter Fehler</value>
-  </data>
-  <data name="VhfInvalidFileT" xml:space="preserve">
-    <value>Fehlerhafte Vokabelheft-Datei</value>
-  </data>
-  <data name="VhfInvalidLanguages" xml:space="preserve">
-    <value>Die Mutter- und Fremdsprache der Vokabelheft-Datei konnten nicht gelesen werden oder sind identisch.
-Stellen Sie sicher, dass die Datei nicht leer ist.</value>
-  </data>
-  <data name="VhfInvalidRow" xml:space="preserve">
-    <value>Ein Eintrag dieser Vokabelheft-Datei ist ungültig. Die Datei kann deshalb nicht gelesen werden.</value>
-  </data>
-  <data name="VhfInvalidVersion" xml:space="preserve">
-    <value>Die Version der Vokabelheft-Datei konnte nicht gelesen werden.
-Bitte stellen Sie sicher, dass die Datei nicht leer ist.</value>
-  </data>
-  <data name="VhfInvalidVhrCode" xml:space="preserve">
-    <value>Die Vokabelheft-Datei enthält keinen gültigen Verweis auf ihre Ergebnisdatei.
-Stellen Sie sicher, dass die Datei nicht leer ist.</value>
-  </data>
-  <data name="VhfMustUpdate" xml:space="preserve">
-    <value>Die Vokabelheft-Datei erfordert eine neuere Version von Vocup. Sie können entweder im Programm oder im Internet nach Updates suchen.</value>
-  </data>
-  <data name="VhfMustUpdateT" xml:space="preserve">
-    <value>Update erforderlich</value>
-  </data>
-  <data name="VhrInvalidFile" xml:space="preserve">
-    <value>Die Ergbnisdatei ist fehlerhaft und wird gelöscht. Die Übungsergebnisse gehen deshalb verloren.</value>
-  </data>
-  <data name="VhrInvalidFileT" xml:space="preserve">
-    <value>Fehlerhafte Ergebnis-Datei</value>
-  </data>
-  <data name="VhrInvalidRowCount" xml:space="preserve">
-    <value>Die referenzierte Ergebnisdatei passt nicht zu diesem Vokabelheft. Die Ergebnisse werden gelöscht.</value>
-  </data>
-  <data name="VhrInvalidRowCountAndOtherFile" xml:space="preserve">
-    <value>Die referenzierte Ergebnisdatei wird von einem anderen Vokabelheft verwendet und passt nicht zu diesem. Daher werden keine Ergebnisse geladen.</value>
-  </data>
+  <metadata name="label_strich.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="LbTotalCount.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="LbFullyPracticed.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="LbWronglyPracticed.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="LbCorrectlyPracticed.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="LbUnpracticed.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="pictureBox2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="pictureBox3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="pictureBox0.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="pictureBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

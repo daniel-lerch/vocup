@@ -14,6 +14,9 @@ namespace Vocup.Util
     /// </summary>
     public static class AppInfo
     {
+        [Obsolete]
+        public const string Name = "Vocup";
+        
         /// <summary>
         /// Gets the directory where custom special char files are stored.
         /// </summary>

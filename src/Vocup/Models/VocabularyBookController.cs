@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vocup.Properties;
 
 namespace Vocup.Models
 {
@@ -19,14 +20,31 @@ namespace Vocup.Models
 
         public VocabularyBookController(VocabularyBook vocabularyBook)
         {
-            ListView = new ListView();
-            imageColumn = new ColumnHeader();
+            ImageList imageList = new ImageList();
+            imageList.Images.Add(Icons.noch_nicht_geübt);
+            imageList.Images.Add(Icons.falsch_geübt);
+            imageList.Images.Add(Icons.richtig_geübt);
+            imageList.Images.Add(Icons.übung_abgeschlossen);
+
+            ListView = new ListView()
+            {
+                Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right,
+                GridLines = Settings.Default.GridLines,
+                MultiSelect = false,
+                Size = new System.Drawing.Size(497, 487),
+                View = View.Details,
+                SmallImageList = imageList
+            };
+            imageColumn = new ColumnHeader() { Text = "" };
             motherTongueColumn = new ColumnHeader();
             foreignLangColumn = new ColumnHeader();
-            praticeDateColumn = new ColumnHeader();
-            wordControllers = new List<VocabularyWordController>();
+            praticeDateColumn = new ColumnHeader() { Text = Words.LastPracticed };
+            wordControllers = new List<VocabularyWordController>(
+                vocabularyBook.Words.Select(x => new VocabularyWordController(x)));
             WordControllers = new ReadOnlyCollection<VocabularyWordController>(wordControllers);
             ListView.Columns.AddRange(new[] { imageColumn, motherTongueColumn, foreignLangColumn, praticeDateColumn });
+            foreach (VocabularyWordController controller in wordControllers)
+                ListView.Items.Add(controller.ListViewItem);
             VocabularyBook = vocabularyBook;
             VocabularyBook.PropertyChanged += (a0, a1) => UpdateUI();
             VocabularyBook.CollectionChanged += VocabularyBook_CollectionChanged;
@@ -63,7 +81,9 @@ namespace Vocup.Models
                     foreach (VocabularyWord word in e.NewItems)
                     {
                         word.Owner = VocabularyBook;
-                        ListView.Items.Add(new VocabularyWordController(word).ListViewItem);
+                        VocabularyWordController controller = new VocabularyWordController(word);
+                        wordControllers.Add(controller);
+                        ListView.Items.Add(controller.ListViewItem);
                     }
                     break;
 
@@ -71,7 +91,9 @@ namespace Vocup.Models
                     foreach (VocabularyWord word in e.OldItems)
                     {
                         word.Owner = null;
-                        ListView.Items.Remove(GetController(word).ListViewItem);
+                        VocabularyWordController controller = GetController(word);
+                        wordControllers.Remove(controller);
+                        ListView.Items.Remove(controller.ListViewItem);
                     }
                     break;
 
@@ -79,12 +101,16 @@ namespace Vocup.Models
                     foreach (VocabularyWord word in e.OldItems)
                     {
                         word.Owner = null;
-                        ListView.Items.Remove(GetController(word).ListViewItem);
+                        VocabularyWordController controller = GetController(word);
+                        wordControllers.Remove(controller);
+                        ListView.Items.Remove(controller.ListViewItem);
                     }
                     foreach (VocabularyWord word in e.NewItems)
                     {
                         word.Owner = VocabularyBook;
-                        ListView.Items.Add(new VocabularyWordController(word).ListViewItem);
+                        VocabularyWordController controller = new VocabularyWordController(word);
+                        wordControllers.Add(controller);
+                        ListView.Items.Add(controller.ListViewItem);
                     }
                     break;
 
@@ -94,6 +120,7 @@ namespace Vocup.Models
                 case NotifyCollectionChangedAction.Reset:
                     foreach (VocabularyWord word in e.OldItems)
                         word.Owner = null;
+                    wordControllers.Clear();
                     ListView.Items.Clear();
                     break;
             }

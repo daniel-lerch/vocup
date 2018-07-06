@@ -13,11 +13,11 @@ namespace Vocup.Models
     public class VocabularyBook : INotifyPropertyChanged
     {
         private string _filePath;
-        private string _fileVersion;
         private string _vhrCode;
         private string _motherTongue;
         private string _foreignLang;
         private PracticeMode _practiceMode;
+        private bool _unsafedChanges;
 
         public VocabularyBook()
         {
@@ -30,11 +30,6 @@ namespace Vocup.Models
         {
             get => _filePath;
             set { _filePath = value; OnPropertyChanged(); }
-        }
-        public string FileVersion
-        {
-            get => _fileVersion;
-            set { _fileVersion = value; OnPropertyChanged(); }
         }
         public string VhrCode
         {
@@ -55,6 +50,11 @@ namespace Vocup.Models
         {
             get => _practiceMode;
             set { _practiceMode = value; OnPropertyChanged(); }
+        }
+        public bool UnsavedChanges
+        {
+            get => _unsafedChanges;
+            set { _unsafedChanges = value; OnPropertyChanged(); }
         }
         public IList<VocabularyWord> Words { get; }
 
