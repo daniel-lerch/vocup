@@ -96,6 +96,12 @@
     <Compile Include="Controls\StatisticsPanel.Designer.cs">
       <DependentUpon>StatisticsPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\VocabularyListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\VocabularyListView.Designer.cs">
+      <DependentUpon>VocabularyListView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\StatisticsPanel.resx">
       <DependentUpon>StatisticsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\VocabularyListView.resx">
+      <DependentUpon>VocabularyListView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutBox.resx">
       <SubType>Designer</SubType>

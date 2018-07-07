@@ -92,24 +92,9 @@
             this.treeview_imagelist = new System.Windows.Forms.ImageList(this.components);
             this.listView_vokabeln = new System.Windows.Forms.ListView();
             this.listview_imagelist = new System.Windows.Forms.ImageList(this.components);
-            this.statistik = new System.Windows.Forms.GroupBox();
-            this.label_strich = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.gesamt_text = new System.Windows.Forms.Label();
-            this.fertig_text = new System.Windows.Forms.Label();
-            this.falsch_text = new System.Windows.Forms.Label();
-            this.richtig_text = new System.Windows.Forms.Label();
-            this.noch_nicht_text = new System.Windows.Forms.Label();
-            this._2 = new System.Windows.Forms.PictureBox();
-            this._3 = new System.Windows.Forms.PictureBox();
-            this._0 = new System.Windows.Forms.PictureBox();
-            this._1 = new System.Windows.Forms.PictureBox();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.sidebar = new System.Windows.Forms.Panel();
+            this.statisticsPanel1 = new Vocup.Controls.StatisticsPanel();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.treeView = new System.Windows.Forms.TreeView();
             this.printDocument_cards = new System.Drawing.Printing.PrintDocument();
@@ -119,11 +104,6 @@
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.statistik.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._0)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._1)).BeginInit();
             this.sidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -597,9 +577,6 @@
             this.listView_vokabeln.Sorting = System.Windows.Forms.SortOrder.Descending;
             this.listView_vokabeln.UseCompatibleStateImageBehavior = false;
             this.listView_vokabeln.View = System.Windows.Forms.View.Details;
-            this.listView_vokabeln.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView_vokabeln_ColumnClick);
-            this.listView_vokabeln.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listView_vokabeln_ColumnWidthChanged);
-            this.listView_vokabeln.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.listView_vokabeln_ColumnWidthChanging);
             this.listView_vokabeln.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView_vokabeln_ItemSelectionChanged);
             this.listView_vokabeln.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView_vokabeln_MouseDoubleClick);
             // 
@@ -612,112 +589,6 @@
             this.listview_imagelist.Images.SetKeyName(2, "2.png");
             this.listview_imagelist.Images.SetKeyName(3, "3.png");
             // 
-            // statistik
-            // 
-            this.statistik.Controls.Add(this.label_strich);
-            this.statistik.Controls.Add(this.label5);
-            this.statistik.Controls.Add(this.label2);
-            this.statistik.Controls.Add(this.label4);
-            this.statistik.Controls.Add(this.label3);
-            this.statistik.Controls.Add(this.label1);
-            this.statistik.Controls.Add(this.gesamt_text);
-            this.statistik.Controls.Add(this.fertig_text);
-            this.statistik.Controls.Add(this.falsch_text);
-            this.statistik.Controls.Add(this.richtig_text);
-            this.statistik.Controls.Add(this.noch_nicht_text);
-            this.statistik.Controls.Add(this._2);
-            this.statistik.Controls.Add(this._3);
-            this.statistik.Controls.Add(this._0);
-            this.statistik.Controls.Add(this._1);
-            resources.ApplyResources(this.statistik, "statistik");
-            this.statistik.Name = "statistik";
-            this.statistik.TabStop = false;
-            this.statistik.Tag = "";
-            // 
-            // label_strich
-            // 
-            resources.ApplyResources(this.label_strich, "label_strich");
-            this.label_strich.BackColor = System.Drawing.SystemColors.Control;
-            this.label_strich.Name = "label_strich";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // gesamt_text
-            // 
-            resources.ApplyResources(this.gesamt_text, "gesamt_text");
-            this.gesamt_text.Name = "gesamt_text";
-            // 
-            // fertig_text
-            // 
-            resources.ApplyResources(this.fertig_text, "fertig_text");
-            this.fertig_text.Name = "fertig_text";
-            // 
-            // falsch_text
-            // 
-            resources.ApplyResources(this.falsch_text, "falsch_text");
-            this.falsch_text.Name = "falsch_text";
-            // 
-            // richtig_text
-            // 
-            resources.ApplyResources(this.richtig_text, "richtig_text");
-            this.richtig_text.Name = "richtig_text";
-            // 
-            // noch_nicht_text
-            // 
-            resources.ApplyResources(this.noch_nicht_text, "noch_nicht_text");
-            this.noch_nicht_text.Name = "noch_nicht_text";
-            // 
-            // _2
-            // 
-            this._2.Image = global::Vocup.Properties.Icons.richtig_geübt;
-            resources.ApplyResources(this._2, "_2");
-            this._2.Name = "_2";
-            this._2.TabStop = false;
-            // 
-            // _3
-            // 
-            this._3.Image = global::Vocup.Properties.Icons.übung_abgeschlossen;
-            resources.ApplyResources(this._3, "_3");
-            this._3.Name = "_3";
-            this._3.TabStop = false;
-            // 
-            // _0
-            // 
-            this._0.Image = global::Vocup.Properties.Icons.noch_nicht_geübt;
-            resources.ApplyResources(this._0, "_0");
-            this._0.Name = "_0";
-            this._0.TabStop = false;
-            // 
-            // _1
-            // 
-            this._1.Image = global::Vocup.Properties.Icons.falsch_geübt;
-            resources.ApplyResources(this._1, "_1");
-            this._1.Name = "_1";
-            this._1.TabStop = false;
-            // 
             // statusStrip
             // 
             resources.ApplyResources(this.statusStrip, "statusStrip");
@@ -726,11 +597,20 @@
             // sidebar
             // 
             resources.ApplyResources(this.sidebar, "sidebar");
+            this.sidebar.Controls.Add(this.statisticsPanel1);
             this.sidebar.Controls.Add(this.groupBox1);
             this.sidebar.Controls.Add(this.groupBox2);
-            this.sidebar.Controls.Add(this.statistik);
             this.sidebar.Controls.Add(this.groupBox3);
             this.sidebar.Name = "sidebar";
+            // 
+            // statisticsPanel1
+            // 
+            this.statisticsPanel1.CorrectlyPracticed = 0;
+            this.statisticsPanel1.FullyPracticed = 0;
+            resources.ApplyResources(this.statisticsPanel1, "statisticsPanel1");
+            this.statisticsPanel1.Name = "statisticsPanel1";
+            this.statisticsPanel1.Unpracticed = 0;
+            this.statisticsPanel1.WronglyPracticed = 0;
             // 
             // splitContainer
             // 
@@ -790,12 +670,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.statistik.ResumeLayout(false);
-            this.statistik.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._0)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._1)).EndInit();
             this.sidebar.ResumeLayout(false);
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel2.ResumeLayout(false);
@@ -850,23 +724,7 @@
         private System.Windows.Forms.Button vokabelheft_optionen;
         private System.Windows.Forms.ImageList listview_imagelist;
         private System.Windows.Forms.ToolStripMenuItem vokabelheftOptionenToolStripMenuItem;
-        private System.Windows.Forms.PictureBox _0;
-        private System.Windows.Forms.PictureBox _1;
-        private System.Windows.Forms.PictureBox _2;
-        private System.Windows.Forms.PictureBox _3;
-        private System.Windows.Forms.GroupBox statistik;
-        public System.Windows.Forms.Label fertig_text;
-        public System.Windows.Forms.Label falsch_text;
-        public System.Windows.Forms.Label richtig_text;
-        public System.Windows.Forms.Label noch_nicht_text;
-        public System.Windows.Forms.Label gesamt_text;
-        public System.Windows.Forms.Label label_strich;
         private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem nachUpdatesToolStripMenuItem;
@@ -892,6 +750,7 @@
         private System.Drawing.Printing.PrintDocument printDocument_cards;
         private System.Drawing.Printing.PrintDocument printDocument_list;
         private System.Windows.Forms.ToolStripMenuItem infosZurBewertungToolStripMenuItem;
+        private Controls.StatisticsPanel statisticsPanel1;
     }
 }
 
