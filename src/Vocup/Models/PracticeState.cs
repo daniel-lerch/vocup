@@ -29,9 +29,9 @@ namespace Vocup.Models
                 return PracticeState.Unpracticed;
             if (practiceStateNumber == 1)
                 return PracticeState.WronglyPracticed;
-            if (practiceStateNumber < Properties.Settings.Default.max)
+            if (practiceStateNumber < Properties.Settings.Default.MaxPracticeCount)
                 return PracticeState.CorrectlyPracticed;
-            else // if (practiceStateNumber >= Properties.Settings.Default.max)
+            else // if (practiceStateNumber >= Properties.Settings.Default.MaxPracticeCount)
                 return PracticeState.FullyPracticed;
         }
     }

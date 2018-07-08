@@ -147,6 +147,7 @@
     <Compile Include="Models\PracticeState.cs" />
     <Compile Include="Models\VocabularyBook.cs" />
     <Compile Include="Models\VocabularyBookController.cs" />
+    <Compile Include="Models\VocabularyBookStatistics.cs" />
     <Compile Include="Models\VocabularyWord.cs" />
     <Compile Include="Models\VocabularyWordController.cs" />
     <Compile Include="Forms\PrintCardsDialog.cs">
@@ -307,9 +308,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>update_windows.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="vokabel_count_practise_dialog.resx">
+    <EmbeddedResource Include="Forms\PracticeCountDialog.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>vokabel_count_practise_dialog.cs</DependentUpon>
+      <DependentUpon>PracticeCountDialog.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="practise_result_list.cs">
       <SubType>Form</SubType>
@@ -350,14 +351,15 @@
     </Compile>
     <Compile Include="Util\AppInfo.cs" />
     <Compile Include="Util\Crypto.cs" />
+    <Compile Include="Util\ReactiveCollection.cs" />
     <Compile Include="Util\RewriteHelper.cs" />
     <Compile Include="Util\StringExtensions.cs" />
     <Compile Include="Util\SystemInfo.cs" />
-    <Compile Include="vokabel_count_practise_dialog.cs">
+    <Compile Include="Forms\PracticeCountDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vokabel_count_practise_dialog.Designer.cs">
-      <DependentUpon>vokabel_count_practise_dialog.cs</DependentUpon>
+    <Compile Include="Forms\PracticeCountDialog.Designer.cs">
+      <DependentUpon>PracticeCountDialog.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

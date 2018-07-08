@@ -68,7 +68,7 @@ namespace Vocup
 
 
             // Anzahl richtig
-            TrbRepetitions.Value = settings.max;
+            TrbRepetitions.Value = settings.MaxPracticeCount;
 
             // Max von trackbar-anzahl_richtig_falsch ermitteln
             TrbWrongRigtht.Maximum = 10 - TrbUnknown.Value;
@@ -143,7 +143,7 @@ namespace Vocup
             settings.sound = CbAcousticFeedback.Checked;
 
             // Anzahl richtig
-            settings.max = TrbRepetitions.Value;
+            settings.MaxPracticeCount = TrbRepetitions.Value;
 
             // Prozentuale Anteile
             settings.prozent_noch_nicht = TrbUnknown.Value * 10;
@@ -154,6 +154,7 @@ namespace Vocup
             settings.Save();
 
             // Dialogfenster beenden
+            DialogResult = DialogResult.OK;
             Close();
         }
 

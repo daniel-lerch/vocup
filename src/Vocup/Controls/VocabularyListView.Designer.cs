@@ -46,6 +46,7 @@
             this.foreignLangColumn,
             this.lastPracticedColumn});
             this.MainListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainListView.FullRowSelect = true;
             this.MainListView.Location = new System.Drawing.Point(0, 0);
             this.MainListView.MultiSelect = false;
             this.MainListView.Name = "MainListView";

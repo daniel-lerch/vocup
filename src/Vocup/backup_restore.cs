@@ -1,14 +1,12 @@
+using ICSharpCode.SharpZipLib.Core;
+using ICSharpCode.SharpZipLib.Zip;
 using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using System.IO;
-using System.Collections;
-using ICSharpCode.SharpZipLib.Zip;
-using ICSharpCode.SharpZipLib.Core;
 using Vocup.Properties;
 
 namespace Vocup
@@ -26,9 +24,9 @@ namespace Vocup
         private string[,] vhf_vhr_log;
         private string[] vhr_log;
 
-        public ArrayList vhf_restore = new ArrayList();
-        public ArrayList vhr_restore = new ArrayList();
-        public ArrayList chars_restore = new ArrayList();
+        public List<string[]> vhf_restore = new List<string[]>();
+        public List<string> vhr_restore = new List<string>();
+        public List<string> chars_restore = new List<string>();
 
         private void backup_restore_Load(object sender, EventArgs e)
         {

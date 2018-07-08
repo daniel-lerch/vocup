@@ -14,6 +14,7 @@ namespace Vocup.Models
         private string _motherTongue;
         private string _foreignLang;
         private string _foreignLangSynonym;
+        private PracticeState _practiceState;
         private int _practiceStateNumber;
         private DateTime _practiceDate;
 
@@ -58,12 +59,20 @@ namespace Vocup.Models
             }
         }
 
-        public PracticeState PracticeState => PracticeStateHelper.Parse(_practiceStateNumber);
+        public PracticeState PracticeState
+        {
+            get => _practiceState;
+            private set { _practiceState = value; OnPropertyChanged(); }
+        }
 
         public int PracticeStateNumber
         {
             get => _practiceStateNumber;
-            set { _practiceStateNumber = value; OnPropertyChanged(); }
+            set
+            {
+                _practiceStateNumber = value; OnPropertyChanged();
+                PracticeState = PracticeStateHelper.Parse(_practiceStateNumber);
+            }
         }
         public DateTime PracticeDate
         {
@@ -78,6 +87,11 @@ namespace Vocup.Models
         private void OnPropertyChanged([CallerMemberName] string name = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+        public void RenewPracticeState()
+        {
+            PracticeState = PracticeStateHelper.Parse(_practiceStateNumber);
         }
     }
 }

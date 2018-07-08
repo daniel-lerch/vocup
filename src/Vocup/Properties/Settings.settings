@@ -11,7 +11,7 @@
     <Setting Name="sonderzeichen_registerkarte" Type="System.String" Scope="User">
       <Value Profile="(Default)">deutsch</Value>
     </Setting>
-    <Setting Name="max" Type="System.Int32" Scope="User">
+    <Setting Name="MaxPracticeCount" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">3</Value>
     </Setting>
     <Setting Name="startscreen" Type="System.String" Scope="User">

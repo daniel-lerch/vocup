@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+using Vocup.Util;
 
 namespace Vocup.Models
 {
@@ -21,9 +18,9 @@ namespace Vocup.Models
 
         public VocabularyBook()
         {
-            var words = new ObservableCollection<VocabularyWord>();
-            words.CollectionChanged += OnCollectionChanged;
-            Words = words;
+            Words = new ReactiveCollection<VocabularyWord>();
+            Words.CollectionChanged += OnCollectionChanged;
+            Statistics = new VocabularyBookStatistics(this);
         }
 
         public string FilePath
@@ -56,7 +53,8 @@ namespace Vocup.Models
             get => _unsafedChanges;
             set { _unsafedChanges = value; OnPropertyChanged(); }
         }
-        public IList<VocabularyWord> Words { get; }
+        public ReactiveCollection<VocabularyWord> Words { get; }
+        public VocabularyBookStatistics Statistics { get; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -74,17 +72,15 @@ namespace Vocup.Models
 
         public void GenerateVhrCode()
         {
-            // No need for RNGCryptoServiceProvider here because this is not security critical.
             int number1 = '0', number2 = '9';
             int bigLetter1 = 'A', bigLetter2 = 'Z';
             int smallLetter1 = 'a', smallLetter2 = 'z';
 
-            Random random = new Random();
+            Random random = new Random(); // No need for RNGCryptoServiceProvider here because this is not security critical.
             char[] code = new char[24];
 
             do
             {
-
                 int i = 0;
                 while (i < code.Length)
                 {

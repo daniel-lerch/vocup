@@ -228,7 +228,7 @@ namespace Vocup
             {
                 for (int i = 0; i < listbox.Items.Count; i++)
                 {
-                    if (vocable_state[i] > 1 && vocable_state[i] <= Properties.Settings.Default.max)
+                    if (vocable_state[i] > 1 && vocable_state[i] <= Properties.Settings.Default.MaxPracticeCount)
                     {
                         listbox.SetItemChecked(i, true);
                     }
@@ -239,7 +239,7 @@ namespace Vocup
             {
                 for (int i = 0; i < listbox.Items.Count; i++)
                 {
-                    if (vocable_state[i] > 1 && vocable_state[i] <= Properties.Settings.Default.max)
+                    if (vocable_state[i] > 1 && vocable_state[i] <= Properties.Settings.Default.MaxPracticeCount)
                     {
                         listbox.SetItemChecked(i, false);
                     }
@@ -276,7 +276,7 @@ namespace Vocup
             {
                 for (int i = 0; i < listbox.Items.Count; i++)
                 {
-                    if (vocable_state[i] >= Properties.Settings.Default.max + 1)
+                    if (vocable_state[i] >= Properties.Settings.Default.MaxPracticeCount + 1)
                     {
                         listbox.SetItemChecked(i, true);
                     }
@@ -288,7 +288,7 @@ namespace Vocup
             {
                 for (int i = 0; i < listbox.Items.Count; i++)
                 {
-                    if (vocable_state[i] >= Properties.Settings.Default.max + 1)
+                    if (vocable_state[i] >= Properties.Settings.Default.MaxPracticeCount + 1)
                     {
                         listbox.SetItemChecked(i, false);
                     }

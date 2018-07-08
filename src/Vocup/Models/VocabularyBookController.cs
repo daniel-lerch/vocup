@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vocup.Controls;
 using Vocup.Properties;
@@ -16,7 +12,7 @@ namespace Vocup.Models
         private readonly List<VocabularyWordController> wordControllers;
         private StatisticsPanel _statisticsPanel;
 
-        public VocabularyBookController(VocabularyBook vocabularyBook)
+        public VocabularyBookController(VocabularyBook book)
         {
             ListView = new VocabularyListView()
             {
@@ -25,11 +21,11 @@ namespace Vocup.Models
             };
             wordControllers = new List<VocabularyWordController>();
             WordControllers = new ReadOnlyCollection<VocabularyWordController>(wordControllers);
-            AddItems(vocabularyBook.Words);
-            VocabularyBook = vocabularyBook;
-            VocabularyBook.PropertyChanged += (a0, a1) => UpdateUI();
-            VocabularyBook.CollectionChanged += VocabularyBook_CollectionChanged;
-            VocabularyBook.CollectionChanged += OnStatisticsChanged;
+            book.Words.OnAdd(AddItem);
+            book.Words.OnRemove(RemoveItem);
+            book.PropertyChanged += (a0, a1) => UpdateUI();
+            book.Statistics.PropertyChanged += OnStatisticsChanged;
+            VocabularyBook = book;
             UpdateUI();
         }
 
@@ -60,89 +56,32 @@ namespace Vocup.Models
             ListView.ForeignLang = VocabularyBook.ForeignLang;
         }
 
-        private void VocabularyBook_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            switch (e.Action)
-            {
-                case NotifyCollectionChangedAction.Add:
-                    AddItems(e.NewItems);
-                    break;
-
-                case NotifyCollectionChangedAction.Remove:
-                    RemoveItems(e.OldItems);
-                    break;
-
-                case NotifyCollectionChangedAction.Replace:
-                    AddItems(e.NewItems);
-                    RemoveItems(e.OldItems);
-                    break;
-
-                case NotifyCollectionChangedAction.Move:
-                    break; // sort will be done on UI layer
-
-                case NotifyCollectionChangedAction.Reset:
-                    RemoveItems(e.OldItems);
-                    break;
-            }
-        }
-
         private void OnStatisticsChanged(object sender, EventArgs e) => OnStatisticsChanged();
         private void OnStatisticsChanged()
         {
             if (StatisticsPanel == null)
                 return;
 
-            int un = 0, wrongly = 0, correctly = 0, fully = 0;
-
-            foreach (VocabularyWord word in VocabularyBook.Words)
-            {
-                switch (word.PracticeState)
-                {
-                    case PracticeState.Unpracticed:
-                        un++;
-                        break;
-                    case PracticeState.WronglyPracticed:
-                        wrongly++;
-                        break;
-                    case PracticeState.CorrectlyPracticed:
-                        correctly++;
-                        break;
-                    case PracticeState.FullyPracticed:
-                        fully++;
-                        break;
-                    default:
-                        break;
-                }
-            }
-
-            StatisticsPanel.Unpracticed = un;
-            StatisticsPanel.WronglyPracticed = wrongly;
-            StatisticsPanel.CorrectlyPracticed = correctly;
-            StatisticsPanel.FullyPracticed = fully;
+            StatisticsPanel.Unpracticed = VocabularyBook.Statistics.Unpracticed;
+            StatisticsPanel.WronglyPracticed = VocabularyBook.Statistics.WronglyPracticed;
+            StatisticsPanel.CorrectlyPracticed = VocabularyBook.Statistics.CorrectlyPracticed;
+            StatisticsPanel.FullyPracticed = VocabularyBook.Statistics.FullyPracticed;
         }
 
-        private void AddItems(IEnumerable items)
+        private void AddItem(VocabularyWord item)
         {
-            foreach (VocabularyWord word in items)
-            {
-                word.Owner = VocabularyBook;
-                VocabularyWordController controller = new VocabularyWordController(word);
-                wordControllers.Add(controller);
-                ListView.Items.Add(controller.ListViewItem);
-                word.PropertyChanged += OnStatisticsChanged;
-            }
+            item.Owner = VocabularyBook;
+            VocabularyWordController controller = new VocabularyWordController(item);
+            wordControllers.Add(controller);
+            ListView.Items.Add(controller.ListViewItem);
         }
 
-        private void RemoveItems(IEnumerable items)
+        private void RemoveItem(VocabularyWord item)
         {
-            foreach (VocabularyWord word in items)
-            {
-                word.Owner = null;
-                VocabularyWordController controller = GetController(word);
-                wordControllers.Remove(controller);
-                ListView.Items.Remove(controller.ListViewItem);
-                word.PropertyChanged -= OnStatisticsChanged;
-            }
+            item.Owner = null;
+            VocabularyWordController controller = GetController(item);
+            wordControllers.Remove(controller);
+            ListView.Items.Remove(controller.ListViewItem);
         }
     }
 }

@@ -9,6 +9,8 @@ namespace Vocup.Controls
 {
     public partial class VocabularyListView : UserControl
     {
+        // TODO: Prevent column width resizing on form resize
+
         private int initialWidthImage;
         private int initialWidthLastPraticed;
 
@@ -79,11 +81,6 @@ namespace Vocup.Controls
 
         public class Sorter : IComparer
         {
-            public Sorter()
-            {
-
-            }
-
             public SortOrder SortOrder { get; set; }
 
             public int Column { get; set; }
