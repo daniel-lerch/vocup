@@ -1,163 +1,82 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Vocup.Models;
 
 namespace Vocup.Forms
 {
     public partial class PracticeCountDialog : Form
     {
-        public PracticeCountDialog()
+        private VocabularyBook book;
+
+        public PracticeCountDialog(VocabularyBook book)
         {
             InitializeComponent();
+            this.book = book;
+            PracticeList = new List<VocabularyWordPractice>();
         }
 
-        public string button;
-        public int anzahl_noch_nicht;
-        public int anzahl_falsch;
-        public int anzahl_richtig;
-        public int anzahl_gesamt;
+        public List<VocabularyWordPractice> PracticeList { get; }
 
-        private void BtnCount20_Click(object sender, EventArgs e)
+        private void Form_Load(object sender, EventArgs e)
         {
-            button = "20";
-            Close();
+            RbUnpracticed.Enabled = book.Statistics.Unpracticed > 0;
+            RbWronglyPracticed.Enabled = book.Statistics.WronglyPracticed > 0;
+            RbCorrectlyPracticed.Enabled = book.Statistics.CorrectlyPracticed > 0;
         }
 
-        private void BtnCount30_Click(object sender, EventArgs e)
-        {
-            button = "30";
-            Close();
-        }
+        private void BtnCount20_Click(object sender, EventArgs e) => Finish(20);
 
-        private void BtnCount40_Click(object sender, EventArgs e)
-        {
-            button = "40";
-            Close();
-        }
+        private void BtnCount30_Click(object sender, EventArgs e) => Finish(30);
 
-        private void BtnCountAll_Click(object sender, EventArgs e)
-        {
-            button = "alle";
-            Close();
-        }
+        private void BtnCount40_Click(object sender, EventArgs e) => Finish(40);
 
-        private void BtnCountCustom_Click(object sender, EventArgs e)
-        {
-            button = "individuell";
-            Close();
-        }
+        private void BtnCountAll_Click(object sender, EventArgs e) => Finish(book.Statistics.NotFullyPracticed);
 
+        private void BtnCountCustom_Click(object sender, EventArgs e) => Finish((int)anzahl.Value);
 
         private void RbAllStates_CheckedChanged(object sender, EventArgs e)
         {
             if (RbAllStates.Checked)
-            {
-                int count;
-
-                if (RbAllDates.Checked)
-                    count = anzahl_gesamt;
-                else
-                    count = anzahl_gesamt - anzahl_noch_nicht;
-
-                anzahl.Maximum = count;
-
-                BtnCount20.Enabled = count >= 20;
-                BtnCount30.Enabled = count >= 30;
-                BtnCount40.Enabled = count >= 40;
-            }
+                Reload(book.Statistics.NotFullyPracticed);
         }
 
         private void RbUnpracticed_CheckedChanged(object sender, EventArgs e)
         {
             if (RbUnpracticed.Checked)
-            {
-                anzahl.Maximum = anzahl_noch_nicht;
-
-                BtnCount20.Enabled = anzahl_noch_nicht >= 20;
-                BtnCount30.Enabled = anzahl_noch_nicht >= 30;
-                BtnCount40.Enabled = anzahl_noch_nicht >= 40;
-
-                //Zeitlich abschalten
-                RbLaterPracticed.Enabled = false;
-                RbEarlierPracticed.Enabled = false;
-                RbAllDates.Checked = true;
-            }
-            else
-            {
-                //Zeitlich einschalten
-                RbLaterPracticed.Enabled = true;
-                RbEarlierPracticed.Enabled = true;
-            }
+                Reload(book.Statistics.Unpracticed);
         }
 
         private void RbWronglyPracticed_CheckedChanged(object sender, EventArgs e)
         {
             if (RbWronglyPracticed.Checked)
-            {
-                anzahl.Maximum = anzahl_falsch;
-
-                BtnCount20.Enabled = anzahl_falsch >= 20;
-                BtnCount30.Enabled = anzahl_falsch >= 30;
-                BtnCount40.Enabled = anzahl_falsch >= 40;
-            }
+                Reload(book.Statistics.WronglyPracticed);
         }
 
         private void RbCorrectlyPracticed_CheckedChanged(object sender, EventArgs e)
         {
             if (RbCorrectlyPracticed.Checked)
-            {
-                anzahl.Maximum = anzahl_richtig;
-
-                BtnCount20.Enabled = anzahl_richtig >= 20;
-                BtnCount30.Enabled = anzahl_richtig >= 30;
-                BtnCount40.Enabled = anzahl_richtig >= 40;
-            }
+                Reload(book.Statistics.CorrectlyPracticed);
         }
 
-
-        //Welche Vokabeln haben priorität
-
-        private void zeitlich_alle_CheckedChanged(object sender, EventArgs e)
+        private void Reload(int count)
         {
-            RbAllStates_CheckedChanged(sender, e);
+            anzahl.Maximum = count;
+
+            BtnCount20.Enabled = count >= 20;
+            BtnCount30.Enabled = count >= 30;
+            BtnCount40.Enabled = count >= 40;
         }
 
-        private void zeitlich_laengst_CheckedChanged(object sender, EventArgs e)
+        private void Finish(int count)
         {
-            if (RbEarlierPracticed.Checked == true)
-            {
-                if (RbAllStates.Checked == true)
-                {
-                    RbAllStates_CheckedChanged(sender, e);
-                }
-                else if (RbWronglyPracticed.Checked == true)
-                {
-                    RbWronglyPracticed_CheckedChanged(sender, e);
-                }
-                else if (RbCorrectlyPracticed.Checked == true)
-                {
-                    RbCorrectlyPracticed_CheckedChanged(sender, e);
-                }
-            }
-        }
+            // TODO: Implement logic:
+            // 1. Calculate count for each category
+            // 2. Get all items for each category, sort and get the needed count
+            // 3. Store all elements in one list
+            // 4. Randomly reorder elements (https://stackoverflow.com/questions/273313/randomize-a-listt)
 
-        private void zeitlich_kuerzlich_CheckedChanged(object sender, EventArgs e)
-        {
-            if (RbLaterPracticed.Checked == true)
-            {
-                if (RbAllStates.Checked == true)
-                {
-                    RbAllStates_CheckedChanged(sender, e);
-                }
-                else if (RbWronglyPracticed.Checked == true)
-                {
-                    RbWronglyPracticed_CheckedChanged(sender, e);
-                }
-                else if (RbCorrectlyPracticed.Checked == true)
-                {
-                    RbCorrectlyPracticed_CheckedChanged(sender, e);
-                }
-            }
+            Close();
         }
     }
 }

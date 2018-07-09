@@ -28,6 +28,8 @@ namespace Vocup.Models
         public int CorrectlyPracticed { get; private set; }
         public int FullyPracticed { get; private set; }
 
+        public int NotFullyPracticed => Unpracticed + WronglyPracticed + CorrectlyPracticed;
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertyChanged([CallerMemberName] string name = "")

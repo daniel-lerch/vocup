@@ -144,6 +144,7 @@
     <Compile Include="IO\VocabularyFile.cs" />
     <Compile Include="IO\VocupFile.cs" />
     <Compile Include="Models\PracticeMode.cs" />
+    <Compile Include="Models\PracticeResult.cs" />
     <Compile Include="Models\PracticeState.cs" />
     <Compile Include="Models\VocabularyBook.cs" />
     <Compile Include="Models\VocabularyBookController.cs" />
@@ -156,6 +157,7 @@
     <Compile Include="Forms\PrintCardsDialog.Designer.cs">
       <DependentUpon>PrintCardsDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\VocabularyWordPractice.cs" />
     <Compile Include="Properties\Icons.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

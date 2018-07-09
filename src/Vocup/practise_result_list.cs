@@ -23,16 +23,6 @@ namespace Vocup
 
         //ListView Spaltenbreite festlegen
 
-        private void listView_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
-        {
-            // Garantiert, dass die Spaltenbreite von Column 0 immer gleich bleibt
-
-            if (listView.Enabled && e.ColumnIndex == 0)
-            {
-                listView.Columns[0].Width = 20;
-            }
-        }
-
         private void listView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
         {
             //Verhindert, dass die Spaltenbreite von column 0 geändert werden kann
@@ -40,6 +30,7 @@ namespace Vocup
             if (listView.Enabled && e.ColumnIndex == 0)
             {
                 e.Cancel = true;
+                e.NewWidth = 20;
             }
         }
 

@@ -146,7 +146,6 @@
             this.RbEarlierPracticed.Name = "RbEarlierPracticed";
             this.RbEarlierPracticed.TabStop = true;
             this.RbEarlierPracticed.UseVisualStyleBackColor = true;
-            this.RbEarlierPracticed.CheckedChanged += new System.EventHandler(this.zeitlich_laengst_CheckedChanged);
             // 
             // RbLaterPracticed
             // 
@@ -154,7 +153,6 @@
             this.RbLaterPracticed.Name = "RbLaterPracticed";
             this.RbLaterPracticed.TabStop = true;
             this.RbLaterPracticed.UseVisualStyleBackColor = true;
-            this.RbLaterPracticed.CheckedChanged += new System.EventHandler(this.zeitlich_kuerzlich_CheckedChanged);
             // 
             // RbAllDates
             // 
@@ -163,7 +161,6 @@
             this.RbAllDates.Name = "RbAllDates";
             this.RbAllDates.TabStop = true;
             this.RbAllDates.UseVisualStyleBackColor = true;
-            this.RbAllDates.CheckedChanged += new System.EventHandler(this.zeitlich_alle_CheckedChanged);
             // 
             // GroupState
             // 
@@ -221,7 +218,7 @@
             this.GroupCount.Name = "GroupCount";
             this.GroupCount.TabStop = false;
             // 
-            // vokabel_count_practise_dialog
+            // PracticeCountDialog
             // 
             this.AcceptButton = this.BtnCount20;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -233,9 +230,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "vokabel_count_practise_dialog";
+            this.Name = "PracticeCountDialog";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.Load += new System.EventHandler(this.Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.anzahl)).EndInit();
             this.GroupState.ResumeLayout(false);
             this.GroupState.PerformLayout();
