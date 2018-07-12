@@ -325,7 +325,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Words.resx</DependentUpon>
     </Compile>
-    <Compile Include="SendFileTo.cs" />
     <Compile Include="AudioVideoPlay.cs" />
     <Compile Include="Forms\SpecialCharKeyboard.cs">
       <SubType>Form</SubType>

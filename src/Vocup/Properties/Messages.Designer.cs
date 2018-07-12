@@ -120,6 +120,24 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Möchten die Änderungen am Vokabelheft speichern, bevor Sie es im Explorer öffnen? Sie können die Änderungen jederzeit auch später speichern..
+        /// </summary>
+        internal static string OpenInExplorerSave {
+            get {
+                return ResourceManager.GetString("OpenInExplorerSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jetzt speichern?.
+        /// </summary>
+        internal static string OpenInExplorerSaveT {
+            get {
+                return ResourceManager.GetString("OpenInExplorerSaveT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unerwarteter Fehler.
         /// </summary>
         internal static string UnexpectedErrorT {

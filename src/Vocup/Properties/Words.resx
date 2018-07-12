@@ -134,6 +134,9 @@
     <value>Richtig wäre: {0} und {1}</value>
     <comment>{0}: Word, {1}: Synonym</comment>
   </data>
+  <data name="CreateVocabularyBook" xml:space="preserve">
+    <value>Neues Vokabelheft erstellen</value>
+  </data>
   <data name="EditVocabularyBook" xml:space="preserve">
     <value>Vokabelheft bearbeiten</value>
   </data>

@@ -129,9 +129,6 @@
     <value>Speichern Sie bitte das Vokabelheft vor dem Drucken ab.</value>
     <comment>print_dialog</comment>
   </data>
-  <data name="have_to_save_mail" xml:space="preserve">
-    <value>Speichern Sie bitte das Vokabelheft vor dem Versenden ab.</value>
-  </data>
   <data name="merge_error" xml:space="preserve">
     <value>Beim Zusammenführen der Vokabelhefte ist ein Fehler aufgetreten.</value>
     <comment>merge</comment>

@@ -42,7 +42,7 @@
             this.importierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
-            this.vokabelheftSendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TsmiOpenInExplorer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
             this.druckenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -134,7 +134,7 @@
             this.importierenToolStripMenuItem,
             this.exportierenToolStripMenuItem,
             this.toolStripMenuItem9,
-            this.vokabelheftSendenToolStripMenuItem,
+            this.TsmiOpenInExplorer,
             this.toolStripMenuItem7,
             this.druckenToolStripMenuItem,
             this.toolStripMenuItem1,
@@ -207,12 +207,12 @@
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
             resources.ApplyResources(this.toolStripMenuItem9, "toolStripMenuItem9");
             // 
-            // vokabelheftSendenToolStripMenuItem
+            // TsmiOpenInExplorer
             // 
-            resources.ApplyResources(this.vokabelheftSendenToolStripMenuItem, "vokabelheftSendenToolStripMenuItem");
-            this.vokabelheftSendenToolStripMenuItem.Image = global::Vocup.Properties.Icons.email_go;
-            this.vokabelheftSendenToolStripMenuItem.Name = "vokabelheftSendenToolStripMenuItem";
-            this.vokabelheftSendenToolStripMenuItem.Click += new System.EventHandler(this.vokabelheftSendenToolStripMenuItem_Click);
+            resources.ApplyResources(this.TsmiOpenInExplorer, "TsmiOpenInExplorer");
+            this.TsmiOpenInExplorer.Image = global::Vocup.Properties.Icons.open;
+            this.TsmiOpenInExplorer.Name = "TsmiOpenInExplorer";
+            this.TsmiOpenInExplorer.Click += new System.EventHandler(this.TsmiOpenInExplorer_Click);
             // 
             // toolStripMenuItem7
             // 
@@ -732,7 +732,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem importierenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportierenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vokabelheftSendenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem TsmiOpenInExplorer;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem9;

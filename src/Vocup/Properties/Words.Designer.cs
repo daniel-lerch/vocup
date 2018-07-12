@@ -106,6 +106,15 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Neues Vokabelheft erstellen.
+        /// </summary>
+        internal static string CreateVocabularyBook {
+            get {
+                return ResourceManager.GetString("CreateVocabularyBook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vokabelheft bearbeiten.
         /// </summary>
         internal static string EditVocabularyBook {

@@ -88,15 +88,6 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Speichern Sie bitte das Vokabelheft vor dem Versenden ab..
-        /// </summary>
-        internal static string have_to_save_mail {
-            get {
-                return ResourceManager.GetString("have_to_save_mail", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Beim Zusammenführen der Vokabelhefte ist ein Fehler aufgetreten..
         /// </summary>
         internal static string merge_error {

@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VocabularyBookSettings));
             this.BtnSpecialChar = new System.Windows.Forms.Button();
-            this.option_box = new System.Windows.Forms.GroupBox();
+            this.GroupOptions = new System.Windows.Forms.GroupBox();
             this.CbResetResults = new System.Windows.Forms.CheckBox();
             this.BtnCancel = new System.Windows.Forms.Button();
             this.BtnOK = new System.Windows.Forms.Button();
@@ -38,11 +38,11 @@
             this.muttersprache = new System.Windows.Forms.Label();
             this.fremdsprache = new System.Windows.Forms.Label();
             this.TbForeignLang = new System.Windows.Forms.TextBox();
-            this.uebersetzungsrichtung = new System.Windows.Forms.GroupBox();
+            this.GroupPracticeMode = new System.Windows.Forms.GroupBox();
             this.RbModeAskMotherTongue = new System.Windows.Forms.RadioButton();
-            this.RbModeAskForeignTongue = new System.Windows.Forms.RadioButton();
-            this.option_box.SuspendLayout();
-            this.uebersetzungsrichtung.SuspendLayout();
+            this.RbModeAskForeignLang = new System.Windows.Forms.RadioButton();
+            this.GroupOptions.SuspendLayout();
+            this.GroupPracticeMode.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnSpecialChar
@@ -52,12 +52,12 @@
             this.BtnSpecialChar.UseVisualStyleBackColor = true;
             this.BtnSpecialChar.Click += new System.EventHandler(this.BtnSpecialChar_Click);
             // 
-            // option_box
+            // GroupOptions
             // 
-            this.option_box.Controls.Add(this.CbResetResults);
-            resources.ApplyResources(this.option_box, "option_box");
-            this.option_box.Name = "option_box";
-            this.option_box.TabStop = false;
+            this.GroupOptions.Controls.Add(this.CbResetResults);
+            resources.ApplyResources(this.GroupOptions, "GroupOptions");
+            this.GroupOptions.Name = "GroupOptions";
+            this.GroupOptions.TabStop = false;
             // 
             // CbResetResults
             // 
@@ -78,6 +78,7 @@
             resources.ApplyResources(this.BtnOK, "BtnOK");
             this.BtnOK.Name = "BtnOK";
             this.BtnOK.UseVisualStyleBackColor = true;
+            this.BtnOK.Click += new System.EventHandler(this.BtnOK_Click);
             // 
             // TbMotherTongue
             // 
@@ -103,13 +104,13 @@
             this.TbForeignLang.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             this.TbForeignLang.Enter += new System.EventHandler(this.TextBox_Enter);
             // 
-            // uebersetzungsrichtung
+            // GroupPracticeMode
             // 
-            this.uebersetzungsrichtung.Controls.Add(this.RbModeAskMotherTongue);
-            this.uebersetzungsrichtung.Controls.Add(this.RbModeAskForeignTongue);
-            resources.ApplyResources(this.uebersetzungsrichtung, "uebersetzungsrichtung");
-            this.uebersetzungsrichtung.Name = "uebersetzungsrichtung";
-            this.uebersetzungsrichtung.TabStop = false;
+            this.GroupPracticeMode.Controls.Add(this.RbModeAskMotherTongue);
+            this.GroupPracticeMode.Controls.Add(this.RbModeAskForeignLang);
+            resources.ApplyResources(this.GroupPracticeMode, "GroupPracticeMode");
+            this.GroupPracticeMode.Name = "GroupPracticeMode";
+            this.GroupPracticeMode.TabStop = false;
             // 
             // RbModeAskMotherTongue
             // 
@@ -118,13 +119,13 @@
             this.RbModeAskMotherTongue.TabStop = true;
             this.RbModeAskMotherTongue.UseVisualStyleBackColor = true;
             // 
-            // RbModeAskForeignTongue
+            // RbModeAskForeignLang
             // 
-            resources.ApplyResources(this.RbModeAskForeignTongue, "RbModeAskForeignTongue");
-            this.RbModeAskForeignTongue.Checked = true;
-            this.RbModeAskForeignTongue.Name = "RbModeAskForeignTongue";
-            this.RbModeAskForeignTongue.TabStop = true;
-            this.RbModeAskForeignTongue.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.RbModeAskForeignLang, "RbModeAskForeignLang");
+            this.RbModeAskForeignLang.Checked = true;
+            this.RbModeAskForeignLang.Name = "RbModeAskForeignLang";
+            this.RbModeAskForeignLang.TabStop = true;
+            this.RbModeAskForeignLang.UseVisualStyleBackColor = true;
             // 
             // VocabularyBookSettings
             // 
@@ -132,13 +133,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this.BtnCancel;
             resources.ApplyResources(this, "$this");
-            this.Controls.Add(this.uebersetzungsrichtung);
+            this.Controls.Add(this.GroupPracticeMode);
             this.Controls.Add(this.fremdsprache);
             this.Controls.Add(this.TbForeignLang);
             this.Controls.Add(this.muttersprache);
             this.Controls.Add(this.TbMotherTongue);
             this.Controls.Add(this.BtnSpecialChar);
-            this.Controls.Add(this.option_box);
+            this.Controls.Add(this.GroupOptions);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnOK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -146,10 +147,10 @@
             this.MinimizeBox = false;
             this.Name = "VocabularyBookSettings";
             this.ShowInTaskbar = false;
-            this.option_box.ResumeLayout(false);
-            this.option_box.PerformLayout();
-            this.uebersetzungsrichtung.ResumeLayout(false);
-            this.uebersetzungsrichtung.PerformLayout();
+            this.GroupOptions.ResumeLayout(false);
+            this.GroupOptions.PerformLayout();
+            this.GroupPracticeMode.ResumeLayout(false);
+            this.GroupPracticeMode.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,7 +159,7 @@
         #endregion
 
         private System.Windows.Forms.Button BtnSpecialChar;
-        public System.Windows.Forms.GroupBox option_box;
+        public System.Windows.Forms.GroupBox GroupOptions;
         public System.Windows.Forms.CheckBox CbResetResults;
         private System.Windows.Forms.Button BtnCancel;
         public System.Windows.Forms.Button BtnOK;
@@ -166,8 +167,8 @@
         private System.Windows.Forms.Label muttersprache;
         private System.Windows.Forms.Label fremdsprache;
         public System.Windows.Forms.TextBox TbForeignLang;
-        private System.Windows.Forms.GroupBox uebersetzungsrichtung;
+        private System.Windows.Forms.GroupBox GroupPracticeMode;
         public System.Windows.Forms.RadioButton RbModeAskMotherTongue;
-        public System.Windows.Forms.RadioButton RbModeAskForeignTongue;
+        public System.Windows.Forms.RadioButton RbModeAskForeignLang;
     }
 }
