@@ -353,9 +353,11 @@
     </Compile>
     <Compile Include="Util\AppInfo.cs" />
     <Compile Include="Util\Crypto.cs" />
+    <Compile Include="Util\ListCompositor.cs" />
     <Compile Include="Util\ReactiveCollection.cs" />
     <Compile Include="Util\RewriteHelper.cs" />
-    <Compile Include="Util\StringExtensions.cs" />
+    <Compile Include="Util\SaintLague.cs" />
+    <Compile Include="Util\Extensions.cs" />
     <Compile Include="Util\SystemInfo.cs" />
     <Compile Include="Forms\PracticeCountDialog.cs">
       <SubType>Form</SubType>

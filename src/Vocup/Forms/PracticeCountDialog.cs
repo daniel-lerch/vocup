@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using Vocup.Models;
+using Vocup.Util;
 
 namespace Vocup.Forms
 {
@@ -70,12 +72,60 @@ namespace Vocup.Forms
 
         private void Finish(int count)
         {
-            // TODO: Implement logic:
-            // 1. Calculate count for each category
-            // 2. Get all items for each category, sort and get the needed count
-            // 3. Store all elements in one list
-            // 4. Randomly reorder elements (https://stackoverflow.com/questions/273313/randomize-a-listt)
+            ListCompositor<VocabularyWord> compositor = new ListCompositor<VocabularyWord>();
 
+            IEnumerable<VocabularyWord> unpracticedItems = book.Words
+                .Where(x => x.PracticeState == PracticeState.Unpracticed);
+            IEnumerable<VocabularyWord> wronglyPracticedItems = book.Words
+                .Where(x => x.PracticeState == PracticeState.WronglyPracticed);
+            IEnumerable<VocabularyWord> correctlyPracticedItems = book.Words
+                .Where(x => x.PracticeState == PracticeState.CorrectlyPracticed);
+
+            if (RbEarlierPracticed.Checked) // No sorting needed in case of RbAllDates.Checked
+            {
+                unpracticedItems = unpracticedItems.OrderBy(x => x.PracticeDate);
+                wronglyPracticedItems = wronglyPracticedItems.OrderBy(x => x.PracticeDate);
+                correctlyPracticedItems = correctlyPracticedItems.OrderBy(x => x.PracticeDate);
+            }
+            else if (RbLaterPracticed.Checked)
+            {
+                unpracticedItems = unpracticedItems.OrderByDescending(x => x.PracticeDate);
+                wronglyPracticedItems = wronglyPracticedItems.OrderByDescending(x => x.PracticeDate);
+                correctlyPracticedItems = correctlyPracticedItems.OrderByDescending(x => x.PracticeDate);
+            }
+
+            if (RbAllStates.Checked)
+            {
+                compositor.AddSource(unpracticedItems.ToList(),
+                    count * Properties.Settings.Default.prozent_noch_nicht / 100d);
+
+                compositor.AddSource(wronglyPracticedItems.ToList(),
+                    count * Properties.Settings.Default.prozent_falsch / 100d);
+
+                compositor.AddSource(correctlyPracticedItems.ToList(),
+                    count * Properties.Settings.Default.prozent_richtig / 100d);
+            }
+            else if (RbUnpracticed.Checked)
+            {
+                compositor.AddSource(unpracticedItems.ToList(), 1d);
+            }
+            else if (RbWronglyPracticed.Checked)
+            {
+                compositor.AddSource(wronglyPracticedItems.ToList(), 1d);
+            }
+            else if (RbCorrectlyPracticed.Checked)
+            {
+                compositor.AddSource(correctlyPracticedItems.ToList(), 1d);
+            }
+
+            List<VocabularyWord> resultList = compositor.ToList(count);
+
+            foreach (VocabularyWord item in resultList)
+            {
+                PracticeList.Add(new VocabularyWordPractice(item));
+            }
+
+            DialogResult = DialogResult.OK;
             Close();
         }
     }
