@@ -21,6 +21,7 @@ namespace Vocup.Controls
             initialWidthLastPraticed = lastPracticedColumn.Width;
             MainListView.ListViewItemSorter = new Sorter() { Column = 1, SortOrder = SortOrder.Ascending };
             MainListView.Sorting = SortOrder.Ascending;
+            MainListView.ItemSelectionChanged += MainListView_ItemSelectionChanged;
         }
 
         public ListView Control => MainListView;
@@ -32,6 +33,7 @@ namespace Vocup.Controls
         }
 
         public ListView.ListViewItemCollection Items => MainListView.Items;
+        public ListView.SelectedListViewItemCollection SelectedItems => MainListView.SelectedItems;
 
         public string MotherTongue
         {
@@ -44,6 +46,8 @@ namespace Vocup.Controls
             get => foreignLangColumn.Text;
             set => foreignLangColumn.Text = value;
         }
+
+        public event ListViewItemSelectionChangedEventHandler ItemSelectionChanged;
 
         private void MainListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
@@ -65,6 +69,7 @@ namespace Vocup.Controls
             }
         }
 
+        // Prevents the user from changing these columns
         private void MainListView_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
         {
             if (e.ColumnIndex == 0)
@@ -77,6 +82,24 @@ namespace Vocup.Controls
                 e.Cancel = true;
                 e.NewWidth = initialWidthLastPraticed;
             }
+        }
+
+        // Prevents the ListView component from changing these columns on resize
+        private void MainListView_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                imageColumn.Width = initialWidthImage;
+            }
+            else if (e.ColumnIndex == 3)
+            {
+                lastPracticedColumn.Width = initialWidthLastPraticed;
+            }
+        }
+
+        private void MainListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            ItemSelectionChanged?.Invoke(sender, e);
         }
 
         public class Sorter : IComparer

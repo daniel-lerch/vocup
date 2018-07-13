@@ -481,7 +481,6 @@
             resources.ApplyResources(this.search_vokabel_field, "search_vokabel_field");
             this.search_vokabel_field.Name = "search_vokabel_field";
             this.search_vokabel_field.TextChanged += new System.EventHandler(this.search_vokabel_field_TextChanged);
-            this.search_vokabel_field.Enter += new System.EventHandler(this.search_vokabel_field_Enter);
             // 
             // groupBox1
             // 
@@ -577,7 +576,6 @@
             this.listView_vokabeln.Sorting = System.Windows.Forms.SortOrder.Descending;
             this.listView_vokabeln.UseCompatibleStateImageBehavior = false;
             this.listView_vokabeln.View = System.Windows.Forms.View.Details;
-            this.listView_vokabeln.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView_vokabeln_ItemSelectionChanged);
             this.listView_vokabeln.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView_vokabeln_MouseDoubleClick);
             // 
             // listview_imagelist

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vocup.Forms;
 using Vocup.Util;
@@ -9,11 +10,15 @@ namespace Vocup
 {
     static class Program
     {
+        private static Properties.Settings settings;
+        private static SplashScreen splash;
+        private static program_form mainForm;
+
         /// <summary>
         /// The main entry-point for the application.
         /// </summary>
         [STAThread]
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             // Verhindert eine Fehlerhafte Installation falls das Programm geöffnet ist
             Mutex mutex = new Mutex(false, AppInfo.ProductName, out bool newinstance);
@@ -21,32 +26,29 @@ namespace Vocup
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Start SplashScreen first to do other things while loading
-            SplashScreen splash = new SplashScreen();
+            splash = new SplashScreen();
             splash.Show();
             Application.DoEvents();
+            mainForm = new program_form(args);
+            ThreadPool.QueueUserWorkItem(Initialize, args);
+            Application.Run(splash);
+            Application.Run(mainForm);
+        }
 
-            Properties.Settings settings = Properties.Settings.Default;
-
-            CreateVhfFolder(settings);
-            Application.DoEvents();
-
-            CreateVhrFolder(settings);
-            Application.DoEvents();
-
+        private static void Initialize(object state)
+        {
+            string[] args = (string[])state;
+            settings = Properties.Settings.Default;
+            CreateVhfFolder();
+            CreateVhrFolder();
             settings.Save();
-            program_form form = new program_form(args);
-            Application.DoEvents();
-            Thread.Sleep(1250);
-
-            splash.Close();
-            Application.Run(form);
+            splash.Invoke((MethodInvoker)delegate { splash.Close(); });
         }
 
         /// <summary>
         /// Checks the currently configured folder for .vhf files and creates it if not existing.
         /// </summary>
-        static void CreateVhfFolder(Properties.Settings settings)
+        private static void CreateVhfFolder()
         {
             string personal = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             string folder = Path.Combine(personal, Properties.Words.VocabularyBooks); // default path
@@ -65,7 +67,7 @@ namespace Vocup
         /// <summary>
         /// Checks the currently configured folder for .vhr files and creates it if not existing.
         /// </summary>
-        static void CreateVhrFolder(Properties.Settings settings)
+        private static void CreateVhrFolder()
         {
             string appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string folder = Path.Combine(appdata, AppInfo.ProductName); // default path
@@ -73,11 +75,11 @@ namespace Vocup
             if (string.IsNullOrWhiteSpace(settings.path_vhr) || settings.path_vhr.Equals(folder, StringComparison.OrdinalIgnoreCase))
             {
                 Directory.CreateDirectory(folder);
-                Properties.Settings.Default.path_vhr = folder;
+                settings.path_vhr = folder;
             }
             else
             {
-                Directory.CreateDirectory(Properties.Settings.Default.path_vhr);
+                Directory.CreateDirectory(settings.path_vhr);
             }
         }
     }

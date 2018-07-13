@@ -10,7 +10,7 @@ namespace Vocup.Models
     public class VocabularyBookController
     {
         private readonly List<VocabularyWordController> wordControllers;
-        private StatisticsPanel _statisticsPanel;
+        private IMainForm _parent;
 
         public VocabularyBookController(VocabularyBook book)
         {
@@ -19,6 +19,7 @@ namespace Vocup.Models
                 Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right,
                 GridLines = Settings.Default.GridLines,
             };
+            ListView.ItemSelectionChanged += OnSelectionChanged;
             wordControllers = new List<VocabularyWordController>();
             WordControllers = new ReadOnlyCollection<VocabularyWordController>(wordControllers);
             book.Words.OnAdd(AddItem);
@@ -30,10 +31,10 @@ namespace Vocup.Models
         }
 
         public VocabularyListView ListView { get; }
-        public StatisticsPanel StatisticsPanel
+        public IMainForm Parent
         {
-            get => _statisticsPanel;
-            set { _statisticsPanel = value; OnStatisticsChanged(); }
+            get => _parent;
+            set { _parent = value; OnStatisticsChanged(); OnSelectionChanged(); }
         }
         public VocabularyBook VocabularyBook { get; }
         IReadOnlyCollection<VocabularyWordController> WordControllers { get; }
@@ -59,13 +60,24 @@ namespace Vocup.Models
         private void OnStatisticsChanged(object sender, EventArgs e) => OnStatisticsChanged();
         private void OnStatisticsChanged()
         {
-            if (StatisticsPanel == null)
+            if (Parent == null)
                 return;
 
-            StatisticsPanel.Unpracticed = VocabularyBook.Statistics.Unpracticed;
-            StatisticsPanel.WronglyPracticed = VocabularyBook.Statistics.WronglyPracticed;
-            StatisticsPanel.CorrectlyPracticed = VocabularyBook.Statistics.CorrectlyPracticed;
-            StatisticsPanel.FullyPracticed = VocabularyBook.Statistics.FullyPracticed;
+            Parent.StatisticsPanel.Unpracticed = VocabularyBook.Statistics.Unpracticed;
+            Parent.StatisticsPanel.WronglyPracticed = VocabularyBook.Statistics.WronglyPracticed;
+            Parent.StatisticsPanel.CorrectlyPracticed = VocabularyBook.Statistics.CorrectlyPracticed;
+            Parent.StatisticsPanel.FullyPracticed = VocabularyBook.Statistics.FullyPracticed;
+
+            Parent.VocabularyBookPracticable(VocabularyBook.Statistics.NotFullyPracticed > 0);
+        }
+
+        private void OnSelectionChanged(object sender, EventArgs e) => OnSelectionChanged();
+        private void OnSelectionChanged()
+        {
+            if (Parent == null)
+                return;
+
+            Parent.VocabularyWordSelected(ListView.SelectedItems.Count > 0);
         }
 
         private void AddItem(VocabularyWord item)

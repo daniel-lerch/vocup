@@ -76,7 +76,7 @@
             // lastPracticedColumn
             // 
             this.lastPracticedColumn.Text = "Zuletzt geübt";
-            this.lastPracticedColumn.Width = 110;
+            this.lastPracticedColumn.Width = 100;
             // 
             // IconImageList
             // 

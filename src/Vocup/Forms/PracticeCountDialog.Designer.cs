@@ -227,7 +227,7 @@
             this.Controls.Add(this.GroupCount);
             this.Controls.Add(this.GroupState);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PracticeCountDialog";

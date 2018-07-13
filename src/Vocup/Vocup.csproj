@@ -46,6 +46,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>default</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -143,6 +144,7 @@
     <Compile Include="IO\VhrFile.cs" />
     <Compile Include="IO\VocabularyFile.cs" />
     <Compile Include="IO\VocupFile.cs" />
+    <Compile Include="Models\IMainForm.cs" />
     <Compile Include="Models\PracticeMode.cs" />
     <Compile Include="Models\PracticeResult.cs" />
     <Compile Include="Models\PracticeState.cs" />

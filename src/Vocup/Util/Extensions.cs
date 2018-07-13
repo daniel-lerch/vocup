@@ -25,7 +25,7 @@ namespace Vocup.Util
         }
     }
 
-    public static class ListExtensions
+    public static class CollectionExtensions
     {
         [ThreadStatic]
         private static Random local;
@@ -50,6 +50,11 @@ namespace Vocup.Util
                 list[k] = list[n];
                 list[n] = value;
             }
+        }
+
+        public static IOrderedEnumerable<T> Shuffle<T>(this IEnumerable<T> enumerable)
+        {
+            return enumerable.OrderBy(x => Random.Next());
         }
     }
 }

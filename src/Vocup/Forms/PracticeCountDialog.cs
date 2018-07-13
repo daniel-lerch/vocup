@@ -81,6 +81,12 @@ namespace Vocup.Forms
             IEnumerable<VocabularyWord> correctlyPracticedItems = book.Words
                 .Where(x => x.PracticeState == PracticeState.CorrectlyPracticed);
 
+            if (RbAllDates.Checked)
+            {
+                unpracticedItems = unpracticedItems.Shuffle();
+                wronglyPracticedItems = wronglyPracticedItems.Shuffle();
+                correctlyPracticedItems = correctlyPracticedItems.Shuffle();
+            }
             if (RbEarlierPracticed.Checked) // No sorting needed in case of RbAllDates.Checked
             {
                 unpracticedItems = unpracticedItems.OrderBy(x => x.PracticeDate);
