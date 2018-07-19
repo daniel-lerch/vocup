@@ -118,183 +118,187 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="vokabel_synonym.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="TbForeignLangSynonym.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="vokabel_synonym.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 76</value>
+  <data name="TbForeignLangSynonym.Location" type="System.Drawing.Point, System.Drawing">
+    <value>137, 78</value>
   </data>
-  <data name="vokabel_synonym.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TbForeignLangSynonym.Size" type="System.Drawing.Size, System.Drawing">
     <value>325, 22</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="vokabel_synonym.TabIndex" type="System.Int32, mscorlib">
+  <data name="TbForeignLangSynonym.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;vokabel_synonym.Name" xml:space="preserve">
-    <value>vokabel_synonym</value>
+  <data name="&gt;&gt;TbForeignLangSynonym.Name" xml:space="preserve">
+    <value>TbForeignLangSynonym</value>
   </data>
-  <data name="&gt;&gt;vokabel_synonym.Type" xml:space="preserve">
+  <data name="&gt;&gt;TbForeignLangSynonym.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;vokabel_synonym.Parent" xml:space="preserve">
-    <value>practise_groupbox</value>
+  <data name="&gt;&gt;TbForeignLangSynonym.Parent" xml:space="preserve">
+    <value>GroupPractice</value>
   </data>
-  <data name="&gt;&gt;vokabel_synonym.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TbForeignLangSynonym.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="vokabel_foreign_language.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="TbForeignLang.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="vokabel_foreign_language.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 46</value>
+  <data name="TbForeignLang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>137, 48</value>
   </data>
-  <data name="vokabel_foreign_language.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TbForeignLang.Size" type="System.Drawing.Size, System.Drawing">
     <value>325, 22</value>
   </data>
-  <data name="vokabel_foreign_language.TabIndex" type="System.Int32, mscorlib">
+  <data name="TbForeignLang.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;vokabel_foreign_language.Name" xml:space="preserve">
-    <value>vokabel_foreign_language</value>
+  <data name="&gt;&gt;TbForeignLang.Name" xml:space="preserve">
+    <value>TbForeignLang</value>
   </data>
-  <data name="&gt;&gt;vokabel_foreign_language.Type" xml:space="preserve">
+  <data name="&gt;&gt;TbForeignLang.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;vokabel_foreign_language.Parent" xml:space="preserve">
-    <value>practise_groupbox</value>
+  <data name="&gt;&gt;TbForeignLang.Parent" xml:space="preserve">
+    <value>GroupPractice</value>
   </data>
-  <data name="&gt;&gt;vokabel_foreign_language.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TbForeignLang.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="vokabel_own_language.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="TbMotherTongue.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="vokabel_own_language.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 20</value>
+  <data name="TbMotherTongue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>137, 22</value>
   </data>
-  <data name="vokabel_own_language.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TbMotherTongue.Size" type="System.Drawing.Size, System.Drawing">
     <value>325, 22</value>
   </data>
-  <data name="vokabel_own_language.TabIndex" type="System.Int32, mscorlib">
+  <data name="TbMotherTongue.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;vokabel_own_language.Name" xml:space="preserve">
-    <value>vokabel_own_language</value>
+  <data name="&gt;&gt;TbMotherTongue.Name" xml:space="preserve">
+    <value>TbMotherTongue</value>
   </data>
-  <data name="&gt;&gt;vokabel_own_language.Type" xml:space="preserve">
+  <data name="&gt;&gt;TbMotherTongue.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;vokabel_own_language.Parent" xml:space="preserve">
-    <value>practise_groupbox</value>
+  <data name="&gt;&gt;TbMotherTongue.Parent" xml:space="preserve">
+    <value>GroupPractice</value>
   </data>
-  <data name="&gt;&gt;vokabel_own_language.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TbMotherTongue.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="synonym_text.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LbForeignLangSynonym.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="synonym_text.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 83</value>
+  <data name="LbForeignLangSynonym.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 85</value>
   </data>
-  <data name="synonym_text.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LbForeignLangSynonym.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 13</value>
   </data>
-  <data name="synonym_text.TabIndex" type="System.Int32, mscorlib">
+  <data name="LbForeignLangSynonym.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="synonym_text.Text" xml:space="preserve">
+  <data name="LbForeignLangSynonym.Text" xml:space="preserve">
     <value>Synonym</value>
   </data>
-  <data name="&gt;&gt;synonym_text.Name" xml:space="preserve">
-    <value>synonym_text</value>
+  <data name="&gt;&gt;LbForeignLangSynonym.Name" xml:space="preserve">
+    <value>LbForeignLangSynonym</value>
   </data>
-  <data name="&gt;&gt;synonym_text.Type" xml:space="preserve">
+  <data name="&gt;&gt;LbForeignLangSynonym.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;synonym_text.Parent" xml:space="preserve">
-    <value>practise_groupbox</value>
+  <data name="&gt;&gt;LbForeignLangSynonym.Parent" xml:space="preserve">
+    <value>GroupPractice</value>
   </data>
-  <data name="&gt;&gt;synonym_text.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LbForeignLangSynonym.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="foreign_language_text.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LbForeignLang.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="foreign_language_text.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 53</value>
+  <data name="LbForeignLang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 55</value>
   </data>
-  <data name="foreign_language_text.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
+  <data name="LbForeignLang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 13</value>
   </data>
-  <data name="foreign_language_text.TabIndex" type="System.Int32, mscorlib">
+  <data name="LbForeignLang.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="foreign_language_text.Text" xml:space="preserve">
-    <value>Sprache</value>
+  <data name="LbForeignLang.Text" xml:space="preserve">
+    <value>%ForeignLang%</value>
   </data>
-  <data name="&gt;&gt;foreign_language_text.Name" xml:space="preserve">
-    <value>foreign_language_text</value>
+  <data name="&gt;&gt;LbForeignLang.Name" xml:space="preserve">
+    <value>LbForeignLang</value>
   </data>
-  <data name="&gt;&gt;foreign_language_text.Type" xml:space="preserve">
+  <data name="&gt;&gt;LbForeignLang.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;foreign_language_text.Parent" xml:space="preserve">
-    <value>practise_groupbox</value>
+  <data name="&gt;&gt;LbForeignLang.Parent" xml:space="preserve">
+    <value>GroupPractice</value>
   </data>
-  <data name="&gt;&gt;foreign_language_text.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LbForeignLang.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="own_language_text.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LbMotherTongue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="own_language_text.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 23</value>
+  <data name="LbMotherTongue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 25</value>
   </data>
-  <data name="own_language_text.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
+  <data name="LbMotherTongue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 13</value>
   </data>
-  <data name="own_language_text.TabIndex" type="System.Int32, mscorlib">
+  <data name="LbMotherTongue.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="own_language_text.Text" xml:space="preserve">
-    <value>Sprache</value>
+  <data name="LbMotherTongue.Text" xml:space="preserve">
+    <value>%MotherTongue%</value>
   </data>
-  <data name="&gt;&gt;own_language_text.Name" xml:space="preserve">
-    <value>own_language_text</value>
+  <data name="&gt;&gt;LbMotherTongue.Name" xml:space="preserve">
+    <value>LbMotherTongue</value>
   </data>
-  <data name="&gt;&gt;own_language_text.Type" xml:space="preserve">
+  <data name="&gt;&gt;LbMotherTongue.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;own_language_text.Parent" xml:space="preserve">
-    <value>practise_groupbox</value>
+  <data name="&gt;&gt;LbMotherTongue.Parent" xml:space="preserve">
+    <value>GroupPractice</value>
   </data>
-  <data name="&gt;&gt;own_language_text.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LbMotherTongue.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="practise_groupbox.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="GroupPractice.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>
   </data>
-  <data name="practise_groupbox.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="GroupPractice.Size" type="System.Drawing.Size, System.Drawing">
     <value>470, 118</value>
   </data>
-  <data name="practise_groupbox.TabIndex" type="System.Int32, mscorlib">
+  <data name="GroupPractice.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="practise_groupbox.Text" xml:space="preserve">
-    <value>Übersetzen Sie von Sprache nach Sprache:</value>
+  <data name="GroupPractice.Text" xml:space="preserve">
+    <value>Übersetzen Sie von {0} nach {1}</value>
   </data>
-  <data name="&gt;&gt;practise_groupbox.Name" xml:space="preserve">
-    <value>practise_groupbox</value>
+  <data name="&gt;&gt;GroupPractice.Name" xml:space="preserve">
+    <value>GroupPractice</value>
   </data>
-  <data name="&gt;&gt;practise_groupbox.Type" xml:space="preserve">
+  <data name="&gt;&gt;GroupPractice.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;practise_groupbox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupPractice.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;practise_groupbox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;GroupPractice.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="statistik_groupbox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="anzahl_falsch.Location" type="System.Drawing.Point, System.Drawing">
     <value>422, 71</value>
@@ -305,7 +309,6 @@
   <data name="anzahl_falsch.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="anzahl_falsch.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -648,6 +651,9 @@
   <data name="&gt;&gt;statistik_groupbox.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="abbrechen_button.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
   <data name="abbrechen_button.Location" type="System.Drawing.Point, System.Drawing">
     <value>382, 164</value>
   </data>
@@ -671,6 +677,9 @@
   </data>
   <data name="&gt;&gt;abbrechen_button.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="fortfahren_button.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
   <data name="fortfahren_button.Location" type="System.Drawing.Point, System.Drawing">
     <value>276, 164</value>
@@ -722,6 +731,9 @@
   </data>
   <data name="&gt;&gt;correction_box.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="sonderzeichen_button.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="sonderzeichen_button.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 164</value>

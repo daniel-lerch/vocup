@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(practise_dialog));
-            this.practise_groupbox = new System.Windows.Forms.GroupBox();
-            this.vokabel_synonym = new System.Windows.Forms.TextBox();
-            this.vokabel_foreign_language = new System.Windows.Forms.TextBox();
-            this.vokabel_own_language = new System.Windows.Forms.TextBox();
-            this.synonym_text = new System.Windows.Forms.Label();
-            this.foreign_language_text = new System.Windows.Forms.Label();
-            this.own_language_text = new System.Windows.Forms.Label();
+            this.GroupPractice = new System.Windows.Forms.GroupBox();
+            this.TbForeignLangSynonym = new System.Windows.Forms.TextBox();
+            this.TbForeignLang = new System.Windows.Forms.TextBox();
+            this.TbMotherTongue = new System.Windows.Forms.TextBox();
+            this.LbForeignLangSynonym = new System.Windows.Forms.Label();
+            this.LbForeignLang = new System.Windows.Forms.Label();
+            this.LbMotherTongue = new System.Windows.Forms.Label();
             this.statistik_groupbox = new System.Windows.Forms.GroupBox();
             this.anzahl_falsch = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -58,58 +58,59 @@
             this.radio_falsch = new System.Windows.Forms.RadioButton();
             this.radio_korrekt = new System.Windows.Forms.RadioButton();
             this.selber_bewerten_groupbox = new System.Windows.Forms.GroupBox();
-            this.practise_groupbox.SuspendLayout();
+            this.GroupPractice.SuspendLayout();
             this.statistik_groupbox.SuspendLayout();
             this.selber_bewerten_groupbox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // practise_groupbox
+            // GroupPractice
             // 
-            this.practise_groupbox.Controls.Add(this.vokabel_synonym);
-            this.practise_groupbox.Controls.Add(this.vokabel_foreign_language);
-            this.practise_groupbox.Controls.Add(this.vokabel_own_language);
-            this.practise_groupbox.Controls.Add(this.synonym_text);
-            this.practise_groupbox.Controls.Add(this.foreign_language_text);
-            this.practise_groupbox.Controls.Add(this.own_language_text);
-            resources.ApplyResources(this.practise_groupbox, "practise_groupbox");
-            this.practise_groupbox.Name = "practise_groupbox";
-            this.practise_groupbox.TabStop = false;
+            this.GroupPractice.Controls.Add(this.TbForeignLangSynonym);
+            this.GroupPractice.Controls.Add(this.TbForeignLang);
+            this.GroupPractice.Controls.Add(this.TbMotherTongue);
+            this.GroupPractice.Controls.Add(this.LbForeignLangSynonym);
+            this.GroupPractice.Controls.Add(this.LbForeignLang);
+            this.GroupPractice.Controls.Add(this.LbMotherTongue);
+            resources.ApplyResources(this.GroupPractice, "GroupPractice");
+            this.GroupPractice.Name = "GroupPractice";
+            this.GroupPractice.TabStop = false;
             // 
-            // vokabel_synonym
+            // TbForeignLangSynonym
             // 
-            resources.ApplyResources(this.vokabel_synonym, "vokabel_synonym");
-            this.vokabel_synonym.Name = "vokabel_synonym";
-            this.vokabel_synonym.Enter += new System.EventHandler(this.TextBox_Enter);
+            resources.ApplyResources(this.TbForeignLangSynonym, "TbForeignLangSynonym");
+            this.TbForeignLangSynonym.Name = "TbForeignLangSynonym";
+            this.TbForeignLangSynonym.Enter += new System.EventHandler(this.TextBox_Enter);
             // 
-            // vokabel_foreign_language
+            // TbForeignLang
             // 
-            resources.ApplyResources(this.vokabel_foreign_language, "vokabel_foreign_language");
-            this.vokabel_foreign_language.Name = "vokabel_foreign_language";
-            this.vokabel_foreign_language.Enter += new System.EventHandler(this.TextBox_Enter);
+            resources.ApplyResources(this.TbForeignLang, "TbForeignLang");
+            this.TbForeignLang.Name = "TbForeignLang";
+            this.TbForeignLang.Enter += new System.EventHandler(this.TextBox_Enter);
             // 
-            // vokabel_own_language
+            // TbMotherTongue
             // 
-            resources.ApplyResources(this.vokabel_own_language, "vokabel_own_language");
-            this.vokabel_own_language.Name = "vokabel_own_language";
-            this.vokabel_own_language.Enter += new System.EventHandler(this.TextBox_Enter);
+            resources.ApplyResources(this.TbMotherTongue, "TbMotherTongue");
+            this.TbMotherTongue.Name = "TbMotherTongue";
+            this.TbMotherTongue.Enter += new System.EventHandler(this.TextBox_Enter);
             // 
-            // synonym_text
+            // LbForeignLangSynonym
             // 
-            resources.ApplyResources(this.synonym_text, "synonym_text");
-            this.synonym_text.Name = "synonym_text";
+            resources.ApplyResources(this.LbForeignLangSynonym, "LbForeignLangSynonym");
+            this.LbForeignLangSynonym.Name = "LbForeignLangSynonym";
             // 
-            // foreign_language_text
+            // LbForeignLang
             // 
-            resources.ApplyResources(this.foreign_language_text, "foreign_language_text");
-            this.foreign_language_text.Name = "foreign_language_text";
+            resources.ApplyResources(this.LbForeignLang, "LbForeignLang");
+            this.LbForeignLang.Name = "LbForeignLang";
             // 
-            // own_language_text
+            // LbMotherTongue
             // 
-            resources.ApplyResources(this.own_language_text, "own_language_text");
-            this.own_language_text.Name = "own_language_text";
+            resources.ApplyResources(this.LbMotherTongue, "LbMotherTongue");
+            this.LbMotherTongue.Name = "LbMotherTongue";
             // 
             // statistik_groupbox
             // 
+            resources.ApplyResources(this.statistik_groupbox, "statistik_groupbox");
             this.statistik_groupbox.Controls.Add(this.anzahl_falsch);
             this.statistik_groupbox.Controls.Add(this.label6);
             this.statistik_groupbox.Controls.Add(this.anzahl_teilweise);
@@ -123,7 +124,6 @@
             this.statistik_groupbox.Controls.Add(this.anzahl_noch_nicht);
             this.statistik_groupbox.Controls.Add(this.anzahl_üben);
             this.statistik_groupbox.Controls.Add(this.progressBar);
-            resources.ApplyResources(this.statistik_groupbox, "statistik_groupbox");
             this.statistik_groupbox.Name = "statistik_groupbox";
             this.statistik_groupbox.TabStop = false;
             // 
@@ -208,8 +208,8 @@
             // 
             // abbrechen_button
             // 
-            this.abbrechen_button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.abbrechen_button, "abbrechen_button");
+            this.abbrechen_button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.abbrechen_button.Name = "abbrechen_button";
             this.abbrechen_button.UseVisualStyleBackColor = true;
             // 
@@ -280,7 +280,7 @@
             this.Controls.Add(this.selber_bewerten_groupbox);
             this.Controls.Add(this.correction_box);
             this.Controls.Add(this.statistik_groupbox);
-            this.Controls.Add(this.practise_groupbox);
+            this.Controls.Add(this.GroupPractice);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -288,8 +288,8 @@
             this.ShowInTaskbar = false;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_FormClosed);
             this.Load += new System.EventHandler(this.practise_dialog_Load);
-            this.practise_groupbox.ResumeLayout(false);
-            this.practise_groupbox.PerformLayout();
+            this.GroupPractice.ResumeLayout(false);
+            this.GroupPractice.PerformLayout();
             this.statistik_groupbox.ResumeLayout(false);
             this.statistik_groupbox.PerformLayout();
             this.selber_bewerten_groupbox.ResumeLayout(false);
@@ -300,17 +300,10 @@
         }
 
         #endregion
-
-        public  System.Windows.Forms.GroupBox practise_groupbox;
-        public  System.Windows.Forms.Label foreign_language_text;
-        public  System.Windows.Forms.TextBox vokabel_synonym;
-        public  System.Windows.Forms.Label own_language_text;
-        public  System.Windows.Forms.TextBox vokabel_foreign_language;
-        public  System.Windows.Forms.TextBox vokabel_own_language;
-        private System.Windows.Forms.Label synonym_text;
-        public  System.Windows.Forms.GroupBox statistik_groupbox;
-        public  System.Windows.Forms.Button abbrechen_button;
-        public  System.Windows.Forms.Button fortfahren_button;
+        public  System.Windows.Forms.TextBox TbForeignLangSynonym;
+        public  System.Windows.Forms.TextBox TbForeignLang;
+        public  System.Windows.Forms.TextBox TbMotherTongue;
+        private System.Windows.Forms.Label LbForeignLangSynonym;
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -325,11 +318,16 @@
         public  System.Windows.Forms.TextBox anzahl_falsch;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox correction_box;
-        public  System.Windows.Forms.Button sonderzeichen_button;
         private System.Windows.Forms.RadioButton radio_teilweise_korrekt;
         private System.Windows.Forms.RadioButton radio_falsch;
         private System.Windows.Forms.RadioButton radio_korrekt;
         private System.Windows.Forms.GroupBox selber_bewerten_groupbox;
-
+        private System.Windows.Forms.GroupBox GroupPractice;
+        private System.Windows.Forms.Label LbForeignLang;
+        private System.Windows.Forms.Label LbMotherTongue;
+        private System.Windows.Forms.GroupBox statistik_groupbox;
+        private System.Windows.Forms.Button abbrechen_button;
+        private System.Windows.Forms.Button fortfahren_button;
+        private System.Windows.Forms.Button sonderzeichen_button;
     }
 }
