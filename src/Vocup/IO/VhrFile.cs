@@ -14,7 +14,7 @@ namespace Vocup.IO.Internal
     {
         public bool Read(VocabularyBook book) // TODO: Add exception handling
         {
-            FileInfo vhrInfo = new FileInfo(Path.Combine(Properties.Settings.Default.path_vhr, book.VhrCode + ".vhr"));
+            FileInfo vhrInfo = new FileInfo(Path.Combine(Settings.Default.path_vhr, book.VhrCode + ".vhr"));
             if (!vhrInfo.Exists)
                 return false;
 
@@ -45,7 +45,7 @@ namespace Vocup.IO.Internal
                         return false;
                     }
                     DateTime time = DateTime.MinValue;
-                    // DateTime.Parse() does work with the format dd.MM.yyyy HH:mm
+                    // DateTime.Parse() works with the format dd.MM.yyyy HH:mm
                     if (!string.IsNullOrWhiteSpace(columns[1]) && !DateTime.TryParse(columns[1], out time))
                     {
                         DeleteInvalidFile(vhrInfo);
@@ -119,7 +119,7 @@ namespace Vocup.IO.Internal
                 raw = writer.ToString();
             }
 
-            WriteFile(Path.Combine(Properties.Settings.Default.path_vhr, book.VhrCode + ".vhr"), raw);
+            WriteFile(Path.Combine(Settings.Default.path_vhr, book.VhrCode + ".vhr"), raw);
 
             return true;
         }

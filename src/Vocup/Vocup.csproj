@@ -109,11 +109,11 @@
     <Compile Include="Forms\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="backup_add.cs">
+    <Compile Include="Forms\CreateBackup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="backup_add.Designer.cs">
-      <DependentUpon>backup_add.cs</DependentUpon>
+    <Compile Include="Forms\CreateBackup.Designer.cs">
+      <DependentUpon>CreateBackup.cs</DependentUpon>
     </Compile>
     <Compile Include="backup_restore.cs">
       <SubType>Form</SubType>
@@ -212,9 +212,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="backup_add.resx">
+    <EmbeddedResource Include="Forms\CreateBackup.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>backup_add.cs</DependentUpon>
+      <DependentUpon>CreateBackup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="backup_restore.resx">
       <SubType>Designer</SubType>

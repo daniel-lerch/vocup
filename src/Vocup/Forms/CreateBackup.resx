@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="GroupVocabularyBooks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LbSaveSpecificBooks.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="LbSaveSpecificBooks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 46</value>
+  </data>
+  <data name="LbSaveSpecificBooks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 13</value>
+  </data>
+  <data name="LbSaveSpecificBooks.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="LbSaveSpecificBooks.Text" xml:space="preserve">
+    <value>Folgende Vokabelhefte sichern:</value>
+  </data>
+  <data name="&gt;&gt;LbSaveSpecificBooks.Name" xml:space="preserve">
+    <value>LbSaveSpecificBooks</value>
+  </data>
+  <data name="&gt;&gt;LbSaveSpecificBooks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LbSaveSpecificBooks.Parent" xml:space="preserve">
+    <value>GroupVocabularyBooks</value>
+  </data>
+  <data name="&gt;&gt;LbSaveSpecificBooks.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CbSaveAllBooks.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbSaveAllBooks.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CbSaveAllBooks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="CbSaveAllBooks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>307, 17</value>
+  </data>
+  <data name="CbSaveAllBooks.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="CbSaveAllBooks.Text" xml:space="preserve">
+    <value>Alle Dateien im Ordner Vokabelhefte sichern (insgesamt {0})</value>
+  </data>
+  <data name="&gt;&gt;CbSaveAllBooks.Name" xml:space="preserve">
+    <value>CbSaveAllBooks</value>
+  </data>
+  <data name="&gt;&gt;CbSaveAllBooks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbSaveAllBooks.Parent" xml:space="preserve">
+    <value>GroupVocabularyBooks</value>
+  </data>
+  <data name="&gt;&gt;CbSaveAllBooks.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="BtnAddVocabularyBook.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="BtnAddVocabularyBook.Location" type="System.Drawing.Point, System.Drawing">
+    <value>106, 179</value>
+  </data>
+  <data name="BtnAddVocabularyBook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 23</value>
+  </data>
+  <data name="BtnAddVocabularyBook.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="BtnAddVocabularyBook.Text" xml:space="preserve">
+    <value>Vokabelheft hinzufügen</value>
+  </data>
+  <data name="&gt;&gt;BtnAddVocabularyBook.Name" xml:space="preserve">
+    <value>BtnAddVocabularyBook</value>
+  </data>
+  <data name="&gt;&gt;BtnAddVocabularyBook.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnAddVocabularyBook.Parent" xml:space="preserve">
+    <value>GroupVocabularyBooks</value>
+  </data>
+  <data name="&gt;&gt;BtnAddVocabularyBook.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="BtnDeleteVocabularyBook.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="BtnDeleteVocabularyBook.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BtnDeleteVocabularyBook.Location" type="System.Drawing.Point, System.Drawing">
+    <value>239, 179</value>
+  </data>
+  <data name="BtnDeleteVocabularyBook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="BtnDeleteVocabularyBook.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="BtnDeleteVocabularyBook.Text" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="&gt;&gt;BtnDeleteVocabularyBook.Name" xml:space="preserve">
+    <value>BtnDeleteVocabularyBook</value>
+  </data>
+  <data name="&gt;&gt;BtnDeleteVocabularyBook.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnDeleteVocabularyBook.Parent" xml:space="preserve">
+    <value>GroupVocabularyBooks</value>
+  </data>
+  <data name="&gt;&gt;BtnDeleteVocabularyBook.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ListVocabularyBooks.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="ListVocabularyBooks.HorizontalScrollbar" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ListVocabularyBooks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 65</value>
+  </data>
+  <data name="ListVocabularyBooks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>308, 108</value>
+  </data>
+  <data name="ListVocabularyBooks.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ListVocabularyBooks.Name" xml:space="preserve">
+    <value>ListVocabularyBooks</value>
+  </data>
+  <data name="&gt;&gt;ListVocabularyBooks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ListVocabularyBooks.Parent" xml:space="preserve">
+    <value>GroupVocabularyBooks</value>
+  </data>
+  <data name="&gt;&gt;ListVocabularyBooks.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="GroupVocabularyBooks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="GroupVocabularyBooks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 210</value>
+  </data>
+  <data name="GroupVocabularyBooks.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="GroupVocabularyBooks.Text" xml:space="preserve">
+    <value>Wählen Sie die Vokabelhefte, die Sie sichern möchten:</value>
+  </data>
+  <data name="&gt;&gt;GroupVocabularyBooks.Name" xml:space="preserve">
+    <value>GroupVocabularyBooks</value>
+  </data>
+  <data name="&gt;&gt;GroupVocabularyBooks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupVocabularyBooks.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupVocabularyBooks.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="BtnCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="BtnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>257, 433</value>
+  </data>
+  <data name="BtnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="BtnCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="BtnCancel.Text" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="&gt;&gt;BtnCancel.Name" xml:space="preserve">
+    <value>BtnCancel</value>
+  </data>
+  <data name="&gt;&gt;BtnCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnCancel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BtnCancel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="BtnCreateBackup.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="BtnCreateBackup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 433</value>
+  </data>
+  <data name="BtnCreateBackup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 23</value>
+  </data>
+  <data name="BtnCreateBackup.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="BtnCreateBackup.Text" xml:space="preserve">
+    <value>Datensicherung erstellen</value>
+  </data>
+  <data name="&gt;&gt;BtnCreateBackup.Name" xml:space="preserve">
+    <value>BtnCreateBackup</value>
+  </data>
+  <data name="&gt;&gt;BtnCreateBackup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnCreateBackup.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BtnCreateBackup.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="GroupPracticeResults.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="RbSaveNoResults.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RbSaveNoResults.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 65</value>
+  </data>
+  <data name="RbSaveNoResults.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 17</value>
+  </data>
+  <data name="RbSaveNoResults.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="RbSaveNoResults.Text" xml:space="preserve">
+    <value>Keine Übungsergebnisse sichern</value>
+  </data>
+  <data name="&gt;&gt;RbSaveNoResults.Name" xml:space="preserve">
+    <value>RbSaveNoResults</value>
+  </data>
+  <data name="&gt;&gt;RbSaveNoResults.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbSaveNoResults.Parent" xml:space="preserve">
+    <value>GroupPracticeResults</value>
+  </data>
+  <data name="&gt;&gt;RbSaveNoResults.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="RbSaveAssociatedResults.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RbSaveAssociatedResults.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="RbSaveAssociatedResults.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="RbSaveAssociatedResults.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 17</value>
+  </data>
+  <data name="RbSaveAssociatedResults.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="RbSaveAssociatedResults.Text" xml:space="preserve">
+    <value>Übungsergebnisse der gewählten Vokabelhefte sichern</value>
+  </data>
+  <data name="&gt;&gt;RbSaveAssociatedResults.Name" xml:space="preserve">
+    <value>RbSaveAssociatedResults</value>
+  </data>
+  <data name="&gt;&gt;RbSaveAssociatedResults.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbSaveAssociatedResults.Parent" xml:space="preserve">
+    <value>GroupPracticeResults</value>
+  </data>
+  <data name="&gt;&gt;RbSaveAssociatedResults.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="RbSaveAllResults.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RbSaveAllResults.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="RbSaveAllResults.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 42</value>
+  </data>
+  <data name="RbSaveAllResults.Size" type="System.Drawing.Size, System.Drawing">
+    <value>309, 17</value>
+  </data>
+  <data name="RbSaveAllResults.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="RbSaveAllResults.Text" xml:space="preserve">
+    <value>Alle vorhandenen Übungsergebnisse sichern (insgesamt {0})</value>
+  </data>
+  <data name="&gt;&gt;RbSaveAllResults.Name" xml:space="preserve">
+    <value>RbSaveAllResults</value>
+  </data>
+  <data name="&gt;&gt;RbSaveAllResults.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbSaveAllResults.Parent" xml:space="preserve">
+    <value>GroupPracticeResults</value>
+  </data>
+  <data name="&gt;&gt;RbSaveAllResults.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="GroupPracticeResults.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 228</value>
+  </data>
+  <data name="GroupPracticeResults.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 88</value>
+  </data>
+  <data name="GroupPracticeResults.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="GroupPracticeResults.Text" xml:space="preserve">
+    <value>Welche Übungsergebnisse sollen gesichert werden?</value>
+  </data>
+  <data name="&gt;&gt;GroupPracticeResults.Name" xml:space="preserve">
+    <value>GroupPracticeResults</value>
+  </data>
+  <data name="&gt;&gt;GroupPracticeResults.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupPracticeResults.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupPracticeResults.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="GroupSpecialChar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="ListSpecialChars.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="ListSpecialChars.HorizontalScrollbar" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ListSpecialChars.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="ListSpecialChars.Size" type="System.Drawing.Size, System.Drawing">
+    <value>308, 79</value>
+  </data>
+  <data name="ListSpecialChars.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ListSpecialChars.Name" xml:space="preserve">
+    <value>ListSpecialChars</value>
+  </data>
+  <data name="&gt;&gt;ListSpecialChars.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ListSpecialChars.Parent" xml:space="preserve">
+    <value>GroupSpecialChar</value>
+  </data>
+  <data name="&gt;&gt;ListSpecialChars.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GroupSpecialChar.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GroupSpecialChar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 322</value>
+  </data>
+  <data name="GroupSpecialChar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 105</value>
+  </data>
+  <data name="GroupSpecialChar.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="GroupSpecialChar.Text" xml:space="preserve">
+    <value>Welche Sonderzeichentabellen sollen gesichert werden?</value>
+  </data>
+  <data name="&gt;&gt;GroupSpecialChar.Name" xml:space="preserve">
+    <value>GroupSpecialChar</value>
+  </data>
+  <data name="&gt;&gt;GroupSpecialChar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupSpecialChar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupSpecialChar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>344, 468</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Neue Datensicherung erstellen</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>CreateBackup</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
