@@ -71,7 +71,7 @@
     <Setting Name="sound" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="selber_bewerten" Type="System.Boolean" Scope="User">
+    <Setting Name="UserEvaluation" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="path_vhf" Type="System.String" Scope="User">

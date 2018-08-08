@@ -82,6 +82,7 @@
     <Reference Include="System.Drawing">
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms">
       <Private>False</Private>
@@ -188,11 +189,11 @@
     <Compile Include="Forms\SettingsDialog.Designer.cs">
       <DependentUpon>SettingsDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="practise_dialog.cs">
+    <Compile Include="Forms\PracticeDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="practise_dialog.Designer.cs">
-      <DependentUpon>practise_dialog.cs</DependentUpon>
+    <Compile Include="Forms\PracticeDialog.Designer.cs">
+      <DependentUpon>PracticeDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="program_form.cs">
       <SubType>Form</SubType>
@@ -249,9 +250,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>SettingsDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="practise_dialog.resx">
+    <EmbeddedResource Include="Forms\PracticeDialog.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>practise_dialog.cs</DependentUpon>
+      <DependentUpon>PracticeDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PrintCardsDialog.resx">
       <SubType>Designer</SubType>

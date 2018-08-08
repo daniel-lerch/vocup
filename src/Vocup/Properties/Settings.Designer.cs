@@ -302,12 +302,12 @@ namespace Vocup.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool selber_bewerten {
+        public bool UserEvaluation {
             get {
-                return ((bool)(this["selber_bewerten"]));
+                return ((bool)(this["UserEvaluation"]));
             }
             set {
-                this["selber_bewerten"] = value;
+                this["UserEvaluation"] = value;
             }
         }
         

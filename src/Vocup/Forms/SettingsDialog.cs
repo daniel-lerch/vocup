@@ -39,7 +39,7 @@ namespace Vocup
             TbVhrPath.Text = settings.path_vhr;
 
             // Selber bewerten
-            CbManualCheck.Checked = settings.selber_bewerten;
+            CbManualCheck.Checked = settings.UserEvaluation;
 
             // Eingabefelder mit Farbe hervorheben
             CbColoredTextfield.Checked = settings.colored_textfields;
@@ -124,7 +124,7 @@ namespace Vocup
             }
 
             // Übersetzungen selber bewerten
-            settings.selber_bewerten = CbManualCheck.Checked;
+            settings.UserEvaluation = CbManualCheck.Checked;
 
             // Eingabefelder mit Farbe hervorheben
             settings.colored_textfields = CbColoredTextfield.Checked;
