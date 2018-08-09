@@ -424,7 +424,6 @@
     <Content Include="icon.ico" />
     <Content Include="Library\K_Updater.dll" />
     <None Include="Resources\logo_splash.png" />
-    <None Include="Resources\splash_back.png" />
     <None Include="Resources\close.png" />
     <None Include="Resources\quit.png" />
     <None Include="Resources\backup_add.png" />

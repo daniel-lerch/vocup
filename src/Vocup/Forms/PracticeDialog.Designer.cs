@@ -37,12 +37,12 @@
             this.LbForeignLang = new System.Windows.Forms.Label();
             this.LbMotherTongue = new System.Windows.Forms.Label();
             this.GroupStatistics = new System.Windows.Forms.GroupBox();
-            this.anzahl_falsch = new System.Windows.Forms.TextBox();
+            this.TbWrongCount = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.anzahl_teilweise = new System.Windows.Forms.TextBox();
+            this.TbPartlyCorrectCount = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.anzahl_richtig = new System.Windows.Forms.TextBox();
+            this.TbCorrectCount = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -111,12 +111,12 @@
             // GroupStatistics
             // 
             resources.ApplyResources(this.GroupStatistics, "GroupStatistics");
-            this.GroupStatistics.Controls.Add(this.anzahl_falsch);
+            this.GroupStatistics.Controls.Add(this.TbWrongCount);
             this.GroupStatistics.Controls.Add(this.label6);
-            this.GroupStatistics.Controls.Add(this.anzahl_teilweise);
+            this.GroupStatistics.Controls.Add(this.TbPartlyCorrectCount);
             this.GroupStatistics.Controls.Add(this.label5);
             this.GroupStatistics.Controls.Add(this.label4);
-            this.GroupStatistics.Controls.Add(this.anzahl_richtig);
+            this.GroupStatistics.Controls.Add(this.TbCorrectCount);
             this.GroupStatistics.Controls.Add(this.label3);
             this.GroupStatistics.Controls.Add(this.label2);
             this.GroupStatistics.Controls.Add(this.label1);
@@ -127,26 +127,26 @@
             this.GroupStatistics.Name = "GroupStatistics";
             this.GroupStatistics.TabStop = false;
             // 
-            // anzahl_falsch
+            // TbWrongCount
             // 
-            this.anzahl_falsch.BackColor = System.Drawing.Color.Pink;
-            this.anzahl_falsch.ForeColor = System.Drawing.SystemColors.WindowText;
-            resources.ApplyResources(this.anzahl_falsch, "anzahl_falsch");
-            this.anzahl_falsch.Name = "anzahl_falsch";
-            this.anzahl_falsch.ReadOnly = true;
+            this.TbWrongCount.BackColor = System.Drawing.Color.Pink;
+            this.TbWrongCount.ForeColor = System.Drawing.SystemColors.WindowText;
+            resources.ApplyResources(this.TbWrongCount, "TbWrongCount");
+            this.TbWrongCount.Name = "TbWrongCount";
+            this.TbWrongCount.ReadOnly = true;
             // 
             // label6
             // 
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
             // 
-            // anzahl_teilweise
+            // TbPartlyCorrectCount
             // 
-            this.anzahl_teilweise.BackColor = System.Drawing.Color.Gold;
-            this.anzahl_teilweise.ForeColor = System.Drawing.SystemColors.WindowText;
-            resources.ApplyResources(this.anzahl_teilweise, "anzahl_teilweise");
-            this.anzahl_teilweise.Name = "anzahl_teilweise";
-            this.anzahl_teilweise.ReadOnly = true;
+            this.TbPartlyCorrectCount.BackColor = System.Drawing.Color.Gold;
+            this.TbPartlyCorrectCount.ForeColor = System.Drawing.SystemColors.WindowText;
+            resources.ApplyResources(this.TbPartlyCorrectCount, "TbPartlyCorrectCount");
+            this.TbPartlyCorrectCount.Name = "TbPartlyCorrectCount";
+            this.TbPartlyCorrectCount.ReadOnly = true;
             // 
             // label5
             // 
@@ -158,13 +158,13 @@
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
             // 
-            // anzahl_richtig
+            // TbCorrectCount
             // 
-            this.anzahl_richtig.BackColor = System.Drawing.Color.LightGreen;
-            this.anzahl_richtig.ForeColor = System.Drawing.SystemColors.WindowText;
-            resources.ApplyResources(this.anzahl_richtig, "anzahl_richtig");
-            this.anzahl_richtig.Name = "anzahl_richtig";
-            this.anzahl_richtig.ReadOnly = true;
+            this.TbCorrectCount.BackColor = System.Drawing.Color.LightGreen;
+            this.TbCorrectCount.ForeColor = System.Drawing.SystemColors.WindowText;
+            resources.ApplyResources(this.TbCorrectCount, "TbCorrectCount");
+            this.TbCorrectCount.Name = "TbCorrectCount";
+            this.TbCorrectCount.ReadOnly = true;
             // 
             // label3
             // 
@@ -218,7 +218,7 @@
             resources.ApplyResources(this.BtnContinue, "BtnContinue");
             this.BtnContinue.Name = "BtnContinue";
             this.BtnContinue.UseVisualStyleBackColor = true;
-            this.BtnContinue.Click += new System.EventHandler(this.fortfahren_button_Click);
+            this.BtnContinue.Click += new System.EventHandler(this.BtnContinue_Click);
             // 
             // TbCorrectAnswer
             // 
@@ -232,7 +232,7 @@
             resources.ApplyResources(this.BtnSpecialChar, "BtnSpecialChar");
             this.BtnSpecialChar.Name = "BtnSpecialChar";
             this.BtnSpecialChar.UseVisualStyleBackColor = true;
-            this.BtnSpecialChar.Click += new System.EventHandler(this.sonderzeichen_button_Click);
+            this.BtnSpecialChar.Click += new System.EventHandler(this.BtnSpecialChar_Click);
             // 
             // RbPartlyCorrect
             // 
@@ -268,12 +268,12 @@
             this.GroupUserEvaluation.Name = "GroupUserEvaluation";
             this.GroupUserEvaluation.TabStop = false;
             // 
-            // practise_dialog
+            // PracticeDialog
             // 
             this.AcceptButton = this.BtnContinue;
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.CancelButton = this.BtnCancel;
             resources.ApplyResources(this, "$this");
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.BtnCancel;
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnSpecialChar);
             this.Controls.Add(this.BtnContinue);
@@ -284,10 +284,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "practise_dialog";
+            this.Name = "PracticeDialog";
             this.ShowInTaskbar = false;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_FormClosed);
-            this.Load += new System.EventHandler(this.practise_dialog_Load);
+            this.Load += new System.EventHandler(this.Form_Load);
             this.GroupPractice.ResumeLayout(false);
             this.GroupPractice.PerformLayout();
             this.GroupStatistics.ResumeLayout(false);
@@ -311,11 +311,11 @@
         public System.Windows.Forms.TextBox TbUnpracticedCount;
         private System.Windows.Forms.TextBox TbPracticeCount;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox anzahl_teilweise;
+        public System.Windows.Forms.TextBox TbPartlyCorrectCount;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.TextBox anzahl_richtig;
-        public System.Windows.Forms.TextBox anzahl_falsch;
+        public System.Windows.Forms.TextBox TbCorrectCount;
+        public System.Windows.Forms.TextBox TbWrongCount;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox TbCorrectAnswer;
         private System.Windows.Forms.RadioButton RbPartlyCorrect;

@@ -117,7 +117,104 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;TbForeignLangSynonym.Name" xml:space="preserve">
+    <value>TbForeignLangSynonym</value>
+  </data>
+  <data name="&gt;&gt;TbForeignLangSynonym.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TbForeignLangSynonym.Parent" xml:space="preserve">
+    <value>GroupPractice</value>
+  </data>
+  <data name="&gt;&gt;TbForeignLangSynonym.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TbForeignLang.Name" xml:space="preserve">
+    <value>TbForeignLang</value>
+  </data>
+  <data name="&gt;&gt;TbForeignLang.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TbForeignLang.Parent" xml:space="preserve">
+    <value>GroupPractice</value>
+  </data>
+  <data name="&gt;&gt;TbForeignLang.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;TbMotherTongue.Name" xml:space="preserve">
+    <value>TbMotherTongue</value>
+  </data>
+  <data name="&gt;&gt;TbMotherTongue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TbMotherTongue.Parent" xml:space="preserve">
+    <value>GroupPractice</value>
+  </data>
+  <data name="&gt;&gt;TbMotherTongue.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;LbForeignLangSynonym.Name" xml:space="preserve">
+    <value>LbForeignLangSynonym</value>
+  </data>
+  <data name="&gt;&gt;LbForeignLangSynonym.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LbForeignLangSynonym.Parent" xml:space="preserve">
+    <value>GroupPractice</value>
+  </data>
+  <data name="&gt;&gt;LbForeignLangSynonym.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;LbForeignLang.Name" xml:space="preserve">
+    <value>LbForeignLang</value>
+  </data>
+  <data name="&gt;&gt;LbForeignLang.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LbForeignLang.Parent" xml:space="preserve">
+    <value>GroupPractice</value>
+  </data>
+  <data name="&gt;&gt;LbForeignLang.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;LbMotherTongue.Name" xml:space="preserve">
+    <value>LbMotherTongue</value>
+  </data>
+  <data name="&gt;&gt;LbMotherTongue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LbMotherTongue.Parent" xml:space="preserve">
+    <value>GroupPractice</value>
+  </data>
+  <data name="&gt;&gt;LbMotherTongue.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="GroupPractice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="GroupPractice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 118</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="GroupPractice.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="GroupPractice.Text" xml:space="preserve">
+    <value>Übersetzen Sie von {0} nach {1}</value>
+  </data>
+  <data name="&gt;&gt;GroupPractice.Name" xml:space="preserve">
+    <value>GroupPractice</value>
+  </data>
+  <data name="&gt;&gt;GroupPractice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupPractice.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupPractice.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="TbForeignLangSynonym.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
@@ -127,7 +224,6 @@
   <data name="TbForeignLangSynonym.Size" type="System.Drawing.Size, System.Drawing">
     <value>325, 22</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TbForeignLangSynonym.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
@@ -272,56 +368,212 @@
   <data name="&gt;&gt;LbMotherTongue.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="GroupPractice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="GroupPractice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>470, 118</value>
-  </data>
-  <data name="GroupPractice.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="GroupPractice.Text" xml:space="preserve">
-    <value>Übersetzen Sie von {0} nach {1}</value>
-  </data>
-  <data name="&gt;&gt;GroupPractice.Name" xml:space="preserve">
-    <value>GroupPractice</value>
-  </data>
-  <data name="&gt;&gt;GroupPractice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupPractice.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupPractice.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="GroupStatistics.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
-  <data name="anzahl_falsch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>422, 71</value>
+  <data name="&gt;&gt;TbWrongCount.Name" xml:space="preserve">
+    <value>TbWrongCount</value>
   </data>
-  <data name="anzahl_falsch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 20</value>
-  </data>
-  <data name="anzahl_falsch.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="anzahl_falsch.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;anzahl_falsch.Name" xml:space="preserve">
-    <value>anzahl_falsch</value>
-  </data>
-  <data name="&gt;&gt;anzahl_falsch.Type" xml:space="preserve">
+  <data name="&gt;&gt;TbWrongCount.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;anzahl_falsch.Parent" xml:space="preserve">
+  <data name="&gt;&gt;TbWrongCount.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
   </data>
-  <data name="&gt;&gt;anzahl_falsch.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TbWrongCount.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>GroupStatistics</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;TbPartlyCorrectCount.Name" xml:space="preserve">
+    <value>TbPartlyCorrectCount</value>
+  </data>
+  <data name="&gt;&gt;TbPartlyCorrectCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TbPartlyCorrectCount.Parent" xml:space="preserve">
+    <value>GroupStatistics</value>
+  </data>
+  <data name="&gt;&gt;TbPartlyCorrectCount.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>GroupStatistics</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>GroupStatistics</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;TbCorrectCount.Name" xml:space="preserve">
+    <value>TbCorrectCount</value>
+  </data>
+  <data name="&gt;&gt;TbCorrectCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TbCorrectCount.Parent" xml:space="preserve">
+    <value>GroupStatistics</value>
+  </data>
+  <data name="&gt;&gt;TbCorrectCount.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>GroupStatistics</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>GroupStatistics</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>GroupStatistics</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;TbPracticedCount.Name" xml:space="preserve">
+    <value>TbPracticedCount</value>
+  </data>
+  <data name="&gt;&gt;TbPracticedCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TbPracticedCount.Parent" xml:space="preserve">
+    <value>GroupStatistics</value>
+  </data>
+  <data name="&gt;&gt;TbPracticedCount.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;TbUnpracticedCount.Name" xml:space="preserve">
+    <value>TbUnpracticedCount</value>
+  </data>
+  <data name="&gt;&gt;TbUnpracticedCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TbUnpracticedCount.Parent" xml:space="preserve">
+    <value>GroupStatistics</value>
+  </data>
+  <data name="&gt;&gt;TbUnpracticedCount.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;TbPracticeCount.Name" xml:space="preserve">
+    <value>TbPracticeCount</value>
+  </data>
+  <data name="&gt;&gt;TbPracticeCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TbPracticeCount.Parent" xml:space="preserve">
+    <value>GroupStatistics</value>
+  </data>
+  <data name="&gt;&gt;TbPracticeCount.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;PbPracticeProgress.Name" xml:space="preserve">
+    <value>PbPracticeProgress</value>
+  </data>
+  <data name="&gt;&gt;PbPracticeProgress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PbPracticeProgress.Parent" xml:space="preserve">
+    <value>GroupStatistics</value>
+  </data>
+  <data name="&gt;&gt;PbPracticeProgress.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="GroupStatistics.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 200</value>
+  </data>
+  <data name="GroupStatistics.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 97</value>
+  </data>
+  <data name="GroupStatistics.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="GroupStatistics.Text" xml:space="preserve">
+    <value>Statistik</value>
+  </data>
+  <data name="&gt;&gt;GroupStatistics.Name" xml:space="preserve">
+    <value>GroupStatistics</value>
+  </data>
+  <data name="&gt;&gt;GroupStatistics.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupStatistics.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupStatistics.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="TbWrongCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>422, 71</value>
+  </data>
+  <data name="TbWrongCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
+  </data>
+  <data name="TbWrongCount.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="TbWrongCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;TbWrongCount.Name" xml:space="preserve">
+    <value>TbWrongCount</value>
+  </data>
+  <data name="&gt;&gt;TbWrongCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TbWrongCount.Parent" xml:space="preserve">
+    <value>GroupStatistics</value>
+  </data>
+  <data name="&gt;&gt;TbWrongCount.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
@@ -351,28 +603,28 @@
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="anzahl_teilweise.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="TbPartlyCorrectCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>275, 71</value>
   </data>
-  <data name="anzahl_teilweise.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TbPartlyCorrectCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
   </data>
-  <data name="anzahl_teilweise.TabIndex" type="System.Int32, mscorlib">
+  <data name="TbPartlyCorrectCount.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="anzahl_teilweise.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+  <data name="TbPartlyCorrectCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <data name="&gt;&gt;anzahl_teilweise.Name" xml:space="preserve">
-    <value>anzahl_teilweise</value>
+  <data name="&gt;&gt;TbPartlyCorrectCount.Name" xml:space="preserve">
+    <value>TbPartlyCorrectCount</value>
   </data>
-  <data name="&gt;&gt;anzahl_teilweise.Type" xml:space="preserve">
+  <data name="&gt;&gt;TbPartlyCorrectCount.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;anzahl_teilweise.Parent" xml:space="preserve">
+  <data name="&gt;&gt;TbPartlyCorrectCount.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
   </data>
-  <data name="&gt;&gt;anzahl_teilweise.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TbPartlyCorrectCount.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
@@ -429,28 +681,28 @@
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="anzahl_richtig.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="TbCorrectCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>108, 71</value>
   </data>
-  <data name="anzahl_richtig.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TbCorrectCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
   </data>
-  <data name="anzahl_richtig.TabIndex" type="System.Int32, mscorlib">
+  <data name="TbCorrectCount.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="anzahl_richtig.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+  <data name="TbCorrectCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <data name="&gt;&gt;anzahl_richtig.Name" xml:space="preserve">
-    <value>anzahl_richtig</value>
+  <data name="&gt;&gt;TbCorrectCount.Name" xml:space="preserve">
+    <value>TbCorrectCount</value>
   </data>
-  <data name="&gt;&gt;anzahl_richtig.Type" xml:space="preserve">
+  <data name="&gt;&gt;TbCorrectCount.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;anzahl_richtig.Parent" xml:space="preserve">
+  <data name="&gt;&gt;TbCorrectCount.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
   </data>
-  <data name="&gt;&gt;anzahl_richtig.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TbCorrectCount.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
@@ -626,30 +878,6 @@
   </data>
   <data name="&gt;&gt;PbPracticeProgress.ZOrder" xml:space="preserve">
     <value>12</value>
-  </data>
-  <data name="GroupStatistics.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 200</value>
-  </data>
-  <data name="GroupStatistics.Size" type="System.Drawing.Size, System.Drawing">
-    <value>470, 97</value>
-  </data>
-  <data name="GroupStatistics.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="GroupStatistics.Text" xml:space="preserve">
-    <value>Statistik</value>
-  </data>
-  <data name="&gt;&gt;GroupStatistics.Name" xml:space="preserve">
-    <value>GroupStatistics</value>
-  </data>
-  <data name="&gt;&gt;GroupStatistics.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupStatistics.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupStatistics.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="BtnCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -876,6 +1104,9 @@
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>494, 308</value>
   </data>
@@ -886,7 +1117,7 @@
     <value>Vokabeln üben</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>practise_dialog</value>
+    <value>PracticeDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
