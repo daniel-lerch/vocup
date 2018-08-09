@@ -33,16 +33,16 @@ namespace Vocup
             CbGridLines.Checked = settings.GridLines;
 
             // Pfad Vokabelhefte
-            TbVhfPath.Text = settings.path_vhf;
+            TbVhfPath.Text = settings.VhfPath;
 
             // Pfad Ergebnisse
-            TbVhrPath.Text = settings.path_vhr;
+            TbVhrPath.Text = settings.VhrPath;
 
             // Selber bewerten
-            CbManualCheck.Checked = settings.UserEvaluation;
+            CbManualCheck.Checked = settings.UserEvaluates;
 
             // Eingabefelder mit Farbe hervorheben
-            CbColoredTextfield.Checked = settings.colored_textfields;
+            CbColoredTextfield.Checked = settings.PracticeInputBackColor != SystemColors.Window;
 
             // Teilweise richtig
             checkbox_leerschläge.Checked = settings.nearly_correct_blank_char;
@@ -105,10 +105,10 @@ namespace Vocup
             settings.GridLines = CbGridLines.Checked;
 
             // Pfad Vokabelhefte
-            settings.path_vhf = TbVhfPath.Text;
+            settings.VhfPath = TbVhfPath.Text;
 
             // Pfad Ergebnisse
-            settings.path_vhr = TbVhrPath.Text;
+            settings.VhrPath = TbVhrPath.Text;
 
             // Auswertung
             settings.show_practise_result_list = CbPracticeResult.Checked;
@@ -124,10 +124,10 @@ namespace Vocup
             }
 
             // Übersetzungen selber bewerten
-            settings.UserEvaluation = CbManualCheck.Checked;
+            settings.UserEvaluates = CbManualCheck.Checked;
 
             // Eingabefelder mit Farbe hervorheben
-            settings.colored_textfields = CbColoredTextfield.Checked;
+            settings.PracticeInputBackColor = CbColoredTextfield.Checked ? Color.FromArgb(250, 250, 150) : SystemColors.Window;
 
             // Teilweise richtig
             settings.nearly_correct_blank_char = checkbox_leerschläge.Checked;
@@ -209,7 +209,7 @@ namespace Vocup
         {
             using (FolderBrowserDialog fbd = new FolderBrowserDialog())
             {
-                fbd.SelectedPath = settings.path_vhf;
+                fbd.SelectedPath = settings.VhfPath;
 
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
@@ -223,7 +223,7 @@ namespace Vocup
         {
             using (FolderBrowserDialog fbd = new FolderBrowserDialog())
             {
-                fbd.SelectedPath = settings.path_vhr;
+                fbd.SelectedPath = settings.VhrPath;
 
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {

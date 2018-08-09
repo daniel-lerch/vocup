@@ -194,18 +194,6 @@ namespace Vocup.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool colored_textfields {
-            get {
-                return ((bool)(this["colored_textfields"]));
-            }
-            set {
-                this["colored_textfields"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool nearly_correct_blank_char {
             get {
                 return ((bool)(this["nearly_correct_blank_char"]));
@@ -302,36 +290,36 @@ namespace Vocup.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool UserEvaluation {
+        public bool UserEvaluates {
             get {
-                return ((bool)(this["UserEvaluation"]));
+                return ((bool)(this["UserEvaluates"]));
             }
             set {
-                this["UserEvaluation"] = value;
+                this["UserEvaluates"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string path_vhf {
+        public string VhfPath {
             get {
-                return ((string)(this["path_vhf"]));
+                return ((string)(this["VhfPath"]));
             }
             set {
-                this["path_vhf"] = value;
+                this["VhfPath"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string path_vhr {
+        public string VhrPath {
             get {
-                return ((string)(this["path_vhr"]));
+                return ((string)(this["VhrPath"]));
             }
             set {
-                this["path_vhr"] = value;
+                this["VhrPath"] = value;
             }
         }
         
@@ -344,6 +332,18 @@ namespace Vocup.Properties {
             }
             set {
                 this["startup_counter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public global::System.Drawing.Color PracticeInputBackColor {
+            get {
+                return ((global::System.Drawing.Color)(this["PracticeInputBackColor"]));
+            }
+            set {
+                this["PracticeInputBackColor"] = value;
             }
         }
     }

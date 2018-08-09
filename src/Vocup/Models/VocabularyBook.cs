@@ -94,7 +94,7 @@ namespace Vocup.Models
                     }
                 }
 
-            } while (File.Exists(Path.Combine(Properties.Settings.Default.path_vhr, code + ".vhr")));
+            } while (File.Exists(Path.Combine(Properties.Settings.Default.VhrPath, code + ".vhr")));
 
             VhrCode = new string(code);
         }

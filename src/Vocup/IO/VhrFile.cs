@@ -14,7 +14,7 @@ namespace Vocup.IO.Internal
     {
         public bool Read(VocabularyBook book) // TODO: Add exception handling
         {
-            FileInfo vhrInfo = new FileInfo(Path.Combine(Settings.Default.path_vhr, book.VhrCode + ".vhr"));
+            FileInfo vhrInfo = new FileInfo(Path.Combine(Settings.Default.VhrPath, book.VhrCode + ".vhr"));
             if (!vhrInfo.Exists)
                 return false;
 
@@ -119,7 +119,7 @@ namespace Vocup.IO.Internal
                 raw = writer.ToString();
             }
 
-            WriteFile(Path.Combine(Settings.Default.path_vhr, book.VhrCode + ".vhr"), raw);
+            WriteFile(Path.Combine(Settings.Default.VhrPath, book.VhrCode + ".vhr"), raw);
 
             return true;
         }

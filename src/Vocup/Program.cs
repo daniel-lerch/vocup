@@ -53,14 +53,14 @@ namespace Vocup
             string personal = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             string folder = Path.Combine(personal, Properties.Words.VocabularyBooks); // default path
 
-            if (string.IsNullOrWhiteSpace(settings.path_vhf) || settings.path_vhf.Equals(folder, StringComparison.OrdinalIgnoreCase))
+            if (string.IsNullOrWhiteSpace(settings.VhfPath) || settings.VhfPath.Equals(folder, StringComparison.OrdinalIgnoreCase))
             {
                 Directory.CreateDirectory(folder);
-                settings.path_vhf = folder;
+                settings.VhfPath = folder;
             }
             else
             {
-                Directory.CreateDirectory(Properties.Settings.Default.path_vhf);
+                Directory.CreateDirectory(Properties.Settings.Default.VhfPath);
             }
         }
 
@@ -72,14 +72,14 @@ namespace Vocup
             string appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string folder = Path.Combine(appdata, AppInfo.ProductName); // default path
 
-            if (string.IsNullOrWhiteSpace(settings.path_vhr) || settings.path_vhr.Equals(folder, StringComparison.OrdinalIgnoreCase))
+            if (string.IsNullOrWhiteSpace(settings.VhrPath) || settings.VhrPath.Equals(folder, StringComparison.OrdinalIgnoreCase))
             {
                 Directory.CreateDirectory(folder);
-                settings.path_vhr = folder;
+                settings.VhrPath = folder;
             }
             else
             {
-                Directory.CreateDirectory(settings.path_vhr);
+                Directory.CreateDirectory(settings.VhrPath);
             }
         }
     }

@@ -24,7 +24,7 @@ namespace Vocup.Forms
         {
             {
                 // Check for vocabulary book files
-                DirectoryInfo booksInfo = new DirectoryInfo(Settings.Default.path_vhf);
+                DirectoryInfo booksInfo = new DirectoryInfo(Settings.Default.VhfPath);
                 int count = 0;
                 if (booksInfo.Exists && (count = booksInfo.EnumerateFiles("*.vhf", SearchOption.AllDirectories).Count()) > 0)
                 {
@@ -35,7 +35,7 @@ namespace Vocup.Forms
             }
             {
                 // Check for pratice result files
-                DirectoryInfo resultsInfo = new DirectoryInfo(Settings.Default.path_vhr);
+                DirectoryInfo resultsInfo = new DirectoryInfo(Settings.Default.VhrPath);
                 int count = 0;
                 if (resultsInfo.Exists && (count = resultsInfo.EnumerateFiles("*.vhr", SearchOption.TopDirectoryOnly).Count()) > 0)
                 {

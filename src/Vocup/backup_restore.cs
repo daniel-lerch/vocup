@@ -144,9 +144,9 @@ namespace Vocup
 
                             //vhf_vhr_log[i, 1] = vhf_vhr_log[i, 1].Replace("%vhf%", Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\" + Properties.language.personal_directory);
 
-                            vhf_vhr_log[i, 1] = vhf_vhr_log[i, 1].Replace("%vhf%", Properties.Settings.Default.path_vhf);
+                            vhf_vhr_log[i, 1] = vhf_vhr_log[i, 1].Replace("%vhf%", Properties.Settings.Default.VhfPath);
 
-                            vhf_vhr_log[i, 1] = vhf_vhr_log[i, 1].Replace("%vhr%", Properties.Settings.Default.path_vhr);
+                            vhf_vhr_log[i, 1] = vhf_vhr_log[i, 1].Replace("%vhr%", Properties.Settings.Default.VhrPath);
                             vhf_vhr_log[i, 1] = vhf_vhr_log[i, 1].Replace("%personal%", Environment.GetFolderPath(Environment.SpecialFolder.Personal));
                             vhf_vhr_log[i, 1] = vhf_vhr_log[i, 1].Replace("%desktop%", Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory));
                             vhf_vhr_log[i, 1] = vhf_vhr_log[i, 1].Replace("%program%", Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles));

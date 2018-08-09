@@ -27,8 +27,7 @@ namespace Vocup.Forms
             LbCopyright.Text = Util.AppInfo.CopyrightInfo;
             LlbProjectWebsite.LinkClicked += (s, args) => Process.Start("https://github.com/daniel-lerch/vocup");
             LlbProjectEMail.LinkClicked += (s, args) => Process.Start("mailto:" + LlbProjectEMail.Text);
-
-            AcceptButton = BtnOK;
+            LlbProjectLicense.LinkClicked += (s, args) => Process.Start("https://github.com/daniel-lerch/vocup/blob/master/LICENSE");
         }
 
         private void BtnOK_Click(object sender, EventArgs e)

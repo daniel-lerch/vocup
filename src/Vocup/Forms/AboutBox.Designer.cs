@@ -35,7 +35,7 @@
             this.LbVersion = new System.Windows.Forms.Label();
             this.LbCopyright = new System.Windows.Forms.Label();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.LbProjectLicense = new System.Windows.Forms.Label();
+            this.LlbProjectLicense = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.LlbProjectWebsite = new System.Windows.Forms.LinkLabel();
             this.LlbProjectEMail = new System.Windows.Forms.LinkLabel();
@@ -89,7 +89,7 @@
             // tableLayoutPanel
             // 
             resources.ApplyResources(this.tableLayoutPanel, "tableLayoutPanel");
-            this.tableLayoutPanel.Controls.Add(this.LbProjectLicense, 0, 2);
+            this.tableLayoutPanel.Controls.Add(this.LlbProjectLicense, 0, 2);
             this.tableLayoutPanel.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.LlbProjectWebsite, 1, 0);
             this.tableLayoutPanel.Controls.Add(this.LlbProjectEMail, 1, 1);
@@ -97,11 +97,14 @@
             this.tableLayoutPanel.Controls.Add(this.label5, 0, 2);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             // 
-            // LbProjectLicense
+            // LlbProjectLicense
             // 
-            resources.ApplyResources(this.LbProjectLicense, "LbProjectLicense");
-            this.LbProjectLicense.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.LbProjectLicense.Name = "LbProjectLicense";
+            this.LlbProjectLicense.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            resources.ApplyResources(this.LlbProjectLicense, "LlbProjectLicense");
+            this.LlbProjectLicense.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.LlbProjectLicense.Name = "LlbProjectLicense";
+            this.LlbProjectLicense.TabStop = true;
+            this.LlbProjectLicense.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
             // 
             // label2
             // 
@@ -238,7 +241,6 @@
         private System.Windows.Forms.Label LbVersion;
         private System.Windows.Forms.Label LbCopyright;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
-        private System.Windows.Forms.Label LbProjectLicense;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel LlbProjectWebsite;
         private System.Windows.Forms.LinkLabel LlbProjectEMail;
@@ -253,6 +255,6 @@
         private System.Windows.Forms.ColumnHeader software_version;
         private System.Windows.Forms.ColumnHeader lizenz;
         private System.Windows.Forms.ColumnHeader url;
-
+        private System.Windows.Forms.LinkLabel LlbProjectLicense;
     }
 }
