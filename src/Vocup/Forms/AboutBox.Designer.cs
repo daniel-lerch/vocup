@@ -209,8 +209,8 @@
             // AboutBox
             // 
             this.AcceptButton = this.BtnOK;
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.BtnOK);
             this.Controls.Add(this.LbNetFramwork);

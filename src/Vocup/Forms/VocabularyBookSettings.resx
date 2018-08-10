@@ -143,6 +143,21 @@
   <data name="&gt;&gt;BtnSpecialChar.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="CbResetResults.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbResetResults.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 23</value>
+  </data>
+  <data name="CbResetResults.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 17</value>
+  </data>
+  <data name="CbResetResults.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="CbResetResults.Text" xml:space="preserve">
+    <value>Ergebnisse aller Vokabeln zurücksetzen</value>
+  </data>
   <data name="&gt;&gt;CbResetResults.Name" xml:space="preserve">
     <value>CbResetResults</value>
   </data>
@@ -178,33 +193,6 @@
   </data>
   <data name="&gt;&gt;GroupOptions.ZOrder" xml:space="preserve">
     <value>6</value>
-  </data>
-  <data name="CbResetResults.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="CbResetResults.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 23</value>
-  </data>
-  <data name="CbResetResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 17</value>
-  </data>
-  <data name="CbResetResults.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="CbResetResults.Text" xml:space="preserve">
-    <value>Ergebnisse aller Vokabeln zurücksetzen</value>
-  </data>
-  <data name="&gt;&gt;CbResetResults.Name" xml:space="preserve">
-    <value>CbResetResults</value>
-  </data>
-  <data name="&gt;&gt;CbResetResults.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbResetResults.Parent" xml:space="preserve">
-    <value>GroupOptions</value>
-  </data>
-  <data name="&gt;&gt;CbResetResults.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="BtnCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>203, 213</value>
@@ -359,54 +347,6 @@
   <data name="&gt;&gt;TbForeignLang.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;RbModeAskMotherTongue.Name" xml:space="preserve">
-    <value>RbModeAskMotherTongue</value>
-  </data>
-  <data name="&gt;&gt;RbModeAskMotherTongue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RbModeAskMotherTongue.Parent" xml:space="preserve">
-    <value>GroupPracticeMode</value>
-  </data>
-  <data name="&gt;&gt;RbModeAskMotherTongue.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;RbModeAskForeignLang.Name" xml:space="preserve">
-    <value>RbModeAskForeignLang</value>
-  </data>
-  <data name="&gt;&gt;RbModeAskForeignLang.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RbModeAskForeignLang.Parent" xml:space="preserve">
-    <value>GroupPracticeMode</value>
-  </data>
-  <data name="&gt;&gt;RbModeAskForeignLang.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="GroupPracticeMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 134</value>
-  </data>
-  <data name="GroupPracticeMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 70</value>
-  </data>
-  <data name="GroupPracticeMode.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="GroupPracticeMode.Text" xml:space="preserve">
-    <value>Übersetzungsrichtung</value>
-  </data>
-  <data name="&gt;&gt;GroupPracticeMode.Name" xml:space="preserve">
-    <value>GroupPracticeMode</value>
-  </data>
-  <data name="&gt;&gt;GroupPracticeMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupPracticeMode.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupPracticeMode.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="RbModeAskMotherTongue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -461,9 +401,36 @@
   <data name="&gt;&gt;RbModeAskForeignLang.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="GroupPracticeMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 134</value>
+  </data>
+  <data name="GroupPracticeMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>266, 70</value>
+  </data>
+  <data name="GroupPracticeMode.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="GroupPracticeMode.Text" xml:space="preserve">
+    <value>Übersetzungsrichtung</value>
+  </data>
+  <data name="&gt;&gt;GroupPracticeMode.Name" xml:space="preserve">
+    <value>GroupPracticeMode</value>
+  </data>
+  <data name="&gt;&gt;GroupPracticeMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupPracticeMode.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupPracticeMode.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>290, 248</value>
   </data>

@@ -157,9 +157,9 @@
             // CreateBackup
             // 
             this.AcceptButton = this.BtnCreateBackup;
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.CancelButton = this.BtnCancel;
             resources.ApplyResources(this, "$this");
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.BtnCancel;
             this.Controls.Add(this.GroupSpecialChar);
             this.Controls.Add(this.GroupPracticeResults);
             this.Controls.Add(this.BtnCreateBackup);

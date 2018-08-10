@@ -229,14 +229,6 @@
     <value>Die Vokabel ist bereits vorhanden!</value>
     <comment>Nachricht</comment>
   </data>
-  <data name="no_vocables_to_learn" xml:space="preserve">
-    <value>Herzlichen Glückwunsch! Sie haben bereits alle Vokabeln mehrmals hintereinander richtig übersetzt.
-	
-Tipp: Unter Optionen können Sie festlegen, wie oft eine Vokabel richtig hintereinander übersetzt werden muss, 
-damit sie als gelernt eingestuft wird.
-</value>
-    <comment>practise_dialog</comment>
-  </data>
   <data name="save_before_update" xml:space="preserve">
     <value>Möchten Sie das Vokabelheft speichern bevor sie fortfahren? Alle nicht gespeicherten Daten gehen verloren.</value>
   </data>

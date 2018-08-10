@@ -221,8 +221,8 @@
             // PracticeCountDialog
             // 
             this.AcceptButton = this.BtnCount20;
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.GroupPriority);
             this.Controls.Add(this.GroupCount);
             this.Controls.Add(this.GroupState);

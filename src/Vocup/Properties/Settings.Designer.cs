@@ -169,13 +169,13 @@ namespace Vocup.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool auto_update {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DisableInternetServices {
             get {
-                return ((bool)(this["auto_update"]));
+                return ((bool)(this["DisableInternetServices"]));
             }
             set {
-                this["auto_update"] = value;
+                this["DisableInternetServices"] = value;
             }
         }
         
@@ -266,12 +266,12 @@ namespace Vocup.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool only_one_click {
+        public bool PracticeFastContinue {
             get {
-                return ((bool)(this["only_one_click"]));
+                return ((bool)(this["PracticeFastContinue"]));
             }
             set {
-                this["only_one_click"] = value;
+                this["PracticeFastContinue"] = value;
             }
         }
         
@@ -337,7 +337,7 @@ namespace Vocup.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        [global::System.Configuration.DefaultSettingValueAttribute("250, 250, 150")]
         public global::System.Drawing.Color PracticeInputBackColor {
             get {
                 return ((global::System.Drawing.Color)(this["PracticeInputBackColor"]));

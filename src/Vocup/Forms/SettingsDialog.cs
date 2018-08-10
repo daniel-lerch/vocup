@@ -27,7 +27,7 @@ namespace Vocup
             CbAutoSave.Checked = settings.auto_save;
 
             // Automatisches Update
-            CbAutoUpdate.Checked = settings.auto_update;
+            CbDisableInternetServices.Checked = settings.DisableInternetServices;
 
             // list view grid lines
             CbGridLines.Checked = settings.GridLines;
@@ -52,7 +52,7 @@ namespace Vocup
             checkbox_synonyme.Checked = settings.nearly_correct_synonym;
 
             // Fortfahren-Button
-            CbSingleContinueButton.Checked = settings.only_one_click;
+            CbSingleContinueButton.Checked = settings.PracticeFastContinue;
 
             // Klänge
             CbAcousticFeedback.Checked = settings.sound;
@@ -99,7 +99,7 @@ namespace Vocup
             settings.auto_save = CbAutoSave.Checked;
 
             // Automatisches Update
-            settings.auto_update = CbAutoUpdate.Checked;
+            settings.DisableInternetServices = CbDisableInternetServices.Checked;
 
             // list view grid lines
             settings.GridLines = CbGridLines.Checked;
@@ -137,7 +137,7 @@ namespace Vocup
             settings.nearly_correct_synonym = checkbox_synonyme.Checked;
 
             // Fortfahren-Button
-            settings.only_one_click = CbSingleContinueButton.Checked;
+            settings.PracticeFastContinue = CbSingleContinueButton.Checked;
 
             // Akustische Rückmeldung
             settings.sound = CbAcousticFeedback.Checked;

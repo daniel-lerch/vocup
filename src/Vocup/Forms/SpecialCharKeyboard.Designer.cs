@@ -1161,9 +1161,10 @@
             this.â_ro.UseVisualStyleBackColor = true;
             this.â_ro.Click += new System.EventHandler(this.Button_Click);
             // 
-            // specialchars
+            // SpecialCharKeyboard
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(404, 126);
@@ -1171,7 +1172,7 @@
             this.Controls.Add(this.Titel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
-            this.Name = "specialchars";
+            this.Name = "SpecialCharKeyboard";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

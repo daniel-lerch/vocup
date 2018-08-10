@@ -513,31 +513,31 @@
   <data name="&gt;&gt;GroupVhfPath.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="CbAutoUpdate.AutoSize" type="System.Boolean, mscorlib">
+  <data name="CbDisableInternetServices.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="CbAutoUpdate.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="CbDisableInternetServices.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 19</value>
   </data>
-  <data name="CbAutoUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 17</value>
+  <data name="CbDisableInternetServices.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 17</value>
   </data>
-  <data name="CbAutoUpdate.TabIndex" type="System.Int32, mscorlib">
+  <data name="CbDisableInternetServices.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="CbAutoUpdate.Text" xml:space="preserve">
-    <value>Alle 30 Tage automatisch nach Updates suchen</value>
+  <data name="CbDisableInternetServices.Text" xml:space="preserve">
+    <value>Internetdienste deaktivieren (nicht empfohlen)</value>
   </data>
-  <data name="&gt;&gt;CbAutoUpdate.Name" xml:space="preserve">
-    <value>CbAutoUpdate</value>
+  <data name="&gt;&gt;CbDisableInternetServices.Name" xml:space="preserve">
+    <value>CbDisableInternetServices</value>
   </data>
-  <data name="&gt;&gt;CbAutoUpdate.Type" xml:space="preserve">
+  <data name="&gt;&gt;CbDisableInternetServices.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;CbAutoUpdate.Parent" xml:space="preserve">
+  <data name="&gt;&gt;CbDisableInternetServices.Parent" xml:space="preserve">
     <value>GroupUpdate</value>
   </data>
-  <data name="&gt;&gt;CbAutoUpdate.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;CbDisableInternetServices.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="GroupUpdate.Location" type="System.Drawing.Point, System.Drawing">
@@ -550,7 +550,7 @@
     <value>2</value>
   </data>
   <data name="GroupUpdate.Text" xml:space="preserve">
-    <value>Update</value>
+    <value>Updates</value>
   </data>
   <data name="&gt;&gt;GroupUpdate.Name" xml:space="preserve">
     <value>GroupUpdate</value>
@@ -1707,6 +1707,9 @@ damit sie als gelernt eingestuft wird?</value>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>319, 469</value>
   </data>

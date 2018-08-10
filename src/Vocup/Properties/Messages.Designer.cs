@@ -61,6 +61,26 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sie haben bereits alle Vokabeln mehrmals hintereinander richtig übersetzt.
+        ///	
+        ///Tipp: Unter Optionen können Sie festlegen, wie oft eine Vokabel richtig hintereinander übersetzt werden muss, damit sie als gelernt eingestuft wird..
+        /// </summary>
+        internal static string BookPracticeFinished {
+            get {
+                return ResourceManager.GetString("BookPracticeFinished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Herzlichen Glückwunsch!.
+        /// </summary>
+        internal static string BookPracticeFinishedT {
+            get {
+                return ResourceManager.GetString("BookPracticeFinishedT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Beim Exportieren einer CSV Datei ist ein unerwarteter Fehler aufgetreten.
         ///Details:
         ///{0}.

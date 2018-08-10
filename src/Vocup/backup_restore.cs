@@ -126,8 +126,6 @@ namespace Vocup
                             vhf_vhr_log[i, 0] = y[0];
                             vhf_vhr_log[i, 1] = y[1];
                             vhf_vhr_log[i, 2] = y[2];
-
-
                         }
 
                         //Dateien in die Listbox einlesen
@@ -157,13 +155,9 @@ namespace Vocup
 
                             try
                             {
-
                                 ZipEntry vhf_entry = backup_file.GetEntry(@"vhf\" + vhf_vhr_log[i, 0] + ".vhf");
 
-
                                 //Aktiviert die Radiobuttons falls nötig
-
-
                                 if (exists == false)
                                 {
                                     replace_nothing.Enabled = true;
@@ -173,14 +167,12 @@ namespace Vocup
                                     replace_newer.Enabled = true;
                                 }
 
-
                                 //Falls alle Vokabelhefte ersetzt werden sollen
                                 if (replace_all.Checked == true)
                                 {
                                     //Schaltet die Groupboxs wieder ein
                                     groupBox2.Enabled = true;
                                     groupBox3.Enabled = true;
-
 
                                     //Exakte Pfadangaben
                                     if (exact_path.Checked == true)
@@ -191,7 +183,6 @@ namespace Vocup
                                     {
                                         vhf_vhr_log[i, 3] = Convert.ToString(listbox_vhf.Items.Add(Path.GetFileNameWithoutExtension(vhf_vhr_log[i, 1]), true));
                                     }
-
                                 }
                                 //Falls nur neuere Vokabelhefte ersetzt werden sollen
                                 else if (replace_newer.Checked == true)
@@ -202,7 +193,6 @@ namespace Vocup
 
 
                                     //Exakte Pfadangaben
-
                                     if (exists == false || vhf_entry.DateTime > vhf_info.LastWriteTime)
                                     {
                                         if (exact_path.Checked == true)
@@ -250,7 +240,6 @@ namespace Vocup
                             {
                                 //Falls beim Lesen der VHF-Datei ein Fehler aufgetaucht ist
                             }
-
                         }
 
                         listbox_vhf.EndUpdate();
@@ -319,7 +308,6 @@ namespace Vocup
 
                                 restore_button.Focus();
 
-
                                 AcceptButton = restore_button;
                             }
                         }
@@ -341,9 +329,7 @@ namespace Vocup
 
                     try
                     {
-
                         Stream log_stream_vhr = backup_file.GetInputStream(log_entry_vhr);
-
 
                         byte[] buffer_vhr = new byte[log_entry_vhr.Size];
 
@@ -355,7 +341,6 @@ namespace Vocup
 
                         if (logstring_vhr != "")
                         {
-
                             vhr_log = logstring_vhr.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
 
                             //Wiederherstellen-Button aktivieren
@@ -365,7 +350,6 @@ namespace Vocup
 
                             restore_button.Focus();
 
-
                             AcceptButton = restore_button;
                         }
                         else
@@ -374,14 +358,12 @@ namespace Vocup
                         }
 
                         //Stream schliessen
-
                         backup_file.Close();
                     }
                     catch
                     {
                         groupBox4.Enabled = false;
                     }
-
                 }
                 catch
                 {
@@ -519,14 +501,10 @@ namespace Vocup
             }
         }
 
-
-        //Falls auf den wiederherstellen-Button geklickt wurde
-
         private void restore_button_Click(object sender, EventArgs e)
         {
             try
             {
-
                 bool activate = false;
 
                 if (listbox_vhf.CheckedItems.Count != 0 && groupBox3.Enabled == true)
@@ -549,7 +527,6 @@ namespace Vocup
                     //Vokabelhefte in Array einlesen
                     if (listbox_vhf.Items.Count != 0)
                     {
-
                         for (int i = 0; i < vhf_vhr_log.Length / 4; i++)
                         {
                             try
@@ -573,21 +550,14 @@ namespace Vocup
                             {
                             }
                         }
-
                     }
                     //Ergebnisse in Array einlesen, falls alle Ergebnisse wiederhergestellt werden sollen
 
                     if (results_restore_all.Checked == true && results_restore_all.Enabled == true)
                     {
-                        try
+                        for (int i = 0; i < vhr_log.Length; i++)
                         {
-                            for (int i = 0; i < vhr_log.Length; i++)
-                            {
-                                vhr_restore.Add(vhr_log[i]);
-                            }
-                        }
-                        catch
-                        {
+                            vhr_restore.Add(vhr_log[i]);
                         }
                     }
 
@@ -595,15 +565,9 @@ namespace Vocup
 
                     for (int i = 0; i < listbox_special_chars.Items.Count; i++)
                     {
-                        try
+                        if (listbox_special_chars.GetItemCheckState(i) == CheckState.Checked)
                         {
-                            if (listbox_special_chars.GetItemCheckState(i) == CheckState.Checked)
-                            {
-                                chars_restore.Add(listbox_special_chars.Items[i] + ".txt");
-                            }
-                        }
-                        catch
-                        {
+                            chars_restore.Add(listbox_special_chars.Items[i] + ".txt");
                         }
                     }
 

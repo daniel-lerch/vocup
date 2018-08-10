@@ -13,7 +13,7 @@ namespace Vocup.Models
         private string _vhrCode;
         private string _motherTongue;
         private string _foreignLang;
-        private PracticeMode _practiceMode;
+        private PracticeMode _practiceMode = PracticeMode.AskForForeignLang;
         private bool _unsafedChanges;
 
         public VocabularyBook()

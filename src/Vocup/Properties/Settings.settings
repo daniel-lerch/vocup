@@ -38,8 +38,8 @@
     <Setting Name="papiereinzug" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="auto_update" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+    <Setting Name="DisableInternetServices" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="checked_for_updates" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -62,7 +62,7 @@
     <Setting Name="backup_folder" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="only_one_click" Type="System.Boolean" Scope="User">
+    <Setting Name="PracticeFastContinue" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="sound" Type="System.Boolean" Scope="User">
@@ -81,7 +81,7 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="PracticeInputBackColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">White</Value>
+      <Value Profile="(Default)">250, 250, 150</Value>
     </Setting>
   </Settings>
 </SettingsFile>

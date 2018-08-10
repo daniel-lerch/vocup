@@ -119,18 +119,18 @@
             this.BtnClose.UseVisualStyleBackColor = true;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // specialchars_manage
+            // SpecialCharManage
             // 
             this.AcceptButton = this.BtnClose;
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "specialchars_manage";
+            this.Name = "SpecialCharManage";
             this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.SpecialCharManage_Load);
             this.groupBox1.ResumeLayout(false);

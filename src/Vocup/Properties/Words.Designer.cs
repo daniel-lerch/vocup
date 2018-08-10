@@ -187,15 +187,6 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Falsche Eingabe.
-        /// </summary>
-        internal static string Misentry {
-            get {
-                return ResourceManager.GetString("Misentry", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Muttersprache.
         /// </summary>
         internal static string MotherTongue {

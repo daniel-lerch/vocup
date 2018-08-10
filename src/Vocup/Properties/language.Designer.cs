@@ -313,19 +313,6 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Herzlichen Glückwunsch! Sie haben bereits alle Vokabeln mehrmals hintereinander richtig übersetzt.
-        ///	
-        ///Tipp: Unter Optionen können Sie festlegen, wie oft eine Vokabel richtig hintereinander übersetzt werden muss, 
-        ///damit sie als gelernt eingestuft wird.
-        ///.
-        /// </summary>
-        internal static string no_vocables_to_learn {
-            get {
-                return ResourceManager.GetString("no_vocables_to_learn", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Möchten Sie das Vokabelheft speichern bevor sie fortfahren? Alle nicht gespeicherten Daten gehen verloren..
         /// </summary>
         internal static string save_before_update {

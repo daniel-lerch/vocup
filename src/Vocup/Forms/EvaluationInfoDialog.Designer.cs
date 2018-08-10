@@ -147,12 +147,12 @@
             resources.ApplyResources(this.text_richtig, "text_richtig");
             this.text_richtig.Name = "text_richtig";
             // 
-            // infos_dialog
+            // EvaluationInfoDialog
             // 
             this.AcceptButton = this.button;
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.CancelButton = this.button;
             resources.ApplyResources(this, "$this");
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.button;
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -161,7 +161,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "infos_dialog";
+            this.Name = "EvaluationInfoDialog";
             this.ShowInTaskbar = false;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

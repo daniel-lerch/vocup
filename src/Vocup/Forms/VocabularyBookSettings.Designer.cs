@@ -130,9 +130,9 @@
             // VocabularyBookSettings
             // 
             this.AcceptButton = this.BtnOK;
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.CancelButton = this.BtnCancel;
             resources.ApplyResources(this, "$this");
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.BtnCancel;
             this.Controls.Add(this.GroupPracticeMode);
             this.Controls.Add(this.fremdsprache);
             this.Controls.Add(this.TbForeignLang);

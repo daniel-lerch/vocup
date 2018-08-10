@@ -117,6 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BookPracticeFinished" xml:space="preserve">
+    <value>Sie haben bereits alle Vokabeln mehrmals hintereinander richtig übersetzt.
+	
+Tipp: Unter Optionen können Sie festlegen, wie oft eine Vokabel richtig hintereinander übersetzt werden muss, damit sie als gelernt eingestuft wird.</value>
+  </data>
+  <data name="BookPracticeFinishedT" xml:space="preserve">
+    <value>Herzlichen Glückwunsch!</value>
+  </data>
   <data name="CsvExportError" xml:space="preserve">
     <value>Beim Exportieren einer CSV Datei ist ein unerwarteter Fehler aufgetreten.
 Details:

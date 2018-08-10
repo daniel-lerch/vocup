@@ -285,9 +285,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="practise_result_list.resx">
+    <EmbeddedResource Include="Forms\PracticeResultList.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>practise_result_list.cs</DependentUpon>
+      <DependentUpon>PracticeResultList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SpecialCharKeyboard.resx">
       <SubType>Designer</SubType>
@@ -317,11 +317,11 @@
       <SubType>Designer</SubType>
       <DependentUpon>PracticeCountDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="practise_result_list.cs">
+    <Compile Include="Forms\PracticeResultList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="practise_result_list.Designer.cs">
-      <DependentUpon>practise_result_list.cs</DependentUpon>
+    <Compile Include="Forms\PracticeResultList.Designer.cs">
+      <DependentUpon>PracticeResultList.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Words.Designer.cs">
       <AutoGen>True</AutoGen>

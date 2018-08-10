@@ -300,22 +300,15 @@
         }
 
         #endregion
-        public System.Windows.Forms.TextBox TbForeignLangSynonym;
-        public System.Windows.Forms.TextBox TbForeignLang;
-        public System.Windows.Forms.TextBox TbMotherTongue;
         private System.Windows.Forms.Label LbForeignLangSynonym;
         private System.Windows.Forms.ProgressBar PbPracticeProgress;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TbPracticedCount;
-        public System.Windows.Forms.TextBox TbUnpracticedCount;
         private System.Windows.Forms.TextBox TbPracticeCount;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox TbPartlyCorrectCount;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.TextBox TbCorrectCount;
-        public System.Windows.Forms.TextBox TbWrongCount;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox TbCorrectAnswer;
         private System.Windows.Forms.RadioButton RbPartlyCorrect;
@@ -329,5 +322,12 @@
         private System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.Button BtnContinue;
         private System.Windows.Forms.Button BtnSpecialChar;
+        private System.Windows.Forms.TextBox TbForeignLangSynonym;
+        private System.Windows.Forms.TextBox TbForeignLang;
+        private System.Windows.Forms.TextBox TbMotherTongue;
+        private System.Windows.Forms.TextBox TbUnpracticedCount;
+        private System.Windows.Forms.TextBox TbPartlyCorrectCount;
+        private System.Windows.Forms.TextBox TbCorrectCount;
+        private System.Windows.Forms.TextBox TbWrongCount;
     }
 }

@@ -162,9 +162,6 @@
     <value>Vokabelheft {0} - {1}</value>
     <comment>{0}: Source, {1}: Target</comment>
   </data>
-  <data name="Misentry" xml:space="preserve">
-    <value>Falsche Eingabe</value>
-  </data>
   <data name="MotherTongue" xml:space="preserve">
     <value>Muttersprache</value>
   </data>
