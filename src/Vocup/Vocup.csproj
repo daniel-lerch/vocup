@@ -171,11 +171,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>language.resx</DependentUpon>
     </Compile>
-    <Compile Include="new_and_settings.cs">
+    <Compile Include="Forms\EditWordDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="new_and_settings.Designer.cs">
-      <DependentUpon>new_and_settings.cs</DependentUpon>
+    <Compile Include="Forms\EditWordDialog.Designer.cs">
+      <DependentUpon>EditWordDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\VocabularyBookSettings.cs">
       <SubType>Form</SubType>
@@ -238,9 +238,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>MergeFiles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="new_and_settings.resx">
+    <EmbeddedResource Include="Forms\EditWordDialog.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>new_and_settings.cs</DependentUpon>
+      <DependentUpon>EditWordDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\VocabularyBookSettings.resx">
       <SubType>Designer</SubType>
@@ -309,10 +309,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Words.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="update_windows.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>update_windows.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PracticeCountDialog.resx">
       <SubType>Designer</SubType>
       <DependentUpon>PracticeCountDialog.cs</DependentUpon>
@@ -346,12 +342,6 @@
     </Compile>
     <Compile Include="Forms\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="update_windows.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="update_windows.Designer.cs">
-      <DependentUpon>update_windows.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\AppInfo.cs" />
     <Compile Include="Util\Crypto.cs" />
