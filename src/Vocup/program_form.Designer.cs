@@ -44,13 +44,13 @@
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
             this.TsmiOpenInExplorer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
-            this.druckenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TsmiPrint = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.datensicherungToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TsmiBackup = new System.Windows.Forms.ToolStripMenuItem();
             this.datensicherungErstellenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.datensicherungWiederherstellenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
-            this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TsmiExitApplication = new System.Windows.Forms.ToolStripMenuItem();
             this.bearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.neueVokabelHinzufügenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vokabelBearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,17 +73,16 @@
             this.ÜberVTrainingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.search_vokabel_field = new System.Windows.Forms.TextBox();
             this.GroupBook = new System.Windows.Forms.GroupBox();
-            this.vokabelheft_optionen = new System.Windows.Forms.Button();
-            this.practice_vokabelheft = new System.Windows.Forms.Button();
+            this.BtnBookSettings = new System.Windows.Forms.Button();
+            this.BtnPractice = new System.Windows.Forms.Button();
             this.GroupSearch = new System.Windows.Forms.GroupBox();
-            this.search_vokabel_button = new System.Windows.Forms.Button();
+            this.BtnSearchWord = new System.Windows.Forms.Button();
             this.GroupWord = new System.Windows.Forms.GroupBox();
-            this.insert_vokabel = new System.Windows.Forms.Button();
-            this.delet_vokabel = new System.Windows.Forms.Button();
-            this.edit_vokabel = new System.Windows.Forms.Button();
+            this.BtnAddWord = new System.Windows.Forms.Button();
+            this.BtnDeleteWord = new System.Windows.Forms.Button();
+            this.BtnEditWord = new System.Windows.Forms.Button();
             this.treeview_imagelist = new System.Windows.Forms.ImageList(this.components);
             this.listView_vokabeln = new System.Windows.Forms.ListView();
-            this.listview_imagelist = new System.Windows.Forms.ImageList(this.components);
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.sidebar = new System.Windows.Forms.Panel();
             this.GroupStatistics = new Vocup.Controls.StatisticsPanel();
@@ -97,7 +96,7 @@
             this.save_vokabelheft = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.print_vokabelheft = new System.Windows.Forms.ToolStripButton();
-            this.infos = new System.Windows.Forms.ToolStripButton();
+            this.TsbtnEvaluationInfo = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuStrip.SuspendLayout();
@@ -138,11 +137,11 @@
             this.toolStripMenuItem9,
             this.TsmiOpenInExplorer,
             this.toolStripMenuItem7,
-            this.druckenToolStripMenuItem,
+            this.TsmiPrint,
             this.toolStripMenuItem1,
-            this.datensicherungToolStripMenuItem,
+            this.TsmiBackup,
             this.toolStripMenuItem3,
-            this.beendenToolStripMenuItem});
+            this.TsmiExitApplication});
             this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
             resources.ApplyResources(this.dateiToolStripMenuItem, "dateiToolStripMenuItem");
             // 
@@ -221,26 +220,26 @@
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
             resources.ApplyResources(this.toolStripMenuItem7, "toolStripMenuItem7");
             // 
-            // druckenToolStripMenuItem
+            // TsmiPrint
             // 
-            resources.ApplyResources(this.druckenToolStripMenuItem, "druckenToolStripMenuItem");
-            this.druckenToolStripMenuItem.Image = global::Vocup.Properties.Icons.print;
-            this.druckenToolStripMenuItem.Name = "druckenToolStripMenuItem";
-            this.druckenToolStripMenuItem.Click += new System.EventHandler(this.druckenToolStripMenuItem_Click);
+            resources.ApplyResources(this.TsmiPrint, "TsmiPrint");
+            this.TsmiPrint.Image = global::Vocup.Properties.Icons.print;
+            this.TsmiPrint.Name = "TsmiPrint";
+            this.TsmiPrint.Click += new System.EventHandler(this.druckenToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             // 
-            // datensicherungToolStripMenuItem
+            // TsmiBackup
             // 
-            this.datensicherungToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TsmiBackup.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.datensicherungErstellenToolStripMenuItem,
             this.datensicherungWiederherstellenToolStripMenuItem});
-            this.datensicherungToolStripMenuItem.Image = global::Vocup.Properties.Icons.backup;
-            this.datensicherungToolStripMenuItem.Name = "datensicherungToolStripMenuItem";
-            resources.ApplyResources(this.datensicherungToolStripMenuItem, "datensicherungToolStripMenuItem");
+            this.TsmiBackup.Image = global::Vocup.Properties.Icons.backup;
+            this.TsmiBackup.Name = "TsmiBackup";
+            resources.ApplyResources(this.TsmiBackup, "TsmiBackup");
             // 
             // datensicherungErstellenToolStripMenuItem
             // 
@@ -261,12 +260,12 @@
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
             // 
-            // beendenToolStripMenuItem
+            // TsmiExitApplication
             // 
-            this.beendenToolStripMenuItem.Image = global::Vocup.Properties.Icons.quit;
-            this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            resources.ApplyResources(this.beendenToolStripMenuItem, "beendenToolStripMenuItem");
-            this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
+            this.TsmiExitApplication.Image = global::Vocup.Properties.Icons.quit;
+            this.TsmiExitApplication.Name = "TsmiExitApplication";
+            resources.ApplyResources(this.TsmiExitApplication, "TsmiExitApplication");
+            this.TsmiExitApplication.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
             // bearbeitenToolStripMenuItem
             // 
@@ -420,76 +419,76 @@
             // 
             // GroupBook
             // 
-            this.GroupBook.Controls.Add(this.vokabelheft_optionen);
-            this.GroupBook.Controls.Add(this.practice_vokabelheft);
+            this.GroupBook.Controls.Add(this.BtnBookSettings);
+            this.GroupBook.Controls.Add(this.BtnPractice);
             resources.ApplyResources(this.GroupBook, "GroupBook");
             this.GroupBook.Name = "GroupBook";
             this.GroupBook.TabStop = false;
             // 
-            // vokabelheft_optionen
+            // BtnBookSettings
             // 
-            this.vokabelheft_optionen.Image = global::Vocup.Properties.Icons.settings_file;
-            resources.ApplyResources(this.vokabelheft_optionen, "vokabelheft_optionen");
-            this.vokabelheft_optionen.Name = "vokabelheft_optionen";
-            this.vokabelheft_optionen.UseVisualStyleBackColor = true;
-            this.vokabelheft_optionen.Click += new System.EventHandler(this.vokabelheft_optionen_Click);
+            this.BtnBookSettings.Image = global::Vocup.Properties.Icons.settings_file;
+            resources.ApplyResources(this.BtnBookSettings, "BtnBookSettings");
+            this.BtnBookSettings.Name = "BtnBookSettings";
+            this.BtnBookSettings.UseVisualStyleBackColor = true;
+            this.BtnBookSettings.Click += new System.EventHandler(this.vokabelheft_optionen_Click);
             // 
-            // practice_vokabelheft
+            // BtnPractice
             // 
-            this.practice_vokabelheft.Image = global::Vocup.Properties.Icons.practise;
-            resources.ApplyResources(this.practice_vokabelheft, "practice_vokabelheft");
-            this.practice_vokabelheft.Name = "practice_vokabelheft";
-            this.practice_vokabelheft.UseVisualStyleBackColor = true;
-            this.practice_vokabelheft.Click += new System.EventHandler(this.practice_vokabelheft_Click);
+            this.BtnPractice.Image = global::Vocup.Properties.Icons.practise;
+            resources.ApplyResources(this.BtnPractice, "BtnPractice");
+            this.BtnPractice.Name = "BtnPractice";
+            this.BtnPractice.UseVisualStyleBackColor = true;
+            this.BtnPractice.Click += new System.EventHandler(this.practice_vokabelheft_Click);
             // 
             // GroupSearch
             // 
             this.GroupSearch.Controls.Add(this.search_vokabel_field);
-            this.GroupSearch.Controls.Add(this.search_vokabel_button);
+            this.GroupSearch.Controls.Add(this.BtnSearchWord);
             resources.ApplyResources(this.GroupSearch, "GroupSearch");
             this.GroupSearch.Name = "GroupSearch";
             this.GroupSearch.TabStop = false;
             // 
-            // search_vokabel_button
+            // BtnSearchWord
             // 
-            resources.ApplyResources(this.search_vokabel_button, "search_vokabel_button");
-            this.search_vokabel_button.Image = global::Vocup.Properties.Icons.search;
-            this.search_vokabel_button.Name = "search_vokabel_button";
-            this.search_vokabel_button.UseVisualStyleBackColor = true;
-            this.search_vokabel_button.Click += new System.EventHandler(this.search_vokabel_button_Click);
+            resources.ApplyResources(this.BtnSearchWord, "BtnSearchWord");
+            this.BtnSearchWord.Image = global::Vocup.Properties.Icons.search;
+            this.BtnSearchWord.Name = "BtnSearchWord";
+            this.BtnSearchWord.UseVisualStyleBackColor = true;
+            this.BtnSearchWord.Click += new System.EventHandler(this.search_vokabel_button_Click);
             // 
             // GroupWord
             // 
-            this.GroupWord.Controls.Add(this.insert_vokabel);
-            this.GroupWord.Controls.Add(this.delet_vokabel);
-            this.GroupWord.Controls.Add(this.edit_vokabel);
+            this.GroupWord.Controls.Add(this.BtnAddWord);
+            this.GroupWord.Controls.Add(this.BtnDeleteWord);
+            this.GroupWord.Controls.Add(this.BtnEditWord);
             resources.ApplyResources(this.GroupWord, "GroupWord");
             this.GroupWord.Name = "GroupWord";
             this.GroupWord.TabStop = false;
             // 
-            // insert_vokabel
+            // BtnAddWord
             // 
-            this.insert_vokabel.Image = global::Vocup.Properties.Icons.add;
-            resources.ApplyResources(this.insert_vokabel, "insert_vokabel");
-            this.insert_vokabel.Name = "insert_vokabel";
-            this.insert_vokabel.UseVisualStyleBackColor = true;
-            this.insert_vokabel.Click += new System.EventHandler(this.insert_vokabel_Click);
+            this.BtnAddWord.Image = global::Vocup.Properties.Icons.add;
+            resources.ApplyResources(this.BtnAddWord, "BtnAddWord");
+            this.BtnAddWord.Name = "BtnAddWord";
+            this.BtnAddWord.UseVisualStyleBackColor = true;
+            this.BtnAddWord.Click += new System.EventHandler(this.insert_vokabel_Click);
             // 
-            // delet_vokabel
+            // BtnDeleteWord
             // 
-            resources.ApplyResources(this.delet_vokabel, "delet_vokabel");
-            this.delet_vokabel.Image = global::Vocup.Properties.Icons.delete;
-            this.delet_vokabel.Name = "delet_vokabel";
-            this.delet_vokabel.UseVisualStyleBackColor = true;
-            this.delet_vokabel.Click += new System.EventHandler(this.delet_vokabel_Click);
+            resources.ApplyResources(this.BtnDeleteWord, "BtnDeleteWord");
+            this.BtnDeleteWord.Image = global::Vocup.Properties.Icons.delete;
+            this.BtnDeleteWord.Name = "BtnDeleteWord";
+            this.BtnDeleteWord.UseVisualStyleBackColor = true;
+            this.BtnDeleteWord.Click += new System.EventHandler(this.delet_vokabel_Click);
             // 
-            // edit_vokabel
+            // BtnEditWord
             // 
-            resources.ApplyResources(this.edit_vokabel, "edit_vokabel");
-            this.edit_vokabel.Image = global::Vocup.Properties.Icons.edit;
-            this.edit_vokabel.Name = "edit_vokabel";
-            this.edit_vokabel.UseVisualStyleBackColor = true;
-            this.edit_vokabel.Click += new System.EventHandler(this.edit_vokabel_Click);
+            resources.ApplyResources(this.BtnEditWord, "BtnEditWord");
+            this.BtnEditWord.Image = global::Vocup.Properties.Icons.edit;
+            this.BtnEditWord.Name = "BtnEditWord";
+            this.BtnEditWord.UseVisualStyleBackColor = true;
+            this.BtnEditWord.Click += new System.EventHandler(this.edit_vokabel_Click);
             // 
             // treeview_imagelist
             // 
@@ -508,20 +507,10 @@
             this.listView_vokabeln.HideSelection = false;
             this.listView_vokabeln.MultiSelect = false;
             this.listView_vokabeln.Name = "listView_vokabeln";
-            this.listView_vokabeln.SmallImageList = this.listview_imagelist;
             this.listView_vokabeln.Sorting = System.Windows.Forms.SortOrder.Descending;
             this.listView_vokabeln.UseCompatibleStateImageBehavior = false;
             this.listView_vokabeln.View = System.Windows.Forms.View.Details;
             this.listView_vokabeln.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView_vokabeln_MouseDoubleClick);
-            // 
-            // listview_imagelist
-            // 
-            this.listview_imagelist.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("listview_imagelist.ImageStream")));
-            this.listview_imagelist.TransparentColor = System.Drawing.Color.Transparent;
-            this.listview_imagelist.Images.SetKeyName(0, "0.png");
-            this.listview_imagelist.Images.SetKeyName(1, "1.png");
-            this.listview_imagelist.Images.SetKeyName(2, "2.png");
-            this.listview_imagelist.Images.SetKeyName(3, "3.png");
             // 
             // statusStrip
             // 
@@ -590,7 +579,7 @@
             this.save_vokabelheft,
             this.toolStripSeparator1,
             this.print_vokabelheft,
-            this.infos,
+            this.TsbtnEvaluationInfo,
             this.toolStripLabel});
             resources.ApplyResources(this.toolStrip, "toolStrip");
             this.toolStrip.Name = "toolStrip";
@@ -636,15 +625,15 @@
             this.print_vokabelheft.Name = "print_vokabelheft";
             this.print_vokabelheft.Click += new System.EventHandler(this.print_vokabelheft_Click);
             // 
-            // infos
+            // TsbtnEvaluationInfo
             // 
-            this.infos.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.infos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.infos.Image = global::Vocup.Properties.Icons.info;
-            resources.ApplyResources(this.infos, "infos");
-            this.infos.Margin = new System.Windows.Forms.Padding(1, 1, 2, 1);
-            this.infos.Name = "infos";
-            this.infos.Click += new System.EventHandler(this.infos_Click);
+            this.TsbtnEvaluationInfo.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.TsbtnEvaluationInfo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TsbtnEvaluationInfo.Image = global::Vocup.Properties.Icons.info;
+            resources.ApplyResources(this.TsbtnEvaluationInfo, "TsbtnEvaluationInfo");
+            this.TsbtnEvaluationInfo.Margin = new System.Windows.Forms.Padding(1, 1, 2, 1);
+            this.TsbtnEvaluationInfo.Name = "TsbtnEvaluationInfo";
+            this.TsbtnEvaluationInfo.Click += new System.EventHandler(this.TsbtnEvalutionInfo_Click);
             // 
             // toolStripLabel
             // 
@@ -662,7 +651,7 @@
             // 
             // program_form
             // 
-            this.AcceptButton = this.insert_vokabel;
+            this.AcceptButton = this.BtnAddWord;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
@@ -672,8 +661,8 @@
             this.MainMenuStrip = this.menuStrip;
             this.Name = "program_form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.program_form_FormClosing);
-            this.Load += new System.EventHandler(this.program_form_Load);
-            this.Shown += new System.EventHandler(this.program_form_Shown);
+            this.Load += new System.EventHandler(this.Form_Load);
+            this.Shown += new System.EventHandler(this.Form_Shown);
             this.SizeChanged += new System.EventHandler(this.program_form_SizeChanged);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -710,11 +699,11 @@
         private System.Windows.Forms.ToolStripMenuItem SpeichernToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SpeichernUnterToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem druckenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem beendenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem TsmiPrint;
+        private System.Windows.Forms.ToolStripMenuItem TsmiExitApplication;
         private System.Windows.Forms.ToolStripButton print_vokabelheft;
-        private System.Windows.Forms.Button practice_vokabelheft;
-        private System.Windows.Forms.Button search_vokabel_button;
+        private System.Windows.Forms.Button BtnPractice;
+        private System.Windows.Forms.Button BtnSearchWord;
         private System.Windows.Forms.TextBox search_vokabel_field;
         private System.Windows.Forms.GroupBox GroupBook;
         private System.Windows.Forms.GroupBox GroupSearch;
@@ -727,16 +716,14 @@
         private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator infoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ÜberVTrainingToolStripMenuItem;
-        private System.Windows.Forms.Button edit_vokabel;
-        private System.Windows.Forms.Button delet_vokabel;
-        private System.Windows.Forms.Button insert_vokabel;
+        private System.Windows.Forms.Button BtnEditWord;
+        private System.Windows.Forms.Button BtnDeleteWord;
+        private System.Windows.Forms.Button BtnAddWord;
         private System.Windows.Forms.GroupBox GroupWord;
-        private System.Windows.Forms.ToolStripButton infos;
+        private System.Windows.Forms.ToolStripButton TsbtnEvaluationInfo;
         private System.Windows.Forms.ToolStripLabel toolStripLabel;
         private System.Windows.Forms.ImageList treeview_imagelist;
-        public System.Windows.Forms.ListView listView_vokabeln;
-        private System.Windows.Forms.Button vokabelheft_optionen;
-        private System.Windows.Forms.ImageList listview_imagelist;
+        private System.Windows.Forms.Button BtnBookSettings;
         private System.Windows.Forms.ToolStripMenuItem vokabelheftOptionenToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
@@ -754,8 +741,7 @@
         private System.Windows.Forms.ToolStripMenuItem sonderzeichenVerwaltenToolStripMenuItem;
         private System.Windows.Forms.Panel sidebar;
         private Controls.ResponsiveSplitContainer splitContainer;
-        public System.Windows.Forms.TreeView treeView;
-        private System.Windows.Forms.ToolStripMenuItem datensicherungToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem TsmiBackup;
         private System.Windows.Forms.ToolStripMenuItem datensicherungErstellenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem datensicherungWiederherstellenToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem10;
@@ -766,6 +752,8 @@
         private System.Windows.Forms.ToolStripMenuItem infosZurBewertungToolStripMenuItem;
         private Controls.StatisticsPanel GroupStatistics;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ListView listView_vokabeln;
+        private System.Windows.Forms.TreeView treeView;
     }
 }
 

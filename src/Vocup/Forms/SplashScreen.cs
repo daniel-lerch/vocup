@@ -16,7 +16,7 @@ namespace Vocup.Forms
 
         private void SplashScreen_Paint(object sender, PaintEventArgs e)
         {
-            using (LinearGradientBrush brush = new LinearGradientBrush(new Point(0, 0), new Point(0, 200), Color.White, Color.LightGray))
+            using (LinearGradientBrush brush = new LinearGradientBrush(new Point(0, 0), new Point(0, Height), Color.White, Color.LightGray))
             using (Pen grayPen = new Pen(Brushes.Gray, width: 2.0f))
             {
                 // Draw background

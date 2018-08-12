@@ -54,7 +54,7 @@
             this.PbLogo.Location = new System.Drawing.Point(57, 63);
             this.PbLogo.Name = "PbLogo";
             this.PbLogo.Size = new System.Drawing.Size(75, 75);
-            this.PbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PbLogo.TabIndex = 5;
             this.PbLogo.TabStop = false;
             // 
@@ -65,7 +65,7 @@
             this.PbTitle.Location = new System.Drawing.Point(146, 60);
             this.PbTitle.Name = "PbTitle";
             this.PbTitle.Size = new System.Drawing.Size(248, 80);
-            this.PbTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PbTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PbTitle.TabIndex = 3;
             this.PbTitle.TabStop = false;
             // 
