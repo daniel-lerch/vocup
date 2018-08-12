@@ -120,9 +120,6 @@
   <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 0</value>
   </metadata>
-  <metadata name="menuStrip.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="neueVokabeldateiToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+N</value>
@@ -460,7 +457,7 @@
     <value>0, 0</value>
   </data>
   <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>794, 24</value>
+    <value>784, 24</value>
   </data>
   <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -472,7 +469,7 @@
     <value>menuStrip</value>
   </data>
   <data name="&gt;&gt;menuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Vocup.Controls.ResponsiveMenuStrip, Vocup, Version=1.4.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
     <value>$this</value>
@@ -480,96 +477,6 @@
   <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 24</value>
-  </metadata>
-  <metadata name="toolStrip.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="new_vokabelheft.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="new_vokabelheft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="new_vokabelheft.Text" xml:space="preserve">
-    <value>Neues Vokabelheft erstellen</value>
-  </data>
-  <data name="open_vokabelheft.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="open_vokabelheft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="open_vokabelheft.Text" xml:space="preserve">
-    <value>Vokabelheft öffnen</value>
-  </data>
-  <data name="save_vokabelheft.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="save_vokabelheft.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="save_vokabelheft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="save_vokabelheft.Text" xml:space="preserve">
-    <value>Vokabelheft speichern</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="print_vokabelheft.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="print_vokabelheft.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="print_vokabelheft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="print_vokabelheft.Text" xml:space="preserve">
-    <value>Vokabelheft drucken</value>
-  </data>
-  <data name="infos.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="infos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="infos.Text" xml:space="preserve">
-    <value>Infos zum Bewertungssystem</value>
-  </data>
-  <data name="toolStripLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 22</value>
-  </data>
-  <data name="toolStripLabel.Text" xml:space="preserve">
-    <value>Infos zum Bewertungssystem:</value>
-  </data>
-  <data name="toolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>794, 25</value>
-  </data>
-  <data name="toolStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;toolStrip.Name" xml:space="preserve">
-    <value>toolStrip</value>
-  </data>
-  <data name="&gt;&gt;toolStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;toolStrip.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <metadata name="search_vokabel_field.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="search_vokabel_field.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 43</value>
   </data>
@@ -586,17 +493,11 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;search_vokabel_field.Parent" xml:space="preserve">
-    <value>groupBox3</value>
+    <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;search_vokabel_field.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="groupBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="vokabelheft_optionen.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="vokabelheft_optionen.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
@@ -622,14 +523,11 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;vokabelheft_optionen.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>GroupBook</value>
   </data>
   <data name="&gt;&gt;vokabelheft_optionen.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="practice_vokabelheft.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="practice_vokabelheft.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
@@ -655,44 +553,38 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;practice_vokabelheft.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>GroupBook</value>
   </data>
   <data name="&gt;&gt;practice_vokabelheft.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="groupBox1.Enabled" type="System.Boolean, mscorlib">
+  <data name="GroupBook.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="GroupBook.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 0</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 94</value>
+  <data name="GroupBook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 88</value>
   </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="GroupBook.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
+  <data name="GroupBook.Text" xml:space="preserve">
     <value>Vokabelheft:</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="&gt;&gt;GroupBook.Name" xml:space="preserve">
+    <value>GroupBook</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;GroupBook.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupBook.Parent" xml:space="preserve">
     <value>sidebar</value>
   </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;GroupBook.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="groupBox3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="search_vokabel_button.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="search_vokabel_button.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -721,44 +613,38 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;search_vokabel_button.Parent" xml:space="preserve">
-    <value>groupBox3</value>
+    <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;search_vokabel_button.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="groupBox3.Enabled" type="System.Boolean, mscorlib">
+  <data name="GroupSearch.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 237</value>
+  <data name="GroupSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 234</value>
   </data>
-  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="GroupSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 100</value>
   </data>
-  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
+  <data name="GroupSearch.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
+  <data name="GroupSearch.Text" xml:space="preserve">
     <value>Nach Vokabeln suchen:</value>
   </data>
-  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
-    <value>groupBox3</value>
+  <data name="&gt;&gt;GroupSearch.Name" xml:space="preserve">
+    <value>GroupSearch</value>
   </data>
-  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
+  <data name="&gt;&gt;GroupSearch.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupSearch.Parent" xml:space="preserve">
     <value>sidebar</value>
   </data>
-  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;GroupSearch.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="groupBox2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="insert_vokabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="insert_vokabel.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
@@ -784,14 +670,11 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;insert_vokabel.Parent" xml:space="preserve">
-    <value>groupBox2</value>
+    <value>GroupWord</value>
   </data>
   <data name="&gt;&gt;insert_vokabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="delet_vokabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="delet_vokabel.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -820,14 +703,11 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;delet_vokabel.Parent" xml:space="preserve">
-    <value>groupBox2</value>
+    <value>GroupWord</value>
   </data>
   <data name="&gt;&gt;delet_vokabel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="edit_vokabel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="edit_vokabel.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -856,36 +736,36 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;edit_vokabel.Parent" xml:space="preserve">
-    <value>groupBox2</value>
+    <value>GroupWord</value>
   </data>
   <data name="&gt;&gt;edit_vokabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="groupBox2.Enabled" type="System.Boolean, mscorlib">
+  <data name="GroupWord.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 108</value>
+  <data name="GroupWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 103</value>
   </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="GroupWord.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 115</value>
   </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+  <data name="GroupWord.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
+  <data name="GroupWord.Text" xml:space="preserve">
     <value>Vokabel:</value>
   </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
+  <data name="&gt;&gt;GroupWord.Name" xml:space="preserve">
+    <value>GroupWord</value>
   </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+  <data name="&gt;&gt;GroupWord.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupWord.Parent" xml:space="preserve">
     <value>sidebar</value>
   </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;GroupWord.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <metadata name="treeview_imagelist.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -895,82 +775,77 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC+
-        DwAAAk1TRnQBSQFMAgEBAwEAAYwBAAGMAQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABO
+        DwAAAk1TRnQBSQFMAgEBAwEAARQBAQEUAQEBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABEAMAAQEBAAEgBgABEJ4AAxcBIAMcAScDHAEnAxwBJwMcAScDHAEnAxwBJwMcAScDHAEnAxwBJwMc
-        AScDGAEi0AADXgHdAdIBvAGuAf8BqwGXAYgB/gHPAbgBqAH/AagBkwGCAf4BywGzAaIB/wGlAY4BfwH+
-        AcgBrgGbAf8BoQGIAX8B/gHEAagBlAH/AZ4BgwF/Af4BXgJbAdlIAANAAXABUgJUAaYBVQFcAWIB6gFM
-        AW0BiAH3AUwBbQGIAfcBTAFtAYgB9wFMAW0BiAH3AUwBbQGIAfcBTAFtAYgB9wFMAW0BiAH3AUwBbQGI
-        AfcBTAFtAYgB9wFTAWQBcAHxA0wBkwgAA0ABcAFSAlQBpgFVAVwBYgHqAUwBbQGIAfcBTAFtAYgB9wFM
-        AW0BiAH3AUwBbQGIAfcBTAFtAYgB9wFMAW0BiAH3AUwBbQGIAfcBTAFtAYgB9wFMAW0BiAH3AVMBZAFw
-        AfEDTAGTEAADXgHdAfoB5gHbAf8B+gHlAdkB/wH6AeQB1gH/AfoB4gHTAf8B+gHhAdEB/wH5Ad8BzwH/
-        AfkB3gHNAf8B+QHcAcoB/wH5AdsByAH/AfgB2gHGAf8DXgHZSAABWAJhAeYBaQJqAfABpwG2Ab4B/QGe
-        AdsB9AH/AZYB2gHzAf8BjgHYAfMB/wGGAdcB8wH/AYEB1AHyAf8BagHTAfIB/wFjAdIB8QH/AV0B0AHx
-        Af8BWgHPAfEB/wGeAcUB0wH+AU4BXQFpAfAIAAFYAmEB5gFpAmoB8AGnAbYBvgH9AZ4B2wH0Af8BlgHa
-        AfMB/wGOAdgB8wH/AYYB1wHzAf8BgQHUAfIB/wFqAdMB8gH/AWMB0gHxAf8BXQHQAfEB/wFaAc8B8QH/
-        AZ4BxQHTAf4BTgFdAWkB8BAAA14B3QH7AegB3QH/AdUBwgG2Af4B+gHlAdkB/wHVAb8BsgH+AfoB4wHU
-        Af8B1AG8Aa0B/gH5AeAB0AH/AdQBuQGoAf4B+QHdAcsB/wHTAbYBpAH+A14B2UgAAVEBdAGJAfcB7wH6
-        Af4B/wGhAekB+QH/AZEB5QH4Af8BgQHhAfcB/wFjAd4B9gH/AVQB2gH1Af8BRQHXAfQB/wE4AdMB8wH/
-        ASoB0AHyAf8BHwHNAfEB/wEXAcsB8AH/AcoB8gH7Af8BUQF0AYkB9wgAAVEBdAGJAfcB7wH6Af4B/wGh
-        AekB+QH/AZEB5QH4Af8BgQHhAfcB/wFjAd4B9gH/AVQB2gH1Af8BRQHXAfQB/wE4AdMB8wH/ASoB0AHy
-        Af8BHwHNAfEB/wEXAcsB8AH/AcoB8gH7Af8BUQF0AYkB9xAAA14B3QH7AeoB4AH/AfsB6AHeAf8B+wHn
-        AdwB/wH6AeYB2gH/AfoB5AHYAf8B+gHjAdUB/wH6AeIB0wH/AfkB4AHQAf8B+QHfAc4B/wH5Ad0BzAH/
-        A14B2UgAAT4BdgGOAfgB8gH6Af0B/wGzAe0B+gH/AaQB6QH5Af8BlQHmAfgB/wGFAeIB9wH/AWcB3gH2
-        Af8BVgHbAfUB/wFIAdcB9AH/AToB1AHzAf8BLAHRAfIB/wEhAc4B8QH/AcwB8gH7Af8BUQF3AYkB9wgA
-        AT4BdgGOAfgB8gH6Af0B/wGzAe0B+gH/AaQB6QH5Af8BlQHmAfgB/wGFAeIB9wH/AWcB3gH2Af8BVgHb
-        AfUB/wFIAdcB9AH/AToB1AHzAf8BLAHRAfIB/wEhAc4B8QH/AcwB8gH7Af8BUQF3AYkB9xAAA14B3QH7
-        AesB4wH/AdUBxQG8Af4B+wHpAd8B/wHVAcIBtwH+AfoB5gHbAf8B1QHAAbMB/gH6AeMB1gH/AdQBvQGu
-        Af4B+QHhAdEB/wHUAboBqgH+A14B2UgAAUEBggGOAfkB9gH8Af4B/wHIAfIB/AH/AbkB7wH7Af8BrAHs
-        AfoB/wGcAegB+QH/AYsB4wH3Af8BbQHgAfYB/wFdAdwB9gH/AU4B2QH1Af8BQAHWAfQB/wE1AdMB8wH/
-        AdAB8wH8Af8BUQF6AYkB9wgAAUEBggGOAfkB9gH8Af4B/wHIAfIB/AH/AbkB7wH7Af8BrAHsAfoB/wGc
-        AegB+QH/AYsB4wH3Af8BbQHgAfYB/wFdAdwB9gH/AU4B2QH1Af8BQAHWAfQB/wE1AdMB8wH/AdAB8wH8
-        Af8BUQF6AYkB9xAAA14B3QH7Ae0B5QH/AfsB7AHjAf8B+wHrAeEB/wH7AekB3wH/AfsB6AHdAf8B+gHn
-        AdsB/wH6AeUB2QH/AfoB5AHWAf8B+gHiAdQB/wH6AeEB0gH/A14B2UgAAU0BewGaAfoB/gP/AfgB/QL/
-        AfYB/QL/AfUB/AL/AfMB/AH+Af8B2AH2AfwB/wGUAeYB+AH/AYUB4wH3Af8BZwHfAfYB/wFZAdsB9QH/
-        AU0B2AH0Af8B1wH0AfwB/wFRAX8BiQH3CAABTQF7AZoB+gH+A/8B+AH9Av8B9gH9Av8B9QH8Av8B8wH8
-        Af4B/wHYAfYB/AH/AZQB5gH4Af8BhQHjAfcB/wFnAd8B9gH/AVkB2wH1Af8BTQHYAfQB/wHXAfQB/AH/
-        AVEBfwGJAfcQAANeAd0B+wHvAegB/wHWAcgBwQH+AfsB7AHkAf8B1QHGAb0B/gH7AeoB4AH/AdUBwwG5
-        Af4B+wHnAdwB/wHVAcEBtQH+AfoB5AHXAf8B1AG+Aa8B/gNeAdlIAAFMAX0BmgH6AegB9gH7Af8BlAHU
-        Ae8B/wGIAc4B7gH/AWQBwQHpAf8ByQHpAfYB/wHyAfwB/gH/AfMB/AH+Af8B8gH8Af4B/wHwAfwB/gH/
-        Ae8B+wH+Af8B7gH7Af4B/wH+A/8BUQGBAYkB9wgAAUwBfQGaAfoB6AH2AfsB/wGUAdQB7wH/AYgBzgHu
-        Af8BZAHBAekB/wHJAekB9gH/AfIB/AH+Af8B8wH8Af4B/wHyAfwB/gH/AfAB/AH+Af8B7wH7Af4B/wHu
-        AfsB/gH/Af4D/wFRAYEBiQH3EAADXgHdAfwB8AHqAf8B/AHvAekB/wH7Ae4B5wH/AfsB7AHlAf8B+wHr
-        AeMB/wH7AeoB4QH/AfsB6QHeAf8B+wHnAdwB/wH6AeYB2gH/AfoB5QHYAf8DXgHZSAABWQFpAXUB8gHx
-        AfoB/QH/AZQB3gH1Af8BkwHcAfQB/wGBAdUB8gH/AVsBygHtAf8BXQHLAeoB/wGFAdMB7wH/AYEB0gHv
-        Af8BawHQAe8B/wFnAc8B7gH/AWMBzwHuAf8B6QH3AfsB/wFMAW0BcwHzCAABWQFpAXUB8gHxAfoB/QH/
-        AZQB3gH1Af8BkwHcAfQB/wGBAdUB8gH/AVsBygHtAf8BXQHLAeoB/wGFAdMB7wH/AYEB0gHvAf8BawHQ
-        Ae8B/wFnAc8B7gH/AWMBzwHuAf8B6QH3AfsB/wFMAW0BcwHzEAADXgHdAfwB8wHtAf8B1gHMAcYB/gH8
-        Ae8B6QH/AdYByQHCAf4B+wHtAeUB/wHVAccBvgH+AfsB6gHhAf8B1QHEAboB/gH7AegB3QH/AdUBwQG2
-        Af4DXgHZSAABTgFlAWkB8AH3AfwB/gH/AY4B5AH4Af8BkQHeAfUB/wGfAeAB9QH/AawB4QH2Af8B7wH7
-        Af4B/wH0Af0B/gH/AfMB/AH+Af8B8QH8Af4B/wHvAfsB/gH/Ae4B+wH+Af8BmgGdAZ4B+QFcAmAB1AgA
-        AU4BZQFpAfAB9wH8Af4B/wGOAeQB+AH/AZEB3gH1Af8BnwHgAfUB/wGsAeEB9gH/Ae8B+wH+Af8B9AH9
-        Af4B/wHzAfwB/gH/AfEB/AH+Af8B7wH7Af4B/wHuAfsB/gH/AZoBnQGeAfkBXAJgAdQQAANeAd0B/AH1
-        Ae8B/wH8AfMB7QH/AfwB8gHrAf8B/AHwAeoB/wH7Ae4B6AH/AfsB7QHmAf8B+wHsAeQB/wH7AesB4gH/
-        AfsB6QHgAf8B+wHoAd0B/wNeAdlIAAE+AX0BjgH4Af0C/gH/Af4D/wL+Av8B/QH+Av8B/gP/AeoB9wH7
-        Af8BagGLAZIB+QFcAYcBkgH4AVwBhwGSAfgBXAGHAZIB+AFtAYcBigH3A2EB4QM1AVYIAAE+AX0BjgH4
-        Af0C/gH/Af4D/wL+Av8B/QH+Av8B/gP/AeoB9wH7Af8BagGLAZIB+QFcAYcBkgH4AVwBhwGSAfgBXAGH
-        AZIB+AFtAYcBigH3A2EB4QM1AVYQAANeAd0B/QH2AfIB/wHXAdABywH+AfwB9AHuAf8B1wHNAccB/gH8
-        AfAB6gH/AdYBygHDAf4B+wHtAeYB/wHWAccBvwH+AfsB6wHiAf8B1QHFAbsB/gNeAdlIAAFbAl4B0AFN
-        AYoBnAH6AU0BjAGcAfoBTQGMAZwB+gFNAYwBnAH6AU0BjAGcAfoBWAJeAd0DEAEWAwsBDwMLAQ8DCwEP
-        AwsBDwMLAQ8DAwEECAABWwJeAdABTQGKAZwB+gFNAYwBnAH6AU0BjAGcAfoBTQGMAZwB+gFNAYwBnAH6
-        AVgCXgHdAxABFgMLAQ8DCwEPAwsBDwMLAQ8DCwEPAwMBBBAAA14B3QH9AfgB9QH/Af0B9gHzAf8B/QH1
-        AfEB/wH8AfQB7gH/AfwB8wHsAf8B/AHxAesB/wH8Ae8B6QH/AfsB7QHnAf8B+QHqAeMB/wH4AegB4AH/
-        A14B2dAAA14B3QH9AfoB9wH/AdgB0wHQAf4B/QH3AfQB/wHXAdABzAH+AfwB9AHvAf8B1wHOAcgB/gH8
-        AfEB6wH/AcwBvgG2Af4B2wHDAbQB/wGqAZEBgAH+A0oBjNAAA14B3QH+AfsB+gH/Af0B+gH4Af8B/QH5
-        AfYB/wH9AfcB9AH/Af0B9gHyAf8B/AH1AfAB/wH8AfQB7QH/AfEB5QHdAf8B8AHZAcsB/wNOAZYDAAEB
-        0AADXgHdAeoB4gHcAf8BxQG8AbYB/gHqAeAB2gH/AcQBugGzAf4B6QHeAdcB/wHEAbkBsQH+AekB3QHU
-        Af8BvQGvAaUB/gNOAZgDAAEBSAABQgFNAT4HAAE+AwABKAMAAUADAAEQAwABAQEAAQEFAAGAFwAD/wEA
-        BP8B4AEBAgAE/wHgAQECAAGAAQEBgAEBAeABAQIAAYABAQGAAQEB4AEBAgABgAEBAYABAQHgAQECAAGA
-        AQEBgAEBAeABAQIAAYABAQGAAQEB4AEBAgABgAEBAYABAQHgAQECAAGAAQEBgAEBAeABAQIAAYABAQGA
-        AQEB4AEBAgABgAEBAYABAQHgAQECAAGAAQEBgAEBAeABAQIAAYABAQGAAQEB4AEBAgAE/wHgAQECAAT/
-        AeABAQIABP8B4AEDAgAL
+        AScDGAEi0AADXgHdAdIBvAGuAf8BiQJ/Af4BzwG4AagB/wGGAn8B/gHLAbMBogH/AYMCfwH+AcgBrgGb
+        Af8DfwH+AcQBqAGUAf8DfwH+AV4CWwHZSAADQAFwAVICVAGmAVUCXAHqAVECbQH3AVECbQH3AVECbQH3
+        AVECbQH3AVECbQH3AVECbQH3AVECbQH3AVECbQH3AVECbQH3AVMCZAHxA0wBkwgAA0ABcAFSAlQBpgFV
+        AlwB6gFRAm0B9wFRAm0B9wFRAm0B9wFRAm0B9wFRAm0B9wFRAm0B9wFRAm0B9wFRAm0B9wFRAm0B9wFT
+        AmQB8QNMAZMQAANeAd0B+gHmAdsB/wH6AeUB2QH/AfoB5AHWAf8B+gHiAdMB/wH6AeEB0QH/AfkB3wHP
+        Af8B+QHeAc0B/wH5AdwBygH/AfkB2wHIAf8B+AHaAcYB/wNeAdlIAAFYAmEB5gNdAfABpwGoAa0B/QGe
+        AdsB9AH/AZYB2gHzAf8BjgHYAfMB/wGGAdcB8wH/AYEB1AHyAf8BWQHTAfIB/wFSAdIB8QH/AUwB0AHx
+        Af8BSQHPAfEB/wF/AaMBsQH+AU4CXQHwCAABWAJhAeYDXQHwAacBqAGtAf0BngHbAfQB/wGWAdoB8wH/
+        AY4B2AHzAf8BhgHXAfMB/wGBAdQB8gH/AVkB0wHyAf8BUgHSAfEB/wFMAdAB8QH/AUkBzwHxAf8BfwGj
+        AbEB/gFOAl0B8BAAA14B3QH7AegB3QH/AbMBoAGUAf4B+gHlAdkB/wGzAZ0BkAH+AfoB4wHUAf8BsgGa
+        AYsB/gH5AeAB0AH/AbIBlwGGAf4B+QHdAcsB/wGxAZQBggH+A14B2UgAAVECbQH3Ae8B+gH+Af8BoQHp
+        AfkB/wGRAeUB+AH/AYEB4QH3Af8BUgHeAfYB/wFDAdoB9QH/ATQB1wH0Af8BJwHTAfMB/wEZAdAB8gH/
+        AQ4BzQHxAf8BBgHLAfAB/wHKAfIB+wH/AVECbQH3CAABUQJtAfcB7wH6Af4B/wGhAekB+QH/AZEB5QH4
+        Af8BgQHhAfcB/wFSAd4B9gH/AUMB2gH1Af8BNAHXAfQB/wEnAdMB8wH/ARkB0AHyAf8BDgHNAfEB/wEG
+        AcsB8AH/AcoB8gH7Af8BUQJtAfcQAANeAd0B+wHqAeAB/wH7AegB3gH/AfsB5wHcAf8B+gHmAdoB/wH6
+        AeQB2AH/AfoB4wHVAf8B+gHiAdMB/wH5AeAB0AH/AfkB3wHOAf8B+QHdAcwB/wNeAdlIAAE+AV0BcwH4
+        AfIB+gH9Af8BswHtAfoB/wGkAekB+QH/AZUB5gH4Af8BhQHiAfcB/wFWAd4B9gH/AUUB2wH1Af8BNwHX
+        AfQB/wEpAdQB8wH/ARsB0QHyAf8BEAHOAfEB/wHMAfIB+wH/AVECbQH3CAABPgFdAXMB+AHyAfoB/QH/
+        AbMB7QH6Af8BpAHpAfkB/wGVAeYB+AH/AYUB4gH3Af8BVgHeAfYB/wFFAdsB9QH/ATcB1wH0Af8BKQHU
+        AfMB/wEbAdEB8gH/ARABzgHxAf8BzAHyAfsB/wFRAm0B9xAAA14B3QH7AesB4wH/AbMBowGaAf4B+wHp
+        Ad8B/wGzAaABlQH+AfoB5gHbAf8BswGeAZEB/gH6AeMB1gH/AbIBmwGMAf4B+QHhAdEB/wGyAZgBiAH+
+        A14B2UgAAUEBagF6AfkB9gH8Af4B/wHIAfIB/AH/AbkB7wH7Af8BrAHsAfoB/wGcAegB+QH/AYsB4wH3
+        Af8BXAHgAfYB/wFMAdwB9gH/AT0B2QH1Af8BLwHWAfQB/wEkAdMB8wH/AdAB8wH8Af8BUQJtAfcIAAFB
+        AWoBegH5AfYB/AH+Af8ByAHyAfwB/wG5Ae8B+wH/AawB7AH6Af8BnAHoAfkB/wGLAeMB9wH/AVwB4AH2
+        Af8BTAHcAfYB/wE9AdkB9QH/AS8B1gH0Af8BJAHTAfMB/wHQAfMB/AH/AVECbQH3EAADXgHdAfsB7QHl
+        Af8B+wHsAeMB/wH7AesB4QH/AfsB6QHfAf8B+wHoAd0B/wH6AecB2wH/AfoB5QHZAf8B+gHkAdYB/wH6
+        AeIB1AH/AfoB4QHSAf8DXgHZSAABTQFqAXcB+gH+A/8B+AH9Av8B9gH9Av8B9QH8Av8B8wH8Af4B/wHY
+        AfYB/AH/AZQB5gH4Af8BhQHjAfcB/wFWAd8B9gH/AUgB2wH1Af8BPAHYAfQB/wHXAfQB/AH/AVECbQH3
+        CAABTQFqAXcB+gH+A/8B+AH9Av8B9gH9Av8B9QH8Av8B8wH8Af4B/wHYAfYB/AH/AZQB5gH4Af8BhQHj
+        AfcB/wFWAd8B9gH/AUgB2wH1Af8BPAHYAfQB/wHXAfQB/AH/AVECbQH3EAADXgHdAfsB7wHoAf8BtAGm
+        AZ8B/gH7AewB5AH/AbMBpAGbAf4B+wHqAeAB/wGzAaEBlwH+AfsB5wHcAf8BswGfAZMB/gH6AeQB1wH/
+        AbIBnAGNAf4DXgHZSAABTQFsAXcB+gHoAfYB+wH/AZQB1AHvAf8BiAHOAe4B/wFTAcEB6QH/AckB6QH2
+        Af8B8gH8Af4B/wHzAfwB/gH/AfIB/AH+Af8B8AH8Af4B/wHvAfsB/gH/Ae4B+wH+Af8B/gP/AVECbQH3
+        CAABTQFsAXcB+gHoAfYB+wH/AZQB1AHvAf8BiAHOAe4B/wFTAcEB6QH/AckB6QH2Af8B8gH8Af4B/wHz
+        AfwB/gH/AfIB/AH+Af8B8AH8Af4B/wHvAfsB/gH/Ae4B+wH+Af8B/gP/AVECbQH3EAADXgHdAfwB8AHq
+        Af8B/AHvAekB/wH7Ae4B5wH/AfsB7AHlAf8B+wHrAeMB/wH7AeoB4QH/AfsB6QHeAf8B+wHnAdwB/wH6
+        AeYB2gH/AfoB5QHYAf8DXgHZSAABWQJnAfIB8QH6Af0B/wGUAd4B9QH/AZMB3AH0Af8BgQHVAfIB/wFK
+        AcoB7QH/AUwBywHqAf8BhQHTAe8B/wGBAdIB7wH/AVoB0AHvAf8BVgHPAe4B/wFSAc8B7gH/AekB9wH7
+        Af8BTAJfAfMIAAFZAmcB8gHxAfoB/QH/AZQB3gH1Af8BkwHcAfQB/wGBAdUB8gH/AUoBygHtAf8BTAHL
+        AeoB/wGFAdMB7wH/AYEB0gHvAf8BWgHQAe8B/wFWAc8B7gH/AVIBzwHuAf8B6QH3AfsB/wFMAl8B8xAA
+        A14B3QH8AfMB7QH/AbQBqgGkAf4B/AHvAekB/wG0AacBoAH+AfsB7QHlAf8BswGlAZwB/gH7AeoB4QH/
+        AbMBogGYAf4B+wHoAd0B/wGzAZ8BlAH+A14B2UgAAU4CXQHwAfcB/AH+Af8BjgHkAfgB/wGRAd4B9QH/
+        AZ8B4AH1Af8BrAHhAfYB/wHvAfsB/gH/AfQB/QH+Af8B8wH8Af4B/wHxAfwB/gH/Ae8B+wH+Af8B7gH7
+        Af4B/wGBAoIB+QFcAmAB1AgAAU4CXQHwAfcB/AH+Af8BjgHkAfgB/wGRAd4B9QH/AZ8B4AH1Af8BrAHh
+        AfYB/wHvAfsB/gH/AfQB/QH+Af8B8wH8Af4B/wHxAfwB/gH/Ae8B+wH+Af8B7gH7Af4B/wGBAoIB+QFc
+        AmAB1BAAA14B3QH8AfUB7wH/AfwB8wHtAf8B/AHyAesB/wH8AfAB6gH/AfsB7gHoAf8B+wHtAeYB/wH7
+        AewB5AH/AfsB6wHiAf8B+wHpAeAB/wH7AegB3QH/A14B2UgAAT4BawFzAfgB/QL+Af8B/gP/Av4C/wH9
+        Af4C/wH+A/8B6gH3AfsB/wFqAXEBfwH5AVwBcAF0AfgBXAFwAXQB+AFcAXABdAH4Am0BbgH3A2EB4QM1
+        AVYIAAE+AWsBcwH4Af0C/gH/Af4D/wL+Av8B/QH+Av8B/gP/AeoB9wH7Af8BagFxAX8B+QFcAXABdAH4
+        AVwBcAF0AfgBXAFwAXQB+AJtAW4B9wNhAeEDNQFWEAADXgHdAf0B9gHyAf8BtQGuAakB/gH8AfQB7gH/
+        AbUBqwGlAf4B/AHwAeoB/wG0AagBoQH+AfsB7QHmAf8BtAGlAZ0B/gH7AesB4gH/AbMBowGZAf4DXgHZ
+        SAABWwJeAdABTQFxAXgB+gFNAXIBeAH6AU0BcgF4AfoBTQFyAXgB+gFNAXIBeAH6AVgCXgHdAxABFgML
+        AQ8DCwEPAwsBDwMLAQ8DCwEPAwMBBAgAAVsCXgHQAU0BcQF4AfoBTQFyAXgB+gFNAXIBeAH6AU0BcgF4
+        AfoBTQFyAXgB+gFYAl4B3QMQARYDCwEPAwsBDwMLAQ8DCwEPAwsBDwMDAQQQAANeAd0B/QH4AfUB/wH9
+        AfYB8wH/Af0B9QHxAf8B/AH0Ae4B/wH8AfMB7AH/AfwB8QHrAf8B/AHvAekB/wH7Ae0B5wH/AfkB6gHj
+        Af8B+AHoAeAB/wNeAdnQAANeAd0B/QH6AfcB/wG2AbEBrgH+Af0B9wH0Af8BtQGuAaoB/gH8AfQB7wH/
+        AbUBrAGmAf4B/AHxAesB/wGqAZwBlAH+AdsBwwG0Af8BiAJ/Af4DSgGM0AADXgHdAf4B+wH6Af8B/QH6
+        AfgB/wH9AfkB9gH/Af0B9wH0Af8B/QH2AfIB/wH8AfUB8AH/AfwB9AHtAf8B8QHlAd0B/wHwAdkBywH/
+        A04BlgMAAQHQAANeAd0B6gHiAdwB/wGjAZoBlAH+AeoB4AHaAf8BogGYAZEB/gHpAd4B1wH/AaIBlwGP
+        Af4B6QHdAdQB/wGbAY0BgwH+A04BmAMAAQFIAAFCAU0BPgcAAT4DAAEoAwABQAMAARADAAEBAQABAQUA
+        AYAXAAP/AQAE/wHgAQECAAT/AeABAQIAAYABAQGAAQEB4AEBAgABgAEBAYABAQHgAQECAAGAAQEBgAEB
+        AeABAQIAAYABAQGAAQEB4AEBAgABgAEBAYABAQHgAQECAAGAAQEBgAEBAeABAQIAAYABAQGAAQEB4AEB
+        AgABgAEBAYABAQHgAQECAAGAAQEBgAEBAeABAQIAAYABAQGAAQEB4AEBAgABgAEBAYABAQHgAQECAAT/
+        AeABAQIABP8B4AEBAgAE/wHgAQMCAAs=
 </value>
   </data>
-  <metadata name="listView_vokabeln.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="listView_vokabeln.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <data name="listView_vokabeln.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="listView_vokabeln.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -979,7 +854,7 @@
     <value>0, 0</value>
   </data>
   <data name="listView_vokabeln.Size" type="System.Drawing.Size, System.Drawing">
-    <value>497, 487</value>
+    <value>500, 482</value>
   </data>
   <metadata name="listview_imagelist.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>515, 17</value>
@@ -988,8 +863,8 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACY
-        GAAAAk1TRnQBSQFMAgEBBAEAAYwBAAGMAQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAA8
+        GAAAAk1TRnQBSQFMAgEBBAEAARQBAQEUAQEBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABIAMAAQEBAAEgBgABIP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wAnAAMmATkBYAJb
         AdYCXQFZAdcCXQFZAdcCXQFZAdcCXQFZAdcCXQFZAdcCXQFZAdcCXQFZAdcCXQFZAdcCXQFZAdcCXQFZ
         AdcCXQFZAdcDVQGyAwABAQQAAyYBOQJbAWAB1gJZAV0B1wJZAV0B1wJZAV0B1wJZAV0B1wJZAV0B1wJZ
@@ -997,104 +872,102 @@
         AVkCXQHXAVkCXQHXAVkCXQHXAVkCXQHXAVkCXQHXAVkCXQHXAVkCXQHXAVkCXQHXAVkCXQHXAVkCXQHX
         A1UBsgMAAQEEAAMmATkBWwFgAVsB1gFZAV0BWQHXAVkBXQFZAdcBWQFdAVkB1wFZAV0BWQHXAVkBXQFZ
         AdcBWQFdAVkB1wFZAV0BWQHXAVkBXQFZAdcBWQFdAVkB1wFZAV0BWQHXAVkBXQFZAdcDVQGyAwABAQQA
-        AzEBTwHQAUgBCgH/Ac4BSAEKAf8B1wFMAQsB/wHgAU8BCwH/AecBUwENAf8B2QFmATIB/wHTAVIBFwH/
-        Ae4BUwEKAf8B6QFUAQ0B/wHhAVABDAH/AdgBTAELAf8B1wFLAQsB/wFhAloB5AMAAQEEAAMxAU8BEQEK
-        AdAB/wERAQoBzgH/ARMBCwHXAf8BEwELAeMB/wEWAQ0B6QH/ARcBDgHtAf8BFwEOAfAB/wEXAQ4B7gH/
-        ARMBCgHrAf8BFAELAeQB/wETAQsB2AH/ARMBCwHXAf8CWgFhAeQDAAEBBAADMQFPAQABrwL/AQABrQL/
-        AQABsQL/AQABtAL/AQMBtgL/AQUBugL/AQ4BugL/AQwBuAL/AQYBtwL/AQABtAL/AQABsQL/AQABtAL/
-        AVoCYQHkAwABAQQAAzEBTwEPAdABCgH/AQ4BzgEKAf8BEAHXAQsB/wERAeABDQH/ARAB6AELAf8BDgHy
-        AQkB/wETAfEBDgH/ARMB7gEOAf8BEgHpAQ0B/wERAeEBDAH/ARAB2AELAf8BEAHXAQsB/wFaAWEBWgHk
-        AwABAQQAAzABSwHEAUMBCAH/AcEBQgEIAf8ByQFFAQkB/wHSAUEBAAH/AcsBiQFXAf8ByQHgAewB/wG/
-        AbgBtQH/AcoBRAEGAf8B2gFMAQoB/wHRAUkBCgH/AcoBRgEJAf8BygFGAQkB/wFeAlsB2QMAAQEEAAMw
-        AUsBDwEIAcQB/wEQAQkBwQH/AQwBBAHMAf8BDQEFAcIB/wENAQUB1QH/ARQBDAHdAf8BFQEMAdwB/wEO
-        AQUB3QH/ARMBCwHNAf8BCgEDAcIB/wEQAQgBzQH/AREBCQHJAf8CWwFeAdkDAAEBBAADMAFLAQABpgH7
-        Af8BAAGjAfcB/wEAAacB/QH/AQABqgL/AQABrQL/ARABngHgAf8BAAGoAfoB/wECAa8C/wEAAawC/wEA
-        AasC/wEAAagB/gH/AQABqQL/AVsCXgHZAwABAQQAAzABSwENAcQBCAH/AQ0BwQEIAf8BDgHJAQoB/wEM
-        AdEBBwH/AQ8B1wEKAf8BHAHDARgB/wEJAdcBBAH/AREB3QEMAf8BEAHXAQsB/wEPAdEBCgH/AQ4BygEJ
-        Af8BDgHKAQkB/wFbAV4BWwHZAwABAQQAAzABSwHAAUEBCAH/Ab0BQAEIAf8BwwFDAQkB/wHLAUEBAQH/
-        AcIBZAE7Af8BuwG1AbIB/wHUAacBkAH/Ac0BRQEGAf8BzwFIAQkB/wHKAUYBCQH/AcQBQwEJAf8BxQFD
-        AQkB/wFeAlsB2QMAAQEEAAMwAUsBDwEIAcAB/wEIAQEBvgH/ATIBLQG6Af8CjQGUAf8BIwEfAZYB/wEI
-        AQAB1QH/AQoBAgHXAf8BHAEUAc4B/wG7AboB0AH/AYkBhwGtAf8BCAECAbcB/wEPAQgBxwH/AlsBXgHZ
-        AwABAQQAAzABSwEAAaMB+AH/AQABnwHxAf8BAAGjAfkB/wEAAaQC/wFpAbkB2wH/AdcBxgG9Af8BHgGV
-        AcsB/wEAAasC/wEAAaoC/wEAAagB/gH/AQABpAH5Af8BAAGmAfwB/wFbAl4B2QMAAQEEAAMwAUsBDQHA
-        AQgB/wEMAb0BCAH/AQkBwwEFAf8BAQHJAQAB/wGCAccBgQH/AdUBwgHWAf8BLAGvASkB/wEFAdUBAAH/
-        AQ8BzwEKAf8BDgHKAQkB/wENAcQBCQH/AQ0BxQEJAf8BWwFeAVsB2QMAAQEEAAMwAUsBvAFAAQgB/wG3
-        AT4BBwH/AbwBQAEIAf8BwgFCAQcB/wHDAUQBCgH/AasBUQEqAf8BtQFBAQwB/wHMAUQBBgH/AcUBRAEJ
-        Af8BwgFCAQgB/wG9AUABCAH/Ab8BQQEIAf8BXgJbAdkDAAEBBAADMAFLAQ4BCAG8Af8BBAEAAbkB/wFO
-        AUoBrgH/Ab0BvgGjAf8CnAGSAf8BGwEWAZUB/wEPAQgBwAH/AZcBlgGuAf8B4wHkAccB/wG0AbMB0wH/
-        AQwBBgG2Af8BDAEGAcAB/wJbAV4B2QMAAQEEAAMwAUsBAAGhAfQB/wEAAZwB7QH/AQABnAHyAf8BVAGp
-        Ac0B/wHDAa0BogH/AdkBygHBAf8BnAGvAbkB/wEAAZUB6gH/AQABqQL/AQABogH3Af8BAAGfAfIB/wEA
-        AaIB9gH/AVsCXgHZAwABAQQAAzABSwEMAbwBCAH/AQoBtwEFAf8BAgG6AQAB/wFgAbYBXgH/AcABqQHB
-        Af8B1gHGAdcB/wGgAbMBnwH/AQABtgEAAf8BDQHKAQgB/wENAcIBCAH/AQwBvQEIAf8BDAG/AQgB/wFb
-        AV4BWwHZAwABAQQAAzABSwG5AT4BBwH/AbIBPAEGAf8BtgE9AQcB/wG6ATgBAAH/Ab0BXQE0Af8BoQGx
-        AbkB/wGQAWEBUAH/AbsBNAEAAf8BwAFCAQgB/wG6AT8BBwH/AbYBPQEHAf8BugE/AQcB/wFeAlsB2QMA
-        AQEEAAMwAUsBDgEHAbkB/wEMAQYBsgH/AQUBAAG4Af8BVAFRAa0B/wK1AaUB/wKTAZUB/wKIAZgB/wG4
-        AbkBpQH/AZYBlQG6Af8BEQELAbwB/wEIAQEBtwH/AQ4BCAG5Af8CWwFeAdkDAAEBBAADMAFLAQABnwHw
-        Af8BAAGWAeoB/wGAAb8B4AH/AegBxQGyAf8BWgGmAcYB/wFPAawB1AH/AdcBvwGyAf8BJwGNAboB/wEA
-        AZ4B9wH/AQABngHvAf8BAAGbAesB/wEAAZ8B8QH/AVsCXgHZAwABAQQAAzABSwELAbkBBwH/AQABsQEA
-        Af8BiQHKAYgB/wHiAb4B4wH/AWUBsgFjAf8BXQG6AVoB/wHTAboB1AH/ATcBnQE0Af8BAAG+AQAB/wEM
-        AbsBCAH/AQsBtgEHAf8BDAG6AQcB/wFbAV4BWwHZAwABAQQAAzABSwG3ATsBAwH/Aa8BOgEFAf8BsAE7
-        AQYB/wGzATkBAgH/AbcBRgEUAf8BqgGlAaMB/wGYAaEBpgH/AYcBPwEiAf8BsgE1AQAB/wG1AT0BBwH/
-        AbEBOwEGAf8BtgE9AQcB/wFeAlsB2QMAAQEEAAMwAUsBCgEDAbcB/wEMAQYBrwH/AQsBBQGxAf8CAAG1
-        Af8BVQFSAakB/wGwAbEBpAH/Aa8BsAGkAf8BjAGLAaEB/wEKAQMBtAH/AQYBAAG1Af8BDQEHAbEB/wEN
-        AQcBtgH/AlsBXgHZAwABAQQAAzABSwEAAZ0B7wH/AQABkwHkAf8BYwG/AeYB/wGCAb8B3gH/AQABmAHr
-        Af8BAAGcAewB/wGtAbIBtQH/AakBpgGkAf8BAAGFAcoB/wEAAZ0B8AH/AQABlwHlAf8BAAGcAe0B/wFb
-        Al4B2QMAAQEEAAMwAUsBBwG3AQMB/wEAAa0BAAH/AYEBywFuAf8BjAHJAYoB/wEDAbQBAAH/AQ0BtwEJ
-        Af8BrgG0Aa4B/wGoAaUBqAH/AQgBnAEEAf8BBwG4AQMB/wELAbABBgH/AQsBtgEHAf8BWwFeAVsB2QMA
-        AQEEAAMwAUwBvwFMARoB/wGuATcBAgH/Aa0BNQEAAf8BrwE5AQUB/wGwATUBAAH/Aa0BTwEnAf8BpgGk
-        AaMB/wGWAaEBpwH/AYsBQAEhAf8BsAE1AQAB/wGvAToBBgH/AbYBPQEHAf8BXgJbAdkDAAEBBAADMAFM
-        AR8BGgG/Af8BCQEDAa4B/wIAAa0B/wEPAQkBqgH/AoEBogH/Aa8BsAGiAf8CsgGmAf8CkgGVAf8BGAEU
-        AYQB/wECAQABsAH/AQ0BBwGwAf8BDQEHAbUB/wJbAV4B2QMAAQEEAAMwAUwBBQGnAfIB/wEAAZQB4wH/
-        AQABjwHiAf8BAAGSAeUB/wEAAZYB5QH/AQABlgHqAf8BMAGdAc0B/wHKAbMBpgH/AVoBjgGgAf8BAAGK
-        AdkB/wEAAZkB5wH/AQABmwHsAf8BWwJeAdkDAAEBBAADMAFMAR4BvwEaAf8BBwGuAQMB/wEAAaoBAAH/
-        AQABrQEAAf8BCAGwAQQB/wEAAbEBAAH/AUABrQE+Af8BxgGvAccB/wFhAZQBYAH/AQABowEAAf8BCgGy
-        AQYB/wELAbUBBwH/AVsBXgFbAdkDAAEBBAADMAFMAdIBhQFPAf8BwAFhATgB/wG3AUwBHQH/AasBNgEB
-        Af8BqgEuAQAB/wGxASoBAAH/AbABXQE6Af8BqQG1AbsB/wGVAYsBhgH/AaIBMQEAAf8BsQE6AQUB/wG2
-        AT0BBwH/AV4CWwHZAwABAQQAAzABTAFUAU8B0gH/ATkBNAHAAf8BLQEoAbYB/wGfAZ4BtgH/AcABwQGq
-        Af8BbgFsAa4B/wFSAU8BqAH/ArQBpQH/ApsBkwH/AR4BGwGDAf8BBgEAAa0B/wENAQcBtwH/AlsBXgHZ
-        AwABAQQAAzABTAE/Ab8B+QH/ASgBrQHqAf8BCgGfAeUB/wEAAZYB4wH/AQABkwHiAf8BAAGTAeIB/wEA
-        AZQB5wH/AWkBowG5Af8BxQGsAZ8B/wEpAYEBpQH/AQABkQHiAf8BAAGdAe4B/wFbAl4B2QMAAQEEAAMw
-        AUwBUgHSAU8B/wE7AcABOAH/AR8BtgEcAf8BDAGvAQgB/wEEAa0BAAH/AQMBrAEAAf8BAAGvAQAB/wGB
-        AaoBgQH/AcEBqAHCAf8BNgGMATQB/wEAAasBAAH/AQsBtwEHAf8BWwFeAVsB2QMAAQEEAAMwAUwB1QGO
-        AVoB/wHLAYgBVwH/AcoBgwFQAf8ByAGYAYEB/wGkAWsBVQH/AaABPwEVAf8BrwFuAVQB/wGlAa0BsQH/
-        AZ0BmAGWAf8BpAE3AQYB/wGxATgBAwH/AbYBPQEHAf8BXgJbAdkDAAEBBAADMAFMAV4BWgHVAf8BUQFN
-        AckB/wGxAbAB2AH/AfMB9AHZAf8BqwGqAcUB/wEnASEBuAH/AQcBAQGzAf8BWAFVAakB/wG6AbsBpAH/
-        AZEBkAGbAf8BBwECAaQB/wELAQUBuAH/AlsBXgHZAwABAQQAAzABTAFLAcQB+gH/AUkBuwHuAf8BRwG6
-        Ae0B/wE5AbQB6wH/ASMBqgHoAf8BDgGhAeYB/wEAAZoB5gH/AQMBmQHgAf8BnAGpAa8B/wGyAZ4BkwH/
-        AQcBhAG+Af8BAAGeAfMB/wFbAl4B2QMAAQEEAAMwAUwBXQHVAVoB/wFaAcsBVwH/AVgBygFWAf8BSwHF
-        AUgB/wE3Ab4BMwH/ASMBtwEgAf8BDwGzAQsB/wEXAbABFAH/AZ8BqwGeAf8BrwGaAa8B/wEXAZcBFAH/
-        AQYBugECAf8BWwFeAVsB2QMAAQEEAAMwAUwB2gGYAWcB/wHOAY8BYAH/AckBhAFRAf8B4gHEAbUB/wHy
-        A/8B3AHkAegB/wHLAdMB1wH/Aa4BuAG9Af8BrAGOAYAB/wG7AVMBJgH/AboBUwEmAf8BvwFTASMB/wFe
-        AlsB2QMAAQEEAAMwAUwBawFnAdoB/wFhAV0BzQH/AW4BawHRAf8BrwGtAdoB/wFfAVsBywH/AVMBTwHJ
-        Af8BTgFKAccB/wE9ATgBwgH/AYEBbQG4Af8BVAFQAb8B/wEnASIBuwH/ASkBIwG/Af8CWwFeAdkDAAEB
-        BAADMAFMAVkBygH8Af8BUwG/Ae8B/wFQAb0B7gH/AU8BvQHtAf8BTQG8Ae0B/wFHAboB7QH/AT0BtQHr
-        Af8BJwGvAe4B/wE8AawB3gH/AYwBsAHCAf8BJAGkAd0B/wENAakB8gH/AVsCXgHZAwABAQQAAzABTAFq
-        AdoBZwH/AWMBzgFgAf8BYAHNAV4B/wFfAcwBXAH/AV4BzAFbAf8BWAHKAVUB/wFPAcYBTAH/AToBwwE3
-        Af8BTAG8AUoB/wGSAbYBkQH/ATgBtgE0Af8BIwHAAR8B/wFbAV4BWwHZAwABAQQAAzABTAHfAaMBhAH/
-        AdMBmgFtAf8B0QGVAWcB/wHUAaABhQH/AeIBygG9Af8B6wHdAdYB/wHhAdEByAH/AcwBpwGTAf8BxAFs
-        AUYB/wHDAWYBPgH/AcABYAE3Af8BxAFeATAB/wFhAl4B2gMAAQEEAAMwAUwBiAGEAd8B/wGBAW4B0wH/
-        AWsBaAHRAf8BYQFdAc4B/wFkAWABzwH/AWABXQHNAf8BWgFWAcoB/wFTAU4ByAH/AUQBPwHHAf8BPgE5
-        AcMB/wE8ATgBwAH/ATYBMAHEAf8CXgFhAdoDAAEBBAADMAFMAWgB0QH+Af8BYQHFAfEB/wFeAcMB8AH/
-        AVoBwgHvAf8BVQHAAe8B/wFPAb0B7gH/AUgBugHtAf8BQQG3AewB/wEzAbMB7gH/ASQBsAHwAf8BJAGt
-        AesB/wEeAa8B8gH/AV4CYQHaAwABAQQAAzABTAGHAd8BhAH/AYEB0wFtAf8BbQHSAWsB/wFpAdABZwH/
-        AWUBzwFiAf8BXwHNAVwB/wFZAcoBVgH/AVMByAFQAf8BRgHGAUMB/wE5AcQBNgH/ATgBwQE1Af8BNQHE
-        ATEB/wFeAWEBXgHaAwABAQQAAzEBTwHxAbgBmwH/AeQBrgGSAf8B4wGsAY8B/wHgAaUBhgH/AdwBmwFr
-        Af8B2wGZAWkB/wHZAZMBYQH/AdcBiwFWAf8B1AGJAVMB/wHQAYIBSwH/Ac0BbAFBAf8B0gFpATsB/wJf
-        AVgB4wMAAQEEAAMxAU8BngGbAfEB/wGVAZIB5AH/AZIBjgHiAf8BjgGKAeEB/wGIAYQB3wH/AYEBgAHc
-        Af8BawFnAdoB/wFiAV4B1wH/AVkBVQHTAf8BUAFLAdAB/wFGAUEBzQH/AUABOwHSAf8CWAFfAeMDAAEB
-        BAADMQFPAY8B4wL/AYYB1wL/AYMB1QL/AYAB0wL/AWkB0AH+Af8BYQHNAf0B/wFZAcoB/AH/AU8BxgH7
-        Af8BRQHCAfoB/wE7Ab0B+QH/ATABuQH3Af8BKAG8Av8BWAJfAeMDAAEBBAADMQFPAZ0B8QGbAf8BlAHk
-        AZIB/wGRAeIBjwH/AY0B4QGKAf8BhwHfAYQB/wGBAdwBbgH/AWkB2gFnAf8BYQHXAV4B/wFYAdMBVQH/
-        AU4B0AFLAf8BRQHNAUEB/wE+AdIBOwH/AVgBXwFYAeMDAAEBBAADDgETAzABTAMxAU0DMAFMAzABTAMw
-        AUwDMAFMAzABTAMwAUwDMAFMAzABTAMwAUwDMAFMAycBOwgAAw4BEwMwAUwDMQFNAzABTAMwAUwDMAFM
-        AzABTAMwAUwDMAFMAzABTAMwAUwDMAFMAzABTAMnATsIAAMOARMDMAFMAzEBTQMwAUwDMAFMAzABTAMw
-        AUwDMAFMAzABTAMwAUwDMAFMAzABTAMwAUwDJwE7CAADDgETAzABTAMxAU0DMAFMAzABTAMwAUwDMAFM
-        AzABTAMwAUwDMAFMAzABTAMwAUwDMAFMAycBO/8ABQABQgFNAT4HAAE+AwABKAMAAUADAAEgAwABAQEA
-        AQEGAAEBFgAD/4EACP8BgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGA
+        AzEBTwHQATcBAAH/Ac4BNwEAAf8B1wE7AQAB/wHgAT4BAAH/AecBQgEAAf8B2QFVASEB/wHTAUEBBgH/
+        Ae4BQgEAAf8B6QFDAQAB/wHhAT8BAAH/AdgBOwEAAf8B1wE6AQAB/wFhAloB5AMAAQEEAAMxAU8CAAHQ
+        Af8CAAHOAf8BAgEAAdcB/wECAQAB4wH/AQUBAAHpAf8BBgEAAe0B/wEGAQAB8AH/AQYBAAHuAf8BAgEA
+        AesB/wEDAQAB5AH/AQIBAAHYAf8BAgEAAdcB/wJaAWEB5AMAAQEEAAMxAU8BAAGvAv8BAAGtAv8BAAGx
+        Av8BAAG0Av8BAAG2Av8BAAG6Av8BAAG6Av8BAAG4Av8BAAG3Av8BAAG0Av8BAAGxAv8BAAG0Av8BWgJh
+        AeQDAAEBBAADMQFPAQAB0AEAAf8BAAHOAQAB/wEAAdcBAAH/AQAB4AEAAf8BAAHoAQAB/wEAAfIBAAH/
+        AQIB8QEAAf8BAgHuAQAB/wEBAekBAAH/AQAB4QEAAf8BAAHYAQAB/wEAAdcBAAH/AVoBYQFaAeQDAAEB
+        BAADMAFLAcQBMgEAAf8BwQExAQAB/wHJATQBAAH/AdIBMAEAAf8BywGJAUYB/wHJAeAB7AH/Ab8BuAG1
+        Af8BygEzAQAB/wHaATsBAAH/AdEBOAEAAf8BygE1AQAB/wHKATUBAAH/AV4CWwHZAwABAQQAAzABSwIA
+        AcQB/wIAAcEB/wIAAcwB/wIAAcIB/wIAAdUB/wEDAQAB3QH/AQQBAAHcAf8CAAHdAf8BAgEAAc0B/wIA
+        AcIB/wIAAc0B/wIAAckB/wJbAV4B2QMAAQEEAAMwAUsBAAGmAfsB/wEAAaMB9wH/AQABpwH9Af8BAAGq
+        Av8BAAGtAv8BAAGeAeAB/wEAAagB+gH/AQABrwL/AQABrAL/AQABqwL/AQABqAH+Af8BAAGpAv8BWwJe
+        AdkDAAEBBAADMAFLAQABxAEAAf8BAAHBAQAB/wEAAckBAAH/AQAB0QEAAf8BAAHXAQAB/wELAcMBBwH/
+        AQAB1wEAAf8BAAHdAQAB/wEAAdcBAAH/AQAB0QEAAf8BAAHKAQAB/wEAAcoBAAH/AVsBXgFbAdkDAAEB
+        BAADMAFLAcABMAEAAf8BvQEvAQAB/wHDATIBAAH/AcsBMAEAAf8BwgFTASoB/wG7AbUBsgH/AdQBpwGQ
+        Af8BzQE0AQAB/wHPATcBAAH/AcoBNQEAAf8BxAEyAQAB/wHFATIBAAH/AV4CWwHZAwABAQQAAzABSwIA
+        AcAB/wIAAb4B/wEhARwBugH/Ao0BlAH/ARIBDgGWAf8CAAHVAf8CAAHXAf8BCwEDAc4B/wG7AboB0AH/
+        AYkBhwGtAf8CAAG3Af8CAAHHAf8CWwFeAdkDAAEBBAADMAFLAQABowH4Af8BAAGfAfEB/wEAAaMB+QH/
+        AQABpAL/AVgBuQHbAf8B1wHGAb0B/wENAZUBywH/AQABqwL/AQABqgL/AQABqAH+Af8BAAGkAfkB/wEA
+        AaYB/AH/AVsCXgHZAwABAQQAAzABSwEAAcABAAH/AQABvQEAAf8BAAHDAQAB/wEAAckBAAH/AYIBxwGB
+        Af8B1QHCAdYB/wEbAa8BGAH/AQAB1QEAAf8BAAHPAQAB/wEAAcoBAAH/AQABxAEAAf8BAAHFAQAB/wFb
+        AV4BWwHZAwABAQQAAzABSwG8AS8BAAH/AbcBLQEAAf8BvAEvAQAB/wHCATEBAAH/AcMBMwEAAf8BqwFA
+        ARkB/wG1ATABAAH/AcwBMwEAAf8BxQEzAQAB/wHCATEBAAH/Ab0BLwEAAf8BvwEwAQAB/wFeAlsB2QMA
+        AQEEAAMwAUsCAAG8Af8CAAG5Af8BPQE5Aa4B/wG9Ab4BowH/ApwBkgH/AQoBBQGVAf8CAAHAAf8BlwGW
+        Aa4B/wHjAeQBxwH/AbQBswHTAf8CAAG2Af8CAAHAAf8CWwFeAdkDAAEBBAADMAFLAQABoQH0Af8BAAGc
+        Ae0B/wEAAZwB8gH/AUMBqQHNAf8BwwGtAaIB/wHZAcoBwQH/AZwBrwG5Af8BAAGVAeoB/wEAAakC/wEA
+        AaIB9wH/AQABnwHyAf8BAAGiAfYB/wFbAl4B2QMAAQEEAAMwAUsBAAG8AQAB/wEAAbcBAAH/AQABugEA
+        Af8BTwG2AU0B/wHAAakBwQH/AdYBxgHXAf8BoAGzAZ8B/wEAAbYBAAH/AQABygEAAf8BAAHCAQAB/wEA
+        Ab0BAAH/AQABvwEAAf8BWwFeAVsB2QMAAQEEAAMwAUsBuQEtAQAB/wGyASsBAAH/AbYBLAEAAf8BugEn
+        AQAB/wG9AUwBIwH/AaEBsQG5Af8BkAFQAT8B/wG7ASMBAAH/AcABMQEAAf8BugEuAQAB/wG2ASwBAAH/
+        AboBLgEAAf8BXgJbAdkDAAEBBAADMAFLAgABuQH/AgABsgH/AgABuAH/AUMBQAGtAf8CtQGlAf8CkwGV
+        Af8CiAGYAf8BuAG5AaUB/wGWAZUBugH/AgABvAH/AgABtwH/AgABuQH/AlsBXgHZAwABAQQAAzABSwEA
+        AZ8B8AH/AQABlgHqAf8BgAG/AeAB/wHoAcUBsgH/AUkBpgHGAf8BPgGsAdQB/wHXAb8BsgH/ARYBjQG6
+        Af8BAAGeAfcB/wEAAZ4B7wH/AQABmwHrAf8BAAGfAfEB/wFbAl4B2QMAAQEEAAMwAUsBAAG5AQAB/wEA
+        AbEBAAH/AYkBygGIAf8B4gG+AeMB/wFUAbIBUgH/AUwBugFJAf8B0wG6AdQB/wEmAZ0BIwH/AQABvgEA
+        Af8BAAG7AQAB/wEAAbYBAAH/AQABugEAAf8BWwFeAVsB2QMAAQEEAAMwAUsBtwEqAQAB/wGvASkBAAH/
+        AbABKgEAAf8BswEoAQAB/wG3ATUBAwH/AaoBpQGjAf8BmAGhAaYB/wGHAS4BEQH/AbIBJAEAAf8BtQEs
+        AQAB/wGxASoBAAH/AbYBLAEAAf8BXgJbAdkDAAEBBAADMAFLAgABtwH/AgABrwH/AgABsQH/AgABtQH/
+        AUQBQQGpAf8BsAGxAaQB/wGvAbABpAH/AYwBiwGhAf8CAAG0Af8CAAG1Af8CAAGxAf8CAAG2Af8CWwFe
+        AdkDAAEBBAADMAFLAQABnQHvAf8BAAGTAeQB/wFSAb8B5gH/AYIBvwHeAf8BAAGYAesB/wEAAZwB7AH/
+        Aa0BsgG1Af8BqQGmAaQB/wEAAYUBygH/AQABnQHwAf8BAAGXAeUB/wEAAZwB7QH/AVsCXgHZAwABAQQA
+        AzABSwEAAbcBAAH/AQABrQEAAf8BgQHLAV0B/wGMAckBigH/AQABtAEAAf8BAAG3AQAB/wGuAbQBrgH/
+        AagBpQGoAf8BAAGcAQAB/wEAAbgBAAH/AQABsAEAAf8BAAG2AQAB/wFbAV4BWwHZAwABAQQAAzABTAG/
+        ATsBCQH/Aa4BJgEAAf8BrQEkAQAB/wGvASgBAAH/AbABJAEAAf8BrQE+ARYB/wGmAaQBowH/AZYBoQGn
+        Af8BiwEvARAB/wGwASQBAAH/Aa8BKQEAAf8BtgEsAQAB/wFeAlsB2QMAAQEEAAMwAUwBDgEJAb8B/wIA
+        Aa4B/wIAAa0B/wIAAaoB/wKBAaIB/wGvAbABogH/ArIBpgH/ApIBlQH/AQcBAwGEAf8CAAGwAf8CAAGw
+        Af8CAAG1Af8CWwFeAdkDAAEBBAADMAFMAQABpwHyAf8BAAGUAeMB/wEAAY8B4gH/AQABkgHlAf8BAAGW
+        AeUB/wEAAZYB6gH/AR8BnQHNAf8BygGzAaYB/wFJAY4BoAH/AQABigHZAf8BAAGZAecB/wEAAZsB7AH/
+        AVsCXgHZAwABAQQAAzABTAENAb8BCQH/AQABrgEAAf8BAAGqAQAB/wEAAa0BAAH/AQABsAEAAf8BAAGx
+        AQAB/wEvAa0BLQH/AcYBrwHHAf8BUAGUAU8B/wEAAaMBAAH/AQABsgEAAf8BAAG1AQAB/wFbAV4BWwHZ
+        AwABAQQAAzABTAHSAYUBPgH/AcABUAEnAf8BtwE7AQwB/wGrASUBAAH/AaoBHQEAAf8BsQEZAQAB/wGw
+        AUwBKQH/AakBtQG7Af8BlQGLAYYB/wGiASABAAH/AbEBKQEAAf8BtgEsAQAB/wFeAlsB2QMAAQEEAAMw
+        AUwBQwE+AdIB/wEoASMBwAH/ARwBFwG2Af8BnwGeAbYB/wHAAcEBqgH/AV0BWwGuAf8BQQE+AagB/wK0
+        AaUB/wKbAZMB/wENAQoBgwH/AgABrQH/AgABtwH/AlsBXgHZAwABAQQAAzABTAEuAb8B+QH/ARcBrQHq
+        Af8BAAGfAeUB/wEAAZYB4wH/AQABkwHiAf8BAAGTAeIB/wEAAZQB5wH/AVgBowG5Af8BxQGsAZ8B/wEY
+        AYEBpQH/AQABkQHiAf8BAAGdAe4B/wFbAl4B2QMAAQEEAAMwAUwBQQHSAT4B/wEqAcABJwH/AQ4BtgEL
+        Af8BAAGvAQAB/wEAAa0BAAH/AQABrAEAAf8BAAGvAQAB/wGBAaoBgQH/AcEBqAHCAf8BJQGMASMB/wEA
+        AasBAAH/AQABtwEAAf8BWwFeAVsB2QMAAQEEAAMwAUwB1QGOAUkB/wHLAYgBRgH/AcoBgwE/Af8ByAGY
+        AYEB/wGkAVoBRAH/AaABLgEEAf8BrwFdAUMB/wGlAa0BsQH/AZ0BmAGWAf8BpAEmAQAB/wGxAScBAAH/
+        AbYBLAEAAf8BXgJbAdkDAAEBBAADMAFMAU0BSQHVAf8BQAE8AckB/wGxAbAB2AH/AfMB9AHZAf8BqwGq
+        AcUB/wEWARABuAH/AgABswH/AUcBRAGpAf8BugG7AaQB/wGRAZABmwH/AgABpAH/AgABuAH/AlsBXgHZ
+        AwABAQQAAzABTAE6AcQB+gH/ATgBuwHuAf8BNgG6Ae0B/wEoAbQB6wH/ARIBqgHoAf8BAAGhAeYB/wEA
+        AZoB5gH/AQABmQHgAf8BnAGpAa8B/wGyAZ4BkwH/AQABhAG+Af8BAAGeAfMB/wFbAl4B2QMAAQEEAAMw
+        AkwB1QFJAf8BSQHLAUYB/wFHAcoBRQH/AToBxQE3Af8BJgG+ASIB/wESAbcBDwH/AQABswEAAf8BBgGw
+        AQMB/wGfAasBngH/Aa8BmgGvAf8BBgGXAQMB/wEAAboBAAH/AVsBXgFbAdkDAAEBBAADMAFMAdoBmAFW
+        Af8BzgGPAU8B/wHJAYQBQAH/AeIBxAG1Af8B8gP/AdwB5AHoAf8BywHTAdcB/wGuAbgBvQH/AawBjgGA
+        Af8BuwFCARUB/wG6AUIBFQH/Ab8BQgESAf8BXgJbAdkDAAEBBAADMAFMAVoBVgHaAf8BUAFMAc0B/wFd
+        AVoB0QH/Aa8BrQHaAf8BTgFKAcsB/wFCAT4ByQH/AT0BOQHHAf8BLAEnAcIB/wGBAVwBuAH/AUMBPwG/
+        Af8BFgERAbsB/wEYARIBvwH/AlsBXgHZAwABAQQAAzABTAFIAcoB/AH/AUIBvwHvAf8BPwG9Ae4B/wE+
+        Ab0B7QH/ATwBvAHtAf8BNgG6Ae0B/wEsAbUB6wH/ARYBrwHuAf8BKwGsAd4B/wGMAbABwgH/ARMBpAHd
+        Af8BAAGpAfIB/wFbAl4B2QMAAQEEAAMwAUwBWQHaAVYB/wFSAc4BTwH/AU8BzQFNAf8BTgHMAUsB/wFN
+        AcwBSgH/AUcBygFEAf8BPgHGATsB/wEpAcMBJgH/ATsBvAE5Af8BkgG2AZEB/wEnAbYBIwH/ARIBwAEO
+        Af8BWwFeAVsB2QMAAQEEAAMwAUwB3wGjAYQB/wHTAZoBXAH/AdEBlQFWAf8B1AGgAYUB/wHiAcoBvQH/
+        AesB3QHWAf8B4QHRAcgB/wHMAacBkwH/AcQBWwE1Af8BwwFVAS0B/wHAAU8BJgH/AcQBTQEfAf8BYQJe
+        AdoDAAEBBAADMAFMAYgBhAHfAf8BgQFdAdMB/wFaAVcB0QH/AVABTAHOAf8BUwFPAc8B/wFPAUwBzQH/
+        AUkBRQHKAf8BQgE9AcgB/wEzAS4BxwH/AS0BKAHDAf8BKwEnAcAB/wElAR8BxAH/Al4BYQHaAwABAQQA
+        AzABTAFXAdEB/gH/AVABxQHxAf8BTQHDAfAB/wFJAcIB7wH/AUQBwAHvAf8BPgG9Ae4B/wE3AboB7QH/
+        ATABtwHsAf8BIgGzAe4B/wETAbAB8AH/ARMBrQHrAf8BDQGvAfIB/wFeAmEB2gMAAQEEAAMwAUwBhwHf
+        AYQB/wGBAdMBXAH/AVwB0gFaAf8BWAHQAVYB/wFUAc8BUQH/AU4BzQFLAf8BSAHKAUUB/wFCAcgBPwH/
+        ATUBxgEyAf8BKAHEASUB/wEnAcEBJAH/ASQBxAEgAf8BXgFhAV4B2gMAAQEEAAMxAU8B8QG4AZsB/wHk
+        Aa4BkgH/AeMBrAGPAf8B4AGlAYYB/wHcAZsBWgH/AdsBmQFYAf8B2QGTAVAB/wHXAYsBRQH/AdQBiQFC
+        Af8B0AGCAToB/wHNAVsBMAH/AdIBWAEqAf8CXwFYAeMDAAEBBAADMQFPAZ4BmwHxAf8BlQGSAeQB/wGS
+        AY4B4gH/AY4BigHhAf8BiAGEAd8B/wGBAYAB3AH/AVoBVgHaAf8BUQFNAdcB/wFIAUQB0wH/AT8BOgHQ
+        Af8BNQEwAc0B/wEvASoB0gH/AlgBXwHjAwABAQQAAzEBTwGPAeMC/wGGAdcC/wGDAdUC/wGAAdMC/wFY
+        AdAB/gH/AVABzQH9Af8BSAHKAfwB/wE+AcYB+wH/ATQBwgH6Af8BKgG9AfkB/wEfAbkB9wH/ARcBvAL/
+        AVgCXwHjAwABAQQAAzEBTwGdAfEBmwH/AZQB5AGSAf8BkQHiAY8B/wGNAeEBigH/AYcB3wGEAf8BgQHc
+        AV0B/wFYAdoBVgH/AVAB1wFNAf8BRwHTAUQB/wE9AdABOgH/ATQBzQEwAf8BLQHSASoB/wFYAV8BWAHj
+        AwABAQQAAw4BEwMwAUwDMQFNAzABTAMwAUwDMAFMAzABTAMwAUwDMAFMAzABTAMwAUwDMAFMAzABTAMn
+        ATsIAAMOARMDMAFMAzEBTQMwAUwDMAFMAzABTAMwAUwDMAFMAzABTAMwAUwDMAFMAzABTAMwAUwDJwE7
+        CAADDgETAzABTAMxAU0DMAFMAzABTAMwAUwDMAFMAzABTAMwAUwDMAFMAzABTAMwAUwDMAFMAycBOwgA
+        Aw4BEwMwAUwDMQFNAzABTAMwAUwDMAFMAzABTAMwAUwDMAFMAzABTAMwAUwDMAFMAzABTAMnATv/AAUA
+        AUIBTQE+BwABPgMAASgDAAFAAwABIAMAAQEBAAEBBgABARYAA/+BAAj/AYABAAGAAQABgAEAAYABAAGA
         AQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGA
         AQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGA
-        AQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAQGAAQEBgAEBAYABAQj/
-        Cw==
+        AQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGA
+        AQABgAEAAYABAAGAAQEBgAEBAYABAQGAAQEI/ws=
 </value>
   </data>
   <data name="listView_vokabeln.TabIndex" type="System.Int32, mscorlib">
@@ -1115,14 +988,11 @@
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 546</value>
   </metadata>
-  <metadata name="statusStrip.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 546</value>
+    <value>0, 539</value>
   </data>
   <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>794, 22</value>
+    <value>784, 22</value>
   </data>
   <data name="statusStrip.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1139,38 +1009,35 @@
   <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="sidebar.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="sidebar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Right</value>
+  <data name="GroupStatistics.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 349</value>
   </data>
-  <data name="statisticsPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 350</value>
-  </data>
-  <data name="statisticsPanel1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="GroupStatistics.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 134</value>
   </data>
-  <data name="statisticsPanel1.TabIndex" type="System.Int32, mscorlib">
+  <data name="GroupStatistics.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;statisticsPanel1.Name" xml:space="preserve">
-    <value>statisticsPanel1</value>
+  <data name="&gt;&gt;GroupStatistics.Name" xml:space="preserve">
+    <value>GroupStatistics</value>
   </data>
-  <data name="&gt;&gt;statisticsPanel1.Type" xml:space="preserve">
+  <data name="&gt;&gt;GroupStatistics.Type" xml:space="preserve">
     <value>Vocup.Controls.StatisticsPanel, Vocup, Version=1.4.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;statisticsPanel1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupStatistics.Parent" xml:space="preserve">
     <value>sidebar</value>
   </data>
-  <data name="&gt;&gt;statisticsPanel1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;GroupStatistics.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="sidebar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
   <data name="sidebar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>670, 52</value>
+    <value>665, 3</value>
   </data>
   <data name="sidebar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 487</value>
+    <value>114, 482</value>
   </data>
   <data name="sidebar.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1182,25 +1049,19 @@
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;sidebar.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;sidebar.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>0</value>
   </data>
-  <metadata name="splitContainer.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="splitContainer.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <data name="splitContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="splitContainer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 52</value>
+    <value>5, 3</value>
   </data>
-  <metadata name="treeView.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="treeView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <data name="treeView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="treeView.ImageIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1212,7 +1073,7 @@
     <value>0</value>
   </data>
   <data name="treeView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 487</value>
+    <value>150, 482</value>
   </data>
   <data name="treeView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1254,10 +1115,10 @@
     <value>1</value>
   </data>
   <data name="splitContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>653, 487</value>
+    <value>654, 482</value>
   </data>
   <data name="splitContainer.SplitterDistance" type="System.Int32, mscorlib">
-    <value>151</value>
+    <value>150</value>
   </data>
   <data name="splitContainer.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1266,13 +1127,13 @@
     <value>splitContainer</value>
   </data>
   <data name="&gt;&gt;splitContainer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Vocup.Controls.ResponsiveSplitContainer, Vocup, Version=1.4.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;splitContainer.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;splitContainer.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="printDocument_cards.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>162, 17</value>
@@ -1280,10 +1141,127 @@
   <metadata name="printDocument_list.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>323, 16</value>
   </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 24</value>
   </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="new_vokabelheft.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="new_vokabelheft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 23</value>
+  </data>
+  <data name="new_vokabelheft.Text" xml:space="preserve">
+    <value>Neues Vokabelheft erstellen</value>
+  </data>
+  <data name="open_vokabelheft.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="open_vokabelheft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 23</value>
+  </data>
+  <data name="open_vokabelheft.Text" xml:space="preserve">
+    <value>Vokabelheft öffnen</value>
+  </data>
+  <data name="save_vokabelheft.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="save_vokabelheft.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="save_vokabelheft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 23</value>
+  </data>
+  <data name="save_vokabelheft.Text" xml:space="preserve">
+    <value>Vokabelheft speichern</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="print_vokabelheft.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="print_vokabelheft.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="print_vokabelheft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 23</value>
+  </data>
+  <data name="print_vokabelheft.Text" xml:space="preserve">
+    <value>Vokabelheft drucken</value>
+  </data>
+  <data name="infos.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="infos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 23</value>
+  </data>
+  <data name="infos.Text" xml:space="preserve">
+    <value>Infos zum Bewertungssystem</value>
+  </data>
+  <data name="toolStripLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 23</value>
+  </data>
+  <data name="toolStripLabel.Text" xml:space="preserve">
+    <value>Infos zum Bewertungssystem:</value>
+  </data>
+  <data name="toolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>784, 25</value>
+  </data>
+  <data name="toolStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;toolStrip.Name" xml:space="preserve">
+    <value>toolStrip</value>
+  </data>
+  <data name="&gt;&gt;toolStrip.Type" xml:space="preserve">
+    <value>Vocup.Controls.ResponsiveToolStrip, Vocup, Version=1.4.3.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;toolStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolStrip.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 49</value>
+  </data>
+  <data name="tableLayoutPanel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 2</value>
+  </data>
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>784, 490</value>
+  </data>
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="sidebar" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="splitContainer" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,Absolute,120" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -1293,7 +1271,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>794, 568</value>
+    <value>784, 561</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -7722,6 +7700,30 @@
   <data name="&gt;&gt;ÜberVTrainingToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;treeview_imagelist.Name" xml:space="preserve">
+    <value>treeview_imagelist</value>
+  </data>
+  <data name="&gt;&gt;treeview_imagelist.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listview_imagelist.Name" xml:space="preserve">
+    <value>listview_imagelist</value>
+  </data>
+  <data name="&gt;&gt;listview_imagelist.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;printDocument_cards.Name" xml:space="preserve">
+    <value>printDocument_cards</value>
+  </data>
+  <data name="&gt;&gt;printDocument_cards.Type" xml:space="preserve">
+    <value>System.Drawing.Printing.PrintDocument, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;printDocument_list.Name" xml:space="preserve">
+    <value>printDocument_list</value>
+  </data>
+  <data name="&gt;&gt;printDocument_list.Type" xml:space="preserve">
+    <value>System.Drawing.Printing.PrintDocument, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="&gt;&gt;new_vokabelheft.Name" xml:space="preserve">
     <value>new_vokabelheft</value>
   </data>
@@ -7763,30 +7765,6 @@
   </data>
   <data name="&gt;&gt;toolStripLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;treeview_imagelist.Name" xml:space="preserve">
-    <value>treeview_imagelist</value>
-  </data>
-  <data name="&gt;&gt;treeview_imagelist.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listview_imagelist.Name" xml:space="preserve">
-    <value>listview_imagelist</value>
-  </data>
-  <data name="&gt;&gt;listview_imagelist.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;printDocument_cards.Name" xml:space="preserve">
-    <value>printDocument_cards</value>
-  </data>
-  <data name="&gt;&gt;printDocument_cards.Type" xml:space="preserve">
-    <value>System.Drawing.Printing.PrintDocument, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="&gt;&gt;printDocument_list.Name" xml:space="preserve">
-    <value>printDocument_list</value>
-  </data>
-  <data name="&gt;&gt;printDocument_list.Type" xml:space="preserve">
-    <value>System.Drawing.Printing.PrintDocument, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>program_form</value>

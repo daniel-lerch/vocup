@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox = new System.Windows.Forms.GroupBox();
-            this.label_strich = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,6 +43,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox0 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PnlLine = new System.Windows.Forms.Panel();
             this.groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -53,7 +53,6 @@
             // 
             // groupBox
             // 
-            this.groupBox.Controls.Add(this.label_strich);
             this.groupBox.Controls.Add(this.label5);
             this.groupBox.Controls.Add(this.label2);
             this.groupBox.Controls.Add(this.label4);
@@ -74,18 +73,6 @@
             this.groupBox.TabIndex = 0;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "Statistik";
-            // 
-            // label_strich
-            // 
-            this.label_strich.AutoSize = true;
-            this.label_strich.BackColor = System.Drawing.SystemColors.Control;
-            this.label_strich.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label_strich.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_strich.Location = new System.Drawing.Point(22, 98);
-            this.label_strich.Name = "label_strich";
-            this.label_strich.Size = new System.Drawing.Size(84, 13);
-            this.label_strich.TabIndex = 29;
-            this.label_strich.Text = "___________";
             // 
             // label5
             // 
@@ -196,6 +183,7 @@
             this.pictureBox2.Location = new System.Drawing.Point(5, 62);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 34;
             this.pictureBox2.TabStop = false;
             // 
@@ -207,6 +195,7 @@
             this.pictureBox3.Location = new System.Drawing.Point(5, 84);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 35;
             this.pictureBox3.TabStop = false;
             // 
@@ -218,6 +207,7 @@
             this.pictureBox0.Location = new System.Drawing.Point(5, 18);
             this.pictureBox0.Name = "pictureBox0";
             this.pictureBox0.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox0.TabIndex = 32;
             this.pictureBox0.TabStop = false;
             // 
@@ -229,13 +219,23 @@
             this.pictureBox1.Location = new System.Drawing.Point(5, 40);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
+            // 
+            // PnlLine
+            // 
+            this.PnlLine.BackColor = System.Drawing.Color.Black;
+            this.PnlLine.Location = new System.Drawing.Point(24, 108);
+            this.PnlLine.Name = "PnlLine";
+            this.PnlLine.Size = new System.Drawing.Size(80, 1);
+            this.PnlLine.TabIndex = 1;
             // 
             // StatisticsPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.PnlLine);
             this.Controls.Add(this.groupBox);
             this.Name = "StatisticsPanel";
             this.Size = new System.Drawing.Size(110, 134);
@@ -252,7 +252,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox;
-        public System.Windows.Forms.Label label_strich;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
@@ -267,5 +266,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox0;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel PnlLine;
     }
 }

@@ -57,6 +57,9 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CsvHelper, Version=7.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
       <HintPath>..\..\packages\CsvHelper.7.1.1\lib\net45\CsvHelper.dll</HintPath>
@@ -92,6 +95,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ResponsiveMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ResponsiveSplitContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ResponsiveToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\StatisticsPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -268,6 +280,7 @@
       <LastGenOutput>language.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="app.manifest" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -350,6 +363,7 @@
     <Compile Include="Util\RewriteHelper.cs" />
     <Compile Include="Util\SaintLague.cs" />
     <Compile Include="Util\Extensions.cs" />
+    <Compile Include="Util\SizeMath.cs" />
     <Compile Include="Util\SystemInfo.cs" />
     <Compile Include="Forms\PracticeCountDialog.cs">
       <SubType>Form</SubType>
@@ -413,6 +427,7 @@
   <ItemGroup>
     <Content Include="icon.ico" />
     <Content Include="Library\K_Updater.dll" />
+    <Content Include="Resources\delete32.png" />
     <None Include="Resources\logo_splash.png" />
     <None Include="Resources\close.png" />
     <None Include="Resources\quit.png" />

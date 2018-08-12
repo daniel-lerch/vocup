@@ -1,24 +1,30 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vocup.Util;
 
 namespace Vocup.Controls
 {
     public partial class VocabularyListView : UserControl
     {
-        // TODO: Prevent column width resizing on form resize
+        private int initialWidthImage = 20;
+        private int initialWidthLastPracticed = 100;
 
-        private int initialWidthImage;
-        private int initialWidthLastPraticed;
+        private SizeF scalingFactor = new SizeF(1F, 1F);
+        private int scaledWidthImage;
+        private int scaledWidthLastPracticed;
 
         public VocabularyListView()
         {
+            scaledWidthImage = initialWidthImage;
+            scaledWidthLastPracticed = initialWidthLastPracticed;
+
             InitializeComponent();
-            initialWidthImage = imageColumn.Width;
-            initialWidthLastPraticed = lastPracticedColumn.Width;
+
             MainListView.ListViewItemSorter = new Sorter() { Column = 1, SortOrder = SortOrder.Ascending };
             MainListView.Sorting = SortOrder.Ascending;
             MainListView.ItemSelectionChanged += MainListView_ItemSelectionChanged;
@@ -49,6 +55,20 @@ namespace Vocup.Controls
 
         public event ListViewItemSelectionChangedEventHandler ItemSelectionChanged;
 
+        protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
+        {
+            scalingFactor = SizeMath.Multiply(scalingFactor, factor);
+            scaledWidthImage = (int)Math.Round(initialWidthImage * scalingFactor.Width);
+            scaledWidthLastPracticed = (int)Math.Round(initialWidthLastPracticed * scalingFactor.Width);
+
+            imageColumn.Width = scaledWidthImage;
+            motherTongueColumn.Width = (int)Math.Round(motherTongueColumn.Width * factor.Width); // Here we don't save defaults and
+            foreignLangColumn.Width = (int)Math.Round(foreignLangColumn.Width * factor.Width);   // therefore directly scale with factor.
+            lastPracticedColumn.Width = scaledWidthLastPracticed;
+
+            base.ScaleControl(factor, specified);
+        }
+
         private void MainListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             Sorter sorter = (Sorter)MainListView.ListViewItemSorter;
@@ -75,12 +95,12 @@ namespace Vocup.Controls
             if (e.ColumnIndex == 0)
             {
                 e.Cancel = true;
-                e.NewWidth = initialWidthImage;
+                e.NewWidth = scaledWidthImage;
             }
             else if (e.ColumnIndex == 3)
             {
                 e.Cancel = true;
-                e.NewWidth = initialWidthLastPraticed;
+                e.NewWidth = scaledWidthLastPracticed;
             }
         }
 
@@ -89,11 +109,11 @@ namespace Vocup.Controls
         {
             if (e.ColumnIndex == 0)
             {
-                imageColumn.Width = initialWidthImage;
+                imageColumn.Width = scaledWidthImage;
             }
             else if (e.ColumnIndex == 3)
             {
-                lastPracticedColumn.Width = initialWidthLastPraticed;
+                lastPracticedColumn.Width = scaledWidthLastPracticed;
             }
         }
 
