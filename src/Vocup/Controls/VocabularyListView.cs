@@ -11,7 +11,7 @@ namespace Vocup.Controls
 {
     public partial class VocabularyListView : UserControl
     {
-        private int initialWidthImage = 20;
+        private int initialWidthImage = 36;
         private int initialWidthLastPracticed = 100;
 
         private SizeF scalingFactor = new SizeF(1F, 1F);
