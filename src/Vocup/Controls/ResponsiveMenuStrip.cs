@@ -26,6 +26,7 @@ namespace Vocup.Controls
         {
             scalingFactor = SizeMath.Multiply(scalingFactor, factor);
             ImageScalingSize = SizeMath.MultiplyAndRound(_imageScalingBaseSize, scalingFactor);
+            ImageScalingSize = SizeMath.Rectify(ImageScalingSize);
             base.ScaleControl(factor, specified);
         }
     }

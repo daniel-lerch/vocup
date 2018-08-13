@@ -16,5 +16,12 @@ namespace Vocup.Util
             int height = (int)Math.Round(left.Height * right.Height);
             return new Size(width, height);
         }
+
+        public static Size Rectify(Size size)
+        {
+            if (size.Width > size.Height)
+                return new Size(size.Height, size.Height);
+            else return new Size(size.Width, size.Width);
+        }
     }
 }
