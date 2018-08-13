@@ -1,33 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vocup.Util;
 
 namespace Vocup.Controls
 {
     public class ResponsiveButton : Button
     {
 
-        public new Image Image
+        protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
         {
-            get => base.Image;
-            set
+            if (Image != null)
             {
-                if (value.Height > this.Height + 10)
+                var newSize = SizeMath.Rectify(SizeMath.MultiplyAndRound(new Size(ClientRectangle.Height - 6, ClientRectangle.Height - 6), factor));
+                var newImage = new Bitmap(newSize.Width, newSize.Height);
+                var oldImage = Image;
+                using (var graph = Graphics.FromImage(newImage))
                 {
-                    var newHeight = this.Height + 10;
-                    var newImage = new Bitmap(newHeight, newHeight);
-                    using (var graph = Graphics.FromImage(newImage)) { 
-                        graph.DrawImage(value, 0, 0, newHeight, newHeight);
-                    }
-                    base.Image = newImage;
-                    value.Dispose();
+                    graph.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    graph.SmoothingMode = SmoothingMode.AntiAlias;
+                    graph.DrawImage(oldImage, 0, 0, newSize.Width, newSize.Height);
                 }
-                else base.Image = value;
+                Image = newImage;
+                oldImage.Dispose();
             }
+            base.ScaleControl(factor, specified);
         }
 
     }
