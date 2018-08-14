@@ -24,7 +24,7 @@ namespace Vocup.Controls
 
         protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
         {
-            scalingFactor = SizeMath.Multiply(scalingFactor, factor);
+            scalingFactor = scalingFactor.Multiply(factor);
             SplitterDistance = (int)Math.Round(_splitterBaseDistance * scalingFactor.Width);
             base.ScaleControl(factor, specified);
         }

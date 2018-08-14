@@ -73,14 +73,14 @@
             this.ÜberVTrainingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.search_vokabel_field = new System.Windows.Forms.TextBox();
             this.GroupBook = new System.Windows.Forms.GroupBox();
-            this.BtnBookSettings = new System.Windows.Forms.Button();
-            this.BtnPractice = new System.Windows.Forms.Button();
+            this.BtnBookSettings = new Vocup.Controls.ResponsiveButton();
+            this.BtnPractice = new Vocup.Controls.ResponsiveButton();
             this.GroupSearch = new System.Windows.Forms.GroupBox();
-            this.BtnSearchWord = new System.Windows.Forms.Button();
+            this.BtnSearchWord = new Vocup.Controls.ResponsiveButton();
             this.GroupWord = new System.Windows.Forms.GroupBox();
-            this.BtnAddWord = new System.Windows.Forms.Button();
-            this.BtnDeleteWord = new System.Windows.Forms.Button();
-            this.BtnEditWord = new System.Windows.Forms.Button();
+            this.BtnAddWord = new Vocup.Controls.ResponsiveButton();
+            this.BtnDeleteWord = new Vocup.Controls.ResponsiveButton();
+            this.BtnEditWord = new Vocup.Controls.ResponsiveButton();
             this.treeview_imagelist = new System.Windows.Forms.ImageList(this.components);
             this.listView_vokabeln = new System.Windows.Forms.ListView();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
@@ -162,6 +162,7 @@
             // vokabelheftSchliessenToolStripMenuItem
             // 
             resources.ApplyResources(this.vokabelheftSchliessenToolStripMenuItem, "vokabelheftSchliessenToolStripMenuItem");
+            this.vokabelheftSchliessenToolStripMenuItem.Image = global::Vocup.Properties.Icons.close;
             this.vokabelheftSchliessenToolStripMenuItem.Name = "vokabelheftSchliessenToolStripMenuItem";
             this.vokabelheftSchliessenToolStripMenuItem.Click += new System.EventHandler(this.vokabelheftSchliessenToolStripMenuItem_Click);
             // 
@@ -702,8 +703,8 @@
         private System.Windows.Forms.ToolStripMenuItem TsmiPrint;
         private System.Windows.Forms.ToolStripMenuItem TsmiExitApplication;
         private System.Windows.Forms.ToolStripButton print_vokabelheft;
-        private System.Windows.Forms.Button BtnPractice;
-        private System.Windows.Forms.Button BtnSearchWord;
+        private Vocup.Controls.ResponsiveButton BtnPractice;
+        private Vocup.Controls.ResponsiveButton BtnSearchWord;
         private System.Windows.Forms.TextBox search_vokabel_field;
         private System.Windows.Forms.GroupBox GroupBook;
         private System.Windows.Forms.GroupBox GroupSearch;
@@ -716,14 +717,14 @@
         private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator infoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ÜberVTrainingToolStripMenuItem;
-        private System.Windows.Forms.Button BtnEditWord;
-        private System.Windows.Forms.Button BtnDeleteWord;
-        private System.Windows.Forms.Button BtnAddWord;
+        private Vocup.Controls.ResponsiveButton BtnEditWord;
+        private Vocup.Controls.ResponsiveButton BtnDeleteWord;
+        private Vocup.Controls.ResponsiveButton BtnAddWord;
         private System.Windows.Forms.GroupBox GroupWord;
         private System.Windows.Forms.ToolStripButton TsbtnEvaluationInfo;
         private System.Windows.Forms.ToolStripLabel toolStripLabel;
         private System.Windows.Forms.ImageList treeview_imagelist;
-        private System.Windows.Forms.Button BtnBookSettings;
+        private Vocup.Controls.ResponsiveButton BtnBookSettings;
         private System.Windows.Forms.ToolStripMenuItem vokabelheftOptionenToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;

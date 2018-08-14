@@ -117,14 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
-  </metadata>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="neueVokabeldateiToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+N</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="neueVokabeldateiToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 22</value>
   </data>
@@ -143,21 +143,6 @@
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="vokabelheftSchliessenToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="vokabelheftSchliessenToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB5UlEQVQ4T6WSW0sbQRiG91YUFC1aKlLp
-        0bRKQhJpjNFCYtmYhNamB4NWSm1LD//TCw/g3yhmQ0nCZnezO/N0ZmPS3aY3pRcvwwzzvN+83zcG8F8a
-        PzQMKzy+lojL+vN+bKO2TR4/gG/v4Osh8ssB8nMD+fEt8sNrgod38A2jE2XG4e9HYJaQ2SwynUakUoi1
-        NYJCjuDoBf37t3H03ZhBFD5swOUlsl5HJJOI1VWCahV5cYFfK+Pv7+LdXcK+NhkaDJ6sKmuYbhdaLYJa
-        jaBSAUtF73SQZ2f0k4/ovyzSDdGIQZg3k0Hs7YXw0CSUhpVJf3sbd2EB7/lT2lED3WH5af93XvXkIRhK
-        wd7WFu78PM7cHG618BeD4zeDvIkEQbkcM9DVvXweZ3aW3vQ0bjk3biDe1wlWVghMc5RZrxqm3UZeXeGo
-        ydiTk7jP1vkZNVCzRagR+U/SyPPzQdVmE29zE3djI4SlMhEnJ/SWbuKUMnEDT/0wPV+/UcE3i4jT0xDW
-        eXszMzi6uQp21lM4O1k6izdoGcaPkYGW+hyWnm//1Q5e4t4orz01hT0xgb2oGqgqtyNwzEBLfQ7LXr6F
-        Vyvg7uZxzVyY1yllcYrpMVgrZqClumvpDg+ls2opUEuNJn4/tvl3YfwC55W4g7G9NzUAAAAASUVORK5C
-        YII=
-</value>
   </data>
   <data name="vokabelheftSchliessenToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+X</value>
@@ -567,18 +552,6 @@
   <data name="BtnBookSettings.Text" xml:space="preserve">
     <value>Optionen</value>
   </data>
-  <data name="&gt;&gt;BtnBookSettings.Name" xml:space="preserve">
-    <value>BtnBookSettings</value>
-  </data>
-  <data name="&gt;&gt;BtnBookSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BtnBookSettings.Parent" xml:space="preserve">
-    <value>GroupBook</value>
-  </data>
-  <data name="&gt;&gt;BtnBookSettings.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="BtnPractice.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
@@ -596,18 +569,6 @@
   </data>
   <data name="BtnPractice.Text" xml:space="preserve">
     <value>Üben</value>
-  </data>
-  <data name="&gt;&gt;BtnPractice.Name" xml:space="preserve">
-    <value>BtnPractice</value>
-  </data>
-  <data name="&gt;&gt;BtnPractice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BtnPractice.Parent" xml:space="preserve">
-    <value>GroupBook</value>
-  </data>
-  <data name="&gt;&gt;BtnPractice.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="&gt;&gt;BtnSearchWord.Name" xml:space="preserve">
     <value>BtnSearchWord</value>
@@ -668,18 +629,6 @@
   </data>
   <data name="BtnSearchWord.Text" xml:space="preserve">
     <value>Suchen</value>
-  </data>
-  <data name="&gt;&gt;BtnSearchWord.Name" xml:space="preserve">
-    <value>BtnSearchWord</value>
-  </data>
-  <data name="&gt;&gt;BtnSearchWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BtnSearchWord.Parent" xml:space="preserve">
-    <value>GroupSearch</value>
-  </data>
-  <data name="&gt;&gt;BtnSearchWord.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="&gt;&gt;BtnAddWord.Name" xml:space="preserve">
     <value>BtnAddWord</value>
@@ -762,18 +711,6 @@
   <data name="BtnAddWord.Text" xml:space="preserve">
     <value>Einfügen</value>
   </data>
-  <data name="&gt;&gt;BtnAddWord.Name" xml:space="preserve">
-    <value>BtnAddWord</value>
-  </data>
-  <data name="&gt;&gt;BtnAddWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BtnAddWord.Parent" xml:space="preserve">
-    <value>GroupWord</value>
-  </data>
-  <data name="&gt;&gt;BtnAddWord.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="BtnDeleteWord.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -794,18 +731,6 @@
   </data>
   <data name="BtnDeleteWord.Text" xml:space="preserve">
     <value>Löschen</value>
-  </data>
-  <data name="&gt;&gt;BtnDeleteWord.Name" xml:space="preserve">
-    <value>BtnDeleteWord</value>
-  </data>
-  <data name="&gt;&gt;BtnDeleteWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BtnDeleteWord.Parent" xml:space="preserve">
-    <value>GroupWord</value>
-  </data>
-  <data name="&gt;&gt;BtnDeleteWord.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="BtnEditWord.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -828,27 +753,15 @@
   <data name="BtnEditWord.Text" xml:space="preserve">
     <value>Bearbeiten</value>
   </data>
-  <data name="&gt;&gt;BtnEditWord.Name" xml:space="preserve">
-    <value>BtnEditWord</value>
-  </data>
-  <data name="&gt;&gt;BtnEditWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BtnEditWord.Parent" xml:space="preserve">
-    <value>GroupWord</value>
-  </data>
-  <data name="&gt;&gt;BtnEditWord.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <metadata name="treeview_imagelist.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="treeview_imagelist.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>653, 17</value>
-  </metadata>
+  </data>
   <data name="treeview_imagelist.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABE
-        DwAAAk1TRnQBSQFMAgEBAwEAASwBAQEsAQEBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        DwAAAk1TRnQBSQFMAgEBAwEAASwBAQEwAQEBEAEAARABAAT/ASEBEAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABEAMAAQEBAAEgBgABEJ4AAxcBIAMcAScDHAEnAxwBJwMcAScDHAEnAxwBJwMcAScDHAEnAxwBJwMc
         AScDGAEi0AADXgHdAdIBvAGuAf8BgwJ/Af4BzwG4AagB/wGAAn8B/gHLAbMBogH/A38B/gHIAa4BmwH/
         A38B/gHEAagBlAH/A38B/gFeAlsB2UgAA0ABcAFSAlQBpgFVAlwB6gFRAm0B9wFRAm0B9wFRAm0B9wFR
@@ -913,7 +826,7 @@
         AeABAQIABP8B4AEBAgABgAEBAYABAQHgAQECAAGAAQEBgAEBAeABAQIAAYABAQGAAQEB4AEBAgABgAEB
         AYABAQHgAQECAAGAAQEBgAEBAeABAQIAAYABAQGAAQEB4AEBAgABgAEBAYABAQHgAQECAAGAAQEBgAEB
         AeABAQIAAYABAQGAAQEB4AEBAgABgAEBAYABAQHgAQECAAGAAQEBgAEBAeABAQIABP8B4AEBAgAE/wHg
-        AQECAAT/AeABAwIACw==
+        AQECAAT/AeABAxgACw==
 </value>
   </data>
   <data name="listView_vokabeln.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -943,9 +856,9 @@
   <data name="&gt;&gt;listView_vokabeln.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>0, 546</value>
-  </metadata>
+  </data>
   <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 539</value>
   </data>
@@ -1011,18 +924,6 @@
   </data>
   <data name="GroupStatistics.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;GroupStatistics.Name" xml:space="preserve">
-    <value>GroupStatistics</value>
-  </data>
-  <data name="&gt;&gt;GroupStatistics.Type" xml:space="preserve">
-    <value>Vocup.Controls.StatisticsPanel, Vocup, Version=1.4.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;GroupStatistics.Parent" xml:space="preserve">
-    <value>sidebar</value>
-  </data>
-  <data name="&gt;&gt;GroupStatistics.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="splitContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1105,15 +1006,15 @@
   <data name="&gt;&gt;splitContainer.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="printDocument_cards.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="printDocument_cards.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>162, 17</value>
-  </metadata>
-  <metadata name="printDocument_list.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="printDocument_list.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>323, 16</value>
-  </metadata>
-  <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>0, 24</value>
-  </metadata>
+  </data>
   <data name="toolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 24</value>
   </data>
@@ -1231,12 +1132,12 @@
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="sidebar" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="splitContainer" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,Absolute,120" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  </data>
+  <data name="$this.TrayHeight" type="System.Int32, mscorlib">
     <value>50</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>

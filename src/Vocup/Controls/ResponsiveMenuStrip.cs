@@ -18,14 +18,14 @@ namespace Vocup.Controls
             set
             {
                 _imageScalingBaseSize = value;
-                ImageScalingSize = SizeMath.MultiplyAndRound(value, scalingFactor);
+                ImageScalingSize = value.Multiply(scalingFactor).Round().Rectify();
             }
         }
 
         protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
         {
-            scalingFactor = SizeMath.Multiply(scalingFactor, factor);
-            ImageScalingSize = SizeMath.MultiplyAndRound(_imageScalingBaseSize, scalingFactor);
+            scalingFactor = scalingFactor.Multiply(factor);
+            ImageScalingSize = _imageScalingBaseSize.Multiply(scalingFactor).Round().Rectify();
             base.ScaleControl(factor, specified);
         }
     }

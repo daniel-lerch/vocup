@@ -95,6 +95,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ResponsiveButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\ResponsiveMenuStrip.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -428,6 +431,33 @@
     <Content Include="icon.ico" />
     <Content Include="Library\K_Updater.dll" />
     <Content Include="Resources\delete32.png" />
+    <None Include="Resources\icons8-administrative-tools-96.png" />
+    <None Include="Resources\icons8-delete-96.png" />
+    <None Include="Resources\icons8-delete-48.png" />
+    <None Include="Resources\icons8-flash-on-96.png" />
+    <None Include="Resources\icons8-import-96.png" />
+    <None Include="Resources\icons8-export-96.png" />
+    <None Include="Resources\icons8-send-96.png" />
+    <None Include="Resources\icons8-database-view-96.png" />
+    <None Include="Resources\icons8-add-database-96.png" />
+    <None Include="Resources\icons8-data-backup-96.png" />
+    <None Include="Resources\icons8-search-96.png" />
+    <None Include="Resources\icons8-print-96.png" />
+    <None Include="Resources\icons8-exit-96.png" />
+    <None Include="Resources\icons8-settings-96.png" />
+    <None Include="Resources\icons8-merge-96.png" />
+    <None Include="Resources\icons8-cancel-96.png" />
+    <None Include="Resources\icons8-edit-96.png" />
+    <None Include="Resources\icons8-heart-outline-96.png" />
+    <None Include="Resources\icons8-info-96.png" />
+    <None Include="Resources\icons8-help-96.png" />
+    <None Include="Resources\icons8-save-96.png" />
+    <None Include="Resources\icons8-pie-chart-96.png" />
+    <None Include="Resources\icons8-restart-96.png" />
+    <None Include="Resources\icons8-a-96.png" />
+    <None Include="Resources\icons8-ordner-öffnen-96.png" />
+    <None Include="Resources\icons8-datei-96.png" />
+    <None Include="Resources\icons8-plus-100.png" />
     <None Include="Resources\logo_splash.png" />
     <None Include="Resources\close.png" />
     <None Include="Resources\quit.png" />
