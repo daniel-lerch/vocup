@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vocup.Util;
 
@@ -17,7 +13,7 @@ namespace Vocup.Controls
         {
             if (Image != null)
             {
-                var newSize = SizeMath.Rectify(SizeMath.MultiplyAndRound(new Size(ClientRectangle.Height - 6, ClientRectangle.Height - 6), factor));
+                var newSize = new Size(ClientRectangle.Height - 6, ClientRectangle.Height - 6).Multiply(factor).Round().Rectify();
                 var newImage = new Bitmap(newSize.Width, newSize.Height);
                 var oldImage = Image;
                 using (var graph = Graphics.FromImage(newImage))
@@ -29,8 +25,8 @@ namespace Vocup.Controls
                 Image = newImage;
                 oldImage.Dispose();
             }
+
             base.ScaleControl(factor, specified);
         }
-
     }
 }
