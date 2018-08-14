@@ -5,23 +5,32 @@ namespace Vocup.Util
 {
     public static class SizeMath
     {
-        public static SizeF Multiply(SizeF left, SizeF right)
+        public static SizeF Multiply(this SizeF first, SizeF other)
         {
-            return new SizeF(left.Width * right.Width, left.Height * right.Height);
+            return new SizeF(first.Width * other.Width, first.Height * other.Height);
         }
 
-        public static Size MultiplyAndRound(Size left, SizeF right)
+        public static SizeF Multiply(this SizeF first, Size other)
         {
-            int width = (int)Math.Round(left.Width * right.Width);
-            int height = (int)Math.Round(left.Height * right.Height);
-            return new Size(width, height);
+            return new SizeF(first.Width * other.Width, first.Height * other.Height);
         }
 
-        public static Size Rectify(Size size)
+        public static SizeF Multiply(this Size first, SizeF other)
+        {
+            return new SizeF(first.Width * other.Width, first.Height * other.Height);
+        }
+
+        public static Size Round(this SizeF size)
+        {
+            return new Size((int)Math.Round(size.Width), (int)Math.Round(size.Height));
+        }
+
+        public static Size Rectify(this Size size)
         {
             if (size.Width > size.Height)
                 return new Size(size.Height, size.Height);
-            else return new Size(size.Width, size.Width);
+            else
+                return new Size(size.Width, size.Width);
         }
     }
 }

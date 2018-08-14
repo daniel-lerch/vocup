@@ -57,7 +57,7 @@ namespace Vocup.Controls
 
         protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
         {
-            scalingFactor = SizeMath.Multiply(scalingFactor, factor);
+            scalingFactor = scalingFactor.Multiply(factor);
             scaledWidthImage = (int)Math.Round(initialWidthImage * scalingFactor.Width);
             scaledWidthLastPracticed = (int)Math.Round(initialWidthLastPracticed * scalingFactor.Width);
 
