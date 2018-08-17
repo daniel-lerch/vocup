@@ -41,7 +41,7 @@
     <Setting Name="DisableInternetServices" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="checked_for_updates" Type="System.String" Scope="User">
+    <Setting Name="LastInternetConnection" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="nearly_correct_blank_char" Type="System.Boolean" Scope="User">
