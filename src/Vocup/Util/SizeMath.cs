@@ -25,6 +25,14 @@ namespace Vocup.Util
             return new Size((int)Math.Round(size.Width), (int)Math.Round(size.Height));
         }
 
+        public static SizeF Rectify(this SizeF size)
+        {
+            if (size.Width > size.Height)
+                return new SizeF(size.Height, size.Height);
+            else
+                return new SizeF(size.Width, size.Width);
+        }
+
         public static Size Rectify(this Size size)
         {
             if (size.Width > size.Height)

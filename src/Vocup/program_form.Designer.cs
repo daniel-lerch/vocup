@@ -428,7 +428,7 @@
             // 
             // BtnBookSettings
             // 
-            this.BtnBookSettings.Image = global::Vocup.Properties.Icons.settings_file;
+            this.BtnBookSettings.BaseImage = global::Vocup.Properties.Icons.settings_file;
             resources.ApplyResources(this.BtnBookSettings, "BtnBookSettings");
             this.BtnBookSettings.Name = "BtnBookSettings";
             this.BtnBookSettings.UseVisualStyleBackColor = true;
@@ -436,7 +436,7 @@
             // 
             // BtnPractice
             // 
-            this.BtnPractice.Image = global::Vocup.Properties.Icons.practise;
+            this.BtnPractice.BaseImage = global::Vocup.Properties.Icons.practise;
             resources.ApplyResources(this.BtnPractice, "BtnPractice");
             this.BtnPractice.Name = "BtnPractice";
             this.BtnPractice.UseVisualStyleBackColor = true;
@@ -452,8 +452,8 @@
             // 
             // BtnSearchWord
             // 
+            this.BtnSearchWord.BaseImage = global::Vocup.Properties.Icons.search;
             resources.ApplyResources(this.BtnSearchWord, "BtnSearchWord");
-            this.BtnSearchWord.Image = global::Vocup.Properties.Icons.search;
             this.BtnSearchWord.Name = "BtnSearchWord";
             this.BtnSearchWord.UseVisualStyleBackColor = true;
             this.BtnSearchWord.Click += new System.EventHandler(this.search_vokabel_button_Click);
@@ -469,7 +469,7 @@
             // 
             // BtnAddWord
             // 
-            this.BtnAddWord.Image = global::Vocup.Properties.Icons.add;
+            this.BtnAddWord.BaseImage = global::Vocup.Properties.Icons.add;
             resources.ApplyResources(this.BtnAddWord, "BtnAddWord");
             this.BtnAddWord.Name = "BtnAddWord";
             this.BtnAddWord.UseVisualStyleBackColor = true;
@@ -477,16 +477,16 @@
             // 
             // BtnDeleteWord
             // 
+            this.BtnDeleteWord.BaseImage = global::Vocup.Properties.Icons.delete;
             resources.ApplyResources(this.BtnDeleteWord, "BtnDeleteWord");
-            this.BtnDeleteWord.Image = global::Vocup.Properties.Icons.delete;
             this.BtnDeleteWord.Name = "BtnDeleteWord";
             this.BtnDeleteWord.UseVisualStyleBackColor = true;
             this.BtnDeleteWord.Click += new System.EventHandler(this.delet_vokabel_Click);
             // 
             // BtnEditWord
             // 
+            this.BtnEditWord.BaseImage = global::Vocup.Properties.Icons.edit;
             resources.ApplyResources(this.BtnEditWord, "BtnEditWord");
-            this.BtnEditWord.Image = global::Vocup.Properties.Icons.edit;
             this.BtnEditWord.Name = "BtnEditWord";
             this.BtnEditWord.UseVisualStyleBackColor = true;
             this.BtnEditWord.Click += new System.EventHandler(this.edit_vokabel_Click);
