@@ -95,6 +95,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ImageListExtensions.cs" />
     <Compile Include="Controls\ResponsiveButton.cs">
       <SubType>Component</SubType>
     </Compile>

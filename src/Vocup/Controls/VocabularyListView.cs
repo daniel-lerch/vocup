@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace Vocup.Controls
 {
     public partial class VocabularyListView : UserControl
     {
+        private Size _imageBaseSize = new Size(16, 16);
         private int initialWidthImage = 36;
         private int initialWidthLastPracticed = 100;
 
@@ -32,21 +34,35 @@ namespace Vocup.Controls
 
         public ListView Control => MainListView;
 
+        [DefaultValue(false)]
         public bool GridLines
         {
             get => MainListView.GridLines;
             set => MainListView.GridLines = value;
         }
 
+        [DefaultValue(typeof(Size), "16,16")]
+        public Size ImageBaseSize
+        {
+            get => _imageBaseSize;
+            set
+            {
+                _imageBaseSize = value;
+                ScaleImageList();
+            }
+        }
+
         public ListView.ListViewItemCollection Items => MainListView.Items;
         public ListView.SelectedListViewItemCollection SelectedItems => MainListView.SelectedItems;
 
+        [DefaultValue("")]
         public string MotherTongue
         {
             get => motherTongueColumn.Text;
             set => motherTongueColumn.Text = value;
         }
 
+        [DefaultValue("")]
         public string ForeignLang
         {
             get => foreignLangColumn.Text;
@@ -66,7 +82,18 @@ namespace Vocup.Controls
             foreignLangColumn.Width = (int)Math.Round(foreignLangColumn.Width * factor.Width);   // therefore directly scale with factor.
             lastPracticedColumn.Width = scaledWidthLastPracticed;
 
+            ScaleImageList();
+
             base.ScaleControl(factor, specified);
+        }
+
+        private void ScaleImageList()
+        {
+            ImageList old = MainListView.SmallImageList;
+            MainListView.SmallImageList = IconImageList.Scale(_imageBaseSize.Multiply(scalingFactor).Rectify().Round());
+            old?.Dispose();
+
+            //MainListView.SmallImageList = IconImageList;
         }
 
         private void MainListView_ColumnClick(object sender, ColumnClickEventArgs e)

@@ -51,7 +51,6 @@
             this.MainListView.MultiSelect = false;
             this.MainListView.Name = "MainListView";
             this.MainListView.Size = new System.Drawing.Size(497, 487);
-            this.MainListView.SmallImageList = this.IconImageList;
             this.MainListView.TabIndex = 0;
             this.MainListView.UseCompatibleStateImageBehavior = false;
             this.MainListView.View = System.Windows.Forms.View.Details;
