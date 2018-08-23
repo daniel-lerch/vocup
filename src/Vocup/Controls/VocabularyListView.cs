@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vocup.Util;
 
@@ -13,7 +10,7 @@ namespace Vocup.Controls
     public partial class VocabularyListView : UserControl
     {
         private Size _imageBaseSize = new Size(16, 16);
-        private int initialWidthImage = 36;
+        private int initialWidthImage = 20;
         private int initialWidthLastPracticed = 100;
 
         private SizeF scalingFactor = new SizeF(1F, 1F);
@@ -92,8 +89,6 @@ namespace Vocup.Controls
             ImageList old = MainListView.SmallImageList;
             MainListView.SmallImageList = IconImageList.Scale(_imageBaseSize.Multiply(scalingFactor).Rectify().Round());
             old?.Dispose();
-
-            //MainListView.SmallImageList = IconImageList;
         }
 
         private void MainListView_ColumnClick(object sender, ColumnClickEventArgs e)

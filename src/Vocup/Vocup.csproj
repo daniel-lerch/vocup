@@ -95,6 +95,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\FileTreeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FileTreeView.Designer.cs">
+      <DependentUpon>FileTreeView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ImageListExtensions.cs" />
     <Compile Include="Controls\ResponsiveButton.cs">
       <SubType>Component</SubType>
@@ -219,6 +225,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\FileTreeView.resx">
+      <DependentUpon>FileTreeView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\StatisticsPanel.resx">
       <DependentUpon>StatisticsPanel.cs</DependentUpon>
     </EmbeddedResource>

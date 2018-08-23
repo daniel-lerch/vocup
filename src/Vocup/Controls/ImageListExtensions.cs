@@ -1,20 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Vocup.Controls
 {
     public static class ImageListExtensions
     {
-        // TODO: ImageList destroys image quality. Find a workaround.
         public static ImageList Scale(this ImageList original, Size size)
         {
-            ImageList result = new ImageList { ImageSize = size };
+            ImageList result = new ImageList
+            {
+                ColorDepth = ColorDepth.Depth32Bit,
+                ImageSize = size
+            };
+
             for (int i = 0; i < original.Images.Count; i++)
             {
                 Bitmap bitmap = new Bitmap(size.Width, size.Height);
@@ -26,6 +26,7 @@ namespace Vocup.Controls
                 }
                 result.Images.Add(bitmap);
             }
+
             return result;
         }
     }
