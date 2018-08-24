@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using Vocup.Util;
 
@@ -14,6 +15,7 @@ namespace Vocup.Controls
         public FileTreeView()
         {
             InitializeComponent();
+            MainTreeView.PathSeparator = Path.PathSeparator.ToString();
         }
 
         [DefaultValue(typeof(Size), "16,16")]
@@ -25,6 +27,13 @@ namespace Vocup.Controls
                 _imageScalingBaseSize = value;
                 ScaleImageList();
             }
+        }
+
+        public void LoadPath()
+        {
+            MainTreeView.BeginUpdate();
+            MainTreeView.Nodes.Clear();
+            
         }
 
         protected override void ScaleControl(SizeF factor, BoundsSpecified specified)

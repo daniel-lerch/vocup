@@ -46,14 +46,13 @@
             // 
             this.MainTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTreeView.Location = new System.Drawing.Point(0, 0);
-            this.MainTreeView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MainTreeView.Name = "MainTreeView";
             this.MainTreeView.Size = new System.Drawing.Size(150, 150);
             this.MainTreeView.TabIndex = 1;
             // 
             // FileTreeView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.MainTreeView);
             this.Name = "FileTreeView";

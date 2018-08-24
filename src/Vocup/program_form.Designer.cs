@@ -87,7 +87,7 @@
             this.sidebar = new System.Windows.Forms.Panel();
             this.GroupStatistics = new Vocup.Controls.StatisticsPanel();
             this.splitContainer = new Vocup.Controls.ResponsiveSplitContainer();
-            this.treeView = new System.Windows.Forms.TreeView();
+            this.treeView = new Controls.FileTreeView();
             this.printDocument_cards = new System.Drawing.Printing.PrintDocument();
             this.printDocument_list = new System.Drawing.Printing.PrintDocument();
             this.toolStrip = new Vocup.Controls.ResponsiveToolStrip();
@@ -554,12 +554,7 @@
             // treeView
             // 
             resources.ApplyResources(this.treeView, "treeView");
-            this.treeView.ImageList = this.treeview_imagelist;
             this.treeView.Name = "treeView";
-            this.treeView.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterCollapse);
-            this.treeView.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeView_BeforeExpand);
-            this.treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterSelect);
-            this.treeView.Enter += new System.EventHandler(this.treeView_Enter);
             // 
             // printDocument_cards
             // 
@@ -754,7 +749,7 @@
         private Controls.StatisticsPanel GroupStatistics;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ListView listView_vokabeln;
-        private System.Windows.Forms.TreeView treeView;
+        private Controls.FileTreeView treeView;
     }
 }
 
