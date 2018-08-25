@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(program_form));
             this.menuStrip = new Vocup.Controls.ResponsiveMenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,13 +80,12 @@
             this.BtnAddWord = new Vocup.Controls.ResponsiveButton();
             this.BtnDeleteWord = new Vocup.Controls.ResponsiveButton();
             this.BtnEditWord = new Vocup.Controls.ResponsiveButton();
-            this.treeview_imagelist = new System.Windows.Forms.ImageList(this.components);
             this.listView_vokabeln = new System.Windows.Forms.ListView();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.sidebar = new System.Windows.Forms.Panel();
             this.GroupStatistics = new Vocup.Controls.StatisticsPanel();
             this.splitContainer = new Vocup.Controls.ResponsiveSplitContainer();
-            this.treeView = new Controls.FileTreeView();
+            this.treeView = new Vocup.Controls.FileTreeView();
             this.printDocument_cards = new System.Drawing.Printing.PrintDocument();
             this.printDocument_list = new System.Drawing.Printing.PrintDocument();
             this.toolStrip = new Vocup.Controls.ResponsiveToolStrip();
@@ -491,14 +489,6 @@
             this.BtnEditWord.UseVisualStyleBackColor = true;
             this.BtnEditWord.Click += new System.EventHandler(this.edit_vokabel_Click);
             // 
-            // treeview_imagelist
-            // 
-            this.treeview_imagelist.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("treeview_imagelist.ImageStream")));
-            this.treeview_imagelist.TransparentColor = System.Drawing.Color.Transparent;
-            this.treeview_imagelist.Images.SetKeyName(0, "folder.png");
-            this.treeview_imagelist.Images.SetKeyName(1, "folder.png");
-            this.treeview_imagelist.Images.SetKeyName(2, "blank_file.png");
-            // 
             // listView_vokabeln
             // 
             this.listView_vokabeln.BackColor = System.Drawing.SystemColors.Control;
@@ -554,6 +544,7 @@
             // treeView
             // 
             resources.ApplyResources(this.treeView, "treeView");
+            this.treeView.FileFilter = "*.vhf";
             this.treeView.Name = "treeView";
             // 
             // printDocument_cards
@@ -718,7 +709,6 @@
         private System.Windows.Forms.GroupBox GroupWord;
         private System.Windows.Forms.ToolStripButton TsbtnEvaluationInfo;
         private System.Windows.Forms.ToolStripLabel toolStripLabel;
-        private System.Windows.Forms.ImageList treeview_imagelist;
         private Vocup.Controls.ResponsiveButton BtnBookSettings;
         private System.Windows.Forms.ToolStripMenuItem vokabelheftOptionenToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip;

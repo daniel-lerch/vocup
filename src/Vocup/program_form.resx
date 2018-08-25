@@ -766,6 +766,15 @@
   <data name="BtnEditWord.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="BtnEditWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC2SURBVDhPYxh64FFJyYTXBQXL/tfXs0CFiAdb9u/qPLLz
+        2P//rS3/X+TlTYMKEwf+TWPo/rVC6/+OYwf+796w+/uL3Fx/qBRh8G8GQ/f/pQz//89j+P9loer3Raev
+        uUKlCAO45gUM///NZfj+r5/BHSpFGGBonjwCNE+hRPMpBr//qxn//59PhmYQ2DlLfuP/q1z//y1mfEey
+        5vp6exavQI/eKxtlcv6dYFCECpMEGKE0iYCBAQB4tY6pzX38SQAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="BtnEditWord.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
@@ -822,82 +831,6 @@
   </data>
   <data name="&gt;&gt;GroupWord.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <metadata name="treeview_imagelist.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>653, 17</value>
-  </metadata>
-  <data name="treeview_imagelist.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABC
-        DwAAAk1TRnQBSQFMAgEBAwEAATgBAQE4AQEBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
-        AwABEAMAAQEBAAEgBgABEJ4AAxcBIAMcAScDHAEnAxwBJwMcAScDHAEnAxwBJwMcAScDHAEnAxwBJwMc
-        AScDGAEi0AADXgHdAdIBvAGuAf8BgQJ/Af4BzwG4AagB/wN/Af4BywGzAaIB/wN/Af4ByAGuAZsB/wN/
-        Af4BxAGoAZQB/wN/Af4BXgJbAdlIAANAAXABUgJUAaYBVQJcAeoBUQJtAfcBUQJtAfcBUQJtAfcBUQJt
-        AfcBUQJtAfcBUQJtAfcBUQJtAfcBUQJtAfcBUQJtAfcBUwJkAfEDTAGTCAADQAFwAVICVAGmAVUCXAHq
-        AVECbQH3AVECbQH3AVECbQH3AVECbQH3AVECbQH3AVECbQH3AVECbQH3AVECbQH3AVECbQH3AVMCZAHx
-        A0wBkxAAA14B3QH6AeYB2wH/AfoB5QHZAf8B+gHkAdYB/wH6AeIB0wH/AfoB4QHRAf8B+QHfAc8B/wH5
-        Ad4BzQH/AfkB3AHKAf8B+QHbAcgB/wH4AdoBxgH/A14B2UgAAVgCYQHmA10B8AGnAagBqQH9AZ4B2wH0
-        Af8BlgHaAfMB/wGOAdgB8wH/AYYB1wHzAf8BgQHUAfIB/wFVAdMB8gH/AU4B0gHxAf8BSAHQAfEB/wFF
-        Ac8B8QH/AX8BmwGpAf4BTgJdAfAIAAFYAmEB5gNdAfABpwGoAakB/QGeAdsB9AH/AZYB2gHzAf8BjgHY
-        AfMB/wGGAdcB8wH/AYEB1AHyAf8BVQHTAfIB/wFOAdIB8QH/AUgB0AHxAf8BRQHPAfEB/wF/AZsBqQH+
-        AU4CXQHwEAADXgHdAfsB6AHdAf8BqwGYAYwB/gH6AeUB2QH/AasBlQGIAf4B+gHjAdQB/wGqAZIBgwH+
-        AfkB4AHQAf8BqgGPAX8B/gH5Ad0BywH/AakBjAF/Af4DXgHZSAABUQJtAfcB7wH6Af4B/wGhAekB+QH/
-        AZEB5QH4Af8BgQHhAfcB/wFOAd4B9gH/AT8B2gH1Af8BMAHXAfQB/wEjAdMB8wH/ARUB0AHyAf8BCgHN
-        AfEB/wECAcsB8AH/AcoB8gH7Af8BUQJtAfcIAAFRAm0B9wHvAfoB/gH/AaEB6QH5Af8BkQHlAfgB/wGB
-        AeEB9wH/AU4B3gH2Af8BPwHaAfUB/wEwAdcB9AH/ASMB0wHzAf8BFQHQAfIB/wEKAc0B8QH/AQIBywHw
-        Af8BygHyAfsB/wFRAm0B9xAAA14B3QH7AeoB4AH/AfsB6AHeAf8B+wHnAdwB/wH6AeYB2gH/AfoB5AHY
-        Af8B+gHjAdUB/wH6AeIB0wH/AfkB4AHQAf8B+QHfAc4B/wH5Ad0BzAH/A14B2UgAAT4BXAFvAfgB8gH6
-        Af0B/wGzAe0B+gH/AaQB6QH5Af8BlQHmAfgB/wGFAeIB9wH/AVIB3gH2Af8BQQHbAfUB/wEzAdcB9AH/
-        ASUB1AHzAf8BFwHRAfIB/wEMAc4B8QH/AcwB8gH7Af8BUQJtAfcIAAE+AVwBbwH4AfIB+gH9Af8BswHt
-        AfoB/wGkAekB+QH/AZUB5gH4Af8BhQHiAfcB/wFSAd4B9gH/AUEB2wH1Af8BMwHXAfQB/wElAdQB8wH/
-        ARcB0QHyAf8BDAHOAfEB/wHMAfIB+wH/AVECbQH3EAADXgHdAfsB6wHjAf8BqwGbAZIB/gH7AekB3wH/
-        AasBmAGNAf4B+gHmAdsB/wGrAZYBiQH+AfoB4wHWAf8BqgGTAYQB/gH5AeEB0QH/AaoBkAGAAf4DXgHZ
-        SAABQQFqAW4B+QH2AfwB/gH/AcgB8gH8Af8BuQHvAfsB/wGsAewB+gH/AZwB6AH5Af8BiwHjAfcB/wFY
-        AeAB9gH/AUgB3AH2Af8BOQHZAfUB/wErAdYB9AH/ASAB0wHzAf8B0AHzAfwB/wFRAm0B9wgAAUEBagFu
-        AfkB9gH8Af4B/wHIAfIB/AH/AbkB7wH7Af8BrAHsAfoB/wGcAegB+QH/AYsB4wH3Af8BWAHgAfYB/wFI
-        AdwB9gH/ATkB2QH1Af8BKwHWAfQB/wEgAdMB8wH/AdAB8wH8Af8BUQJtAfcQAANeAd0B+wHtAeUB/wH7
-        AewB4wH/AfsB6wHhAf8B+wHpAd8B/wH7AegB3QH/AfoB5wHbAf8B+gHlAdkB/wH6AeQB1gH/AfoB4gHU
-        Af8B+gHhAdIB/wNeAdlIAAFNAWYBcwH6Af4D/wH4Af0C/wH2Af0C/wH1AfwC/wHzAfwB/gH/AdgB9gH8
-        Af8BlAHmAfgB/wGFAeMB9wH/AVIB3wH2Af8BRAHbAfUB/wE4AdgB9AH/AdcB9AH8Af8BUQJtAfcIAAFN
-        AWYBcwH6Af4D/wH4Af0C/wH2Af0C/wH1AfwC/wHzAfwB/gH/AdgB9gH8Af8BlAHmAfgB/wGFAeMB9wH/
-        AVIB3wH2Af8BRAHbAfUB/wE4AdgB9AH/AdcB9AH8Af8BUQJtAfcQAANeAd0B+wHvAegB/wGsAZ4BlwH+
-        AfsB7AHkAf8BqwGcAZMB/gH7AeoB4AH/AasBmQGPAf4B+wHnAdwB/wGrAZcBiwH+AfoB5AHXAf8BqgGU
-        AYUB/gNeAdlIAAFNAWgBcwH6AegB9gH7Af8BlAHUAe8B/wGIAc4B7gH/AU8BwQHpAf8ByQHpAfYB/wHy
-        AfwB/gH/AfMB/AH+Af8B8gH8Af4B/wHwAfwB/gH/Ae8B+wH+Af8B7gH7Af4B/wH+A/8BUQJtAfcIAAFN
-        AWgBcwH6AegB9gH7Af8BlAHUAe8B/wGIAc4B7gH/AU8BwQHpAf8ByQHpAfYB/wHyAfwB/gH/AfMB/AH+
-        Af8B8gH8Af4B/wHwAfwB/gH/Ae8B+wH+Af8B7gH7Af4B/wH+A/8BUQJtAfcQAANeAd0B/AHwAeoB/wH8
-        Ae8B6QH/AfsB7gHnAf8B+wHsAeUB/wH7AesB4wH/AfsB6gHhAf8B+wHpAd4B/wH7AecB3AH/AfoB5gHa
-        Af8B+gHlAdgB/wNeAdlIAAFZAmcB8gHxAfoB/QH/AZQB3gH1Af8BkwHcAfQB/wGBAdUB8gH/AUYBygHt
-        Af8BSAHLAeoB/wGFAdMB7wH/AYEB0gHvAf8BVgHQAe8B/wFSAc8B7gH/AU4BzwHuAf8B6QH3AfsB/wFM
-        Al8B8wgAAVkCZwHyAfEB+gH9Af8BlAHeAfUB/wGTAdwB9AH/AYEB1QHyAf8BRgHKAe0B/wFIAcsB6gH/
-        AYUB0wHvAf8BgQHSAe8B/wFWAdAB7wH/AVIBzwHuAf8BTgHPAe4B/wHpAfcB+wH/AUwCXwHzEAADXgHd
-        AfwB8wHtAf8BrAGiAZwB/gH8Ae8B6QH/AawBnwGYAf4B+wHtAeUB/wGrAZ0BlAH+AfsB6gHhAf8BqwGa
-        AZAB/gH7AegB3QH/AasBlwGMAf4DXgHZSAABTgJdAfAB9wH8Af4B/wGOAeQB+AH/AZEB3gH1Af8BnwHg
-        AfUB/wGsAeEB9gH/Ae8B+wH+Af8B9AH9Af4B/wHzAfwB/gH/AfEB/AH+Af8B7wH7Af4B/wHuAfsB/gH/
-        AXoCfQH5AVwCYAHUCAABTgJdAfAB9wH8Af4B/wGOAeQB+AH/AZEB3gH1Af8BnwHgAfUB/wGsAeEB9gH/
-        Ae8B+wH+Af8B9AH9Af4B/wHzAfwB/gH/AfEB/AH+Af8B7wH7Af4B/wHuAfsB/gH/AXoCfQH5AVwCYAHU
-        EAADXgHdAfwB9QHvAf8B/AHzAe0B/wH8AfIB6wH/AfwB8AHqAf8B+wHuAegB/wH7Ae0B5gH/AfsB7AHk
-        Af8B+wHrAeIB/wH7AekB4AH/AfsB6AHdAf8DXgHZSAABPgFjAW8B+AH9Av4B/wH+A/8C/gL/Af0B/gL/
-        Af4D/wHqAfcB+wH/AmoBdAH5AVwBawFwAfgBXAFrAXAB+AFcAWsBcAH4A20B9wNhAeEDNQFWCAABPgFj
-        AW8B+AH9Av4B/wH+A/8C/gL/Af0B/gL/Af4D/wHqAfcB+wH/AmoBdAH5AVwBawFwAfgBXAFrAXAB+AFc
-        AWsBcAH4A20B9wNhAeEDNQFWEAADXgHdAf0B9gHyAf8BrQGmAaEB/gH8AfQB7gH/Aa0BowGdAf4B/AHw
-        AeoB/wGsAaABmQH+AfsB7QHmAf8BrAGdAZUB/gH7AesB4gH/AasBmwGRAf4DXgHZSAABWwJeAdABTQFt
-        AXQB+gFNAW4BdAH6AU0BbgF0AfoBTQFuAXQB+gFNAW4BdAH6AVgCXgHdAxABFgMLAQ8DCwEPAwsBDwML
-        AQ8DCwEPAwMBBAgAAVsCXgHQAU0BbQF0AfoBTQFuAXQB+gFNAW4BdAH6AU0BbgF0AfoBTQFuAXQB+gFY
-        Al4B3QMQARYDCwEPAwsBDwMLAQ8DCwEPAwsBDwMDAQQQAANeAd0B/QH4AfUB/wH9AfYB8wH/Af0B9QHx
-        Af8B/AH0Ae4B/wH8AfMB7AH/AfwB8QHrAf8B/AHvAekB/wH7Ae0B5wH/AfkB6gHjAf8B+AHoAeAB/wNe
-        AdnQAANeAd0B/QH6AfcB/wGuAakBpgH+Af0B9wH0Af8BrQGmAaIB/gH8AfQB7wH/Aa0BpAGeAf4B/AHx
-        AesB/wGiAZQBjAH+AdsBwwG0Af8BgAJ/Af4DSgGM0AADXgHdAf4B+wH6Af8B/QH6AfgB/wH9AfkB9gH/
-        Af0B9wH0Af8B/QH2AfIB/wH8AfUB8AH/AfwB9AHtAf8B8QHlAd0B/wHwAdkBywH/A04BlgMAAQHQAANe
-        Ad0B6gHiAdwB/wGbAZIBjAH+AeoB4AHaAf8BmgGQAYkB/gHpAd4B1wH/AZoBjwGHAf4B6QHdAdQB/wGT
-        AYUBfwH+A04BmAMAAQFIAAFCAU0BPgcAAT4DAAEoAwABQAMAARADAAEBAQABAQUAAYAXAAP/AQAE/wHg
-        AQECAAT/AeABAQIAAYABAQGAAQEB4AEBAgABgAEBAYABAQHgAQECAAGAAQEBgAEBAeABAQIAAYABAQGA
-        AQEB4AEBAgABgAEBAYABAQHgAQECAAGAAQEBgAEBAeABAQIAAYABAQGAAQEB4AEBAgABgAEBAYABAQHg
-        AQECAAGAAQEBgAEBAeABAQIAAYABAQGAAQEB4AEBAgABgAEBAYABAQHgAQECAAT/AeABAQIABP8B4AEB
-        AgAE/wHgAQMCAAs=
-</value>
   </data>
   <data name="listView_vokabeln.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1004,14 +937,8 @@
   <data name="treeView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="treeView.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="treeView.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
-  </data>
-  <data name="treeView.SelectedImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="treeView.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 482</value>
@@ -1023,7 +950,7 @@
     <value>treeView</value>
   </data>
   <data name="&gt;&gt;treeView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Vocup.Controls.FileTreeView, Vocup, Version=1.4.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;treeView.Parent" xml:space="preserve">
     <value>splitContainer.Panel1</value>
@@ -7640,12 +7567,6 @@
   </data>
   <data name="&gt;&gt;ÜberVTrainingToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;treeview_imagelist.Name" xml:space="preserve">
-    <value>treeview_imagelist</value>
-  </data>
-  <data name="&gt;&gt;treeview_imagelist.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;printDocument_cards.Name" xml:space="preserve">
     <value>printDocument_cards</value>
