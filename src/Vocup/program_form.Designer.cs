@@ -85,7 +85,7 @@
             this.sidebar = new System.Windows.Forms.Panel();
             this.GroupStatistics = new Vocup.Controls.StatisticsPanel();
             this.splitContainer = new Vocup.Controls.ResponsiveSplitContainer();
-            this.treeView = new Vocup.Controls.FileTreeView();
+            this.FileTreeView = new Vocup.Controls.FileTreeView();
             this.printDocument_cards = new System.Drawing.Printing.PrintDocument();
             this.printDocument_list = new System.Drawing.Printing.PrintDocument();
             this.toolStrip = new Vocup.Controls.ResponsiveToolStrip();
@@ -534,18 +534,19 @@
             // 
             // splitContainer.Panel1
             // 
-            this.splitContainer.Panel1.Controls.Add(this.treeView);
+            this.splitContainer.Panel1.Controls.Add(this.FileTreeView);
             // 
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.Controls.Add(this.listView_vokabeln);
             this.splitContainer.SplitterBaseDistance = 150;
             // 
-            // treeView
+            // FileTreeView
             // 
-            resources.ApplyResources(this.treeView, "treeView");
-            this.treeView.FileFilter = "*.vhf";
-            this.treeView.Name = "treeView";
+            resources.ApplyResources(this.FileTreeView, "FileTreeView");
+            this.FileTreeView.FileFilter = "*.vhf";
+            this.FileTreeView.Name = "FileTreeView";
+            this.FileTreeView.FileSelected += new System.EventHandler<Vocup.Controls.FileSelectedEventArgs>(this.FileTreeView_FileSelected);
             // 
             // printDocument_cards
             // 
@@ -739,7 +740,7 @@
         private Controls.StatisticsPanel GroupStatistics;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ListView listView_vokabeln;
-        private Controls.FileTreeView treeView;
+        private Controls.FileTreeView FileTreeView;
     }
 }
 

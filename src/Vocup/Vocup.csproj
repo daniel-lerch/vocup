@@ -101,6 +101,7 @@
     <Compile Include="Controls\FileTreeView.Designer.cs">
       <DependentUpon>FileTreeView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\FileSelectedEventArgs.cs" />
     <Compile Include="Controls\ImageListExtensions.cs" />
     <Compile Include="Controls\ResponsiveButton.cs">
       <SubType>Component</SubType>
@@ -372,6 +373,7 @@
     <Compile Include="Util\AppInfo.cs" />
     <Compile Include="Util\Crypto.cs" />
     <Compile Include="Util\ListCompositor.cs" />
+    <Compile Include="Util\PatternMatcher.cs" />
     <Compile Include="Util\ReactiveCollection.cs" />
     <Compile Include="Util\RewriteHelper.cs" />
     <Compile Include="Util\SaintLague.cs" />

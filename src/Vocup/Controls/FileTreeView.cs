@@ -2,16 +2,16 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
-using Vocup.Properties;
 using Vocup.Util;
 
 namespace Vocup.Controls
 {
+    [DefaultEvent("FileSelected")]
     public partial class FileTreeView : UserControl
     {
         private Size _imageScalingBaseSize = new Size(16, 16);
-        private string _fileFilter = "*.*";
         private string _rootPath = "";
         private SizeF scalingFactor = new SizeF(1F, 1F);
 
@@ -33,15 +33,7 @@ namespace Vocup.Controls
         }
 
         [DefaultValue("*.*")]
-        public string FileFilter
-        {
-            get => _fileFilter;
-            set
-            {
-                _fileFilter = value;
-                MainWatcher.Filter = value;
-            }
-        }
+        public string FileFilter { get; set; } = "*.*";
 
         [DefaultValue("")]
         public string RootPath
@@ -63,6 +55,14 @@ namespace Vocup.Controls
             }
         }
 
+        [Browsable(true), EditorBrowsable(EditorBrowsableState.Always)]
+        public event EventHandler<FileSelectedEventArgs> FileSelected;
+
+        protected virtual void OnFileSelected(FileSelectedEventArgs e)
+        {
+            FileSelected?.Invoke(this, e);
+        }
+
         protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
         {
             scalingFactor = scalingFactor.Multiply(factor);
@@ -77,20 +77,12 @@ namespace Vocup.Controls
             old?.Dispose();
         }
 
-        /// <summary>
-        /// Refreshes a associated node and loads eventually new files.
-        /// </summary>
-        public void RefreshPath(string path)
-        {
-
-        }
-
         private void LoadNodes(TreeNode root)
         {
             root.Nodes.Clear();
             DirectoryInfo rootInfo = (DirectoryInfo)root.Tag;
             DirectoryInfo[] directories = rootInfo.GetDirectories();
-            FileInfo[] files = rootInfo.GetFiles(_fileFilter);
+            FileInfo[] files = rootInfo.GetFiles(FileFilter);
             foreach (DirectoryInfo directory in directories)
             {
                 root.Nodes.Add(new TreeNode()
@@ -113,10 +105,44 @@ namespace Vocup.Controls
             }
         }
 
+        private TreeNode LoadNode(TreeNode parent, string path)
+        {
+            TreeNode result = null;
+
+            if (File.GetAttributes(path).HasFlag(FileAttributes.Directory))
+            {
+                DirectoryInfo info = new DirectoryInfo(path);
+                parent.Nodes.Add(result = new TreeNode()
+                {
+                    Tag = info,
+                    Text = info.Name,
+                    ImageIndex = 1,
+                    SelectedImageIndex = 1
+                });
+                LoadNodes(result);
+            }
+            else if (PatternMatcher.StrictMatchPattern(FileFilter, path))
+            {
+                FileInfo info = new FileInfo(path);
+                parent.Nodes.Add(result = new TreeNode()
+                {
+                    Tag = info,
+                    Text = Path.GetFileNameWithoutExtension(info.FullName),
+                    ImageIndex = 2,
+                    SelectedImageIndex = 2
+                });
+            }
+
+            return result;
+        }
+
         private TreeNode GetNode(string path)
         {
-            // TODO: Get relative path
-            string[] names = path.Split(Path.DirectorySeparatorChar);
+            if (!path.ToLower().Contains(_rootPath.ToLower()))
+                return null;
+            string relativePath = path.Substring(_rootPath.Length);
+
+            string[] names = relativePath.Split(new[] { Path.DirectorySeparatorChar }, StringSplitOptions.RemoveEmptyEntries);
 
             if (MainTreeView.Nodes.Count == 0)
                 return null;
@@ -125,12 +151,21 @@ namespace Vocup.Controls
 
             foreach (string name in names)
             {
-                currentNode = currentNode.Nodes[name];
+                currentNode = currentNode.Nodes.Cast<TreeNode>().Where(x => GetName(x) == name).FirstOrDefault();
                 if (currentNode == null)
                     return currentNode;
             }
 
             return currentNode;
+        }
+
+        private string GetName(TreeNode node)
+        {
+            if (node.Tag is DirectoryInfo directory)
+                return directory.Name;
+            if (node.Tag is FileInfo file)
+                return file.Name;
+            return null;
         }
 
         private void MainTreeView_BeforeExpand(object sender, TreeViewCancelEventArgs e)
@@ -152,24 +187,30 @@ namespace Vocup.Controls
 
         private void MainTreeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
-
+            if (e.Node.Tag is FileInfo)
+            {
+                OnFileSelected(new FileSelectedEventArgs(((FileInfo)e.Node.Tag).FullName));
+            }
         }
 
         private void MainWatcher_Created(object sender, FileSystemEventArgs e)
         {
-            
+            TreeNode root = GetNode(Path.GetDirectoryName(e.FullPath));
+            LoadNode(root, e.FullPath);
         }
 
         private void MainWatcher_Deleted(object sender, FileSystemEventArgs e)
         {
-
+            TreeNode node = GetNode(e.FullPath);
+            node.Remove();
         }
 
         private void MainWatcher_Renamed(object sender, RenamedEventArgs e)
         {
-
+            TreeNode old = GetNode(e.OldFullPath);
+            old?.Remove(); // null check because user can change file ending to match FileFilter
+            TreeNode root = GetNode(Path.GetDirectoryName(e.FullPath));
+            LoadNode(root, e.FullPath);
         }
-
-        // FileSystemWatcher watcher is being disposed in FileTreeView.Designer.cs
     }
 }
