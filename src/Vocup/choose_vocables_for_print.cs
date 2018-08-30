@@ -12,7 +12,7 @@ namespace Vocup
         public choose_vocables_for_print()
         {
             InitializeComponent();
-            Icon = Icon.FromHandle(Icons.print.GetHicon());
+            Icon = Icon.FromHandle(Icons.Print.GetHicon());
         }
 
         //Array, das die Status-Informationen der Vokabeln enthält

@@ -14,7 +14,7 @@ namespace Vocup
         public SettingsDialog()
         {
             InitializeComponent();
-            Icon = Icon.FromHandle(Icons.settings.GetHicon());
+            Icon = Icon.FromHandle(Icons.Settings.GetHicon());
             settings = Settings.Default;
         }
 

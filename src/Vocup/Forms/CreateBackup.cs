@@ -15,7 +15,7 @@ namespace Vocup.Forms
         public CreateBackup()
         {
             InitializeComponent();
-            Icon = Icon.FromHandle(Icons.backup_add.GetHicon());
+            Icon = Icon.FromHandle(Icons.DatabaseAdd.GetHicon());
         }
 
         public string pfad;

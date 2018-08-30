@@ -41,8 +41,8 @@
             this.IconImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("IconImageList.ImageStream")));
             this.IconImageList.TransparentColor = System.Drawing.Color.Transparent;
             this.IconImageList.Images.SetKeyName(0, "folder.png");
-            this.IconImageList.Images.SetKeyName(1, "folder.png");
-            this.IconImageList.Images.SetKeyName(2, "icons8-datei-96.png");
+            this.IconImageList.Images.SetKeyName(1, "open.png");
+            this.IconImageList.Images.SetKeyName(2, "file.png");
             // 
             // MainTreeView
             // 
@@ -57,6 +57,7 @@
             // 
             // MainWatcher
             // 
+            this.MainWatcher.EnableRaisingEvents = true;
             this.MainWatcher.IncludeSubdirectories = true;
             this.MainWatcher.NotifyFilter = ((System.IO.NotifyFilters)((System.IO.NotifyFilters.FileName | System.IO.NotifyFilters.DirectoryName)));
             this.MainWatcher.SynchronizingObject = this;

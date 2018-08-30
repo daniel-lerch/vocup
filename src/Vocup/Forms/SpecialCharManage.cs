@@ -19,7 +19,7 @@ namespace Vocup.Forms
         public SpecialCharManage()
         {
             InitializeComponent();
-            Icon = Icon.FromHandle(Icons.character.GetHicon());
+            Icon = Icon.FromHandle(Icons.ABC.GetHicon());
         }
 
         //Laden

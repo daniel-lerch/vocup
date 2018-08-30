@@ -15,7 +15,7 @@ namespace Vocup
         public backup_restore()
         {
             InitializeComponent();
-            Icon = Icon.FromHandle(Icons.backup_go.GetHicon());
+            Icon = Icon.FromHandle(Icons.DatabaseRestore.GetHicon());
         }
 
         public string path_backup;

@@ -22,7 +22,7 @@ namespace Vocup.Forms
         public PracticeResultList(VocabularyBook book, List<VocabularyWordPractice> practiceList)
         {
             InitializeComponent();
-            Icon = Icon.FromHandle(Icons.statistics.GetHicon());
+            Icon = Icon.FromHandle(Icons.BarChart.GetHicon());
 
             this.book = book;
             this.practiceList = practiceList;

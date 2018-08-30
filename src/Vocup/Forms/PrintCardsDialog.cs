@@ -14,7 +14,7 @@ namespace Vocup.Forms
         public PrintCardsDialog()
         {
             InitializeComponent();
-            Icon = Icon.FromHandle(Icons.print.GetHicon());
+            Icon = Icon.FromHandle(Icons.Print.GetHicon());
         }
     }
 }

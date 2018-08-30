@@ -31,7 +31,7 @@ namespace Vocup.Forms
             this.book = book;
 
             Text = Words.CreateVocabularyBook;
-            Icon = Icon.FromHandle(Icons.blank_file.GetHicon());
+            Icon = Icon.FromHandle(Icons.File.GetHicon());
             GroupOptions.Enabled = false;
         }
 
@@ -40,7 +40,7 @@ namespace Vocup.Forms
             this.book = book;
 
             Text = Words.EditVocabularyBook;
-            Icon = Icon.FromHandle(Icons.settings_file.GetHicon());
+            Icon = Icon.FromHandle(Icons.FileSettings.GetHicon());
             TbMotherTongue.Text = book.MotherTongue;
             TbForeignLang.Text = book.ForeignLang;
             RbModeAskForeignLang.Checked = book.PracticeMode == PracticeMode.AskForForeignLang;

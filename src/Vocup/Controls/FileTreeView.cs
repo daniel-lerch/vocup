@@ -11,6 +11,13 @@ namespace Vocup.Controls
     [DefaultEvent("FileSelected")]
     public partial class FileTreeView : UserControl
     {
+        private const int ImgRoot = 0;
+        private const int ImgRootSelected = 0;
+        private const int ImgDir = 0;
+        private const int ImgDirSelected = 0;
+        private const int ImgFile = 2;
+        private const int ImgFileSelected = 2;
+
         private Size _imageScalingBaseSize = new Size(16, 16);
         private string _rootPath = "";
         private SizeF scalingFactor = new SizeF(1F, 1F);
@@ -45,8 +52,14 @@ namespace Vocup.Controls
                 MainTreeView.BeginUpdate();
                 MainTreeView.Nodes.Clear();
                 DirectoryInfo info = new DirectoryInfo(value);
-                TreeNode node = MainTreeView.Nodes.Add(info.Name);
-                node.Tag = info;
+                TreeNode node = new TreeNode
+                {
+                    Text = info.Name,
+                    Tag = info,
+                    ImageIndex = ImgRoot,
+                    SelectedImageIndex = ImgRootSelected
+                };
+                MainTreeView.Nodes.Add(node);
                 LoadNodes(node);
                 MainTreeView.EndUpdate();
                 _rootPath = value;
@@ -89,8 +102,8 @@ namespace Vocup.Controls
                 {
                     Tag = directory,
                     Text = directory.Name,
-                    ImageIndex = 1,
-                    SelectedImageIndex = 1
+                    ImageIndex = ImgDir,
+                    SelectedImageIndex = ImgDirSelected
                 });
             }
             foreach (FileInfo file in files)
@@ -99,8 +112,8 @@ namespace Vocup.Controls
                 {
                     Tag = file,
                     Text = Path.GetFileNameWithoutExtension(file.FullName),
-                    ImageIndex = 2,
-                    SelectedImageIndex = 2,
+                    ImageIndex = ImgFile,
+                    SelectedImageIndex = ImgFileSelected
                 });
             }
         }

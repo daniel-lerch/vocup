@@ -177,7 +177,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Vocup.Properties.Icons.richtig_geübt;
+            this.pictureBox2.Image = global::Vocup.Properties.Icons.CorrectlyPracticed;
             this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pictureBox2.InitialImage = null;
             this.pictureBox2.Location = new System.Drawing.Point(5, 62);
@@ -189,7 +189,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Vocup.Properties.Icons.übung_abgeschlossen;
+            this.pictureBox3.Image = global::Vocup.Properties.Icons.FullyPracticed;
             this.pictureBox3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pictureBox3.InitialImage = null;
             this.pictureBox3.Location = new System.Drawing.Point(5, 84);
@@ -201,7 +201,7 @@
             // 
             // pictureBox0
             // 
-            this.pictureBox0.Image = global::Vocup.Properties.Icons.noch_nicht_geübt;
+            this.pictureBox0.Image = global::Vocup.Properties.Icons.Unpracticed;
             this.pictureBox0.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pictureBox0.InitialImage = null;
             this.pictureBox0.Location = new System.Drawing.Point(5, 18);
@@ -213,7 +213,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Vocup.Properties.Icons.falsch_geübt;
+            this.pictureBox1.Image = global::Vocup.Properties.Icons.WronglyPracticed;
             this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(5, 40);

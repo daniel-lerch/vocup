@@ -50,7 +50,7 @@
             // PbLogo
             // 
             this.PbLogo.BackColor = System.Drawing.Color.Transparent;
-            this.PbLogo.Image = global::Vocup.Properties.Icons.logo_splash;
+            this.PbLogo.Image = global::Vocup.Properties.Icons.Icon;
             this.PbLogo.Location = new System.Drawing.Point(57, 63);
             this.PbLogo.Name = "PbLogo";
             this.PbLogo.Size = new System.Drawing.Size(75, 75);
@@ -61,7 +61,7 @@
             // PbTitle
             // 
             this.PbTitle.BackColor = System.Drawing.Color.Transparent;
-            this.PbTitle.Image = global::Vocup.Properties.Icons.logo;
+            this.PbTitle.Image = global::Vocup.Properties.Icons.Logo;
             this.PbTitle.Location = new System.Drawing.Point(146, 60);
             this.PbTitle.Name = "PbTitle";
             this.PbTitle.Size = new System.Drawing.Size(248, 80);

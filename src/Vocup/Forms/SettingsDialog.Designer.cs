@@ -502,7 +502,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Vocup.Properties.Icons.falsch_geübt;
+            this.pictureBox2.Image = global::Vocup.Properties.Icons.WronglyPracticed;
             resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -510,7 +510,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Vocup.Properties.Icons.noch_nicht_geübt;
+            this.pictureBox1.Image = global::Vocup.Properties.Icons.Unpracticed;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -518,7 +518,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Vocup.Properties.Icons.richtig_geübt;
+            this.pictureBox3.Image = global::Vocup.Properties.Icons.CorrectlyPracticed;
             resources.ApplyResources(this.pictureBox3, "pictureBox3");
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

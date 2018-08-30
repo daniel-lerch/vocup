@@ -396,21 +396,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\0.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add.png" />
     <None Include="Resources\info.png" />
-    <None Include="Resources\question_mark.png" />
     <None Include="Resources\open.png" />
     <None Include="Resources\folder.png" />
     <None Include="Resources\save.png" />
@@ -419,21 +405,13 @@
     <None Include="Resources\settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\blank_file.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\edit.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\import.png" />
     <None Include="Resources\export.png" />
-    <None Include="Resources\merge.png" />
-    <None Include="Resources\settings_file.png" />
     <None Include="Resources\update.png" />
     <None Include="Resources\search.png" />
-    <None Include="Resources\practise.png" />
-    <None Include="Resources\statistics.png" />
-    <None Include="Resources\email_go.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
@@ -450,45 +428,23 @@
   <ItemGroup>
     <Content Include="icon.ico" />
     <Content Include="Library\K_Updater.dll" />
-    <Content Include="Resources\delete32.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\file.png" />
+    <None Include="Resources\database.png" />
+    <None Include="Resources\database_add.png" />
+    <None Include="Resources\database_restore.png" />
+    <None Include="Resources\door_opened.png" />
+    <None Include="Resources\lightning_bolt.png" />
+    <None Include="Resources\abc.png" />
+    <None Include="Resources\merge_files.png" />
+    <None Include="Resources\bar_chart.png" />
+    <None Include="Resources\email_send.png" />
+    <None Include="Resources\file_settings.png" />
+    <Content Include="Resources\plus.png" />
     <Content Include="Resources\sound_correct.wav" />
     <Content Include="Resources\sound_wrong.wav" />
-    <None Include="Resources\icons8-administrative-tools-96.png" />
-    <None Include="Resources\icons8-delete-96.png" />
-    <None Include="Resources\icons8-delete-48.png" />
-    <None Include="Resources\icons8-flash-on-96.png" />
-    <None Include="Resources\icons8-import-96.png" />
-    <None Include="Resources\icons8-export-96.png" />
-    <None Include="Resources\icons8-send-96.png" />
-    <None Include="Resources\icons8-database-view-96.png" />
-    <None Include="Resources\icons8-add-database-96.png" />
-    <None Include="Resources\icons8-data-backup-96.png" />
-    <None Include="Resources\icons8-search-96.png" />
-    <None Include="Resources\icons8-print-96.png" />
-    <None Include="Resources\icons8-exit-96.png" />
-    <None Include="Resources\icons8-settings-96.png" />
-    <None Include="Resources\icons8-merge-96.png" />
-    <None Include="Resources\icons8-cancel-96.png" />
-    <None Include="Resources\icons8-edit-96.png" />
-    <None Include="Resources\icons8-heart-outline-96.png" />
-    <None Include="Resources\icons8-info-96.png" />
-    <None Include="Resources\icons8-help-96.png" />
-    <None Include="Resources\icons8-save-96.png" />
-    <None Include="Resources\icons8-pie-chart-96.png" />
-    <None Include="Resources\icons8-restart-96.png" />
-    <None Include="Resources\icons8-a-96.png" />
-    <None Include="Resources\icons8-ordner-öffnen-96.png" />
-    <None Include="Resources\icons8-datei-96.png" />
-    <None Include="Resources\icons8-plus-100.png" />
-    <None Include="Resources\logo_splash.png" />
-    <None Include="Resources\close.png" />
-    <None Include="Resources\quit.png" />
-    <None Include="Resources\backup_add.png" />
-    <None Include="Resources\backup_go.png" />
-    <None Include="Resources\backup.png" />
-    <None Include="Resources\lock_add.png" />
-    <None Include="Resources\lock_go.png" />
-    <None Include="Resources\char.png" />
+    <None Include="Resources\icon.png" />
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup />

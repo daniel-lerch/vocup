@@ -14,7 +14,7 @@ namespace Vocup.Forms
         public EvaluationInfoDialog()
         {
             InitializeComponent();
-            Icon = Icon.FromHandle(Icons.info.GetHicon());
+            Icon = Icon.FromHandle(Icons.Info.GetHicon());
         }
     }
 }

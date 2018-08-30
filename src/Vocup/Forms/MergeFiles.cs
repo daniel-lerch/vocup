@@ -19,7 +19,7 @@ namespace Vocup.Forms
         public MergeFiles()
         {
             InitializeComponent();
-            Icon = Icon.FromHandle(Icons.merge.GetHicon());
+            Icon = Icon.FromHandle(Icons.MergeFiles.GetHicon());
             specialCharDialog = new SpecialCharKeyboard();
             specialCharDialog.Initialize(this);
             specialCharDialog.VisibleChanged += (a0, a1) => ValidateInput();

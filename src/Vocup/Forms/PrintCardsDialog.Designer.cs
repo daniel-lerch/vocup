@@ -102,7 +102,7 @@
             // BtnPrintForeside
             // 
             this.BtnPrintForeside.DialogResult = System.Windows.Forms.DialogResult.Ignore;
-            this.BtnPrintForeside.Image = global::Vocup.Properties.Icons.print;
+            this.BtnPrintForeside.Image = global::Vocup.Properties.Icons.Print;
             resources.ApplyResources(this.BtnPrintForeside, "BtnPrintForeside");
             this.BtnPrintForeside.Name = "BtnPrintForeside";
             this.BtnPrintForeside.UseVisualStyleBackColor = true;
@@ -140,7 +140,7 @@
             // BtnPrintBackside
             // 
             this.BtnPrintBackside.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BtnPrintBackside.Image = global::Vocup.Properties.Icons.print;
+            this.BtnPrintBackside.Image = global::Vocup.Properties.Icons.Print;
             resources.ApplyResources(this.BtnPrintBackside, "BtnPrintBackside");
             this.BtnPrintBackside.Name = "BtnPrintBackside";
             this.BtnPrintBackside.UseVisualStyleBackColor = true;
