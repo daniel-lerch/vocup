@@ -187,6 +187,7 @@
             this.pictureBox1.Image = global::Vocup.Properties.Icons.falsch_geübt;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox4
@@ -194,6 +195,7 @@
             this.pictureBox4.Image = global::Vocup.Properties.Icons.übung_abgeschlossen;
             resources.ApplyResources(this.pictureBox4, "pictureBox4");
             this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox2
@@ -201,6 +203,7 @@
             this.pictureBox2.Image = global::Vocup.Properties.Icons.noch_nicht_geübt;
             resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox3
@@ -208,6 +211,7 @@
             this.pictureBox3.Image = global::Vocup.Properties.Icons.richtig_geübt;
             resources.ApplyResources(this.pictureBox3, "pictureBox3");
             this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabStop = false;
             // 
             // GroupGrades

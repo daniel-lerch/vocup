@@ -332,6 +332,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Messages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Sounds.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Sounds.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Words.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Words.Designer.cs</LastGenOutput>
@@ -346,12 +350,16 @@
     <Compile Include="Forms\PracticeResultList.Designer.cs">
       <DependentUpon>PracticeResultList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Sounds.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sounds.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Words.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Words.resx</DependentUpon>
     </Compile>
-    <Compile Include="AudioVideoPlay.cs" />
     <Compile Include="Forms\SpecialCharKeyboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -443,6 +451,8 @@
     <Content Include="icon.ico" />
     <Content Include="Library\K_Updater.dll" />
     <Content Include="Resources\delete32.png" />
+    <Content Include="Resources\sound_correct.wav" />
+    <Content Include="Resources\sound_wrong.wav" />
     <None Include="Resources\icons8-administrative-tools-96.png" />
     <None Include="Resources\icons8-delete-96.png" />
     <None Include="Resources\icons8-delete-48.png" />
