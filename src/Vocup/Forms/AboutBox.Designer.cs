@@ -164,7 +164,6 @@
             // 
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabStop = false;
             // 
             // komp
@@ -226,7 +225,6 @@
             this.tableLayoutPanel.PerformLayout();
             this.tabControl.ResumeLayout(false);
             this.info.ResumeLayout(false);
-            this.info.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.komp.ResumeLayout(false);
             this.ResumeLayout(false);
