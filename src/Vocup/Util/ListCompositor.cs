@@ -25,7 +25,6 @@ namespace Vocup.Util
 
         public List<T> ToList(int count)
         {
-            // TODO: Implement logic:
             // 1. Round and count items
             int[] result = SaintLague.Calculate(sources.Select(x => x.Representation).ToArray(), count);
             List<T> final = new List<T>();
