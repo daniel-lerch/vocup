@@ -436,12 +436,13 @@
     <None Include="Resources\database_restore.png" />
     <None Include="Resources\door_opened.png" />
     <None Include="Resources\lightning_bolt.png" />
-    <None Include="Resources\abc.png" />
     <None Include="Resources\merge_files.png" />
     <None Include="Resources\bar_chart.png" />
     <None Include="Resources\email_send.png" />
     <None Include="Resources\file_settings.png" />
+    <None Include="Resources\alphabet.png" />
     <Content Include="Resources\plus.png" />
+    <None Include="Resources\save_all.png" />
     <Content Include="Resources\sound_correct.wav" />
     <Content Include="Resources\sound_wrong.wav" />
     <None Include="Resources\icon.png" />

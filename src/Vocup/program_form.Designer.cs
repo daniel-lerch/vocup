@@ -179,7 +179,7 @@
             // SpeichernUnterToolStripMenuItem
             // 
             resources.ApplyResources(this.SpeichernUnterToolStripMenuItem, "SpeichernUnterToolStripMenuItem");
-            this.SpeichernUnterToolStripMenuItem.Image = global::Vocup.Properties.Icons.Save;
+            this.SpeichernUnterToolStripMenuItem.Image = global::Vocup.Properties.Icons.SaveAll;
             this.SpeichernUnterToolStripMenuItem.Name = "SpeichernUnterToolStripMenuItem";
             this.SpeichernUnterToolStripMenuItem.Click += new System.EventHandler(this.SpeichernUnterToolStripMenuItem_Click);
             // 
@@ -343,7 +343,7 @@
             // 
             // sonderzeichenVerwaltenToolStripMenuItem
             // 
-            this.sonderzeichenVerwaltenToolStripMenuItem.Image = global::Vocup.Properties.Icons.ABC;
+            this.sonderzeichenVerwaltenToolStripMenuItem.Image = global::Vocup.Properties.Icons.Alphabet;
             this.sonderzeichenVerwaltenToolStripMenuItem.Name = "sonderzeichenVerwaltenToolStripMenuItem";
             resources.ApplyResources(this.sonderzeichenVerwaltenToolStripMenuItem, "sonderzeichenVerwaltenToolStripMenuItem");
             this.sonderzeichenVerwaltenToolStripMenuItem.Click += new System.EventHandler(this.sonderzeichenVerwaltenToolStripMenuItem_Click);
