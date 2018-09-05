@@ -16,7 +16,7 @@ namespace Vocup.Models
         {
             ListView = new VocabularyListView()
             {
-                Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right,
+                Dock = DockStyle.Fill,
                 GridLines = Settings.Default.GridLines,
             };
             ListView.ItemSelectionChanged += OnSelectionChanged;
