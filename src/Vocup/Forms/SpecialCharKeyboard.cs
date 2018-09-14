@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using Vocup.Properties;
 
 namespace Vocup.Forms
 {
@@ -90,13 +91,17 @@ namespace Vocup.Forms
                     }
                     catch
                     {
-                        // TODO: Show message when skipping file
+                        MessageBox.Show(
+                            string.Format(Messages.SpecialCharInvalidFile, Path.GetFileNameWithoutExtension(info.FullName), info.FullName),
+                            Messages.SpecialCharInvalidFileT,
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
                     }
                 }
             }
 
             // Try to open recent tab
-            string last = Properties.Settings.Default.sonderzeichen_registerkarte;
+            string last = Settings.Default.sonderzeichen_registerkarte;
             if (!string.IsNullOrWhiteSpace(last) && TcMain.TabPages.ContainsKey(last))
                 TcMain.SelectTab(last);
         }
@@ -126,8 +131,8 @@ namespace Vocup.Forms
 
         private void Form_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Properties.Settings.Default.sonderzeichen_registerkarte = TcMain.SelectedTab.Name;
-            Properties.Settings.Default.Save();
+            Settings.Default.sonderzeichen_registerkarte = TcMain.SelectedTab.Name;
+            Settings.Default.Save();
 
             if (e.CloseReason == CloseReason.UserClosing)
             {

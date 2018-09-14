@@ -91,6 +91,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.TrbRepetitions = new System.Windows.Forms.TrackBar();
+            this.CbColumnResize = new System.Windows.Forms.CheckBox();
             this.GroupStartScreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TrbWrongRigtht)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrbUnknown)).BeginInit();
@@ -209,6 +210,7 @@
             // GroupVocabularyList
             // 
             this.GroupVocabularyList.BackColor = System.Drawing.Color.Transparent;
+            this.GroupVocabularyList.Controls.Add(this.CbColumnResize);
             this.GroupVocabularyList.Controls.Add(this.CbGridLines);
             resources.ApplyResources(this.GroupVocabularyList, "GroupVocabularyList");
             this.GroupVocabularyList.Name = "GroupVocabularyList";
@@ -505,7 +507,6 @@
             this.pictureBox2.Image = global::Vocup.Properties.Icons.WronglyPracticed;
             resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
@@ -513,7 +514,6 @@
             this.pictureBox1.Image = global::Vocup.Properties.Icons.Unpracticed;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox3
@@ -521,7 +521,6 @@
             this.pictureBox3.Image = global::Vocup.Properties.Icons.CorrectlyPracticed;
             resources.ApplyResources(this.pictureBox3, "pictureBox3");
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabStop = false;
             // 
             // label2
@@ -588,6 +587,12 @@
             this.TrbRepetitions.Minimum = 2;
             this.TrbRepetitions.Name = "TrbRepetitions";
             this.TrbRepetitions.Value = 3;
+            // 
+            // CbColumnResize
+            // 
+            resources.ApplyResources(this.CbColumnResize, "CbColumnResize");
+            this.CbColumnResize.Name = "CbColumnResize";
+            this.CbColumnResize.UseVisualStyleBackColor = true;
             // 
             // SettingsDialog
             // 
@@ -713,5 +718,6 @@
         private System.Windows.Forms.Button BtnResetStartScreen;
         private System.Windows.Forms.GroupBox GroupVocabularyList;
         private System.Windows.Forms.CheckBox CbGridLines;
+        private System.Windows.Forms.CheckBox CbColumnResize;
     }
 }

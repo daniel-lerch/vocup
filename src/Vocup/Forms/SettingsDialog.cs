@@ -29,8 +29,9 @@ namespace Vocup
             // Automatisches Update
             CbDisableInternetServices.Checked = settings.DisableInternetServices;
 
-            // list view grid lines
+            // ListView
             CbGridLines.Checked = settings.GridLines;
+            CbColumnResize.Checked = settings.ColumnResize;
 
             // Pfad Vokabelhefte
             TbVhfPath.Text = settings.VhfPath;
@@ -101,8 +102,9 @@ namespace Vocup
             // Automatisches Update
             settings.DisableInternetServices = CbDisableInternetServices.Checked;
 
-            // list view grid lines
+            // ListView
             settings.GridLines = CbGridLines.Checked;
+            settings.ColumnResize = CbColumnResize.Checked;
 
             // Pfad Vokabelhefte
             settings.VhfPath = TbVhfPath.Text;

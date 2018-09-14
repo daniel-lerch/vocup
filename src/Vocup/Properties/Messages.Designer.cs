@@ -158,6 +158,24 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Die Sonderzeichendatei {0} konnte nicht geladen werden. Überprüfen Sie die Datei unter {1} und löschen sie diese gegebenenfalls..
+        /// </summary>
+        internal static string SpecialCharInvalidFile {
+            get {
+                return ResourceManager.GetString("SpecialCharInvalidFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fehlerhafte Datei.
+        /// </summary>
+        internal static string SpecialCharInvalidFileT {
+            get {
+                return ResourceManager.GetString("SpecialCharInvalidFileT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unerwarteter Fehler.
         /// </summary>
         internal static string UnexpectedErrorT {

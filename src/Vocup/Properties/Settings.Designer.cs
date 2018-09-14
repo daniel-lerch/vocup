@@ -345,5 +345,17 @@ namespace Vocup.Properties {
                 this["PracticeInputBackColor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ColumnResize {
+            get {
+                return ((bool)(this["ColumnResize"]));
+            }
+            set {
+                this["ColumnResize"] = value;
+            }
+        }
     }
 }

@@ -56,6 +56,7 @@
             this.MainListView.View = System.Windows.Forms.View.Details;
             this.MainListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.MainListView_ColumnClick);
             this.MainListView.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.MainListView_ColumnWidthChanging);
+            this.MainListView.Resize += new System.EventHandler(this.MainListView_Resize);
             // 
             // imageColumn
             // 

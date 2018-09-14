@@ -318,6 +318,36 @@
   <data name="&gt;&gt;TrbUnknown.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="CbColumnResize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbColumnResize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CbColumnResize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 42</value>
+  </data>
+  <data name="CbColumnResize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 17</value>
+  </data>
+  <data name="CbColumnResize.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="CbColumnResize.Text" xml:space="preserve">
+    <value>Spaltenbreite automatisch anpassen</value>
+  </data>
+  <data name="&gt;&gt;CbColumnResize.Name" xml:space="preserve">
+    <value>CbColumnResize</value>
+  </data>
+  <data name="&gt;&gt;CbColumnResize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbColumnResize.Parent" xml:space="preserve">
+    <value>GroupVocabularyList</value>
+  </data>
+  <data name="&gt;&gt;CbColumnResize.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="CbGridLines.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -346,13 +376,13 @@
     <value>GroupVocabularyList</value>
   </data>
   <data name="&gt;&gt;CbGridLines.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="GroupVocabularyList.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 198</value>
   </data>
   <data name="GroupVocabularyList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 42</value>
+    <value>278, 65</value>
   </data>
   <data name="GroupVocabularyList.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -421,7 +451,7 @@
     <value>1</value>
   </data>
   <data name="GroupVhrPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 306</value>
+    <value>6, 320</value>
   </data>
   <data name="GroupVhrPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 45</value>
@@ -490,7 +520,7 @@
     <value>1</value>
   </data>
   <data name="GroupVhfPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 255</value>
+    <value>6, 269</value>
   </data>
   <data name="GroupVhfPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 45</value>
@@ -1324,6 +1354,9 @@
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
   </data>
+  <data name="pictureBox2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
   <data name="pictureBox2.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
@@ -1345,6 +1378,9 @@
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
   </data>
+  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
   </data>
@@ -1365,6 +1401,9 @@
   </data>
   <data name="pictureBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
+  </data>
+  <data name="pictureBox3.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
   </data>
   <data name="pictureBox3.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>

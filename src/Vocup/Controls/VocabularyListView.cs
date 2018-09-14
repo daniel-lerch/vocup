@@ -3,6 +3,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using Vocup.Properties;
 using Vocup.Util;
 
 namespace Vocup.Controls
@@ -136,6 +137,17 @@ namespace Vocup.Controls
             else if (e.ColumnIndex == 3)
             {
                 lastPracticedColumn.Width = scaledWidthLastPracticed;
+            }
+        }
+
+        private void MainListView_Resize(object sender, EventArgs e)
+        {
+            if (Settings.Default.ColumnResize)
+            {
+                int include = SystemInformation.VerticalScrollBarWidth + MainListView.Columns.Count;
+                int width = (MainListView.Width - imageColumn.Width - lastPracticedColumn.Width - include) / 2;
+                motherTongueColumn.Width = width;
+                foreignLangColumn.Width = width;
             }
         }
 
