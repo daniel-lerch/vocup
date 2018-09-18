@@ -334,7 +334,7 @@
             this.TsmiMerge.Image = global::Vocup.Properties.Icons.MergeFiles;
             this.TsmiMerge.Name = "TsmiMerge";
             resources.ApplyResources(this.TsmiMerge, "TsmiMerge");
-            this.TsmiMerge.Click += new System.EventHandler(this.vokabelhefteZusammenführenToolStripMenuItem_Click);
+            this.TsmiMerge.Click += new System.EventHandler(this.TsmiMerge_Click);
             // 
             // toolStripMenuItem5
             // 
