@@ -140,6 +140,24 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Die Vokabelheftdatei {0} existiert nicht mehr..
+        /// </summary>
+        internal static string OpenInExplorerNotFound {
+            get {
+                return ResourceManager.GetString("OpenInExplorerNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Datei nicht gefunden.
+        /// </summary>
+        internal static string OpenInExplorerNotFoundT {
+            get {
+                return ResourceManager.GetString("OpenInExplorerNotFoundT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Möchten die Änderungen am Vokabelheft speichern, bevor Sie es im Explorer öffnen? Sie können die Änderungen jederzeit auch später speichern..
         /// </summary>
         internal static string OpenInExplorerSave {

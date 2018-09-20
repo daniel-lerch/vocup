@@ -232,7 +232,4 @@
   <data name="save_before_update" xml:space="preserve">
     <value>Möchten Sie das Vokabelheft speichern bevor sie fortfahren? Alle nicht gespeicherten Daten gehen verloren.</value>
   </data>
-  <data name="treeview_doesnt_exists" xml:space="preserve">
-    <value>Das gewählte Vokabelheft existiert nicht mehr.</value>
-  </data>
 </root>

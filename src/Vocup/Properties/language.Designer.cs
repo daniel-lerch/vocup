@@ -320,14 +320,5 @@ namespace Vocup.Properties {
                 return ResourceManager.GetString("save_before_update", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Das gewählte Vokabelheft existiert nicht mehr..
-        /// </summary>
-        internal static string treeview_doesnt_exists {
-            get {
-                return ResourceManager.GetString("treeview_doesnt_exists", resourceCulture);
-            }
-        }
     }
 }

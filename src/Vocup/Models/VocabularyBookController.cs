@@ -52,7 +52,6 @@ namespace Vocup.Models
 
         private void UpdateUI()
         {
-            // TODO: Set width of items like the last state. Saving in Settings required.
             ListView.MotherTongue = VocabularyBook.MotherTongue;
             ListView.ForeignLang = VocabularyBook.ForeignLang;
         }

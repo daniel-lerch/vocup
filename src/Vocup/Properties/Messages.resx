@@ -152,6 +152,13 @@ Bitte stellen Sie sicher, dass die Datei nicht leer ist.</value>
     <value>Möchten Sie ein {0} - {1} Vokabelheft importieren, obwohl die Sprachen nicht übereinstimmen?</value>
     <comment>{0}: Source, {1}: Target</comment>
   </data>
+  <data name="OpenInExplorerNotFound" xml:space="preserve">
+    <value>Die Vokabelheftdatei {0} existiert nicht mehr.</value>
+    <comment>{0}: FilePath</comment>
+  </data>
+  <data name="OpenInExplorerNotFoundT" xml:space="preserve">
+    <value>Datei nicht gefunden</value>
+  </data>
   <data name="OpenInExplorerSave" xml:space="preserve">
     <value>Möchten die Änderungen am Vokabelheft speichern, bevor Sie es im Explorer öffnen? Sie können die Änderungen jederzeit auch später speichern.</value>
   </data>
