@@ -140,6 +140,24 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ein Vokabelheft vom selben Pfad wurde bereits geladen. Möchten Sie das aktuelle Vokabelheft laden und die Daten überschreiben?.
+        /// </summary>
+        internal static string MergeOverride {
+            get {
+                return ResourceManager.GetString("MergeOverride", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Daten überschreiben?.
+        /// </summary>
+        internal static string MergeOverrideT {
+            get {
+                return ResourceManager.GetString("MergeOverrideT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Die Vokabelheftdatei {0} existiert nicht mehr..
         /// </summary>
         internal static string OpenInExplorerNotFound {
@@ -199,6 +217,15 @@ namespace Vocup.Properties {
         internal static string UnexpectedErrorT {
             get {
                 return ResourceManager.GetString("UnexpectedErrorT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Die Vokabelheftdatei ist fehlerhaft und konnte nicht geöffnet werden..
+        /// </summary>
+        internal static string VhfInvalidFile {
+            get {
+                return ResourceManager.GetString("VhfInvalidFile", resourceCulture);
             }
         }
         
@@ -301,6 +328,25 @@ namespace Vocup.Properties {
         internal static string VhrInvalidRowCountAndOtherFile {
             get {
                 return ResourceManager.GetString("VhrInvalidRowCountAndOtherFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eine Vokabelheft- oder Ergebnisdatei konnte nicht gespeichert werden:
+        ///{0}.
+        /// </summary>
+        internal static string VocupFileWriteError {
+            get {
+                return ResourceManager.GetString("VocupFileWriteError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fehler beim Speichern.
+        /// </summary>
+        internal static string VocupFileWriteErrorT {
+            get {
+                return ResourceManager.GetString("VocupFileWriteErrorT", resourceCulture);
             }
         }
     }

@@ -152,6 +152,12 @@ Bitte stellen Sie sicher, dass die Datei nicht leer ist.</value>
     <value>Möchten Sie ein {0} - {1} Vokabelheft importieren, obwohl die Sprachen nicht übereinstimmen?</value>
     <comment>{0}: Source, {1}: Target</comment>
   </data>
+  <data name="MergeOverride" xml:space="preserve">
+    <value>Ein Vokabelheft vom selben Pfad wurde bereits geladen. Möchten Sie das aktuelle Vokabelheft laden und die Daten überschreiben?</value>
+  </data>
+  <data name="MergeOverrideT" xml:space="preserve">
+    <value>Daten überschreiben?</value>
+  </data>
   <data name="OpenInExplorerNotFound" xml:space="preserve">
     <value>Die Vokabelheftdatei {0} existiert nicht mehr.</value>
     <comment>{0}: FilePath</comment>
@@ -174,6 +180,9 @@ Bitte stellen Sie sicher, dass die Datei nicht leer ist.</value>
   </data>
   <data name="UnexpectedErrorT" xml:space="preserve">
     <value>Unerwarteter Fehler</value>
+  </data>
+  <data name="VhfInvalidFile" xml:space="preserve">
+    <value>Die Vokabelheftdatei ist fehlerhaft und konnte nicht geöffnet werden.</value>
   </data>
   <data name="VhfInvalidFileT" xml:space="preserve">
     <value>Fehlerhafte Vokabelheft-Datei</value>
@@ -210,5 +219,13 @@ Stellen Sie sicher, dass die Datei nicht leer ist.</value>
   </data>
   <data name="VhrInvalidRowCountAndOtherFile" xml:space="preserve">
     <value>Die referenzierte Ergebnisdatei wird von einem anderen Vokabelheft verwendet und passt nicht zu diesem. Daher werden keine Ergebnisse geladen.</value>
+  </data>
+  <data name="VocupFileWriteError" xml:space="preserve">
+    <value>Eine Vokabelheft- oder Ergebnisdatei konnte nicht gespeichert werden:
+{0}</value>
+    <comment>{0}: ErrorDetails</comment>
+  </data>
+  <data name="VocupFileWriteErrorT" xml:space="preserve">
+    <value>Fehler beim Speichern</value>
   </data>
 </root>

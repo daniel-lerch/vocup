@@ -16,12 +16,16 @@ namespace Vocup.Util
     {
         [Obsolete]
         public const string Name = "Vocup";
-        
+
+        /// <summary>
+        /// Defines invalid characters for a path and thereby many strings in Vocup.
+        /// </summary>
+        public const string InvalidPathChars = "#=:\\/|<>*?\"";
+
         /// <summary>
         /// Gets the directory where custom special char files are stored.
         /// </summary>
         public static string SpecialCharDirectory { get; } = Path.Combine(Properties.Settings.Default.VhrPath, "specialchar");
-
         /// <summary>
         /// Returns the product version of the currently running instance.
         /// </summary>

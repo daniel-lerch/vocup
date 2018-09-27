@@ -148,7 +148,7 @@
             this.TsmiCreateBook.Image = global::Vocup.Properties.Icons.File;
             this.TsmiCreateBook.Name = "TsmiCreateBook";
             resources.ApplyResources(this.TsmiCreateBook, "TsmiCreateBook");
-            this.TsmiCreateBook.Click += new System.EventHandler(this.neueVocabeldateiToolStripMenuItem_Click);
+            this.TsmiCreateBook.Click += new System.EventHandler(this.TsmiCreateBook_Click);
             // 
             // TsmiOpenBook
             // 
@@ -174,14 +174,14 @@
             resources.ApplyResources(this.TsmiSave, "TsmiSave");
             this.TsmiSave.Image = global::Vocup.Properties.Icons.Save;
             this.TsmiSave.Name = "TsmiSave";
-            this.TsmiSave.Click += new System.EventHandler(this.SpeichernToolStripMenuItem_Click);
+            this.TsmiSave.Click += new System.EventHandler(this.TsmiSave_Click);
             // 
             // TsmiSaveAs
             // 
             resources.ApplyResources(this.TsmiSaveAs, "TsmiSaveAs");
             this.TsmiSaveAs.Image = global::Vocup.Properties.Icons.SaveAll;
             this.TsmiSaveAs.Name = "TsmiSaveAs";
-            this.TsmiSaveAs.Click += new System.EventHandler(this.SpeichernUnterToolStripMenuItem_Click);
+            this.TsmiSaveAs.Click += new System.EventHandler(this.TsmiSaveAs_Click);
             // 
             // toolStripMenuItem10
             // 
@@ -193,14 +193,14 @@
             this.TsmiImport.Image = global::Vocup.Properties.Icons.Import;
             this.TsmiImport.Name = "TsmiImport";
             resources.ApplyResources(this.TsmiImport, "TsmiImport");
-            this.TsmiImport.Click += new System.EventHandler(this.importierenToolStripMenuItem_Click);
+            this.TsmiImport.Click += new System.EventHandler(this.TsmiImport_Click);
             // 
             // TsmiExport
             // 
             resources.ApplyResources(this.TsmiExport, "TsmiExport");
             this.TsmiExport.Image = global::Vocup.Properties.Icons.Export;
             this.TsmiExport.Name = "TsmiExport";
-            this.TsmiExport.Click += new System.EventHandler(this.exportierenToolStripMenuItem_Click);
+            this.TsmiExport.Click += new System.EventHandler(this.TsmiExport_Click);
             // 
             // toolStripMenuItem9
             // 
@@ -252,7 +252,7 @@
             this.TsmiBackupRestore.Image = global::Vocup.Properties.Icons.DatabaseRestore;
             this.TsmiBackupRestore.Name = "TsmiBackupRestore";
             resources.ApplyResources(this.TsmiBackupRestore, "TsmiBackupRestore");
-            this.TsmiBackupRestore.Click += new System.EventHandler(this.datensicherungWiederherstellenToolStripMenuItem_Click);
+            this.TsmiBackupRestore.Click += new System.EventHandler(this.TsmiBackupRestore_Click);
             // 
             // toolStripMenuItem3
             // 
@@ -264,7 +264,7 @@
             this.TsmiExitApplication.Image = global::Vocup.Properties.Icons.DoorOpened;
             this.TsmiExitApplication.Name = "TsmiExitApplication";
             resources.ApplyResources(this.TsmiExitApplication, "TsmiExitApplication");
-            this.TsmiExitApplication.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
+            this.TsmiExitApplication.Click += new System.EventHandler(this.TsmiExitAppliaction_Click);
             // 
             // TsmiRootEdit
             // 
@@ -346,7 +346,7 @@
             this.TsmiSpecialChar.Image = global::Vocup.Properties.Icons.Alphabet;
             this.TsmiSpecialChar.Name = "TsmiSpecialChar";
             resources.ApplyResources(this.TsmiSpecialChar, "TsmiSpecialChar");
-            this.TsmiSpecialChar.Click += new System.EventHandler(this.sonderzeichenVerwaltenToolStripMenuItem_Click);
+            this.TsmiSpecialChar.Click += new System.EventHandler(this.TsmiSpecialChar_Click);
             // 
             // toolStripMenuItem6
             // 
@@ -358,7 +358,7 @@
             this.TsmiSettings.Image = global::Vocup.Properties.Icons.Settings;
             this.TsmiSettings.Name = "TsmiSettings";
             resources.ApplyResources(this.TsmiSettings, "TsmiSettings");
-            this.TsmiSettings.Click += new System.EventHandler(this.optionenToolStripMenuItem_Click);
+            this.TsmiSettings.Click += new System.EventHandler(this.TsmiSettings_Click);
             // 
             // TsmiRootHelp
             // 
@@ -377,14 +377,14 @@
             this.TsmiHelp.Image = global::Vocup.Properties.Icons.Help;
             this.TsmiHelp.Name = "TsmiHelp";
             resources.ApplyResources(this.TsmiHelp, "TsmiHelp");
-            this.TsmiHelp.Click += new System.EventHandler(this.hilfeToolStripMenuItem1_Click);
+            this.TsmiHelp.Click += new System.EventHandler(this.TsmiHelp_Click);
             // 
             // TsmiEvaluationInfo
             // 
             this.TsmiEvaluationInfo.Image = global::Vocup.Properties.Icons.Info;
             this.TsmiEvaluationInfo.Name = "TsmiEvaluationInfo";
             resources.ApplyResources(this.TsmiEvaluationInfo, "TsmiEvaluationInfo");
-            this.TsmiEvaluationInfo.Click += new System.EventHandler(this.infosZurBewertungToolStripMenuItem_Click);
+            this.TsmiEvaluationInfo.Click += new System.EventHandler(this.TsmiEvaluationInfo_Click);
             // 
             // toolStripMenuItem8
             // 
@@ -396,7 +396,7 @@
             this.TsmiUpdate.Image = global::Vocup.Properties.Icons.Update;
             this.TsmiUpdate.Name = "TsmiUpdate";
             resources.ApplyResources(this.TsmiUpdate, "TsmiUpdate");
-            this.TsmiUpdate.Click += new System.EventHandler(this.nachUpdatesToolStripMenuItem_Click);
+            this.TsmiUpdate.Click += new System.EventHandler(this.TsmiUpdate_Click);
             // 
             // infoToolStripMenuItem
             // 
@@ -408,7 +408,7 @@
             this.TsmiAbout.Image = global::Vocup.Properties.Icons.Info;
             this.TsmiAbout.Name = "TsmiAbout";
             resources.ApplyResources(this.TsmiAbout, "TsmiAbout");
-            this.TsmiAbout.Click += new System.EventHandler(this.infoÜberVTrainingToolStripMenuItem_Click);
+            this.TsmiAbout.Click += new System.EventHandler(this.TsmiAbout_Click);
             // 
             // search_vokabel_field
             // 
@@ -579,7 +579,7 @@
             resources.ApplyResources(this.TsbCreateBook, "TsbCreateBook");
             this.TsbCreateBook.Margin = new System.Windows.Forms.Padding(2, 1, 1, 1);
             this.TsbCreateBook.Name = "TsbCreateBook";
-            this.TsbCreateBook.Click += new System.EventHandler(this.new_vokabelheft_Click);
+            this.TsbCreateBook.Click += new System.EventHandler(this.TsbCreateBook_Click);
             // 
             // TsbOpenBook
             // 
@@ -648,7 +648,7 @@
             this.Controls.Add(this.MenuStrip);
             this.MainMenuStrip = this.MenuStrip;
             this.Name = "program_form";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.program_form_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
             this.Load += new System.EventHandler(this.Form_Load);
             this.Shown += new System.EventHandler(this.Form_Shown);
             this.MenuStrip.ResumeLayout(false);

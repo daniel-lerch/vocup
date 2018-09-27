@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vocup.Models;
 using Vocup.Properties;
@@ -12,13 +9,27 @@ namespace Vocup.IO.Internal
 {
     internal class VhrFile : VocupFile
     {
-        public bool Read(VocabularyBook book) // TODO: Add exception handling
+        public bool Read(VocabularyBook book)
         {
             FileInfo vhrInfo = new FileInfo(Path.Combine(Settings.Default.VhrPath, book.VhrCode + ".vhr"));
             if (!vhrInfo.Exists)
                 return false;
 
-            string plaintext = ReadFile(vhrInfo.FullName);
+            string plaintext;
+            try
+            {
+                plaintext = ReadFile(vhrInfo.FullName);
+            }
+            catch (FormatException)
+            {
+                DeleteInvalidFile(vhrInfo);
+                return false;
+            }
+            catch (System.Security.Cryptography.CryptographicException)
+            {
+                DeleteInvalidFile(vhrInfo);
+                return false;
+            }
 
             using (StringReader reader = new StringReader(plaintext))
             {
@@ -77,7 +88,7 @@ namespace Vocup.IO.Internal
                     }
 
                     if (pathInfo.Exists)
-                        book.GenerateVhrCode(); // Save new results file if old one is in use by another file
+                        book.GenerateVhrCode(); // Save new results file if the old one is in use by another file
 
                     book.UnsavedChanges = true;
                 }
@@ -97,7 +108,7 @@ namespace Vocup.IO.Internal
             return false;
         }
 
-        public bool Write(VocabularyBook book) // TODO: Add exception handling
+        public bool Write(VocabularyBook book)
         {
             string raw;
 
@@ -119,11 +130,23 @@ namespace Vocup.IO.Internal
                 raw = writer.ToString();
             }
 
-            WriteFile(Path.Combine(Settings.Default.VhrPath, book.VhrCode + ".vhr"), raw);
+            try
+            {
+                WriteFile(Path.Combine(Settings.Default.VhrPath, book.VhrCode + ".vhr"), raw);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format(Messages.VocupFileWriteError, ex), Messages.VocupFileWriteErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
             return true;
         }
 
+        /// <summary>
+        /// Shows a message box and deletes an invalid result file.
+        /// </summary>
+        /// <param name="info"></param>
         private void DeleteInvalidFile(FileInfo info)
         {
             MessageBox.Show(Messages.VhrInvalidFile, Messages.VhrInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);

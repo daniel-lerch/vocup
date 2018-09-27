@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vocup.Models;
 using Vocup.Properties;
@@ -12,9 +8,23 @@ namespace Vocup.IO.Internal
 {
     internal class VhfFile : VocupFile
     {
-        public bool Read(string path, VocabularyBook book) // TODO: Add exception handling
+        public bool Read(string path, VocabularyBook book)
         {
-            string plaintext = ReadFile(path);
+            string plaintext;
+            try
+            {
+                plaintext = ReadFile(path);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show(Messages.VhfInvalidFile, Messages.VhfInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            catch (System.Security.Cryptography.CryptographicException)
+            {
+                MessageBox.Show(Messages.VhfInvalidFile, Messages.VhfInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
             using (StringReader reader = new StringReader(plaintext))
             {
@@ -78,7 +88,7 @@ namespace Vocup.IO.Internal
             return true;
         }
 
-        public bool Write(string path, VocabularyBook book) // TODO: Add exception handling
+        public bool Write(string path, VocabularyBook book)
         {
             string raw;
 
@@ -101,7 +111,15 @@ namespace Vocup.IO.Internal
                 raw = writer.ToString();
             }
 
-            WriteFile(path, raw);
+            try
+            {
+                WriteFile(path, raw);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format(Messages.VocupFileWriteError, ex), Messages.VocupFileWriteErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
 
             return true;
         }

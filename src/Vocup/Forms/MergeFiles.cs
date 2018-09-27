@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
+using System.Linq;
 using System.Windows.Forms;
-using Vocup.Forms;
+using Vocup.IO;
+using Vocup.Models;
 using Vocup.Properties;
 using Vocup.Util;
 
@@ -11,10 +12,11 @@ namespace Vocup.Forms
 {
     public partial class MergeFiles : Form
     {
-        private const string InvalidChars = "#=:\\/|<>*?\"";
         private readonly Color redBgColor = Color.FromArgb(255, 192, 203);
-        private SpecialCharKeyboard specialCharDialog;
+        private readonly SpecialCharKeyboard specialCharDialog;
         private bool textsValid;
+
+        private readonly List<VocabularyBook> books;
 
         public MergeFiles()
         {
@@ -24,6 +26,8 @@ namespace Vocup.Forms
             specialCharDialog.Initialize(this);
             specialCharDialog.VisibleChanged += (a0, a1) => ValidateInput();
             specialCharDialog.RegisterTextBox(TbMotherTongue);
+
+            books = new List<VocabularyBook>();
         }
 
         //Pfad zum Speicherort
@@ -43,8 +47,20 @@ namespace Vocup.Forms
             {
                 foreach (string file in addFile.FileNames)
                 {
-                    if (!LbFiles.Items.Contains(file))
-                        LbFiles.Items.Add(file);
+                    VocabularyBook book = new VocabularyBook();
+                    if (!VocabularyFile.ReadVhfFile(file, book))
+                        continue;
+                    VocabularyFile.ReadVhrFile(book);
+                    VocabularyBook conflict = books.Where(x => x.FilePath.Equals(book.FilePath, StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+                    if (conflict != null)
+                    {
+                        if (MessageBox.Show(Messages.MergeOverride, Messages.MergeOverrideT, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                            continue;
+                        books.Remove(conflict);
+                        LbFiles.Items.Remove(conflict.FilePath);
+                    }
+                    books.Add(book);
+                    LbFiles.Items.Add(book.FilePath);
                 }
                 ValidateInput();
             }
@@ -54,7 +70,11 @@ namespace Vocup.Forms
         private void BtnRemove_Click(object sender, EventArgs e)
         {
             while (LbFiles.SelectedItems.Count > 0)
-                LbFiles.Items.Remove(LbFiles.SelectedItems[0]);
+            {
+                string file = LbFiles.SelectedItems[0].ToString();
+                books.RemoveAll(x => x.FilePath == file);
+                LbFiles.Items.Remove(file);
+            }
 
             ValidateInput();
         }
@@ -66,9 +86,9 @@ namespace Vocup.Forms
 
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
-            bool mValid = !TbMotherTongue.Text.ContainsAny(InvalidChars);
+            bool mValid = !TbMotherTongue.Text.ContainsAny(AppInfo.InvalidPathChars);
             TbMotherTongue.BackColor = mValid ? Color.White : redBgColor;
-            bool fValid = !TbForeignLang.Text.ContainsAny(InvalidChars);
+            bool fValid = !TbForeignLang.Text.ContainsAny(AppInfo.InvalidPathChars);
             TbForeignLang.BackColor = fValid ? Color.White : redBgColor;
 
             textsValid = mValid && fValid &&
@@ -124,8 +144,22 @@ namespace Vocup.Forms
                 pfad = save.FileName;
                 DialogResult = DialogResult.OK;
             }
+            else
+            {
+                DialogResult = DialogResult.Cancel;
+            }
 
             save.Dispose();
         }
+
+        // TODO: Implement merging here with new API
+        /*
+         * 1. Create new book
+         * 2. Configure languages and path
+         * 3. Load vocabulary words from books
+         * 4. When facing conflicts take later practiced version
+         *    or leave the old version when both are identical
+         * 5. Save book
+         */
     }
 }
