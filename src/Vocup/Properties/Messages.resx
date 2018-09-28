@@ -221,6 +221,9 @@ Stellen Sie sicher, dass die Datei nicht leer ist.</value>
     <value>Die referenzierte Ergebnisdatei wird von einem anderen Vokabelheft verwendet und passt nicht zu diesem. Daher werden keine Ergebnisse geladen.</value>
   </data>
   <data name="VocupFileWriteError" xml:space="preserve">
+    <value>Eine Vokabelheft- oder Ergebnisdatei konnte nicht gespeichert werden.</value>
+  </data>
+  <data name="VocupFileWriteErrorEx" xml:space="preserve">
     <value>Eine Vokabelheft- oder Ergebnisdatei konnte nicht gespeichert werden:
 {0}</value>
     <comment>{0}: ErrorDetails</comment>

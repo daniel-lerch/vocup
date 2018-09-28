@@ -30,9 +30,6 @@ namespace Vocup.Forms
             books = new List<VocabularyBook>();
         }
 
-        //Pfad zum Speicherort
-        public string pfad;
-
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             OpenFileDialog addFile = new OpenFileDialog
@@ -131,35 +128,77 @@ namespace Vocup.Forms
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            SaveFileDialog save = new SaveFileDialog
+            string path;
+
+            using (SaveFileDialog save = new SaveFileDialog
             {
                 Title = Words.SaveVocabularyBook,
                 FileName = TbMotherTongue.Text + " - " + TbForeignLang.Text,
                 InitialDirectory = Settings.Default.VhfPath,
                 Filter = Words.VocupVocabularyBookFile + " (*.vhf)|*.vhf"
+            })
+            {
+                if (save.ShowDialog() == DialogResult.OK)
+                {
+                    path = save.FileName;
+                }
+                else
+                {
+                    DialogResult = DialogResult.Cancel;
+                    return;
+                }
+            }
+
+            Cursor.Current = Cursors.WaitCursor;
+
+            VocabularyBook result = new VocabularyBook()
+            {
+                MotherTongue = TbMotherTongue.Text,
+                ForeignLang = TbForeignLang.Text,
+                FilePath = path
             };
 
-            if (save.ShowDialog() == DialogResult.OK)
+            foreach (VocabularyBook book in books)
             {
-                pfad = save.FileName;
-                DialogResult = DialogResult.OK;
+                foreach (VocabularyWord word in book.Words)
+                {
+                    CopyWord(word, result);
+                }
+            }
+
+            if (!VocabularyFile.WriteVhfFile(path, result) ||
+                !VocabularyFile.WriteVhrFile(result))
+            {
+                MessageBox.Show(Messages.VocupFileWriteError, Messages.VocupFileWriteErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DialogResult = DialogResult.Abort;
             }
             else
             {
-                DialogResult = DialogResult.Cancel;
+                DialogResult = DialogResult.OK;
             }
 
-            save.Dispose();
+            Cursor.Current = Cursors.Default;
         }
 
-        // TODO: Implement merging here with new API
-        /*
-         * 1. Create new book
-         * 2. Configure languages and path
-         * 3. Load vocabulary words from books
-         * 4. When facing conflicts take later practiced version
-         *    or leave the old version when both are identical
-         * 5. Save book
-         */
+        private void CopyWord(VocabularyWord word, VocabularyBook target)
+        {
+            VocabularyWord cloned = word.Clone(CbKeepResults.Checked);
+
+            for (int i = 0; i < target.Words.Count; i++)
+            {
+                VocabularyWord comp = target.Words[i];
+                if (cloned.MotherTongue == comp.MotherTongue &&
+                    cloned.ForeignLang == comp.ForeignLang &&
+                    cloned.ForeignLangSynonym == comp.ForeignLangSynonym)
+                {
+                    if (cloned.PracticeDate > comp.PracticeDate)
+                        target.Words[i] = cloned;
+                }
+                else
+                {
+                    target.Words.Add(cloned);
+                }
+            }
+        }
     }
 }

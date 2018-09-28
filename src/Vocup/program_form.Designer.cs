@@ -155,14 +155,14 @@
             this.TsmiOpenBook.Image = global::Vocup.Properties.Icons.Open;
             this.TsmiOpenBook.Name = "TsmiOpenBook";
             resources.ApplyResources(this.TsmiOpenBook, "TsmiOpenBook");
-            this.TsmiOpenBook.Click += new System.EventHandler(this.vokabelheftToolStripMenuItem_Click);
+            this.TsmiOpenBook.Click += new System.EventHandler(this.TsmiOpenBook_Click);
             // 
             // TsmiCloseBook
             // 
             resources.ApplyResources(this.TsmiCloseBook, "TsmiCloseBook");
             this.TsmiCloseBook.Image = global::Vocup.Properties.Icons.Cancel;
             this.TsmiCloseBook.Name = "TsmiCloseBook";
-            this.TsmiCloseBook.Click += new System.EventHandler(this.vokabelheftSchliessenToolStripMenuItem_Click);
+            this.TsmiCloseBook.Click += new System.EventHandler(this.TsmiCloseBook_Click);
             // 
             // toolStripMenuItem11
             // 
@@ -245,7 +245,7 @@
             this.TsmiBackupCreate.Image = global::Vocup.Properties.Icons.DatabaseAdd;
             this.TsmiBackupCreate.Name = "TsmiBackupCreate";
             resources.ApplyResources(this.TsmiBackupCreate, "TsmiBackupCreate");
-            this.TsmiBackupCreate.Click += new System.EventHandler(this.datensicherungErstellenToolStripMenuItem_Click);
+            this.TsmiBackupCreate.Click += new System.EventHandler(this.TsmiBackupCreate_Click);
             // 
             // TsmiBackupRestore
             // 
@@ -280,21 +280,21 @@
             resources.ApplyResources(this.TsmiAddWord, "TsmiAddWord");
             this.TsmiAddWord.Image = global::Vocup.Properties.Icons.Plus;
             this.TsmiAddWord.Name = "TsmiAddWord";
-            this.TsmiAddWord.Click += new System.EventHandler(this.neueVokabelHinzufügenToolStripMenuItem_Click);
+            this.TsmiAddWord.Click += new System.EventHandler(this.TsmiAddWord_Click);
             // 
             // TsmiEditWord
             // 
             resources.ApplyResources(this.TsmiEditWord, "TsmiEditWord");
             this.TsmiEditWord.Image = global::Vocup.Properties.Icons.Edit;
             this.TsmiEditWord.Name = "TsmiEditWord";
-            this.TsmiEditWord.Click += new System.EventHandler(this.vokabelBearbeitenToolStripMenuItem_Click);
+            this.TsmiEditWord.Click += new System.EventHandler(this.TsmiEditWord_Click);
             // 
             // TsmiDeleteWord
             // 
             resources.ApplyResources(this.TsmiDeleteWord, "TsmiDeleteWord");
             this.TsmiDeleteWord.Image = global::Vocup.Properties.Icons.Delete;
             this.TsmiDeleteWord.Name = "TsmiDeleteWord";
-            this.TsmiDeleteWord.Click += new System.EventHandler(this.vokabelLöschenToolStripMenuItem_Click);
+            this.TsmiDeleteWord.Click += new System.EventHandler(this.TsmiDeleteWord_Click);
             // 
             // TsmiRootExtras
             // 
@@ -315,14 +315,14 @@
             resources.ApplyResources(this.TsmiPractice, "TsmiPractice");
             this.TsmiPractice.Image = global::Vocup.Properties.Icons.LightningBolt;
             this.TsmiPractice.Name = "TsmiPractice";
-            this.TsmiPractice.Click += new System.EventHandler(this.vokabelnÜbenToolStripMenuItem_Click);
+            this.TsmiPractice.Click += new System.EventHandler(this.TsmiPractice_Click);
             // 
             // TsmiBookOptions
             // 
             resources.ApplyResources(this.TsmiBookOptions, "TsmiBookOptions");
             this.TsmiBookOptions.Image = global::Vocup.Properties.Icons.FileSettings;
             this.TsmiBookOptions.Name = "TsmiBookOptions";
-            this.TsmiBookOptions.Click += new System.EventHandler(this.vokabelheftOptionenToolStripMenuItem_Click);
+            this.TsmiBookOptions.Click += new System.EventHandler(this.TsmiBookOptions_Click);
             // 
             // toolStripMenuItem4
             // 
@@ -597,7 +597,7 @@
             this.TsbSave.Image = global::Vocup.Properties.Icons.Save;
             this.TsbSave.Margin = new System.Windows.Forms.Padding(1);
             this.TsbSave.Name = "TsbSave";
-            this.TsbSave.Click += new System.EventHandler(this.save_vokabelheft_Click);
+            this.TsbSave.Click += new System.EventHandler(this.TsbSave_Click);
             // 
             // toolStripSeparator1
             // 

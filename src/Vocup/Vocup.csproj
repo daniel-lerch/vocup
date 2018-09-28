@@ -172,6 +172,7 @@
     <Compile Include="Models\PracticeMode.cs" />
     <Compile Include="Models\PracticeResult.cs" />
     <Compile Include="Models\PracticeState.cs" />
+    <Compile Include="Models\StartScreen.cs" />
     <Compile Include="Models\VocabularyBook.cs" />
     <Compile Include="Models\VocabularyBookController.cs" />
     <Compile Include="Models\VocabularyBookStatistics.cs" />

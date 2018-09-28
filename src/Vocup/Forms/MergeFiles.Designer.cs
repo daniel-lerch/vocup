@@ -154,14 +154,14 @@
 
         private System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.Button BtnSave;
-        public System.Windows.Forms.ListBox LbFiles;
         private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.Button BtnRemove;
-        public System.Windows.Forms.CheckBox CbKeepResults;
         private System.Windows.Forms.GroupBox GroupMotherTongue;
         private System.Windows.Forms.GroupBox GroupForeignTongue;
-        public System.Windows.Forms.TextBox TbMotherTongue;
-        public System.Windows.Forms.TextBox TbForeignLang;
         private System.Windows.Forms.Button BtnSpecialChar;
+        private System.Windows.Forms.ListBox LbFiles;
+        private System.Windows.Forms.CheckBox CbKeepResults;
+        private System.Windows.Forms.TextBox TbMotherTongue;
+        private System.Windows.Forms.TextBox TbForeignLang;
     }
 }

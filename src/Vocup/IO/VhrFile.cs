@@ -136,7 +136,7 @@ namespace Vocup.IO.Internal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(string.Format(Messages.VocupFileWriteError, ex), Messages.VocupFileWriteErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(string.Format(Messages.VocupFileWriteErrorEx, ex), Messages.VocupFileWriteErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 

@@ -93,5 +93,26 @@ namespace Vocup.Models
         {
             PracticeState = PracticeStateHelper.Parse(_practiceStateNumber);
         }
+
+        public VocabularyWord Clone(bool copyResults)
+        {
+            if (copyResults)
+                return new VocabularyWord()
+                {
+                    _motherTongue = _motherTongue,
+                    _foreignLang = _foreignLang,
+                    _foreignLangSynonym = _foreignLangSynonym,
+                    _practiceState = _practiceState,
+                    _practiceStateNumber = _practiceStateNumber,
+                    _practiceDate = _practiceDate
+                };
+            else
+                return new VocabularyWord()
+                {
+                    _motherTongue = _motherTongue,
+                    _foreignLang = _foreignLang,
+                    _foreignLangSynonym = _foreignLangSynonym
+                };
+        }
     }
 }

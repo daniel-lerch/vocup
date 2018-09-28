@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Vocup.Models;
 using Vocup.Properties;
 
 namespace Vocup
@@ -21,7 +22,7 @@ namespace Vocup
         private void SettingsDialog_Load(object sender, EventArgs e)
         {
             // Startbild   
-            RbRecentFile.Checked = settings.startscreen == "zuletzt" || settings.startscreen == "willkommensbild";
+            RbRecentFile.Checked = settings.StartScreen == (int)StartScreen.LastFile || settings.StartScreen == (int)StartScreen.AboutBox;
 
             // Vokabelheft automatisch speichern
             CbAutoSave.Checked = settings.auto_save;
@@ -94,7 +95,7 @@ namespace Vocup
             // Einstellungen speichern
 
             // Startbild
-            settings.startscreen = RbRecentFile.Checked ? "zuletzt" : "nichts";
+            settings.StartScreen = RbRecentFile.Checked ? (int)StartScreen.LastFile : (int)StartScreen.None;
 
             // Vokabelheft automatisch speichern
             settings.auto_save = CbAutoSave.Checked;
@@ -162,7 +163,7 @@ namespace Vocup
 
         private void BtnResetStartScreen_Click(object sender, EventArgs e)
         {
-            settings.startscreen = "willkommensbild";
+            settings.StartScreen = (int)StartScreen.AboutBox;
             RbRecentFile.Checked = true;
         }
 

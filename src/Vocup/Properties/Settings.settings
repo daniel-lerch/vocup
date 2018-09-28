@@ -14,8 +14,8 @@
     <Setting Name="MaxPracticeCount" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">3</Value>
     </Setting>
-    <Setting Name="startscreen" Type="System.String" Scope="User">
-      <Value Profile="(Default)">willkommensbild</Value>
+    <Setting Name="StartScreen" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="prozent_noch_nicht" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">50</Value>

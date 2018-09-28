@@ -332,12 +332,21 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Eine Vokabelheft- oder Ergebnisdatei konnte nicht gespeichert werden:
-        ///{0}.
+        ///   Looks up a localized string similar to Eine Vokabelheft- oder Ergebnisdatei konnte nicht gespeichert werden..
         /// </summary>
         internal static string VocupFileWriteError {
             get {
                 return ResourceManager.GetString("VocupFileWriteError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eine Vokabelheft- oder Ergebnisdatei konnte nicht gespeichert werden:
+        ///{0}.
+        /// </summary>
+        internal static string VocupFileWriteErrorEx {
+            get {
+                return ResourceManager.GetString("VocupFileWriteErrorEx", resourceCulture);
             }
         }
         
