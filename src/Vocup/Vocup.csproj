@@ -397,6 +397,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="help.chm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\info.png" />
     <None Include="Resources\open.png" />
     <None Include="Resources\folder.png" />
