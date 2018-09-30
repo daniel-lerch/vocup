@@ -1,0 +1,28 @@
+Vocup Lizenzvertrag
+
+Lizenzbestimmungen:
+ 
+Diese Software ist für den privaten Gebrauch Freeware. Sie dürfen die Software auf beliebig vielen Computer uneingeschränkt benutzen. Die Software ist NICHT Public Domain Software. Das Copyright sowie alle Eigentumsrechte an der Software und dem Quellcode bleiben bei Florian Amstutz. Sie dürfen die Software unter folgenden Bedingungen benutzen und weitergeben:
+
+
+- Es ist Ihnen nicht gestattet die Software abzuändern, zu übersetzen, zurückzuentwickeln, zu dekompilieren oder zu disassemblieren, von der Software abgeleitete Werke zu erstellen oder die Dokumentation zu vervielfältigen, zu übersetzen, abzuändern oder von der Dokumentation abgeleitete Werke zu erstellen.
+
+- Sie müssen alle Dateien weitergeben, die auch im Originalpaket enthalten sind.
+
+- Sie dürfen die Software nicht weiterverkaufen.
+
+- Sie dürfen die Software weitergeben solange die obigen Bedingungen eingehalten werden. Sie brauchen keine vorherige Erlaubnis für eine Weitergabe.
+
+Garantiebestimmungen:
+  
+Die Software und Dokumentation werden ohne jede Garantie angeboten. Es wird weder garantiert, dass die Funktionen der Software Ihren Anforderungen entsprechen, noch dass die Software fehlerfrei ist, noch dass Fehler in der Software oder Dokumentation behoben werden.
+
+Haftungsausschluss:
+
+Unter keinen Umständen (eingeschlossen Fahrlässigkeit) bin ich haftbar für Verluste oder Schäden jeglicher Art die durch den Einsatz des Produktes oder der Dokumentation entstehen könnten. 
+
+Copyright:
+
+Diese Software und Dokumentation sind urheberrechtlich geschützt.
+
+© Copyright 2009 Florian Amstutz. All Rights Reserved.
