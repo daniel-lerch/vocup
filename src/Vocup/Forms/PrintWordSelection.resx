@@ -146,434 +146,482 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="listbox.HorizontalScrollbar" type="System.Boolean, mscorlib">
+  <data name="ListBox.HorizontalScrollbar" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="listbox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ListBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="listbox.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ListBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 38</value>
   </data>
-  <data name="listbox.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ListBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>360, 244</value>
   </data>
-  <data name="listbox.TabIndex" type="System.Int32, mscorlib">
+  <data name="ListBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;listbox.Name" xml:space="preserve">
-    <value>listbox</value>
+  <data name="&gt;&gt;ListBox.Name" xml:space="preserve">
+    <value>ListBox</value>
   </data>
-  <data name="&gt;&gt;listbox.Type" xml:space="preserve">
+  <data name="&gt;&gt;ListBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;listbox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ListBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;listbox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ListBox.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="check_all.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="BtnCheckAll.Location" type="System.Drawing.Point, System.Drawing">
     <value>166, 289</value>
   </data>
-  <data name="check_all.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BtnCheckAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 23</value>
   </data>
-  <data name="check_all.TabIndex" type="System.Int32, mscorlib">
+  <data name="BtnCheckAll.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="check_all.Text" xml:space="preserve">
+  <data name="BtnCheckAll.Text" xml:space="preserve">
     <value>Alle Auswählen</value>
   </data>
-  <data name="&gt;&gt;check_all.Name" xml:space="preserve">
-    <value>check_all</value>
+  <data name="&gt;&gt;BtnCheckAll.Name" xml:space="preserve">
+    <value>BtnCheckAll</value>
   </data>
-  <data name="&gt;&gt;check_all.Type" xml:space="preserve">
+  <data name="&gt;&gt;BtnCheckAll.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;check_all.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BtnCheckAll.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;check_all.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BtnCheckAll.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="discheck_all.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="BtnUncheckAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="discheck_all.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="BtnUncheckAll.Location" type="System.Drawing.Point, System.Drawing">
     <value>272, 289</value>
   </data>
-  <data name="discheck_all.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BtnUncheckAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 23</value>
   </data>
-  <data name="discheck_all.TabIndex" type="System.Int32, mscorlib">
+  <data name="BtnUncheckAll.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="discheck_all.Text" xml:space="preserve">
+  <data name="BtnUncheckAll.Text" xml:space="preserve">
     <value>Alle Abwählen</value>
   </data>
-  <data name="&gt;&gt;discheck_all.Name" xml:space="preserve">
-    <value>discheck_all</value>
+  <data name="&gt;&gt;BtnUncheckAll.Name" xml:space="preserve">
+    <value>BtnUncheckAll</value>
   </data>
-  <data name="&gt;&gt;discheck_all.Type" xml:space="preserve">
+  <data name="&gt;&gt;BtnUncheckAll.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;discheck_all.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BtnUncheckAll.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;discheck_all.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BtnUncheckAll.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="print_button.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="BtnContinue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="print_button.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="BtnContinue.Location" type="System.Drawing.Point, System.Drawing">
     <value>216, 466</value>
   </data>
-  <data name="print_button.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BtnContinue.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="print_button.TabIndex" type="System.Int32, mscorlib">
+  <data name="BtnContinue.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="print_button.Text" xml:space="preserve">
+  <data name="BtnContinue.Text" xml:space="preserve">
     <value>Weiter</value>
   </data>
-  <data name="&gt;&gt;print_button.Name" xml:space="preserve">
-    <value>print_button</value>
+  <data name="&gt;&gt;BtnContinue.Name" xml:space="preserve">
+    <value>BtnContinue</value>
   </data>
-  <data name="&gt;&gt;print_button.Type" xml:space="preserve">
+  <data name="&gt;&gt;BtnContinue.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;print_button.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BtnContinue.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;print_button.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BtnContinue.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="cancel_button.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="BtnCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="cancel_button.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="BtnCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>297, 466</value>
   </data>
-  <data name="cancel_button.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BtnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="cancel_button.TabIndex" type="System.Int32, mscorlib">
+  <data name="BtnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="cancel_button.Text" xml:space="preserve">
+  <data name="BtnCancel.Text" xml:space="preserve">
     <value>Abbrechen</value>
   </data>
-  <data name="&gt;&gt;cancel_button.Name" xml:space="preserve">
-    <value>cancel_button</value>
+  <data name="&gt;&gt;BtnCancel.Name" xml:space="preserve">
+    <value>BtnCancel</value>
   </data>
-  <data name="&gt;&gt;cancel_button.Type" xml:space="preserve">
+  <data name="&gt;&gt;BtnCancel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cancel_button.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BtnCancel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;cancel_button.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BtnCancel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="radioButton_kaertchen.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;RbCards.Name" xml:space="preserve">
+    <value>RbCards</value>
   </data>
-  <data name="radioButton_kaertchen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="radioButton_kaertchen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 17</value>
-  </data>
-  <data name="radioButton_kaertchen.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="radioButton_kaertchen.Text" xml:space="preserve">
-    <value>Kärtchen</value>
-  </data>
-  <data name="&gt;&gt;radioButton_kaertchen.Name" xml:space="preserve">
-    <value>radioButton_kaertchen</value>
-  </data>
-  <data name="&gt;&gt;radioButton_kaertchen.Type" xml:space="preserve">
+  <data name="&gt;&gt;RbCards.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;radioButton_kaertchen.Parent" xml:space="preserve">
-    <value>groupBox2</value>
+  <data name="&gt;&gt;RbCards.Parent" xml:space="preserve">
+    <value>GroupType</value>
   </data>
-  <data name="&gt;&gt;radioButton_kaertchen.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;RbCards.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="radioButton_liste.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;RbList.Name" xml:space="preserve">
+    <value>RbList</value>
   </data>
-  <data name="radioButton_liste.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 43</value>
-  </data>
-  <data name="radioButton_liste.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 17</value>
-  </data>
-  <data name="radioButton_liste.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="radioButton_liste.Text" xml:space="preserve">
-    <value>Liste</value>
-  </data>
-  <data name="&gt;&gt;radioButton_liste.Name" xml:space="preserve">
-    <value>radioButton_liste</value>
-  </data>
-  <data name="&gt;&gt;radioButton_liste.Type" xml:space="preserve">
+  <data name="&gt;&gt;RbList.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;radioButton_liste.Parent" xml:space="preserve">
-    <value>groupBox2</value>
+  <data name="&gt;&gt;RbList.Parent" xml:space="preserve">
+    <value>GroupType</value>
   </data>
-  <data name="&gt;&gt;radioButton_liste.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;RbList.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="GroupType.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 390</value>
   </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="GroupType.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 70</value>
   </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+  <data name="GroupType.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
+  <data name="GroupType.Text" xml:space="preserve">
     <value>Was möchten Sie audrucken?</value>
   </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
+  <data name="&gt;&gt;GroupType.Name" xml:space="preserve">
+    <value>GroupType</value>
   </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+  <data name="&gt;&gt;GroupType.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupType.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;GroupType.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="foreign_own.AutoSize" type="System.Boolean, mscorlib">
+  <data name="RbCards.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="foreign_own.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="RbCards.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
   </data>
-  <data name="foreign_own.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="RbCards.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 17</value>
+  </data>
+  <data name="RbCards.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="RbCards.Text" xml:space="preserve">
+    <value>Kärtchen</value>
+  </data>
+  <data name="&gt;&gt;RbCards.Name" xml:space="preserve">
+    <value>RbCards</value>
+  </data>
+  <data name="&gt;&gt;RbCards.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbCards.Parent" xml:space="preserve">
+    <value>GroupType</value>
+  </data>
+  <data name="&gt;&gt;RbCards.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="RbList.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RbList.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 43</value>
   </data>
-  <data name="foreign_own.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 17</value>
+  <data name="RbList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 17</value>
   </data>
-  <data name="foreign_own.TabIndex" type="System.Int32, mscorlib">
+  <data name="RbList.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="foreign_own.Text" xml:space="preserve">
-    <value>Fremdsprache → Muttersprache</value>
+  <data name="RbList.Text" xml:space="preserve">
+    <value>Liste</value>
   </data>
-  <data name="&gt;&gt;foreign_own.Name" xml:space="preserve">
-    <value>foreign_own</value>
+  <data name="&gt;&gt;RbList.Name" xml:space="preserve">
+    <value>RbList</value>
   </data>
-  <data name="&gt;&gt;foreign_own.Type" xml:space="preserve">
+  <data name="&gt;&gt;RbList.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;foreign_own.Parent" xml:space="preserve">
-    <value>groupBox3</value>
+  <data name="&gt;&gt;RbList.Parent" xml:space="preserve">
+    <value>GroupType</value>
   </data>
-  <data name="&gt;&gt;foreign_own.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="own_foreign.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="own_foreign.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="own_foreign.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 17</value>
-  </data>
-  <data name="own_foreign.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="own_foreign.Text" xml:space="preserve">
-    <value>Muttersprache → Fremdsprache</value>
-  </data>
-  <data name="&gt;&gt;own_foreign.Name" xml:space="preserve">
-    <value>own_foreign</value>
-  </data>
-  <data name="&gt;&gt;own_foreign.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;own_foreign.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;own_foreign.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;RbList.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="groupBox3.Enabled" type="System.Boolean, mscorlib">
+  <data name="&gt;&gt;RbAskForMotherTongue.Name" xml:space="preserve">
+    <value>RbAskForMotherTongue</value>
+  </data>
+  <data name="&gt;&gt;RbAskForMotherTongue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbAskForMotherTongue.Parent" xml:space="preserve">
+    <value>GroupPracticeMode</value>
+  </data>
+  <data name="&gt;&gt;RbAskForMotherTongue.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;RbAskForForeignLang.Name" xml:space="preserve">
+    <value>RbAskForForeignLang</value>
+  </data>
+  <data name="&gt;&gt;RbAskForForeignLang.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbAskForForeignLang.Parent" xml:space="preserve">
+    <value>GroupPracticeMode</value>
+  </data>
+  <data name="&gt;&gt;RbAskForForeignLang.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="GroupPracticeMode.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="GroupPracticeMode.Location" type="System.Drawing.Point, System.Drawing">
     <value>184, 390</value>
   </data>
-  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="GroupPracticeMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 70</value>
   </data>
-  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
+  <data name="GroupPracticeMode.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Von links nach rechts:</value>
+  <data name="GroupPracticeMode.Text" xml:space="preserve">
+    <value>Übersetzungsrichtung</value>
   </data>
-  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
-    <value>groupBox3</value>
+  <data name="&gt;&gt;GroupPracticeMode.Name" xml:space="preserve">
+    <value>GroupPracticeMode</value>
   </data>
-  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
+  <data name="&gt;&gt;GroupPracticeMode.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupPracticeMode.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;GroupPracticeMode.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="checkBox_fertig.AutoSize" type="System.Boolean, mscorlib">
+  <data name="RbAskForMotherTongue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="checkBox_fertig.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="RbAskForMotherTongue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBox_fertig.Location" type="System.Drawing.Point, System.Drawing">
-    <value>178, 42</value>
+  <data name="RbAskForMotherTongue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 43</value>
   </data>
-  <data name="checkBox_fertig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 17</value>
+  <data name="RbAskForMotherTongue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 17</value>
   </data>
-  <data name="checkBox_fertig.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="RbAskForMotherTongue.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="checkBox_fertig.Text" xml:space="preserve">
-    <value>als gelernt markiert wurden</value>
+  <data name="RbAskForMotherTongue.Text" xml:space="preserve">
+    <value>Fremdsprache → Muttersprache</value>
   </data>
-  <data name="&gt;&gt;checkBox_fertig.Name" xml:space="preserve">
-    <value>checkBox_fertig</value>
+  <data name="&gt;&gt;RbAskForMotherTongue.Name" xml:space="preserve">
+    <value>RbAskForMotherTongue</value>
   </data>
-  <data name="&gt;&gt;checkBox_fertig.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;RbAskForMotherTongue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;checkBox_fertig.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="&gt;&gt;RbAskForMotherTongue.Parent" xml:space="preserve">
+    <value>GroupPracticeMode</value>
   </data>
-  <data name="&gt;&gt;checkBox_fertig.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;RbAskForMotherTongue.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="checkBox_mindestens_einmal.AutoSize" type="System.Boolean, mscorlib">
+  <data name="RbAskForForeignLang.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="checkBox_mindestens_einmal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>178, 19</value>
-  </data>
-  <data name="checkBox_mindestens_einmal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 17</value>
-  </data>
-  <data name="checkBox_mindestens_einmal.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="checkBox_mindestens_einmal.Text" xml:space="preserve">
-    <value>richtig übersetzt wurden</value>
-  </data>
-  <data name="&gt;&gt;checkBox_mindestens_einmal.Name" xml:space="preserve">
-    <value>checkBox_mindestens_einmal</value>
-  </data>
-  <data name="&gt;&gt;checkBox_mindestens_einmal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_mindestens_einmal.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;checkBox_mindestens_einmal.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="checkBox_falsch.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox_falsch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 42</value>
-  </data>
-  <data name="checkBox_falsch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 17</value>
-  </data>
-  <data name="checkBox_falsch.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="checkBox_falsch.Text" xml:space="preserve">
-    <value>falsch übersetzt wurden</value>
-  </data>
-  <data name="&gt;&gt;checkBox_falsch.Name" xml:space="preserve">
-    <value>checkBox_falsch</value>
-  </data>
-  <data name="&gt;&gt;checkBox_falsch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox_falsch.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;checkBox_falsch.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="checkBox_noch_nie.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox_noch_nie.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="RbAskForForeignLang.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 19</value>
   </data>
-  <data name="checkBox_noch_nie.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 17</value>
+  <data name="RbAskForForeignLang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 17</value>
   </data>
-  <data name="checkBox_noch_nie.TabIndex" type="System.Int32, mscorlib">
+  <data name="RbAskForForeignLang.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="checkBox_noch_nie.Text" xml:space="preserve">
-    <value>noch nie geübt wurden</value>
+  <data name="RbAskForForeignLang.Text" xml:space="preserve">
+    <value>Muttersprache → Fremdsprache</value>
   </data>
-  <data name="&gt;&gt;checkBox_noch_nie.Name" xml:space="preserve">
-    <value>checkBox_noch_nie</value>
+  <data name="&gt;&gt;RbAskForForeignLang.Name" xml:space="preserve">
+    <value>RbAskForForeignLang</value>
   </data>
-  <data name="&gt;&gt;checkBox_noch_nie.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;RbAskForForeignLang.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;checkBox_noch_nie.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="&gt;&gt;RbAskForForeignLang.Parent" xml:space="preserve">
+    <value>GroupPracticeMode</value>
   </data>
-  <data name="&gt;&gt;checkBox_noch_nie.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;RbAskForForeignLang.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CbFullyPracticed.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbFullyPracticed.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CbFullyPracticed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 42</value>
+  </data>
+  <data name="CbFullyPracticed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 17</value>
+  </data>
+  <data name="CbFullyPracticed.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="CbFullyPracticed.Text" xml:space="preserve">
+    <value>als gelernt markiert wurden</value>
+  </data>
+  <data name="&gt;&gt;CbFullyPracticed.Name" xml:space="preserve">
+    <value>CbFullyPracticed</value>
+  </data>
+  <data name="&gt;&gt;CbFullyPracticed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbFullyPracticed.Parent" xml:space="preserve">
+    <value>GroupFilter</value>
+  </data>
+  <data name="&gt;&gt;CbFullyPracticed.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CbCorrectlyPracticed.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbCorrectlyPracticed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 19</value>
+  </data>
+  <data name="CbCorrectlyPracticed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 17</value>
+  </data>
+  <data name="CbCorrectlyPracticed.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="CbCorrectlyPracticed.Text" xml:space="preserve">
+    <value>richtig übersetzt wurden</value>
+  </data>
+  <data name="&gt;&gt;CbCorrectlyPracticed.Name" xml:space="preserve">
+    <value>CbCorrectlyPracticed</value>
+  </data>
+  <data name="&gt;&gt;CbCorrectlyPracticed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbCorrectlyPracticed.Parent" xml:space="preserve">
+    <value>GroupFilter</value>
+  </data>
+  <data name="&gt;&gt;CbCorrectlyPracticed.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CbWronglyPracticed.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbWronglyPracticed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 42</value>
+  </data>
+  <data name="CbWronglyPracticed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 17</value>
+  </data>
+  <data name="CbWronglyPracticed.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="CbWronglyPracticed.Text" xml:space="preserve">
+    <value>falsch übersetzt wurden</value>
+  </data>
+  <data name="&gt;&gt;CbWronglyPracticed.Name" xml:space="preserve">
+    <value>CbWronglyPracticed</value>
+  </data>
+  <data name="&gt;&gt;CbWronglyPracticed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbWronglyPracticed.Parent" xml:space="preserve">
+    <value>GroupFilter</value>
+  </data>
+  <data name="&gt;&gt;CbWronglyPracticed.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="CbUnpracticed.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbUnpracticed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="CbUnpracticed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 17</value>
+  </data>
+  <data name="CbUnpracticed.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="CbUnpracticed.Text" xml:space="preserve">
+    <value>noch nie geübt wurden</value>
+  </data>
+  <data name="&gt;&gt;CbUnpracticed.Name" xml:space="preserve">
+    <value>CbUnpracticed</value>
+  </data>
+  <data name="&gt;&gt;CbUnpracticed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbUnpracticed.Parent" xml:space="preserve">
+    <value>GroupFilter</value>
+  </data>
+  <data name="&gt;&gt;CbUnpracticed.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="GroupFilter.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 318</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="GroupFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>360, 66</value>
   </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="GroupFilter.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
+  <data name="GroupFilter.Text" xml:space="preserve">
     <value>Nur Vokabeln drucken, die</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="&gt;&gt;GroupFilter.Name" xml:space="preserve">
+    <value>GroupFilter</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;GroupFilter.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupFilter.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;GroupFilter.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -592,7 +640,7 @@
     <value>Vokabeln drucken</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>choose_vocables_for_print</value>
+    <value>PrintWordSelection</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

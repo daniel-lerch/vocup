@@ -145,11 +145,11 @@
     <Compile Include="backup_restore.Designer.cs">
       <DependentUpon>backup_restore.cs</DependentUpon>
     </Compile>
-    <Compile Include="choose_vocables_for_print.cs">
+    <Compile Include="Forms\PrintWordSelection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="choose_vocables_for_print.Designer.cs">
-      <DependentUpon>choose_vocables_for_print.cs</DependentUpon>
+    <Compile Include="Forms\PrintWordSelection.Designer.cs">
+      <DependentUpon>PrintWordSelection.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EvaluationInfoDialog.cs">
       <SubType>Form</SubType>
@@ -248,9 +248,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>backup_restore.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="choose_vocables_for_print.resx">
+    <EmbeddedResource Include="Forms\PrintWordSelection.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>choose_vocables_for_print.cs</DependentUpon>
+      <DependentUpon>PrintWordSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Icons.resx">
       <SubType>Designer</SubType>

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Vocup.Properties;
 
 namespace Vocup.Models
 {
@@ -29,9 +26,9 @@ namespace Vocup.Models
                 return PracticeState.Unpracticed;
             if (practiceStateNumber == 1)
                 return PracticeState.WronglyPracticed;
-            if (practiceStateNumber < Properties.Settings.Default.MaxPracticeCount)
+            if (practiceStateNumber < Settings.Default.MaxPracticeCount)
                 return PracticeState.CorrectlyPracticed;
-            else // if (practiceStateNumber >= Properties.Settings.Default.MaxPracticeCount)
+            else // if (practiceStateNumber >= Settings.Default.MaxPracticeCount)
                 return PracticeState.FullyPracticed;
         }
     }
