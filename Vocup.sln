@@ -25,13 +25,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "setup", "setup", "{2EC721A1
 	ProjectSection(SolutionItems) = preProject
 		setup\icon_vdp.ico = setup\icon_vdp.ico
 		setup\icon_vhf.ico = setup\icon_vhf.ico
-		setup\it_download.iss = setup\it_download.iss
 		setup\left.bmp = setup\left.bmp
-		setup\license.rtf = setup\license.rtf
 		setup\license.txt = setup\license.txt
 		setup\setup_icon.ico = setup\setup_icon.ico
-		setup\setup_Vocup.iss = setup\setup_Vocup.iss
 		setup\top.bmp = setup\top.bmp
+		setup\vocup.iss = setup\vocup.iss
 	EndProjectSection
 EndProject
 Global
