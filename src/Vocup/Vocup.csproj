@@ -37,7 +37,7 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -48,7 +48,7 @@
     <Prefer32Bit>false</Prefer32Bit>
     <LangVersion>default</LangVersion>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -407,31 +407,13 @@
     <None Include="Resources\print.png" />
     <None Include="Resources\delete.png" />
     <None Include="Resources\settings.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\edit.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\import.png" />
     <None Include="Resources\export.png" />
     <None Include="Resources\update.png" />
     <None Include="Resources\search.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 2.0</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="icon.ico" />
-    <Content Include="Library\K_Updater.dll" />
+    <None Include="icon.ico" />
+    <None Include="Library\K_Updater.dll" />
     <None Include="Resources\cancel.png" />
     <None Include="Resources\help.png" />
     <None Include="Resources\file.png" />
@@ -445,14 +427,14 @@
     <None Include="Resources\email_send.png" />
     <None Include="Resources\file_settings.png" />
     <None Include="Resources\alphabet.png" />
-    <Content Include="Resources\plus.png" />
+    <None Include="Resources\plus.png" />
     <None Include="Resources\save_all.png" />
-    <Content Include="Resources\sound_correct.wav" />
-    <Content Include="Resources\sound_wrong.wav" />
+    <None Include="Resources\sound_correct.wav" />
+    <None Include="Resources\sound_wrong.wav" />
     <None Include="Resources\icon.png" />
     <None Include="Resources\logo.png" />
+    <None Include="Resources\icon256.png" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
