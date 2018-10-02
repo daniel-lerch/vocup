@@ -17,12 +17,35 @@
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="$targetentrypoint$">
       <uap:VisualElements DisplayName="Vocup" Description="Kostenloser Vokabeltrainer" BackgroundColor="transparent" Square150x150Logo="Images\Square150x150Logo.png" Square44x44Logo="Images\Square44x44Logo.png">
         <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" Square310x310Logo="Images\LargeTile.png" Square71x71Logo="Images\SmallTile.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+          </uap:ShowNameOnTiles>
         </uap:DefaultTile>
         <uap:InitialRotationPreference>
           <uap:Rotation Preference="landscape" />
         </uap:InitialRotationPreference>
         <uap:SplashScreen Image="Images\SplashScreen.png" />
       </uap:VisualElements>
+      <Extensions>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap:FileTypeAssociation Name="vhf">
+            <uap:Logo>Images\VhfLogo.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.vhf</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap:FileTypeAssociation Name="vdp">
+            <uap:Logo>Images\VdpLogo.png</uap:Logo>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.vdp</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap:FileTypeAssociation>
+        </uap:Extension>
+      </Extensions>
     </Application>
   </Applications>
   <Capabilities>
