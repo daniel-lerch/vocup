@@ -54,6 +54,7 @@ namespace Vocup.Models
         {
             ListView.MotherTongue = VocabularyBook.MotherTongue;
             ListView.ForeignLang = VocabularyBook.ForeignLang;
+            Parent?.VocabularyBookUnsavedChanges(VocabularyBook.UnsavedChanges);
         }
 
         private void OnStatisticsChanged(object sender, EventArgs e) => OnStatisticsChanged();

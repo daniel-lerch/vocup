@@ -92,6 +92,24 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Möchten die Änderungen am Vokabelheft speichern, bevor Sie es in eine CSV-Datei exportieren? Sie können die Änderungen jederzeit auch später speichern. Exportiert wird immer die aktuelle Version inklusive ungespeicherter Änderungen..
+        /// </summary>
+        internal static string CsvExportSave {
+            get {
+                return ResourceManager.GetString("CsvExportSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jetzt speichern?.
+        /// </summary>
+        internal static string CsvExportSaveT {
+            get {
+                return ResourceManager.GetString("CsvExportSaveT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Beim Importieren einer CSV Datei ist ein unerwarteter Fehler aufgetreten.
         ///Details:
         ///{0}.

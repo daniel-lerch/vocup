@@ -1,11 +1,9 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vocup.Models;
 using Vocup.Properties;
@@ -15,11 +13,11 @@ namespace Vocup.IO.Internal
 {
     internal class CsvFile
     {
-        public bool Import(string path, VocabularyBook book)
+        public bool Import(string path, VocabularyBook book, bool importSettings)
         {
             try
             {
-                RewriteHelper<string, string> helper = new RewriteHelper<string, string>(nameof(Entry.MotherTongue), nameof(Entry.ForeignLang));
+                RewriteHelper helper = new RewriteHelper(nameof(Entry.MotherTongue), nameof(Entry.ForeignLang));
                 Configuration config = new Configuration()
                 {
                     Encoding = Encoding.Unicode,
@@ -41,9 +39,18 @@ namespace Vocup.IO.Internal
                         return false;
                     }
 
-                    if (helper.SourceItems[0] != book.MotherTongue || helper.SourceItems[1] != book.ForeignLang)
+                    if (importSettings)
                     {
-                        if (MessageBox.Show(string.Format(Messages.CsvInvalidLanguages, helper.SourceItems[0], helper.SourceItems[1]), Messages.CsvInvalidHeaderT, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                        book.MotherTongue = helper.SourceItems[0];
+                        book.ForeignLang = helper.SourceItems[1];
+                    }
+                    else if (helper.SourceItems[0] != book.MotherTongue || helper.SourceItems[1] != book.ForeignLang)
+                    {
+                        DialogResult dialogResult = MessageBox.Show(
+                            string.Format(Messages.CsvInvalidLanguages, helper.SourceItems[0], helper.SourceItems[1]),
+                            Messages.CsvInvalidHeaderT, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (dialogResult == DialogResult.No)
                             return false;
                     }
 

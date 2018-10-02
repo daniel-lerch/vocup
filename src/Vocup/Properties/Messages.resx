@@ -131,6 +131,12 @@ Details:
 {0}</value>
     <comment>{0}: ErrorDetails</comment>
   </data>
+  <data name="CsvExportSave" xml:space="preserve">
+    <value>Möchten die Änderungen am Vokabelheft speichern, bevor Sie es in eine CSV-Datei exportieren? Sie können die Änderungen jederzeit auch später speichern. Exportiert wird immer die aktuelle Version inklusive ungespeicherter Änderungen.</value>
+  </data>
+  <data name="CsvExportSaveT" xml:space="preserve">
+    <value>Jetzt speichern?</value>
+  </data>
   <data name="CsvImportError" xml:space="preserve">
     <value>Beim Importieren einer CSV Datei ist ein unerwarteter Fehler aufgetreten.
 Details:

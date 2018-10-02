@@ -7,25 +7,28 @@ using System.Threading.Tasks;
 
 namespace Vocup.Util
 {
-    public class RewriteHelper<TSrc, TDest>
+    public class RewriteHelper
     {
-        private readonly TDest[] destinationItems;
-        private IList<TSrc> sourceItems;
+        private readonly string[] destinationItems;
+        private IList<string> sourceItems;
 
-        public RewriteHelper(params TDest[] destinationItems)
+        public RewriteHelper(params string[] destinationItems)
         {
             this.destinationItems = destinationItems;
-            sourceItems = new List<TSrc>();
-            SourceItems = new ReadOnlyCollection<TSrc>(sourceItems);
+            sourceItems = new List<string>();
+            SourceItems = new ReadOnlyCollection<string>(sourceItems);
         }
 
-        public IReadOnlyList<TSrc> SourceItems { get; }
+        public IReadOnlyList<string> SourceItems { get; }
 
-        public TDest Rewrite(TSrc sourceItem)
+        public string Rewrite(string source)
         {
-            int index = sourceItems.Count;
-            sourceItems.Add(sourceItem);
-            return index < destinationItems.Length ? destinationItems[index] : default(TDest);
+            foreach (string sourceItem in source.Split('\t'))
+            {
+                sourceItems.Add(sourceItem);
+            }
+
+            return string.Join("\t", destinationItems);
         }
     }
 }
