@@ -68,6 +68,7 @@ namespace Vocup.Models
             Parent.StatisticsPanel.CorrectlyPracticed = VocabularyBook.Statistics.CorrectlyPracticed;
             Parent.StatisticsPanel.FullyPracticed = VocabularyBook.Statistics.FullyPracticed;
 
+            Parent.VocabularyBookHasContent(VocabularyBook.Words.Count > 0);
             Parent.VocabularyBookPracticable(VocabularyBook.Statistics.NotFullyPracticed > 0);
         }
 

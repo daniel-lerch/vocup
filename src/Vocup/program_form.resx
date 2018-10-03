@@ -462,25 +462,25 @@
   <data name="&gt;&gt;MenuStrip.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="search_vokabel_field.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="TbSearchWord.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 43</value>
   </data>
-  <data name="search_vokabel_field.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TbSearchWord.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 20</value>
   </data>
-  <data name="search_vokabel_field.TabIndex" type="System.Int32, mscorlib">
+  <data name="TbSearchWord.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;search_vokabel_field.Name" xml:space="preserve">
-    <value>search_vokabel_field</value>
+  <data name="&gt;&gt;TbSearchWord.Name" xml:space="preserve">
+    <value>TbSearchWord</value>
   </data>
-  <data name="&gt;&gt;search_vokabel_field.Type" xml:space="preserve">
+  <data name="&gt;&gt;TbSearchWord.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;search_vokabel_field.Parent" xml:space="preserve">
+  <data name="&gt;&gt;TbSearchWord.Parent" xml:space="preserve">
     <value>GroupSearch</value>
   </data>
-  <data name="&gt;&gt;search_vokabel_field.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TbSearchWord.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="BtnBookSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -1018,7 +1018,7 @@
   <metadata name="printList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>323, 16</value>
   </metadata>
-  <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="ToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 24</value>
   </metadata>
   <data name="TsbCreateBook.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -1081,25 +1081,25 @@
   <data name="toolStripLabel.Text" xml:space="preserve">
     <value>Infos zum Bewertungssystem:</value>
   </data>
-  <data name="toolStrip.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 24</value>
   </data>
-  <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ToolStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>784, 25</value>
   </data>
-  <data name="toolStrip.TabIndex" type="System.Int32, mscorlib">
+  <data name="ToolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;toolStrip.Name" xml:space="preserve">
-    <value>toolStrip</value>
+  <data name="&gt;&gt;ToolStrip.Name" xml:space="preserve">
+    <value>ToolStrip</value>
   </data>
-  <data name="&gt;&gt;toolStrip.Type" xml:space="preserve">
+  <data name="&gt;&gt;ToolStrip.Type" xml:space="preserve">
     <value>Vocup.Controls.ResponsiveToolStrip, Vocup, Version=1.4.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;toolStrip.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ToolStrip.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;toolStrip.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ToolStrip.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="TableLayout.ColumnCount" type="System.Int32, mscorlib">
