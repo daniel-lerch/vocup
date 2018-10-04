@@ -158,6 +158,24 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Möchten Sie Ihre Änderungen und/oder Übungsergebnisse speichern?.
+        /// </summary>
+        internal static string GeneralSaveChanges {
+            get {
+                return ResourceManager.GetString("GeneralSaveChanges", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Speichern?.
+        /// </summary>
+        internal static string GeneralSaveChangesT {
+            get {
+                return ResourceManager.GetString("GeneralSaveChangesT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ein Vokabelheft vom selben Pfad wurde bereits geladen. Möchten Sie das aktuelle Vokabelheft laden und die Daten überschreiben?.
         /// </summary>
         internal static string MergeOverride {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Windows.Forms;
 using Vocup.Controls;
 using Vocup.Properties;
@@ -55,6 +56,7 @@ namespace Vocup.Models
             ListView.MotherTongue = VocabularyBook.MotherTongue;
             ListView.ForeignLang = VocabularyBook.ForeignLang;
             Parent?.VocabularyBookUnsavedChanges(VocabularyBook.UnsavedChanges);
+            Parent?.VocabularyBookName(Path.GetFileNameWithoutExtension(VocabularyBook.FilePath));
         }
 
         private void OnStatisticsChanged(object sender, EventArgs e) => OnStatisticsChanged();

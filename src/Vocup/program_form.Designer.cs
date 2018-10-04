@@ -414,7 +414,7 @@
             // 
             resources.ApplyResources(this.TbSearchWord, "TbSearchWord");
             this.TbSearchWord.Name = "TbSearchWord";
-            this.TbSearchWord.TextChanged += new System.EventHandler(this.search_vokabel_field_TextChanged);
+            this.TbSearchWord.TextChanged += new System.EventHandler(this.TbSearchWord_TextChanged);
             // 
             // GroupBook
             // 

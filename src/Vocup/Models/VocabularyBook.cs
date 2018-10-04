@@ -26,32 +26,32 @@ namespace Vocup.Models
         public string FilePath
         {
             get => _filePath;
-            set { _filePath = value; OnPropertyChanged(); }
+            set { if (_filePath != value) { _filePath = value; OnPropertyChanged(); } }
         }
         public string VhrCode
         {
             get => _vhrCode;
-            set { _vhrCode = value; OnPropertyChanged(); }
+            set { if (_vhrCode != value) { _vhrCode = value; OnPropertyChanged(); } }
         }
         public string MotherTongue
         {
             get => _motherTongue;
-            set { _motherTongue = value; OnPropertyChanged(); }
+            set { if (_motherTongue != value) { _motherTongue = value; OnPropertyChanged(); } }
         }
         public string ForeignLang
         {
             get => _foreignLang;
-            set { _foreignLang = value; OnPropertyChanged(); }
+            set { if (_foreignLang != value) { _foreignLang = value; OnPropertyChanged(); } }
         }
         public PracticeMode PracticeMode
         {
             get => _practiceMode;
-            set { _practiceMode = value; OnPropertyChanged(); }
+            set { if (_practiceMode != value) { _practiceMode = value; OnPropertyChanged(); } }
         }
         public bool UnsavedChanges
         {
             get => _unsafedChanges;
-            set { _unsafedChanges = value; OnPropertyChanged(); }
+            set { if (_unsafedChanges != value) { _unsafedChanges = value; OnPropertyChanged(); } }
         }
         public ReactiveCollection<VocabularyWord> Words { get; }
         public VocabularyBookStatistics Statistics { get; }
@@ -60,6 +60,8 @@ namespace Vocup.Models
 
         private void OnPropertyChanged([CallerMemberName] string name = "")
         {
+            if (name != nameof(UnsavedChanges))
+                UnsavedChanges = true;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
@@ -67,6 +69,7 @@ namespace Vocup.Models
 
         private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
+            UnsavedChanges = true;
             CollectionChanged?.Invoke(sender, e);
         }
 

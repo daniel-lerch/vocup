@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Vocup.Models
 {
@@ -21,17 +16,17 @@ namespace Vocup.Models
         public string MotherTongue
         {
             get => _motherTongue;
-            set { _motherTongue = value; OnPropertyChanged(); }
+            set { if (_motherTongue != value) { _motherTongue = value; OnPropertyChanged(); } }
         }
         public string ForeignLang
         {
             get => _foreignLang;
-            set { _foreignLang = value; OnPropertyChanged(); }
+            set { if (_foreignLang != value) { _foreignLang = value; OnPropertyChanged(); } }
         }
         public string ForeignLangSynonym
         {
             get => _foreignLangSynonym;
-            set { _foreignLangSynonym = value; OnPropertyChanged(); }
+            set { if (_foreignLangSynonym != value) { _foreignLangSynonym = value; OnPropertyChanged(); } }
         }
         public string ForeignLangText
         {
@@ -47,22 +42,21 @@ namespace Vocup.Models
                 int idx = value.LastIndexOf('=');
                 if (idx == -1)
                 {
-                    _foreignLang = value;
-                    _foreignLangSynonym = null;
+                    ForeignLang = value;
+                    ForeignLangSynonym = null;
                 }
                 else
                 {
-                    _foreignLang = value.Remove(idx);
-                    _foreignLangSynonym = value.Substring(idx + 1);
+                    ForeignLang = value.Remove(idx);
+                    ForeignLangSynonym = value.Substring(idx + 1);
                 }
-                OnPropertyChanged();
             }
         }
 
         public PracticeState PracticeState
         {
             get => _practiceState;
-            private set { _practiceState = value; OnPropertyChanged(); }
+            private set { if (_practiceState != value) { _practiceState = value; OnPropertyChanged(); } }
         }
 
         public int PracticeStateNumber
@@ -70,14 +64,17 @@ namespace Vocup.Models
             get => _practiceStateNumber;
             set
             {
-                _practiceStateNumber = value; OnPropertyChanged();
-                PracticeState = PracticeStateHelper.Parse(_practiceStateNumber);
+                if (_practiceStateNumber != value)
+                {
+                    _practiceStateNumber = value; OnPropertyChanged();
+                    PracticeState = PracticeStateHelper.Parse(_practiceStateNumber);
+                }
             }
         }
         public DateTime PracticeDate
         {
             get => _practiceDate;
-            set { _practiceDate = value; OnPropertyChanged(); }
+            set { if (_practiceDate != value) { _practiceDate = value; OnPropertyChanged(); } }
         }
 
         public VocabularyBook Owner { get; set; }
@@ -86,6 +83,7 @@ namespace Vocup.Models
 
         private void OnPropertyChanged([CallerMemberName] string name = "")
         {
+            if (Owner != null) Owner.UnsavedChanges = true;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
