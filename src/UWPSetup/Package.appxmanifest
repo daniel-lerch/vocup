@@ -32,6 +32,7 @@
         <uap:Extension Category="windows.fileTypeAssociation">
           <uap:FileTypeAssociation Name="vhf">
             <uap:Logo>Images\VhfLogo.png</uap:Logo>
+            <uap:DisplayName>Vokabelheft</uap:DisplayName>
             <uap:SupportedFileTypes>
               <uap:FileType>.vhf</uap:FileType>
             </uap:SupportedFileTypes>
@@ -40,6 +41,7 @@
         <uap:Extension Category="windows.fileTypeAssociation">
           <uap:FileTypeAssociation Name="vdp">
             <uap:Logo>Images\VdpLogo.png</uap:Logo>
+            <uap:DisplayName>Vocup Datensicherung</uap:DisplayName>
             <uap:SupportedFileTypes>
               <uap:FileType>.vdp</uap:FileType>
             </uap:SupportedFileTypes>
