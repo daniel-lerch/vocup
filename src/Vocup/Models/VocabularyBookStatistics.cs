@@ -45,7 +45,7 @@ namespace Vocup.Models
             }
         }
 
-        private void Refresh()
+        public void Refresh()
         {
             int un = 0, wrongly = 0, correctly = 0, fully = 0;
 

@@ -93,7 +93,6 @@ namespace Vocup.IO.Internal
                     book.UnsavedChanges = true;
                 }
 
-                book.FilePath = path;
                 book.PracticeMode = (PracticeMode)imode;
 
                 for (int i = 0; i < book.Words.Count; i++)

@@ -83,8 +83,11 @@ namespace Vocup.Models
 
         private void OnPropertyChanged([CallerMemberName] string name = "")
         {
-            if (Owner != null) Owner.UnsavedChanges = true;
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            if (Owner != null && Owner.Notifies)
+            {
+                Owner.UnsavedChanges = true;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            }
         }
 
         public void RenewPracticeState()

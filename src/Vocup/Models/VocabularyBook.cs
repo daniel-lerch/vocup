@@ -55,22 +55,38 @@ namespace Vocup.Models
         }
         public ReactiveCollection<VocabularyWord> Words { get; }
         public VocabularyBookStatistics Statistics { get; }
+        public bool Notifies { get; private set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertyChanged([CallerMemberName] string name = "")
         {
-            if (name != nameof(UnsavedChanges))
-                UnsavedChanges = true;
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            if (Notifies)
+            {
+                if (name != nameof(UnsavedChanges))
+                    UnsavedChanges = true;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            }
         }
 
         public event NotifyCollectionChangedEventHandler CollectionChanged;
 
         private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            UnsavedChanges = true;
-            CollectionChanged?.Invoke(sender, e);
+            if (Notifies)
+            {
+                UnsavedChanges = true;
+                CollectionChanged?.Invoke(sender, e);
+            }
+        }
+
+        /// <summary>
+        /// Activates raising events by setting <see cref="Notifies"/> to true.
+        /// </summary>
+        public void Notify()
+        {
+            Statistics.Refresh();
+            Notifies = true;
         }
 
         public void GenerateVhrCode()
