@@ -67,25 +67,13 @@
     <Reference Include="ICSharpCode.SharpZipLib, Version=1.0.0.999, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\..\packages\SharpZipLib.1.0.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
-    <Reference Include="K_Updater, Version=1.2.0.0, Culture=neutral, PublicKeyToken=f9082c8bf73e2593, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Library\K_Updater.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.DirectoryServices">
       <Private>False</Private>
     </Reference>
     <Reference Include="System.Drawing">
       <Private>False</Private>
     </Reference>
-    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms">
       <Private>False</Private>
@@ -413,7 +401,6 @@
     <None Include="Resources\update.png" />
     <None Include="Resources\search.png" />
     <None Include="icon.ico" />
-    <None Include="Library\K_Updater.dll" />
     <None Include="Resources\cancel.png" />
     <None Include="Resources\help.png" />
     <None Include="Resources\file.png" />
