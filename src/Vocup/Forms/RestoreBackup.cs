@@ -38,34 +38,18 @@ namespace Vocup.Forms
         }
 
         //OpenFile-Dialog anzeigen
-        private void path_button_Click(object sender, EventArgs e)
+        private void BtnFilePath_Click(object sender, EventArgs e)
         {
-            //Neuer Dialog erstellen
-
             OpenFileDialog open = new OpenFileDialog
             {
                 Title = Words.SaveBackup,
-                Filter = Words.VocupBackupFile + " (*.vdp)|*.vdp"
+                Filter = Words.VocupBackupFile + " (*.vdp)|*.vdp",
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal)
             };
-
-            if (string.IsNullOrWhiteSpace(Settings.Default.backup_folder))
-            {
-                open.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            }
-            else
-            {
-                DirectoryInfo info = new DirectoryInfo(Properties.Settings.Default.backup_folder);
-
-                if (info.Exists == true)
-                {
-                    open.InitialDirectory = Properties.Settings.Default.backup_folder;
-                }
-            }
 
             if (open.ShowDialog() == DialogResult.OK)
             {
                 path_backup = open.FileName;
-
                 TbFilePath.Text = open.FileName;
             }
         }

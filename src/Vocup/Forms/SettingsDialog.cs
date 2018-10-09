@@ -47,23 +47,23 @@ namespace Vocup
             CbColoredTextfield.Checked = settings.PracticeInputBackColor != SystemColors.Window;
 
             // Teilweise richtig
-            checkbox_leerschläge.Checked = settings.nearly_correct_blank_char;
-            checkbox_satzzeichen.Checked = settings.nearly_correct_punctuation_char;
-            checkbox_sonderzeichen.Checked = settings.nearly_correct_special_char;
-            checkbox_artikel.Checked = settings.nearly_correct_artical;
-            checkbox_synonyme.Checked = settings.nearly_correct_synonym;
+            checkbox_leerschläge.Checked = settings.EvaluateTolerateWhiteSpace;
+            checkbox_satzzeichen.Checked = settings.EvaluateToleratePunctuationMark;
+            checkbox_sonderzeichen.Checked = settings.EvaluateTolerateSpecialChar;
+            checkbox_artikel.Checked = settings.EvaluateTolerateArticle;
+            checkbox_synonyme.Checked = settings.EvaluateTolerateNoSynonym;
 
             // Fortfahren-Button
             CbSingleContinueButton.Checked = settings.PracticeFastContinue;
 
             // Klänge
-            CbAcousticFeedback.Checked = settings.sound;
+            CbAcousticFeedback.Checked = settings.PracticeSoundFeedback;
 
             // Auswertung
-            CbPracticeResult.Checked = settings.show_practise_result_list;
+            CbPracticeResult.Checked = settings.PracticeShowResultList;
 
             // Notensystem
-            if (settings.notensystem == "de")
+            if (settings.PracticeGradeCulture == "de-DE")
                 CbEvaluationSystem.SelectedItem = "Deutschland";
             else
                 CbEvaluationSystem.SelectedItem = "Schweiz";
@@ -76,18 +76,18 @@ namespace Vocup
             TrbWrongRigtht.Maximum = 10 - TrbUnknown.Value;
 
             // Prozentualer Anteil an noch nicht geübten Vokabeln
-            anzahl_noch_nicht_label.Text = settings.prozent_noch_nicht + "%";
-            TrbUnknown.Value = settings.prozent_noch_nicht / 10;
+            anzahl_noch_nicht_label.Text = settings.PracticePercentageUnpracticed + "%";
+            TrbUnknown.Value = settings.PracticePercentageUnpracticed / 10;
 
             // Prozentualer Anteil an falsch geübten Vokabeln
-            anzahl_falsch_label.Text = settings.prozent_falsch + "%";
+            anzahl_falsch_label.Text = settings.PracticePercentageWrong + "%";
 
             // Prozentualer Anteil an richtig geübten Vokabeln
-            anzahl_richtig_label.Text = settings.prozent_richtig + "%";
+            anzahl_richtig_label.Text = settings.PracticePercentageCorrect + "%";
 
             // Trackbar anzahl_falsch_richtig
-            TrbWrongRigtht.Maximum = (settings.prozent_richtig + settings.prozent_falsch) / 10 - 1;
-            TrbWrongRigtht.Value = settings.prozent_richtig / 10;
+            TrbWrongRigtht.Maximum = (settings.PracticePercentageCorrect + settings.PracticePercentageWrong) / 10 - 1;
+            TrbWrongRigtht.Value = settings.PracticePercentageCorrect / 10;
         }
 
         private void BtnOk_Click(object sender, EventArgs e)
@@ -114,16 +114,16 @@ namespace Vocup
             settings.VhrPath = TbVhrPath.Text;
 
             // Auswertung
-            settings.show_practise_result_list = CbPracticeResult.Checked;
+            settings.PracticeShowResultList = CbPracticeResult.Checked;
 
             // Notensystem
             if (CbEvaluationSystem.SelectedItem.ToString() == "Deutschland")
             {
-                settings.notensystem = "de";
+                settings.PracticeGradeCulture = "de-DE";
             }
             else
             {
-                settings.notensystem = "ch";
+                settings.PracticeGradeCulture = "de-CH";
             }
 
             // Übersetzungen selber bewerten
@@ -133,25 +133,25 @@ namespace Vocup
             settings.PracticeInputBackColor = CbColoredTextfield.Checked ? Color.FromArgb(250, 250, 150) : SystemColors.Window;
 
             // Teilweise richtig
-            settings.nearly_correct_blank_char = checkbox_leerschläge.Checked;
-            settings.nearly_correct_punctuation_char = checkbox_satzzeichen.Checked;
-            settings.nearly_correct_special_char = checkbox_sonderzeichen.Checked;
-            settings.nearly_correct_artical = checkbox_artikel.Checked;
-            settings.nearly_correct_synonym = checkbox_synonyme.Checked;
+            settings.EvaluateTolerateWhiteSpace = checkbox_leerschläge.Checked;
+            settings.EvaluateToleratePunctuationMark = checkbox_satzzeichen.Checked;
+            settings.EvaluateTolerateSpecialChar = checkbox_sonderzeichen.Checked;
+            settings.EvaluateTolerateArticle = checkbox_artikel.Checked;
+            settings.EvaluateTolerateNoSynonym = checkbox_synonyme.Checked;
 
             // Fortfahren-Button
             settings.PracticeFastContinue = CbSingleContinueButton.Checked;
 
             // Akustische Rückmeldung
-            settings.sound = CbAcousticFeedback.Checked;
+            settings.PracticeSoundFeedback = CbAcousticFeedback.Checked;
 
             // Anzahl richtig
             settings.MaxPracticeCount = TrbRepetitions.Value;
 
             // Prozentuale Anteile
-            settings.prozent_noch_nicht = TrbUnknown.Value * 10;
-            settings.prozent_richtig = TrbWrongRigtht.Value * 10;
-            settings.prozent_falsch = (10 - TrbUnknown.Value - TrbWrongRigtht.Value) * 10;
+            settings.PracticePercentageUnpracticed = TrbUnknown.Value * 10;
+            settings.PracticePercentageCorrect = TrbWrongRigtht.Value * 10;
+            settings.PracticePercentageWrong = (10 - TrbUnknown.Value - TrbWrongRigtht.Value) * 10;
 
             // Einstellungen speichern
             settings.Save();

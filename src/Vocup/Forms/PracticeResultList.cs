@@ -90,7 +90,7 @@ namespace Vocup.Forms
         {
             if (CbDoNotShowAgain.Checked)
             {
-                Settings.Default.show_practise_result_list = false;
+                Settings.Default.PracticeShowResultList = false;
                 Settings.Default.Save();
             }
 
@@ -107,7 +107,7 @@ namespace Vocup.Forms
             else // Calculate percentage and grade
             {
                 decimal grade;
-                if (Settings.Default.notensystem == "de")
+                if (Settings.Default.PracticeGradeCulture == "de-DE")
                 {
                     grade = 7M - Math.Round(((correct + partlyCorrect / 2M) * 5M / (practiceList.Count - notPracticed)) + 1, 1);
 

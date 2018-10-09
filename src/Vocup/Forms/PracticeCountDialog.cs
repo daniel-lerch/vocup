@@ -103,13 +103,13 @@ namespace Vocup.Forms
             if (RbAllStates.Checked)
             {
                 compositor.AddSource(unpracticedItems.ToList(),
-                    count * Properties.Settings.Default.prozent_noch_nicht / 100d);
+                    count * Properties.Settings.Default.PracticePercentageUnpracticed / 100d);
 
                 compositor.AddSource(wronglyPracticedItems.ToList(),
-                    count * Properties.Settings.Default.prozent_falsch / 100d);
+                    count * Properties.Settings.Default.PracticePercentageWrong / 100d);
 
                 compositor.AddSource(correctlyPracticedItems.ToList(),
-                    count * Properties.Settings.Default.prozent_richtig / 100d);
+                    count * Properties.Settings.Default.PracticePercentageCorrect / 100d);
             }
             else if (RbUnpracticed.Checked)
             {

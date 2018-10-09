@@ -141,24 +141,13 @@ namespace Vocup.Forms
             using (SaveFileDialog save = new SaveFileDialog
             {
                 Title = Words.SaveBackup,
-                Filter = Words.VocupBackupFile + " (*.vdp)|*.vdp"
+                Filter = Words.VocupBackupFile + " (*.vdp)|*.vdp",
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal)
             })
             {
-                if (string.IsNullOrWhiteSpace(Settings.Default.backup_folder) ||
-                    !Directory.Exists(Settings.Default.backup_folder))
-                {
-                    save.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-                }
-                else
-                {
-                    save.InitialDirectory = Settings.Default.backup_folder;
-                }
-
                 if (save.ShowDialog() == DialogResult.OK)
                 {
                     pfad = save.FileName;
-                    Settings.Default.backup_folder = new FileInfo(save.FileName).DirectoryName;
-                    Settings.Default.Save();
                     DialogResult = DialogResult.OK;
 
                     ExecuteCreateBackup();

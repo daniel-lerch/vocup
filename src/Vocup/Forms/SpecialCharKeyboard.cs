@@ -101,9 +101,11 @@ namespace Vocup.Forms
             }
 
             // Try to open recent tab
-            string last = Settings.Default.sonderzeichen_registerkarte;
-            if (!string.IsNullOrWhiteSpace(last) && TcMain.TabPages.ContainsKey(last))
-                TcMain.SelectTab(last);
+            foreach (TabPage page in TcMain.TabPages)
+            {
+                if (page.Tag.ToString().Equals(Settings.Default.SpecialCharTab, StringComparison.OrdinalIgnoreCase))
+                    TcMain.SelectTab(page);
+            }
         }
 
         private void Button_Click(object sender, EventArgs e)
@@ -131,7 +133,7 @@ namespace Vocup.Forms
 
         private void Form_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Settings.Default.sonderzeichen_registerkarte = TcMain.SelectedTab.Name;
+            Settings.Default.SpecialCharTab = TcMain.SelectedTab.Tag.ToString();
             Settings.Default.Save();
 
             if (e.CloseReason == CloseReason.UserClosing)

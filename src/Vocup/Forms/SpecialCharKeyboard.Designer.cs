@@ -150,6 +150,7 @@
             this.TcMain.SelectedIndex = 0;
             this.TcMain.Size = new System.Drawing.Size(404, 126);
             this.TcMain.TabIndex = 0;
+            this.TcMain.Tag = "es-ES";
             // 
             // Deutsch
             // 
@@ -167,6 +168,7 @@
             this.Deutsch.Padding = new System.Windows.Forms.Padding(3);
             this.Deutsch.Size = new System.Drawing.Size(396, 99);
             this.Deutsch.TabIndex = 0;
+            this.Deutsch.Tag = "de-DE";
             this.Deutsch.Text = "Deutsch";
             this.Deutsch.UseVisualStyleBackColor = true;
             // 
@@ -280,6 +282,7 @@
             this.Französisch.Padding = new System.Windows.Forms.Padding(3);
             this.Französisch.Size = new System.Drawing.Size(396, 99);
             this.Französisch.TabIndex = 1;
+            this.Französisch.Tag = "fr-FR";
             this.Französisch.Text = "Französisch";
             this.Französisch.UseVisualStyleBackColor = true;
             // 
@@ -612,6 +615,7 @@
             this.Italienisch.Padding = new System.Windows.Forms.Padding(3);
             this.Italienisch.Size = new System.Drawing.Size(396, 99);
             this.Italienisch.TabIndex = 2;
+            this.Italienisch.Tag = "it-IT";
             this.Italienisch.Text = "Italienisch";
             this.Italienisch.UseVisualStyleBackColor = true;
             // 
@@ -1048,6 +1052,7 @@
             this.Rumaenisch.Padding = new System.Windows.Forms.Padding(3);
             this.Rumaenisch.Size = new System.Drawing.Size(396, 99);
             this.Rumaenisch.TabIndex = 4;
+            this.Rumaenisch.Tag = "ro-RO";
             this.Rumaenisch.Text = "Rumänisch";
             this.Rumaenisch.UseVisualStyleBackColor = true;
             // 

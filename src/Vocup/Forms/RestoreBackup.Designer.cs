@@ -66,7 +66,7 @@
             resources.ApplyResources(this.BtnFilePath, "BtnFilePath");
             this.BtnFilePath.Name = "BtnFilePath";
             this.BtnFilePath.UseVisualStyleBackColor = true;
-            this.BtnFilePath.Click += new System.EventHandler(this.path_button_Click);
+            this.BtnFilePath.Click += new System.EventHandler(this.BtnFilePath_Click);
             // 
             // GroupFilePath
             // 

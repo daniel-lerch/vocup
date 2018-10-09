@@ -49,13 +49,13 @@ namespace Vocup.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("deutsch")]
-        public string sonderzeichen_registerkarte {
+        [global::System.Configuration.DefaultSettingValueAttribute("de-DE")]
+        public string SpecialCharTab {
             get {
-                return ((string)(this["sonderzeichen_registerkarte"]));
+                return ((string)(this["SpecialCharTab"]));
             }
             set {
-                this["sonderzeichen_registerkarte"] = value;
+                this["SpecialCharTab"] = value;
             }
         }
         
@@ -86,48 +86,48 @@ namespace Vocup.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("50")]
-        public int prozent_noch_nicht {
+        public int PracticePercentageUnpracticed {
             get {
-                return ((int)(this["prozent_noch_nicht"]));
+                return ((int)(this["PracticePercentageUnpracticed"]));
             }
             set {
-                this["prozent_noch_nicht"] = value;
+                this["PracticePercentageUnpracticed"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("20")]
-        public int prozent_richtig {
+        public int PracticePercentageCorrect {
             get {
-                return ((int)(this["prozent_richtig"]));
+                return ((int)(this["PracticePercentageCorrect"]));
             }
             set {
-                this["prozent_richtig"] = value;
+                this["PracticePercentageCorrect"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("30")]
-        public int prozent_falsch {
+        public int PracticePercentageWrong {
             get {
-                return ((int)(this["prozent_falsch"]));
+                return ((int)(this["PracticePercentageWrong"]));
             }
             set {
-                this["prozent_falsch"] = value;
+                this["PracticePercentageWrong"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool show_practise_result_list {
+        public bool PracticeShowResultList {
             get {
-                return ((bool)(this["show_practise_result_list"]));
+                return ((bool)(this["PracticeShowResultList"]));
             }
             set {
-                this["show_practise_result_list"] = value;
+                this["PracticeShowResultList"] = value;
             }
         }
         
@@ -145,25 +145,13 @@ namespace Vocup.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("ch")]
-        public string notensystem {
+        [global::System.Configuration.DefaultSettingValueAttribute("de-DE")]
+        public string PracticeGradeCulture {
             get {
-                return ((string)(this["notensystem"]));
+                return ((string)(this["PracticeGradeCulture"]));
             }
             set {
-                this["notensystem"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool papiereinzug {
-            get {
-                return ((bool)(this["papiereinzug"]));
-            }
-            set {
-                this["papiereinzug"] = value;
+                this["PracticeGradeCulture"] = value;
             }
         }
         
@@ -193,72 +181,48 @@ namespace Vocup.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool nearly_correct_blank_char {
+        public bool EvaluateTolerateWhiteSpace {
             get {
-                return ((bool)(this["nearly_correct_blank_char"]));
+                return ((bool)(this["EvaluateTolerateWhiteSpace"]));
             }
             set {
-                this["nearly_correct_blank_char"] = value;
+                this["EvaluateTolerateWhiteSpace"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool nearly_correct_punctuation_char {
+        public bool EvaluateToleratePunctuationMark {
             get {
-                return ((bool)(this["nearly_correct_punctuation_char"]));
+                return ((bool)(this["EvaluateToleratePunctuationMark"]));
             }
             set {
-                this["nearly_correct_punctuation_char"] = value;
+                this["EvaluateToleratePunctuationMark"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool nearly_correct_special_char {
+        public bool EvaluateTolerateSpecialChar {
             get {
-                return ((bool)(this["nearly_correct_special_char"]));
+                return ((bool)(this["EvaluateTolerateSpecialChar"]));
             }
             set {
-                this["nearly_correct_special_char"] = value;
+                this["EvaluateTolerateSpecialChar"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool nearly_correct_artical {
+        public bool EvaluateTolerateArticle {
             get {
-                return ((bool)(this["nearly_correct_artical"]));
+                return ((bool)(this["EvaluateTolerateArticle"]));
             }
             set {
-                this["nearly_correct_artical"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool nearly_correct_synonym {
-            get {
-                return ((bool)(this["nearly_correct_synonym"]));
-            }
-            set {
-                this["nearly_correct_synonym"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string backup_folder {
-            get {
-                return ((string)(this["backup_folder"]));
-            }
-            set {
-                this["backup_folder"] = value;
+                this["EvaluateTolerateArticle"] = value;
             }
         }
         
@@ -277,12 +241,12 @@ namespace Vocup.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool sound {
+        public bool PracticeSoundFeedback {
             get {
-                return ((bool)(this["sound"]));
+                return ((bool)(this["PracticeSoundFeedback"]));
             }
             set {
-                this["sound"] = value;
+                this["PracticeSoundFeedback"] = value;
             }
         }
         
@@ -325,12 +289,12 @@ namespace Vocup.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int startup_counter {
+        public int StartupCounter {
             get {
-                return ((int)(this["startup_counter"]));
+                return ((int)(this["StartupCounter"]));
             }
             set {
-                this["startup_counter"] = value;
+                this["StartupCounter"] = value;
             }
         }
         
@@ -355,6 +319,18 @@ namespace Vocup.Properties {
             }
             set {
                 this["ColumnResize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool EvaluateTolerateNoSynonym {
+            get {
+                return ((bool)(this["EvaluateTolerateNoSynonym"]));
+            }
+            set {
+                this["EvaluateTolerateNoSynonym"] = value;
             }
         }
     }
