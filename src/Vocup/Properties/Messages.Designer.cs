@@ -158,6 +158,33 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Diese Vokabel ist in Ihrem Vokabelheft bereits vorhanden. Möchten Sie Ihre Eingabe verwerfen?.
+        /// </summary>
+        internal static string EditAddDuplicate {
+            get {
+                return ResourceManager.GetString("EditAddDuplicate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vokabel bereits vorhanden.
+        /// </summary>
+        internal static string EditDuplicateT {
+            get {
+                return ResourceManager.GetString("EditDuplicateT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Die geänderte Vokabel befindet sich bereits in ihrem Vokabelheft. Möchten Sie diese Vokabel löschen?.
+        /// </summary>
+        internal static string EditToDuplicate {
+            get {
+                return ResourceManager.GetString("EditToDuplicate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Möchten Sie Ihre Änderungen und/oder Übungsergebnisse speichern?.
         /// </summary>
         internal static string GeneralSaveChanges {

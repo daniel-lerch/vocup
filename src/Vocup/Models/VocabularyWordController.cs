@@ -15,7 +15,7 @@ namespace Vocup.Models
 
         public VocabularyWordController(VocabularyWord vocabularyWord)
         {
-            ListViewItem = new ListViewItem();
+            ListViewItem = new ListViewItem { Tag = vocabularyWord };
             motherTongueColumn = ListViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(ListViewItem, ""));
             foreignLangColumn = ListViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(ListViewItem, ""));
             praticeDateColumn = ListViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(ListViewItem, ""));

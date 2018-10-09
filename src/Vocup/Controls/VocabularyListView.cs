@@ -52,6 +52,7 @@ namespace Vocup.Controls
 
         public ListView.ListViewItemCollection Items => MainListView.Items;
         public ListView.SelectedListViewItemCollection SelectedItems => MainListView.SelectedItems;
+        public ListViewItem SelectedItem => SelectedItems.Count > 0 ? SelectedItems[0] : null;
 
         [DefaultValue("")]
         public string MotherTongue

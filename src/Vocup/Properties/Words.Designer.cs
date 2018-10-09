@@ -70,6 +70,15 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Neue Vokabel hinzufügen.
+        /// </summary>
+        internal static string AddWord {
+            get {
+                return ResourceManager.GetString("AddWord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Abbrechen.
         /// </summary>
         internal static string Cancel {

@@ -158,6 +158,15 @@ Bitte stellen Sie sicher, dass die Datei nicht leer ist.</value>
     <value>Möchten Sie ein {0} - {1} Vokabelheft importieren, obwohl die Sprachen nicht übereinstimmen?</value>
     <comment>{0}: Source, {1}: Target</comment>
   </data>
+  <data name="EditAddDuplicate" xml:space="preserve">
+    <value>Diese Vokabel ist in Ihrem Vokabelheft bereits vorhanden. Möchten Sie Ihre Eingabe verwerfen?</value>
+  </data>
+  <data name="EditDuplicateT" xml:space="preserve">
+    <value>Vokabel bereits vorhanden</value>
+  </data>
+  <data name="EditToDuplicate" xml:space="preserve">
+    <value>Die geänderte Vokabel befindet sich bereits in ihrem Vokabelheft. Möchten Sie diese Vokabel löschen?</value>
+  </data>
   <data name="GeneralSaveChanges" xml:space="preserve">
     <value>Möchten Sie Ihre Änderungen und/oder Übungsergebnisse speichern?</value>
   </data>

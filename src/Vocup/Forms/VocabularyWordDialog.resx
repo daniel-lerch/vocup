@@ -286,13 +286,13 @@
     <value>6, 48</value>
   </data>
   <data name="LbSynonym.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 13</value>
+    <value>134, 13</value>
   </data>
   <data name="LbSynonym.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="LbSynonym.Text" xml:space="preserve">
-    <value>Synonym</value>
+    <value>%ForeignLang% (Synonym)</value>
   </data>
   <data name="&gt;&gt;LbSynonym.Name" xml:space="preserve">
     <value>LbSynonym</value>
@@ -305,6 +305,9 @@
   </data>
   <data name="&gt;&gt;LbSynonym.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="GroupOptions.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="GroupOptions.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 166</value>
@@ -469,10 +472,10 @@
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Neue Vokabel hinzufügen</value>
+    <value>%Text%</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>EditWordDialog</value>
+    <value>VocabularyWordDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

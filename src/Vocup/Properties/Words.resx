@@ -120,6 +120,9 @@
   <data name="AddVocabularyBooks" xml:space="preserve">
     <value>Vokabelhefte hinzufügen</value>
   </data>
+  <data name="AddWord" xml:space="preserve">
+    <value>Neue Vokabel hinzufügen</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Abbrechen</value>
   </data>

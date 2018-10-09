@@ -1,6 +1,6 @@
 ﻿namespace Vocup.Forms
 {
-    partial class EditWordDialog
+    partial class VocabularyWordDialog
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditWordDialog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VocabularyWordDialog));
             this.BtnContinue = new System.Windows.Forms.Button();
             this.BtnCancel = new System.Windows.Forms.Button();
             this.TbForeignLangSynonym = new System.Windows.Forms.TextBox();
@@ -53,6 +53,7 @@
             resources.ApplyResources(this.BtnContinue, "BtnContinue");
             this.BtnContinue.Name = "BtnContinue";
             this.BtnContinue.UseVisualStyleBackColor = true;
+            this.BtnContinue.Click += new System.EventHandler(this.BtnContinue_Click);
             // 
             // BtnCancel
             // 
@@ -60,6 +61,7 @@
             resources.ApplyResources(this.BtnCancel, "BtnCancel");
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // TbForeignLangSynonym
             // 
@@ -136,7 +138,7 @@
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
-            // EditWordDialog
+            // VocabularyWordDialog
             // 
             this.AcceptButton = this.BtnContinue;
             resources.ApplyResources(this, "$this");
@@ -150,9 +152,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "EditWordDialog";
+            this.Name = "VocabularyWordDialog";
             this.ShowInTaskbar = false;
-            this.Load += new System.EventHandler(this.Form_Load);
             this.GroupOptions.ResumeLayout(false);
             this.GroupOptions.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -166,16 +167,16 @@
         #endregion
         public System.Windows.Forms.TextBox TbForeignLangSynonym;
         public System.Windows.Forms.TextBox TbForeignLang;
-        public System.Windows.Forms.Label LbForeignLang;
         public System.Windows.Forms.CheckBox CbResetResults;
-        public System.Windows.Forms.Label LbSynonym;
         private System.Windows.Forms.Button BtnSpecialChar;
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.TextBox TbMotherTongue;
-        public System.Windows.Forms.Label LbMotherTongue;
         private System.Windows.Forms.GroupBox groupBox2;
-        public System.Windows.Forms.GroupBox GroupOptions;
         public System.Windows.Forms.Button BtnContinue;
         public System.Windows.Forms.Button BtnCancel;
+        private System.Windows.Forms.Label LbForeignLang;
+        private System.Windows.Forms.Label LbSynonym;
+        private System.Windows.Forms.Label LbMotherTongue;
+        protected System.Windows.Forms.GroupBox GroupOptions;
     }
 }
