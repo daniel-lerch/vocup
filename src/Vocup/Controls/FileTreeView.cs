@@ -74,7 +74,7 @@ namespace Vocup.Controls
             get => (MainTreeView.SelectedNode?.Tag as FileInfo)?.FullName;
             set
             {
-                if (value == null) throw new ArgumentNullException(nameof(SelectedPath));
+                if (value == null) value = "";
                 if (value != SelectedPath)
                     MainTreeView.SelectedNode = GetNode(value);
             }

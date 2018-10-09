@@ -29,6 +29,7 @@ namespace Vocup.Forms
         {
             book = new VocabularyBook();
             this.book = book;
+            book.Notify();
 
             Text = Words.CreateVocabularyBook;
             Icon = Icon.FromHandle(Icons.File.GetHicon());
