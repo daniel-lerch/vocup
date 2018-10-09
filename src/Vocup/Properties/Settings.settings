@@ -5,7 +5,7 @@
     <Setting Name="GridLines" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="last_file" Type="System.String" Scope="User">
+    <Setting Name="LastFile" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="sonderzeichen_registerkarte" Type="System.String" Scope="User">

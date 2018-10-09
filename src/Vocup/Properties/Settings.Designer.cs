@@ -38,12 +38,12 @@ namespace Vocup.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string last_file {
+        public string LastFile {
             get {
-                return ((string)(this["last_file"]));
+                return ((string)(this["LastFile"]));
             }
             set {
-                this["last_file"] = value;
+                this["LastFile"] = value;
             }
         }
         

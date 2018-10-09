@@ -104,7 +104,7 @@ namespace Vocup.IO.Internal
                 }
             }
 
-            return false;
+            return true;
         }
 
         public bool Write(VocabularyBook book)

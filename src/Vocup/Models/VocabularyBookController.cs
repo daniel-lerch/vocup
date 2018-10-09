@@ -37,7 +37,13 @@ namespace Vocup.Models
         public IMainForm Parent
         {
             get => _parent;
-            set { _parent = value; OnStatisticsChanged(); OnSelectionChanged(); }
+            set
+            {
+                _parent = value;
+                OnPropertyChanged(this, new PropertyChangedEventArgs(null));
+                OnStatisticsChanged();
+                OnSelectionChanged();
+            }
         }
         public VocabularyBook VocabularyBook { get; }
         IReadOnlyCollection<VocabularyWordController> WordControllers { get; }

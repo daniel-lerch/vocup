@@ -68,6 +68,18 @@ namespace Vocup.Controls
             }
         }
 
+        [DefaultValue("")]
+        public string SelectedPath
+        {
+            get => (MainTreeView.SelectedNode?.Tag as FileInfo)?.FullName;
+            set
+            {
+                if (value == null) throw new ArgumentNullException(nameof(SelectedPath));
+                if (value != SelectedPath)
+                    MainTreeView.SelectedNode = GetNode(value);
+            }
+        }
+
         [Browsable(true), EditorBrowsable(EditorBrowsableState.Always)]
         public event EventHandler<FileSelectedEventArgs> FileSelected;
 
