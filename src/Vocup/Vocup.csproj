@@ -130,11 +130,11 @@
     <Compile Include="Forms\CreateBackup.Designer.cs">
       <DependentUpon>CreateBackup.cs</DependentUpon>
     </Compile>
-    <Compile Include="backup_restore.cs">
+    <Compile Include="Forms\RestoreBackup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="backup_restore.Designer.cs">
-      <DependentUpon>backup_restore.cs</DependentUpon>
+    <Compile Include="Forms\RestoreBackup.Designer.cs">
+      <DependentUpon>RestoreBackup.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EditWordDialog.cs">
       <SubType>Form</SubType>
@@ -238,9 +238,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>CreateBackup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="backup_restore.resx">
+    <EmbeddedResource Include="Forms\RestoreBackup.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>backup_restore.cs</DependentUpon>
+      <DependentUpon>RestoreBackup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PrintWordSelection.resx">
       <SubType>Designer</SubType>

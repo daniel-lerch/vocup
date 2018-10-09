@@ -36,13 +36,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.BtnPrintForeside = new System.Windows.Forms.Button();
+            this.BtnPrintForeside = new Vocup.Controls.ResponsiveButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.BtnPrintBackside = new System.Windows.Forms.Button();
+            this.BtnPrintBackside = new Vocup.Controls.ResponsiveButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.RbRearSide = new System.Windows.Forms.RadioButton();
@@ -102,7 +102,7 @@
             // BtnPrintForeside
             // 
             this.BtnPrintForeside.DialogResult = System.Windows.Forms.DialogResult.Ignore;
-            this.BtnPrintForeside.Image = global::Vocup.Properties.Icons.Print;
+            this.BtnPrintForeside.BaseImage = global::Vocup.Properties.Icons.Print;
             resources.ApplyResources(this.BtnPrintForeside, "BtnPrintForeside");
             this.BtnPrintForeside.Name = "BtnPrintForeside";
             this.BtnPrintForeside.UseVisualStyleBackColor = true;
@@ -140,7 +140,7 @@
             // BtnPrintBackside
             // 
             this.BtnPrintBackside.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BtnPrintBackside.Image = global::Vocup.Properties.Icons.Print;
+            this.BtnPrintBackside.BaseImage = global::Vocup.Properties.Icons.Print;
             resources.ApplyResources(this.BtnPrintBackside, "BtnPrintBackside");
             this.BtnPrintBackside.Name = "BtnPrintBackside";
             this.BtnPrintBackside.UseVisualStyleBackColor = true;
@@ -221,8 +221,8 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox LbPaperCount;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.Button BtnPrintBackside;
-        public System.Windows.Forms.Button BtnPrintForeside;
+        public Vocup.Controls.ResponsiveButton BtnPrintBackside;
+        public Vocup.Controls.ResponsiveButton BtnPrintForeside;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox3;

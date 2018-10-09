@@ -8,11 +8,11 @@ using System.Text;
 using System.Windows.Forms;
 using Vocup.Properties;
 
-namespace Vocup
+namespace Vocup.Forms
 {
-    public partial class backup_restore : Form
+    public partial class RestoreBackup : Form
     {
-        public backup_restore()
+        public RestoreBackup()
         {
             InitializeComponent();
             Icon = Icon.FromHandle(Icons.DatabaseRestore.GetHicon());
@@ -27,11 +27,11 @@ namespace Vocup
         public List<string> vhr_restore = new List<string>();
         public List<string> chars_restore = new List<string>();
 
-        private void backup_restore_Load(object sender, EventArgs e)
+        private void Form_Load(object sender, EventArgs e)
         {
             //Falls das Feld mit dem Pfad nicht leer ist
 
-            if (path_field.Text != "")
+            if (TbFilePath.Text != "")
             {
                 browse_file();
             }
@@ -66,7 +66,7 @@ namespace Vocup
             {
                 path_backup = open.FileName;
 
-                path_field.Text = open.FileName;
+                TbFilePath.Text = open.FileName;
             }
         }
 
@@ -83,16 +83,13 @@ namespace Vocup
             Cursor.Current = Cursors.WaitCursor;
             Update();
 
-            listbox_vhf.Items.Clear();
-            listbox_special_chars.Items.Clear();
-
+            ListBooks.Items.Clear();
+            ListSpecialChars.Items.Clear();
 
             //Neue Datei öffnen
+            ZipFile backup_file = new ZipFile(TbFilePath.Text);
 
-            ZipFile backup_file = new ZipFile(path_field.Text);
-
-
-            if (backup_file.Count != 0)
+            if (backup_file.Count > 0)
             {
 
                 ZipEntry log_entry = backup_file.GetEntry("vhf_vhr.log");
@@ -100,21 +97,18 @@ namespace Vocup
                 //Versucht die Log-Datei aus dem Archiv zu lesen
                 try
                 {
-                    Stream log_stream = backup_file.GetInputStream(log_entry);
+                    string[] log_lines;
 
-                    byte[] buffer = new byte[log_entry.Size];
-
-                    StreamUtils.ReadFully(log_stream, buffer);
-
-                    string logstring = Encoding.UTF8.GetString(buffer);
-
-                    log_stream.Close();
-
-                    if (logstring != "")
+                    using (Stream log_stream = backup_file.GetInputStream(log_entry))
                     {
+                        byte[] buffer = new byte[log_entry.Size];
+                        StreamUtils.ReadFully(log_stream, buffer);
+                        string logstring = Encoding.UTF8.GetString(buffer);
+                        log_lines = logstring.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+                    }
 
-                        string[] log_lines = logstring.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
-
+                    if (log_lines.Length > 0)
+                    {
                         //Daten in ein Array lesen
 
                         vhf_vhr_log = new string[log_lines.Length, 4];
@@ -130,20 +124,17 @@ namespace Vocup
 
                         //Dateien in die Listbox einlesen
 
-                        listbox_vhf.BeginUpdate();
+                        ListBooks.BeginUpdate();
 
                         //Radiobuttons ausschalten
-                        replace_newer.Enabled = false;
-                        replace_nothing.Enabled = false;
+                        RbReplaceOlder.Enabled = false;
+                        RbReplaceNothing.Enabled = false;
 
                         for (int i = 0; i < vhf_vhr_log.Length / 4; i++)
                         {
                             //Dateipfade wiederherstellen
 
-                            //vhf_vhr_log[i, 1] = vhf_vhr_log[i, 1].Replace("%vhf%", Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\" + Properties.language.personal_directory);
-
                             vhf_vhr_log[i, 1] = vhf_vhr_log[i, 1].Replace("%vhf%", Properties.Settings.Default.VhfPath);
-
                             vhf_vhr_log[i, 1] = vhf_vhr_log[i, 1].Replace("%vhr%", Properties.Settings.Default.VhrPath);
                             vhf_vhr_log[i, 1] = vhf_vhr_log[i, 1].Replace("%personal%", Environment.GetFolderPath(Environment.SpecialFolder.Personal));
                             vhf_vhr_log[i, 1] = vhf_vhr_log[i, 1].Replace("%desktop%", Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory));
@@ -160,36 +151,36 @@ namespace Vocup
                                 //Aktiviert die Radiobuttons falls nötig
                                 if (exists == false)
                                 {
-                                    replace_nothing.Enabled = true;
+                                    RbReplaceNothing.Enabled = true;
                                 }
                                 if (vhf_entry.DateTime > vhf_info.LastWriteTime)
                                 {
-                                    replace_newer.Enabled = true;
+                                    RbReplaceOlder.Enabled = true;
                                 }
 
                                 //Falls alle Vokabelhefte ersetzt werden sollen
-                                if (replace_all.Checked == true)
+                                if (RbReplaceAll.Checked == true)
                                 {
                                     //Schaltet die Groupboxs wieder ein
-                                    groupBox2.Enabled = true;
-                                    groupBox3.Enabled = true;
+                                    GroupReplace.Enabled = true;
+                                    GroupBooks.Enabled = true;
 
                                     //Exakte Pfadangaben
                                     if (exact_path.Checked == true)
                                     {
-                                        vhf_vhr_log[i, 3] = Convert.ToString(listbox_vhf.Items.Add(vhf_vhr_log[i, 1], true));
+                                        vhf_vhr_log[i, 3] = Convert.ToString(ListBooks.Items.Add(vhf_vhr_log[i, 1], true));
                                     }
                                     else
                                     {
-                                        vhf_vhr_log[i, 3] = Convert.ToString(listbox_vhf.Items.Add(Path.GetFileNameWithoutExtension(vhf_vhr_log[i, 1]), true));
+                                        vhf_vhr_log[i, 3] = Convert.ToString(ListBooks.Items.Add(Path.GetFileNameWithoutExtension(vhf_vhr_log[i, 1]), true));
                                     }
                                 }
                                 //Falls nur neuere Vokabelhefte ersetzt werden sollen
-                                else if (replace_newer.Checked == true)
+                                else if (RbReplaceOlder.Checked == true)
                                 {
                                     //Schaltet die Groupboxs wieder ein
-                                    groupBox2.Enabled = true;
-                                    groupBox3.Enabled = true;
+                                    GroupReplace.Enabled = true;
+                                    GroupBooks.Enabled = true;
 
 
                                     //Exakte Pfadangaben
@@ -197,43 +188,43 @@ namespace Vocup
                                     {
                                         if (exact_path.Checked == true)
                                         {
-                                            vhf_vhr_log[i, 3] = Convert.ToString(listbox_vhf.Items.Add(vhf_vhr_log[i, 1], true));
+                                            vhf_vhr_log[i, 3] = Convert.ToString(ListBooks.Items.Add(vhf_vhr_log[i, 1], true));
                                         }
                                         else
                                         {
-                                            vhf_vhr_log[i, 3] = Convert.ToString(listbox_vhf.Items.Add(Path.GetFileNameWithoutExtension(vhf_vhr_log[i, 1]), true));
+                                            vhf_vhr_log[i, 3] = Convert.ToString(ListBooks.Items.Add(Path.GetFileNameWithoutExtension(vhf_vhr_log[i, 1]), true));
                                         }
                                     }
                                 }
                                 else //Falls nichts ersetzt werden soll
                                 {
                                     //Schaltet die Groupboxs wieder ein
-                                    groupBox2.Enabled = true;
-                                    groupBox3.Enabled = true;
-                                    groupBox4.Enabled = true;
+                                    GroupReplace.Enabled = true;
+                                    GroupBooks.Enabled = true;
+                                    GroupResults.Enabled = true;
 
                                     if (exists == false)
                                     {
 
                                         if (exact_path.Checked == true)
                                         {
-                                            vhf_vhr_log[i, 3] = Convert.ToString(listbox_vhf.Items.Add(vhf_vhr_log[i, 1], true));
+                                            vhf_vhr_log[i, 3] = Convert.ToString(ListBooks.Items.Add(vhf_vhr_log[i, 1], true));
                                         }
                                         else
                                         {
-                                            vhf_vhr_log[i, 3] = Convert.ToString(listbox_vhf.Items.Add(Path.GetFileNameWithoutExtension(vhf_vhr_log[i, 1]), true));
+                                            vhf_vhr_log[i, 3] = Convert.ToString(ListBooks.Items.Add(Path.GetFileNameWithoutExtension(vhf_vhr_log[i, 1]), true));
                                         }
                                     }
                                 }
 
                                 //Wiederherstellen-Button aktivieren
-                                if (listbox_vhf.Items.Count != 0)
+                                if (ListBooks.Items.Count != 0)
                                 {
-                                    results_restore_choosed.Enabled = true;
-                                    results_restore_choosed.Checked = true;
-                                    restore_button.Enabled = true;
-                                    restore_button.Focus();
-                                    AcceptButton = restore_button;
+                                    RbRestoreAssociatedResults.Enabled = true;
+                                    RbRestoreAssociatedResults.Checked = true;
+                                    BtnRestore.Enabled = true;
+                                    BtnRestore.Focus();
+                                    AcceptButton = BtnRestore;
                                 }
                             }
                             catch
@@ -242,18 +233,18 @@ namespace Vocup
                             }
                         }
 
-                        listbox_vhf.EndUpdate();
+                        ListBooks.EndUpdate();
                     }
                     else
                     {
                         //listbox-Vokabelhefte und radiobuttons ausblenden, weil keine Vokabelhefte vorhanden sind
 
-                        groupBox2.Enabled = false;
-                        groupBox3.Enabled = false;
+                        GroupReplace.Enabled = false;
+                        GroupBooks.Enabled = false;
 
-                        results_restore_choosed.Enabled = false;
+                        RbRestoreAssociatedResults.Enabled = false;
 
-                        results_restore_all.Checked = true;
+                        RbRestoreAllResults.Checked = true;
                     }
 
                     //Nach Sonderzeichentabellen suchen
@@ -279,7 +270,7 @@ namespace Vocup
 
                             //Dateien in die Listbox einlesen
 
-                            listbox_special_chars.Update();
+                            ListSpecialChars.Update();
 
                             for (int i = 0; i < log_lines_chars.Length; i++)
                             {
@@ -289,8 +280,7 @@ namespace Vocup
 
                                     if (chars_entry.IsFile == true)
                                     {
-                                        listbox_special_chars.Items.Add(Path.GetFileNameWithoutExtension(log_lines_chars[i]), true);
-
+                                        ListSpecialChars.Items.Add(Path.GetFileNameWithoutExtension(log_lines_chars[i]), true);
                                     }
                                 }
                                 catch
@@ -301,25 +291,25 @@ namespace Vocup
 
                             //Wiederherstellen-Button aktivieren
 
-                            if (listbox_special_chars.Items.Count != 0)
+                            if (ListSpecialChars.Items.Count != 0)
                             {
-                                groupBox5.Enabled = true;
-                                restore_button.Enabled = true;
+                                GroupSpecialChars.Enabled = true;
+                                BtnRestore.Enabled = true;
 
-                                restore_button.Focus();
+                                BtnRestore.Focus();
 
-                                AcceptButton = restore_button;
+                                AcceptButton = BtnRestore;
                             }
                         }
                         else
                         {
-                            groupBox5.Enabled = false;
+                            GroupSpecialChars.Enabled = false;
                         }
                     }
                     catch
                     {
-                        listbox_special_chars.Items.Clear();
-                        groupBox5.Enabled = false;
+                        ListSpecialChars.Items.Clear();
+                        GroupSpecialChars.Enabled = false;
                     }
 
 
@@ -345,16 +335,16 @@ namespace Vocup
 
                             //Wiederherstellen-Button aktivieren
 
-                            groupBox4.Enabled = true;
-                            restore_button.Enabled = true;
+                            GroupResults.Enabled = true;
+                            BtnRestore.Enabled = true;
 
-                            restore_button.Focus();
+                            BtnRestore.Focus();
 
-                            AcceptButton = restore_button;
+                            AcceptButton = BtnRestore;
                         }
                         else
                         {
-                            groupBox4.Enabled = false;
+                            GroupResults.Enabled = false;
                         }
 
                         //Stream schliessen
@@ -362,45 +352,45 @@ namespace Vocup
                     }
                     catch
                     {
-                        groupBox4.Enabled = false;
+                        GroupResults.Enabled = false;
                     }
                 }
                 catch
                 {
                     //Radiobuttons etc. wieder ausblenden und Fehlermeldung anzeigen
 
-                    listbox_special_chars.Items.Clear();
-                    listbox_vhf.Items.Clear();
+                    ListSpecialChars.Items.Clear();
+                    ListBooks.Items.Clear();
 
-                    groupBox2.Enabled = false;
-                    groupBox3.Enabled = false;
-                    groupBox4.Enabled = false;
-                    groupBox5.Enabled = false;
+                    GroupReplace.Enabled = false;
+                    GroupBooks.Enabled = false;
+                    GroupResults.Enabled = false;
+                    GroupSpecialChars.Enabled = false;
 
-                    restore_button.Enabled = false;
+                    BtnRestore.Enabled = false;
 
-                    AcceptButton = path_button;
+                    AcceptButton = BtnFilePath;
                 }
             }
             else
             {
                 //Es sind im Archiv keine Dateien vorhanden
 
-                groupBox2.Enabled = false;
-                groupBox3.Enabled = false;
-                groupBox4.Enabled = false;
-                groupBox5.Enabled = false;
+                GroupReplace.Enabled = false;
+                GroupBooks.Enabled = false;
+                GroupResults.Enabled = false;
+                GroupSpecialChars.Enabled = false;
 
-                restore_button.Enabled = false;
+                BtnRestore.Enabled = false;
 
-                AcceptButton = path_button;
+                AcceptButton = BtnFilePath;
             }
         }
 
         //Falls der Zustand geändert wurde, wird der Text geändert
         private void exact_path_CheckedChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < listbox_vhf.Items.Count; i++)
+            for (int i = 0; i < ListBooks.Items.Count; i++)
             {
                 //Sucht im Log-Array nach dem richtigen Eintrag
                 string new_text = "";
@@ -421,7 +411,7 @@ namespace Vocup
                     }
                 }
 
-                listbox_vhf.Items[i] = new_text;
+                ListBooks.Items[i] = new_text;
             }
         }
         //Falls die Auswahl geändert wird, Backup neu untersuchen
@@ -478,26 +468,26 @@ namespace Vocup
         {
             bool activate = false;
 
-            if (listbox_vhf.CheckedItems.Count != 0 && groupBox3.Enabled == true)
+            if (ListBooks.CheckedItems.Count != 0 && GroupBooks.Enabled == true)
             {
                 activate = true;
             }
-            if (results_restore_nothing.Enabled == false & groupBox4.Enabled == true)
+            if (RbRestoreNoResults.Enabled == false & GroupResults.Enabled == true)
             {
                 activate = true;
             }
-            if (listbox_special_chars.CheckedItems.Count != 0 && groupBox5.Enabled == true)
+            if (ListSpecialChars.CheckedItems.Count != 0 && GroupSpecialChars.Enabled == true)
             {
                 activate = true;
             }
 
             if (activate == true)
             {
-                restore_button.Enabled = true;
+                BtnRestore.Enabled = true;
             }
             else
             {
-                restore_button.Enabled = false;
+                BtnRestore.Enabled = false;
             }
         }
 
@@ -507,15 +497,15 @@ namespace Vocup
             {
                 bool activate = false;
 
-                if (listbox_vhf.CheckedItems.Count != 0 && groupBox3.Enabled == true)
+                if (ListBooks.CheckedItems.Count != 0 && GroupBooks.Enabled == true)
                 {
                     activate = true;
                 }
-                if (results_restore_nothing.Enabled == false & groupBox4.Enabled == true)
+                if (RbRestoreNoResults.Enabled == false & GroupResults.Enabled == true)
                 {
                     activate = true;
                 }
-                if (listbox_special_chars.CheckedItems.Count != 0 && groupBox5.Enabled == true)
+                if (ListSpecialChars.CheckedItems.Count != 0 && GroupSpecialChars.Enabled == true)
                 {
                     activate = true;
                 }
@@ -525,13 +515,13 @@ namespace Vocup
                     //Falls Daten zum sichern vorhanden sind ind Arrays einlesen
 
                     //Vokabelhefte in Array einlesen
-                    if (listbox_vhf.Items.Count != 0)
+                    if (ListBooks.Items.Count != 0)
                     {
                         for (int i = 0; i < vhf_vhr_log.Length / 4; i++)
                         {
                             try
                             {
-                                if (listbox_vhf.GetItemCheckState(Convert.ToInt32(vhf_vhr_log[i, 3])) == CheckState.Checked)
+                                if (ListBooks.GetItemCheckState(Convert.ToInt32(vhf_vhr_log[i, 3])) == CheckState.Checked)
                                 {
                                     string[] temp = new string[2];
 
@@ -540,7 +530,7 @@ namespace Vocup
 
                                     vhf_restore.Add(temp);
 
-                                    if (results_restore_choosed.Checked == true && results_restore_choosed.Enabled == true && vhf_vhr_log[i, 2] != "")
+                                    if (RbRestoreAssociatedResults.Checked == true && RbRestoreAssociatedResults.Enabled == true && vhf_vhr_log[i, 2] != "")
                                     {
                                         vhr_restore.Add(vhf_vhr_log[i, 2] + ".vhr");
                                     }
@@ -553,7 +543,7 @@ namespace Vocup
                     }
                     //Ergebnisse in Array einlesen, falls alle Ergebnisse wiederhergestellt werden sollen
 
-                    if (results_restore_all.Checked == true && results_restore_all.Enabled == true)
+                    if (RbRestoreAllResults.Checked == true && RbRestoreAllResults.Enabled == true)
                     {
                         for (int i = 0; i < vhr_log.Length; i++)
                         {
@@ -563,11 +553,11 @@ namespace Vocup
 
                     //Sonderzeichentabellen in Array einlesen
 
-                    for (int i = 0; i < listbox_special_chars.Items.Count; i++)
+                    for (int i = 0; i < ListSpecialChars.Items.Count; i++)
                     {
-                        if (listbox_special_chars.GetItemCheckState(i) == CheckState.Checked)
+                        if (ListSpecialChars.GetItemCheckState(i) == CheckState.Checked)
                         {
-                            chars_restore.Add(listbox_special_chars.Items[i] + ".txt");
+                            chars_restore.Add(ListSpecialChars.Items[i] + ".txt");
                         }
                     }
 

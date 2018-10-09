@@ -61,15 +61,6 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Beim Importieren der Datei ist ein Fehler aufgetreten..
-        /// </summary>
-        internal static string can_not_import {
-            get {
-                return ResourceManager.GetString("can_not_import", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string error {
@@ -84,69 +75,6 @@ namespace Vocup.Properties {
         internal static string have_to_save {
             get {
                 return ResourceManager.GetString("have_to_save", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Beim Zusammenführen der Vokabelhefte ist ein Fehler aufgetreten..
-        /// </summary>
-        internal static string merge_error {
-            get {
-                return ResourceManager.GetString("merge_error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ein Vokabelheft konnte nicht zusammengeführt werden..
-        /// </summary>
-        internal static string merge_error_1 {
-            get {
-                return ResourceManager.GetString("merge_error_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Vokabelhefte konnten nicht zusammengeführt werden..
-        /// </summary>
-        internal static string merge_error_over_1 {
-            get {
-                return ResourceManager.GetString("merge_error_over_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Die Vokabelhefte wurden erfolgreich zusammengeführt..
-        /// </summary>
-        internal static string merge_success {
-            get {
-                return ResourceManager.GetString("merge_success", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ein Vokabelheft konnte nicht zusammengeführt werden, weil dazu eine neuere Version von Vocup benötigt wird. Möchten Sie nach Updates suchen?.
-        /// </summary>
-        internal static string merge_to_new_1 {
-            get {
-                return ResourceManager.GetString("merge_to_new_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Vokabelhefte konnten nicht zusammengeführt werden, weil dazu eine neuere Version von Vocup benötigt wird. Möchten Sie nach Updates suchen?.
-        /// </summary>
-        internal static string merge_to_new_over {
-            get {
-                return ResourceManager.GetString("merge_to_new_over", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Möchten Sie Ihre Übungsergebnisse und/oder  Änderungen im Vokabelheft speichern?.
-        /// </summary>
-        internal static string messagebox_ask_to_save {
-            get {
-                return ResourceManager.GetString("messagebox_ask_to_save", resourceCulture);
             }
         }
         
@@ -241,83 +169,11 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Die Vokabel konnte nicht geändert werden, da sie bereits vorhanden ist!.
-        /// </summary>
-        internal static string messagebox_cant_edit {
-            get {
-                return ResourceManager.GetString("messagebox_cant_edit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Die Datei ist fehlerhaft!.
-        /// </summary>
-        internal static string messagebox_faulty_file {
-            get {
-                return ResourceManager.GetString("messagebox_faulty_file", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fehler beim Laden der Ergebnisse!.
-        /// </summary>
-        internal static string messagebox_fautly_results {
-            get {
-                return ResourceManager.GetString("messagebox_fautly_results", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Bei diesem Vokabelheft handelt es sich um eine Kopie, dessen Inhalt mit der Orginaldatei nicht identisch ist. Die Ergebnisse der Übungen werden bei dieser Datei gelöscht..
-        /// </summary>
-        internal static string messagebox_file_copy {
-            get {
-                return ResourceManager.GetString("messagebox_file_copy", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Die Datei benötigt eine neuere Version von Vocup. Möchten Sie nach Updates suchen?.
-        /// </summary>
-        internal static string messagebox_new_program_version {
-            get {
-                return ResourceManager.GetString("messagebox_new_program_version", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Bei dieser Datei handelt es sich nicht um ein Vokabelheft!.
         /// </summary>
         internal static string messagebox_no_vhf {
             get {
                 return ResourceManager.GetString("messagebox_no_vhf", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fehler beim Öffnen der Datei!.
-        /// </summary>
-        internal static string messagebox_reading_fault {
-            get {
-                return ResourceManager.GetString("messagebox_reading_fault", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Die Vokabel ist bereits vorhanden!.
-        /// </summary>
-        internal static string messagebox_vocable_exists {
-            get {
-                return ResourceManager.GetString("messagebox_vocable_exists", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Möchten Sie das Vokabelheft speichern bevor sie fortfahren? Alle nicht gespeicherten Daten gehen verloren..
-        /// </summary>
-        internal static string save_before_update {
-            get {
-                return ResourceManager.GetString("save_before_update", resourceCulture);
             }
         }
     }

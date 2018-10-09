@@ -117,10 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="can_not_import" xml:space="preserve">
-    <value>Beim Importieren der Datei ist ein Fehler aufgetreten.</value>
-    <comment>Nachricht</comment>
-  </data>
   <data name="error" xml:space="preserve">
     <value>Error</value>
     <comment>Nachrichten</comment>
@@ -128,34 +124,6 @@
   <data name="have_to_save" xml:space="preserve">
     <value>Speichern Sie bitte das Vokabelheft vor dem Drucken ab.</value>
     <comment>print_dialog</comment>
-  </data>
-  <data name="merge_error" xml:space="preserve">
-    <value>Beim Zusammenführen der Vokabelhefte ist ein Fehler aufgetreten.</value>
-    <comment>merge</comment>
-  </data>
-  <data name="merge_error_1" xml:space="preserve">
-    <value>Ein Vokabelheft konnte nicht zusammengeführt werden.</value>
-    <comment>merge</comment>
-  </data>
-  <data name="merge_error_over_1" xml:space="preserve">
-    <value>Vokabelhefte konnten nicht zusammengeführt werden.</value>
-    <comment>merge</comment>
-  </data>
-  <data name="merge_success" xml:space="preserve">
-    <value>Die Vokabelhefte wurden erfolgreich zusammengeführt.</value>
-    <comment>merge</comment>
-  </data>
-  <data name="merge_to_new_1" xml:space="preserve">
-    <value>Ein Vokabelheft konnte nicht zusammengeführt werden, weil dazu eine neuere Version von Vocup benötigt wird. Möchten Sie nach Updates suchen?</value>
-    <comment>merge</comment>
-  </data>
-  <data name="merge_to_new_over" xml:space="preserve">
-    <value>Vokabelhefte konnten nicht zusammengeführt werden, weil dazu eine neuere Version von Vocup benötigt wird. Möchten Sie nach Updates suchen?</value>
-    <comment>merge</comment>
-  </data>
-  <data name="messagebox_ask_to_save" xml:space="preserve">
-    <value>Möchten Sie Ihre Übungsergebnisse und/oder  Änderungen im Vokabelheft speichern?</value>
-    <comment>Nachricht</comment>
   </data>
   <data name="messagebox_backup_error" xml:space="preserve">
     <value>Beim erstellen der Datensicherung ist ein Fehler aufgetreten!</value>
@@ -197,39 +165,8 @@
     <value>Die Datensicherung wurde erfolgreich erstellt.</value>
     <comment>create_backup</comment>
   </data>
-  <data name="messagebox_cant_edit" xml:space="preserve">
-    <value>Die Vokabel konnte nicht geändert werden, da sie bereits vorhanden ist!</value>
-    <comment>Nachricht</comment>
-  </data>
-  <data name="messagebox_faulty_file" xml:space="preserve">
-    <value>Die Datei ist fehlerhaft!</value>
-    <comment>Nachricht</comment>
-  </data>
-  <data name="messagebox_fautly_results" xml:space="preserve">
-    <value>Fehler beim Laden der Ergebnisse!</value>
-    <comment>Nachricht</comment>
-  </data>
-  <data name="messagebox_file_copy" xml:space="preserve">
-    <value>Bei diesem Vokabelheft handelt es sich um eine Kopie, dessen Inhalt mit der Orginaldatei nicht identisch ist. Die Ergebnisse der Übungen werden bei dieser Datei gelöscht.</value>
-    <comment>Nachricht</comment>
-  </data>
-  <data name="messagebox_new_program_version" xml:space="preserve">
-    <value>Die Datei benötigt eine neuere Version von Vocup. Möchten Sie nach Updates suchen?</value>
-    <comment>Nachricht</comment>
-  </data>
   <data name="messagebox_no_vhf" xml:space="preserve">
     <value>Bei dieser Datei handelt es sich nicht um ein Vokabelheft!</value>
     <comment>Nachricht</comment>
-  </data>
-  <data name="messagebox_reading_fault" xml:space="preserve">
-    <value>Fehler beim Öffnen der Datei!</value>
-    <comment>Nachricht</comment>
-  </data>
-  <data name="messagebox_vocable_exists" xml:space="preserve">
-    <value>Die Vokabel ist bereits vorhanden!</value>
-    <comment>Nachricht</comment>
-  </data>
-  <data name="save_before_update" xml:space="preserve">
-    <value>Möchten Sie das Vokabelheft speichern bevor sie fortfahren? Alle nicht gespeicherten Daten gehen verloren.</value>
   </data>
 </root>
