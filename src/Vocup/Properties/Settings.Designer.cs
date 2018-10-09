@@ -134,12 +134,12 @@ namespace Vocup.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool auto_save {
+        public bool AutoSave {
             get {
-                return ((bool)(this["auto_save"]));
+                return ((bool)(this["AutoSave"]));
             }
             set {
-                this["auto_save"] = value;
+                this["AutoSave"] = value;
             }
         }
         

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 using Vocup.Controls;
+using Vocup.IO;
 using Vocup.Properties;
 
 namespace Vocup.Models
@@ -25,10 +27,10 @@ namespace Vocup.Models
             WordControllers = new ReadOnlyCollection<VocabularyWordController>(wordControllers);
             book.Words.OnAdd(AddItem);
             book.Words.OnRemove(RemoveItem);
-            book.PropertyChanged += (a0, a1) => UpdateUI();
+            book.PropertyChanged += OnPropertyChanged;
             book.Statistics.PropertyChanged += OnStatisticsChanged;
             VocabularyBook = book;
-            UpdateUI();
+            OnPropertyChanged(this, new PropertyChangedEventArgs(null));
         }
 
         public VocabularyListView ListView { get; }
@@ -51,12 +53,21 @@ namespace Vocup.Models
             throw new KeyNotFoundException("No controller could be found for the specified VocabularyWord.");
         }
 
-        private void UpdateUI()
+        private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             ListView.MotherTongue = VocabularyBook.MotherTongue;
             ListView.ForeignLang = VocabularyBook.ForeignLang;
             Parent?.VocabularyBookUnsavedChanges(VocabularyBook.UnsavedChanges);
             Parent?.VocabularyBookName(Path.GetFileNameWithoutExtension(VocabularyBook.FilePath));
+
+            if (VocabularyBook.UnsavedChanges && Settings.Default.AutoSave && !string.IsNullOrWhiteSpace(VocabularyBook.FilePath))
+            {
+                if (VocabularyFile.WriteVhfFile(VocabularyBook.FilePath, VocabularyBook) &&
+                    VocabularyFile.WriteVhrFile(VocabularyBook))
+                {
+                    VocabularyBook.UnsavedChanges = false;
+                }
+            }
         }
 
         private void OnStatisticsChanged(object sender, EventArgs e) => OnStatisticsChanged();
@@ -85,7 +96,6 @@ namespace Vocup.Models
 
         private void AddItem(VocabularyWord item)
         {
-            item.Owner = VocabularyBook;
             VocabularyWordController controller = new VocabularyWordController(item);
             wordControllers.Add(controller);
             ListView.Items.Add(controller.ListViewItem);
@@ -93,7 +103,6 @@ namespace Vocup.Models
 
         private void RemoveItem(VocabularyWord item)
         {
-            item.Owner = null;
             VocabularyWordController controller = GetController(item);
             wordControllers.Remove(controller);
             ListView.Items.Remove(controller.ListViewItem);

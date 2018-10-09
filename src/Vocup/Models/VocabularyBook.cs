@@ -19,6 +19,8 @@ namespace Vocup.Models
         public VocabularyBook()
         {
             Words = new ReactiveCollection<VocabularyWord>();
+            Words.OnAdd(x => x.Owner = this);
+            Words.OnRemove(x => x.Owner = null);
             Words.CollectionChanged += OnCollectionChanged;
             Statistics = new VocabularyBookStatistics(this);
         }

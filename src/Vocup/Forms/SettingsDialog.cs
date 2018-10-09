@@ -25,7 +25,7 @@ namespace Vocup
             RbRecentFile.Checked = settings.StartScreen == (int)StartScreen.LastFile || settings.StartScreen == (int)StartScreen.AboutBox;
 
             // Vokabelheft automatisch speichern
-            CbAutoSave.Checked = settings.auto_save;
+            CbAutoSave.Checked = settings.AutoSave;
 
             // Automatisches Update
             CbDisableInternetServices.Checked = settings.DisableInternetServices;
@@ -98,7 +98,7 @@ namespace Vocup
             settings.StartScreen = RbRecentFile.Checked ? (int)StartScreen.LastFile : (int)StartScreen.None;
 
             // Vokabelheft automatisch speichern
-            settings.auto_save = CbAutoSave.Checked;
+            settings.AutoSave = CbAutoSave.Checked;
 
             // Automatisches Update
             settings.DisableInternetServices = CbDisableInternetServices.Checked;
