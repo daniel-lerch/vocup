@@ -7,9 +7,9 @@ using System.Resources;
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die mit einer Assembly verknüpft sind.
 [assembly: AssemblyTitle("Vocup")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Kostenloser Vokabeltrainer")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("VectorData")]
 [assembly: AssemblyProduct("Vocup")]
 [assembly: AssemblyCopyright("Copyright © 2011 Florian Amstutz, © 2018 Daniel Lerch.")]
 [assembly: AssemblyTrademark("")]
@@ -30,6 +30,6 @@ using System.Resources;
 //      Buildnummer
 //      Revision
 //
-[assembly: AssemblyVersion("1.4.3.0")]
-[assembly: AssemblyFileVersion("1.4.3.0")]
+[assembly: AssemblyVersion("1.5.0.0")]
+[assembly: AssemblyFileVersion("1.5.0.0")]
 [assembly: NeutralResourcesLanguage("de")]

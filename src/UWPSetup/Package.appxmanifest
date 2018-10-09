@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" IgnorableNamespaces="uap mp rescap">
-  <Identity Name="9961VectorData.Vocup" Publisher="CN=FDFCA12E-D0B5-4F1F-869D-7F97CD35B39E" Version="1.1.0.0" />
+  <Identity Name="9961VectorData.Vocup" Publisher="CN=FDFCA12E-D0B5-4F1F-869D-7F97CD35B39E" Version="1.5.0.0" />
   <Properties>
     <DisplayName>Vocup</DisplayName>
     <PublisherDisplayName>VectorData</PublisherDisplayName>
@@ -31,8 +31,8 @@
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
           <uap:FileTypeAssociation Name="vhf">
-            <uap:Logo>Images\VhfLogo.png</uap:Logo>
             <uap:DisplayName>Vokabelheft</uap:DisplayName>
+            <uap:Logo>Images\VhfLogo.png</uap:Logo>
             <uap:SupportedFileTypes>
               <uap:FileType>.vhf</uap:FileType>
             </uap:SupportedFileTypes>
@@ -40,8 +40,8 @@
         </uap:Extension>
         <uap:Extension Category="windows.fileTypeAssociation">
           <uap:FileTypeAssociation Name="vdp">
-            <uap:Logo>Images\VdpLogo.png</uap:Logo>
             <uap:DisplayName>Vocup Datensicherung</uap:DisplayName>
+            <uap:Logo>Images\VdpLogo.png</uap:Logo>
             <uap:SupportedFileTypes>
               <uap:FileType>.vdp</uap:FileType>
             </uap:SupportedFileTypes>
