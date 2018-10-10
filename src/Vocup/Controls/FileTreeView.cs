@@ -21,6 +21,7 @@ namespace Vocup.Controls
         private Size _imageScalingBaseSize = new Size(16, 16);
         private string _rootPath = "";
         private SizeF scalingFactor = new SizeF(1F, 1F);
+        private bool interceptEvents;
 
         public FileTreeView()
         {
@@ -76,7 +77,11 @@ namespace Vocup.Controls
             {
                 if (value == null) value = "";
                 if (value != SelectedPath)
+                {
+                    interceptEvents = true;
                     MainTreeView.SelectedNode = GetNode(value);
+                    interceptEvents = false;
+                }
             }
         }
 
@@ -85,7 +90,10 @@ namespace Vocup.Controls
 
         protected virtual void OnFileSelected(FileSelectedEventArgs e)
         {
-            FileSelected?.Invoke(this, e);
+            if (!interceptEvents)
+            {
+                FileSelected?.Invoke(this, e);
+            }
         }
 
         protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
