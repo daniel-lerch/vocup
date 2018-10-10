@@ -257,6 +257,24 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vocup kann die Datei {0} nicht öffnen, weil es sich weder um ein Vokabelheft, noch um eine Vocup-Datensicherung handelt..
+        /// </summary>
+        internal static string OpenUnknownFile {
+            get {
+                return ResourceManager.GetString("OpenUnknownFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unbekanntes Dateiformat.
+        /// </summary>
+        internal static string OpenUnknownFileT {
+            get {
+                return ResourceManager.GetString("OpenUnknownFileT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Die Sonderzeichendatei {0} konnte nicht geladen werden. Überprüfen Sie die Datei unter {1} und löschen sie diese gegebenenfalls..
         /// </summary>
         internal static string SpecialCharInvalidFile {
