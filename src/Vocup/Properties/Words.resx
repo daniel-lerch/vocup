@@ -140,6 +140,9 @@
   <data name="CreateVocabularyBook" xml:space="preserve">
     <value>Neues Vokabelheft erstellen</value>
   </data>
+  <data name="EasterEgg" xml:space="preserve">
+    <value>Easter Egg</value>
+  </data>
   <data name="EditVocabularyBook" xml:space="preserve">
     <value>Vokabelheft bearbeiten</value>
   </data>

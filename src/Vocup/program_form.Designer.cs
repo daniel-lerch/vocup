@@ -501,7 +501,6 @@
             this.listView_vokabeln.Sorting = System.Windows.Forms.SortOrder.Descending;
             this.listView_vokabeln.UseCompatibleStateImageBehavior = false;
             this.listView_vokabeln.View = System.Windows.Forms.View.Details;
-            this.listView_vokabeln.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView_vokabeln_MouseDoubleClick);
             // 
             // StatusStrip
             // 
@@ -546,6 +545,7 @@
             resources.ApplyResources(this.FileTreeView, "FileTreeView");
             this.FileTreeView.FileFilter = "*.vhf";
             this.FileTreeView.Name = "FileTreeView";
+            this.FileTreeView.SelectedPath = null;
             this.FileTreeView.FileSelected += new System.EventHandler<Vocup.Controls.FileSelectedEventArgs>(this.FileTreeView_FileSelected);
             // 
             // printCards
@@ -621,7 +621,7 @@
             resources.ApplyResources(this.TsbEvaluationInfo, "TsbEvaluationInfo");
             this.TsbEvaluationInfo.Margin = new System.Windows.Forms.Padding(1, 1, 2, 1);
             this.TsbEvaluationInfo.Name = "TsbEvaluationInfo";
-            this.TsbEvaluationInfo.Click += new System.EventHandler(this.TsbtnEvalutionInfo_Click);
+            this.TsbEvaluationInfo.Click += new System.EventHandler(this.TsbtnEvaluationInfo_Click);
             // 
             // toolStripLabel
             // 

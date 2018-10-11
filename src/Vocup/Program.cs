@@ -32,6 +32,8 @@ namespace Vocup
 
             CreateVhfFolder();
             CreateVhrFolder();
+            if (Settings.Default.StartupCounter == 0)
+                Settings.Default.Upgrade(); // Keep old settings with new version
             Settings.Default.StartupCounter++;
             Settings.Default.Save();
             Application.DoEvents();

@@ -23,6 +23,7 @@ namespace Vocup.Models
                 GridLines = Settings.Default.GridLines,
             };
             ListView.ItemSelectionChanged += OnSelectionChanged;
+            ListView.Control.DoubleClick += OnDoubleClick;
             wordControllers = new List<VocabularyWordController>();
             WordControllers = new ReadOnlyCollection<VocabularyWordController>(wordControllers);
             book.Words.OnAdd(AddItem);
@@ -41,8 +42,8 @@ namespace Vocup.Models
             {
                 _parent = value;
                 OnPropertyChanged(this, new PropertyChangedEventArgs(null));
-                OnStatisticsChanged();
-                OnSelectionChanged();
+                OnStatisticsChanged(this, new EventArgs());
+                OnSelectionChanged(this, new EventArgs());
             }
         }
         public VocabularyBook VocabularyBook { get; }
@@ -76,8 +77,7 @@ namespace Vocup.Models
             }
         }
 
-        private void OnStatisticsChanged(object sender, EventArgs e) => OnStatisticsChanged();
-        private void OnStatisticsChanged()
+        private void OnStatisticsChanged(object sender, EventArgs e)
         {
             if (Parent == null)
                 return;
@@ -91,13 +91,18 @@ namespace Vocup.Models
             Parent.VocabularyBookPracticable(VocabularyBook.Statistics.NotFullyPracticed > 0);
         }
 
-        private void OnSelectionChanged(object sender, EventArgs e) => OnSelectionChanged();
-        private void OnSelectionChanged()
+        private void OnSelectionChanged(object sender, EventArgs e)
         {
             if (Parent == null)
                 return;
 
             Parent.VocabularyWordSelected(ListView.SelectedItems.Count > 0);
+        }
+
+        private void OnDoubleClick(object sender, EventArgs e)
+        {
+            if (ListView.SelectedItem != null)
+                Parent?.edit_vokabel_dialog();
         }
 
         private void AddItem(VocabularyWord item)

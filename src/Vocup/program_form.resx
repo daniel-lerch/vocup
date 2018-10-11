@@ -454,7 +454,7 @@
     <value>MenuStrip</value>
   </data>
   <data name="&gt;&gt;MenuStrip.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveMenuStrip, Vocup, Version=1.4.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveMenuStrip, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;MenuStrip.Parent" xml:space="preserve">
     <value>$this</value>
@@ -521,7 +521,7 @@
     <value>BtnBookSettings</value>
   </data>
   <data name="&gt;&gt;BtnBookSettings.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.4.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnBookSettings.Parent" xml:space="preserve">
     <value>GroupBook</value>
@@ -566,7 +566,7 @@
     <value>BtnPractice</value>
   </data>
   <data name="&gt;&gt;BtnPractice.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.4.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnPractice.Parent" xml:space="preserve">
     <value>GroupBook</value>
@@ -641,7 +641,7 @@
     <value>BtnSearchWord</value>
   </data>
   <data name="&gt;&gt;BtnSearchWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.4.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnSearchWord.Parent" xml:space="preserve">
     <value>GroupSearch</value>
@@ -715,7 +715,7 @@
     <value>BtnAddWord</value>
   </data>
   <data name="&gt;&gt;BtnAddWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.4.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnAddWord.Parent" xml:space="preserve">
     <value>GroupWord</value>
@@ -761,7 +761,7 @@
     <value>BtnDeleteWord</value>
   </data>
   <data name="&gt;&gt;BtnDeleteWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.4.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnDeleteWord.Parent" xml:space="preserve">
     <value>GroupWord</value>
@@ -806,7 +806,7 @@
     <value>BtnEditWord</value>
   </data>
   <data name="&gt;&gt;BtnEditWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.4.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnEditWord.Parent" xml:space="preserve">
     <value>GroupWord</value>
@@ -905,7 +905,7 @@
     <value>GroupStatistics</value>
   </data>
   <data name="&gt;&gt;GroupStatistics.Type" xml:space="preserve">
-    <value>Vocup.Controls.StatisticsPanel, Vocup, Version=1.4.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.StatisticsPanel, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;GroupStatistics.Parent" xml:space="preserve">
     <value>SideBar</value>
@@ -959,7 +959,7 @@
     <value>FileTreeView</value>
   </data>
   <data name="&gt;&gt;FileTreeView.Type" xml:space="preserve">
-    <value>Vocup.Controls.FileTreeView, Vocup, Version=1.4.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.FileTreeView, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;FileTreeView.Parent" xml:space="preserve">
     <value>SplitContainer.Panel1</value>
@@ -1004,7 +1004,7 @@
     <value>SplitContainer</value>
   </data>
   <data name="&gt;&gt;SplitContainer.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveSplitContainer, Vocup, Version=1.4.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveSplitContainer, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SplitContainer.Parent" xml:space="preserve">
     <value>TableLayout</value>
@@ -1094,7 +1094,7 @@
     <value>ToolStrip</value>
   </data>
   <data name="&gt;&gt;ToolStrip.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveToolStrip, Vocup, Version=1.4.3.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveToolStrip, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ToolStrip.Parent" xml:space="preserve">
     <value>$this</value>
