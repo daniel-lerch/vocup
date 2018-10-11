@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace Vocup.Util
 {
-    public static class SizeMath
+    public static class DrawingMath
     {
         public static SizeF Multiply(this SizeF first, SizeF other)
         {
@@ -39,6 +39,17 @@ namespace Vocup.Util
                 return new Size(size.Height, size.Height);
             else
                 return new Size(size.Width, size.Width);
+        }
+
+
+        public static Rectangle MarginTop(this Rectangle rect, int value)
+        {
+            return new Rectangle(rect.X, rect.Y + value, rect.Width, rect.Height - value);
+        }
+
+        public static Rectangle SetHeight(this Rectangle rect, int value)
+        {
+            return new Rectangle(rect.X, rect.Y, rect.Width, value);
         }
     }
 }

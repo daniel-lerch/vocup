@@ -46,6 +46,7 @@
             this.CbCorrectlyPracticed = new System.Windows.Forms.CheckBox();
             this.CbWronglyPracticed = new System.Windows.Forms.CheckBox();
             this.CbUnpracticed = new System.Windows.Forms.CheckBox();
+            this.PrintList = new System.Drawing.Printing.PrintDocument();
             this.GroupType.SuspendLayout();
             this.GroupPracticeMode.SuspendLayout();
             this.GroupFilter.SuspendLayout();
@@ -176,6 +177,11 @@
             this.CbUnpracticed.UseVisualStyleBackColor = true;
             this.CbUnpracticed.CheckedChanged += new System.EventHandler(this.CbUnpracticed_CheckedChanged);
             // 
+            // PrintList
+            // 
+            this.PrintList.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.PrintList_BeginPrint);
+            this.PrintList.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintList_PrintPage);
+            // 
             // PrintWordSelection
             // 
             this.AcceptButton = this.BtnContinue;
@@ -225,5 +231,6 @@
         public System.Windows.Forms.CheckBox CbUnpracticed;
         public System.Windows.Forms.CheckBox CbCorrectlyPracticed;
         public System.Windows.Forms.CheckBox CbFullyPracticed;
+        private System.Drawing.Printing.PrintDocument PrintList;
     }
 }

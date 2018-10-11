@@ -489,6 +489,78 @@
   <data name="&gt;&gt;RbAskForForeignLang.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;CbFullyPracticed.Name" xml:space="preserve">
+    <value>CbFullyPracticed</value>
+  </data>
+  <data name="&gt;&gt;CbFullyPracticed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbFullyPracticed.Parent" xml:space="preserve">
+    <value>GroupFilter</value>
+  </data>
+  <data name="&gt;&gt;CbFullyPracticed.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;CbCorrectlyPracticed.Name" xml:space="preserve">
+    <value>CbCorrectlyPracticed</value>
+  </data>
+  <data name="&gt;&gt;CbCorrectlyPracticed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbCorrectlyPracticed.Parent" xml:space="preserve">
+    <value>GroupFilter</value>
+  </data>
+  <data name="&gt;&gt;CbCorrectlyPracticed.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;CbWronglyPracticed.Name" xml:space="preserve">
+    <value>CbWronglyPracticed</value>
+  </data>
+  <data name="&gt;&gt;CbWronglyPracticed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbWronglyPracticed.Parent" xml:space="preserve">
+    <value>GroupFilter</value>
+  </data>
+  <data name="&gt;&gt;CbWronglyPracticed.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;CbUnpracticed.Name" xml:space="preserve">
+    <value>CbUnpracticed</value>
+  </data>
+  <data name="&gt;&gt;CbUnpracticed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbUnpracticed.Parent" xml:space="preserve">
+    <value>GroupFilter</value>
+  </data>
+  <data name="&gt;&gt;CbUnpracticed.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="GroupFilter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 318</value>
+  </data>
+  <data name="GroupFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 66</value>
+  </data>
+  <data name="GroupFilter.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="GroupFilter.Text" xml:space="preserve">
+    <value>Nur Vokabeln drucken, die</value>
+  </data>
+  <data name="&gt;&gt;GroupFilter.Name" xml:space="preserve">
+    <value>GroupFilter</value>
+  </data>
+  <data name="&gt;&gt;GroupFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupFilter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupFilter.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="CbFullyPracticed.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -600,30 +672,9 @@
   <data name="&gt;&gt;CbUnpracticed.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="GroupFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 318</value>
-  </data>
-  <data name="GroupFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 66</value>
-  </data>
-  <data name="GroupFilter.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="GroupFilter.Text" xml:space="preserve">
-    <value>Nur Vokabeln drucken, die</value>
-  </data>
-  <data name="&gt;&gt;GroupFilter.Name" xml:space="preserve">
-    <value>GroupFilter</value>
-  </data>
-  <data name="&gt;&gt;GroupFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupFilter.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupFilter.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+  <metadata name="PrintList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -638,6 +689,12 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Vokabeln drucken</value>
+  </data>
+  <data name="&gt;&gt;PrintList.Name" xml:space="preserve">
+    <value>PrintList</value>
+  </data>
+  <data name="&gt;&gt;PrintList.Type" xml:space="preserve">
+    <value>System.Drawing.Printing.PrintDocument, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>PrintWordSelection</value>

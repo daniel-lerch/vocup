@@ -48,6 +48,7 @@
             this.RbRearSide = new System.Windows.Forms.RadioButton();
             this.RbFrontSide = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
+            this.PrintCards = new System.Drawing.Printing.PrintDocument();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -101,8 +102,8 @@
             // 
             // BtnPrintForeside
             // 
-            this.BtnPrintForeside.DialogResult = System.Windows.Forms.DialogResult.Ignore;
             this.BtnPrintForeside.BaseImage = global::Vocup.Properties.Icons.Print;
+            this.BtnPrintForeside.DialogResult = System.Windows.Forms.DialogResult.Ignore;
             resources.ApplyResources(this.BtnPrintForeside, "BtnPrintForeside");
             this.BtnPrintForeside.Name = "BtnPrintForeside";
             this.BtnPrintForeside.UseVisualStyleBackColor = true;
@@ -139,8 +140,8 @@
             // 
             // BtnPrintBackside
             // 
-            this.BtnPrintBackside.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnPrintBackside.BaseImage = global::Vocup.Properties.Icons.Print;
+            this.BtnPrintBackside.DialogResult = System.Windows.Forms.DialogResult.OK;
             resources.ApplyResources(this.BtnPrintBackside, "BtnPrintBackside");
             this.BtnPrintBackside.Name = "BtnPrintBackside";
             this.BtnPrintBackside.UseVisualStyleBackColor = true;
@@ -179,6 +180,11 @@
             // 
             resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
+            // 
+            // PrintCards
+            // 
+            this.PrintCards.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.PrintCards_BeginPrint);
+            this.PrintCards.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintCards_PrintPage);
             // 
             // PrintCardsDialog
             // 
@@ -235,5 +241,6 @@
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.RadioButton RbRearSide;
         public System.Windows.Forms.RadioButton RbFrontSide;
+        private System.Drawing.Printing.PrintDocument PrintCards;
     }
 }
