@@ -38,7 +38,7 @@
     <TargetPlatformVersion>10.0.17134.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
     <DefaultLanguage>de-DE</DefaultLanguage>
-    <PackageCertificateKeyFile>UWPSetup_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>Vocup.Packaging_StoreKey.pfx</PackageCertificateKeyFile>
     <EntryPointProjectUniqueName>..\Vocup\Vocup.csproj</EntryPointProjectUniqueName>
     <PackageCertificateThumbprint>47D92E92941912131735EFFAC813F67BFF9307A4</PackageCertificateThumbprint>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
@@ -86,7 +86,7 @@
     <Content Include="Images\Wide310x150Logo.scale-100.png" />
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
     <Content Include="Images\Wide310x150Logo.scale-400.png" />
-    <None Include="UWPSetup_StoreKey.pfx" />
+    <None Include="Vocup.Packaging_StoreKey.pfx" />
     <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />

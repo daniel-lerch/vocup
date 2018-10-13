@@ -32,7 +32,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "setup", "setup", "{2EC721A1
 		setup\vocup.iss = setup\vocup.iss
 	EndProjectSection
 EndProject
-Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "UWPSetup", "src\UWPSetup\UWPSetup.wapproj", "{B6986B1F-50BC-4E36-87B4-1C195B15F953}"
+Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "Vocup.Packaging", "src\Vocup.Packaging\Vocup.Packaging.wapproj", "{B6986B1F-50BC-4E36-87B4-1C195B15F953}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
