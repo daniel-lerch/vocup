@@ -179,6 +179,14 @@ Bitte stellen Sie sicher, dass die Datei nicht leer ist.</value>
   <data name="MergeOverrideT" xml:space="preserve">
     <value>Daten überschreiben?</value>
   </data>
+  <data name="OpenInExplorerError" xml:space="preserve">
+    <value>Das aktuelle Vokabelheft konnte nicht im Explorer geöffnet werden. Bitte beachten Sie, dass dieses Feature mit manchen Betriebssystemen wie Linux oder Windows 10 S nicht kompatibel ist.
+Details: {0}</value>
+    <comment>{0}: ErrorDetails</comment>
+  </data>
+  <data name="OpenInExplorerErrorT" xml:space="preserve">
+    <value>Fehler beim Öffnen</value>
+  </data>
   <data name="OpenInExplorerNotFound" xml:space="preserve">
     <value>Die Vokabelheftdatei {0} existiert nicht mehr.</value>
     <comment>{0}: FilePath</comment>

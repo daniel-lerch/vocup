@@ -221,6 +221,25 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Das aktuelle Vokabelheft konnte nicht im Explorer geöffnet werden. Bitte beachten Sie, dass dieses Feature mit manchen Betriebssystemen wie Linux oder Windows 10 S nicht kompatibel ist.
+        ///Details: {0}.
+        /// </summary>
+        internal static string OpenInExplorerError {
+            get {
+                return ResourceManager.GetString("OpenInExplorerError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fehler beim Öffnen.
+        /// </summary>
+        internal static string OpenInExplorerErrorT {
+            get {
+                return ResourceManager.GetString("OpenInExplorerErrorT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Die Vokabelheftdatei {0} existiert nicht mehr..
         /// </summary>
         internal static string OpenInExplorerNotFound {
