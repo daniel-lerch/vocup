@@ -42,9 +42,21 @@ namespace Vocup.Util
         }
 
 
+        public static Rectangle Move(this Rectangle rect, int x, int y)
+        {
+            return new Rectangle(rect.X + x, rect.Y + y, rect.Width, rect.Height);
+        }
+
         public static Rectangle MarginTop(this Rectangle rect, int value)
         {
-            return new Rectangle(rect.X, rect.Y + value, rect.Width, rect.Height - value);
+            int delta = Math.Min(value, rect.Height); // prevent underflow 
+            return new Rectangle(rect.X, rect.Y + delta, rect.Width, rect.Height - delta);
+        }
+
+        public static Rectangle MarginSide(this Rectangle rect, int value)
+        {
+            int delta = Math.Min(value, rect.Width / 2); // prevent underflow 
+            return new Rectangle(rect.X + delta, rect.Y, rect.Width - 2 * delta, rect.Height);
         }
 
         public static Rectangle SetHeight(this Rectangle rect, int value)

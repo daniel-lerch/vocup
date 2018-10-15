@@ -279,54 +279,6 @@
   <data name="&gt;&gt;BtnCancel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;RbCards.Name" xml:space="preserve">
-    <value>RbCards</value>
-  </data>
-  <data name="&gt;&gt;RbCards.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RbCards.Parent" xml:space="preserve">
-    <value>GroupType</value>
-  </data>
-  <data name="&gt;&gt;RbCards.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;RbList.Name" xml:space="preserve">
-    <value>RbList</value>
-  </data>
-  <data name="&gt;&gt;RbList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RbList.Parent" xml:space="preserve">
-    <value>GroupType</value>
-  </data>
-  <data name="&gt;&gt;RbList.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="GroupType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 390</value>
-  </data>
-  <data name="GroupType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 70</value>
-  </data>
-  <data name="GroupType.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="GroupType.Text" xml:space="preserve">
-    <value>Was möchten Sie audrucken?</value>
-  </data>
-  <data name="&gt;&gt;GroupType.Name" xml:space="preserve">
-    <value>GroupType</value>
-  </data>
-  <data name="&gt;&gt;GroupType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupType.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupType.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="RbCards.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -381,56 +333,29 @@
   <data name="&gt;&gt;RbList.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;RbAskForMotherTongue.Name" xml:space="preserve">
-    <value>RbAskForMotherTongue</value>
+  <data name="GroupType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 390</value>
   </data>
-  <data name="&gt;&gt;RbAskForMotherTongue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="GroupType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 70</value>
   </data>
-  <data name="&gt;&gt;RbAskForMotherTongue.Parent" xml:space="preserve">
-    <value>GroupPracticeMode</value>
+  <data name="GroupType.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
-  <data name="&gt;&gt;RbAskForMotherTongue.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="GroupType.Text" xml:space="preserve">
+    <value>Was möchten Sie audrucken?</value>
   </data>
-  <data name="&gt;&gt;RbAskForForeignLang.Name" xml:space="preserve">
-    <value>RbAskForForeignLang</value>
+  <data name="&gt;&gt;GroupType.Name" xml:space="preserve">
+    <value>GroupType</value>
   </data>
-  <data name="&gt;&gt;RbAskForForeignLang.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RbAskForForeignLang.Parent" xml:space="preserve">
-    <value>GroupPracticeMode</value>
-  </data>
-  <data name="&gt;&gt;RbAskForForeignLang.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="GroupPracticeMode.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="GroupPracticeMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 390</value>
-  </data>
-  <data name="GroupPracticeMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 70</value>
-  </data>
-  <data name="GroupPracticeMode.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="GroupPracticeMode.Text" xml:space="preserve">
-    <value>Übersetzungsrichtung</value>
-  </data>
-  <data name="&gt;&gt;GroupPracticeMode.Name" xml:space="preserve">
-    <value>GroupPracticeMode</value>
-  </data>
-  <data name="&gt;&gt;GroupPracticeMode.Type" xml:space="preserve">
+  <data name="&gt;&gt;GroupType.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupPracticeMode.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupType.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;GroupPracticeMode.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;GroupType.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="RbAskForMotherTongue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -489,77 +414,32 @@
   <data name="&gt;&gt;RbAskForForeignLang.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;CbFullyPracticed.Name" xml:space="preserve">
-    <value>CbFullyPracticed</value>
+  <data name="GroupPracticeMode.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;CbFullyPracticed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="GroupPracticeMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 390</value>
   </data>
-  <data name="&gt;&gt;CbFullyPracticed.Parent" xml:space="preserve">
-    <value>GroupFilter</value>
+  <data name="GroupPracticeMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 70</value>
   </data>
-  <data name="&gt;&gt;CbFullyPracticed.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="GroupPracticeMode.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
-  <data name="&gt;&gt;CbCorrectlyPracticed.Name" xml:space="preserve">
-    <value>CbCorrectlyPracticed</value>
+  <data name="GroupPracticeMode.Text" xml:space="preserve">
+    <value>Übersetzungsrichtung</value>
   </data>
-  <data name="&gt;&gt;CbCorrectlyPracticed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;GroupPracticeMode.Name" xml:space="preserve">
+    <value>GroupPracticeMode</value>
   </data>
-  <data name="&gt;&gt;CbCorrectlyPracticed.Parent" xml:space="preserve">
-    <value>GroupFilter</value>
-  </data>
-  <data name="&gt;&gt;CbCorrectlyPracticed.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;CbWronglyPracticed.Name" xml:space="preserve">
-    <value>CbWronglyPracticed</value>
-  </data>
-  <data name="&gt;&gt;CbWronglyPracticed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbWronglyPracticed.Parent" xml:space="preserve">
-    <value>GroupFilter</value>
-  </data>
-  <data name="&gt;&gt;CbWronglyPracticed.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;CbUnpracticed.Name" xml:space="preserve">
-    <value>CbUnpracticed</value>
-  </data>
-  <data name="&gt;&gt;CbUnpracticed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbUnpracticed.Parent" xml:space="preserve">
-    <value>GroupFilter</value>
-  </data>
-  <data name="&gt;&gt;CbUnpracticed.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="GroupFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 318</value>
-  </data>
-  <data name="GroupFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 66</value>
-  </data>
-  <data name="GroupFilter.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="GroupFilter.Text" xml:space="preserve">
-    <value>Nur Vokabeln drucken, die</value>
-  </data>
-  <data name="&gt;&gt;GroupFilter.Name" xml:space="preserve">
-    <value>GroupFilter</value>
-  </data>
-  <data name="&gt;&gt;GroupFilter.Type" xml:space="preserve">
+  <data name="&gt;&gt;GroupPracticeMode.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupFilter.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupPracticeMode.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;GroupFilter.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;GroupPracticeMode.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="CbFullyPracticed.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -671,6 +551,30 @@
   </data>
   <data name="&gt;&gt;CbUnpracticed.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="GroupFilter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 318</value>
+  </data>
+  <data name="GroupFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 66</value>
+  </data>
+  <data name="GroupFilter.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="GroupFilter.Text" xml:space="preserve">
+    <value>Nur Vokabeln drucken, die</value>
+  </data>
+  <data name="&gt;&gt;GroupFilter.Name" xml:space="preserve">
+    <value>GroupFilter</value>
+  </data>
+  <data name="&gt;&gt;GroupFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupFilter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupFilter.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="PrintList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

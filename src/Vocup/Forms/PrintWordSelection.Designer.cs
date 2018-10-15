@@ -89,10 +89,10 @@
             // 
             // BtnCancel
             // 
+            this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.BtnCancel, "BtnCancel");
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.UseVisualStyleBackColor = true;
-            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // GroupType
             // 
@@ -179,7 +179,6 @@
             // 
             // PrintList
             // 
-            this.PrintList.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.PrintList_BeginPrint);
             this.PrintList.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintList_PrintPage);
             // 
             // PrintWordSelection
@@ -219,18 +218,18 @@
         private System.Windows.Forms.Button BtnUncheckAll;
         private System.Windows.Forms.Button BtnContinue;
         private System.Windows.Forms.Button BtnCancel;
-        public System.Windows.Forms.CheckedListBox ListBox;
+        private System.Windows.Forms.CheckedListBox ListBox;
         private System.Windows.Forms.GroupBox GroupType;
         private System.Windows.Forms.GroupBox GroupPracticeMode;
-        public System.Windows.Forms.RadioButton RbCards;
-        public System.Windows.Forms.RadioButton RbList;
-        public System.Windows.Forms.RadioButton RbAskForMotherTongue;
-        public System.Windows.Forms.RadioButton RbAskForForeignLang;
+        private System.Windows.Forms.RadioButton RbCards;
+        private System.Windows.Forms.RadioButton RbList;
+        private System.Windows.Forms.RadioButton RbAskForMotherTongue;
+        private System.Windows.Forms.RadioButton RbAskForForeignLang;
         private System.Windows.Forms.GroupBox GroupFilter;
-        public System.Windows.Forms.CheckBox CbWronglyPracticed;
-        public System.Windows.Forms.CheckBox CbUnpracticed;
-        public System.Windows.Forms.CheckBox CbCorrectlyPracticed;
-        public System.Windows.Forms.CheckBox CbFullyPracticed;
+        private System.Windows.Forms.CheckBox CbWronglyPracticed;
+        private System.Windows.Forms.CheckBox CbUnpracticed;
+        private System.Windows.Forms.CheckBox CbCorrectlyPracticed;
+        private System.Windows.Forms.CheckBox CbFullyPracticed;
         private System.Drawing.Printing.PrintDocument PrintList;
     }
 }

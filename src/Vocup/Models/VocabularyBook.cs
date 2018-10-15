@@ -55,6 +55,7 @@ namespace Vocup.Models
             get => _unsafedChanges;
             set { if (_unsafedChanges != value) { _unsafedChanges = value; OnPropertyChanged(); } }
         }
+        public string Name => string.IsNullOrWhiteSpace(_filePath) ? null : Path.GetFileNameWithoutExtension(_filePath);
         public ReactiveCollection<VocabularyWord> Words { get; }
         public VocabularyBookStatistics Statistics { get; }
         public bool Notifies { get; private set; }
