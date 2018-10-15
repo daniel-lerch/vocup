@@ -154,28 +154,28 @@
             resources.ApplyResources(this.CbFullyPracticed, "CbFullyPracticed");
             this.CbFullyPracticed.Name = "CbFullyPracticed";
             this.CbFullyPracticed.UseVisualStyleBackColor = true;
-            this.CbFullyPracticed.CheckedChanged += new System.EventHandler(this.CbFullyPracticed_CheckedChanged);
+            this.CbFullyPracticed.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // CbCorrectlyPracticed
             // 
             resources.ApplyResources(this.CbCorrectlyPracticed, "CbCorrectlyPracticed");
             this.CbCorrectlyPracticed.Name = "CbCorrectlyPracticed";
             this.CbCorrectlyPracticed.UseVisualStyleBackColor = true;
-            this.CbCorrectlyPracticed.CheckedChanged += new System.EventHandler(this.CbCorrectlyPracticed_CheckedChanged);
+            this.CbCorrectlyPracticed.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // CbWronglyPracticed
             // 
             resources.ApplyResources(this.CbWronglyPracticed, "CbWronglyPracticed");
             this.CbWronglyPracticed.Name = "CbWronglyPracticed";
             this.CbWronglyPracticed.UseVisualStyleBackColor = true;
-            this.CbWronglyPracticed.CheckedChanged += new System.EventHandler(this.CbWronglyPracticed_CheckedChanged);
+            this.CbWronglyPracticed.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // CbUnpracticed
             // 
             resources.ApplyResources(this.CbUnpracticed, "CbUnpracticed");
             this.CbUnpracticed.Name = "CbUnpracticed";
             this.CbUnpracticed.UseVisualStyleBackColor = true;
-            this.CbUnpracticed.CheckedChanged += new System.EventHandler(this.CbUnpracticed_CheckedChanged);
+            this.CbUnpracticed.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // PrintList
             // 

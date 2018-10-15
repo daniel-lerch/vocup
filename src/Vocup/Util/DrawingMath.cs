@@ -59,6 +59,12 @@ namespace Vocup.Util
             return new Rectangle(rect.X + delta, rect.Y, rect.Width - 2 * delta, rect.Height);
         }
 
+        public static Rectangle MarginLeft(this Rectangle rect, int value)
+        {
+            int delta = Math.Min(value, rect.Width); // prevent underflow
+            return new Rectangle(rect.X + delta, rect.Y, rect.Width - value, rect.Height);
+        }
+
         public static Rectangle SetHeight(this Rectangle rect, int value)
         {
             return new Rectangle(rect.X, rect.Y, rect.Width, value);

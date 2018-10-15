@@ -21,7 +21,7 @@ namespace Vocup.Forms
 
             ListBox.BeginUpdate();
             foreach (VocabularyWord word in book.Words)
-                ListBox.Items.Add($"{word.MotherTongue} - {word.ForeignLangText}");
+                ListBox.Items.Add($"{word.MotherTongue} - {word.ForeignLangText}", true);
             ListBox.EndUpdate();
 
             CbUnpracticed.Enabled = book.Statistics.Unpracticed > 0;
@@ -62,6 +62,8 @@ namespace Vocup.Forms
                     }
                 }
 
+                invertSides = RbAskForMotherTongue.Checked;
+
                 PrintList.PrinterSettings = dialog.PrinterSettings;
                 PrintList.DocumentName = book.Name ?? Words.Vocup;
                 PrintList.Print();
@@ -80,36 +82,24 @@ namespace Vocup.Forms
             BtnContinue.Enabled = ListBox.CheckedItems.Count > 0;
         }
 
-        private void CbUnpracticed_CheckedChanged(object sender, EventArgs e)
-        {
-            SetItemsChecked(x => x.PracticeState == PracticeState.Unpracticed, CbUnpracticed.Checked);
-            CheckBox_CheckedChanged(sender, e);
-        }
-
-        private void CbWronglyPracticed_CheckedChanged(object sender, EventArgs e)
-        {
-            SetItemsChecked(x => x.PracticeState == PracticeState.WronglyPracticed, CbUnpracticed.Checked);
-            CheckBox_CheckedChanged(sender, e);
-        }
-
-        private void CbCorrectlyPracticed_CheckedChanged(object sender, EventArgs e)
-        {
-            SetItemsChecked(x => x.PracticeState == PracticeState.CorrectlyPracticed, CbUnpracticed.Checked);
-            CheckBox_CheckedChanged(sender, e);
-        }
-
-        private void CbFullyPracticed_CheckedChanged(object sender, EventArgs e)
-        {
-            SetItemsChecked(x => x.PracticeState == PracticeState.FullyPracticed, CbUnpracticed.Checked);
-            CheckBox_CheckedChanged(sender, e);
-        }
-
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             bool selection = CbUnpracticed.Checked || CbWronglyPracticed.Checked || CbCorrectlyPracticed.Checked || CbFullyPracticed.Checked;
 
             BtnCheckAll.Enabled = !selection;
             BtnUncheckAll.Enabled = !selection;
+
+            if (selection)
+            {
+                SetItemsChecked(x => x.PracticeState == PracticeState.Unpracticed, CbUnpracticed.Checked);
+                SetItemsChecked(x => x.PracticeState == PracticeState.WronglyPracticed, CbWronglyPracticed.Checked);
+                SetItemsChecked(x => x.PracticeState == PracticeState.CorrectlyPracticed, CbCorrectlyPracticed.Checked);
+                SetItemsChecked(x => x.PracticeState == PracticeState.FullyPracticed, CbFullyPracticed.Checked);
+            }
+            else
+            {
+                SetItemsChecked(x => true, true);
+            }
         }
 
         private void SetItemsChecked(Func<VocabularyWord, bool> predicate, bool value)
@@ -130,6 +120,7 @@ namespace Vocup.Forms
         private List<VocabularyWord> printList = new List<VocabularyWord>();
         private int wordNumber = 0;
         private int pageNumber = 1;
+        private bool invertSides;
 
         private void PrintList_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
@@ -138,6 +129,12 @@ namespace Vocup.Forms
 
             int hoffset = 0;
             int siteWordNumber = 0;
+            int tableBegin = 0;
+
+            int sideOffset = 2;
+            int lineOffset = 2;
+            int lineThickness = 1;
+            int textMinHeight = 17;
 
             using (Font siteFont = new Font("Arial", 11))
             using (StringFormat centerFormat = new StringFormat() { Alignment = StringAlignment.Center })
@@ -149,41 +146,39 @@ namespace Vocup.Forms
             using (StringFormat centerFormat = new StringFormat() { Alignment = StringAlignment.Center })
             {
                 string name = string.IsNullOrWhiteSpace(book.Name) ? "" : book.Name + ": ";
+                string left = invertSides ? book.ForeignLang : book.MotherTongue;
+                string right = invertSides ? book.MotherTongue : book.ForeignLang;
+                string title = $"{name}{left} - {right}";
 
-                string title;
-                if (book.PracticeMode == PracticeMode.AskForForeignLang)
-                    title = $"{book.MotherTongue} - {book.ForeignLang}";
-                else
-                    title = $"{book.ForeignLang} - {book.MotherTongue}";
-
-                g.DrawString(name + title, titleFont, Brushes.Black, e.MarginBounds.MarginTop(hoffset).SetHeight(25), centerFormat);
+                g.DrawString(title, titleFont, Brushes.Black, e.MarginBounds.MarginTop(hoffset).SetHeight(25), centerFormat);
                 hoffset += 25;
+                tableBegin = hoffset;
             }
 
             using (Font font = new Font("Arial", 10))
             using (StringFormat nearFormat = new StringFormat() { Alignment = StringAlignment.Near })
-            using (Pen pen = new Pen(Brushes.Black, 1F))
+            using (Pen pen = new Pen(Brushes.Black, lineThickness))
             {
                 for (; ; wordNumber++, siteWordNumber++) // loop through printList
                 {
-                    int sideoffset = 0;
-                    int lineoffset = 1;
-
-                    Rectangle rect = e.MarginBounds.MarginTop(hoffset += lineoffset).MarginSide(sideoffset);
-                    g.DrawLine(pen, rect.Left, rect.Top, rect.Right, rect.Top);
-                    hoffset += (int)pen.Width + lineoffset;
+                    Rectangle rect = e.MarginBounds.MarginTop(hoffset += lineOffset);
+                    g.DrawLine(pen, rect.Left, rect.Top, rect.Right, rect.Top); // Draw horizontal lines
+                    hoffset += (int)pen.Width + lineOffset;
 
                     if (wordNumber >= book.Words.Count) break;
 
-                    rect = e.MarginBounds.MarginTop(hoffset).MarginSide(sideoffset);
+                    rect = e.MarginBounds.MarginTop(hoffset);
                     VocabularyWord word = printList[wordNumber];
-                    Rectangle left = new Rectangle(rect.X, rect.Y, rect.Width / 2, rect.Height);
-                    Rectangle right = new Rectangle(left.Right, rect.Y, rect.Width / 2, rect.Height);
+                    Rectangle left = new Rectangle(rect.X, rect.Y, rect.Width / 2, rect.Height).MarginSide(sideOffset);
+                    Rectangle right = new Rectangle(left.Right, rect.Y, rect.Width / 2, rect.Height).MarginSide(sideOffset)
+                        .MarginLeft(lineThickness); // right column is smaller than the left one because of the line
+                    string leftText = invertSides ? word.ForeignLangText : word.MotherTongue;
+                    string rightText = invertSides ? word.MotherTongue : word.ForeignLangText;
 
-                    SizeF leftSize = g.MeasureString(word.MotherTongue, font, left.Size, nearFormat, out int leftChars, out int leftLines);
-                    SizeF rightSize = g.MeasureString(word.ForeignLangText, font, right.Size, nearFormat, out int rightChars, out int rightLines);
-                    bool missingChars = leftChars < word.MotherTongue.Length || rightChars < word.ForeignLangText.Length;
-                    int textHeight = (int)Math.Max(leftSize.Height, rightSize.Height);
+                    SizeF leftSize = g.MeasureString(leftText, font, left.Size, nearFormat, out int leftChars, out int leftLines);
+                    SizeF rightSize = g.MeasureString(rightText, font, right.Size, nearFormat, out int rightChars, out int rightLines);
+                    bool missingChars = leftChars < leftText.Length || rightChars < rightText.Length;
+                    int textHeight = (int)Math.Max(textMinHeight, Math.Max(leftSize.Height, rightSize.Height));
 
                     if (siteWordNumber > 0 && (missingChars || textHeight > rect.Height))
                     {
@@ -191,10 +186,20 @@ namespace Vocup.Forms
                         break;
                     }
 
-                    g.DrawString(word.MotherTongue, font, Brushes.Black, left, nearFormat);
-                    g.DrawString(word.ForeignLangText, font, Brushes.Black, right, nearFormat);
+                    g.DrawString(leftText, font, Brushes.Black, left, nearFormat);
+                    g.DrawString(rightText, font, Brushes.Black, right, nearFormat);
                     hoffset += textHeight;
                 }
+            }
+
+            using (Pen pen = new Pen(Brushes.Black, lineThickness)) // Draw vertical lines
+            {
+                Rectangle table = e.MarginBounds.MarginTop(tableBegin + lineOffset)
+                    .SetHeight(hoffset - tableBegin - lineThickness - 2 * lineOffset);
+                g.DrawLine(pen, table.Left, table.Top, table.Left, table.Bottom);
+                g.DrawLine(pen, table.Right, table.Top, table.Right, table.Bottom);
+                int middleX = table.Left + table.Width / 2;
+                g.DrawLine(pen, middleX, table.Top, middleX, table.Bottom);
             }
 
             pageNumber++;
