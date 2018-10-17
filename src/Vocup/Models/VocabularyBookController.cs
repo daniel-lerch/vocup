@@ -10,7 +10,7 @@ using Vocup.Properties;
 
 namespace Vocup.Models
 {
-    public class VocabularyBookController
+    public class VocabularyBookController : IDisposable
     {
         private readonly List<VocabularyWordController> wordControllers;
         private IMainForm _parent;
@@ -117,6 +117,11 @@ namespace Vocup.Models
             VocabularyWordController controller = GetController(item);
             wordControllers.Remove(controller);
             ListView.Items.Remove(controller.ListViewItem);
+        }
+
+        public void Dispose()
+        {
+            ((IDisposable)ListView).Dispose();
         }
     }
 }
