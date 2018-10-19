@@ -45,31 +45,38 @@ namespace Vocup.Forms
 
         private void BtnContinue_Click(object sender, EventArgs e)
         {
-            PrintDialog dialog = new PrintDialog()
+            for (int i = 0; i < book.Words.Count; i++) // Compose print list
             {
-                AllowCurrentPage = false,
-                AllowSomePages = false,
-                UseEXDialog = true
-            };
-
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                for (int i = 0; i < book.Words.Count; i++)
+                if (ListBox.GetItemChecked(i))
                 {
-                    if (ListBox.GetItemChecked(i))
-                    {
-                        printList.Add(book.Words[i]);
-                    }
+                    printList.Add(book.Words[i]);
                 }
-
-                invertSides = RbAskForMotherTongue.Checked;
-
-                PrintList.PrinterSettings = dialog.PrinterSettings;
-                PrintList.DocumentName = book.Name ?? Words.Vocup;
-                PrintList.Print();
             }
 
-            dialog.Dispose();
+            if (RbList.Checked)
+            {
+                PrintDialog dialog = new PrintDialog()
+                {
+                    AllowCurrentPage = false,
+                    AllowSomePages = false,
+                    UseEXDialog = true
+                };
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    invertSides = RbAskForMotherTongue.Checked;
+
+                    PrintList.PrinterSettings = dialog.PrinterSettings;
+                    PrintList.DocumentName = book.Name ?? Words.Vocup;
+                    PrintList.Print();
+                }
+
+                dialog.Dispose();
+            }
+            else // print cards
+            {
+                using (var dialog = new PrintCardsDialog()) dialog.ShowDialog();
+            }
         }
 
         private void RbList_CheckedChanged(object sender, EventArgs e)

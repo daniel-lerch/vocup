@@ -87,7 +87,6 @@
             this.SplitContainer = new Vocup.Controls.ResponsiveSplitContainer();
             this.FileTreeView = new Vocup.Controls.FileTreeView();
             this.printCards = new System.Drawing.Printing.PrintDocument();
-            this.printList = new System.Drawing.Printing.PrintDocument();
             this.ToolStrip = new Vocup.Controls.ResponsiveToolStrip();
             this.TsbCreateBook = new System.Windows.Forms.ToolStripButton();
             this.TsbOpenBook = new System.Windows.Forms.ToolStripButton();
@@ -553,11 +552,6 @@
             this.printCards.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.printDocument_cards_BeginPrint);
             this.printCards.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_cards_PrintPage);
             // 
-            // printList
-            // 
-            this.printList.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.printDocument_list_BeginPrint);
-            this.printList.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_list_PrintPage);
-            // 
             // ToolStrip
             // 
             this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
@@ -734,7 +728,6 @@
         private System.Windows.Forms.ToolStripMenuItem TsmiCloseBook;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem11;
         private System.Drawing.Printing.PrintDocument printCards;
-        private System.Drawing.Printing.PrintDocument printList;
         private System.Windows.Forms.ToolStripMenuItem TsmiEvaluationInfo;
         private Controls.StatisticsPanel GroupStatistics;
         private System.Windows.Forms.TableLayoutPanel TableLayout;

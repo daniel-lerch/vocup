@@ -10,6 +10,26 @@ namespace Vocup.Forms
 {
     public partial class PrintCardsDialog : Form
     {
+        ListView listView_vokabeln;
+
+        //Liste der Vokabeln die ausgedruckt werden soll
+        int[] vokabelliste;
+
+        //Anzahl Vokabeln beim Drucken
+        int anz_vok;
+
+        //Anzahl zu druckende Seiten
+        int anzahl_seiten;
+
+        //Aktuelle zu druckende Seite
+        int aktuelle_seite;
+
+        //Vorder- oder Rückseite bei den Kärtchen
+        bool if_foreside;
+
+        //Papiereinzug
+        bool is_front;
+
         public PrintCardsDialog()
         {
             InitializeComponent();
@@ -915,6 +935,29 @@ namespace Vocup.Forms
             else
             {
                 e.HasMorePages = false;
+            }
+        }
+
+        private int[] get_coordinates(int number)
+        {
+            switch (number)
+            {
+                case 01: return new int[] { -146, 103 };
+                case 02: return new int[] { -146, 310 };
+                case 03: return new int[] { -146, 516 };
+                case 04: return new int[] { -146, 723 };
+                case 05: return new int[] { -438, 103 };
+                case 06: return new int[] { -438, 310 };
+                case 07: return new int[] { -438, 516 };
+                case 08: return new int[] { -438, 723 };
+                case 09: return new int[] { -731, 103 };
+                case 10: return new int[] { -731, 310 };
+                case 11: return new int[] { -731, 516 };
+                case 12: return new int[] { -731, 723 };
+                case 13: return new int[] { -1023, 103 };
+                case 14: return new int[] { -1023, 310 };
+                case 15: return new int[] { -1023, 516 };
+                default: return new int[] { -1023, 723 };
             }
         }
     }
