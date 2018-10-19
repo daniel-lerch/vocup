@@ -158,7 +158,7 @@ namespace Vocup
         {
             if (Settings.Default.StartScreen == (int)StartScreen.AboutBox)
             {
-                new AboutBox().ShowDialog();
+                using (var dialog = new AboutBox()) dialog.ShowDialog();
 
                 Settings.Default.StartScreen = (int)StartScreen.LastFile;
                 Settings.Default.Save();
@@ -173,39 +173,51 @@ namespace Vocup
         }
 
 
-        private void TsmiAbout_Click(object sender, EventArgs e) => new AboutBox().ShowDialog();
+        private void TsmiAbout_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new AboutBox()) dialog.ShowDialog();
+        }
 
-        private void TsbtnEvaluationInfo_Click(object sender, EventArgs e) => new EvaluationInfoDialog().ShowDialog();
-        private void TsmiEvaluationInfo_Click(object sender, EventArgs e) => new EvaluationInfoDialog().ShowDialog();
-
+        private void TsbtnEvaluationInfo_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new EvaluationInfoDialog()) dialog.ShowDialog();
+        }
+        private void TsmiEvaluationInfo_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new EvaluationInfoDialog()) dialog.ShowDialog();
+        }
 
         private void TsmiSettings_Click(object sender, EventArgs e)
         {
             string oldVhfPath = Settings.Default.VhfPath;
 
-            SettingsDialog optionen = new SettingsDialog();
-
-            if (optionen.ShowDialog() == DialogResult.OK)
+            using (SettingsDialog optionen = new SettingsDialog())
             {
-                // Renew practice state for Settings.MaxPracticeCount changes
-                CurrentBook?.Words.ForEach(x => x.RenewPracticeState());
-
-                if (CurrentController != null)
-                    CurrentController.ListView.GridLines = Settings.Default.GridLines;
-
-                // Eventually refresh tree view root path
-                if (oldVhfPath != Settings.Default.VhfPath)
-                    FileTreeView.RootPath = Settings.Default.VhfPath;
-
-                //Autosave
-                if (Settings.Default.AutoSave && UnsavedChanges)
+                if (optionen.ShowDialog() == DialogResult.OK)
                 {
-                    savefile(false);
+                    // Renew practice state for Settings.MaxPracticeCount changes
+                    CurrentBook?.Words.ForEach(x => x.RenewPracticeState());
+
+                    if (CurrentController != null)
+                        CurrentController.ListView.GridLines = Settings.Default.GridLines;
+
+                    // Eventually refresh tree view root path
+                    if (oldVhfPath != Settings.Default.VhfPath)
+                        FileTreeView.RootPath = Settings.Default.VhfPath;
+
+                    //Autosave
+                    if (Settings.Default.AutoSave && UnsavedChanges)
+                    {
+                        savefile(false);
+                    }
                 }
             }
         }
 
-        private void TsmiSpecialChar_Click(object sender, EventArgs e) => new SpecialCharManage().ShowDialog();
+        private void TsmiSpecialChar_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new SpecialCharManage()) dialog.ShowDialog();
+        }
 
         private void TsmiUpdate_Click(object sender, EventArgs e) { } // TODO: Check online for updates or messages
 
@@ -455,22 +467,23 @@ namespace Vocup
 
         private void create_new_vokabelheft()
         {
-            VocabularyBookSettings dialog = new VocabularyBookSettings(out VocabularyBook book);
-
-            if (dialog.ShowDialog() == DialogResult.OK)
+            using (VocabularyBookSettings dialog = new VocabularyBookSettings(out VocabularyBook book))
             {
-                if (CurrentBook != null)
+                if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    if (UnsavedChanges && !vokabelheft_ask_to_save())
-                        return;
+                    if (CurrentBook != null)
+                    {
+                        if (UnsavedChanges && !vokabelheft_ask_to_save())
+                            return;
 
-                    UnloadBook(false);
+                        UnloadBook(false);
+                    }
+
+                    // VocabularyBookSettings enables notification on creation
+                    LoadBook(book);
+
+                    BtnAddWord.Focus();
                 }
-
-                // VocabularyBookSettings enables notification on creation
-                LoadBook(book);
-
-                BtnAddWord.Focus();
             }
         }
 
@@ -478,7 +491,7 @@ namespace Vocup
 
         private void add_vokabel()
         {
-            new AddWordDialog(CurrentBook).ShowDialog();
+            using (var dialog = new AddWordDialog(CurrentBook)) dialog.ShowDialog();
             BtnAddWord.Focus();
         }
 
@@ -487,7 +500,7 @@ namespace Vocup
         public void edit_vokabel_dialog()
         {
             VocabularyWord selected = (VocabularyWord)CurrentController.ListView.SelectedItem.Tag;
-            new EditWordDialog(CurrentBook, selected).ShowDialog();
+            using (var dialog = new EditWordDialog(CurrentBook, selected)) dialog.ShowDialog();
             CurrentController.ListView.SelectedItem.EnsureVisible();
             BtnAddWord.Focus();
         }
@@ -505,7 +518,7 @@ namespace Vocup
 
         private void edit_vokabelheft_dialog()
         {
-            new VocabularyBookSettings(CurrentBook) { Owner = this }.ShowDialog();
+            using (var dialog = new VocabularyBookSettings(CurrentBook) { Owner = this }) dialog.ShowDialog();
             BtnAddWord.Focus();
         }
 
@@ -514,40 +527,42 @@ namespace Vocup
 
         private void vokabeln_üben()
         {
-            PracticeCountDialog countDialog = new PracticeCountDialog(CurrentBook);
-            if (countDialog.ShowDialog() != DialogResult.OK)
-                return;
-
-            List<VocabularyWordPractice> practiceList = countDialog.PracticeList;
-
-            int anzahl = practiceList.Count;
-
-            CurrentController.ListView.Visible = false;
-
-            new PracticeDialog(CurrentBook, practiceList) { Owner = this }.ShowDialog();
-
-            if (Settings.Default.PracticeShowResultList)
+            using (PracticeCountDialog countDialog = new PracticeCountDialog(CurrentBook))
             {
-                new PracticeResultList(CurrentBook, practiceList).ShowDialog();
+                if (countDialog.ShowDialog() != DialogResult.OK)
+                    return;
+
+                List<VocabularyWordPractice> practiceList = countDialog.PracticeList;
+
+                int anzahl = practiceList.Count;
+
+                CurrentController.ListView.Visible = false;
+
+                using (var dialog = new PracticeDialog(CurrentBook, practiceList) { Owner = this }) dialog.ShowDialog();
+
+                if (Settings.Default.PracticeShowResultList)
+                {
+                    using (var dialog = new PracticeResultList(CurrentBook, practiceList)) dialog.ShowDialog();
+                }
+
+                CurrentController.ListView.Visible = true;
+
+                BtnAddWord.Focus();
             }
-
-            CurrentController.ListView.Visible = true;
-
-            BtnAddWord.Focus();
         }
 
         //Vokabelhefte zusammenführen
 
         private void TsmiMerge_Click(object sender, EventArgs e)
         {
-            new MergeFiles().ShowDialog();
+            using (var dialog = new MergeFiles()) dialog.ShowDialog();
         }
 
         //Datensicherung erstellen
 
         private void TsmiBackupCreate_Click(object sender, EventArgs e)
         {
-            new CreateBackup().ShowDialog();
+            using (var dialog = new CreateBackup()) dialog.ShowDialog();
         }
 
         //Datensicherung wiederherstellen
