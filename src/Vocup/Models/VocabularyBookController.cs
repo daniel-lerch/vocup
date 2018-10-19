@@ -93,10 +93,7 @@ namespace Vocup.Models
 
         private void OnSelectionChanged(object sender, EventArgs e)
         {
-            if (Parent == null)
-                return;
-
-            Parent.VocabularyWordSelected(ListView.SelectedItems.Count > 0);
+            Parent?.VocabularyWordSelected(ListView.SelectedItems.Count > 0);
         }
 
         private void OnDoubleClick(object sender, EventArgs e)
