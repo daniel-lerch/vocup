@@ -2339,13 +2339,7 @@ namespace Vocup
 
         //Beenden
 
-        private void TsmiExitAppliaction_Click(object sender, EventArgs e)
-        {
-            if (UnsavedChanges && vokabelheft_ask_to_save())
-            {
-                Close();
-            }
-        }
+        private void TsmiExitAppliaction_Click(object sender, EventArgs e) => Close();
 
         private void Form_FormClosing(object sender, FormClosingEventArgs e)
         {
