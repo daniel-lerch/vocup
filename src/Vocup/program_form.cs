@@ -70,7 +70,6 @@ namespace Vocup
             TsmiAddWord.Enabled = value;
             BtnBookSettings.Enabled = value;
             TsmiBookOptions.Enabled = value;
-            BtnPractice.Enabled = value;
             TsmiCloseBook.Enabled = value;
             TsmiSaveAs.Enabled = value;
             TsmiOpenInExplorer.Enabled = value;

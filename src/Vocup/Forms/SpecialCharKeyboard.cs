@@ -45,10 +45,12 @@ namespace Vocup.Forms
                     {
                         using (StreamReader reader = new StreamReader(info.FullName, Encoding.UTF8))
                         {
+                            string name = Path.GetFileNameWithoutExtension(info.FullName);
                             TabPage page = new TabPage()
                             {
-                                Name = "Custom_" + Path.GetFileNameWithoutExtension(info.FullName),
-                                Text = Path.GetFileNameWithoutExtension(info.FullName),
+                                Name = "Custom_" + name,
+                                Tag = "Custom_" + name,
+                                Text = name,
                                 AutoScroll = true,
                                 UseVisualStyleBackColor = true,
                                 Font = new Font("Arial", 9.75f)

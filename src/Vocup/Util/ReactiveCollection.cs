@@ -48,10 +48,11 @@ namespace Vocup.Util
 
         protected override void RemoveItem(int index)
         {
+            T item = this[index];
             base.RemoveItem(index);
             foreach (Action<T> action in onRemoveActions)
             {
-                action(this[index]);
+                action(item);
             }
         }
     }
