@@ -225,6 +225,10 @@ namespace Vocup
         {
             if (CurrentBook != null)
             {
+                // Prevent the file tree view from loading the book again
+                // if FileTreeView.SelectedPath was assigned in IMainForm.LoadBook(VocabularyBook)
+                if (CurrentBook.FilePath == e.FullName)
+                    return;
                 if (UnsavedChanges && !vokabelheft_ask_to_save())
                     return;
 
