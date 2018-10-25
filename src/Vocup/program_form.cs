@@ -2288,21 +2288,6 @@ namespace Vocup
 
         private void TsmiImport_Click(object sender, EventArgs e)
         {
-            if (UnsavedChanges)
-            {
-                DialogResult dialogResult = MessageBox.Show(Messages.CsvExportSave,
-                    Messages.CsvExportSaveT, MessageBoxButtons.YesNoCancel);
-
-                if (dialogResult == DialogResult.Yes)
-                {
-                    savefile(false);
-                }
-                else if (dialogResult == DialogResult.Cancel)
-                {
-                    return;
-                }
-            }
-
             OpenFileDialog openDialog = new OpenFileDialog
             {
                 Title = Words.Import,
@@ -2318,8 +2303,8 @@ namespace Vocup
                 else
                 {
                     VocabularyBook book = new VocabularyBook();
-                    VocabularyFile.ImportCsvFile(openDialog.FileName, book, true);
-                    LoadBook(book);
+                    if (VocabularyFile.ImportCsvFile(openDialog.FileName, book, true))
+                        LoadBook(book);
                 }
             }
 
@@ -2328,6 +2313,21 @@ namespace Vocup
 
         private void TsmiExport_Click(object sender, EventArgs e)
         {
+            if (UnsavedChanges)
+            {
+                DialogResult dialogResult = MessageBox.Show(Messages.CsvExportSave,
+                    Messages.CsvExportSaveT, MessageBoxButtons.YesNoCancel);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    savefile(false);
+                }
+                else if (dialogResult == DialogResult.Cancel)
+                {
+                    return;
+                }
+            }
+
             SaveFileDialog saveDialog = new SaveFileDialog
             {
                 Title = Words.Export,

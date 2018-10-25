@@ -64,7 +64,7 @@ namespace Vocup.Forms
             {
                 word.MotherTongue = TbMotherTongue.Text;
                 word.ForeignLang = TbForeignLang.Text;
-                word.ForeignLangSynonym = string.IsNullOrWhiteSpace(TbForeignLang.Text) ? null : TbForeignLang.Text;
+                word.ForeignLangSynonym = string.IsNullOrWhiteSpace(TbForeignLangSynonym.Text) ? null : TbForeignLangSynonym.Text;
 
                 if (CbResetResults.Checked)
                 {
