@@ -64,6 +64,7 @@ namespace Vocup.Models
         {
             ListView.MotherTongue = VocabularyBook.MotherTongue;
             ListView.ForeignLang = VocabularyBook.ForeignLang;
+            Parent?.VocabularyBookHasFilePath(!string.IsNullOrWhiteSpace(VocabularyBook.FilePath));
             Parent?.VocabularyBookUnsavedChanges(VocabularyBook.UnsavedChanges);
             Parent?.VocabularyBookName(Path.GetFileNameWithoutExtension(VocabularyBook.FilePath));
 

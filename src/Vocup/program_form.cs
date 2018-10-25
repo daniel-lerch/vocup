@@ -66,13 +66,11 @@ namespace Vocup
         {
             GroupBook.Enabled = value;
             GroupWord.Enabled = value;
-            GroupSearch.Enabled = value;
             TsmiAddWord.Enabled = value;
             BtnBookSettings.Enabled = value;
             TsmiBookOptions.Enabled = value;
             TsmiCloseBook.Enabled = value;
             TsmiSaveAs.Enabled = value;
-            TsmiOpenInExplorer.Enabled = value;
         }
         public void VocabularyBookHasContent(bool value)
         {
@@ -88,6 +86,10 @@ namespace Vocup
         {
             BtnPractice.Enabled = value;
             TsmiPractice.Enabled = value;
+        }
+        public void VocabularyBookHasFilePath(bool value)
+        {
+            TsmiOpenInExplorer.Enabled = value;
         }
         public void VocabularyBookUnsavedChanges(bool value)
         {
@@ -137,6 +139,7 @@ namespace Vocup
                 VocabularyWordSelected(false);
                 VocabularyBookHasContent(false);
                 VocabularyBookPracticable(false);
+                VocabularyBookHasFilePath(false);
                 VocabularyBookUnsavedChanges(false);
                 VocabularyBookName(null);
 
