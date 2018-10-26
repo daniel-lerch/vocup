@@ -201,6 +201,16 @@ namespace Vocup.Controls
             return null;
         }
 
+        private void SafeRemoveNode(TreeNode node)
+        {
+            if (node != null)
+            {
+                if (SelectedPath == (node.Tag as FileInfo)?.FullName)
+                    SelectedPath = null; // prevent from automatically loading another file
+                node.Remove();
+            }
+        }
+
         private void MainTreeView_BeforeExpand(object sender, TreeViewCancelEventArgs e)
         {
             foreach (TreeNode node in e.Node.Nodes)
@@ -235,13 +245,13 @@ namespace Vocup.Controls
         private void MainWatcher_Deleted(object sender, FileSystemEventArgs e)
         {
             TreeNode node = GetNode(e.FullPath);
-            node.Remove();
+            SafeRemoveNode(node); // null check because no FileFilter is applied to the watcher
         }
 
         private void MainWatcher_Renamed(object sender, RenamedEventArgs e)
         {
             TreeNode old = GetNode(e.OldFullPath);
-            old?.Remove(); // null check because user can change file ending to match FileFilter
+            SafeRemoveNode(old); // null check because user can change file ending to match FileFilter
             TreeNode root = GetNode(Path.GetDirectoryName(e.FullPath));
             LoadNode(root, e.FullPath);
         }
