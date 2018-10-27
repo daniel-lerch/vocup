@@ -119,7 +119,6 @@
             resources.ApplyResources(this.BtnSpecialChar, "BtnSpecialChar");
             this.BtnSpecialChar.Name = "BtnSpecialChar";
             this.BtnSpecialChar.UseVisualStyleBackColor = true;
-            this.BtnSpecialChar.Click += new System.EventHandler(this.BtnSpecialChar_Click);
             // 
             // MergeFiles
             // 

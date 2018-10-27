@@ -23,8 +23,7 @@ namespace Vocup.Forms
             InitializeComponent();
             Icon = Icon.FromHandle(Icons.MergeFiles.GetHicon());
             specialCharDialog = new SpecialCharKeyboard();
-            specialCharDialog.Initialize(this);
-            specialCharDialog.VisibleChanged += (a0, a1) => ValidateInput();
+            specialCharDialog.Initialize(this, BtnSpecialChar);
             specialCharDialog.RegisterTextBox(TbMotherTongue);
 
             books = new List<VocabularyBook>();
@@ -119,11 +118,6 @@ namespace Vocup.Forms
         private void TextBox_Enter(object sender, EventArgs e)
         {
             specialCharDialog.RegisterTextBox((TextBox)sender);
-        }
-
-        private void BtnSpecialChar_Click(object sender, EventArgs e)
-        {
-            specialCharDialog.Show();
         }
 
         private void BtnSave_Click(object sender, EventArgs e)

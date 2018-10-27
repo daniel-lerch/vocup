@@ -11,18 +11,35 @@ namespace Vocup.Forms
     public partial class SpecialCharKeyboard : Form
     {
         private TextBox textBox;
+        private bool _dialogEnabled;
 
         public SpecialCharKeyboard()
         {
             InitializeComponent();
         }
 
-        public void Initialize(Form owner)
+        public bool DialogEnabled
+        {
+            get => _dialogEnabled;
+            set { if (value != _dialogEnabled) { _dialogEnabled = value; OnDialogEnabledChanged(); } }
+        }
+        protected virtual void OnDialogEnabledChanged()
+        {
+            DialogEnabledChanged?.Invoke(this, EventArgs.Empty);
+            Visible = _dialogEnabled && (textBox?.Enabled ?? false);
+        }
+        public event EventHandler DialogEnabledChanged;
+
+        public void Initialize(Form owner, Button trigger)
         {
             Owner = owner;
             Owner.Move += Owner_MoveResize;
             Owner.Resize += Owner_MoveResize;
             Owner_MoveResize(Owner, null);
+
+            trigger.Click += (a0, a1) => DialogEnabled = true;
+            DialogEnabledChanged += (a0, a1) => trigger.Enabled = !DialogEnabled;
+            trigger.Enabled = !DialogEnabled;
         }
 
         public void RegisterTextBox(TextBox control)
@@ -124,7 +141,7 @@ namespace Vocup.Forms
 
         private void TextBox_EnabledChanged(object sender, EventArgs e)
         {
-            Visible = textBox.Enabled;
+            Visible = _dialogEnabled && textBox.Enabled;
         }
 
         private void Owner_MoveResize(object sender, EventArgs e)

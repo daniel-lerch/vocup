@@ -20,8 +20,7 @@ namespace Vocup.Forms
         {
             InitializeComponent();
             specialCharDialog = new SpecialCharKeyboard();
-            specialCharDialog.Initialize(this);
-            specialCharDialog.VisibleChanged += (a0, a1) => BtnSpecialChar.Enabled = true;
+            specialCharDialog.Initialize(this, BtnSpecialChar);
             specialCharDialog.RegisterTextBox(TbMotherTongue);
         }
 
@@ -74,12 +73,6 @@ namespace Vocup.Forms
                 BtnOK.Enabled = false;
                 AcceptButton = BtnCancel;
             }
-        }
-
-        private void BtnSpecialChar_Click(object sender, EventArgs e)
-        {
-            specialCharDialog.Show();
-            BtnSpecialChar.Enabled = false;
         }
 
         private void BtnOK_Click(object sender, EventArgs e)
