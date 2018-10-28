@@ -187,12 +187,12 @@ namespace Vocup.Forms
                 {
                     if (cloned.PracticeDate > comp.PracticeDate)
                         target.Words[i] = cloned;
-                }
-                else
-                {
-                    target.Words.Add(cloned);
+
+                    return;
                 }
             }
+
+            target.Words.Add(cloned);
         }
     }
 }
