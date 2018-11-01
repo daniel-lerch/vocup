@@ -42,19 +42,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.info = new System.Windows.Forms.TabPage();
+            this.TpInfo = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.komp = new System.Windows.Forms.TabPage();
-            this.komponenten = new System.Windows.Forms.ListView();
+            this.TpComponents = new System.Windows.Forms.TabPage();
+            this.LwComponents = new System.Windows.Forms.ListView();
             this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.software_version = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lizenz = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.url = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
-            this.info.SuspendLayout();
+            this.TpInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.komp.SuspendLayout();
+            this.TpComponents.SuspendLayout();
             this.SuspendLayout();
             // 
             // LbOS
@@ -69,10 +69,10 @@
             // 
             // BtnOK
             // 
+            this.BtnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             resources.ApplyResources(this.BtnOK, "BtnOK");
             this.BtnOK.Name = "BtnOK";
             this.BtnOK.UseVisualStyleBackColor = true;
-            this.BtnOK.Click += new System.EventHandler(this.BtnOK_Click);
             // 
             // LbVersion
             // 
@@ -105,6 +105,7 @@
             this.LlbProjectLicense.Name = "LlbProjectLicense";
             this.LlbProjectLicense.TabStop = true;
             this.LlbProjectLicense.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.LlbProjectLicense.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LlbProjectLicense_LinkClicked);
             // 
             // label2
             // 
@@ -120,6 +121,7 @@
             this.LlbProjectWebsite.Name = "LlbProjectWebsite";
             this.LlbProjectWebsite.TabStop = true;
             this.LlbProjectWebsite.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.LlbProjectWebsite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LlbProjectWebsite_LinkClicked);
             // 
             // LlbProjectEMail
             // 
@@ -129,6 +131,7 @@
             this.LlbProjectEMail.Name = "LlbProjectEMail";
             this.LlbProjectEMail.TabStop = true;
             this.LlbProjectEMail.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.LlbProjectEMail.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LlbProjectEMail_LinkClicked);
             // 
             // label3
             // 
@@ -144,21 +147,21 @@
             // 
             // tabControl
             // 
-            this.tabControl.Controls.Add(this.info);
-            this.tabControl.Controls.Add(this.komp);
+            this.tabControl.Controls.Add(this.TpInfo);
+            this.tabControl.Controls.Add(this.TpComponents);
             resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             // 
-            // info
+            // TpInfo
             // 
-            this.info.BackColor = System.Drawing.Color.White;
-            this.info.Controls.Add(this.pictureBox1);
-            this.info.Controls.Add(this.LbVersion);
-            this.info.Controls.Add(this.LbCopyright);
-            this.info.Controls.Add(this.tableLayoutPanel);
-            resources.ApplyResources(this.info, "info");
-            this.info.Name = "info";
+            this.TpInfo.BackColor = System.Drawing.Color.White;
+            this.TpInfo.Controls.Add(this.pictureBox1);
+            this.TpInfo.Controls.Add(this.LbVersion);
+            this.TpInfo.Controls.Add(this.LbCopyright);
+            this.TpInfo.Controls.Add(this.tableLayoutPanel);
+            resources.ApplyResources(this.TpInfo, "TpInfo");
+            this.TpInfo.Name = "TpInfo";
             // 
             // pictureBox1
             // 
@@ -166,29 +169,30 @@
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
-            // komp
+            // TpComponents
             // 
-            this.komp.BackColor = System.Drawing.Color.White;
-            this.komp.Controls.Add(this.komponenten);
-            resources.ApplyResources(this.komp, "komp");
-            this.komp.Name = "komp";
+            this.TpComponents.BackColor = System.Drawing.Color.White;
+            this.TpComponents.Controls.Add(this.LwComponents);
+            resources.ApplyResources(this.TpComponents, "TpComponents");
+            this.TpComponents.Name = "TpComponents";
             // 
-            // komponenten
+            // LwComponents
             // 
-            this.komponenten.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.LwComponents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.name,
             this.software_version,
             this.lizenz,
             this.url});
-            resources.ApplyResources(this.komponenten, "komponenten");
-            this.komponenten.FullRowSelect = true;
-            this.komponenten.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            ((System.Windows.Forms.ListViewItem)(resources.GetObject("komponenten.Items"))),
-            ((System.Windows.Forms.ListViewItem)(resources.GetObject("komponenten.Items1"))),
-            ((System.Windows.Forms.ListViewItem)(resources.GetObject("komponenten.Items2")))});
-            this.komponenten.Name = "komponenten";
-            this.komponenten.UseCompatibleStateImageBehavior = false;
-            this.komponenten.View = System.Windows.Forms.View.Details;
+            resources.ApplyResources(this.LwComponents, "LwComponents");
+            this.LwComponents.FullRowSelect = true;
+            this.LwComponents.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items"))),
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items1"))),
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items2")))});
+            this.LwComponents.Name = "LwComponents";
+            this.LwComponents.UseCompatibleStateImageBehavior = false;
+            this.LwComponents.View = System.Windows.Forms.View.Details;
+            this.LwComponents.DoubleClick += new System.EventHandler(this.LwComponents_DoubleClick);
             // 
             // name
             // 
@@ -224,9 +228,9 @@
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
             this.tabControl.ResumeLayout(false);
-            this.info.ResumeLayout(false);
+            this.TpInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.komp.ResumeLayout(false);
+            this.TpComponents.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,10 +250,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         public  System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage info;
+        private System.Windows.Forms.TabPage TpInfo;
         private System.Windows.Forms.PictureBox pictureBox1;
-        public  System.Windows.Forms.TabPage komp;
-        public  System.Windows.Forms.ListView komponenten;
+        public  System.Windows.Forms.TabPage TpComponents;
+        public  System.Windows.Forms.ListView LwComponents;
         private System.Windows.Forms.ColumnHeader name;
         private System.Windows.Forms.ColumnHeader software_version;
         private System.Windows.Forms.ColumnHeader lizenz;
