@@ -314,7 +314,7 @@ namespace Vocup
                 {
                     if (word.MotherTongue.ToUpper().Contains(search_text) ||
                         word.ForeignLang.ToUpper().Contains(search_text) ||
-                        word.ForeignLangSynonym.ToUpper().Contains(search_text))
+                        (word.ForeignLangSynonym?.ToUpper().Contains(search_text) ?? false))
                     {
                         ListViewItem item = CurrentController.GetController(word).ListViewItem;
                         item.Selected = true;
