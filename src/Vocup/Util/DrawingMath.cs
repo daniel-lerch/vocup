@@ -42,6 +42,12 @@ namespace Vocup.Util
         }
 
 
+        public static Point Move(this Point point, int x, int y)
+        {
+            return new Point(point.X + x, point.Y + y);
+        }
+
+
         public static Rectangle Move(this Rectangle rect, int x, int y)
         {
             return new Rectangle(rect.X + x, rect.Y + y, rect.Width, rect.Height);

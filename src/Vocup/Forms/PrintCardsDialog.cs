@@ -5,6 +5,7 @@ using System.Drawing.Printing;
 using System.Text;
 using System.Windows.Forms;
 using Vocup.Properties;
+using Vocup.Util;
 
 namespace Vocup.Forms
 {
@@ -93,209 +94,22 @@ namespace Vocup.Forms
                 {
                     for (int i = 0; i < 16; i++)
                     {
-                        //Koordinaten abfragen
-                        int[] coordinates = get_coordinates(i + 1);
+                        int[] coordinates = get_coordinates(i + 1); //Koordinaten abfragen
 
-                        //Grösse des Textes abfragen
+                        string text = listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[1].Text;
 
-                        SizeF size_string = g.MeasureString(listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[1].Text, font);
-
-                        int height = Convert.ToInt32(size_string.Height / 2);
-
-                        //Vokabel schreiben
-                        //Schriftgrösse anpassen
-
-                        //Falls Text zu gross, string auf mehrere Zeilen aufteilen falls möglich
-                        if (size_string.Width > 292)
-                        {
-                            bool is_good = false;
-                            int font_size = 12;
-
-                            if (listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[1].Text.Trim().Contains(" ") == true)
-                            {
-                                //Falls der String leerschläge enthält
-
-                                string[] splitter = listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[1].Text.Trim().Split(' ');
-
-                                do
-                                {
-                                    Font font_new = new Font("Arial", font_size);
-
-                                    for (int y = 1; y < splitter.Length; y++)
-                                    {
-                                        string part1 = "";
-                                        string part2 = "";
-
-                                        for (int x = 1; x <= splitter.Length - y; x++)
-                                        {
-                                            part1 = part1 + " " + splitter[x - 1];
-
-                                            if (x == splitter.Length - y)
-                                            {
-                                                for (int z = splitter.Length - y; z < splitter.Length; z++)
-                                                {
-                                                    part2 = part2 + " " + splitter[z];
-                                                }
-                                            }
-                                        }
-
-                                        SizeF size_part1 = g.MeasureString(part1, font_new);
-                                        SizeF size_part2 = g.MeasureString(part2, font_new);
-
-                                        if (size_part1.Width <= 292 && size_part2.Width <= 292)
-                                        {
-                                            is_good = true;
-
-                                            //zwei Zeilen schreiben
-
-                                            g.DrawString(part1, font_new, Brushes.Black, new Point(coordinates[0] + top, coordinates[1] - left - height - 20), format);
-                                            g.DrawString(part2, font_new, Brushes.Black, new Point(coordinates[0] + top, coordinates[1] - left - height + 20), format);
-
-                                            break;
-                                        }
-                                    }
-
-                                    if (is_good == false)
-                                    {
-                                        font_size--;
-                                    }
-
-                                } while (is_good == false);
-                            }
-                            else
-                            {
-                                do
-                                {
-                                    font_size--;
-                                    Font font_new = new Font("Arial", font_size);
-
-                                    SizeF string_size = g.MeasureString(listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[1].Text, font_new);
-
-                                    if (string_size.Width > 292 && font_size > 1)
-                                    {
-                                        is_good = false;
-                                    }
-                                    else
-                                    {
-                                        is_good = true;
-
-                                        //kleinerer Text schreiben
-                                        g.DrawString(listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[1].Text, font_new, Brushes.Black, new Point(coordinates[0] + top, coordinates[1] - left - height), format);
-                                    }
-
-                                } while (is_good == false);
-                            }
-                        }
-                        else //Falls Text nicht zu gross
-                        {
-                            g.DrawString(listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[1].Text, font, Brushes.Black, new Point(coordinates[0] + top, coordinates[1] - left - height), format);
-                        }
+                        draw_field(g, font, format, text, new Point(coordinates[0] + top, coordinates[1] - left));
                     }
                 }
                 else //Falls dies die letzte Seite ist
                 {
                     for (int i = 0; i < noch_nicht_gedruckt; i++)
                     {
-                        //Koordinaten abfragen
-                        int[] coordinates = get_coordinates(i + 1);
+                        int[] coordinates = get_coordinates(i + 1); //Koordinaten abfragen
 
-                        //Grösse des Textes abfragen
+                        string text = listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[1].Text;
 
-                        SizeF size_string = g.MeasureString(listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[1].Text, font);
-
-                        int height = Convert.ToInt32(size_string.Height / 2);
-
-                        //Vokabel schreiben
-                        //Schriftgrösse anpassen
-
-                        //Falls Text zu gross, string auf mehrere Zeilen aufteilen falls möglich
-                        if (size_string.Width > 292)
-                        {
-
-                            bool is_good = false;
-                            int font_size = 12;
-
-                            if (listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[1].Text.Trim().Contains(" ") == true)
-                            {
-                                //Falls der String leerschläge enthält
-
-                                string[] splitter = listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[1].Text.Trim().Split(' ');
-
-                                do
-                                {
-                                    Font font_new = new Font("Arial", font_size);
-
-                                    for (int y = 1; y < splitter.Length; y++)
-                                    {
-                                        string part1 = "";
-                                        string part2 = "";
-
-                                        for (int x = 1; x <= splitter.Length - y; x++)
-                                        {
-                                            part1 = part1 + " " + splitter[x - 1];
-
-                                            if (x == splitter.Length - y)
-                                            {
-                                                for (int z = splitter.Length - y; z < splitter.Length; z++)
-                                                {
-                                                    part2 = part2 + " " + splitter[z];
-                                                }
-                                            }
-                                        }
-
-
-                                        SizeF size_part1 = g.MeasureString(part1, font_new);
-                                        SizeF size_part2 = g.MeasureString(part2, font_new);
-
-                                        if (size_part1.Width <= 292 && size_part2.Width <= 292)
-                                        {
-                                            is_good = true;
-
-                                            //zwei Zeilen schreiben
-
-                                            g.DrawString(part1, font_new, Brushes.Black, new Point(coordinates[0] + top, coordinates[1] - left - height - 20), format);
-                                            g.DrawString(part2, font_new, Brushes.Black, new Point(coordinates[0] + top, coordinates[1] - left - height + 20), format);
-
-                                            break;
-                                        }
-                                    }
-
-                                    if (is_good == false)
-                                    {
-                                        font_size--;
-                                    }
-
-                                } while (is_good == false);
-                            }
-                            else // Falls keine Leerzeichen vorhanden sind
-                            {
-                                do
-                                {
-                                    font_size--;
-                                    Font font_new = new Font("Arial", font_size);
-
-                                    SizeF string_size = g.MeasureString(listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[1].Text, font_new);
-
-                                    if (string_size.Width > 292 && font_size > 1)
-                                    {
-                                        is_good = false;
-                                    }
-                                    else
-                                    {
-                                        is_good = true;
-
-                                        //kleinerer Text schreiben
-                                        g.DrawString(listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[1].Text, font_new, Brushes.Black, new Point(coordinates[0] + top, coordinates[1] - left - height), format);
-                                    }
-
-                                } while (is_good == false);
-                            }
-                        }
-                        else
-                        {
-                            //Falls Text nicht zu gross
-                            g.DrawString(listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[1].Text, font, Brushes.Black, new Point(coordinates[0] + top, coordinates[1] - left - height), format);
-                        }
+                        draw_field(g, font, format, text, new Point(coordinates[0] + top, coordinates[1] - left));
                     }
 
                     //nicht benötigte Linien entfernen
@@ -377,15 +191,13 @@ namespace Vocup.Forms
                 //Pfeil zeichnen
                 if (aktuelle_seite == anzahl_seiten || aktuelle_seite == 1)
                 {
-                    //rotieren
+                    g.RotateTransform(+90); // rotieren
 
-                    g.RotateTransform(+90);
                     Font pfeil = new Font("Arial", 12, FontStyle.Bold);
 
                     g.DrawString("↑", pfeil, Brushes.Black, new Point(413 - left - 30, 0), format);
                     g.DrawString("↑", pfeil, Brushes.Black, new Point(413 - left + 30, 0), format);
                 }
-
             }
             else //Rückseite
             {
@@ -398,7 +210,7 @@ namespace Vocup.Forms
                 if (is_front == true)
                 {
                     noch_nicht_gedruckt = anz_vok - (anzahl_seiten - aktuelle_seite) * 16;
-                    vok_beginnen = ((anzahl_seiten) - (aktuelle_seite)) * 16 + 1;
+                    vok_beginnen = (anzahl_seiten - aktuelle_seite) * 16 + 1;
                 }
                 else
                 {
@@ -435,16 +247,15 @@ namespace Vocup.Forms
                         //Koordinaten abfragen
                         int[] coordinates = get_coordinates(i + 1 + links_rechts_verschiebung);
 
-                        //Grösse des Textes abfragen
+                        string text = listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[2].Text;
 
-                        SizeF size_string = g.MeasureString(listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[2].Text, font);
+                        SizeF size_string = g.MeasureString(text, font);
 
                         int height = Convert.ToInt32(size_string.Height / 2);
 
-                        //Falls es ein Synonym gibt
-                        if (listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[2].Text.Contains("=") == true)
+                        if (text.Contains("=")) //Falls es ein Synonym gibt
                         {
-                            string[] split_text = listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[2].Text.Split('=');
+                            string[] split_text = text.Split('=');
 
                             SizeF size_foreign = g.MeasureString(split_text[0], font);
                             SizeF size_synonym = g.MeasureString(split_text[1], font);
@@ -581,95 +392,7 @@ namespace Vocup.Forms
                         }
                         else
                         {
-                            //Schriftgrösse anpassen
-                            //Falls Text zu gross
-
-                            //Falls Text zu gross, string auf mehrere Zeilen aufteilen falls möglich
-                            if (size_string.Width > 292)
-                            {
-
-                                bool is_good = false;
-                                int font_size = 12;
-
-                                if (listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[2].Text.Trim().Contains(" ") == true)
-                                {
-                                    //Falls der String leerschläge enthält
-
-                                    string[] splitter = listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[2].Text.Trim().Split(' ');
-
-                                    do
-                                    {
-                                        Font font_new = new Font("Arial", font_size);
-
-                                        for (int y = 1; y < splitter.Length; y++)
-                                        {
-                                            string part1 = "";
-                                            string part2 = "";
-
-                                            for (int x = 1; x <= splitter.Length - y; x++)
-                                            {
-                                                part1 = part1 + " " + splitter[x - 1];
-
-                                                if (x == splitter.Length - y)
-                                                {
-                                                    for (int z = splitter.Length - y; z < splitter.Length; z++)
-                                                    {
-                                                        part2 = part2 + " " + splitter[z];
-                                                    }
-                                                }
-                                            }
-
-                                            SizeF size_part1 = g.MeasureString(part1, font_new);
-                                            SizeF size_part2 = g.MeasureString(part2, font_new);
-
-                                            if (size_part1.Width <= 292 && size_part2.Width <= 292)
-                                            {
-                                                is_good = true;
-
-                                                //zwei Zeilen schreiben
-                                                g.DrawString(part1, font_new, Brushes.Black, new Point((coordinates[0] * (-1)) - top, (coordinates[1] * (-1)) + left - height - 20), format);
-                                                g.DrawString(part2, font_new, Brushes.Black, new Point((coordinates[0] * (-1)) - top, (coordinates[1] * (-1)) + left - height + 20), format);
-
-                                                break;
-                                            }
-                                        }
-
-                                        if (is_good == false)
-                                        {
-                                            font_size--;
-                                        }
-
-                                    } while (is_good == false);
-                                }
-                                else
-                                {
-                                    do
-                                    {
-                                        font_size--;
-                                        Font font_new = new Font("Arial", font_size);
-
-                                        SizeF string_size = g.MeasureString(listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[1].Text, font_new);
-
-                                        if (string_size.Width > 292 && font_size > 1)
-                                        {
-                                            is_good = false;
-                                        }
-                                        else
-                                        {
-                                            is_good = true;
-
-                                            //kleinerer Text schreiben
-                                            g.DrawString(listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[1].Text, font_new, Brushes.Black, new Point(coordinates[0] + top, coordinates[1] - left - height), format);
-                                        }
-
-                                    } while (is_good == false);
-                                }
-                            }
-                            else
-                            {
-                                //Normal schreiben
-                                g.DrawString(listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[2].Text, font, Brushes.Black, new Point((coordinates[0] * (-1)) - top, (coordinates[1] * (-1)) + left - height), format);
-                            }
+                            draw_field(g, font, format, text, new Point(-coordinates[0] - top, -coordinates[1] + left));
                         }
                     }
                     //Falls letzte Seite
@@ -702,19 +425,19 @@ namespace Vocup.Forms
                         //Koordinaten abfragen
                         int[] coordinates = get_coordinates(i + 1 + links_rechts_verschiebung);
 
-                        //Grösse des Textes abfragen
+                        string text = listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[2].Text;
 
-                        SizeF size_string = g.MeasureString(listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[2].Text, font);
+                        SizeF size_string = g.MeasureString(text, font);
 
                         int height = Convert.ToInt32(size_string.Height / 2);
 
                         //Schriftgrösse anpassen
 
                         //Vokabel schreiben
-                        //Falls es ein Synonym gibt
-                        if (listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[2].Text.Contains("=") == true)
+                        
+                        if (text.Contains("=")) // Falls es ein Synonym gibt
                         {
-                            string[] split_text = listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[2].Text.Split('=');
+                            string[] split_text = text.Split('=');
 
                             SizeF size_foreign = g.MeasureString(split_text[0], font);
                             SizeF size_synonym = g.MeasureString(split_text[1], font);
@@ -854,71 +577,7 @@ namespace Vocup.Forms
                         }
                         else //Falls es kein Synonym gibt
                         {
-                            //Schriftgrösse anpassen
-                            //Falls Text zu gross
-                            if (size_string.Width > 292)
-                            {
-
-                                bool is_good = false;
-                                int font_size = 12;
-
-                                if (listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[2].Text.Trim().Contains(" ") == true)
-                                {
-                                    //Falls der String leerschläge enthält
-
-                                    string[] splitter = listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[2].Text.Trim().Split(' ');
-
-                                    do
-                                    {
-                                        Font font_new = new Font("Arial", font_size);
-
-                                        for (int y = 1; y < splitter.Length; y++)
-                                        {
-                                            string part1 = "";
-                                            string part2 = "";
-
-                                            for (int x = 1; x <= splitter.Length - y; x++)
-                                            {
-                                                part1 = part1 + " " + splitter[x - 1];
-
-                                                if (x == splitter.Length - y)
-                                                {
-                                                    for (int z = splitter.Length - y; z < splitter.Length; z++)
-                                                    {
-                                                        part2 = part2 + " " + splitter[z];
-                                                    }
-                                                }
-                                            }
-
-                                            SizeF size_part1 = g.MeasureString(part1, font_new);
-                                            SizeF size_part2 = g.MeasureString(part2, font_new);
-
-                                            if (size_part1.Width <= 292 && size_part2.Width <= 292)
-                                            {
-                                                is_good = true;
-
-                                                //zwei Zeilen schreiben
-
-                                                g.DrawString(part1, font_new, Brushes.Black, new Point((coordinates[0] * (-1)) - top, (coordinates[1] * (-1)) + left - height - 20), format);
-                                                g.DrawString(part2, font_new, Brushes.Black, new Point((coordinates[0] * (-1)) - top, (coordinates[1] * (-1)) + left - height + 20), format);
-
-                                                break;
-                                            }
-                                        }
-
-                                        if (is_good == false)
-                                        {
-                                            font_size--;
-                                        }
-
-                                    } while (is_good == false);
-                                }
-                            }
-                            else
-                            {
-                                //Text normal schreiben
-                                g.DrawString(listView_vokabeln.Items[vokabelliste[vok_beginnen - 1 + i]].SubItems[2].Text, font, Brushes.Black, new Point((coordinates[0] * (-1)) - top, (coordinates[1] * (-1)) + left - height), format);
-                            }
+                            draw_field(g, font, format, text, new Point(-coordinates[0] - top, -coordinates[1] + left));
                         }
                     }
                 }
@@ -958,6 +617,95 @@ namespace Vocup.Forms
                 case 14: return new int[] { -1023, 310 };
                 case 15: return new int[] { -1023, 516 };
                 default: return new int[] { -1023, 723 };
+            }
+        }
+
+        private void draw_field(Graphics g, Font font, StringFormat format, string text, Point point)
+        {
+            SizeF size_string = g.MeasureString(text, font);
+            int height = Convert.ToInt32(size_string.Height / 2);
+
+            //Falls Text zu gross, string auf mehrere Zeilen aufteilen falls möglich
+            if (size_string.Width > 292)
+            {
+                bool is_good = false;
+                int font_size = 12;
+
+                if (text.Trim().Contains(" ")) //Falls der String leerschläge enthält
+                {
+                    string[] splitter = text.Trim().Split(' ');
+
+                    do
+                    {
+                        Font font_new = new Font("Arial", font_size);
+
+                        for (int y = 1; y < splitter.Length; y++)
+                        {
+                            string part1 = "";
+                            string part2 = "";
+
+                            for (int x = 1; x <= splitter.Length - y; x++)
+                            {
+                                part1 = part1 + " " + splitter[x - 1];
+
+                                if (x == splitter.Length - y)
+                                {
+                                    for (int z = splitter.Length - y; z < splitter.Length; z++)
+                                    {
+                                        part2 = part2 + " " + splitter[z];
+                                    }
+                                }
+                            }
+
+                            SizeF size_part1 = g.MeasureString(part1, font_new);
+                            SizeF size_part2 = g.MeasureString(part2, font_new);
+
+                            if (size_part1.Width <= 292 && size_part2.Width <= 292)
+                            {
+                                is_good = true;
+
+                                // Write two lines
+                                g.DrawString(part1, font_new, Brushes.Black, point.Move(0, -height - 20), format);
+                                g.DrawString(part2, font_new, Brushes.Black, point.Move(0, -height + 20), format);
+
+                                break;
+                            }
+                        }
+
+                        if (is_good == false)
+                        {
+                            font_size--;
+                        }
+
+                    } while (is_good == false);
+                }
+                else
+                {
+                    do
+                    {
+                        font_size--;
+                        Font font_new = new Font("Arial", font_size);
+
+                        SizeF string_size = g.MeasureString(text, font_new);
+
+                        if (string_size.Width > 292 && font_size > 1)
+                        {
+                            is_good = false;
+                        }
+                        else
+                        {
+                            is_good = true;
+
+                            //kleinerer Text schreiben
+                            g.DrawString(text, font_new, Brushes.Black, point.Move(0, -height), format);
+                        }
+
+                    } while (is_good == false);
+                }
+            }
+            else //Falls Text nicht zu gross
+            {
+                g.DrawString(text, font, Brushes.Black, point.Move(0, -height), format);
             }
         }
     }
