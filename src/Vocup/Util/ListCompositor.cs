@@ -29,10 +29,13 @@ namespace Vocup.Util
             int[] result = SaintLague.Calculate(sources.Select(x => x.Representation).ToArray(), count);
             List<T> final = new List<T>();
             Stack<int> remove = new Stack<int>();
-            // 2. While one sources has not enough items
-            bool found = false;
-            while (found)
+
+            // 2. While one of the sources has not enough items
+            bool found;
+            do
             {
+                found = false;
+
                 for (int i = 0; i < result.Length; i++)
                 {
                     if (result[i] > sources[i].Data.Count)
@@ -50,7 +53,8 @@ namespace Vocup.Util
 
                 // Round again and see if the list fits this time
                 result = SaintLague.Calculate(sources.Select(x => x.Representation).ToArray(), count);
-            }
+
+            } while (found);
 
             // 3. Get necessary count and add to result list
             for (int i = 0; i < result.Length; i++)

@@ -83,11 +83,12 @@ namespace Vocup.Forms
 
             if (RbAllDates.Checked)
             {
+                // No sorting wanted here, so we shuffle
                 unpracticedItems = unpracticedItems.Shuffle();
                 wronglyPracticedItems = wronglyPracticedItems.Shuffle();
                 correctlyPracticedItems = correctlyPracticedItems.Shuffle();
             }
-            if (RbEarlierPracticed.Checked) // No sorting needed in case of RbAllDates.Checked
+            if (RbEarlierPracticed.Checked)
             {
                 unpracticedItems = unpracticedItems.OrderBy(x => x.PracticeDate);
                 wronglyPracticedItems = wronglyPracticedItems.OrderBy(x => x.PracticeDate);
