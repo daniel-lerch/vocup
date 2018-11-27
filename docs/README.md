@@ -13,3 +13,7 @@ Control names should begin upper case.
 ## File formats
 
 See [File formats](fileformats.md)
+
+## Internet services
+
+See [Internet services](internet-services.md)
