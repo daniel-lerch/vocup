@@ -58,4 +58,22 @@ namespace Vocup.Util
             return result;
         }
     }
+
+    public static class SaintLague2
+    {
+        public interface IParty
+        {
+            double Votes { get; }
+            int Seats { get; set; }
+        }
+
+        public static void Calculate(List<IParty> parties, int seats)
+        {
+            if (parties == null) throw new ArgumentNullException(nameof(parties));
+            if (seats < 0) throw new ArgumentOutOfRangeException(nameof(seats), seats, "The number of seats must not be negative");
+            if (parties.Any(x => x.Votes < 0)) throw new ArgumentOutOfRangeException(nameof(parties), "The count of votes must not be negative");
+            double sum = parties.Sum(x => x.Votes);
+            if (sum == 0 || seats == 0) return;
+        }
+    }
 }
