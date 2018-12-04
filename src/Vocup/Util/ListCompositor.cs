@@ -17,8 +17,10 @@ namespace Vocup.Util
 
         public void AddSource(IList<T> data, double representation)
         {
-            if (representation <= 0)
-                throw new ArgumentOutOfRangeException(nameof(representation));
+            if (data == null)
+                throw new ArgumentNullException(nameof(data));
+            if (representation < 0)
+                throw new ArgumentOutOfRangeException(nameof(representation), representation, "Must not be negative");
 
             sources.Add(new ItemSource(data, representation));
         }
