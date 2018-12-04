@@ -14,66 +14,45 @@ namespace Vocup.Util
     /// </remarks>
     public static class SaintLague
     {
-        public static int[] Calculate(double[] votes, int seats)
-        {
-            int[] results = new int[votes.Length];
-
-            double voteSum = CalculateSum(votes);
-            double divisor = voteSum / seats;
-            double low = divisor * 2d;
-            double high = divisor * 0.5;
-
-            int result = CalculateSeats(votes, divisor, results);
-
-            while (result != seats)
-            {
-                if (result < seats) low = divisor;
-                else high = divisor;
-                divisor = (low + high) / 2d;
-                result = CalculateSeats(votes, divisor, results);
-            }
-
-            return results;
-        }
-
-        private static int CalculateSeats(double[] votes, double divisor, int[] results)
-        {
-            int result = 0;
-            for (int i = 0; i < votes.Length; i++)
-            {
-                int rounded = (int)Math.Round(votes[i] / divisor);
-                results[i] = rounded;
-                result += rounded;
-            }
-            return result;
-        }
-
-        private static double CalculateSum(double[] votes)
-        {
-            double result = 0;
-            foreach (double item in votes)
-            {
-                result += item;
-            }
-            return result;
-        }
-    }
-
-    public static class SaintLague2
-    {
         public interface IParty
         {
             double Votes { get; }
             int Seats { get; set; }
         }
 
-        public static void Calculate(List<IParty> parties, int seats)
+        public static int Calculate(IEnumerable<IParty> parties, int seats)
         {
             if (parties == null) throw new ArgumentNullException(nameof(parties));
             if (seats < 0) throw new ArgumentOutOfRangeException(nameof(seats), seats, "The number of seats must not be negative");
             if (parties.Any(x => x.Votes < 0)) throw new ArgumentOutOfRangeException(nameof(parties), "The count of votes must not be negative");
+
             double sum = parties.Sum(x => x.Votes);
-            if (sum == 0 || seats == 0) return;
+            if (sum == 0 || seats == 0) return 0;
+            double divisor = sum / seats;
+            double low = divisor * 2d;
+            double high = divisor * 0.5;
+
+            int result = CalculateSeats(parties, divisor);
+
+            while (result != seats)
+            {
+                if (result < seats) low = divisor;
+                else high = divisor;
+                divisor = (low + high) / 2d;
+                result = CalculateSeats(parties, divisor);
+            }
+
+            return result;
+        }
+
+        private static int CalculateSeats(IEnumerable<IParty> parties, double divisor)
+        {
+            int result = 0;
+            foreach (IParty party in parties)
+            {
+                result += party.Seats = (int)Math.Round(party.Votes / divisor);
+            }
+            return result;
         }
     }
 }

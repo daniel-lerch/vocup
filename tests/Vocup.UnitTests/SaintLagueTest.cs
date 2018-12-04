@@ -12,11 +12,13 @@ namespace Vocup.UnitTests
         [DataRow(new double[] { 0.3, 0.1, 0.0 }, 20)]
         [DataRow(new double[] { 3.0, 0.0, 0.0 }, 1)]
         [DataRow(new double[] { 0.3, 0.2, 0.5 }, 0)]
+        [DataRow(new double[] { 345674, 25648393, 4385634, 9483463, 9376390}, 598)]
         public void TestCompose(double[] votes, int seats)
         {
-            //Party[] parties = votes.Select(x => new Party(x)).ToArray();
-            int[] result = SaintLague.Calculate(votes, seats);
-            Assert.AreEqual(seats, result.Sum());
+            Party[] parties = votes.Select(x => new Party(x)).ToArray();
+            int result = SaintLague.Calculate(parties, seats);
+            Assert.AreEqual(seats, result);
+            Assert.AreEqual(seats, parties.Sum(x => x.Seats));
         }
 
         [TestMethod]
@@ -31,10 +33,11 @@ namespace Vocup.UnitTests
         [DataRow(new double[] { 0.3, 0.2, -0.5 }, 0)]
         public void TestArgumentOutOfRange(double[] votes, int seats)
         {
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => SaintLague.Calculate(votes, seats));
+            Party[] parties = votes.Select(x => new Party(x)).ToArray();
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => SaintLague.Calculate(parties, seats));
         }
 
-        private class Party : SaintLague2.IParty
+        private class Party : SaintLague.IParty
         {
             public Party(double votes)
             {
