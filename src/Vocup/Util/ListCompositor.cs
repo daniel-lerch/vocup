@@ -15,18 +15,22 @@ namespace Vocup.Util
             sources = new List<ItemSource>();
         }
 
-        public void AddSource(IList<T> data, double representation)
+        public void AddSource(IList<T> data, double votes)
         {
             if (data == null)
                 throw new ArgumentNullException(nameof(data));
-            if (representation < 0)
-                throw new ArgumentOutOfRangeException(nameof(representation), representation, "Must not be negative");
+            if (votes < 0)
+                throw new ArgumentOutOfRangeException(nameof(votes), votes, "Must not be negative");
 
-            sources.Add(new ItemSource(data, representation));
+            sources.Add(new ItemSource(data, votes));
         }
 
         public List<T> ToList(int count)
         {
+            if (count < 0) throw new ArgumentOutOfRangeException(nameof(count), count, "Must not be negative");
+            int dataCount = sources.Sum(x => x.Data.Count);
+            if (count > dataCount) throw new ArgumentOutOfRangeException(nameof(count), count, $"There are only {dataCount} elements available");
+            
             // 1. Round and count items
             int result = SaintLague.Calculate(sources, count);
             List<T> final = new List<T>();

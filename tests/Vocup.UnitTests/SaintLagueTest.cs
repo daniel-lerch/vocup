@@ -11,8 +11,11 @@ namespace Vocup.UnitTests
         [DataTestMethod]
         [DataRow(new double[] { 0.3, 0.1, 0.0 }, 20)]
         [DataRow(new double[] { 3.0, 0.0, 0.0 }, 1)]
+        [DataRow(new double[] { 0.1, 0.0, 0.0 }, 73)]
+        [DataRow(new double[] { 345674, 25648393, 4385634, 9483463, 9376390 }, 598)]
         [DataRow(new double[] { 0.3, 0.2, 0.5 }, 0)]
-        [DataRow(new double[] { 345674, 25648393, 4385634, 9483463, 9376390}, 598)]
+        [DataRow(new double[] { 0.5 }, 5)]
+        [DataRow(new double[] { }, 0)]
         public void TestCompose(double[] votes, int seats)
         {
             Party[] parties = votes.Select(x => new Party(x)).ToArray();
@@ -25,6 +28,7 @@ namespace Vocup.UnitTests
         public void TestArgumentNull()
         {
             Assert.ThrowsException<ArgumentNullException>(() => SaintLague.Calculate(null, 0));
+            Assert.ThrowsException<ArgumentNullException>(() => SaintLague.Calculate(new SaintLague.IParty[] { new Party(0.3), null }, 0));
         }
 
         [DataTestMethod]

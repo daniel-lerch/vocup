@@ -10,7 +10,7 @@ namespace Vocup.Util
     /// This class implements the Sainte-Laguë/Webster method for parliamentary seat composition.
     /// </summary>
     /// <remarks>
-    /// C# port from https://github.com/juliuste/sainte-lague (slightly modified)
+    /// C# port from https://github.com/juliuste/sainte-lague in an object orientated manner.
     /// </remarks>
     public static class SaintLague
     {
@@ -24,7 +24,12 @@ namespace Vocup.Util
         {
             if (parties == null) throw new ArgumentNullException(nameof(parties));
             if (seats < 0) throw new ArgumentOutOfRangeException(nameof(seats), seats, "The number of seats must not be negative");
-            if (parties.Any(x => x.Votes < 0)) throw new ArgumentOutOfRangeException(nameof(parties), "The count of votes must not be negative");
+
+            foreach (IParty party in parties)
+            {
+                if (party == null) throw new ArgumentNullException(nameof(parties), "Elements in parties enumerable must not be null");
+                if (party.Votes < 0) throw new ArgumentOutOfRangeException(nameof(parties), "The count of votes must not be negative");
+            }
 
             double sum = parties.Sum(x => x.Votes);
             if (sum == 0 || seats == 0) return 0;
