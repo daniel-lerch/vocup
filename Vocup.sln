@@ -42,7 +42,9 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Vocup.Shared", "src\Vocup.S
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		src\Vocup.Shared\Vocup.Shared.projitems*{004ae06a-96f3-4b2e-9af4-524835814a36}*SharedItemsImports = 4
 		src\Vocup.Shared\Vocup.Shared.projitems*{bd136565-338d-426f-af73-601ffb3cc57f}*SharedItemsImports = 13
+		src\Vocup.Shared\Vocup.Shared.projitems*{f733217f-c09d-42f0-bff6-6d15867dc6f6}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
