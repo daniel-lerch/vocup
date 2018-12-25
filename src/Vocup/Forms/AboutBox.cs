@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vocup.Properties;
+using Vocup.Util;
 
 namespace Vocup.Forms
 {
@@ -20,17 +21,29 @@ namespace Vocup.Forms
         private async void AboutBox_Load(object sender, EventArgs e)
         {
             // tab info
-            LbVersion.Text = string.Format(LbVersion.Text, Util.AppInfo.GetVersion(3));
-            LbCopyright.Text = Util.AppInfo.CopyrightInfo;
+#if UWP
+            LbVersion.Text = string.Format(LbVersion.Text, AppInfo.GetVersion(3) + " (UWP)");
+#else
+            LbVersion.Text = string.Format(LbVersion.Text, AppInfo.GetVersion(3));
+#endif
+            LbCopyright.Text = AppInfo.CopyrightInfo;
 
             // main page
-            LbOS.Text = await Task.Run(() => Util.SystemInfo.GetOSName());
-            LbNetFramwork.Text = await Task.Run(() => Util.SystemInfo.GetNetFrameworkVersion());
+            LbOS.Text = await Task.Run(() => SystemInfo.GetOSName());
+            LbNetFramwork.Text = await Task.Run(() => SystemInfo.GetNetFrameworkVersion());
         }
 
         private void LlbProjectWebsite_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://github.com/daniel-lerch/vocup");
+        }
+
+        private void LlbDownload_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (SystemInfo.IsWindows10())
+                Process.Start("ms-windows-store://pdp/?productid=9N6W2H3QJQMM");
+            else
+                Process.Start("https://www.microsoft.com/store/apps/9N6W2H3QJQMM");
         }
 
         private void LlbProjectEMail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

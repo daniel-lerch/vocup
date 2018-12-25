@@ -127,7 +127,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="LbOS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 278</value>
+    <value>6, 280</value>
   </data>
   <data name="LbOS.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 13</value>
@@ -157,7 +157,7 @@
     <value>NoControl</value>
   </data>
   <data name="LbNetFramwork.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 296</value>
+    <value>6, 299</value>
   </data>
   <data name="LbNetFramwork.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 13</value>
@@ -184,7 +184,7 @@
     <value>NoControl</value>
   </data>
   <data name="BtnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 281</value>
+    <value>256, 284</value>
   </data>
   <data name="BtnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 25</value>
@@ -276,41 +276,77 @@
   <data name="tableLayoutPanel.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="LlbProjectLicense.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LlbDownload.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LlbProjectLicense.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="LlbDownload.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 8.25pt</value>
   </data>
-  <data name="LlbProjectLicense.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LlbDownload.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LlbProjectLicense.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 50</value>
+  <data name="LlbDownload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 22</value>
   </data>
-  <data name="LlbProjectLicense.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 14</value>
+  <data name="LlbDownload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 14</value>
   </data>
-  <data name="LlbProjectLicense.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="LlbDownload.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="LlbProjectLicense.Text" xml:space="preserve">
-    <value>AGPL-3.0</value>
+  <data name="LlbDownload.Text" xml:space="preserve">
+    <value>Microsoft Store</value>
   </data>
-  <data name="LlbProjectLicense.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="LlbDownload.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;LlbProjectLicense.Name" xml:space="preserve">
-    <value>LlbProjectLicense</value>
+  <data name="&gt;&gt;LlbDownload.Name" xml:space="preserve">
+    <value>LlbDownload</value>
   </data>
-  <data name="&gt;&gt;LlbProjectLicense.Type" xml:space="preserve">
+  <data name="&gt;&gt;LlbDownload.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LlbProjectLicense.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LlbDownload.Parent" xml:space="preserve">
     <value>tableLayoutPanel</value>
   </data>
-  <data name="&gt;&gt;LlbProjectLicense.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LlbDownload.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="LlbProjectWebsite.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LlbProjectWebsite.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 8.25pt</value>
+  </data>
+  <data name="LlbProjectWebsite.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LlbProjectWebsite.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 0</value>
+  </data>
+  <data name="LlbProjectWebsite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 14</value>
+  </data>
+  <data name="LlbProjectWebsite.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="LlbProjectWebsite.Text" xml:space="preserve">
+    <value>Vocup auf GitHub</value>
+  </data>
+  <data name="LlbProjectWebsite.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;LlbProjectWebsite.Name" xml:space="preserve">
+    <value>LlbProjectWebsite</value>
+  </data>
+  <data name="&gt;&gt;LlbProjectWebsite.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LlbProjectWebsite.Parent" xml:space="preserve">
+    <value>tableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;LlbProjectWebsite.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -346,115 +382,43 @@
     <value>tableLayoutPanel</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="LlbProjectWebsite.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LlbProjectWebsite.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 8.25pt</value>
-  </data>
-  <data name="LlbProjectWebsite.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LlbProjectWebsite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 0</value>
-  </data>
-  <data name="LlbProjectWebsite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 14</value>
-  </data>
-  <data name="LlbProjectWebsite.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="LlbProjectWebsite.Text" xml:space="preserve">
-    <value>Vocup auf GitHub</value>
-  </data>
-  <data name="LlbProjectWebsite.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;LlbProjectWebsite.Name" xml:space="preserve">
-    <value>LlbProjectWebsite</value>
-  </data>
-  <data name="&gt;&gt;LlbProjectWebsite.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LlbProjectWebsite.Parent" xml:space="preserve">
-    <value>tableLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;LlbProjectWebsite.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="LlbProjectEMail.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LlbProjectEMail.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 8.25pt</value>
   </data>
-  <data name="LlbProjectEMail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LlbProjectEMail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 25</value>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 22</value>
   </data>
-  <data name="LlbProjectEMail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 14</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
   </data>
-  <data name="LlbProjectEMail.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
-  <data name="LlbProjectEMail.Text" xml:space="preserve">
-    <value>daniel.p.lerch@gmail.com</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Download:</value>
   </data>
-  <data name="LlbProjectEMail.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;LlbProjectEMail.Name" xml:space="preserve">
-    <value>LlbProjectEMail</value>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
   </data>
-  <data name="&gt;&gt;LlbProjectEMail.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LlbProjectEMail.Parent" xml:space="preserve">
-    <value>tableLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;LlbProjectEMail.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 8.25pt</value>
-  </data>
-  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 25</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 14</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>E-Mail:</value>
-  </data>
-  <data name="label3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>tableLayoutPanel</value>
   </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -466,7 +430,7 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 50</value>
+    <value>3, 66</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 14</value>
@@ -490,16 +454,124 @@
     <value>tableLayoutPanel</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 8.25pt</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 44</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 14</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>E-Mail:</value>
+  </data>
+  <data name="label3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>tableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="LlbProjectLicense.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LlbProjectLicense.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 8.25pt</value>
+  </data>
+  <data name="LlbProjectLicense.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LlbProjectLicense.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 66</value>
+  </data>
+  <data name="LlbProjectLicense.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 14</value>
+  </data>
+  <data name="LlbProjectLicense.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="LlbProjectLicense.Text" xml:space="preserve">
+    <value>AGPL-3.0</value>
+  </data>
+  <data name="LlbProjectLicense.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;LlbProjectLicense.Name" xml:space="preserve">
+    <value>LlbProjectLicense</value>
+  </data>
+  <data name="&gt;&gt;LlbProjectLicense.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LlbProjectLicense.Parent" xml:space="preserve">
+    <value>tableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;LlbProjectLicense.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="LlbProjectEMail.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LlbProjectEMail.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 8.25pt</value>
+  </data>
+  <data name="LlbProjectEMail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LlbProjectEMail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 44</value>
+  </data>
+  <data name="LlbProjectEMail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 14</value>
+  </data>
+  <data name="LlbProjectEMail.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="LlbProjectEMail.Text" xml:space="preserve">
+    <value>daniel.p.lerch@gmail.com</value>
+  </data>
+  <data name="LlbProjectEMail.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;LlbProjectEMail.Name" xml:space="preserve">
+    <value>LlbProjectEMail</value>
+  </data>
+  <data name="&gt;&gt;LlbProjectEMail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LlbProjectEMail.Parent" xml:space="preserve">
+    <value>tableLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;LlbProjectEMail.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="tableLayoutPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>73, 155</value>
   </data>
   <data name="tableLayoutPanel.RowCount" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="tableLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 83</value>
+    <value>187, 88</value>
   </data>
   <data name="tableLayoutPanel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -517,7 +589,7 @@
     <value>3</value>
   </data>
   <data name="tableLayoutPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="LlbProjectLicense" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="LlbProjectWebsite" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LlbProjectEMail" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="Absolute,25,Absolute,25,Absolute,25,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="LlbDownload" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="LlbProjectWebsite" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="LlbProjectLicense" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LlbProjectEMail" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="Absolute,22,Absolute,22,Absolute,22,Absolute,22" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

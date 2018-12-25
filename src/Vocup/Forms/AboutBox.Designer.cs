@@ -35,12 +35,14 @@
             this.LbVersion = new System.Windows.Forms.Label();
             this.LbCopyright = new System.Windows.Forms.Label();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.LlbProjectLicense = new System.Windows.Forms.LinkLabel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LlbDownload = new System.Windows.Forms.LinkLabel();
             this.LlbProjectWebsite = new System.Windows.Forms.LinkLabel();
-            this.LlbProjectEMail = new System.Windows.Forms.LinkLabel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.LlbProjectLicense = new System.Windows.Forms.LinkLabel();
+            this.LlbProjectEMail = new System.Windows.Forms.LinkLabel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.TpInfo = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -89,29 +91,25 @@
             // tableLayoutPanel
             // 
             resources.ApplyResources(this.tableLayoutPanel, "tableLayoutPanel");
-            this.tableLayoutPanel.Controls.Add(this.LlbProjectLicense, 0, 2);
-            this.tableLayoutPanel.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel.Controls.Add(this.LlbDownload, 0, 1);
             this.tableLayoutPanel.Controls.Add(this.LlbProjectWebsite, 1, 0);
-            this.tableLayoutPanel.Controls.Add(this.LlbProjectEMail, 1, 1);
-            this.tableLayoutPanel.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel.Controls.Add(this.label5, 0, 2);
+            this.tableLayoutPanel.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel.Controls.Add(this.label5, 0, 3);
+            this.tableLayoutPanel.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel.Controls.Add(this.LlbProjectLicense, 1, 3);
+            this.tableLayoutPanel.Controls.Add(this.LlbProjectEMail, 1, 2);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             // 
-            // LlbProjectLicense
+            // LlbDownload
             // 
-            this.LlbProjectLicense.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            resources.ApplyResources(this.LlbProjectLicense, "LlbProjectLicense");
-            this.LlbProjectLicense.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.LlbProjectLicense.Name = "LlbProjectLicense";
-            this.LlbProjectLicense.TabStop = true;
-            this.LlbProjectLicense.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.LlbProjectLicense.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LlbProjectLicense_LinkClicked);
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.label2.Name = "label2";
+            this.LlbDownload.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            resources.ApplyResources(this.LlbDownload, "LlbDownload");
+            this.LlbDownload.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.LlbDownload.Name = "LlbDownload";
+            this.LlbDownload.TabStop = true;
+            this.LlbDownload.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.LlbDownload.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LlbDownload_LinkClicked);
             // 
             // LlbProjectWebsite
             // 
@@ -123,6 +121,40 @@
             this.LlbProjectWebsite.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
             this.LlbProjectWebsite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LlbProjectWebsite_LinkClicked);
             // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.label2.Name = "label2";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.label1.Name = "label1";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.label5.Name = "label5";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.label3.Name = "label3";
+            // 
+            // LlbProjectLicense
+            // 
+            this.LlbProjectLicense.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            resources.ApplyResources(this.LlbProjectLicense, "LlbProjectLicense");
+            this.LlbProjectLicense.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.LlbProjectLicense.Name = "LlbProjectLicense";
+            this.LlbProjectLicense.TabStop = true;
+            this.LlbProjectLicense.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.LlbProjectLicense.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LlbProjectLicense_LinkClicked);
+            // 
             // LlbProjectEMail
             // 
             this.LlbProjectEMail.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
@@ -132,18 +164,6 @@
             this.LlbProjectEMail.TabStop = true;
             this.LlbProjectEMail.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
             this.LlbProjectEMail.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LlbProjectEMail_LinkClicked);
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.label3.Name = "label3";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.label5.Name = "label5";
             // 
             // tabControl
             // 
@@ -259,5 +279,7 @@
         private System.Windows.Forms.ColumnHeader lizenz;
         private System.Windows.Forms.ColumnHeader url;
         private System.Windows.Forms.LinkLabel LlbProjectLicense;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel LlbDownload;
     }
 }
