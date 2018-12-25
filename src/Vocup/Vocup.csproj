@@ -102,14 +102,401 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\FileSelectedEventArgs.cs" />
+    <Compile Include="Controls\FileTreeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FileTreeView.Designer.cs">
+      <DependentUpon>FileTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ImageListExtensions.cs" />
+    <Compile Include="Controls\ResponsiveButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ResponsiveMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ResponsiveSplitContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ResponsiveToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\StatisticsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\StatisticsPanel.Designer.cs">
+      <DependentUpon>StatisticsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\VocabularyListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\VocabularyListView.Designer.cs">
+      <DependentUpon>VocabularyListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddWordDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateBackup.Designer.cs">
+      <DependentUpon>CreateBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditWordDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EvaluationInfoDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EvaluationInfoDialog.Designer.cs">
+      <DependentUpon>EvaluationInfoDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MergeFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MergeFiles.Designer.cs">
+      <DependentUpon>MergeFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PracticeCountDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PracticeCountDialog.Designer.cs">
+      <DependentUpon>PracticeCountDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PracticeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PracticeDialog.Designer.cs">
+      <DependentUpon>PracticeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PracticeResultList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PracticeResultList.Designer.cs">
+      <DependentUpon>PracticeResultList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrintCardsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrintCardsDialog.Designer.cs">
+      <DependentUpon>PrintCardsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrintWordSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrintWordSelection.Designer.cs">
+      <DependentUpon>PrintWordSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RestoreBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RestoreBackup.Designer.cs">
+      <DependentUpon>RestoreBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SettingsDialog.Designer.cs">
+      <DependentUpon>SettingsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SpecialCharKeyboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SpecialCharKeyboard.Designer.cs">
+      <DependentUpon>SpecialCharKeyboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SpecialCharManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SpecialCharManage.Designer.cs">
+      <DependentUpon>SpecialCharManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\splashscreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VocabularyBookSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VocabularyBookSettings.Designer.cs">
+      <DependentUpon>VocabularyBookSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VocabularyWordDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VocabularyWordDialog.Designer.cs">
+      <DependentUpon>VocabularyWordDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IO\CsvFile.cs" />
+    <Compile Include="IO\VhfFile.cs" />
+    <Compile Include="IO\VhrFile.cs" />
+    <Compile Include="IO\VocabularyFile.cs" />
+    <Compile Include="IO\VocupFile.cs" />
+    <Compile Include="Models\IMainForm.cs" />
+    <Compile Include="Models\PracticeMode.cs" />
+    <Compile Include="Models\PracticeResult.cs" />
+    <Compile Include="Models\PracticeState.cs" />
+    <Compile Include="Models\StartScreen.cs" />
+    <Compile Include="Models\VocabularyBook.cs" />
+    <Compile Include="Models\VocabularyBookController.cs" />
+    <Compile Include="Models\VocabularyBookStatistics.cs" />
+    <Compile Include="Models\VocabularyWord.cs" />
+    <Compile Include="Models\VocabularyWordController.cs" />
+    <Compile Include="Models\VocabularyWordPractice.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="program_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="program_form.Designer.cs">
+      <DependentUpon>program_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Icons.Designer.cs">
+      <DependentUpon>Icons.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\language.Designer.cs">
+      <DependentUpon>language.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Messages.Designer.cs">
+      <DependentUpon>Messages.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Properties\Sounds.Designer.cs">
+      <DependentUpon>Sounds.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Words.Designer.cs">
+      <DependentUpon>Words.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Util\AppInfo.cs" />
+    <Compile Include="Util\Crypto.cs" />
+    <Compile Include="Util\Extensions.cs" />
+    <Compile Include="Util\ListCompositor.cs" />
+    <Compile Include="Util\PatternMatcher.cs" />
+    <Compile Include="Util\ReactiveCollection.cs" />
+    <Compile Include="Util\RewriteHelper.cs" />
+    <Compile Include="Util\SaintLague.cs" />
+    <Compile Include="Util\SizeMath.cs" />
+    <Compile Include="Util\SystemInfo.cs" />
     <None Include="app.config" />
     <None Include="app.manifest" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\easter_egg.vhf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\help.chm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
-  <Import Project="..\Vocup.Shared\Vocup.Shared.projitems" Label="Shared" />
+  <ItemGroup>
+    <None Include="Resources\alphabet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bar_chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database_restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\door_opened.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email_send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file_settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightning_bolt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\merge_files.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_all.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sound_correct.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sound_wrong.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\FileTreeView.resx">
+      <DependentUpon>FileTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\StatisticsPanel.resx">
+      <DependentUpon>StatisticsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\VocabularyListView.resx">
+      <DependentUpon>VocabularyListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateBackup.resx">
+      <DependentUpon>CreateBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EvaluationInfoDialog.resx">
+      <DependentUpon>EvaluationInfoDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MergeFiles.resx">
+      <DependentUpon>MergeFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PracticeCountDialog.resx">
+      <DependentUpon>PracticeCountDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PracticeDialog.resx">
+      <DependentUpon>PracticeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PracticeResultList.resx">
+      <DependentUpon>PracticeResultList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrintCardsDialog.resx">
+      <DependentUpon>PrintCardsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrintWordSelection.resx">
+      <DependentUpon>PrintWordSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RestoreBackup.resx">
+      <DependentUpon>RestoreBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsDialog.resx">
+      <DependentUpon>SettingsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SpecialCharKeyboard.resx">
+      <DependentUpon>SpecialCharKeyboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SpecialCharManage.resx">
+      <DependentUpon>SpecialCharManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VocabularyBookSettings.resx">
+      <DependentUpon>VocabularyBookSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VocabularyWordDialog.resx">
+      <DependentUpon>VocabularyWordDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="program_form.resx">
+      <DependentUpon>program_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Icons.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Icons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\language.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>language.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Sounds.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Sounds.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Words.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Words.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
