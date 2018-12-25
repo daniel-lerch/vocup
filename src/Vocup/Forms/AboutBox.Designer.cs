@@ -52,6 +52,7 @@
             this.software_version = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lizenz = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.url = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TpUpdates = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.TpInfo.SuspendLayout();
@@ -168,6 +169,7 @@
             // tabControl
             // 
             this.tabControl.Controls.Add(this.TpInfo);
+            this.tabControl.Controls.Add(this.TpUpdates);
             this.tabControl.Controls.Add(this.TpComponents);
             resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Name = "tabControl";
@@ -208,7 +210,8 @@
             this.LwComponents.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items"))),
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items1"))),
-            ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items2")))});
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items2"))),
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items3")))});
             this.LwComponents.Name = "LwComponents";
             this.LwComponents.UseCompatibleStateImageBehavior = false;
             this.LwComponents.View = System.Windows.Forms.View.Details;
@@ -229,6 +232,12 @@
             // url
             // 
             resources.ApplyResources(this.url, "url");
+            // 
+            // TpUpdates
+            // 
+            resources.ApplyResources(this.TpUpdates, "TpUpdates");
+            this.TpUpdates.Name = "TpUpdates";
+            this.TpUpdates.UseVisualStyleBackColor = true;
             // 
             // AboutBox
             // 
@@ -281,5 +290,6 @@
         private System.Windows.Forms.LinkLabel LlbProjectLicense;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel LlbDownload;
+        private System.Windows.Forms.TabPage TpUpdates;
     }
 }

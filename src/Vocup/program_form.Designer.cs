@@ -97,10 +97,12 @@
             this.TsbEvaluationInfo = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.TableLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.MenuStrip.SuspendLayout();
             this.GroupBook.SuspendLayout();
             this.GroupSearch.SuspendLayout();
             this.GroupWord.SuspendLayout();
+            this.StatusStrip.SuspendLayout();
             this.SideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer)).BeginInit();
             this.SplitContainer.Panel1.SuspendLayout();
@@ -504,6 +506,8 @@
             // 
             // StatusStrip
             // 
+            this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
             resources.ApplyResources(this.StatusStrip, "StatusStrip");
             this.StatusStrip.Name = "StatusStrip";
             // 
@@ -637,6 +641,12 @@
             this.TableLayout.Controls.Add(this.SplitContainer, 0, 0);
             this.TableLayout.Name = "TableLayout";
             // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
+            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
+            // 
             // program_form
             // 
             this.AcceptButton = this.BtnAddWord;
@@ -657,6 +667,8 @@
             this.GroupSearch.ResumeLayout(false);
             this.GroupSearch.PerformLayout();
             this.GroupWord.ResumeLayout(false);
+            this.StatusStrip.ResumeLayout(false);
+            this.StatusStrip.PerformLayout();
             this.SideBar.ResumeLayout(false);
             this.SplitContainer.Panel1.ResumeLayout(false);
             this.SplitContainer.Panel2.ResumeLayout(false);
@@ -740,6 +752,7 @@
         private System.Windows.Forms.TableLayoutPanel TableLayout;
         private System.Windows.Forms.ListView listView_vokabeln;
         private Controls.FileTreeView FileTreeView;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 
