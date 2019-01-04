@@ -217,6 +217,14 @@ Details: {0}</value>
   <data name="UnexpectedErrorT" xml:space="preserve">
     <value>Unerwarteter Fehler</value>
   </data>
+  <data name="VdpInvalidFile" xml:space="preserve">
+    <value>Die Vocup-Datensicherung ist fehlerhaft und konnte ich geöffnet werden:
+{0}</value>
+    <comment>{0}: ErrorDetails</comment>
+  </data>
+  <data name="VdpInvalidFileT" xml:space="preserve">
+    <value>Fehlerhafte Datei</value>
+  </data>
   <data name="VhfInvalidFile" xml:space="preserve">
     <value>Die Vokabelheftdatei ist fehlerhaft und konnte nicht geöffnet werden.</value>
   </data>

@@ -321,6 +321,25 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Die Vocup-Datensicherung ist fehlerhaft und konnte ich geöffnet werden:
+        ///{0}.
+        /// </summary>
+        internal static string VdpInvalidFile {
+            get {
+                return ResourceManager.GetString("VdpInvalidFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fehlerhafte Datei.
+        /// </summary>
+        internal static string VdpInvalidFileT {
+            get {
+                return ResourceManager.GetString("VdpInvalidFileT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Die Vokabelheftdatei ist fehlerhaft und konnte nicht geöffnet werden..
         /// </summary>
         internal static string VhfInvalidFile {

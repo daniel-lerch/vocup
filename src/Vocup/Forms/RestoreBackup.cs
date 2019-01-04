@@ -21,6 +21,11 @@ namespace Vocup.Forms
         public string path_backup;
 
         private string[,] vhf_vhr_log;
+        // 0: int FileIndex
+        // 1: string VhfPath
+        // 2: string VhrCode
+        // 3: int UiIndex
+
         private string[] vhr_log;
 
         public List<string[]> vhf_restore = new List<string[]>();
@@ -33,7 +38,7 @@ namespace Vocup.Forms
 
             if (TbFilePath.Text != "")
             {
-                browse_file();
+                OpenFile();
             }
         }
 
@@ -57,11 +62,25 @@ namespace Vocup.Forms
         //Falls ein anderer Pfad gewählt worden ist
         private void path_field_TextChanged(object sender, EventArgs e)
         {
-            browse_file();
+            OpenFile();
         }
 
+        private bool TryOpen(string path, out ZipFile file)
+        {
+            try
+            {
+                file = new ZipFile(path);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format(Messages.VdpInvalidFile, ex), Messages.VdpInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                file = null;
+                return false;
+            }
+        }
 
-        private void browse_file()
+        private void OpenFile()
         {
 
             Cursor.Current = Cursors.WaitCursor;
@@ -71,7 +90,12 @@ namespace Vocup.Forms
             ListSpecialChars.Items.Clear();
 
             //Neue Datei öffnen
-            ZipFile backup_file = new ZipFile(TbFilePath.Text);
+            if (!TryOpen(TbFilePath.Text, out ZipFile backup_file))
+            {
+                DialogResult = DialogResult.Abort;
+                Close();
+                return;
+            }
 
             if (backup_file.Count > 0)
             {
@@ -118,8 +142,8 @@ namespace Vocup.Forms
                         {
                             //Dateipfade wiederherstellen
 
-                            vhf_vhr_log[i, 1] = vhf_vhr_log[i, 1].Replace("%vhf%", Properties.Settings.Default.VhfPath);
-                            vhf_vhr_log[i, 1] = vhf_vhr_log[i, 1].Replace("%vhr%", Properties.Settings.Default.VhrPath);
+                            vhf_vhr_log[i, 1] = vhf_vhr_log[i, 1].Replace("%vhf%", Settings.Default.VhfPath);
+                            vhf_vhr_log[i, 1] = vhf_vhr_log[i, 1].Replace("%vhr%", Settings.Default.VhrPath);
                             vhf_vhr_log[i, 1] = vhf_vhr_log[i, 1].Replace("%personal%", Environment.GetFolderPath(Environment.SpecialFolder.Personal));
                             vhf_vhr_log[i, 1] = vhf_vhr_log[i, 1].Replace("%desktop%", Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory));
                             vhf_vhr_log[i, 1] = vhf_vhr_log[i, 1].Replace("%program%", Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles));
@@ -402,17 +426,17 @@ namespace Vocup.Forms
 
         private void replace_all_CheckedChanged(object sender, EventArgs e)
         {
-            browse_file();
+            OpenFile();
         }
 
         private void replace_newer_CheckedChanged(object sender, EventArgs e)
         {
-            browse_file();
+            OpenFile();
         }
 
         private void replace_nothing_CheckedChanged(object sender, EventArgs e)
         {
-            browse_file();
+            OpenFile();
         }
 
 
