@@ -119,27 +119,16 @@ namespace Vocup.Forms
                     {
                         g.FillRectangle(Brushes.White, new Rectangle(0, 292 - top + 1, 866, 1180));
                     }
-                    else if (noch_nicht_gedruckt > 4 && noch_nicht_gedruckt <= 8)
+                    else if (noch_nicht_gedruckt <= 8)
                     {
                         g.FillRectangle(Brushes.White, new Rectangle(0, 585 - top + 1, 866, 1180));
                     }
-                    else if (noch_nicht_gedruckt > 8 && noch_nicht_gedruckt <= 12)
+                    else if (noch_nicht_gedruckt <= 12)
                     {
                         g.FillRectangle(Brushes.White, new Rectangle(0, 877 - top - top + 1, 866, 1180));
                     }
 
                     //Vertikale Linien
-
-
-                    //Vertikal
-                    //g.DrawLine(pen, 207 - left, 0, 207 - left, 1180);
-                    //g.DrawLine(pen, 413 - left, 0, 413 - left, 1180);
-                    //g.DrawLine(pen, 620 - left, 0, 620 - left, 1180);
-
-                    ////Horizontal
-                    //g.DrawLine(pen, 0, 292 - top, 866, 292 - top);
-                    //g.DrawLine(pen, 0, 585 - top, 866, 585 - top);
-                    //g.DrawLine(pen, 0, 877 - top, 866, 877 - top);
 
                     Rectangle rect = new Rectangle();
 
@@ -148,37 +137,37 @@ namespace Vocup.Forms
                         rect.Y = 0;
                         rect.Height = 1180;
                     }
-                    else if (noch_nicht_gedruckt > 4 && noch_nicht_gedruckt < 8)
+                    else if (noch_nicht_gedruckt < 8)
                     {
                         rect.Y = 292 - top + 1;
                         rect.Height = 888;
                     }
-                    else if (noch_nicht_gedruckt > 8 & noch_nicht_gedruckt < 12)
+                    else if (noch_nicht_gedruckt < 12)
                     {
                         rect.Y = 585 - top + 1;
                         rect.Height = 593;
                     }
-                    else if (noch_nicht_gedruckt > 12 & noch_nicht_gedruckt < 16)
+                    else if (noch_nicht_gedruckt < 16)
                     {
                         rect.Y = 877 - top + 1;
                         rect.Height = 298;
                     }
 
-                    if (noch_nicht_gedruckt == 1 || noch_nicht_gedruckt == 5 || noch_nicht_gedruckt == 9 || noch_nicht_gedruckt == 13)
+                    if (noch_nicht_gedruckt % 4 == 1)
                     {
                         rect.X = 207 - left + 1;
                         rect.Width = 650;
 
                         g.FillRectangle(Brushes.White, rect);
                     }
-                    else if (noch_nicht_gedruckt == 2 || noch_nicht_gedruckt == 6 || noch_nicht_gedruckt == 10 || noch_nicht_gedruckt == 14)
+                    else if (noch_nicht_gedruckt % 4 == 2)
                     {
                         rect.X = 413 - left + 1;
                         rect.Width = 435;
 
                         g.FillRectangle(Brushes.White, rect);
                     }
-                    else if (noch_nicht_gedruckt == 3 || noch_nicht_gedruckt == 7 || noch_nicht_gedruckt == 11)
+                    else if (noch_nicht_gedruckt % 4 == 3)
                     {
                         rect.X = 620 - left + 1;
                         rect.Width = 218;
@@ -221,28 +210,12 @@ namespace Vocup.Forms
                 //Falls noch mehr Seiten gedruckt werden müssen
                 if (noch_nicht_gedruckt >= 16)
                 {
-
                     //Positionsverschiebung der Rückseite
                     int links_rechts_verschiebung = -3;
 
                     for (int i = 0; i < 16; i++)
                     {
-                        //Positionszugabe ändern
-                        switch (links_rechts_verschiebung)
-                        {
-                            case 1:
-                                links_rechts_verschiebung = -1;
-                                break;
-                            case -1:
-                                links_rechts_verschiebung = -3;
-                                break;
-                            case -3:
-                                links_rechts_verschiebung = 3;
-                                break;
-                            case 3:
-                                links_rechts_verschiebung = 1;
-                                break;
-                        }
+                        links_rechts_verschiebung = get_offset(links_rechts_verschiebung);
 
                         //Koordinaten abfragen
                         int[] coordinates = get_coordinates(i + 1 + links_rechts_verschiebung);
@@ -404,23 +377,7 @@ namespace Vocup.Forms
 
                     for (int i = 0; i < noch_nicht_gedruckt; i++)
                     {
-
-                        //Positionszugabe ändern
-                        switch (links_rechts_verschiebung)
-                        {
-                            case 1:
-                                links_rechts_verschiebung = -1;
-                                break;
-                            case -1:
-                                links_rechts_verschiebung = -3;
-                                break;
-                            case -3:
-                                links_rechts_verschiebung = 3;
-                                break;
-                            case 3:
-                                links_rechts_verschiebung = 1;
-                                break;
-                        }
+                        links_rechts_verschiebung = get_offset(links_rechts_verschiebung);
 
                         //Koordinaten abfragen
                         int[] coordinates = get_coordinates(i + 1 + links_rechts_verschiebung);
@@ -434,7 +391,7 @@ namespace Vocup.Forms
                         //Schriftgrösse anpassen
 
                         //Vokabel schreiben
-                        
+
                         if (text.Contains("=")) // Falls es ein Synonym gibt
                         {
                             string[] split_text = text.Split('=');
@@ -617,6 +574,18 @@ namespace Vocup.Forms
                 case 14: return new int[] { -1023, 310 };
                 case 15: return new int[] { -1023, 516 };
                 default: return new int[] { -1023, 723 };
+            }
+        }
+
+        private int get_offset(int horizontalOffset)
+        {
+            switch (horizontalOffset) // Positionszugabe ändern
+            {
+                case 1: return -1;
+                case -1: return -3;
+                case -3: return 3;
+                case 3: return 1;
+                default: return horizontalOffset;
             }
         }
 

@@ -135,7 +135,7 @@ namespace Vocup.Forms
             g.PageUnit = GraphicsUnit.Display;
 
             int hoffset = 0;
-            int siteWordNumber = 0;
+            int sitePrintedWords = 0;
             int tableBegin = 0;
 
             int sideOffset = 2;
@@ -166,7 +166,7 @@ namespace Vocup.Forms
             using (StringFormat nearFormat = new StringFormat() { Alignment = StringAlignment.Near })
             using (Pen pen = new Pen(Brushes.Black, lineThickness))
             {
-                for (; ; wordNumber++, siteWordNumber++) // loop through printList
+                for (; ; wordNumber++, sitePrintedWords++) // loop through printList
                 {
                     Rectangle rect = e.MarginBounds.MarginTop(hoffset += lineOffset);
                     g.DrawLine(pen, rect.Left, rect.Top, rect.Right, rect.Top); // Draw horizontal lines
@@ -187,7 +187,7 @@ namespace Vocup.Forms
                     bool missingChars = leftChars < leftText.Length || rightChars < rightText.Length;
                     int textHeight = (int)Math.Max(textMinHeight, Math.Max(leftSize.Height, rightSize.Height));
 
-                    if (siteWordNumber > 0 && (missingChars || textHeight > rect.Height))
+                    if (sitePrintedWords > 0 && (missingChars || textHeight > rect.Height))
                     {
                         e.HasMorePages = true;
                         break;
