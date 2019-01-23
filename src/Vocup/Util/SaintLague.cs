@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,17 +38,37 @@ namespace Vocup.Util
             double low = divisor * 2d;
             double high = divisor * 0.5;
 
-            int result = CalculateSeats(parties, divisor);
-
-            while (result != seats)
+            for (int i = 1; ; i++)
             {
-                if (result < seats) low = divisor;
-                else high = divisor;
+                int result = CalculateSeats(parties, divisor);
+                if (result == seats)
+                    return result;
+                if (i >= 32) // Stop after 32 iterations if we still have no result
+                    break; // Prevent further changes as we won't check their result 
+
+                if (result < seats)
+                    low = divisor;
+                else
+                    high = divisor;
                 divisor = (low + high) / 2d;
-                result = CalculateSeats(parties, divisor);
             }
 
-            return result;
+            // This code will randomly assign the remaining seats which can't be calculated due to arithmetic conflicts.
+            List<IParty> conflicts = new List<IParty>(parties.Where(p => GetSeats(p, low) != GetSeats(p, high)));
+            conflicts.Shuffle();
+
+            int baseSeats = CalculateSeats(parties, low);
+            if (baseSeats > seats || baseSeats + conflicts.Count < seats)
+                throw new NotSupportedException($"Mathematically distributed {baseSeats} of {seats} seats with {conflicts.Count} conflicts." +
+                    $"{Environment.NewLine}The number of distributed seats must not be higher than the expected result" +
+                    $"and the number of conflicts has to be higher than the number of missing distributions.");
+
+            for (int i = 0; i < seats - baseSeats; i++)
+            {
+                conflicts[i].Seats++;
+            }
+
+            return seats;
         }
 
         private static int CalculateSeats(IEnumerable<IParty> parties, double divisor)
@@ -55,9 +76,15 @@ namespace Vocup.Util
             int result = 0;
             foreach (IParty party in parties)
             {
-                result += party.Seats = (int)Math.Round(party.Votes / divisor);
+                result += party.Seats = GetSeats(party, divisor);
             }
             return result;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static int GetSeats(IParty party, double divisor)
+        {
+            return (int)Math.Round(party.Votes / divisor);
         }
     }
 }
