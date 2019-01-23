@@ -381,7 +381,6 @@
     <Compile Include="Util\RewriteHelper.cs" />
     <Compile Include="Util\SaintLague.cs" />
     <Compile Include="Util\Extensions.cs" />
-    <Compile Include="Util\SaintLague2.cs" />
     <Compile Include="Util\SizeMath.cs" />
     <Compile Include="Util\SystemInfo.cs" />
     <Compile Include="Forms\PracticeCountDialog.cs">
