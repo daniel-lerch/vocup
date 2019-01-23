@@ -9,7 +9,8 @@ namespace Vocup.Forms
 {
     public partial class PracticeCountDialog : Form
     {
-        private VocabularyBook book;
+        private readonly VocabularyBook book;
+        private int _count;
 
         public PracticeCountDialog(VocabularyBook book)
         {
@@ -19,6 +20,20 @@ namespace Vocup.Forms
         }
 
         public List<VocabularyWordPractice> PracticeList { get; }
+
+        private int Count
+        {
+            get => _count;
+            set
+            {
+                _count = value;
+                anzahl.Maximum = value;
+
+                BtnCount20.Enabled = value >= 20;
+                BtnCount30.Enabled = value >= 30;
+                BtnCount40.Enabled = value >= 40;
+            }
+        }
 
         private void Form_Load(object sender, EventArgs e)
         {
@@ -33,41 +48,32 @@ namespace Vocup.Forms
 
         private void BtnCount40_Click(object sender, EventArgs e) => Finish(40);
 
-        private void BtnCountAll_Click(object sender, EventArgs e) => Finish(book.Statistics.NotFullyPracticed);
+        private void BtnCountAll_Click(object sender, EventArgs e) => Finish(Count);
 
         private void BtnCountCustom_Click(object sender, EventArgs e) => Finish((int)anzahl.Value);
 
         private void RbAllStates_CheckedChanged(object sender, EventArgs e)
         {
             if (RbAllStates.Checked)
-                Reload(book.Statistics.NotFullyPracticed);
+                Count = book.Statistics.NotFullyPracticed;
         }
 
         private void RbUnpracticed_CheckedChanged(object sender, EventArgs e)
         {
             if (RbUnpracticed.Checked)
-                Reload(book.Statistics.Unpracticed);
+                Count = book.Statistics.Unpracticed;
         }
 
         private void RbWronglyPracticed_CheckedChanged(object sender, EventArgs e)
         {
             if (RbWronglyPracticed.Checked)
-                Reload(book.Statistics.WronglyPracticed);
+                Count = book.Statistics.WronglyPracticed;
         }
 
         private void RbCorrectlyPracticed_CheckedChanged(object sender, EventArgs e)
         {
             if (RbCorrectlyPracticed.Checked)
-                Reload(book.Statistics.CorrectlyPracticed);
-        }
-
-        private void Reload(int count)
-        {
-            anzahl.Maximum = count;
-
-            BtnCount20.Enabled = count >= 20;
-            BtnCount30.Enabled = count >= 30;
-            BtnCount40.Enabled = count >= 40;
+                Count = book.Statistics.CorrectlyPracticed;
         }
 
         private void Finish(int count)
