@@ -107,6 +107,7 @@
             resources.ApplyResources(this.BtnPrintForeside, "BtnPrintForeside");
             this.BtnPrintForeside.Name = "BtnPrintForeside";
             this.BtnPrintForeside.UseVisualStyleBackColor = true;
+            this.BtnPrintForeside.Click += new System.EventHandler(this.BtnPrintForeside_Click);
             // 
             // groupBox3
             // 
@@ -145,6 +146,7 @@
             resources.ApplyResources(this.BtnPrintBackside, "BtnPrintBackside");
             this.BtnPrintBackside.Name = "BtnPrintBackside";
             this.BtnPrintBackside.UseVisualStyleBackColor = true;
+            this.BtnPrintBackside.Click += new System.EventHandler(this.BtnPrintBackside_Click);
             // 
             // groupBox6
             // 
@@ -225,10 +227,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox LbPaperCount;
         private System.Windows.Forms.Label label3;
-        public Vocup.Controls.ResponsiveButton BtnPrintBackside;
-        public Vocup.Controls.ResponsiveButton BtnPrintForeside;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -239,8 +238,11 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.RadioButton RbRearSide;
-        public System.Windows.Forms.RadioButton RbFrontSide;
         private System.Drawing.Printing.PrintDocument PrintCards;
+        private System.Windows.Forms.TextBox LbPaperCount;
+        private Controls.ResponsiveButton BtnPrintBackside;
+        private Controls.ResponsiveButton BtnPrintForeside;
+        private System.Windows.Forms.RadioButton RbRearSide;
+        private System.Windows.Forms.RadioButton RbFrontSide;
     }
 }

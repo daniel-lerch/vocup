@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.Text;
 using System.Windows.Forms;
+using Vocup.Models;
 using Vocup.Properties;
 using Vocup.Util;
 
@@ -11,6 +12,8 @@ namespace Vocup.Forms
 {
     public partial class PrintCardsDialog : Form
     {
+        private readonly List<VocabularyWord> printList;
+
         ListView listView_vokabeln;
 
         //Liste der Vokabeln die ausgedruckt werden soll
@@ -31,10 +34,23 @@ namespace Vocup.Forms
         //Papiereinzug
         bool is_front;
 
-        public PrintCardsDialog()
+        public PrintCardsDialog(List<VocabularyWord> printList)
         {
+            this.printList = printList;
+
             InitializeComponent();
             Icon = Icon.FromHandle(Icons.Print.GetHicon());
+            LbPaperCount.Text = Math.Ceiling(printList.Count / 16d).ToString();
+        }
+
+        private void BtnPrintForeside_Click(object sender, EventArgs e)
+        {
+            // TODO: Print and disable button
+        }
+
+        private void BtnPrintBackside_Click(object sender, EventArgs e)
+        {
+            // TODO: Print and close dialog
         }
 
         private void PrintCards_BeginPrint(object sender, PrintEventArgs e)

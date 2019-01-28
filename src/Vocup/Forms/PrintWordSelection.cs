@@ -75,7 +75,7 @@ namespace Vocup.Forms
             }
             else // print cards
             {
-                using (var dialog = new PrintCardsDialog()) dialog.ShowDialog();
+                using (var dialog = new PrintCardsDialog(printList)) dialog.ShowDialog();
             }
         }
 

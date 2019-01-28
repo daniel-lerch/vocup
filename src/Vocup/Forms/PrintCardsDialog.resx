@@ -296,54 +296,6 @@ Ihres Druckers.</value>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;BtnPrintForeside.Name" xml:space="preserve">
-    <value>BtnPrintForeside</value>
-  </data>
-  <data name="&gt;&gt;BtnPrintForeside.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;BtnPrintForeside.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;BtnPrintForeside.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 122</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 40</value>
-  </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>2.</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -377,18 +329,18 @@ Ihres Druckers.</value>
   <data name="BtnPrintForeside.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ0SURBVDhPfZN9T1JhGMbP9+gj9BX6EG3NUoempQl/aMjY
-        NKTE4mXCOYqOA6mdIwYKnpyvqITHOL4gCBpOAROcZeViuflXVvZHV4c6ooh2bb89e+4917X7eXY/xHlp
-        SPZeU8cAW6ftvBJNp4ttsTI3JEuh6p/aueDbDJJ7B1fyil+D4rFVLlkKVavpYDOfv+J/8oc2UNZorJYs
-        hZJrScf7g6x09HLx4TgqVPoSyUIQNVrb9ftNnY67Sj1b2tyffsKGQXrXQHnXi8jVVbYgStX0UpXKJD4Y
-        1U5UqdvZbo+AwZkI5JYASowRKHq28YBOFKHoSeGmbgFNdgGu6Sj0z8dByBoNTudkBMubH6HsmsdDJg16
-        4Res/PEFvsG+cAIZuY6haR/e7aVg7PWBqFAa2BdjIcyv7aLBykNuT8AmnPw1FHKM7jc/cFvssG/Uj2gi
-        AUPPxFnAXDQD+2gMt1oDkFlWUUleJIoy0wpk+jm4/FuYjezC1Cte4TRgJpxGQAxxvd6EeSgCy9AqSM8Z
-        FrFGieuIkII/ksa0eD4fwIyvYGIxiWc0B13XINq63GjrvgSx3mp1w8JMih1kTgOMAwO+VfDrH/CI7Ie5
-        bwQefxiuqaUicvUWyon2vjEIG59gZqZAVKvNtMXpB+0NQtPxEqH4tjQyxfot4vEJ0NmGQQ8HobV6QdRp
-        qGtVarOqRNGmrmmmYpn9L4gn02C4GbjH+TwMN4uD7CECoTjKlQauvN6ormw0V/4bR0m1LZRjP3uE7OER
-        wvEUYls7eXL77z9PMB9N4I7KdDbK56UyODiOjyGwsgkhlkIwmsyT288ub4CZWESDnpZ+I0H8AToanFgO
-        1NxCAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ0SURBVDhPfZN9T1JhGMbP9+gj9BX6EG3NUoemLRPaNGRs
+        GlJq8TLhHETHgdDOEUMFT85XVMJjHF+QNw2ngAXOsnKx3PwrK/ujq0MdUUS7tt+ePfee69r9PLsf4qw0
+        JHun2TLA1mu7LkXT5WZbrcw1yVKshid2Lvgmi9Tu/qW85NegeGSVS5Zi1WksbPbzV/xP/tAGKpoMtZKl
+        WHIt6Xi/n5OOXiw+nECVSlcmWQjivtZ2ta65y3FbqWPLW/ozj9kwSO8aKO96Cfm6yhZEuZperlEZxQej
+        OokadSfb4xEwNBuB3BxAmSEChXMb9+hkCQpnGtfbF9FsF+CeiUH3bAKErEnvck1FsLL5EcruBTxgMqAX
+        f8HKH53jG+yLx5CR6xie8eHtbhqGXh+IKqWefT4ewsLaDhqtPOT2JGzC8V9DMUfoef0DN8UO+8b8iCWT
+        0DsnTwPmY1nYx+K40RaAzBxFNXmeGCqMq5Dp5uH2b2EusgNjr3iFk4DZcAYBMcT9ahOm4QjMw1GQnlPM
+        Yo0S11EhDX8kgxnxfCGAmVjF5FIKT2kO7d1D6OgeREfPBYj1NusgzMyU2EH2JMAwMOCLgl//gIdkP0x9
+        o/D4w3BPL5eQr7dSLnT2jUPY+AQTMw2iVm2izS4/aG8QGssLhBLb0siU6reIxyeg3TYCeiQIrdULol5D
+        XalRm1Rlig713RYqnt37gkQqA4abxeAEX4Dh5rCfO0AglEClUs9VNhjU1U2m6n/jKKmulXLs5Q6ROzhE
+        OJFGfOtdgfz++89jLMSSuKUyno7yWan0Do7j4wisbkKIpxGMpQrk93MrG2Aml9Coo6XfSBB/AFJqnGB7
+        gzIxAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="BtnPrintForeside.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
@@ -413,13 +365,37 @@ Ihres Druckers.</value>
     <value>BtnPrintForeside</value>
   </data>
   <data name="&gt;&gt;BtnPrintForeside.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnPrintForeside.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;BtnPrintForeside.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 122</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>295, 40</value>
+  </data>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>2.</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
@@ -556,11 +532,46 @@ betreffenden Vokabeln nochmals ausdrucken.</value>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="BtnPrintBackside.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ0SURBVDhPfZN9T1JhGMbP9+gj9BX6EG3NUoemLRPaNGRs
+        GlJq8TLhHETHgdDOEUMFT85XVMJjHF+QNw2ngAXOsnKx3PwrK/ujq0MdUUS7tt+ePfee69r9PLsf4qw0
+        JHun2TLA1mu7LkXT5WZbrcw1yVKshid2Lvgmi9Tu/qW85NegeGSVS5Zi1WksbPbzV/xP/tAGKpoMtZKl
+        WHIt6Xi/n5OOXiw+nECVSlcmWQjivtZ2ta65y3FbqWPLW/ozj9kwSO8aKO96Cfm6yhZEuZperlEZxQej
+        OokadSfb4xEwNBuB3BxAmSEChXMb9+hkCQpnGtfbF9FsF+CeiUH3bAKErEnvck1FsLL5EcruBTxgMqAX
+        f8HKH53jG+yLx5CR6xie8eHtbhqGXh+IKqWefT4ewsLaDhqtPOT2JGzC8V9DMUfoef0DN8UO+8b8iCWT
+        0DsnTwPmY1nYx+K40RaAzBxFNXmeGCqMq5Dp5uH2b2EusgNjr3iFk4DZcAYBMcT9ahOm4QjMw1GQnlPM
+        Yo0S11EhDX8kgxnxfCGAmVjF5FIKT2kO7d1D6OgeREfPBYj1NusgzMyU2EH2JMAwMOCLgl//gIdkP0x9
+        o/D4w3BPL5eQr7dSLnT2jUPY+AQTMw2iVm2izS4/aG8QGssLhBLb0siU6reIxyeg3TYCeiQIrdULol5D
+        XalRm1Rlig713RYqnt37gkQqA4abxeAEX4Dh5rCfO0AglEClUs9VNhjU1U2m6n/jKKmulXLs5Q6ROzhE
+        OJFGfOtdgfz++89jLMSSuKUyno7yWan0Do7j4wisbkKIpxGMpQrk93MrG2Aml9Coo6XfSBB/AFJqnGB7
+        gzIxAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="BtnPrintBackside.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="BtnPrintBackside.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="BtnPrintBackside.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 11</value>
+  </data>
+  <data name="BtnPrintBackside.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 23</value>
+  </data>
+  <data name="BtnPrintBackside.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="BtnPrintBackside.Text" xml:space="preserve">
+    <value>Drucken</value>
+  </data>
   <data name="&gt;&gt;BtnPrintBackside.Name" xml:space="preserve">
     <value>BtnPrintBackside</value>
   </data>
   <data name="&gt;&gt;BtnPrintBackside.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnPrintBackside.Parent" xml:space="preserve">
     <value>groupBox5</value>
@@ -591,53 +602,6 @@ betreffenden Vokabeln nochmals ausdrucken.</value>
   </data>
   <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="BtnPrintBackside.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ0SURBVDhPfZN9T1JhGMbP9+gj9BX6EG3NUoempQl/aMjY
-        NKTE4mXCOYqOA6mdIwYKnpyvqITHOL4gCBpOAROcZeViuflXVvZHV4c6ooh2bb89e+4917X7eXY/xHlp
-        SPZeU8cAW6ftvBJNp4ttsTI3JEuh6p/aueDbDJJ7B1fyil+D4rFVLlkKVavpYDOfv+J/8oc2UNZorJYs
-        hZJrScf7g6x09HLx4TgqVPoSyUIQNVrb9ftNnY67Sj1b2tyffsKGQXrXQHnXi8jVVbYgStX0UpXKJD4Y
-        1U5UqdvZbo+AwZkI5JYASowRKHq28YBOFKHoSeGmbgFNdgGu6Sj0z8dByBoNTudkBMubH6HsmsdDJg16
-        4Res/PEFvsG+cAIZuY6haR/e7aVg7PWBqFAa2BdjIcyv7aLBykNuT8AmnPw1FHKM7jc/cFvssG/Uj2gi
-        AUPPxFnAXDQD+2gMt1oDkFlWUUleJIoy0wpk+jm4/FuYjezC1Cte4TRgJpxGQAxxvd6EeSgCy9AqSM8Z
-        FrFGieuIkII/ksa0eD4fwIyvYGIxiWc0B13XINq63GjrvgSx3mp1w8JMih1kTgOMAwO+VfDrH/CI7Ie5
-        bwQefxiuqaUicvUWyon2vjEIG59gZqZAVKvNtMXpB+0NQtPxEqH4tjQyxfot4vEJ0NmGQQ8HobV6QdRp
-        qGtVarOqRNGmrmmmYpn9L4gn02C4GbjH+TwMN4uD7CECoTjKlQauvN6ormw0V/4bR0m1LZRjP3uE7OER
-        wvEUYls7eXL77z9PMB9N4I7KdDbK56UyODiOjyGwsgkhlkIwmsyT288ub4CZWESDnpZ+I0H8AToanFgO
-        1NxCAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="BtnPrintBackside.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="BtnPrintBackside.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="BtnPrintBackside.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 11</value>
-  </data>
-  <data name="BtnPrintBackside.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 23</value>
-  </data>
-  <data name="BtnPrintBackside.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="BtnPrintBackside.Text" xml:space="preserve">
-    <value>Drucken</value>
-  </data>
-  <data name="&gt;&gt;BtnPrintBackside.Name" xml:space="preserve">
-    <value>BtnPrintBackside</value>
-  </data>
-  <data name="&gt;&gt;BtnPrintBackside.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;BtnPrintBackside.Parent" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;BtnPrintBackside.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 370</value>
