@@ -71,9 +71,12 @@
     <Reference Include="System">
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing">
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms">
       <Private>False</Private>
@@ -162,6 +165,7 @@
     <Compile Include="IO\VhrFile.cs" />
     <Compile Include="IO\VocabularyFile.cs" />
     <Compile Include="IO\VocupFile.cs" />
+    <Compile Include="Models\BackupMeta.cs" />
     <Compile Include="Models\IMainForm.cs" />
     <Compile Include="Models\PracticeMode.cs" />
     <Compile Include="Models\PracticeResult.cs" />

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using Vocup.Models;
 using Vocup.Properties;
 
 namespace Vocup.Forms
@@ -121,15 +122,7 @@ namespace Vocup.Forms
                         for (int i = 0; i < log_lines.Length; i++)
                         {
                             string[] y = log_lines[i].Split('|');
-                            string path = y[1] // Dateipfade wiederherstellen
-                                .Replace("%vhf%", Settings.Default.VhfPath)
-                                .Replace("%vhr%", Settings.Default.VhrPath)
-                                .Replace("%personal%", Environment.GetFolderPath(Environment.SpecialFolder.Personal))
-                                .Replace("%desktop%", Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory))
-                                .Replace("%program%", Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles))
-                                .Replace("%system%", Environment.GetFolderPath(Environment.SpecialFolder.System));
-
-                            vhf_vhr_log[i] = new LogItem(int.Parse(y[0]), path, y[2]);
+                            vhf_vhr_log[i] = new LogItem(int.Parse(y[0]), BackupMeta.ExpandPath(y[1]), y[2]);
                         }
 
                         //Dateien in die Listbox einlesen

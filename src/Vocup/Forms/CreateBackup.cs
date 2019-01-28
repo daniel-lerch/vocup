@@ -4,9 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Vocup.IO;
+using Vocup.Models;
 using Vocup.Properties;
 using Vocup.Util;
 
@@ -159,6 +162,58 @@ namespace Vocup.Forms
             }
         }
 
+        private void ExecuteBackup(string path)
+        {
+            using (FileStream saveStream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None))
+            using (ZipArchive archive = new ZipArchive(saveStream, ZipArchiveMode.Create))
+            {
+                BackupMeta backup = new BackupMeta();
+                DirectoryInfo booksInfo = new DirectoryInfo(Settings.Default.VhfPath);
+                int counter = 0;
+                AddFiles(booksInfo.EnumerateFiles("*.vhf", SearchOption.AllDirectories), archive, backup, ref counter);
+            }
+        }
+
+        private void AddFiles(IEnumerable<FileInfo> files, ZipArchive archive, BackupMeta backup, ref int counter)
+        {
+            foreach (FileInfo fileInfo in files)
+            {
+                VocabularyBook book = new VocabularyBook();
+                if (VocabularyFile.ReadVhfFile(fileInfo.FullName, book))
+                {
+                    bool vhr = VocabularyFile.ReadVhrFile(book);
+                    bool success = TryAddFile(fileInfo.FullName, archive, $"vhf/{counter}.vhf");
+                    if (success && vhr && CbSaveResults.Checked)
+                    {
+                        vhr = TryAddFile(Path.Combine(Settings.Default.VhrPath, book.VhrCode + ".vhr"), archive, $"vhr/{book.VhrCode}.vhr");
+                        backup.Books.Add(new BackupMeta.BookMeta(counter, BackupMeta.ShrinkPath(fileInfo.FullName), vhr ? book.VhrCode : ""));
+                        if (vhr) backup.Results.Add(book.VhrCode + ".vhr");
+                        counter++;
+                    }
+                }
+            }
+        }
+
+        private bool TryAddFile(string source, ZipArchive archive, string destination)
+        {
+            try
+            {
+                using (FileStream file = new FileStream(source, FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    ZipArchiveEntry entry = archive.CreateEntry(destination);
+                    using (Stream stream = entry.Open())
+                    {
+                        file.CopyTo(stream);
+                    }
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private void ExecuteCreateBackup()
         {
             //Variablen für Fehlermeldungen
@@ -185,7 +240,6 @@ namespace Vocup.Forms
 
             //Backup erstellen
             //Daten zusammenstellen
-            //Cursor auf warten setzen
             Cursor.Current = Cursors.WaitCursor;
 
             List<string[]> files_vhf = new List<string[]>();
@@ -366,12 +420,7 @@ namespace Vocup.Forms
 
                     //Datei-Pfade durch lokale variablen ersetzen
 
-                    vhf_vhr[0] = vhf_vhr[0].Replace(Settings.Default.VhfPath, "%vhf%");
-                    vhf_vhr[0] = vhf_vhr[0].Replace(Settings.Default.VhrPath, "%vhr%");
-                    vhf_vhr[0] = vhf_vhr[0].Replace(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "%personal%");
-                    vhf_vhr[0] = vhf_vhr[0].Replace(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "%desktop%");
-                    vhf_vhr[0] = vhf_vhr[0].Replace(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "%program%");
-                    vhf_vhr[0] = vhf_vhr[0].Replace(Environment.GetFolderPath(Environment.SpecialFolder.System), "%system%");
+                    vhf_vhr[0] = BackupMeta.ShrinkPath(vhf_vhr[0]);
 
                     correspond = correspond + i.ToString() + "|" + vhf_vhr[0] + "|" + vhf_vhr[1];
 
