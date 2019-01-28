@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Management;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,10 +25,24 @@ namespace Vocup.Util
             }
         }
 
+        public static bool IsApplicationUwp()
+        {
+            if (IsWindows10())
+            {
+                int length = 0;
+                StringBuilder sb = new StringBuilder(0);
+                int result = GetCurrentPackageFullName(ref length, sb);
+                sb = new StringBuilder(length);
+                result = GetCurrentPackageFullName(ref length, sb);
+                return result != APPMODEL_ERROR_NO_PACKAGE;
+            }
+            else return false;
+        }
+
         public static bool IsWindows10()
         {
             return Environment.OSVersion.Platform == PlatformID.Win32NT &&
-                Environment.OSVersion.Version >= Version.Parse("10.0");
+                Environment.OSVersion.Version >= new Version(10, 0);
         }
 
         /// <summary>
@@ -86,5 +101,10 @@ namespace Vocup.Util
             // that 4.5 or later is installed.
             return "No 4.5 or later version detected";
         }
+
+        private const int APPMODEL_ERROR_NO_PACKAGE = 15700;
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+        private static extern int GetCurrentPackageFullName(ref int packageFullNameLength, StringBuilder packageFullName);
     }
 }

@@ -21,11 +21,10 @@ namespace Vocup.Forms
         private async void AboutBox_Load(object sender, EventArgs e)
         {
             // tab info
-#if UWP
-            LbVersion.Text = string.Format(LbVersion.Text, AppInfo.GetVersion(3) + " (UWP)");
-#else
-            LbVersion.Text = string.Format(LbVersion.Text, AppInfo.GetVersion(3));
-#endif
+            if (SystemInfo.IsApplicationUwp())
+                LbVersion.Text = string.Format(LbVersion.Text, AppInfo.GetVersion(3) + " (UWP)");
+            else
+                LbVersion.Text = string.Format(LbVersion.Text, AppInfo.GetVersion(3));
             LbCopyright.Text = AppInfo.CopyrightInfo;
 
             // main page
