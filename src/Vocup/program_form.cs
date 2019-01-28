@@ -688,11 +688,8 @@ namespace Vocup
                             }
                         }
 
-                        //Sonderzeichentabellen sichern
-
-                        if (restore.chars_restore.Count > 0)
+                        if (restore.chars_restore.Count > 0) // Sonderzeichentabellen sichern
                         {
-
                             for (int i = 0; i < restore.chars_restore.Count; i++)
                             {
                                 try
@@ -701,22 +698,17 @@ namespace Vocup
 
                                     byte[] buffer = new byte[entry.Size + 4096];
 
-                                    if (Directory.Exists(Properties.Settings.Default.VhrPath + "\\specialchar\\") == false)
-                                    {
-                                        Directory.CreateDirectory(Properties.Settings.Default.VhrPath + "\\specialchar\\");
-                                    }
+                                    Directory.CreateDirectory(AppInfo.SpecialCharDirectory);
 
-                                    FileStream writer = new FileStream(Properties.Settings.Default.VhrPath + "\\specialchar\\" + restore.chars_restore[i], FileMode.Create);
+                                    FileStream writer = new FileStream(Path.Combine(AppInfo.SpecialCharDirectory, restore.chars_restore[i]), FileMode.Create);
 
                                     StreamUtils.Copy(backup_file.GetInputStream(entry), writer, buffer);
 
                                     writer.Close();
                                 }
-
                                 catch
                                 {
                                     error_chars++;
-
                                     error_chars_name.Add(restore.chars_restore[i]);
                                 }
                             }

@@ -116,7 +116,6 @@ namespace Vocup.Forms
                     if (log_lines.Length > 0)
                     {
                         //Daten in ein Array lesen
-
                         vhf_vhr_log = new LogItem[log_lines.Length];
 
                         for (int i = 0; i < log_lines.Length; i++)
@@ -134,7 +133,6 @@ namespace Vocup.Forms
                         }
 
                         //Dateien in die Listbox einlesen
-
                         ListBooks.BeginUpdate();
 
                         //Radiobuttons ausschalten
@@ -144,14 +142,13 @@ namespace Vocup.Forms
                         for (int i = 0; i < vhf_vhr_log.Length; i++)
                         {
                             FileInfo vhf_info = new FileInfo(vhf_vhr_log[i].VhfPath);
-                            bool exists = vhf_info.Exists;
 
                             try
                             {
                                 ZipEntry vhf_entry = backup_file.GetEntry(@"vhf\" + vhf_vhr_log[i].FileIndex + ".vhf");
 
                                 //Aktiviert die Radiobuttons falls nötig
-                                if (exists == false)
+                                if (!vhf_info.Exists)
                                 {
                                     RbReplaceNothing.Enabled = true;
                                 }
@@ -161,26 +158,26 @@ namespace Vocup.Forms
                                 }
 
                                 //Falls alle Vokabelhefte ersetzt werden sollen
-                                if (RbReplaceAll.Checked == true)
+                                if (RbReplaceAll.Checked)
                                 {
                                     //Schaltet die Groupboxs wieder ein
                                     GroupReplace.Enabled = true;
                                     GroupBooks.Enabled = true;
 
                                     //Exakte Pfadangaben
-                                    string text = exact_path.Checked ? vhf_vhr_log[i].VhfPath : Path.GetFileNameWithoutExtension(vhf_vhr_log[i].VhfPath);
+                                    string text = CbAbsolutePath.Checked ? vhf_vhr_log[i].VhfPath : Path.GetFileNameWithoutExtension(vhf_vhr_log[i].VhfPath);
                                     vhf_vhr_log[i].UiIndex = ListBooks.Items.Add(text, true);
                                 }
-                                else if (RbReplaceOlder.Checked == true) // Falls nur neuere Vokabelhefte ersetzt werden sollen
+                                else if (RbReplaceOlder.Checked) // Falls nur neuere Vokabelhefte ersetzt werden sollen
                                 {
                                     //Schaltet die Groupboxs wieder ein
                                     GroupReplace.Enabled = true;
                                     GroupBooks.Enabled = true;
 
-                                    if (exists == false || vhf_entry.DateTime > vhf_info.LastWriteTime)
+                                    if (!vhf_info.Exists || vhf_entry.DateTime > vhf_info.LastWriteTime)
                                     {
                                         //Exakte Pfadangaben
-                                        string text = exact_path.Checked ? vhf_vhr_log[i].VhfPath : Path.GetFileNameWithoutExtension(vhf_vhr_log[i].VhfPath);
+                                        string text = CbAbsolutePath.Checked ? vhf_vhr_log[i].VhfPath : Path.GetFileNameWithoutExtension(vhf_vhr_log[i].VhfPath);
                                         vhf_vhr_log[i].UiIndex = ListBooks.Items.Add(text, true);
                                     }
                                 }
@@ -191,10 +188,10 @@ namespace Vocup.Forms
                                     GroupBooks.Enabled = true;
                                     GroupResults.Enabled = true;
 
-                                    if (exists == false)
+                                    if (!vhf_info.Exists)
                                     {
                                         //Exakte Pfadangaben
-                                        string text = exact_path.Checked ? vhf_vhr_log[i].VhfPath : Path.GetFileNameWithoutExtension(vhf_vhr_log[i].VhfPath);
+                                        string text = CbAbsolutePath.Checked ? vhf_vhr_log[i].VhfPath : Path.GetFileNameWithoutExtension(vhf_vhr_log[i].VhfPath);
                                         vhf_vhr_log[i].UiIndex = ListBooks.Items.Add(text, true);
                                     }
                                 }
@@ -368,8 +365,7 @@ namespace Vocup.Forms
             }
         }
 
-        //Falls der Zustand geändert wurde, wird der Text geändert
-        private void exact_path_CheckedChanged(object sender, EventArgs e)
+        private void CbAbsolutePath_CheckedChanged(object sender, EventArgs e)
         {
             for (int i = 0; i < ListBooks.Items.Count; i++)
             {
@@ -377,7 +373,7 @@ namespace Vocup.Forms
                 {
                     if (vhf_vhr_log[j].UiIndex == i)
                     {
-                        ListBooks.Items[i] = exact_path.Checked ? vhf_vhr_log[j].VhfPath : Path.GetFileNameWithoutExtension(vhf_vhr_log[j].VhfPath);
+                        ListBooks.Items[i] = CbAbsolutePath.Checked ? vhf_vhr_log[j].VhfPath : Path.GetFileNameWithoutExtension(vhf_vhr_log[j].VhfPath);
                         break;
                     }
                 }
@@ -450,17 +446,10 @@ namespace Vocup.Forms
                 activate = true;
             }
 
-            if (activate == true)
-            {
-                BtnRestore.Enabled = true;
-            }
-            else
-            {
-                BtnRestore.Enabled = false;
-            }
+            BtnRestore.Enabled = activate;
         }
 
-        private void restore_button_Click(object sender, EventArgs e)
+        private void BtnRestore_Click(object sender, EventArgs e)
         {
             try
             {
@@ -531,9 +520,8 @@ namespace Vocup.Forms
                     }
 
                 }
-                //Form schliessen
-
-                DialogResult = DialogResult.OK;
+                
+                DialogResult = DialogResult.OK; //Form schliessen
             }
             catch
             {
