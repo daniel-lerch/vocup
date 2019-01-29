@@ -207,12 +207,31 @@ Details: {0}</value>
   <data name="OpenUnknownFileT" xml:space="preserve">
     <value>Unbekanntes Dateiformat</value>
   </data>
+  <data name="SpecialCharAlreadyExists" xml:space="preserve">
+    <value>Für diese Sprache existieren bereits Sonderzeichen</value>
+  </data>
+  <data name="SpecialCharDeleteError" xml:space="preserve">
+    <value>Beim Löschen der Sonderzeichendatei für {0} ist ein Fehler aufgetreten:
+{1}</value>
+    <comment>{0}: Language, {1}: ErrorDetails</comment>
+  </data>
+  <data name="SpecialCharDeleteErrorT" xml:space="preserve">
+    <value>Fehler beim Löschen</value>
+  </data>
   <data name="SpecialCharInvalidFile" xml:space="preserve">
     <value>Die Sonderzeichendatei {0} konnte nicht geladen werden. Überprüfen Sie die Datei unter {1} und löschen sie diese gegebenenfalls.</value>
     <comment>{0}: Language, {1}: FilePath</comment>
   </data>
   <data name="SpecialCharInvalidFileT" xml:space="preserve">
     <value>Fehlerhafte Datei</value>
+  </data>
+  <data name="SpecialCharSaveError" xml:space="preserve">
+    <value>Beim Speichern der Sonderzeichendatei für {0} ist ein Fehler aufgetreten:
+{1}</value>
+    <comment>{0}: Language, {1}: ErrorDetails</comment>
+  </data>
+  <data name="SpecialCharSaveErrorT" xml:space="preserve">
+    <value>Fehler beim Speichern</value>
   </data>
   <data name="UnexpectedErrorT" xml:space="preserve">
     <value>Unerwarteter Fehler</value>

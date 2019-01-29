@@ -294,6 +294,34 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Für diese Sprache existieren bereits Sonderzeichen.
+        /// </summary>
+        internal static string SpecialCharAlreadyExists {
+            get {
+                return ResourceManager.GetString("SpecialCharAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Beim Löschen der Sonderzeichendatei für {0} ist ein Fehler aufgetreten:
+        ///{1}.
+        /// </summary>
+        internal static string SpecialCharDeleteError {
+            get {
+                return ResourceManager.GetString("SpecialCharDeleteError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fehler beim Löschen.
+        /// </summary>
+        internal static string SpecialCharDeleteErrorT {
+            get {
+                return ResourceManager.GetString("SpecialCharDeleteErrorT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Die Sonderzeichendatei {0} konnte nicht geladen werden. Überprüfen Sie die Datei unter {1} und löschen sie diese gegebenenfalls..
         /// </summary>
         internal static string SpecialCharInvalidFile {
@@ -308,6 +336,25 @@ namespace Vocup.Properties {
         internal static string SpecialCharInvalidFileT {
             get {
                 return ResourceManager.GetString("SpecialCharInvalidFileT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Beim Speichern der Sonderzeichendatei für {0} ist ein Fehler aufgetreten:
+        ///{1}.
+        /// </summary>
+        internal static string SpecialCharSaveError {
+            get {
+                return ResourceManager.GetString("SpecialCharSaveError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fehler beim Speichern.
+        /// </summary>
+        internal static string SpecialCharSaveErrorT {
+            get {
+                return ResourceManager.GetString("SpecialCharSaveErrorT", resourceCulture);
             }
         }
         
