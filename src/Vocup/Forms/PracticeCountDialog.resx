@@ -153,7 +153,7 @@
     <value>3</value>
   </data>
   <data name="BtnCountAll.Text" xml:space="preserve">
-    <value>Alle Vokabeln</value>
+    <value>Alle Vokabeln ({0})</value>
   </data>
   <data name="&gt;&gt;BtnCountAll.Name" xml:space="preserve">
     <value>BtnCountAll</value>

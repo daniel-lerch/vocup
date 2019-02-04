@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Vocup.Models;
+using Vocup.Properties;
 using Vocup.Util;
 
 namespace Vocup.Forms
@@ -17,6 +18,7 @@ namespace Vocup.Forms
             InitializeComponent();
             this.book = book;
             PracticeList = new List<VocabularyWordPractice>();
+            Count = book.Statistics.NotFullyPracticed;
         }
 
         public List<VocabularyWordPractice> PracticeList { get; }
@@ -32,6 +34,7 @@ namespace Vocup.Forms
                 BtnCount20.Enabled = value >= 20;
                 BtnCount30.Enabled = value >= 30;
                 BtnCount40.Enabled = value >= 40;
+                BtnCountAll.Text = $"{Words.AllWords} ({value})";
             }
         }
 
