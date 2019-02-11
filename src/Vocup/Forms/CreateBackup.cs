@@ -27,43 +27,28 @@ namespace Vocup.Forms
 
         private void Form_Load(object sender, EventArgs e)
         {
+            // Check for vocabulary book files
+            DirectoryInfo booksInfo = new DirectoryInfo(Settings.Default.VhfPath);
+            int count = 0;
+            if (booksInfo.Exists && (count = booksInfo.EnumerateFiles("*.vhf", SearchOption.AllDirectories).Count()) > 0)
             {
-                // Check for vocabulary book files
-                DirectoryInfo booksInfo = new DirectoryInfo(Settings.Default.VhfPath);
-                int count = 0;
-                if (booksInfo.Exists && (count = booksInfo.EnumerateFiles("*.vhf", SearchOption.AllDirectories).Count()) > 0)
-                {
-                    CbSaveAllBooks.Checked = true;
-                    CbSaveAllBooks.Enabled = true;
-                }
-                CbSaveAllBooks.Text = string.Format(CbSaveAllBooks.Text, count);
+                CbSaveAllBooks.Checked = true;
+                CbSaveAllBooks.Enabled = true;
             }
-            {
-                // Check for pratice result files
-                DirectoryInfo resultsInfo = new DirectoryInfo(Settings.Default.VhrPath);
-                int count = 0;
-                if (resultsInfo.Exists && (count = resultsInfo.EnumerateFiles("*.vhr", SearchOption.TopDirectoryOnly).Count()) > 0)
-                {
-                    RbSaveAssociatedResults.Enabled = true;
-                    RbSaveAllResults.Enabled = true;
-                    RbSaveAssociatedResults.Checked = true;
-                }
-                RbSaveAllResults.Text = string.Format(RbSaveAllResults.Text, count);
-            }
-            {
-                // Check for special char files
-                DirectoryInfo specialCharInfo = new DirectoryInfo(AppInfo.SpecialCharDirectory);
-                if (specialCharInfo.Exists)
-                {
-                    foreach (FileInfo file in specialCharInfo.GetFiles("*.txt", SearchOption.TopDirectoryOnly))
-                    {
-                        ListSpecialChars.Items.Add(Path.GetFileNameWithoutExtension(file.FullName));
-                    }
+            CbSaveAllBooks.Text = string.Format(CbSaveAllBooks.Text, count);
 
-                    if (ListSpecialChars.Items.Count > 0)
-                    {
-                        GroupSpecialChar.Enabled = true;
-                    }
+            // Check for special char files
+            DirectoryInfo specialCharInfo = new DirectoryInfo(AppInfo.SpecialCharDirectory);
+            if (specialCharInfo.Exists)
+            {
+                foreach (FileInfo file in specialCharInfo.GetFiles("*.txt", SearchOption.TopDirectoryOnly))
+                {
+                    ListSpecialChars.Items.Add(Path.GetFileNameWithoutExtension(file.FullName));
+                }
+
+                if (ListSpecialChars.Items.Count > 0)
+                {
+                    GroupSpecialChar.Enabled = true;
                 }
             }
         }
@@ -71,13 +56,6 @@ namespace Vocup.Forms
         private void CbSaveAllBooks_CheckedChanged(object sender, EventArgs e)
         {
             UpdateUI();
-        }
-
-        private void ResultRadioButtons_CheckedChanged(object sender, EventArgs e)
-        {
-            RadioButton rb = (RadioButton)sender;
-            if (rb.Checked)
-                UpdateUI();
         }
 
         private void ListSpecialChars_SelectedValueChanged(object sender, EventArgs e)
@@ -90,10 +68,7 @@ namespace Vocup.Forms
         /// </summary>
         private void UpdateUI()
         {
-            RbSaveAssociatedResults.Enabled = RbSaveAllResults.Enabled && (CbSaveAllBooks.Checked || ListVocabularyBooks.Items.Count > 0);
-            if (!RbSaveAssociatedResults.Enabled && RbSaveAssociatedResults.Checked)
-                RbSaveNoResults.Checked = true;
-            BtnCreateBackup.Enabled = CbSaveAllBooks.Checked || ListVocabularyBooks.Items.Count > 0 || RbSaveAllResults.Checked || ListSpecialChars.CheckedItems.Count > 0;
+            BtnCreateBackup.Enabled = CbSaveAllBooks.Checked || ListVocabularyBooks.Items.Count > 0 || ListSpecialChars.CheckedItems.Count > 0;
         }
 
         private void BtnAddVocabularyBook_Click(object sender, EventArgs e)
@@ -170,11 +145,13 @@ namespace Vocup.Forms
                 BackupMeta backup = new BackupMeta();
                 DirectoryInfo booksInfo = new DirectoryInfo(Settings.Default.VhfPath);
                 int counter = 0;
-                AddFiles(booksInfo.EnumerateFiles("*.vhf", SearchOption.AllDirectories), archive, backup, ref counter);
+                AddBooks(booksInfo.EnumerateFiles("*.vhf", SearchOption.AllDirectories), archive, backup, ref counter);
+                AddSpecialChars(ListSpecialChars.CheckedItems.Cast<string>(), archive, backup);
+
             }
         }
 
-        private void AddFiles(IEnumerable<FileInfo> files, ZipArchive archive, BackupMeta backup, ref int counter)
+        private void AddBooks(IEnumerable<FileInfo> files, ZipArchive archive, BackupMeta backup, ref int counter)
         {
             foreach (FileInfo fileInfo in files)
             {
@@ -191,6 +168,15 @@ namespace Vocup.Forms
                         counter++;
                     }
                 }
+            }
+        }
+
+        private void AddSpecialChars(IEnumerable<string> files, ZipArchive archive, BackupMeta backup)
+        {
+            foreach (FileInfo fileInfo in files.Select(path => new FileInfo(Path.Combine(AppInfo.SpecialCharDirectory, path))))
+            {
+                if (TryAddFile(fileInfo.FullName, archive, "chars/" + fileInfo.Name))
+                    backup.SpecialChars.Add(fileInfo.Name);
             }
         }
 
