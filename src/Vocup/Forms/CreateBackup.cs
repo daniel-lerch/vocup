@@ -163,15 +163,15 @@ namespace Vocup.Forms
                         vhr = TryAddFile(Path.Combine(Settings.Default.VhrPath, book.VhrCode + ".vhr"), archive, $"vhr/{book.VhrCode}.vhr");
                         backup.Books.Add(new BackupMeta.BookMeta(counter, BackupMeta.ShrinkPath(fileInfo.FullName), vhr ? book.VhrCode : ""));
                         if (vhr) backup.Results.Add(book.VhrCode + ".vhr");
-                        counter++;
                     }
+                    if (success) counter++;
                 }
             }
         }
 
         private void AddSpecialChars(IEnumerable<string> files, ZipArchive archive, BackupMeta backup)
         {
-            foreach (FileInfo fileInfo in files.Select(path => new FileInfo(Path.Combine(AppInfo.SpecialCharDirectory, path))))
+            foreach (FileInfo fileInfo in files.Select(path => new FileInfo(Path.Combine(AppInfo.SpecialCharDirectory, path + ".txt"))))
             {
                 if (TryAddFile(fileInfo.FullName, archive, "chars/" + fileInfo.Name))
                     backup.SpecialChars.Add(fileInfo.Name);
