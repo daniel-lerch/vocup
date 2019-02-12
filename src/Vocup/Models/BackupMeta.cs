@@ -4,7 +4,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 using Vocup.Properties;
 
 namespace Vocup.Models
@@ -81,17 +81,41 @@ namespace Vocup.Models
                         string[] parts = line.Split('|');
                         if (parts.Length < 3)
                             continue; // Skip invalid item
-                        // TODO: Read list
+                        backup.Books.Add(new BookMeta(int.Parse(parts[0]), parts[1], parts[2]));
                     }
                 }
 
-                // TODO: Read result and chars lists as well
+                var results = archive.GetEntry("vhr.log");
+                if (results == null) return false;
+
+                using (StreamReader reader = new StreamReader(results.Open()))
+                {
+                    while (true)
+                    {
+                        string line = reader.ReadLine();
+                        if (string.IsNullOrEmpty(line)) break;
+                        backup.Results.Add(line);
+                    }
+                }
+
+                var chars = archive.GetEntry("chars.log");
+                if (chars == null) return false;
+
+                using (StreamReader reader = new StreamReader(chars.Open()))
+                {
+                    while (true)
+                    {
+                        string line = reader.ReadLine();
+                        if (string.IsNullOrEmpty(line)) break;
+                        backup.SpecialChars.Add(line);
+                    }
+                }
 
                 return true;
             }
             catch (Exception ex)
             {
-                // TODO: Show exception message
+                MessageBox.Show(string.Format(Messages.VdpInvalidFile, ex), Messages.VdpInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
