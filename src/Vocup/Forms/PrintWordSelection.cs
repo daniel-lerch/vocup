@@ -160,7 +160,7 @@ namespace Vocup.Forms
                     g.DrawLine(pen, rect.Left, rect.Top, rect.Right, rect.Top); // Draw horizontal lines
                     hoffset += (int)pen.Width + lineOffset;
 
-                    if (wordNumber >= book.Words.Count) break;
+                    if (wordNumber >= printList.Count) break;
 
                     rect = e.MarginBounds.MarginTop(hoffset);
                     VocabularyWord word = printList[wordNumber];

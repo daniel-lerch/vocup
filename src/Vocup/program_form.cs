@@ -245,8 +245,14 @@ namespace Vocup
         private void BtnPractice_Click(object sender, EventArgs e) => vokabeln_üben();
         private void TsmiPractice_Click(object sender, EventArgs e) => vokabeln_üben();
 
-        private void TsbPrint_Click(object sender, EventArgs e) => print_file();
-        private void TsmiPrint_Click(object sender, EventArgs e) => print_file();
+        private void TsbPrint_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new PrintWordSelection(CurrentBook)) dialog.ShowDialog();
+        }
+        private void TsmiPrint_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new PrintWordSelection(CurrentBook)) dialog.ShowDialog();
+        }
 
 
         private async void BtnSearchWord_Click(object sender, EventArgs e)
@@ -776,14 +782,6 @@ namespace Vocup
         private void TsmiBackupRestore_Click(object sender, EventArgs e)
         {
             restore_backup("");
-        }
-
-        //Vokabelheft drucken
-
-        private void print_file()
-        {
-            PrintWordSelection choose_vocables = new PrintWordSelection(CurrentBook);
-            DialogResult choose_vocables_result = choose_vocables.ShowDialog();
         }
 
 

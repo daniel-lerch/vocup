@@ -336,9 +336,6 @@
   <data name="&gt;&gt;RbAskForForeignLang.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="GroupPracticeMode.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="GroupPracticeMode.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 390</value>
   </data>
