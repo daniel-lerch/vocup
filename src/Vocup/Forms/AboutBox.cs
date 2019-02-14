@@ -19,20 +19,36 @@ namespace Vocup.Forms
 
         private async void AboutBox_Load(object sender, EventArgs e)
         {
-            // main page
-            LbOS.Text = await Task.Run(() => Util.SystemInfo.GetOSName());
-            LbNetFramwork.Text = Util.SystemInfo.GetNetFrameworkVersion();
             // tab info
             LbVersion.Text = string.Format(LbVersion.Text, Util.AppInfo.GetVersion(3));
             LbCopyright.Text = Util.AppInfo.CopyrightInfo;
-            LlbProjectWebsite.LinkClicked += (s, args) => Process.Start("https://github.com/daniel-lerch/vocup");
-            LlbProjectEMail.LinkClicked += (s, args) => Process.Start("mailto:" + LlbProjectEMail.Text);
-            LlbProjectLicense.LinkClicked += (s, args) => Process.Start("https://github.com/daniel-lerch/vocup/blob/master/LICENSE");
+
+            // main page
+            LbOS.Text = await Task.Run(() => Util.SystemInfo.GetOSName());
+            LbNetFramwork.Text = await Task.Run(() => Util.SystemInfo.GetNetFrameworkVersion());
         }
 
-        private void BtnOK_Click(object sender, EventArgs e)
+        private void LlbProjectWebsite_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Close();
+            Process.Start("https://github.com/daniel-lerch/vocup");
+        }
+
+        private void LlbProjectEMail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("mailto:" + LlbProjectEMail.Text);
+        }
+
+        private void LlbProjectLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/daniel-lerch/vocup/blob/master/LICENSE");
+        }
+
+        private void LwComponents_DoubleClick(object sender, EventArgs e)
+        {
+            if (LwComponents.SelectedItems.Count > 0)
+            {
+                Process.Start(LwComponents.SelectedItems[0].SubItems[3].Text);
+            }
         }
     }
 }

@@ -10,7 +10,7 @@ using Vocup.Properties;
 
 namespace Vocup.Models
 {
-    public class VocabularyBookController
+    public class VocabularyBookController : IDisposable
     {
         private readonly List<VocabularyWordController> wordControllers;
         private IMainForm _parent;
@@ -64,6 +64,7 @@ namespace Vocup.Models
         {
             ListView.MotherTongue = VocabularyBook.MotherTongue;
             ListView.ForeignLang = VocabularyBook.ForeignLang;
+            Parent?.VocabularyBookHasFilePath(!string.IsNullOrWhiteSpace(VocabularyBook.FilePath));
             Parent?.VocabularyBookUnsavedChanges(VocabularyBook.UnsavedChanges);
             Parent?.VocabularyBookName(VocabularyBook.Name);
 
@@ -93,10 +94,7 @@ namespace Vocup.Models
 
         private void OnSelectionChanged(object sender, EventArgs e)
         {
-            if (Parent == null)
-                return;
-
-            Parent.VocabularyWordSelected(ListView.SelectedItems.Count > 0);
+            Parent?.VocabularyWordSelected(ListView.SelectedItems.Count > 0);
         }
 
         private void OnDoubleClick(object sender, EventArgs e)
@@ -117,6 +115,11 @@ namespace Vocup.Models
             VocabularyWordController controller = GetController(item);
             wordControllers.Remove(controller);
             ListView.Items.Remove(controller.ListViewItem);
+        }
+
+        public void Dispose()
+        {
+            ((IDisposable)ListView).Dispose();
         }
     }
 }

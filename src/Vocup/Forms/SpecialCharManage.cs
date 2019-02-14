@@ -14,15 +14,13 @@ namespace Vocup.Forms
     {
         private const string InvalidChars = "#=:\\/|<>*?\"";
         private readonly Color redBgColor = Color.FromArgb(255, 192, 203);
-        private string specialCharDir = Util.AppInfo.SpecialCharDirectory;
+        private string specialCharDir = AppInfo.SpecialCharDirectory;
 
         public SpecialCharManage()
         {
             InitializeComponent();
             Icon = Icon.FromHandle(Icons.Alphabet.GetHicon());
         }
-
-        //Laden
 
         private void SpecialCharManage_Load(object sender, EventArgs e)
         {
@@ -31,33 +29,20 @@ namespace Vocup.Forms
 
         private void BtnNew_Click(object sender, EventArgs e)
         {
-            const string name = "Neue Sprache";
-
-            DirectoryInfo dirInfo = new DirectoryInfo(specialCharDir);
-            if (!dirInfo.Exists)
-                dirInfo.Create();
-
-            FileInfo fileInfo = new FileInfo(Path.Combine(specialCharDir, name + ".txt"));
-
-            if (fileInfo.Exists)
-            {
-                MessageBox.Show("Diese Sprache existiert bereits.");
-            }
-            else
-            {
-                fileInfo.Create().Dispose(); // Create empty file
-                listBox.Items.Add(name);
-                listBox.SelectedIndex = listBox.Items.Count - 1;
-                TbLanguage.Focus();
-                TbLanguage.SelectAll();
-            }
+            LanguageList.SelectedIndex = -1;
+            BtnNew.Enabled = false;
+            TbLanguage.Enabled = true;
+            TbLanguage.Text = "";
+            TbChars.Enabled = true;
+            TbChars.Text = "";
+            TbLanguage.Focus();
         }
 
         private void TbLanguage_TbChars_TextChanged(object sender, EventArgs e)
         {
             //Überprüfen, das Textfeld nicht erlaubte zeichen enthält
             bool charsValid = !TbLanguage.Text.ContainsAny(InvalidChars);
-            TbLanguage.BackColor = charsValid ? Color.White : redBgColor;
+            TbLanguage.BackColor = charsValid ? Color.Empty : redBgColor;
 
             if (!string.IsNullOrWhiteSpace(TbLanguage.Text) &&
                 !string.IsNullOrWhiteSpace(TbChars.Text) &&
@@ -78,7 +63,7 @@ namespace Vocup.Forms
         {
             try
             {
-                string language = listBox.Items[listBox.SelectedIndex].ToString();
+                string language = LanguageList.Items[LanguageList.SelectedIndex].ToString();
 
                 //Datei mit den Sonderzeichen löschen
                 FileInfo info = new FileInfo(Path.Combine(specialCharDir, language + ".txt"));
@@ -86,11 +71,12 @@ namespace Vocup.Forms
                     info.Delete();
 
                 //Sprache aus der Listbox löschen
-                listBox.Items.RemoveAt(listBox.SelectedIndex);
+                LanguageList.Items.RemoveAt(LanguageList.SelectedIndex);
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Fehler beim Löschen");
+                MessageBox.Show(string.Format(Messages.SpecialCharDeleteError, TbLanguage.Text, ex),
+                    Messages.SpecialCharDeleteErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 RefreshListbox();
             }
         }
@@ -100,9 +86,21 @@ namespace Vocup.Forms
         {
             try
             {
-                DirectoryInfo dirInfo = new DirectoryInfo(specialCharDir);
-                if (!dirInfo.Exists)
-                    dirInfo.Create();
+                Directory.CreateDirectory(specialCharDir);
+
+                if (LanguageList.SelectedIndex == -1) // New item
+                {
+                    for (int i = 0; i < LanguageList.Items.Count; i++)
+                    {
+                        if (TbLanguage.Text == LanguageList.Items[i].ToString())
+                        {
+                            MessageBox.Show(Messages.SpecialCharAlreadyExists, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
+                    LanguageList.Items.Add(TbLanguage.Text);
+                }
 
                 using (StreamWriter writer = new StreamWriter(Path.Combine(specialCharDir, TbLanguage.Text + ".txt")))
                 {
@@ -111,46 +109,44 @@ namespace Vocup.Forms
                 }
 
                 // Delete old file if language was changed
-                if (TbLanguage.Text != listBox.Items[listBox.SelectedIndex].ToString())
+                if (LanguageList.SelectedIndex != -1 && TbLanguage.Text != LanguageList.Items[LanguageList.SelectedIndex].ToString())
                 {
-                    FileInfo info = new FileInfo(Path.Combine(specialCharDir, listBox.Items[listBox.SelectedIndex].ToString() + ".txt"));
+                    FileInfo info = new FileInfo(Path.Combine(specialCharDir, LanguageList.Items[LanguageList.SelectedIndex].ToString() + ".txt"));
                     info.Delete();
 
-                    listBox.Items[listBox.SelectedIndex] = TbLanguage.Text;
+                    LanguageList.Items[LanguageList.SelectedIndex] = TbLanguage.Text;
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Fehler beim Speichern");
+                MessageBox.Show(string.Format(Messages.SpecialCharSaveError, TbLanguage.Text, ex),
+                    Messages.SpecialCharSaveErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             TbLanguage.Text = "";
             TbChars.Text = "";
-            listBox.SelectedIndex = -1;
+            LanguageList.SelectedIndex = -1;
         }
 
-        private void listBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void LanguageList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBox.SelectedIndex == -1)
+            BtnNew.Enabled = true;
+            TbChars.Text = "";
+            TbLanguage.Text = "";
+
+            if (LanguageList.SelectedIndex == -1)
             {
                 RefreshListbox();
 
                 BtnDelete.Enabled = false;
-
                 TbChars.Enabled = false;
-                TbChars.Text = "";
-
                 TbLanguage.Enabled = false;
-                TbLanguage.Text = "";
             }
             else
             {
                 BtnDelete.Enabled = true;
-
                 TbChars.Enabled = true;
                 TbLanguage.Enabled = true;
-                TbChars.Text = "";
-                TbLanguage.Text = "";
 
                 LoadLanguage();
             }
@@ -161,48 +157,45 @@ namespace Vocup.Forms
         /// </summary>
         private void RefreshListbox()
         {
-            listBox.BeginUpdate();
-            listBox.Items.Clear();
+            LanguageList.BeginUpdate();
+            LanguageList.Items.Clear();
 
             DirectoryInfo directory_info = new DirectoryInfo(specialCharDir);
             if (!directory_info.Exists)
-                directory_info.Create();
+            {
+                LanguageList.EndUpdate();
+                return;
+            }
 
-            FileInfo[] files = directory_info.GetFiles();
-            listBox.Items.AddRange(files
-                .Where(x => x.Extension == ".txt")
-                .Select(x => Path.GetFileNameWithoutExtension(x.FullName))
+            LanguageList.Items.AddRange(directory_info
+                .EnumerateFiles("*.txt", SearchOption.TopDirectoryOnly)
+                .Select(info => Path.GetFileNameWithoutExtension(info.FullName))
                 .ToArray());
 
-            listBox.EndUpdate();
+            LanguageList.EndUpdate();
         }
 
         private void LoadLanguage()
         {
             try
             {
-                FileInfo info = new FileInfo(Path.Combine(specialCharDir, listBox.Items[listBox.SelectedIndex].ToString() + ".txt"));
+                FileInfo info = new FileInfo(Path.Combine(specialCharDir, LanguageList.Items[LanguageList.SelectedIndex].ToString() + ".txt"));
+                if (!info.Exists)
+                    RefreshListbox();
 
-                if (info.Exists)
+                using (StreamReader reader = new StreamReader(info.FullName, Encoding.UTF8))
                 {
-                    using (StreamReader reader = new StreamReader(info.FullName, Encoding.UTF8))
+                    StringBuilder builder = new StringBuilder();
+
+                    while (!reader.EndOfStream)
                     {
-                        StringBuilder builder = new StringBuilder();
-
-                        while (!reader.EndOfStream)
-                        {
-                            builder.Append(reader.ReadLine().Trim().Substring(0, 1));
-                        }
-
-                        TbChars.Text = builder.ToString();
+                        builder.Append(reader.ReadLine().Trim().Substring(0, 1));
                     }
 
-                    TbLanguage.Text = listBox.Items[listBox.SelectedIndex].ToString();
+                    TbChars.Text = builder.ToString();
                 }
-                else
-                {
-                    RefreshListbox();
-                }
+
+                TbLanguage.Text = LanguageList.Items[LanguageList.SelectedIndex].ToString();
             }
             catch
             {

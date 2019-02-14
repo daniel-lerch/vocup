@@ -11,7 +11,7 @@ namespace Vocup.Forms
     {
         private const string InvalidChars = "#=";
         private readonly Color redBgColor = Color.FromArgb(255, 192, 203);
-        private SpecialCharKeyboard specialCharDialog;
+        private readonly SpecialCharKeyboard specialCharDialog;
         protected readonly VocabularyBook book;
 
         public VocabularyWordDialog(VocabularyBook book)
@@ -19,11 +19,7 @@ namespace Vocup.Forms
             InitializeComponent();
 
             specialCharDialog = new SpecialCharKeyboard();
-            specialCharDialog.Initialize(this);
-            specialCharDialog.VisibleChanged += (a0, a1) =>
-            {
-                BtnSpecialChar.Enabled = !specialCharDialog.Visible;
-            };
+            specialCharDialog.Initialize(this, BtnSpecialChar);
 
             this.book = book;
             LbMotherTongue.Text = book.MotherTongue;
@@ -92,11 +88,6 @@ namespace Vocup.Forms
         private void TextBox_Enter(object sender, EventArgs e)
         {
             specialCharDialog.RegisterTextBox((TextBox)sender);
-        }
-
-        private void BtnSpecialChar_Click(object sender, EventArgs e)
-        {
-            specialCharDialog.Show();
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)

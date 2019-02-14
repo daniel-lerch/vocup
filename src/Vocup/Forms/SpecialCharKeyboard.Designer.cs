@@ -847,6 +847,7 @@
             this.Spanisch.Padding = new System.Windows.Forms.Padding(3);
             this.Spanisch.Size = new System.Drawing.Size(396, 99);
             this.Spanisch.TabIndex = 3;
+            this.Spanisch.Tag = "es-ES";
             this.Spanisch.Text = "Spanisch";
             this.Spanisch.UseVisualStyleBackColor = true;
             // 

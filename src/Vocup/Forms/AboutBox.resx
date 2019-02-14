@@ -235,7 +235,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbVersion.Parent" xml:space="preserve">
-    <value>info</value>
+    <value>TpInfo</value>
   </data>
   <data name="&gt;&gt;LbVersion.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -268,7 +268,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbCopyright.Parent" xml:space="preserve">
-    <value>info</value>
+    <value>TpInfo</value>
   </data>
   <data name="&gt;&gt;LbCopyright.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -511,7 +511,7 @@
     <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel.Parent" xml:space="preserve">
-    <value>info</value>
+    <value>TpInfo</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -962,63 +962,102 @@
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>info</value>
+    <value>TpInfo</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="info.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="TpInfo.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <data name="info.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="TpInfo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="info.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TpInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>327, 244</value>
   </data>
-  <data name="info.TabIndex" type="System.Int32, mscorlib">
+  <data name="TpInfo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="info.Text" xml:space="preserve">
+  <data name="TpInfo.Text" xml:space="preserve">
     <value>Info</value>
   </data>
-  <data name="&gt;&gt;info.Name" xml:space="preserve">
-    <value>info</value>
+  <data name="&gt;&gt;TpInfo.Name" xml:space="preserve">
+    <value>TpInfo</value>
   </data>
-  <data name="&gt;&gt;info.Type" xml:space="preserve">
+  <data name="&gt;&gt;TpInfo.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;info.Parent" xml:space="preserve">
+  <data name="&gt;&gt;TpInfo.Parent" xml:space="preserve">
     <value>tabControl</value>
   </data>
-  <data name="&gt;&gt;info.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TpInfo.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="name.Text" xml:space="preserve">
-    <value>Name</value>
+  <data name="&gt;&gt;LwComponents.Name" xml:space="preserve">
+    <value>LwComponents</value>
   </data>
-  <data name="name.Width" type="System.Int32, mscorlib">
-    <value>70</value>
+  <data name="&gt;&gt;LwComponents.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="software_version.Text" xml:space="preserve">
-    <value>Version</value>
+  <data name="&gt;&gt;LwComponents.Parent" xml:space="preserve">
+    <value>TpComponents</value>
   </data>
-  <data name="software_version.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+  <data name="&gt;&gt;LwComponents.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="lizenz.Text" xml:space="preserve">
-    <value>Lizenz</value>
+  <data name="TpComponents.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
   </data>
-  <data name="url.Text" xml:space="preserve">
-    <value>URL</value>
+  <data name="TpComponents.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
-  <data name="url.Width" type="System.Int32, mscorlib">
-    <value>136</value>
+  <data name="TpComponents.Size" type="System.Drawing.Size, System.Drawing">
+    <value>327, 244</value>
   </data>
-  <data name="komponenten.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="TpComponents.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TpComponents.Text" xml:space="preserve">
+    <value>Komponenten</value>
+  </data>
+  <data name="&gt;&gt;TpComponents.Name" xml:space="preserve">
+    <value>TpComponents</value>
+  </data>
+  <data name="&gt;&gt;TpComponents.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TpComponents.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;TpComponents.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 5</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>335, 270</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LwComponents.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="komponenten.Items" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="LwComponents.Items" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkMAwAAAFFTeXN0
@@ -1044,7 +1083,7 @@
         B3ZhbHVlX18ACAMAAAADAAAACw==
 </value>
   </data>
-  <data name="komponenten.Items1" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="LwComponents.Items1" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkMAwAAAFFTeXN0
@@ -1070,7 +1109,7 @@
         AAgDAAAAAwAAAAs=
 </value>
   </data>
-  <data name="komponenten.Items2" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="LwComponents.Items2" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkMAwAAAFFTeXN0
@@ -1096,74 +1135,47 @@
         AAMAAAAL
 </value>
   </data>
-  <data name="komponenten.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LwComponents.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="komponenten.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LwComponents.Size" type="System.Drawing.Size, System.Drawing">
     <value>321, 238</value>
   </data>
-  <data name="komponenten.TabIndex" type="System.Int32, mscorlib">
+  <data name="LwComponents.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;komponenten.Name" xml:space="preserve">
-    <value>komponenten</value>
+  <data name="&gt;&gt;LwComponents.Name" xml:space="preserve">
+    <value>LwComponents</value>
   </data>
-  <data name="&gt;&gt;komponenten.Type" xml:space="preserve">
+  <data name="&gt;&gt;LwComponents.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;komponenten.Parent" xml:space="preserve">
-    <value>komp</value>
+  <data name="&gt;&gt;LwComponents.Parent" xml:space="preserve">
+    <value>TpComponents</value>
   </data>
-  <data name="&gt;&gt;komponenten.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LwComponents.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="komp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+  <data name="name.Text" xml:space="preserve">
+    <value>Name</value>
   </data>
-  <data name="komp.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="name.Width" type="System.Int32, mscorlib">
+    <value>70</value>
   </data>
-  <data name="komp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>327, 244</value>
+  <data name="software_version.Text" xml:space="preserve">
+    <value>Version</value>
   </data>
-  <data name="komp.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="software_version.Width" type="System.Int32, mscorlib">
+    <value>50</value>
   </data>
-  <data name="komp.Text" xml:space="preserve">
-    <value>Komponenten</value>
+  <data name="lizenz.Text" xml:space="preserve">
+    <value>Lizenz</value>
   </data>
-  <data name="&gt;&gt;komp.Name" xml:space="preserve">
-    <value>komp</value>
+  <data name="url.Text" xml:space="preserve">
+    <value>URL</value>
   </data>
-  <data name="&gt;&gt;komp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;komp.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;komp.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 5</value>
-  </data>
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 270</value>
-  </data>
-  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="url.Width" type="System.Int32, mscorlib">
+    <value>136</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

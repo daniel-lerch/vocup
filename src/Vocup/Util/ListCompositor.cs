@@ -15,27 +15,36 @@ namespace Vocup.Util
             sources = new List<ItemSource>();
         }
 
-        public void AddSource(IList<T> data, double representation)
+        public void AddSource(IList<T> data, double votes)
         {
-            if (representation <= 0)
-                throw new ArgumentOutOfRangeException(nameof(representation));
+            if (data == null)
+                throw new ArgumentNullException(nameof(data));
+            if (votes < 0)
+                throw new ArgumentOutOfRangeException(nameof(votes), votes, "Must not be negative");
 
-            sources.Add(new ItemSource(data, representation));
+            sources.Add(new ItemSource(data, votes));
         }
 
         public List<T> ToList(int count)
         {
+            if (count < 0) throw new ArgumentOutOfRangeException(nameof(count), count, "Must not be negative");
+            int dataCount = sources.Sum(x => x.Data.Count);
+            if (count > dataCount) throw new ArgumentOutOfRangeException(nameof(count), count, $"There are only {dataCount} elements available");
+            
             // 1. Round and count items
-            int[] result = SaintLague.Calculate(sources.Select(x => x.Representation).ToArray(), count);
+            int result = SaintLague.Calculate(sources, count);
             List<T> final = new List<T>();
             Stack<int> remove = new Stack<int>();
-            // 2. While one sources has not enough items
-            bool found = false;
-            while (found)
+
+            // 2. While one of the sources has not enough items
+            bool found;
+            do
             {
-                for (int i = 0; i < result.Length; i++)
+                found = false;
+
+                for (int i = 0; i < sources.Count; i++)
                 {
-                    if (result[i] > sources[i].Data.Count)
+                    if (sources[i].Seats > sources[i].Data.Count)
                     {
                         ItemSource source = sources[i];
                         final.AddRange(source.Data); // add all items to final list
@@ -49,13 +58,14 @@ namespace Vocup.Util
                     sources.RemoveAt(remove.Pop()); // remove source after iteration
 
                 // Round again and see if the list fits this time
-                result = SaintLague.Calculate(sources.Select(x => x.Representation).ToArray(), count);
-            }
+                result = SaintLague.Calculate(sources, count);
+
+            } while (found);
 
             // 3. Get necessary count and add to result list
-            for (int i = 0; i < result.Length; i++)
+            foreach (ItemSource source in sources)
             {
-                final.AddRange(sources[i].Data.Take(result[i]));
+                final.AddRange(source.Data.Take(source.Seats));
             }
 
             // 4. Mix result list
@@ -64,16 +74,17 @@ namespace Vocup.Util
             return final;
         }
 
-        private class ItemSource
+        private class ItemSource : SaintLague.IParty
         {
-            public ItemSource(IList<T> data, double representation)
+            public ItemSource(IList<T> data, double votes)
             {
                 Data = data;
-                Representation = representation;
+                Votes = votes;
             }
 
             public IList<T> Data { get; }
-            public double Representation { get; set; }
+            public double Votes { get; set; }
+            public int Seats { get; set; }
         }
     }
 }

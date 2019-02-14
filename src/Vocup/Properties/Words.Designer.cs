@@ -79,6 +79,15 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alle Vokabeln.
+        /// </summary>
+        internal static string AllWords {
+            get {
+                return ResourceManager.GetString("AllWords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Abbrechen.
         /// </summary>
         internal static string Cancel {

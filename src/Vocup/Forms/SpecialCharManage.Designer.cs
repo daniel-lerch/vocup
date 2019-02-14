@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SpecialCharManage));
-            this.listBox = new System.Windows.Forms.ListBox();
+            this.LanguageList = new System.Windows.Forms.ListBox();
             this.BtnDelete = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BtnNew = new System.Windows.Forms.Button();
@@ -43,12 +43,12 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listBox
+            // LanguageList
             // 
-            this.listBox.FormattingEnabled = true;
-            resources.ApplyResources(this.listBox, "listBox");
-            this.listBox.Name = "listBox";
-            this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
+            this.LanguageList.FormattingEnabled = true;
+            resources.ApplyResources(this.LanguageList, "LanguageList");
+            this.LanguageList.Name = "LanguageList";
+            this.LanguageList.SelectedIndexChanged += new System.EventHandler(this.LanguageList_SelectedIndexChanged);
             // 
             // BtnDelete
             // 
@@ -65,7 +65,7 @@
             this.groupBox1.Controls.Add(this.TbChars);
             this.groupBox1.Controls.Add(this.TbLanguage);
             this.groupBox1.Controls.Add(this.BtnSave);
-            this.groupBox1.Controls.Add(this.listBox);
+            this.groupBox1.Controls.Add(this.LanguageList);
             this.groupBox1.Controls.Add(this.BtnDelete);
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
@@ -142,7 +142,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox;
+        private System.Windows.Forms.ListBox LanguageList;
         private System.Windows.Forms.Button BtnDelete;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button BtnSave;

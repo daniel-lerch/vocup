@@ -23,8 +23,7 @@ namespace Vocup.Forms
             InitializeComponent();
             Icon = Icon.FromHandle(Icons.MergeFiles.GetHicon());
             specialCharDialog = new SpecialCharKeyboard();
-            specialCharDialog.Initialize(this);
-            specialCharDialog.VisibleChanged += (a0, a1) => ValidateInput();
+            specialCharDialog.Initialize(this, BtnSpecialChar);
             specialCharDialog.RegisterTextBox(TbMotherTongue);
 
             books = new List<VocabularyBook>();
@@ -121,11 +120,6 @@ namespace Vocup.Forms
             specialCharDialog.RegisterTextBox((TextBox)sender);
         }
 
-        private void BtnSpecialChar_Click(object sender, EventArgs e)
-        {
-            specialCharDialog.Show();
-        }
-
         private void BtnSave_Click(object sender, EventArgs e)
         {
             string path;
@@ -193,12 +187,12 @@ namespace Vocup.Forms
                 {
                     if (cloned.PracticeDate > comp.PracticeDate)
                         target.Words[i] = cloned;
-                }
-                else
-                {
-                    target.Words.Add(cloned);
+
+                    return;
                 }
             }
+
+            target.Words.Add(cloned);
         }
     }
 }
