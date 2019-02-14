@@ -121,26 +121,6 @@
     <value>Error</value>
     <comment>Nachrichten</comment>
   </data>
-  <data name="have_to_save" xml:space="preserve">
-    <value>Speichern Sie bitte das Vokabelheft vor dem Drucken ab.</value>
-    <comment>print_dialog</comment>
-  </data>
-  <data name="messagebox_backup_error" xml:space="preserve">
-    <value>Beim erstellen der Datensicherung ist ein Fehler aufgetreten!</value>
-    <comment>create_backup</comment>
-  </data>
-  <data name="messagebox_backup_error_chars" xml:space="preserve">
-    <value>Folgende Sonderzeichentabellen konnten nicht gesichert werden:</value>
-    <comment>create_backup</comment>
-  </data>
-  <data name="messagebox_backup_error_vhf" xml:space="preserve">
-    <value>Folgende Vokabelhefte konnten nicht gesichert werden:</value>
-    <comment>create_backup</comment>
-  </data>
-  <data name="messagebox_backup_error_vhr" xml:space="preserve">
-    <value>Ergebnis-Datei(en) konnte(n) nicht gesichert werden!</value>
-    <comment>create_backup</comment>
-  </data>
   <data name="messagebox_backup_restore_error" xml:space="preserve">
     <value>Beim Wiederherstellen der Datensicherung ist ein Fehler aufgetreten!</value>
     <comment>restore_backup</comment>
@@ -160,13 +140,5 @@
   <data name="messagebox_backup_restore_success" xml:space="preserve">
     <value>Die Datensicherung wurde erfolgreich wiederhergestellt.</value>
     <comment>restore_backup</comment>
-  </data>
-  <data name="messagebox_backup_success" xml:space="preserve">
-    <value>Die Datensicherung wurde erfolgreich erstellt.</value>
-    <comment>create_backup</comment>
-  </data>
-  <data name="messagebox_no_vhf" xml:space="preserve">
-    <value>Bei dieser Datei handelt es sich nicht um ein Vokabelheft!</value>
-    <comment>Nachricht</comment>
   </data>
 </root>

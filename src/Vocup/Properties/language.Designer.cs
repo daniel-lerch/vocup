@@ -70,51 +70,6 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Speichern Sie bitte das Vokabelheft vor dem Drucken ab..
-        /// </summary>
-        internal static string have_to_save {
-            get {
-                return ResourceManager.GetString("have_to_save", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Beim erstellen der Datensicherung ist ein Fehler aufgetreten!.
-        /// </summary>
-        internal static string messagebox_backup_error {
-            get {
-                return ResourceManager.GetString("messagebox_backup_error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Folgende Sonderzeichentabellen konnten nicht gesichert werden:.
-        /// </summary>
-        internal static string messagebox_backup_error_chars {
-            get {
-                return ResourceManager.GetString("messagebox_backup_error_chars", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Folgende Vokabelhefte konnten nicht gesichert werden:.
-        /// </summary>
-        internal static string messagebox_backup_error_vhf {
-            get {
-                return ResourceManager.GetString("messagebox_backup_error_vhf", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ergebnis-Datei(en) konnte(n) nicht gesichert werden!.
-        /// </summary>
-        internal static string messagebox_backup_error_vhr {
-            get {
-                return ResourceManager.GetString("messagebox_backup_error_vhr", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Beim Wiederherstellen der Datensicherung ist ein Fehler aufgetreten!.
         /// </summary>
         internal static string messagebox_backup_restore_error {
@@ -156,24 +111,6 @@ namespace Vocup.Properties {
         internal static string messagebox_backup_restore_success {
             get {
                 return ResourceManager.GetString("messagebox_backup_restore_success", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Die Datensicherung wurde erfolgreich erstellt..
-        /// </summary>
-        internal static string messagebox_backup_success {
-            get {
-                return ResourceManager.GetString("messagebox_backup_success", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Bei dieser Datei handelt es sich nicht um ein Vokabelheft!.
-        /// </summary>
-        internal static string messagebox_no_vhf {
-            get {
-                return ResourceManager.GetString("messagebox_no_vhf", resourceCulture);
             }
         }
     }
