@@ -172,12 +172,6 @@
     <Compile Include="Models\VocabularyBookStatistics.cs" />
     <Compile Include="Models\VocabularyWord.cs" />
     <Compile Include="Models\VocabularyWordController.cs" />
-    <Compile Include="Forms\PrintCardsDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PrintCardsDialog.Designer.cs">
-      <DependentUpon>PrintCardsDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\VocabularyWordPractice.cs" />
     <Compile Include="Properties\Icons.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -274,10 +268,6 @@
     <EmbeddedResource Include="Forms\PracticeDialog.resx">
       <SubType>Designer</SubType>
       <DependentUpon>PracticeDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PrintCardsDialog.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>PrintCardsDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="program_form.resx">
       <DependentUpon>program_form.cs</DependentUpon>
