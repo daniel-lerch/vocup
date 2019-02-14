@@ -1012,9 +1012,6 @@
   <data name="&gt;&gt;SplitContainer.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="printCards.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>162, 17</value>
-  </metadata>
   <metadata name="ToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 24</value>
   </metadata>
@@ -7573,12 +7570,6 @@
   </data>
   <data name="&gt;&gt;TsmiAbout.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;printCards.Name" xml:space="preserve">
-    <value>printCards</value>
-  </data>
-  <data name="&gt;&gt;printCards.Type" xml:space="preserve">
-    <value>System.Drawing.Printing.PrintDocument, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;TsbCreateBook.Name" xml:space="preserve">
     <value>TsbCreateBook</value>
