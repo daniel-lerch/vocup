@@ -53,35 +53,23 @@ namespace Vocup.Forms
                 }
             }
 
-            if (RbList.Checked)
+            PrintDialog dialog = new PrintDialog()
             {
-                PrintDialog dialog = new PrintDialog()
-                {
-                    AllowCurrentPage = false,
-                    AllowSomePages = false,
-                    UseEXDialog = true
-                };
+                AllowCurrentPage = false,
+                AllowSomePages = false,
+                UseEXDialog = true
+            };
 
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    invertSides = RbAskForMotherTongue.Checked;
-
-                    PrintList.PrinterSettings = dialog.PrinterSettings;
-                    PrintList.DocumentName = book.Name ?? Words.Vocup;
-                    PrintList.Print();
-                }
-
-                dialog.Dispose();
-            }
-            else // print cards
+            if (dialog.ShowDialog() == DialogResult.OK)
             {
-                using (var dialog = new PrintCardsDialog(printList)) dialog.ShowDialog();
-            }
-        }
+                invertSides = RbAskForMotherTongue.Checked;
 
-        private void RbList_CheckedChanged(object sender, EventArgs e)
-        {
-            GroupPracticeMode.Enabled = RbList.Checked;
+                PrintList.PrinterSettings = dialog.PrinterSettings;
+                PrintList.DocumentName = book.Name ?? Words.Vocup;
+                PrintList.Print();
+            }
+
+            dialog.Dispose();
         }
 
         private void ListBox_SelectedValueChanged(object sender, EventArgs e)

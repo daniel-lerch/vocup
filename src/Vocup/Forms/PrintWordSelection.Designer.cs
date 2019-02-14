@@ -35,9 +35,6 @@
             this.BtnUncheckAll = new System.Windows.Forms.Button();
             this.BtnContinue = new System.Windows.Forms.Button();
             this.BtnCancel = new System.Windows.Forms.Button();
-            this.GroupType = new System.Windows.Forms.GroupBox();
-            this.RbCards = new System.Windows.Forms.RadioButton();
-            this.RbList = new System.Windows.Forms.RadioButton();
             this.GroupPracticeMode = new System.Windows.Forms.GroupBox();
             this.RbAskForMotherTongue = new System.Windows.Forms.RadioButton();
             this.RbAskForForeignLang = new System.Windows.Forms.RadioButton();
@@ -47,7 +44,6 @@
             this.CbWronglyPracticed = new System.Windows.Forms.CheckBox();
             this.CbUnpracticed = new System.Windows.Forms.CheckBox();
             this.PrintList = new System.Drawing.Printing.PrintDocument();
-            this.GroupType.SuspendLayout();
             this.GroupPracticeMode.SuspendLayout();
             this.GroupFilter.SuspendLayout();
             this.SuspendLayout();
@@ -93,29 +89,6 @@
             resources.ApplyResources(this.BtnCancel, "BtnCancel");
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.UseVisualStyleBackColor = true;
-            // 
-            // GroupType
-            // 
-            this.GroupType.Controls.Add(this.RbCards);
-            this.GroupType.Controls.Add(this.RbList);
-            resources.ApplyResources(this.GroupType, "GroupType");
-            this.GroupType.Name = "GroupType";
-            this.GroupType.TabStop = false;
-            // 
-            // RbCards
-            // 
-            resources.ApplyResources(this.RbCards, "RbCards");
-            this.RbCards.Checked = true;
-            this.RbCards.Name = "RbCards";
-            this.RbCards.TabStop = true;
-            this.RbCards.UseVisualStyleBackColor = true;
-            // 
-            // RbList
-            // 
-            resources.ApplyResources(this.RbList, "RbList");
-            this.RbList.Name = "RbList";
-            this.RbList.UseVisualStyleBackColor = true;
-            this.RbList.CheckedChanged += new System.EventHandler(this.RbList_CheckedChanged);
             // 
             // GroupPracticeMode
             // 
@@ -188,7 +161,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.GroupFilter);
             this.Controls.Add(this.GroupPracticeMode);
-            this.Controls.Add(this.GroupType);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnContinue);
             this.Controls.Add(this.BtnUncheckAll);
@@ -200,8 +172,6 @@
             this.MinimizeBox = false;
             this.Name = "PrintWordSelection";
             this.ShowInTaskbar = false;
-            this.GroupType.ResumeLayout(false);
-            this.GroupType.PerformLayout();
             this.GroupPracticeMode.ResumeLayout(false);
             this.GroupPracticeMode.PerformLayout();
             this.GroupFilter.ResumeLayout(false);
@@ -219,10 +189,7 @@
         private System.Windows.Forms.Button BtnContinue;
         private System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.CheckedListBox ListBox;
-        private System.Windows.Forms.GroupBox GroupType;
         private System.Windows.Forms.GroupBox GroupPracticeMode;
-        private System.Windows.Forms.RadioButton RbCards;
-        private System.Windows.Forms.RadioButton RbList;
         private System.Windows.Forms.RadioButton RbAskForMotherTongue;
         private System.Windows.Forms.RadioButton RbAskForForeignLang;
         private System.Windows.Forms.GroupBox GroupFilter;
