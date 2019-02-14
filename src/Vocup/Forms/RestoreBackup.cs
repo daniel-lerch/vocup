@@ -8,18 +8,20 @@ using System.Text;
 using System.Windows.Forms;
 using Vocup.Models;
 using Vocup.Properties;
+using Vocup.Util;
 
 namespace Vocup.Forms
 {
     public partial class RestoreBackup : Form
     {
-        public RestoreBackup()
+        private string path;
+
+        public RestoreBackup(string path)
         {
+            this.path = path;
             InitializeComponent();
             Icon = Icon.FromHandle(Icons.DatabaseRestore.GetHicon());
         }
-
-        public string path_backup;
 
         private LogItem[] vhf_vhr_log;
         // 0: int FileIndex
@@ -35,11 +37,14 @@ namespace Vocup.Forms
 
         private void Form_Load(object sender, EventArgs e)
         {
-            //Falls das Feld mit dem Pfad nicht leer ist
-
-            if (TbFilePath.Text != "")
+            if (string.IsNullOrWhiteSpace(path))
             {
-                OpenFile();
+                BtnFilePath.PerformClick();
+            }
+            else
+            {
+                TbFilePath.Text = path;
+                BtnFilePath.Enabled = false;
             }
         }
 
@@ -55,15 +60,10 @@ namespace Vocup.Forms
 
             if (open.ShowDialog() == DialogResult.OK)
             {
-                path_backup = open.FileName;
+                path = open.FileName;
                 TbFilePath.Text = open.FileName;
+                OpenFile();
             }
-        }
-
-        //Falls ein anderer Pfad gewählt worden ist
-        private void path_field_TextChanged(object sender, EventArgs e)
-        {
-            OpenFile();
         }
 
         private bool TryOpen(string path, out ZipFile file)
@@ -358,6 +358,191 @@ namespace Vocup.Forms
             }
         }
 
+        private void restore_backup()
+        {
+            //Variablen für Fehlermeldungen
+            int error_vhf = 0;
+            int error_vhr = 0;
+            int error_chars = 0;
+            bool error = false;
+
+            List<string> error_vhf_name = new List<string>();
+            List<string> error_chars_name = new List<string>();
+
+            try
+            {
+                //Cursor auf Warten setzen
+                Cursor.Current = Cursors.WaitCursor;
+                Update();
+
+                //Schliesst das geöffnete Vokabelheft
+                //close_vokabelheft();
+
+                //Backup-Datei vorbereiten
+
+                ZipFile backup_file = new ZipFile(path);
+
+                //Vokabelhefte wiederherstellen
+                if (vhf_restore.Count > 0)
+                {
+                    for (int i = 0; i < vhf_restore.Count; i++)
+                    {
+                        try
+                        {
+
+                            string[] temp = vhf_restore[i];
+
+                            ZipEntry entry = backup_file.GetEntry(@"vhf\" + temp[0] + ".vhf");
+
+                            byte[] buffer = new byte[entry.Size + 4096];
+
+                            FileInfo info = new FileInfo(temp[1]);
+
+                            if (Directory.Exists(info.DirectoryName) == false)
+                            {
+                                Directory.CreateDirectory(info.DirectoryName);
+                            }
+
+
+                            FileStream writer = new FileStream(temp[1], FileMode.Create);
+
+                            StreamUtils.Copy(backup_file.GetInputStream(entry), writer, buffer);
+
+                            writer.Close();
+                        }
+                        catch
+                        {
+                            error_vhf++;
+
+                            string[] temp = vhf_restore[i];
+                            error_vhf_name.Add(temp[1]);
+                        }
+                    }
+                }
+
+                //Ergebnisse wiederherstellen
+
+                if (vhr_restore.Count > 0)
+                {
+                    for (int i = 0; i < vhr_restore.Count; i++)
+                    {
+                        try
+                        {
+                            ZipEntry entry = backup_file.GetEntry(@"vhr\" + vhr_restore[i]);
+
+                            byte[] buffer = new byte[entry.Size + 4096];
+
+
+                            FileStream writer = new FileStream(Properties.Settings.Default.VhrPath + "\\" + vhr_restore[i], FileMode.Create);
+
+                            StreamUtils.Copy(backup_file.GetInputStream(entry), writer, buffer);
+
+                            writer.Close();
+                        }
+
+                        catch
+                        {
+                            error_vhr++;
+                        }
+                    }
+                }
+
+                if (chars_restore.Count > 0) // Sonderzeichentabellen sichern
+                {
+                    for (int i = 0; i < chars_restore.Count; i++)
+                    {
+                        try
+                        {
+                            ZipEntry entry = backup_file.GetEntry(@"chars\" + chars_restore[i]);
+
+                            byte[] buffer = new byte[entry.Size + 4096];
+
+                            Directory.CreateDirectory(AppInfo.SpecialCharDirectory);
+
+                            FileStream writer = new FileStream(Path.Combine(AppInfo.SpecialCharDirectory, chars_restore[i]), FileMode.Create);
+
+                            StreamUtils.Copy(backup_file.GetInputStream(entry), writer, buffer);
+
+                            writer.Close();
+                        }
+                        catch
+                        {
+                            error_chars++;
+                            error_chars_name.Add(chars_restore[i]);
+                        }
+                    }
+                }
+
+                backup_file.Close();
+
+                Cursor.Current = Cursors.Default;
+                Update();
+            }
+            catch
+            {
+                error = true;
+
+                Cursor.Current = Cursors.Default;
+
+                //fehlermeldung anzeigen
+                MessageBox.Show(Properties.language.messagebox_backup_restore_error,
+                       Properties.language.error,
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
+            }
+
+            //Falls nötig Fehlermeldungen anzeigen
+
+            if (error_vhf > 0)
+            {
+                string messange = Properties.language.messagebox_backup_restore_error_vhf + Environment.NewLine;
+
+                for (int i = 0; i < error_vhf_name.Count; i++)
+                {
+                    messange = messange + Environment.NewLine + error_vhf_name[i];
+                }
+
+                //Fehlermeldung anzeigen
+                MessageBox.Show(messange,
+                       Properties.language.error,
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
+            }
+            if (error_vhr > 0)
+            {
+                //Fehlermeldung anzeigen
+                MessageBox.Show(error_vhr.ToString() + " " + Properties.language.messagebox_backup_restore_error_vhr,
+                       Properties.language.error,
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
+            }
+            if (error_chars > 0)
+            {
+                string messange = Properties.language.messagebox_backup_restore_error_chars + Environment.NewLine;
+
+                for (int i = 0; i < error_chars_name.Count; i++)
+                {
+                    messange = messange + Environment.NewLine + error_chars_name[i];
+                }
+
+                //Fehlermeldung anzeigen
+                MessageBox.Show(messange,
+                       Properties.language.error,
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
+            }
+
+            //Dialog anzeigen, dass der Prozess erfolgreich war
+
+            if (error == false && error_vhf == 0 && error_vhr == 0 && error_chars == 0)
+            {
+                MessageBox.Show(Properties.language.messagebox_backup_restore_success,
+                          AppInfo.Name,
+                          MessageBoxButtons.OK,
+                          MessageBoxIcon.Information);
+            }
+        }
+
         private void CbAbsolutePath_CheckedChanged(object sender, EventArgs e)
         {
             for (int i = 0; i < ListBooks.Items.Count; i++)
@@ -513,7 +698,8 @@ namespace Vocup.Forms
                     }
 
                 }
-                
+
+                restore_backup();
                 DialogResult = DialogResult.OK; //Form schliessen
             }
             catch

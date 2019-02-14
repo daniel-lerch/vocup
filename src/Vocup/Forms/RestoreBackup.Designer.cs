@@ -59,7 +59,6 @@
             resources.ApplyResources(this.TbFilePath, "TbFilePath");
             this.TbFilePath.Name = "TbFilePath";
             this.TbFilePath.ReadOnly = true;
-            this.TbFilePath.TextChanged += new System.EventHandler(this.path_field_TextChanged);
             // 
             // BtnFilePath
             // 
@@ -227,24 +226,23 @@
         }
 
         #endregion
-
-        public System.Windows.Forms.TextBox TbFilePath;
-        public System.Windows.Forms.Button BtnFilePath;
         private System.Windows.Forms.GroupBox GroupFilePath;
         private System.Windows.Forms.GroupBox GroupBooks;
-        public System.Windows.Forms.CheckedListBox ListBooks;
         private System.Windows.Forms.GroupBox GroupSpecialChars;
-        public System.Windows.Forms.CheckedListBox ListSpecialChars;
         private System.Windows.Forms.Button BtnRestore;
         private System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.GroupBox GroupReplace;
-        public System.Windows.Forms.RadioButton RbReplaceOlder;
-        public System.Windows.Forms.RadioButton RbReplaceNothing;
-        public System.Windows.Forms.RadioButton RbReplaceAll;
         private System.Windows.Forms.GroupBox GroupResults;
-        public System.Windows.Forms.RadioButton RbRestoreAllResults;
-        public System.Windows.Forms.RadioButton RbRestoreAssociatedResults;
-        public System.Windows.Forms.RadioButton RbRestoreNoResults;
         private System.Windows.Forms.CheckBox CbAbsolutePath;
+        private System.Windows.Forms.TextBox TbFilePath;
+        private System.Windows.Forms.Button BtnFilePath;
+        private System.Windows.Forms.CheckedListBox ListBooks;
+        private System.Windows.Forms.RadioButton RbReplaceOlder;
+        private System.Windows.Forms.RadioButton RbReplaceNothing;
+        private System.Windows.Forms.RadioButton RbReplaceAll;
+        private System.Windows.Forms.CheckedListBox ListSpecialChars;
+        private System.Windows.Forms.RadioButton RbRestoreAllResults;
+        private System.Windows.Forms.RadioButton RbRestoreAssociatedResults;
+        private System.Windows.Forms.RadioButton RbRestoreNoResults;
     }
 }
