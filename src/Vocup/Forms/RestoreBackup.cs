@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.IO.Compression;
 using System.Text;
 using System.Windows.Forms;
 using Vocup.Models;
@@ -15,6 +16,7 @@ namespace Vocup.Forms
     public partial class RestoreBackup : Form
     {
         private string path;
+        private BackupMeta meta;
 
         public RestoreBackup(string path)
         {
@@ -39,38 +41,23 @@ namespace Vocup.Forms
         {
             if (string.IsNullOrWhiteSpace(path))
             {
-                BtnFilePath.PerformClick();
+                BrowseFile();
             }
             else
             {
                 TbFilePath.Text = path;
                 BtnFilePath.Enabled = false;
-            }
-        }
-
-        //OpenFile-Dialog anzeigen
-        private void BtnFilePath_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog open = new OpenFileDialog
-            {
-                Title = Words.SaveBackup,
-                Filter = Words.VocupBackupFile + " (*.vdp)|*.vdp",
-                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal)
-            };
-
-            if (open.ShowDialog() == DialogResult.OK)
-            {
-                path = open.FileName;
-                TbFilePath.Text = open.FileName;
                 OpenFile();
             }
         }
 
-        private bool TryOpen(string path, out ZipFile file)
+        private void BtnFilePath_Click(object sender, EventArgs e) => BrowseFile();
+
+        private bool TryOpen(string path, out ICSharpCode.SharpZipLib.Zip.ZipFile file)
         {
             try
             {
-                file = new ZipFile(path);
+                file = new ICSharpCode.SharpZipLib.Zip.ZipFile(path);
                 return true;
             }
             catch (Exception ex)
@@ -90,7 +77,7 @@ namespace Vocup.Forms
             ListSpecialChars.Items.Clear();
 
             //Neue Datei öffnen
-            if (!TryOpen(TbFilePath.Text, out ZipFile backup_file))
+            if (!TryOpen(TbFilePath.Text, out ICSharpCode.SharpZipLib.Zip.ZipFile backup_file))
             {
                 DialogResult = DialogResult.Abort;
                 Close();
@@ -380,7 +367,7 @@ namespace Vocup.Forms
 
                 //Backup-Datei vorbereiten
 
-                ZipFile backup_file = new ZipFile(path);
+                var backup_file = new ICSharpCode.SharpZipLib.Zip.ZipFile(path);
 
                 //Vokabelhefte wiederherstellen
                 if (vhf_restore.Count > 0)
@@ -631,72 +618,53 @@ namespace Vocup.Forms
         {
             try
             {
-                bool activate = false;
+                //Falls Daten zum sichern vorhanden sind ind Arrays einlesen
 
-                if (ListBooks.CheckedItems.Count != 0 && GroupBooks.Enabled == true)
+                //Vokabelhefte in Array einlesen
+                if (ListBooks.Items.Count != 0)
                 {
-                    activate = true;
-                }
-                if (RbRestoreNoResults.Enabled == false & GroupResults.Enabled == true)
-                {
-                    activate = true;
-                }
-                if (ListSpecialChars.CheckedItems.Count != 0 && GroupSpecialChars.Enabled == true)
-                {
-                    activate = true;
-                }
-
-                if (activate == true)
-                {
-                    //Falls Daten zum sichern vorhanden sind ind Arrays einlesen
-
-                    //Vokabelhefte in Array einlesen
-                    if (ListBooks.Items.Count != 0)
+                    for (int i = 0; i < vhf_vhr_log.Length; i++)
                     {
-                        for (int i = 0; i < vhf_vhr_log.Length; i++)
+                        try
                         {
-                            try
+                            if (ListBooks.GetItemCheckState(vhf_vhr_log[i].UiIndex) == CheckState.Checked)
                             {
-                                if (ListBooks.GetItemCheckState(vhf_vhr_log[i].UiIndex) == CheckState.Checked)
+                                string[] temp = new string[2];
+
+                                temp[0] = vhf_vhr_log[i].FileIndex.ToString();
+                                temp[1] = vhf_vhr_log[i].VhfPath;
+
+                                vhf_restore.Add(temp);
+
+                                if (RbRestoreAssociatedResults.Checked && RbRestoreAssociatedResults.Enabled && !string.IsNullOrWhiteSpace(vhf_vhr_log[i].VhrCode))
                                 {
-                                    string[] temp = new string[2];
-
-                                    temp[0] = vhf_vhr_log[i].FileIndex.ToString();
-                                    temp[1] = vhf_vhr_log[i].VhfPath;
-
-                                    vhf_restore.Add(temp);
-
-                                    if (RbRestoreAssociatedResults.Checked && RbRestoreAssociatedResults.Enabled && !string.IsNullOrWhiteSpace(vhf_vhr_log[i].VhrCode))
-                                    {
-                                        vhr_restore.Add(vhf_vhr_log[i].VhrCode + ".vhr");
-                                    }
+                                    vhr_restore.Add(vhf_vhr_log[i].VhrCode + ".vhr");
                                 }
                             }
-                            catch
-                            {
-                            }
                         }
-                    }
-                    //Ergebnisse in Array einlesen, falls alle Ergebnisse wiederhergestellt werden sollen
-
-                    if (RbRestoreAllResults.Checked == true && RbRestoreAllResults.Enabled == true)
-                    {
-                        for (int i = 0; i < vhr_log.Length; i++)
+                        catch
                         {
-                            vhr_restore.Add(vhr_log[i]);
                         }
                     }
+                }
+                //Ergebnisse in Array einlesen, falls alle Ergebnisse wiederhergestellt werden sollen
 
-                    //Sonderzeichentabellen in Array einlesen
-
-                    for (int i = 0; i < ListSpecialChars.Items.Count; i++)
+                if (RbRestoreAllResults.Checked == true && RbRestoreAllResults.Enabled == true)
+                {
+                    for (int i = 0; i < vhr_log.Length; i++)
                     {
-                        if (ListSpecialChars.GetItemCheckState(i) == CheckState.Checked)
-                        {
-                            chars_restore.Add(ListSpecialChars.Items[i] + ".txt");
-                        }
+                        vhr_restore.Add(vhr_log[i]);
                     }
+                }
 
+                //Sonderzeichentabellen in Array einlesen
+
+                for (int i = 0; i < ListSpecialChars.Items.Count; i++)
+                {
+                    if (ListSpecialChars.GetItemCheckState(i) == CheckState.Checked)
+                    {
+                        chars_restore.Add(ListSpecialChars.Items[i] + ".txt");
+                    }
                 }
 
                 restore_backup();
@@ -706,6 +674,58 @@ namespace Vocup.Forms
             {
                 //Fehlermeldung anzeigen
             }
+        }
+
+        private void BrowseFile()
+        {
+            using (OpenFileDialog dialog = new OpenFileDialog
+            {
+                Title = Words.SaveBackup,
+                Filter = Words.VocupBackupFile + " (*.vdp)|*.vdp",
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal)
+            })
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    path = dialog.FileName;
+                    TbFilePath.Text = dialog.FileName;
+                    OpenFile();
+                }
+            }
+        }
+
+        private bool TryOpen(string path, out ZipArchive archive)
+        {
+            try
+            {
+                archive = new ZipArchive(new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read), ZipArchiveMode.Read, leaveOpen: false);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format(Messages.VdpInvalidFile, ex), Messages.VdpInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                archive = null;
+                return false;
+            }
+        }
+
+        private void LoadFile()
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            ListBooks.BeginUpdate();
+            ListBooks.Items.Clear();
+
+            if (TryOpen(path, out ZipArchive archive) && BackupMeta.TryRead(archive, out meta))
+            {
+                foreach (BackupMeta.BookMeta book in meta.Books)
+                {
+                    ListBooks.Items.Add(book.VhfPath);
+                }
+            }
+            else meta = null;
+
+            ListBooks.EndUpdate();
+            Cursor.Current = Cursors.Default;
         }
 
         private struct LogItem
