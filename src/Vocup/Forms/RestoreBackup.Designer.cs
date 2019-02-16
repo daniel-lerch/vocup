@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RestoreBackup));
-            this.TbFilePath = new System.Windows.Forms.TextBox();
-            this.BtnFilePath = new System.Windows.Forms.Button();
-            this.GroupFilePath = new System.Windows.Forms.GroupBox();
             this.GroupBooks = new System.Windows.Forms.GroupBox();
             this.CbAbsolutePath = new System.Windows.Forms.CheckBox();
             this.ListBooks = new System.Windows.Forms.CheckedListBox();
@@ -47,33 +44,11 @@
             this.RbRestoreNoResults = new System.Windows.Forms.RadioButton();
             this.RbRestoreAllResults = new System.Windows.Forms.RadioButton();
             this.RbRestoreAssociatedResults = new System.Windows.Forms.RadioButton();
-            this.GroupFilePath.SuspendLayout();
             this.GroupBooks.SuspendLayout();
             this.GroupSpecialChars.SuspendLayout();
             this.GroupReplace.SuspendLayout();
             this.GroupResults.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // TbFilePath
-            // 
-            resources.ApplyResources(this.TbFilePath, "TbFilePath");
-            this.TbFilePath.Name = "TbFilePath";
-            this.TbFilePath.ReadOnly = true;
-            // 
-            // BtnFilePath
-            // 
-            resources.ApplyResources(this.BtnFilePath, "BtnFilePath");
-            this.BtnFilePath.Name = "BtnFilePath";
-            this.BtnFilePath.UseVisualStyleBackColor = true;
-            this.BtnFilePath.Click += new System.EventHandler(this.BtnFilePath_Click);
-            // 
-            // GroupFilePath
-            // 
-            this.GroupFilePath.Controls.Add(this.TbFilePath);
-            this.GroupFilePath.Controls.Add(this.BtnFilePath);
-            resources.ApplyResources(this.GroupFilePath, "GroupFilePath");
-            this.GroupFilePath.Name = "GroupFilePath";
-            this.GroupFilePath.TabStop = false;
             // 
             // GroupBooks
             // 
@@ -195,7 +170,6 @@
             // 
             // RestoreBackup
             // 
-            this.AcceptButton = this.BtnFilePath;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnCancel;
@@ -205,15 +179,11 @@
             this.Controls.Add(this.BtnRestore);
             this.Controls.Add(this.GroupSpecialChars);
             this.Controls.Add(this.GroupBooks);
-            this.Controls.Add(this.GroupFilePath);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RestoreBackup";
             this.ShowInTaskbar = false;
-            this.Load += new System.EventHandler(this.Form_Load);
-            this.GroupFilePath.ResumeLayout(false);
-            this.GroupFilePath.PerformLayout();
             this.GroupBooks.ResumeLayout(false);
             this.GroupBooks.PerformLayout();
             this.GroupSpecialChars.ResumeLayout(false);
@@ -226,7 +196,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox GroupFilePath;
         private System.Windows.Forms.GroupBox GroupBooks;
         private System.Windows.Forms.GroupBox GroupSpecialChars;
         private System.Windows.Forms.Button BtnRestore;
@@ -234,8 +203,6 @@
         private System.Windows.Forms.GroupBox GroupReplace;
         private System.Windows.Forms.GroupBox GroupResults;
         private System.Windows.Forms.CheckBox CbAbsolutePath;
-        private System.Windows.Forms.TextBox TbFilePath;
-        private System.Windows.Forms.Button BtnFilePath;
         private System.Windows.Forms.CheckedListBox ListBooks;
         private System.Windows.Forms.RadioButton RbReplaceOlder;
         private System.Windows.Forms.RadioButton RbReplaceNothing;

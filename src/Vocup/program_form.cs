@@ -555,34 +555,35 @@ namespace Vocup
         }
 
         //Vokabelhefte zusammenführen
-
         private void TsmiMerge_Click(object sender, EventArgs e)
         {
             using (var dialog = new MergeFiles()) dialog.ShowDialog();
         }
 
         //Datensicherung erstellen
-
         private void TsmiBackupCreate_Click(object sender, EventArgs e)
         {
             using (var dialog = new CreateBackup()) dialog.ShowDialog();
         }
 
         //Datensicherung wiederherstellen
-
-        public void restore_backup(string file_path)
-        {
-            using (RestoreBackup restore = new RestoreBackup(file_path))
-            {
-                if (UnsavedChanges && !vokabelheft_ask_to_save()) return;
-
-                restore.ShowDialog();
-            }
-        }
-
         private void TsmiBackupRestore_Click(object sender, EventArgs e)
         {
-            restore_backup("");
+            if (UnsavedChanges && !vokabelheft_ask_to_save()) return;
+
+            using (OpenFileDialog dialog = new OpenFileDialog
+            {
+                Title = Words.SaveBackup,
+                Filter = Words.VocupBackupFile + " (*.vdp)|*.vdp",
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal)
+            })
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (RestoreBackup restore = new RestoreBackup(dialog.FileName))
+                        restore.ShowDialog();
+                }
+            }
         }
 
         //Vokabelheft drucken

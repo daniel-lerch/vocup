@@ -117,131 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="TbFilePath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="TbFilePath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 20</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="TbFilePath.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TbFilePath.Name" xml:space="preserve">
-    <value>TbFilePath</value>
-  </data>
-  <data name="&gt;&gt;TbFilePath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TbFilePath.Parent" xml:space="preserve">
-    <value>GroupFilePath</value>
-  </data>
-  <data name="&gt;&gt;TbFilePath.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="BtnFilePath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>241, 16</value>
-  </data>
-  <data name="BtnFilePath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 23</value>
-  </data>
-  <data name="BtnFilePath.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="BtnFilePath.Text" xml:space="preserve">
-    <value>Durchsuchen</value>
-  </data>
-  <data name="&gt;&gt;BtnFilePath.Name" xml:space="preserve">
-    <value>BtnFilePath</value>
-  </data>
-  <data name="&gt;&gt;BtnFilePath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BtnFilePath.Parent" xml:space="preserve">
-    <value>GroupFilePath</value>
-  </data>
-  <data name="&gt;&gt;BtnFilePath.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="GroupFilePath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="GroupFilePath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>331, 45</value>
-  </data>
-  <data name="GroupFilePath.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="GroupFilePath.Text" xml:space="preserve">
-    <value>Geben Sie den Pfad der Datensicherung an:</value>
-  </data>
-  <data name="&gt;&gt;GroupFilePath.Name" xml:space="preserve">
-    <value>GroupFilePath</value>
-  </data>
-  <data name="&gt;&gt;GroupFilePath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupFilePath.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupFilePath.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;CbAbsolutePath.Name" xml:space="preserve">
-    <value>CbAbsolutePath</value>
-  </data>
-  <data name="&gt;&gt;CbAbsolutePath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbAbsolutePath.Parent" xml:space="preserve">
-    <value>GroupBooks</value>
-  </data>
-  <data name="&gt;&gt;CbAbsolutePath.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ListBooks.Name" xml:space="preserve">
-    <value>ListBooks</value>
-  </data>
-  <data name="&gt;&gt;ListBooks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ListBooks.Parent" xml:space="preserve">
-    <value>GroupBooks</value>
-  </data>
-  <data name="&gt;&gt;ListBooks.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="GroupBooks.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="GroupBooks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 157</value>
-  </data>
-  <data name="GroupBooks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>331, 157</value>
-  </data>
-  <data name="GroupBooks.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="GroupBooks.Text" xml:space="preserve">
-    <value>Welche Vokabelhefte sollen wiederhergestellt werden?</value>
-  </data>
-  <data name="&gt;&gt;GroupBooks.Name" xml:space="preserve">
-    <value>GroupBooks</value>
-  </data>
-  <data name="&gt;&gt;GroupBooks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBooks.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupBooks.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="CbAbsolutePath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="CbAbsolutePath.Location" type="System.Drawing.Point, System.Drawing">
     <value>214, 134</value>
   </data>
@@ -290,6 +170,30 @@
   <data name="&gt;&gt;ListBooks.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="GroupBooks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 106</value>
+  </data>
+  <data name="GroupBooks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 157</value>
+  </data>
+  <data name="GroupBooks.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="GroupBooks.Text" xml:space="preserve">
+    <value>Welche Vokabelhefte sollen wiederhergestellt werden?</value>
+  </data>
+  <data name="&gt;&gt;GroupBooks.Name" xml:space="preserve">
+    <value>GroupBooks</value>
+  </data>
+  <data name="&gt;&gt;GroupBooks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBooks.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBooks.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="ListSpecialChars.HorizontalScrollbar" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -314,11 +218,8 @@
   <data name="&gt;&gt;ListSpecialChars.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="GroupSpecialChars.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="GroupSpecialChars.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 414</value>
+    <value>12, 363</value>
   </data>
   <data name="GroupSpecialChars.Size" type="System.Drawing.Size, System.Drawing">
     <value>331, 89</value>
@@ -345,7 +246,7 @@
     <value>False</value>
   </data>
   <data name="BtnRestore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>164, 509</value>
+    <value>164, 458</value>
   </data>
   <data name="BtnRestore.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 23</value>
@@ -369,7 +270,7 @@
     <value>3</value>
   </data>
   <data name="BtnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>268, 509</value>
+    <value>268, 458</value>
   </data>
   <data name="BtnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -391,69 +292,6 @@
   </data>
   <data name="&gt;&gt;BtnCancel.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="&gt;&gt;RbReplaceOlder.Name" xml:space="preserve">
-    <value>RbReplaceOlder</value>
-  </data>
-  <data name="&gt;&gt;RbReplaceOlder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RbReplaceOlder.Parent" xml:space="preserve">
-    <value>GroupReplace</value>
-  </data>
-  <data name="&gt;&gt;RbReplaceOlder.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;RbReplaceNothing.Name" xml:space="preserve">
-    <value>RbReplaceNothing</value>
-  </data>
-  <data name="&gt;&gt;RbReplaceNothing.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RbReplaceNothing.Parent" xml:space="preserve">
-    <value>GroupReplace</value>
-  </data>
-  <data name="&gt;&gt;RbReplaceNothing.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;RbReplaceAll.Name" xml:space="preserve">
-    <value>RbReplaceAll</value>
-  </data>
-  <data name="&gt;&gt;RbReplaceAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RbReplaceAll.Parent" xml:space="preserve">
-    <value>GroupReplace</value>
-  </data>
-  <data name="&gt;&gt;RbReplaceAll.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="GroupReplace.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="GroupReplace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 63</value>
-  </data>
-  <data name="GroupReplace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>331, 88</value>
-  </data>
-  <data name="GroupReplace.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="GroupReplace.Text" xml:space="preserve">
-    <value>Sollen vorhandene Dateien ersetzt werden?</value>
-  </data>
-  <data name="&gt;&gt;GroupReplace.Name" xml:space="preserve">
-    <value>GroupReplace</value>
-  </data>
-  <data name="&gt;&gt;GroupReplace.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupReplace.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupReplace.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="RbReplaceOlder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -536,6 +374,30 @@
   <data name="&gt;&gt;RbReplaceAll.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="GroupReplace.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="GroupReplace.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 88</value>
+  </data>
+  <data name="GroupReplace.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="GroupReplace.Text" xml:space="preserve">
+    <value>Sollen vorhandene Dateien ersetzt werden?</value>
+  </data>
+  <data name="&gt;&gt;GroupReplace.Name" xml:space="preserve">
+    <value>GroupReplace</value>
+  </data>
+  <data name="&gt;&gt;GroupReplace.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupReplace.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupReplace.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="RbRestoreNoResults.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -617,11 +479,8 @@
   <data name="&gt;&gt;RbRestoreAssociatedResults.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="GroupResults.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="GroupResults.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 320</value>
+    <value>12, 269</value>
   </data>
   <data name="GroupResults.Size" type="System.Drawing.Size, System.Drawing">
     <value>331, 88</value>
@@ -651,7 +510,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>355, 544</value>
+    <value>355, 493</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">

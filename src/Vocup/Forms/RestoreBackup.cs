@@ -37,22 +37,6 @@ namespace Vocup.Forms
         public List<string> vhr_restore = new List<string>();
         public List<string> chars_restore = new List<string>();
 
-        private void Form_Load(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(path))
-            {
-                BrowseFile();
-            }
-            else
-            {
-                TbFilePath.Text = path;
-                BtnFilePath.Enabled = false;
-                OpenFile();
-            }
-        }
-
-        private void BtnFilePath_Click(object sender, EventArgs e) => BrowseFile();
-
         private bool TryOpen(string path, out ICSharpCode.SharpZipLib.Zip.ZipFile file)
         {
             try
@@ -77,7 +61,7 @@ namespace Vocup.Forms
             ListSpecialChars.Items.Clear();
 
             //Neue Datei öffnen
-            if (!TryOpen(TbFilePath.Text, out ICSharpCode.SharpZipLib.Zip.ZipFile backup_file))
+            if (!TryOpen(path, out ICSharpCode.SharpZipLib.Zip.ZipFile backup_file))
             {
                 DialogResult = DialogResult.Abort;
                 Close();
@@ -326,8 +310,6 @@ namespace Vocup.Forms
                     GroupSpecialChars.Enabled = false;
 
                     BtnRestore.Enabled = false;
-
-                    AcceptButton = BtnFilePath;
                 }
             }
             else
@@ -340,8 +322,6 @@ namespace Vocup.Forms
                 GroupSpecialChars.Enabled = false;
 
                 BtnRestore.Enabled = false;
-
-                AcceptButton = BtnFilePath;
             }
         }
 
@@ -673,24 +653,6 @@ namespace Vocup.Forms
             catch
             {
                 //Fehlermeldung anzeigen
-            }
-        }
-
-        private void BrowseFile()
-        {
-            using (OpenFileDialog dialog = new OpenFileDialog
-            {
-                Title = Words.SaveBackup,
-                Filter = Words.VocupBackupFile + " (*.vdp)|*.vdp",
-                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal)
-            })
-            {
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    path = dialog.FileName;
-                    TbFilePath.Text = dialog.FileName;
-                    OpenFile();
-                }
             }
         }
 

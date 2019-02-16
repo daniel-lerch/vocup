@@ -11,9 +11,6 @@ namespace Vocup
 {
     static class Program
     {
-        private static SplashScreen splash;
-        private static program_form mainForm;
-
         /// <summary>
         /// The main entry-point for the application.
         /// </summary>
@@ -26,7 +23,7 @@ namespace Vocup
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            splash = new SplashScreen();
+            SplashScreen splash = new SplashScreen();
             splash.Show();
             Application.DoEvents();
 
@@ -41,35 +38,39 @@ namespace Vocup
             Settings.Default.Save();
             Application.DoEvents();
 
-            mainForm = new program_form();
-            Application.DoEvents();
+            Form form = null;
 
             if (args.Length > 0 && !string.IsNullOrWhiteSpace(args[0]))
             {
                 FileInfo info = new FileInfo(args[0]);
                 if (info.Extension == ".vhf")
                 {
+                    var mainForm = new program_form();
                     mainForm.readfile(info.FullName);
+                    form = mainForm;
                 }
                 else if (info.Extension == ".vdp")
                 {
-                    // TODO: Rewrite this method and ensure independency of MainForm
-                    mainForm.restore_backup(info.FullName);
+                    form = new RestoreBackup(info.FullName);
                 }
                 else
                 {
+                    form = new program_form();
                     MessageBox.Show(string.Format(Messages.OpenUnknownFile, info.FullName),
                         Messages.OpenUnknownFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if (Settings.Default.StartScreen == (int)StartScreen.LastFile && File.Exists(Settings.Default.LastFile))
             {
+                var mainForm = new program_form();
                 mainForm.readfile(Settings.Default.LastFile);
+                form = mainForm;
             }
+
             Application.DoEvents();
 
             splash.Close();
-            Application.Run(mainForm);
+            if (form != null) Application.Run(form);
         }
 
         /// <summary>
