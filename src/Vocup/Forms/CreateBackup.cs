@@ -21,8 +21,6 @@ namespace Vocup.Forms
             Icon = Icon.FromHandle(Icons.DatabaseAdd.GetHicon());
         }
 
-        public string pfad;
-
         private void Form_Load(object sender, EventArgs e)
         {
             // Check for vocabulary book files
@@ -85,7 +83,7 @@ namespace Vocup.Forms
                     {
                         if (!ListVocabularyBooks.Items.Contains(path))
                         {
-                            // TODO: Warning: A user might add a file that is backuped by setting CbSaveAllBooks.Checked to true
+                            // ExecuteBackup will prevent the user from including the same file twice in a backup
                             ListVocabularyBooks.Items.Add(path);
                         }
                     }
@@ -123,10 +121,8 @@ namespace Vocup.Forms
             {
                 if (save.ShowDialog() == DialogResult.OK)
                 {
-                    pfad = save.FileName;
                     DialogResult = DialogResult.OK;
-
-                    ExecuteBackup(pfad);
+                    ExecuteBackup(save.FileName, CbSaveAllBooks.Checked, ListVocabularyBooks.Items.Cast<string>().Select(x => new FileInfo(x)));
                 }
                 else
                 {
@@ -135,18 +131,29 @@ namespace Vocup.Forms
             }
         }
 
-        private void ExecuteBackup(string path)
+        private void ExecuteBackup(string path, bool allBooks, IEnumerable<FileInfo> additionalFiles)
         {
+            Cursor = Cursors.WaitCursor;
+
             using (FileStream saveStream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None))
             using (ZipArchive archive = new ZipArchive(saveStream, ZipArchiveMode.Create))
             {
                 BackupMeta backup = new BackupMeta();
                 DirectoryInfo booksInfo = new DirectoryInfo(Settings.Default.VhfPath);
                 int counter = 0;
-                AddBooks(booksInfo.EnumerateFiles("*.vhf", SearchOption.AllDirectories), archive, backup, ref counter);
+
+                if (allBooks)
+                    AddBooks(booksInfo.EnumerateFiles("*.vhf", SearchOption.AllDirectories), archive, backup, ref counter);
+
+                additionalFiles = additionalFiles
+                    .Where(info => !allBooks || !info.FullName.StartsWith(Settings.Default.VhfPath, StringComparison.OrdinalIgnoreCase));
+                AddBooks(additionalFiles, archive, backup, ref counter);
+
                 AddSpecialChars(ListSpecialChars.CheckedItems.Cast<string>(), archive, backup);
                 backup.Write(archive);
             }
+
+            Cursor = Cursors.Default;
         }
 
         private void AddBooks(IEnumerable<FileInfo> files, ZipArchive archive, BackupMeta backup, ref int counter)
