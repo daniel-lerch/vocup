@@ -71,7 +71,6 @@
             this.ListBooks.FormattingEnabled = true;
             resources.ApplyResources(this.ListBooks, "ListBooks");
             this.ListBooks.Name = "ListBooks";
-            this.ListBooks.SelectedValueChanged += new System.EventHandler(this.listbox_vhf_SelectedValueChanged);
             // 
             // GroupSpecialChars
             // 
@@ -86,16 +85,13 @@
             this.ListSpecialChars.FormattingEnabled = true;
             resources.ApplyResources(this.ListSpecialChars, "ListSpecialChars");
             this.ListSpecialChars.Name = "ListSpecialChars";
-            this.ListSpecialChars.SelectedValueChanged += new System.EventHandler(this.listbox_special_chars_SelectedValueChanged);
             // 
             // BtnRestore
             // 
             this.BtnRestore.DialogResult = System.Windows.Forms.DialogResult.OK;
             resources.ApplyResources(this.BtnRestore, "BtnRestore");
             this.BtnRestore.Name = "BtnRestore";
-            this.BtnRestore.UseVisualStyleBackColor = true;
             this.BtnRestore.Click += new System.EventHandler(this.BtnRestore_Click);
-            this.BtnRestore.MouseEnter += new System.EventHandler(this.restore_button_MouseEnter);
             // 
             // BtnCancel
             // 
@@ -118,14 +114,12 @@
             resources.ApplyResources(this.RbReplaceOlder, "RbReplaceOlder");
             this.RbReplaceOlder.Name = "RbReplaceOlder";
             this.RbReplaceOlder.UseVisualStyleBackColor = true;
-            this.RbReplaceOlder.CheckedChanged += new System.EventHandler(this.replace_newer_CheckedChanged);
             // 
             // RbReplaceNothing
             // 
             resources.ApplyResources(this.RbReplaceNothing, "RbReplaceNothing");
             this.RbReplaceNothing.Name = "RbReplaceNothing";
             this.RbReplaceNothing.UseVisualStyleBackColor = true;
-            this.RbReplaceNothing.CheckedChanged += new System.EventHandler(this.replace_nothing_CheckedChanged);
             // 
             // RbReplaceAll
             // 
@@ -134,7 +128,6 @@
             this.RbReplaceAll.Name = "RbReplaceAll";
             this.RbReplaceAll.TabStop = true;
             this.RbReplaceAll.UseVisualStyleBackColor = true;
-            this.RbReplaceAll.CheckedChanged += new System.EventHandler(this.replace_all_CheckedChanged);
             // 
             // GroupResults
             // 
@@ -150,14 +143,12 @@
             resources.ApplyResources(this.RbRestoreNoResults, "RbRestoreNoResults");
             this.RbRestoreNoResults.Name = "RbRestoreNoResults";
             this.RbRestoreNoResults.UseVisualStyleBackColor = true;
-            this.RbRestoreNoResults.CheckedChanged += new System.EventHandler(this.results_restore_nothing_CheckedChanged);
             // 
             // RbRestoreAllResults
             // 
             resources.ApplyResources(this.RbRestoreAllResults, "RbRestoreAllResults");
             this.RbRestoreAllResults.Name = "RbRestoreAllResults";
             this.RbRestoreAllResults.UseVisualStyleBackColor = true;
-            this.RbRestoreAllResults.CheckedChanged += new System.EventHandler(this.results_restore_all_CheckedChanged);
             // 
             // RbRestoreAssociatedResults
             // 
@@ -166,7 +157,6 @@
             this.RbRestoreAssociatedResults.Name = "RbRestoreAssociatedResults";
             this.RbRestoreAssociatedResults.TabStop = true;
             this.RbRestoreAssociatedResults.UseVisualStyleBackColor = true;
-            this.RbRestoreAssociatedResults.CheckedChanged += new System.EventHandler(this.results_restore_choosed_CheckedChanged);
             // 
             // RestoreBackup
             // 
@@ -184,6 +174,7 @@
             this.MinimizeBox = false;
             this.Name = "RestoreBackup";
             this.ShowInTaskbar = false;
+            this.Shown += new System.EventHandler(this.Form_Shown);
             this.GroupBooks.ResumeLayout(false);
             this.GroupBooks.PerformLayout();
             this.GroupSpecialChars.ResumeLayout(false);

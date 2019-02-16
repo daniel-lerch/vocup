@@ -25,6 +25,35 @@ namespace Vocup.Forms
             Icon = Icon.FromHandle(Icons.DatabaseRestore.GetHicon());
         }
 
+        private void Form_Shown(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            ListBooks.BeginUpdate();
+            ListSpecialChars.BeginUpdate();
+
+            if (TryOpen(path, out ZipArchive archive) && BackupMeta.TryRead(archive, out meta))
+            {
+                foreach (BackupMeta.BookMeta book in meta.Books)
+                {
+                    string fullName = BackupMeta.ExpandPath(book.VhfPath);
+                    ListBooks.Items.Add(CbAbsolutePath.Checked ? fullName : Path.GetFileNameWithoutExtension(fullName), true);
+                }
+
+                foreach (string specialChar in meta.SpecialChars)
+                {
+                    ListSpecialChars.Items.Add(specialChar, true);
+                }
+            }
+            else
+            {
+                DialogResult = DialogResult.Abort;
+            }
+
+            ListBooks.EndUpdate();
+            ListSpecialChars.EndUpdate();
+            Cursor.Current = Cursors.Default;
+        }
+
         private LogItem[] vhf_vhr_log;
         // 0: int FileIndex
         // 1: string VhfPath
@@ -512,86 +541,11 @@ namespace Vocup.Forms
 
         private void CbAbsolutePath_CheckedChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < ListBooks.Items.Count; i++)
+            for (int i = 0; i < meta.Books.Count; i++)
             {
-                for (int j = 0; j < vhf_vhr_log.Length; j++)
-                {
-                    if (vhf_vhr_log[j].UiIndex == i)
-                    {
-                        ListBooks.Items[i] = CbAbsolutePath.Checked ? vhf_vhr_log[j].VhfPath : Path.GetFileNameWithoutExtension(vhf_vhr_log[j].VhfPath);
-                        break;
-                    }
-                }
+                string fullName = BackupMeta.ExpandPath(meta.Books[i].VhfPath);
+                ListBooks.Items[i] = CbAbsolutePath.Checked ? fullName : Path.GetFileNameWithoutExtension(fullName);
             }
-        }
-
-        //Falls die Auswahl geändert wird, Backup neu untersuchen
-        private void replace_all_CheckedChanged(object sender, EventArgs e)
-        {
-            OpenFile();
-        }
-
-        private void replace_newer_CheckedChanged(object sender, EventArgs e)
-        {
-            OpenFile();
-        }
-
-        private void replace_nothing_CheckedChanged(object sender, EventArgs e)
-        {
-            OpenFile();
-        }
-
-
-        //Falls nötig wiederherstellen-Button deaktivieren oder aktivieren
-
-        private void results_restore_nothing_CheckedChanged(object sender, EventArgs e)
-        {
-            coordinater();
-        }
-
-        private void results_restore_choosed_CheckedChanged(object sender, EventArgs e)
-        {
-            coordinater();
-        }
-
-        private void results_restore_all_CheckedChanged(object sender, EventArgs e)
-        {
-            coordinater();
-        }
-
-        private void listbox_vhf_SelectedValueChanged(object sender, EventArgs e)
-        {
-            coordinater();
-        }
-
-        private void listbox_special_chars_SelectedValueChanged(object sender, EventArgs e)
-        {
-            coordinater();
-        }
-
-        private void restore_button_MouseEnter(object sender, EventArgs e)
-        {
-            coordinater();
-        }
-
-        private void coordinater()
-        {
-            bool activate = false;
-
-            if (ListBooks.CheckedItems.Count != 0 && GroupBooks.Enabled == true)
-            {
-                activate = true;
-            }
-            if (RbRestoreNoResults.Enabled == false & GroupResults.Enabled == true)
-            {
-                activate = true;
-            }
-            if (ListSpecialChars.CheckedItems.Count != 0 && GroupSpecialChars.Enabled == true)
-            {
-                activate = true;
-            }
-
-            BtnRestore.Enabled = activate;
         }
 
         private void BtnRestore_Click(object sender, EventArgs e)
@@ -669,25 +623,6 @@ namespace Vocup.Forms
                 archive = null;
                 return false;
             }
-        }
-
-        private void LoadFile()
-        {
-            Cursor.Current = Cursors.WaitCursor;
-            ListBooks.BeginUpdate();
-            ListBooks.Items.Clear();
-
-            if (TryOpen(path, out ZipArchive archive) && BackupMeta.TryRead(archive, out meta))
-            {
-                foreach (BackupMeta.BookMeta book in meta.Books)
-                {
-                    ListBooks.Items.Add(book.VhfPath);
-                }
-            }
-            else meta = null;
-
-            ListBooks.EndUpdate();
-            Cursor.Current = Cursors.Default;
         }
 
         private struct LogItem

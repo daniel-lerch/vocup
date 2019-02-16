@@ -117,11 +117,59 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;CbAbsolutePath.Name" xml:space="preserve">
+    <value>CbAbsolutePath</value>
+  </data>
+  <data name="&gt;&gt;CbAbsolutePath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbAbsolutePath.Parent" xml:space="preserve">
+    <value>GroupBooks</value>
+  </data>
+  <data name="&gt;&gt;CbAbsolutePath.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ListBooks.Name" xml:space="preserve">
+    <value>ListBooks</value>
+  </data>
+  <data name="&gt;&gt;ListBooks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ListBooks.Parent" xml:space="preserve">
+    <value>GroupBooks</value>
+  </data>
+  <data name="&gt;&gt;ListBooks.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="GroupBooks.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 106</value>
+  </data>
+  <data name="GroupBooks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 157</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="GroupBooks.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="GroupBooks.Text" xml:space="preserve">
+    <value>Welche Vokabelhefte sollen wiederhergestellt werden?</value>
+  </data>
+  <data name="&gt;&gt;GroupBooks.Name" xml:space="preserve">
+    <value>GroupBooks</value>
+  </data>
+  <data name="&gt;&gt;GroupBooks.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBooks.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupBooks.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="CbAbsolutePath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="CbAbsolutePath.Location" type="System.Drawing.Point, System.Drawing">
     <value>214, 134</value>
   </data>
@@ -169,30 +217,6 @@
   </data>
   <data name="&gt;&gt;ListBooks.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="GroupBooks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 106</value>
-  </data>
-  <data name="GroupBooks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>331, 157</value>
-  </data>
-  <data name="GroupBooks.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="GroupBooks.Text" xml:space="preserve">
-    <value>Welche Vokabelhefte sollen wiederhergestellt werden?</value>
-  </data>
-  <data name="&gt;&gt;GroupBooks.Name" xml:space="preserve">
-    <value>GroupBooks</value>
-  </data>
-  <data name="&gt;&gt;GroupBooks.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBooks.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupBooks.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="ListSpecialChars.HorizontalScrollbar" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -242,9 +266,6 @@
   <data name="&gt;&gt;GroupSpecialChars.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="BtnRestore.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="BtnRestore.Location" type="System.Drawing.Point, System.Drawing">
     <value>164, 458</value>
   </data>
@@ -292,6 +313,66 @@
   </data>
   <data name="&gt;&gt;BtnCancel.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;RbReplaceOlder.Name" xml:space="preserve">
+    <value>RbReplaceOlder</value>
+  </data>
+  <data name="&gt;&gt;RbReplaceOlder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbReplaceOlder.Parent" xml:space="preserve">
+    <value>GroupReplace</value>
+  </data>
+  <data name="&gt;&gt;RbReplaceOlder.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;RbReplaceNothing.Name" xml:space="preserve">
+    <value>RbReplaceNothing</value>
+  </data>
+  <data name="&gt;&gt;RbReplaceNothing.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbReplaceNothing.Parent" xml:space="preserve">
+    <value>GroupReplace</value>
+  </data>
+  <data name="&gt;&gt;RbReplaceNothing.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;RbReplaceAll.Name" xml:space="preserve">
+    <value>RbReplaceAll</value>
+  </data>
+  <data name="&gt;&gt;RbReplaceAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbReplaceAll.Parent" xml:space="preserve">
+    <value>GroupReplace</value>
+  </data>
+  <data name="&gt;&gt;RbReplaceAll.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="GroupReplace.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="GroupReplace.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 88</value>
+  </data>
+  <data name="GroupReplace.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="GroupReplace.Text" xml:space="preserve">
+    <value>Sollen vorhandene Dateien ersetzt werden?</value>
+  </data>
+  <data name="&gt;&gt;GroupReplace.Name" xml:space="preserve">
+    <value>GroupReplace</value>
+  </data>
+  <data name="&gt;&gt;GroupReplace.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupReplace.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupReplace.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="RbReplaceOlder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -374,29 +455,65 @@
   <data name="&gt;&gt;RbReplaceAll.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="GroupReplace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
+  <data name="&gt;&gt;RbRestoreNoResults.Name" xml:space="preserve">
+    <value>RbRestoreNoResults</value>
   </data>
-  <data name="GroupReplace.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="&gt;&gt;RbRestoreNoResults.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbRestoreNoResults.Parent" xml:space="preserve">
+    <value>GroupResults</value>
+  </data>
+  <data name="&gt;&gt;RbRestoreNoResults.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;RbRestoreAllResults.Name" xml:space="preserve">
+    <value>RbRestoreAllResults</value>
+  </data>
+  <data name="&gt;&gt;RbRestoreAllResults.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbRestoreAllResults.Parent" xml:space="preserve">
+    <value>GroupResults</value>
+  </data>
+  <data name="&gt;&gt;RbRestoreAllResults.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;RbRestoreAssociatedResults.Name" xml:space="preserve">
+    <value>RbRestoreAssociatedResults</value>
+  </data>
+  <data name="&gt;&gt;RbRestoreAssociatedResults.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbRestoreAssociatedResults.Parent" xml:space="preserve">
+    <value>GroupResults</value>
+  </data>
+  <data name="&gt;&gt;RbRestoreAssociatedResults.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="GroupResults.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 269</value>
+  </data>
+  <data name="GroupResults.Size" type="System.Drawing.Size, System.Drawing">
     <value>331, 88</value>
   </data>
-  <data name="GroupReplace.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="GroupResults.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="GroupReplace.Text" xml:space="preserve">
-    <value>Sollen vorhandene Dateien ersetzt werden?</value>
+  <data name="GroupResults.Text" xml:space="preserve">
+    <value>Sollen die Übungsergebnisse wiederhergestellt werden?</value>
   </data>
-  <data name="&gt;&gt;GroupReplace.Name" xml:space="preserve">
-    <value>GroupReplace</value>
+  <data name="&gt;&gt;GroupResults.Name" xml:space="preserve">
+    <value>GroupResults</value>
   </data>
-  <data name="&gt;&gt;GroupReplace.Type" xml:space="preserve">
+  <data name="&gt;&gt;GroupResults.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupReplace.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupResults.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;GroupReplace.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;GroupResults.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="RbRestoreNoResults.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -478,30 +595,6 @@
   </data>
   <data name="&gt;&gt;RbRestoreAssociatedResults.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="GroupResults.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 269</value>
-  </data>
-  <data name="GroupResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>331, 88</value>
-  </data>
-  <data name="GroupResults.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="GroupResults.Text" xml:space="preserve">
-    <value>Sollen die Übungsergebnisse wiederhergestellt werden?</value>
-  </data>
-  <data name="&gt;&gt;GroupResults.Name" xml:space="preserve">
-    <value>GroupResults</value>
-  </data>
-  <data name="&gt;&gt;GroupResults.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupResults.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupResults.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
