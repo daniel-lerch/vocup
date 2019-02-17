@@ -119,7 +119,14 @@ namespace Vocup.Forms
                 stats(Restore(archive, "chars/" + meta.SpecialChars[i], destination, GetOverrideMode()));
             }
 
-            // TODO: Show MessageBox with statistics
+            MessageBox.Show(string.Format(Messages.VdpRestored, restored, skipped, failed), 
+                Messages.VdpRestoredT, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Close();
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         private OverrideMode GetOverrideMode()

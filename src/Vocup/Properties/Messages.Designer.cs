@@ -340,6 +340,27 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zusammenfassung
+        /// -  {0} Datei(en) wiederhergestellt
+        /// -  {1} Datei(en) übersprungen
+        /// -  {2} Datei(en) fehlgeschlagen.
+        /// </summary>
+        internal static string VdpRestored {
+            get {
+                return ResourceManager.GetString("VdpRestored", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wiederherstellung abgeschlossen.
+        /// </summary>
+        internal static string VdpRestoredT {
+            get {
+                return ResourceManager.GetString("VdpRestoredT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Die Vokabelheftdatei ist fehlerhaft und konnte nicht geöffnet werden..
         /// </summary>
         internal static string VhfInvalidFile {
