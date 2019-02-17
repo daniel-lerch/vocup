@@ -16,6 +16,7 @@ namespace Vocup.Forms
     public partial class RestoreBackup : Form
     {
         private string path;
+        private ZipArchive archive;
         private BackupMeta meta;
 
         public RestoreBackup(string path)
@@ -31,7 +32,7 @@ namespace Vocup.Forms
             ListBooks.BeginUpdate();
             ListSpecialChars.BeginUpdate();
 
-            if (TryOpen(path, out ZipArchive archive) && BackupMeta.TryRead(archive, out meta))
+            if (TryOpen(path, out archive) && BackupMeta.TryRead(archive, out meta))
             {
                 foreach (BackupMeta.BookMeta book in meta.Books)
                 {
@@ -52,6 +53,11 @@ namespace Vocup.Forms
             ListBooks.EndUpdate();
             ListSpecialChars.EndUpdate();
             Cursor.Current = Cursors.Default;
+        }
+
+        private void Form_Closed(object sender, FormClosedEventArgs e)
+        {
+            archive?.Dispose();
         }
 
         private LogItem[] vhf_vhr_log;
@@ -262,64 +268,43 @@ namespace Vocup.Forms
 
         private void BtnRestore_Click(object sender, EventArgs e)
         {
-            try
+            // TODO: Check RestoreResult codes and calculate statistics
+
+            for (int i = 0; i < meta.Books.Count; i++)
             {
-                //Falls Daten zum sichern vorhanden sind ind Arrays einlesen
+                if (!ListBooks.GetItemChecked(i)) continue;
 
-                //Vokabelhefte in Array einlesen
-                if (ListBooks.Items.Count != 0)
-                {
-                    for (int i = 0; i < vhf_vhr_log.Length; i++)
-                    {
-                        try
-                        {
-                            if (ListBooks.GetItemCheckState(vhf_vhr_log[i].UiIndex) == CheckState.Checked)
-                            {
-                                string[] temp = new string[2];
-
-                                temp[0] = vhf_vhr_log[i].FileIndex.ToString();
-                                temp[1] = vhf_vhr_log[i].VhfPath;
-
-                                vhf_restore.Add(temp);
-
-                                if (RbRestoreAssociatedResults.Checked && RbRestoreAssociatedResults.Enabled && !string.IsNullOrWhiteSpace(vhf_vhr_log[i].VhrCode))
-                                {
-                                    vhr_restore.Add(vhf_vhr_log[i].VhrCode + ".vhr");
-                                }
-                            }
-                        }
-                        catch
-                        {
-                        }
-                    }
-                }
-                //Ergebnisse in Array einlesen, falls alle Ergebnisse wiederhergestellt werden sollen
-
-                if (RbRestoreAllResults.Checked == true && RbRestoreAllResults.Enabled == true)
-                {
-                    for (int i = 0; i < vhr_log.Length; i++)
-                    {
-                        vhr_restore.Add(vhr_log[i]);
-                    }
-                }
-
-                //Sonderzeichentabellen in Array einlesen
-
-                for (int i = 0; i < ListSpecialChars.Items.Count; i++)
-                {
-                    if (ListSpecialChars.GetItemCheckState(i) == CheckState.Checked)
-                    {
-                        chars_restore.Add(ListSpecialChars.Items[i] + ".txt");
-                    }
-                }
-
-                restore_backup();
-                DialogResult = DialogResult.OK; //Form schliessen
+                BackupMeta.BookMeta item = meta.Books[i];
+                // TODO: Restore book and results if selected
             }
-            catch
+
+            if (RbRestoreAllResults.Checked)
             {
-                //Fehlermeldung anzeigen
+                for (int i = 0; i < meta.Results.Count; i++)
+                {
+                    var destination = new FileInfo(Path.Combine(Settings.Default.VhrPath, meta.Results[i]));
+                    Restore(archive, "vhr/" + meta.SpecialChars[i], destination, GetOverrideMode());
+                }
             }
+
+            for (int i = 0; i < meta.SpecialChars.Count; i++)
+            {
+                if (!ListSpecialChars.GetItemChecked(i)) continue;
+
+                var destination = new FileInfo(Path.Combine(AppInfo.SpecialCharDirectory, meta.SpecialChars[i]));
+                Restore(archive, "chars/" + meta.SpecialChars[i], destination, GetOverrideMode());
+            }
+        }
+
+        private OverrideMode GetOverrideMode()
+        {
+            if (RbReplaceAll.Checked)
+                return OverrideMode.All;
+            if (RbReplaceOlder.Checked)
+                return OverrideMode.Older;
+            if (RbReplaceNothing.Checked)
+                return OverrideMode.Never;
+            return (OverrideMode)(-1);
         }
 
         private bool TryOpen(string path, out ZipArchive archive)
@@ -337,6 +322,31 @@ namespace Vocup.Forms
             }
         }
 
+        private RestoreResult Restore(ZipArchive archive, string path, FileInfo destination, OverrideMode mode)
+        {
+            try
+            {
+                ZipArchiveEntry entry = archive.GetEntry(path);
+                if (entry == null) return RestoreResult.Error;
+
+                if (destination.Exists &&
+                    (mode == OverrideMode.Never || (mode == OverrideMode.Older && destination.LastWriteTime > entry.LastWriteTime)))
+                    return RestoreResult.Skipped;
+
+                destination.Directory.Create();
+                using (FileStream file = destination.Open(FileMode.Create, FileAccess.Write))
+                using (Stream source = entry.Open())
+                {
+                    source.CopyTo(file);
+                }
+                return RestoreResult.Success;
+            }
+            catch
+            {
+                return RestoreResult.Error;
+            }
+        }
+
         private struct LogItem
         {
             public LogItem(int fileIndex, string vhfPath, string vhrCode)
@@ -351,6 +361,20 @@ namespace Vocup.Forms
             public string VhfPath { get; }
             public string VhrCode { get; }
             public int UiIndex { get; set; }
+        }
+
+        private enum OverrideMode
+        {
+            Never,
+            Older,
+            All
+        }
+
+        private enum RestoreResult
+        {
+            Success,
+            Skipped,
+            Error
         }
     }
 }

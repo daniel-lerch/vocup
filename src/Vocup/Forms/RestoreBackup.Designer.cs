@@ -174,6 +174,7 @@
             this.MinimizeBox = false;
             this.Name = "RestoreBackup";
             this.ShowInTaskbar = false;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Closed);
             this.Shown += new System.EventHandler(this.Form_Shown);
             this.GroupBooks.ResumeLayout(false);
             this.GroupBooks.PerformLayout();
