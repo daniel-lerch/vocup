@@ -268,14 +268,37 @@ namespace Vocup.Forms
 
         private void BtnRestore_Click(object sender, EventArgs e)
         {
-            // TODO: Check RestoreResult codes and calculate statistics
+            int restored = 0, skipped = 0, failed = 0;
+
+            void stats(RestoreResult result)
+            {
+                switch (result)
+                {
+                    case RestoreResult.Success:
+                        restored++;
+                        break;
+                    case RestoreResult.Skipped:
+                        skipped++;
+                        break;
+                    case RestoreResult.Error:
+                        failed++;
+                        break;
+                }
+            }
 
             for (int i = 0; i < meta.Books.Count; i++)
             {
                 if (!ListBooks.GetItemChecked(i)) continue;
 
                 BackupMeta.BookMeta item = meta.Books[i];
-                // TODO: Restore book and results if selected
+                var destination = new FileInfo(BackupMeta.ExpandPath(item.VhfPath));
+                RestoreResult result = Restore(archive, "vhf/" + item.FileId, destination, GetOverrideMode());
+                stats(result);
+                if (result == RestoreResult.Success && RbRestoreAssociatedResults.Checked && !string.IsNullOrWhiteSpace(item.VhrCode))
+                {
+                    var resultDestination = new FileInfo(Path.Combine(Settings.Default.VhrPath, item.VhrCode));
+                    stats(Restore(archive, "vhr/" + item.VhrCode, resultDestination, GetOverrideMode()));
+                }
             }
 
             if (RbRestoreAllResults.Checked)
@@ -283,7 +306,7 @@ namespace Vocup.Forms
                 for (int i = 0; i < meta.Results.Count; i++)
                 {
                     var destination = new FileInfo(Path.Combine(Settings.Default.VhrPath, meta.Results[i]));
-                    Restore(archive, "vhr/" + meta.SpecialChars[i], destination, GetOverrideMode());
+                    stats(Restore(archive, "vhr/" + meta.SpecialChars[i], destination, GetOverrideMode()));
                 }
             }
 
@@ -292,8 +315,10 @@ namespace Vocup.Forms
                 if (!ListSpecialChars.GetItemChecked(i)) continue;
 
                 var destination = new FileInfo(Path.Combine(AppInfo.SpecialCharDirectory, meta.SpecialChars[i]));
-                Restore(archive, "chars/" + meta.SpecialChars[i], destination, GetOverrideMode());
+                stats(Restore(archive, "chars/" + meta.SpecialChars[i], destination, GetOverrideMode()));
             }
+
+            // TODO: Show MessageBox with statistics
         }
 
         private OverrideMode GetOverrideMode()
