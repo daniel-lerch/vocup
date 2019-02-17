@@ -133,7 +133,7 @@ namespace Vocup.Forms
 
         private void ExecuteBackup(string path, bool allBooks, IEnumerable<FileInfo> additionalFiles)
         {
-            Cursor = Cursors.WaitCursor;
+            Cursor.Current = Cursors.WaitCursor;
 
             using (FileStream saveStream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None))
             using (ZipArchive archive = new ZipArchive(saveStream, ZipArchiveMode.Create))
@@ -153,7 +153,7 @@ namespace Vocup.Forms
                 backup.Write(archive);
             }
 
-            Cursor = Cursors.Default;
+            Cursor.Current = Cursors.Default;
         }
 
         private void AddBooks(IEnumerable<FileInfo> files, ZipArchive archive, BackupMeta backup, ref int counter)
