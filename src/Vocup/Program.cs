@@ -66,6 +66,10 @@ namespace Vocup
                 mainForm.readfile(Settings.Default.LastFile);
                 form = mainForm;
             }
+            else
+            {
+                form = new program_form();
+            }
 
             Application.DoEvents();
 
