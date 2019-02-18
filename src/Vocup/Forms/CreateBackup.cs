@@ -165,13 +165,17 @@ namespace Vocup.Forms
                 {
                     bool vhr = VocabularyFile.ReadVhrFile(book);
                     bool success = TryAddFile(fileInfo.FullName, archive, $"vhf/{counter}.vhf");
+                    bool success2 = false;
+
                     if (success && vhr && CbSaveResults.Checked)
+                        success2 = TryAddFile(Path.Combine(Settings.Default.VhrPath, book.VhrCode + ".vhr"), archive, $"vhr/{book.VhrCode}.vhr");
+                    if (success)
                     {
-                        vhr = TryAddFile(Path.Combine(Settings.Default.VhrPath, book.VhrCode + ".vhr"), archive, $"vhr/{book.VhrCode}.vhr");
-                        backup.Books.Add(new BackupMeta.BookMeta(counter, BackupMeta.ShrinkPath(fileInfo.FullName), vhr ? book.VhrCode : ""));
-                        if (vhr) backup.Results.Add(book.VhrCode + ".vhr");
+                        backup.Books.Add(new BackupMeta.BookMeta(counter, BackupMeta.ShrinkPath(fileInfo.FullName), success2 ? book.VhrCode : ""));
+                        counter++;
+
+                        if (success2) backup.Results.Add(book.VhrCode + ".vhr");
                     }
-                    if (success) counter++;
                 }
             }
         }
