@@ -652,7 +652,8 @@ namespace Vocup
             SaveFileDialog saveDialog = new SaveFileDialog
             {
                 Title = Words.Export,
-                Filter = "CSV (*.csv)|*.csv"
+                Filter = "CSV (*.csv)|*.csv",
+                FileName = CurrentBook.Name
             };
 
             if (saveDialog.ShowDialog() == DialogResult.OK)

@@ -360,7 +360,6 @@
     <Compile Include="Util\ListCompositor.cs" />
     <Compile Include="Util\PatternMatcher.cs" />
     <Compile Include="Util\ReactiveCollection.cs" />
-    <Compile Include="Util\RewriteHelper.cs" />
     <Compile Include="Util\SaintLague.cs" />
     <Compile Include="Util\Extensions.cs" />
     <Compile Include="Util\DrawingMath.cs" />

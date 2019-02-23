@@ -7,7 +7,6 @@ using System.Text;
 using System.Windows.Forms;
 using Vocup.Models;
 using Vocup.Properties;
-using Vocup.Util;
 
 namespace Vocup.IO.Internal
 {
@@ -17,14 +16,10 @@ namespace Vocup.IO.Internal
         {
             try
             {
-                RewriteHelper helper = new RewriteHelper(nameof(Entry.MotherTongue), nameof(Entry.ForeignLang));
-                Configuration config = new Configuration()
-                {
-                    Encoding = Encoding.Unicode,
-                    PrepareHeaderForMatch = (name, idx) => helper.Rewrite(name)
-                };
+                Configuration config = new Configuration();
+                config.RegisterClassMap(new EntryMap());
 
-                using (TextReader file = new StreamReader(path, Encoding.Unicode))
+                using (StreamReader file = new StreamReader(path, detectEncodingFromByteOrderMarks: true))
                 using (CsvReader reader = new CsvReader(file, config))
                 {
                     if (!reader.Read() || !reader.ReadHeader())
@@ -33,21 +28,22 @@ namespace Vocup.IO.Internal
                         return false;
                     }
 
-                    if (helper.SourceItems.Count != 2)
+                    if (reader.Context.HeaderRecord.Length != 2)
                     {
-                        MessageBox.Show(string.Format(Messages.CsvInvalidHeaderColumns, helper.SourceItems.Count), Messages.CsvInvalidHeaderT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(string.Format(Messages.CsvInvalidHeaderColumns, reader.Context.HeaderRecord.Length),
+                            Messages.CsvInvalidHeaderT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
 
                     if (importSettings)
                     {
-                        book.MotherTongue = helper.SourceItems[0];
-                        book.ForeignLang = helper.SourceItems[1];
+                        book.MotherTongue = reader.Context.HeaderRecord[0];
+                        book.ForeignLang = reader.Context.HeaderRecord[1];
                     }
-                    else if (helper.SourceItems[0] != book.MotherTongue || helper.SourceItems[1] != book.ForeignLang)
+                    else if (reader.Context.HeaderRecord[0] != book.MotherTongue || reader.Context.HeaderRecord[1] != book.ForeignLang)
                     {
                         DialogResult dialogResult = MessageBox.Show(
-                            string.Format(Messages.CsvInvalidLanguages, helper.SourceItems[0], helper.SourceItems[1]),
+                            string.Format(Messages.CsvInvalidLanguages, reader.Context.HeaderRecord[0], reader.Context.HeaderRecord[1]),
                             Messages.CsvInvalidHeaderT, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                         if (dialogResult == DialogResult.No)
@@ -58,7 +54,7 @@ namespace Vocup.IO.Internal
                     {
                         if (!book.Words.Any(x => x.MotherTongue == entry.MotherTongue && x.ForeignLangText == entry.ForeignLang))
                         {
-                            book.Words.Add(new VocabularyWord()
+                            book.Words.Add(new VocabularyWord
                             {
                                 Owner = book,
                                 MotherTongue = entry.MotherTongue,
@@ -81,13 +77,10 @@ namespace Vocup.IO.Internal
         {
             try
             {
-                Configuration config = new Configuration()
-                {
-                    Encoding = Encoding.Unicode
-                };
+                Configuration config = new Configuration();
                 config.RegisterClassMap(new EntryMap(book.MotherTongue, book.ForeignLang));
 
-                using (TextWriter file = new StreamWriter(path, false, Encoding.Unicode))
+                using (TextWriter file = new StreamWriter(path, false, Encoding.UTF8))
                 using (CsvWriter writer = new CsvWriter(file, config))
                 {
                     writer.WriteRecords(book.Words.Select(x => new Entry() { MotherTongue = x.MotherTongue, ForeignLang = x.ForeignLangText }));
@@ -110,6 +103,12 @@ namespace Vocup.IO.Internal
 
         private class EntryMap : ClassMap<Entry>
         {
+            public EntryMap()
+            {
+                Map(x => x.MotherTongue).Index(0);
+                Map(x => x.ForeignLang).Index(1);
+            }
+
             public EntryMap(string motherTongue, string foreignLang)
             {
                 Map(x => x.MotherTongue).Name(motherTongue);
