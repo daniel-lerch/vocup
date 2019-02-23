@@ -37,15 +37,13 @@
             this.ListVocabularyBooks = new System.Windows.Forms.ListBox();
             this.BtnCancel = new System.Windows.Forms.Button();
             this.BtnCreateBackup = new System.Windows.Forms.Button();
-            this.GroupPracticeResults = new System.Windows.Forms.GroupBox();
-            this.RbSaveNoResults = new System.Windows.Forms.RadioButton();
-            this.RbSaveAssociatedResults = new System.Windows.Forms.RadioButton();
-            this.RbSaveAllResults = new System.Windows.Forms.RadioButton();
             this.GroupSpecialChar = new System.Windows.Forms.GroupBox();
             this.ListSpecialChars = new System.Windows.Forms.CheckedListBox();
+            this.CbSaveResults = new System.Windows.Forms.CheckBox();
+            this.GroupPracticeResults = new System.Windows.Forms.GroupBox();
             this.GroupVocabularyBooks.SuspendLayout();
-            this.GroupPracticeResults.SuspendLayout();
             this.GroupSpecialChar.SuspendLayout();
+            this.GroupPracticeResults.SuspendLayout();
             this.SuspendLayout();
             // 
             // GroupVocabularyBooks
@@ -107,38 +105,6 @@
             this.BtnCreateBackup.UseVisualStyleBackColor = true;
             this.BtnCreateBackup.Click += new System.EventHandler(this.BtnCreateBackup_Click);
             // 
-            // GroupPracticeResults
-            // 
-            resources.ApplyResources(this.GroupPracticeResults, "GroupPracticeResults");
-            this.GroupPracticeResults.Controls.Add(this.RbSaveNoResults);
-            this.GroupPracticeResults.Controls.Add(this.RbSaveAssociatedResults);
-            this.GroupPracticeResults.Controls.Add(this.RbSaveAllResults);
-            this.GroupPracticeResults.Name = "GroupPracticeResults";
-            this.GroupPracticeResults.TabStop = false;
-            // 
-            // RbSaveNoResults
-            // 
-            resources.ApplyResources(this.RbSaveNoResults, "RbSaveNoResults");
-            this.RbSaveNoResults.Checked = true;
-            this.RbSaveNoResults.Name = "RbSaveNoResults";
-            this.RbSaveNoResults.TabStop = true;
-            this.RbSaveNoResults.UseVisualStyleBackColor = true;
-            this.RbSaveNoResults.CheckedChanged += new System.EventHandler(this.ResultRadioButtons_CheckedChanged);
-            // 
-            // RbSaveAssociatedResults
-            // 
-            resources.ApplyResources(this.RbSaveAssociatedResults, "RbSaveAssociatedResults");
-            this.RbSaveAssociatedResults.Name = "RbSaveAssociatedResults";
-            this.RbSaveAssociatedResults.UseVisualStyleBackColor = true;
-            this.RbSaveAssociatedResults.CheckedChanged += new System.EventHandler(this.ResultRadioButtons_CheckedChanged);
-            // 
-            // RbSaveAllResults
-            // 
-            resources.ApplyResources(this.RbSaveAllResults, "RbSaveAllResults");
-            this.RbSaveAllResults.Name = "RbSaveAllResults";
-            this.RbSaveAllResults.UseVisualStyleBackColor = true;
-            this.RbSaveAllResults.CheckedChanged += new System.EventHandler(this.ResultRadioButtons_CheckedChanged);
-            // 
             // GroupSpecialChar
             // 
             resources.ApplyResources(this.GroupSpecialChar, "GroupSpecialChar");
@@ -154,14 +120,27 @@
             this.ListSpecialChars.Name = "ListSpecialChars";
             this.ListSpecialChars.SelectedValueChanged += new System.EventHandler(this.ListSpecialChars_SelectedValueChanged);
             // 
+            // CbSaveResults
+            // 
+            resources.ApplyResources(this.CbSaveResults, "CbSaveResults");
+            this.CbSaveResults.Name = "CbSaveResults";
+            this.CbSaveResults.UseVisualStyleBackColor = true;
+            // 
+            // GroupPracticeResults
+            // 
+            this.GroupPracticeResults.Controls.Add(this.CbSaveResults);
+            resources.ApplyResources(this.GroupPracticeResults, "GroupPracticeResults");
+            this.GroupPracticeResults.Name = "GroupPracticeResults";
+            this.GroupPracticeResults.TabStop = false;
+            // 
             // CreateBackup
             // 
             this.AcceptButton = this.BtnCreateBackup;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnCancel;
-            this.Controls.Add(this.GroupSpecialChar);
             this.Controls.Add(this.GroupPracticeResults);
+            this.Controls.Add(this.GroupSpecialChar);
             this.Controls.Add(this.BtnCreateBackup);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.GroupVocabularyBooks);
@@ -173,9 +152,9 @@
             this.Load += new System.EventHandler(this.Form_Load);
             this.GroupVocabularyBooks.ResumeLayout(false);
             this.GroupVocabularyBooks.PerformLayout();
+            this.GroupSpecialChar.ResumeLayout(false);
             this.GroupPracticeResults.ResumeLayout(false);
             this.GroupPracticeResults.PerformLayout();
-            this.GroupSpecialChar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -189,12 +168,10 @@
         private System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.Button BtnCreateBackup;
         public System.Windows.Forms.CheckBox CbSaveAllBooks;
-        private System.Windows.Forms.GroupBox GroupPracticeResults;
-        public System.Windows.Forms.RadioButton RbSaveAssociatedResults;
-        public System.Windows.Forms.RadioButton RbSaveAllResults;
-        public System.Windows.Forms.RadioButton RbSaveNoResults;
         private System.Windows.Forms.GroupBox GroupSpecialChar;
         public System.Windows.Forms.CheckedListBox ListSpecialChars;
         private System.Windows.Forms.Label LbSaveSpecificBooks;
+        private System.Windows.Forms.CheckBox CbSaveResults;
+        private System.Windows.Forms.GroupBox GroupPracticeResults;
     }
 }

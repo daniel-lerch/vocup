@@ -14,9 +14,6 @@ namespace Vocup.Util
     /// </summary>
     public static class AppInfo
     {
-        [Obsolete]
-        public const string Name = "Vocup";
-
         /// <summary>
         /// Defines invalid characters for a path and thereby many strings in Vocup.
         /// </summary>

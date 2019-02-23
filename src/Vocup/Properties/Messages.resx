@@ -244,6 +244,16 @@ Details: {0}</value>
   <data name="VdpInvalidFileT" xml:space="preserve">
     <value>Fehlerhafte Datei</value>
   </data>
+  <data name="VdpRestored" xml:space="preserve">
+    <value>Zusammenfassung
+ -  {0} Datei(en) wiederhergestellt
+ -  {1} Datei(en) übersprungen
+ -  {2} Datei(en) fehlgeschlagen</value>
+    <comment>{0}: Restored, {1}: Skipped, {2}: Failed</comment>
+  </data>
+  <data name="VdpRestoredT" xml:space="preserve">
+    <value>Wiederherstellung abgeschlossen</value>
+  </data>
   <data name="VhfInvalidFile" xml:space="preserve">
     <value>Die Vokabelheftdatei ist fehlerhaft und konnte nicht geöffnet werden.</value>
   </data>

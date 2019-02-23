@@ -71,9 +71,12 @@
     <Reference Include="System">
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing">
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms">
       <Private>False</Private>
@@ -162,6 +165,7 @@
     <Compile Include="IO\VhrFile.cs" />
     <Compile Include="IO\VocabularyFile.cs" />
     <Compile Include="IO\VocupFile.cs" />
+    <Compile Include="Models\BackupMeta.cs" />
     <Compile Include="Models\IMainForm.cs" />
     <Compile Include="Models\PracticeMode.cs" />
     <Compile Include="Models\PracticeResult.cs" />
@@ -177,11 +181,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Icons.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\language.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>language.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\VocabularyWordDialog.cs">
       <SubType>Form</SubType>
@@ -272,11 +271,6 @@
     <EmbeddedResource Include="program_form.resx">
       <DependentUpon>program_form.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\language.resx">
-      <SubType>Designer</SubType>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>language.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="app.manifest" />

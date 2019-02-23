@@ -1,6 +1,4 @@
-﻿using ICSharpCode.SharpZipLib.Core;
-using ICSharpCode.SharpZipLib.Zip;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -12,7 +10,6 @@ using Vocup.Forms;
 using Vocup.IO;
 using Vocup.Models;
 using Vocup.Properties;
-using Vocup.Util;
 
 namespace Vocup
 {
@@ -543,245 +540,35 @@ namespace Vocup
         }
 
         //Vokabelhefte zusammenführen
-
         private void TsmiMerge_Click(object sender, EventArgs e)
         {
             using (var dialog = new MergeFiles()) dialog.ShowDialog();
         }
 
         //Datensicherung erstellen
-
         private void TsmiBackupCreate_Click(object sender, EventArgs e)
         {
             using (var dialog = new CreateBackup()) dialog.ShowDialog();
         }
 
         //Datensicherung wiederherstellen
-
-        public void restore_backup(string file_path)
-        {
-            //Neue Form vorbereiten
-            RestoreBackup restore = new RestoreBackup();
-
-            //Falls ein Backup geöffnet wurde
-            if (file_path != "")
-            {
-                restore.TbFilePath.Text = file_path;
-                restore.BtnFilePath.Enabled = false;
-                restore.path_backup = file_path;
-            }
-
-
-            //Fragen, ob das Vokabelheft gespeichert werden soll
-
-            bool result = true;
-
-            if (UnsavedChanges)
-            {
-                result = vokabelheft_ask_to_save();
-            }
-
-            if (result == true)
-            {
-                //Falls auf wiederherstellen geklickt wurde
-                if (restore.ShowDialog() == DialogResult.OK)
-                {
-                    //Variablen für Fehlermeldungen
-                    int error_vhf = 0;
-                    int error_vhr = 0;
-                    int error_chars = 0;
-                    bool error = false;
-
-                    List<string> error_vhf_name = new List<string>();
-                    List<string> error_chars_name = new List<string>();
-
-                    try
-                    {
-                        //Cursor auf Warten setzen
-                        Cursor.Current = Cursors.WaitCursor;
-                        Update();
-
-                        //Schliesst das geöffnete Vokabelheft
-                        //close_vokabelheft();
-
-                        //Backup-Datei vorbereiten
-
-                        ZipFile backup_file = new ZipFile(restore.path_backup);
-
-                        //Vokabelhefte wiederherstellen
-                        if (restore.vhf_restore.Count > 0)
-                        {
-                            for (int i = 0; i < restore.vhf_restore.Count; i++)
-                            {
-                                try
-                                {
-
-                                    string[] temp = restore.vhf_restore[i];
-
-                                    ZipEntry entry = backup_file.GetEntry(@"vhf\" + temp[0] + ".vhf");
-
-                                    byte[] buffer = new byte[entry.Size + 4096];
-
-                                    FileInfo info = new FileInfo(temp[1]);
-
-                                    if (Directory.Exists(info.DirectoryName) == false)
-                                    {
-                                        Directory.CreateDirectory(info.DirectoryName);
-                                    }
-
-
-                                    FileStream writer = new FileStream(temp[1], FileMode.Create);
-
-                                    StreamUtils.Copy(backup_file.GetInputStream(entry), writer, buffer);
-
-                                    writer.Close();
-                                }
-                                catch
-                                {
-                                    error_vhf++;
-
-                                    string[] temp = restore.vhf_restore[i];
-                                    error_vhf_name.Add(temp[1]);
-                                }
-                            }
-                        }
-
-                        //Ergebnisse wiederherstellen
-
-                        if (restore.vhr_restore.Count > 0)
-                        {
-                            for (int i = 0; i < restore.vhr_restore.Count; i++)
-                            {
-                                try
-                                {
-                                    ZipEntry entry = backup_file.GetEntry(@"vhr\" + restore.vhr_restore[i]);
-
-                                    byte[] buffer = new byte[entry.Size + 4096];
-
-
-                                    FileStream writer = new FileStream(Properties.Settings.Default.VhrPath + "\\" + restore.vhr_restore[i], FileMode.Create);
-
-                                    StreamUtils.Copy(backup_file.GetInputStream(entry), writer, buffer);
-
-                                    writer.Close();
-                                }
-
-                                catch
-                                {
-                                    error_vhr++;
-                                }
-                            }
-                        }
-
-                        //Sonderzeichentabellen sichern
-
-                        if (restore.chars_restore.Count > 0)
-                        {
-
-                            for (int i = 0; i < restore.chars_restore.Count; i++)
-                            {
-                                try
-                                {
-                                    ZipEntry entry = backup_file.GetEntry(@"chars\" + restore.chars_restore[i]);
-
-                                    byte[] buffer = new byte[entry.Size + 4096];
-
-                                    if (Directory.Exists(Properties.Settings.Default.VhrPath + "\\specialchar\\") == false)
-                                    {
-                                        Directory.CreateDirectory(Properties.Settings.Default.VhrPath + "\\specialchar\\");
-                                    }
-
-                                    FileStream writer = new FileStream(Properties.Settings.Default.VhrPath + "\\specialchar\\" + restore.chars_restore[i], FileMode.Create);
-
-                                    StreamUtils.Copy(backup_file.GetInputStream(entry), writer, buffer);
-
-                                    writer.Close();
-                                }
-
-                                catch
-                                {
-                                    error_chars++;
-
-                                    error_chars_name.Add(restore.chars_restore[i]);
-                                }
-                            }
-                        }
-
-                        backup_file.Close();
-
-                        Cursor.Current = Cursors.Default;
-                        Update();
-                    }
-                    catch
-                    {
-                        error = true;
-
-                        Cursor.Current = Cursors.Default;
-
-                        //fehlermeldung anzeigen
-                        MessageBox.Show(Properties.language.messagebox_backup_restore_error,
-                               Properties.language.error,
-                               MessageBoxButtons.OK,
-                               MessageBoxIcon.Error);
-                    }
-
-                    //Falls nötig Fehlermeldungen anzeigen
-
-                    if (error_vhf > 0)
-                    {
-                        string messange = Properties.language.messagebox_backup_restore_error_vhf + Environment.NewLine;
-
-                        for (int i = 0; i < error_vhf_name.Count; i++)
-                        {
-                            messange = messange + Environment.NewLine + error_vhf_name[i];
-                        }
-
-                        //Fehlermeldung anzeigen
-                        MessageBox.Show(messange,
-                               Properties.language.error,
-                               MessageBoxButtons.OK,
-                               MessageBoxIcon.Error);
-                    }
-                    if (error_vhr > 0)
-                    {
-                        //Fehlermeldung anzeigen
-                        MessageBox.Show(error_vhr.ToString() + " " + Properties.language.messagebox_backup_restore_error_vhr,
-                               Properties.language.error,
-                               MessageBoxButtons.OK,
-                               MessageBoxIcon.Error);
-                    }
-                    if (error_chars > 0)
-                    {
-                        string messange = Properties.language.messagebox_backup_restore_error_chars + Environment.NewLine;
-
-                        for (int i = 0; i < error_chars_name.Count; i++)
-                        {
-                            messange = messange + Environment.NewLine + error_chars_name[i];
-                        }
-
-                        //Fehlermeldung anzeigen
-                        MessageBox.Show(messange,
-                               Properties.language.error,
-                               MessageBoxButtons.OK,
-                               MessageBoxIcon.Error);
-                    }
-
-                    //Dialog anzeigen, dass der Prozess erfolgreich war
-
-                    if (error == false && error_vhf == 0 && error_vhr == 0 && error_chars == 0)
-                    {
-                        MessageBox.Show(Properties.language.messagebox_backup_restore_success,
-                                  AppInfo.Name,
-                                  MessageBoxButtons.OK,
-                                  MessageBoxIcon.Information);
-                    }
-                }
-            }
-        }
-
         private void TsmiBackupRestore_Click(object sender, EventArgs e)
         {
-            restore_backup("");
+            if (UnsavedChanges && !vokabelheft_ask_to_save()) return;
+
+            using (OpenFileDialog dialog = new OpenFileDialog
+            {
+                Title = Words.SaveBackup,
+                Filter = Words.VocupBackupFile + " (*.vdp)|*.vdp",
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal)
+            })
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (RestoreBackup restore = new RestoreBackup(dialog.FileName))
+                        restore.ShowDialog();
+                }
+            }
         }
 
 
