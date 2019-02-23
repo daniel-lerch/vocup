@@ -21,7 +21,7 @@ namespace Vocup.IO.Internal
                 Configuration config = new Configuration()
                 {
                     Encoding = Encoding.Unicode,
-                    PrepareHeaderForMatch = source => helper.Rewrite(source)
+                    PrepareHeaderForMatch = (name, idx) => helper.Rewrite(name)
                 };
 
                 using (TextReader file = new StreamReader(path, Encoding.Unicode))
