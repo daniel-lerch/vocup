@@ -148,14 +148,16 @@ Details:
 Bitte stellen Sie sicher, dass die Datei nicht leer ist.</value>
   </data>
   <data name="CsvInvalidHeaderColumns" xml:space="preserve">
-    <value>Der CSV Header verfügt über {0} Spalten, muss aber aus genau 2 Spalten bestehen</value>
+    <value>Der CSV Header verfügt über {0} Spalten, muss aber aus genau 2 Spalten bestehen.
+Stellen Sie sicher, dass die CSV Datei mit Excel im UTF-8 Format gespeichert wurde. Von älteren Vocup Versionen exportierte Dateien sind nicht kompatibel.</value>
     <comment>{0}: Count of columns</comment>
   </data>
   <data name="CsvInvalidHeaderT" xml:space="preserve">
     <value>Fehlerhafter CSV Header</value>
   </data>
   <data name="CsvInvalidLanguages" xml:space="preserve">
-    <value>Möchten Sie ein {0} - {1} Vokabelheft importieren, obwohl die Sprachen nicht übereinstimmen?</value>
+    <value>Möchten Sie ein {0} - {1} Vokabelheft importieren, obwohl die Sprachen nicht mit Ihrem Vokabelheft übereinstimmen?
+Falls {0} und {1} keine Sprachen sondern Vokabeln sind, denken Sie bitte daran, in der ersten Zeile der CSV Datei links Ihre Muttersprache und rechts Ihre Fremdsprache einzutragen.</value>
     <comment>{0}: Source, {1}: Target</comment>
   </data>
   <data name="EditAddDuplicate" xml:space="preserve">

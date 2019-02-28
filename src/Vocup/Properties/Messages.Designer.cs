@@ -132,6 +132,7 @@ namespace Vocup.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to Der CSV Header verfügt über {0} Spalten, muss aber aus genau 2 Spalten bestehen.
+        ///Stellen Sie sicher, dass die CSV Datei mit Excel im UTF-8 Format gespeichert wurde. Von älteren Vocup Versionen exportierte Dateien sind nicht kompatibel..
         /// </summary>
         internal static string CsvInvalidHeaderColumns {
             get {
@@ -149,7 +150,8 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Möchten Sie ein {0} - {1} Vokabelheft importieren, obwohl die Sprachen nicht übereinstimmen?.
+        ///   Looks up a localized string similar to Möchten Sie ein {0} - {1} Vokabelheft importieren, obwohl die Sprachen nicht mit Ihrem Vokabelheft übereinstimmen?
+        ///Falls {0} und {1} keine Sprachen sondern Vokabeln sind, denken Sie bitte daran, in der ersten Zeile der CSV Datei links Ihre Muttersprache und rechts Ihre Fremdsprache einzutragen..
         /// </summary>
         internal static string CsvInvalidLanguages {
             get {
