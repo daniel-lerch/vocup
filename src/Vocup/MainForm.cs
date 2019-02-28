@@ -15,15 +15,11 @@ namespace Vocup
 {
     public partial class MainForm : Form, IMainForm
     {
-        // Deprecated, only for compatibility
-        ListView originalListView;
-
         public MainForm()
         {
             InitializeComponent();
 
             FileTreeView.RootPath = Settings.Default.VhfPath;
-            originalListView = listView_vokabeln;
         }
 
         public VocabularyBook CurrentBook { get; private set; }
@@ -82,13 +78,12 @@ namespace Vocup
         public void LoadBook(VocabularyBook book)
         {
             VocabularyBookController controller = new VocabularyBookController(book) { Parent = this };
-            SplitContainer.Panel2.Controls.Remove(listView_vokabeln);
             SplitContainer.Panel2.Controls.Add(controller.ListView);
             controller.ListView.PerformLayout();
+            controller.ListView.BringToFront();
 
             CurrentBook = book;
             CurrentController = controller;
-            listView_vokabeln = controller.ListView.Control;
 
             VocabularyBookLoaded(true);
 
@@ -103,10 +98,7 @@ namespace Vocup
             {
                 CurrentBook = null;
                 CurrentController = null;
-                listView_vokabeln = originalListView;
                 SplitContainer.Panel2.Controls.Remove(controller.ListView);
-                SplitContainer.Panel2.Controls.Add(originalListView);
-                originalListView.PerformLayout();
             }
 
             if (fullUnload)

@@ -454,7 +454,7 @@
     <value>MenuStrip</value>
   </data>
   <data name="&gt;&gt;MenuStrip.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveMenuStrip, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveMenuStrip, Vocup, Version=1.5.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;MenuStrip.Parent" xml:space="preserve">
     <value>$this</value>
@@ -521,7 +521,7 @@
     <value>BtnBookSettings</value>
   </data>
   <data name="&gt;&gt;BtnBookSettings.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnBookSettings.Parent" xml:space="preserve">
     <value>GroupBook</value>
@@ -566,7 +566,7 @@
     <value>BtnPractice</value>
   </data>
   <data name="&gt;&gt;BtnPractice.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnPractice.Parent" xml:space="preserve">
     <value>GroupBook</value>
@@ -641,7 +641,7 @@
     <value>BtnSearchWord</value>
   </data>
   <data name="&gt;&gt;BtnSearchWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnSearchWord.Parent" xml:space="preserve">
     <value>GroupSearch</value>
@@ -715,7 +715,7 @@
     <value>BtnAddWord</value>
   </data>
   <data name="&gt;&gt;BtnAddWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnAddWord.Parent" xml:space="preserve">
     <value>GroupWord</value>
@@ -761,7 +761,7 @@
     <value>BtnDeleteWord</value>
   </data>
   <data name="&gt;&gt;BtnDeleteWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnDeleteWord.Parent" xml:space="preserve">
     <value>GroupWord</value>
@@ -806,7 +806,7 @@
     <value>BtnEditWord</value>
   </data>
   <data name="&gt;&gt;BtnEditWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.5.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnEditWord.Parent" xml:space="preserve">
     <value>GroupWord</value>
@@ -840,33 +840,6 @@
   </data>
   <data name="&gt;&gt;GroupWord.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="listView_vokabeln.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="listView_vokabeln.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="listView_vokabeln.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="listView_vokabeln.Size" type="System.Drawing.Size, System.Drawing">
-    <value>500, 482</value>
-  </data>
-  <data name="listView_vokabeln.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;listView_vokabeln.Name" xml:space="preserve">
-    <value>listView_vokabeln</value>
-  </data>
-  <data name="&gt;&gt;listView_vokabeln.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listView_vokabeln.Parent" xml:space="preserve">
-    <value>SplitContainer.Panel2</value>
-  </data>
-  <data name="&gt;&gt;listView_vokabeln.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="StatusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 28</value>
@@ -905,7 +878,7 @@
     <value>GroupStatistics</value>
   </data>
   <data name="&gt;&gt;GroupStatistics.Type" xml:space="preserve">
-    <value>Vocup.Controls.StatisticsPanel, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.StatisticsPanel, Vocup, Version=1.5.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;GroupStatistics.Parent" xml:space="preserve">
     <value>SideBar</value>
@@ -959,7 +932,7 @@
     <value>FileTreeView</value>
   </data>
   <data name="&gt;&gt;FileTreeView.Type" xml:space="preserve">
-    <value>Vocup.Controls.FileTreeView, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.FileTreeView, Vocup, Version=1.5.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;FileTreeView.Parent" xml:space="preserve">
     <value>SplitContainer.Panel1</value>
@@ -977,6 +950,37 @@
     <value>SplitContainer</value>
   </data>
   <data name="&gt;&gt;SplitContainer.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LbEmptyForm.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="LbEmptyForm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="LbEmptyForm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>500, 482</value>
+  </data>
+  <data name="LbEmptyForm.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="LbEmptyForm.Text" xml:space="preserve">
+    <value>Ganz schön leer hier!
+Öffne doch ein Vokabelheft oder erstelle ein neues.</value>
+  </data>
+  <data name="LbEmptyForm.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;LbEmptyForm.Name" xml:space="preserve">
+    <value>LbEmptyForm</value>
+  </data>
+  <data name="&gt;&gt;LbEmptyForm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LbEmptyForm.Parent" xml:space="preserve">
+    <value>SplitContainer.Panel2</value>
+  </data>
+  <data name="&gt;&gt;LbEmptyForm.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;SplitContainer.Panel2.Name" xml:space="preserve">
@@ -1004,7 +1008,7 @@
     <value>SplitContainer</value>
   </data>
   <data name="&gt;&gt;SplitContainer.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveSplitContainer, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveSplitContainer, Vocup, Version=1.5.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SplitContainer.Parent" xml:space="preserve">
     <value>TableLayout</value>
@@ -1088,7 +1092,7 @@
     <value>ToolStrip</value>
   </data>
   <data name="&gt;&gt;ToolStrip.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveToolStrip, Vocup, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveToolStrip, Vocup, Version=1.5.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ToolStrip.Parent" xml:space="preserve">
     <value>$this</value>
@@ -7614,7 +7618,7 @@
     <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>program_form</value>
+    <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
