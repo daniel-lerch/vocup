@@ -591,7 +591,11 @@ namespace Vocup
                     {
                         VocabularyBook book = new VocabularyBook();
                         if (VocabularyFile.ImportCsvFile(openDialog.FileName, book, true))
+                        {
+                            book.Notify();
+                            book.UnsavedChanges = true;
                             LoadBook(book);
+                        }
                     }
                 }
             }
