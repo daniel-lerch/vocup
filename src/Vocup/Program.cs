@@ -45,8 +45,8 @@ namespace Vocup
                 FileInfo info = new FileInfo(args[0]);
                 if (info.Extension == ".vhf")
                 {
-                    var mainForm = new program_form();
-                    mainForm.readfile(info.FullName);
+                    var mainForm = new MainForm();
+                    mainForm.ReadFile(info.FullName);
                     form = mainForm;
                 }
                 else if (info.Extension == ".vdp")
@@ -55,20 +55,20 @@ namespace Vocup
                 }
                 else
                 {
-                    form = new program_form();
+                    form = new MainForm();
                     MessageBox.Show(string.Format(Messages.OpenUnknownFile, info.FullName),
                         Messages.OpenUnknownFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if (Settings.Default.StartScreen == (int)StartScreen.LastFile && File.Exists(Settings.Default.LastFile))
             {
-                var mainForm = new program_form();
-                mainForm.readfile(Settings.Default.LastFile);
+                var mainForm = new MainForm();
+                mainForm.ReadFile(Settings.Default.LastFile);
                 form = mainForm;
             }
             else
             {
-                form = new program_form();
+                form = new MainForm();
             }
 
             Application.DoEvents();

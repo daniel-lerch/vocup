@@ -16,6 +16,6 @@ namespace Vocup.Models
         void LoadBook(VocabularyBook book);
         void UnloadBook(bool fullUnload);
 
-        void edit_vokabel_dialog();
+        void EditWord();
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Vocup
 {
-    public partial class program_form
+    public partial class MainForm
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(program_form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MenuStrip = new Vocup.Controls.ResponsiveMenuStrip();
             this.TsmiRootFile = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiCreateBook = new System.Windows.Forms.ToolStripMenuItem();

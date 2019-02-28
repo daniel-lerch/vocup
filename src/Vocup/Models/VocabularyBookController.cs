@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.IO;
 using System.Windows.Forms;
 using Vocup.Controls;
 using Vocup.IO;
@@ -100,7 +99,7 @@ namespace Vocup.Models
         private void OnDoubleClick(object sender, EventArgs e)
         {
             if (ListView.SelectedItem != null)
-                Parent?.edit_vokabel_dialog();
+                Parent?.EditWord();
         }
 
         private void AddItem(VocabularyWord item)
