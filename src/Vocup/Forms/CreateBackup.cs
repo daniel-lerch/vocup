@@ -164,11 +164,11 @@ namespace Vocup.Forms
                 if (VocabularyFile.ReadVhfFile(fileInfo.FullName, book))
                 {
                     bool vhr = VocabularyFile.ReadVhrFile(book);
-                    bool success = TryAddFile(fileInfo.FullName, archive, $"vhf/{counter}.vhf");
+                    bool success = TryAddFile(fileInfo.FullName, archive, $"vhf\\{counter}.vhf");
                     bool success2 = false;
 
                     if (success && vhr && CbSaveResults.Checked)
-                        success2 = TryAddFile(Path.Combine(Settings.Default.VhrPath, book.VhrCode + ".vhr"), archive, $"vhr/{book.VhrCode}.vhr");
+                        success2 = TryAddFile(Path.Combine(Settings.Default.VhrPath, book.VhrCode + ".vhr"), archive, $"vhr\\{book.VhrCode}.vhr");
                     if (success)
                     {
                         backup.Books.Add(new BackupMeta.BookMeta(counter, BackupMeta.ShrinkPath(fileInfo.FullName), success2 ? book.VhrCode : ""));
@@ -184,7 +184,7 @@ namespace Vocup.Forms
         {
             foreach (FileInfo fileInfo in files.Select(path => new FileInfo(Path.Combine(AppInfo.SpecialCharDirectory, path + ".txt"))))
             {
-                if (TryAddFile(fileInfo.FullName, archive, "chars/" + fileInfo.Name))
+                if (TryAddFile(fileInfo.FullName, archive, "chars\\" + fileInfo.Name))
                     backup.SpecialChars.Add(fileInfo.Name);
             }
         }

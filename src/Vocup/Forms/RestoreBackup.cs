@@ -94,12 +94,12 @@ namespace Vocup.Forms
 
                 BackupMeta.BookMeta item = meta.Books[i];
                 var destination = new FileInfo(BackupMeta.ExpandPath(item.VhfPath));
-                RestoreResult result = Restore(archive, $"vhf/{item.FileId}.vhf", destination, GetOverrideMode());
+                RestoreResult result = Restore(archive, $"vhf\\{item.FileId}.vhf", destination, GetOverrideMode());
                 stats(result);
                 if (result == RestoreResult.Success && RbRestoreAssociatedResults.Checked && !string.IsNullOrWhiteSpace(item.VhrCode))
                 {
                     var resultDestination = new FileInfo(Path.Combine(Settings.Default.VhrPath, item.VhrCode));
-                    stats(Restore(archive, $"vhr/{item.VhrCode}.vhr", resultDestination, GetOverrideMode()));
+                    stats(Restore(archive, $"vhr\\{item.VhrCode}.vhr", resultDestination, GetOverrideMode()));
                 }
             }
 
@@ -108,7 +108,7 @@ namespace Vocup.Forms
                 for (int i = 0; i < meta.Results.Count; i++)
                 {
                     var destination = new FileInfo(Path.Combine(Settings.Default.VhrPath, meta.Results[i]));
-                    stats(Restore(archive, "vhr/" + meta.Results[i], destination, GetOverrideMode()));
+                    stats(Restore(archive, "vhr\\" + meta.Results[i], destination, GetOverrideMode()));
                 }
             }
 
@@ -117,7 +117,7 @@ namespace Vocup.Forms
                 if (!ListSpecialChars.GetItemChecked(i)) continue;
 
                 var destination = new FileInfo(Path.Combine(AppInfo.SpecialCharDirectory, meta.SpecialChars[i]));
-                stats(Restore(archive, "chars/" + meta.SpecialChars[i], destination, GetOverrideMode()));
+                stats(Restore(archive, "chars\\" + meta.SpecialChars[i], destination, GetOverrideMode()));
             }
 
             MessageBox.Show(string.Format(Messages.VdpRestored, restored, skipped, failed), 
