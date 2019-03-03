@@ -173,6 +173,7 @@ namespace Vocup.Forms
                 {
                     source.CopyTo(file);
                 }
+                destination.LastWriteTimeUtc = entry.LastWriteTime.UtcDateTime;
                 return RestoreResult.Success;
             }
             catch

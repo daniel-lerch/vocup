@@ -193,9 +193,11 @@ namespace Vocup.Forms
         {
             try
             {
-                using (FileStream file = new FileStream(source, FileMode.Open, FileAccess.Read, FileShare.Read))
+                FileInfo info = new FileInfo(source);
+                using (FileStream file = info.Open(FileMode.Open, FileAccess.Read, FileShare.Read))
                 {
                     ZipArchiveEntry entry = archive.CreateEntry(destination);
+                    entry.LastWriteTime = new DateTimeOffset(info.LastWriteTimeUtc);
                     using (Stream stream = entry.Open())
                     {
                         file.CopyTo(stream);
