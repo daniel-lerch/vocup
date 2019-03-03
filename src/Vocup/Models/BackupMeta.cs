@@ -27,32 +27,34 @@ namespace Vocup.Models
             var books = archive.CreateEntry("vhf_vhr.log");
             using (StreamWriter writer = new StreamWriter(books.Open()))
             {
-                foreach (BookMeta book in Books)
+                for (int i = 0; i < Books.Count; i++)
                 {
-                    writer.Write(book.FileId);
+                    if (i != 0) writer.WriteLine();
+                    writer.Write(Books[i].FileId);
                     writer.Write('|');
-                    writer.Write(book.VhfPath);
+                    writer.Write(Books[i].VhfPath);
                     writer.Write('|');
-                    writer.Write(book.VhrCode);
-                    writer.WriteLine();
+                    writer.Write(Books[i].VhrCode);
                 }
             }
 
             var results = archive.CreateEntry("vhr.log");
             using (StreamWriter writer = new StreamWriter(results.Open()))
             {
-                foreach (string result in Results)
+                for (int i = 0; i < Results.Count; i++)
                 {
-                    writer.WriteLine(result);
+                    if (i != 0) writer.WriteLine();
+                    writer.Write(Results[i]);
                 }
             }
 
             var chars = archive.CreateEntry("chars.log");
             using (StreamWriter writer = new StreamWriter(chars.Open()))
             {
-                foreach (string @char in SpecialChars)
+                for (int i = 0; i < SpecialChars.Count; i++)
                 {
-                    writer.WriteLine(@char);
+                    if (i != 0) writer.WriteLine();
+                    writer.Write(SpecialChars[i]);
                 }
             }
         }
