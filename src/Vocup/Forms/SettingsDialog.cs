@@ -5,12 +5,13 @@ using System.Text;
 using System.Windows.Forms;
 using Vocup.Models;
 using Vocup.Properties;
+using Vocup.Util;
 
 namespace Vocup
 {
     public partial class SettingsDialog : Form
     {
-        private Settings settings;
+        private readonly Settings settings;
 
         public SettingsDialog()
         {
@@ -28,7 +29,16 @@ namespace Vocup
             CbAutoSave.Checked = settings.AutoSave;
 
             // Automatisches Update
-            CbDisableInternetServices.Checked = settings.DisableInternetServices;
+            if (AppInfo.IsUwp())
+            {
+                GroupUpdate.Enabled = false;
+                CbDisableInternetServices.Checked = true;
+            }
+            else
+            {
+                CbDisableInternetServices.Text += $" ({Words.NotRecommended})";
+                CbDisableInternetServices.Checked = settings.DisableInternetServices;
+            }
 
             // ListView
             CbGridLines.Checked = settings.GridLines;
@@ -76,14 +86,14 @@ namespace Vocup
             TrbWrongRigtht.Maximum = 10 - TrbUnknown.Value;
 
             // Prozentualer Anteil an noch nicht geübten Vokabeln
-            anzahl_noch_nicht_label.Text = settings.PracticePercentageUnpracticed + "%";
+            LbUnpracticed.Text = settings.PracticePercentageUnpracticed + "%";
             TrbUnknown.Value = settings.PracticePercentageUnpracticed / 10;
 
             // Prozentualer Anteil an falsch geübten Vokabeln
-            anzahl_falsch_label.Text = settings.PracticePercentageWrong + "%";
+            LbWronglyPracticed.Text = settings.PracticePercentageWrong + "%";
 
             // Prozentualer Anteil an richtig geübten Vokabeln
-            anzahl_richtig_label.Text = settings.PracticePercentageCorrect + "%";
+            LbCorrectlyPracticed.Text = settings.PracticePercentageCorrect + "%";
 
             // Trackbar anzahl_falsch_richtig
             TrbWrongRigtht.Maximum = (settings.PracticePercentageCorrect + settings.PracticePercentageWrong) / 10 - 1;
@@ -92,8 +102,6 @@ namespace Vocup
 
         private void BtnOk_Click(object sender, EventArgs e)
         {
-            // Einstellungen speichern
-
             // Startbild
             settings.StartScreen = RbRecentFile.Checked ? (int)StartScreen.LastFile : (int)StartScreen.None;
 
@@ -169,7 +177,7 @@ namespace Vocup
 
         private void BtnResetPractice_Click(object sender, EventArgs e)
         {
-            // Einstellungen zurücksetzen
+            // Reset practice settings
 
             TrbRepetitions.Value = 3;
 
@@ -179,27 +187,27 @@ namespace Vocup
 
         private void TrbUnknown_ValueChanged(object sender, EventArgs e)
         {
-            anzahl_noch_nicht_label.Text = TrbUnknown.Value * 10 + "%";
+            LbUnpracticed.Text = TrbUnknown.Value * 10 + "%";
             TrbWrongRigtht.Maximum = 10 - TrbUnknown.Value - 1;
 
             if (TrbUnknown.Value == 8)
             {
                 TrbWrongRigtht.Enabled = false;
-                anzahl_falsch_label.Text = "10%";
-                anzahl_richtig_label.Text = "10%";
+                LbWronglyPracticed.Text = "10%";
+                LbCorrectlyPracticed.Text = "10%";
             }
             else
             {
                 TrbWrongRigtht.Enabled = true;
-                anzahl_richtig_label.Text = TrbWrongRigtht.Value * 10 + "%";
-                anzahl_falsch_label.Text = (10 - TrbUnknown.Value - TrbWrongRigtht.Value) * 10 + "%";
+                LbCorrectlyPracticed.Text = TrbWrongRigtht.Value * 10 + "%";
+                LbWronglyPracticed.Text = (10 - TrbUnknown.Value - TrbWrongRigtht.Value) * 10 + "%";
             }
         }
 
         private void TrbWrongRight_ValueChanged(object sender, EventArgs e)
         {
-            anzahl_richtig_label.Text = TrbWrongRigtht.Value * 10 + "%";
-            anzahl_falsch_label.Text = (10 - TrbUnknown.Value - TrbWrongRigtht.Value) * 10 + "%";
+            LbCorrectlyPracticed.Text = TrbWrongRigtht.Value * 10 + "%";
+            LbWronglyPracticed.Text = (10 - TrbUnknown.Value - TrbWrongRigtht.Value) * 10 + "%";
         }
 
         private void CbPracticeResult_CheckedChanged(object sender, EventArgs e)
@@ -207,7 +215,6 @@ namespace Vocup
             CbEvaluationSystem.Enabled = CbPracticeResult.Checked;
         }
 
-        // Verzeichnis für VHF-Dateien auswählen
         private void BtnVhfPath_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog fbd = new FolderBrowserDialog())
@@ -221,7 +228,6 @@ namespace Vocup
             }
         }
 
-        // Verzeichnis für VHR-Dateien auswählen
         private void BtnVhrPath_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog fbd = new FolderBrowserDialog())

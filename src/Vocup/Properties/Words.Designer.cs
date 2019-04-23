@@ -223,6 +223,15 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to nicht empfohlen.
+        /// </summary>
+        internal static string NotRecommended {
+            get {
+                return ResourceManager.GetString("NotRecommended", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
         internal static string Ok {

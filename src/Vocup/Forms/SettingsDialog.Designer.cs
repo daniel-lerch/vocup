@@ -40,6 +40,7 @@
             this.TabControlMain = new System.Windows.Forms.TabControl();
             this.TabGeneral = new System.Windows.Forms.TabPage();
             this.GroupVocabularyList = new System.Windows.Forms.GroupBox();
+            this.CbColumnResize = new System.Windows.Forms.CheckBox();
             this.CbGridLines = new System.Windows.Forms.CheckBox();
             this.GroupVhrPath = new System.Windows.Forms.GroupBox();
             this.BtnVhrPath = new System.Windows.Forms.Button();
@@ -74,9 +75,9 @@
             this.TabPracticeSelect = new System.Windows.Forms.TabPage();
             this.BtnResetPracticeSelect = new System.Windows.Forms.Button();
             this.GroupSelectionMix = new System.Windows.Forms.GroupBox();
-            this.anzahl_falsch_label = new System.Windows.Forms.Label();
-            this.anzahl_richtig_label = new System.Windows.Forms.Label();
-            this.anzahl_noch_nicht_label = new System.Windows.Forms.Label();
+            this.LbWronglyPracticed = new System.Windows.Forms.Label();
+            this.LbCorrectlyPracticed = new System.Windows.Forms.Label();
+            this.LbUnpracticed = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -91,7 +92,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.TrbRepetitions = new System.Windows.Forms.TrackBar();
-            this.CbColumnResize = new System.Windows.Forms.CheckBox();
             this.GroupStartScreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TrbWrongRigtht)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrbUnknown)).BeginInit();
@@ -215,6 +215,12 @@
             resources.ApplyResources(this.GroupVocabularyList, "GroupVocabularyList");
             this.GroupVocabularyList.Name = "GroupVocabularyList";
             this.GroupVocabularyList.TabStop = false;
+            // 
+            // CbColumnResize
+            // 
+            resources.ApplyResources(this.CbColumnResize, "CbColumnResize");
+            this.CbColumnResize.Name = "CbColumnResize";
+            this.CbColumnResize.UseVisualStyleBackColor = true;
             // 
             // CbGridLines
             // 
@@ -468,9 +474,9 @@
             // 
             // GroupSelectionMix
             // 
-            this.GroupSelectionMix.Controls.Add(this.anzahl_falsch_label);
-            this.GroupSelectionMix.Controls.Add(this.anzahl_richtig_label);
-            this.GroupSelectionMix.Controls.Add(this.anzahl_noch_nicht_label);
+            this.GroupSelectionMix.Controls.Add(this.LbWronglyPracticed);
+            this.GroupSelectionMix.Controls.Add(this.LbCorrectlyPracticed);
+            this.GroupSelectionMix.Controls.Add(this.LbUnpracticed);
             this.GroupSelectionMix.Controls.Add(this.label1);
             this.GroupSelectionMix.Controls.Add(this.pictureBox2);
             this.GroupSelectionMix.Controls.Add(this.pictureBox1);
@@ -482,20 +488,20 @@
             this.GroupSelectionMix.Name = "GroupSelectionMix";
             this.GroupSelectionMix.TabStop = false;
             // 
-            // anzahl_falsch_label
+            // LbWronglyPracticed
             // 
-            resources.ApplyResources(this.anzahl_falsch_label, "anzahl_falsch_label");
-            this.anzahl_falsch_label.Name = "anzahl_falsch_label";
+            resources.ApplyResources(this.LbWronglyPracticed, "LbWronglyPracticed");
+            this.LbWronglyPracticed.Name = "LbWronglyPracticed";
             // 
-            // anzahl_richtig_label
+            // LbCorrectlyPracticed
             // 
-            resources.ApplyResources(this.anzahl_richtig_label, "anzahl_richtig_label");
-            this.anzahl_richtig_label.Name = "anzahl_richtig_label";
+            resources.ApplyResources(this.LbCorrectlyPracticed, "LbCorrectlyPracticed");
+            this.LbCorrectlyPracticed.Name = "LbCorrectlyPracticed";
             // 
-            // anzahl_noch_nicht_label
+            // LbUnpracticed
             // 
-            resources.ApplyResources(this.anzahl_noch_nicht_label, "anzahl_noch_nicht_label");
-            this.anzahl_noch_nicht_label.Name = "anzahl_noch_nicht_label";
+            resources.ApplyResources(this.LbUnpracticed, "LbUnpracticed");
+            this.LbUnpracticed.Name = "LbUnpracticed";
             // 
             // label1
             // 
@@ -588,12 +594,6 @@
             this.TrbRepetitions.Name = "TrbRepetitions";
             this.TrbRepetitions.Value = 3;
             // 
-            // CbColumnResize
-            // 
-            resources.ApplyResources(this.CbColumnResize, "CbColumnResize");
-            this.CbColumnResize.Name = "CbColumnResize";
-            this.CbColumnResize.UseVisualStyleBackColor = true;
-            // 
             // SettingsDialog
             // 
             this.AcceptButton = this.BtnOk;
@@ -666,9 +666,9 @@
         private System.Windows.Forms.TabControl TabControlMain;
         private System.Windows.Forms.TabPage TabGeneral;
         private System.Windows.Forms.TabPage TabPracticeSelect;
-        private System.Windows.Forms.Label anzahl_falsch_label;
-        private System.Windows.Forms.Label anzahl_richtig_label;
-        private System.Windows.Forms.Label anzahl_noch_nicht_label;
+        private System.Windows.Forms.Label LbWronglyPracticed;
+        private System.Windows.Forms.Label LbCorrectlyPracticed;
+        private System.Windows.Forms.Label LbUnpracticed;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;

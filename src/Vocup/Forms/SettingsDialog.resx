@@ -550,13 +550,13 @@
     <value>6, 19</value>
   </data>
   <data name="CbDisableInternetServices.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 17</value>
+    <value>157, 17</value>
   </data>
   <data name="CbDisableInternetServices.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="CbDisableInternetServices.Text" xml:space="preserve">
-    <value>Internetdienste deaktivieren (nicht empfohlen)</value>
+    <value>Internetdienste deaktivieren</value>
   </data>
   <data name="&gt;&gt;CbDisableInternetServices.Name" xml:space="preserve">
     <value>CbDisableInternetServices</value>
@@ -1236,88 +1236,88 @@
   <data name="&gt;&gt;BtnResetPracticeSelect.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="anzahl_falsch_label.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LbWronglyPracticed.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="anzahl_falsch_label.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LbWronglyPracticed.Location" type="System.Drawing.Point, System.Drawing">
     <value>38, 142</value>
   </data>
-  <data name="anzahl_falsch_label.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+  <data name="LbWronglyPracticed.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
   </data>
-  <data name="anzahl_falsch_label.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LbWronglyPracticed.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 13</value>
   </data>
-  <data name="anzahl_falsch_label.TabIndex" type="System.Int32, mscorlib">
+  <data name="LbWronglyPracticed.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="anzahl_falsch_label.Text" xml:space="preserve">
+  <data name="LbWronglyPracticed.Text" xml:space="preserve">
     <value>%</value>
   </data>
-  <data name="&gt;&gt;anzahl_falsch_label.Name" xml:space="preserve">
-    <value>anzahl_falsch_label</value>
+  <data name="&gt;&gt;LbWronglyPracticed.Name" xml:space="preserve">
+    <value>LbWronglyPracticed</value>
   </data>
-  <data name="&gt;&gt;anzahl_falsch_label.Type" xml:space="preserve">
+  <data name="&gt;&gt;LbWronglyPracticed.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;anzahl_falsch_label.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LbWronglyPracticed.Parent" xml:space="preserve">
     <value>GroupSelectionMix</value>
   </data>
-  <data name="&gt;&gt;anzahl_falsch_label.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LbWronglyPracticed.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="anzahl_richtig_label.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LbCorrectlyPracticed.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="anzahl_richtig_label.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LbCorrectlyPracticed.Location" type="System.Drawing.Point, System.Drawing">
     <value>175, 142</value>
   </data>
-  <data name="anzahl_richtig_label.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LbCorrectlyPracticed.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 13</value>
   </data>
-  <data name="anzahl_richtig_label.TabIndex" type="System.Int32, mscorlib">
+  <data name="LbCorrectlyPracticed.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="anzahl_richtig_label.Text" xml:space="preserve">
+  <data name="LbCorrectlyPracticed.Text" xml:space="preserve">
     <value>%</value>
   </data>
-  <data name="&gt;&gt;anzahl_richtig_label.Name" xml:space="preserve">
-    <value>anzahl_richtig_label</value>
+  <data name="&gt;&gt;LbCorrectlyPracticed.Name" xml:space="preserve">
+    <value>LbCorrectlyPracticed</value>
   </data>
-  <data name="&gt;&gt;anzahl_richtig_label.Type" xml:space="preserve">
+  <data name="&gt;&gt;LbCorrectlyPracticed.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;anzahl_richtig_label.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LbCorrectlyPracticed.Parent" xml:space="preserve">
     <value>GroupSelectionMix</value>
   </data>
-  <data name="&gt;&gt;anzahl_richtig_label.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LbCorrectlyPracticed.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="anzahl_noch_nicht_label.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LbUnpracticed.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="anzahl_noch_nicht_label.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LbUnpracticed.Location" type="System.Drawing.Point, System.Drawing">
     <value>175, 60</value>
   </data>
-  <data name="anzahl_noch_nicht_label.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LbUnpracticed.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 13</value>
   </data>
-  <data name="anzahl_noch_nicht_label.TabIndex" type="System.Int32, mscorlib">
+  <data name="LbUnpracticed.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="anzahl_noch_nicht_label.Text" xml:space="preserve">
+  <data name="LbUnpracticed.Text" xml:space="preserve">
     <value>%</value>
   </data>
-  <data name="&gt;&gt;anzahl_noch_nicht_label.Name" xml:space="preserve">
-    <value>anzahl_noch_nicht_label</value>
+  <data name="&gt;&gt;LbUnpracticed.Name" xml:space="preserve">
+    <value>LbUnpracticed</value>
   </data>
-  <data name="&gt;&gt;anzahl_noch_nicht_label.Type" xml:space="preserve">
+  <data name="&gt;&gt;LbUnpracticed.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;anzahl_noch_nicht_label.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LbUnpracticed.Parent" xml:space="preserve">
     <value>GroupSelectionMix</value>
   </data>
-  <data name="&gt;&gt;anzahl_noch_nicht_label.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LbUnpracticed.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
