@@ -12,8 +12,8 @@ namespace Vocup.Util
     {
         public static string GetOSName()
         {
-            var name = (from x in new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem").Get().Cast<ManagementObject>()
-                        select x.GetPropertyValue("Caption")).FirstOrDefault();
+            var name = new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem").Get().Cast<ManagementObject>()
+                .Select(x => x.GetPropertyValue("Caption")).FirstOrDefault();
             return name != null ? name.ToString() : "Unknown";
         }
 
@@ -42,8 +42,12 @@ namespace Vocup.Util
         // Checking the version using >= will enable forward compatibility.
         private static string CheckFor45PlusVersion(int releaseKey)
         {
+            if (releaseKey > 528049)
+                return "4.8 or later";
+            if (releaseKey >= 528040)
+                return "4.8";
             if (releaseKey >= 461808)
-                return "4.7.2 or later";
+                return "4.7.2";
             if (releaseKey >= 461308)
                 return "4.7.1";
             if (releaseKey >= 460798)
