@@ -16,4 +16,5 @@ See [File formats](fileformats.md)
 
 ## Internet services
 
-See [Internet services](internet-services.md)
+Instead of designing an own infrastructure for releases and updates, Vocup will rely on the Microsoft Store and GitHub APIs.
+The UWP version will not use any internet services at all. Other versions search for new releases using the GitHub API.

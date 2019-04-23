@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2027
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C15174B9-657C-4871-BD70-E367286C3A48}"
 EndProject
@@ -18,13 +18,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{513AA9B6-F697-45D9-B598-A96030B32541}"
 	ProjectSection(SolutionItems) = preProject
 		docs\fileformats.md = docs\fileformats.md
-		docs\internet-services.md = docs\internet-services.md
 		docs\README.md = docs\README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "setup", "setup", "{2EC721A1-43D9-4567-BF3F-F2CBB7F215F5}"
 	ProjectSection(SolutionItems) = preProject
-		setup\hash.ps1 = setup\hash.ps1
 		setup\icon_vdp.ico = setup\icon_vdp.ico
 		setup\icon_vhf.ico = setup\icon_vhf.ico
 		setup\left.bmp = setup\left.bmp
