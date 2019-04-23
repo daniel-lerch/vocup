@@ -80,7 +80,7 @@ namespace Vocup
         /// <summary>
         /// Checks the currently configured folder for .vhf files and creates it if not existing.
         /// </summary>
-        private static void CreateVhfFolder()
+        internal static void CreateVhfFolder()
         {
             string personal = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             string folder = Path.Combine(personal, Words.VocabularyBooks); // default path
@@ -99,7 +99,7 @@ namespace Vocup
         /// <summary>
         /// Checks the currently configured folder for .vhr files and creates it if not existing.
         /// </summary>
-        private static void CreateVhrFolder()
+        internal static void CreateVhrFolder()
         {
             string appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string folder = Path.Combine(appdata, AppInfo.ProductName); // default path
