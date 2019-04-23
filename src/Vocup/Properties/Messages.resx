@@ -175,6 +175,12 @@ Falls {0} und {1} keine Sprachen sondern Vokabeln sind, denken Sie bitte daran, 
   <data name="GeneralSaveChangesT" xml:space="preserve">
     <value>Speichern?</value>
   </data>
+  <data name="LegacyVersionUninstall" xml:space="preserve">
+    <value>Es wurde eine veraltete Version von Vocup auf ihrem Computer gefunden. Dadurch können Dateitypzuordnungen nicht automatisch eingerichtet werden und Vokabelhefte können eventuell nicht geöffnet werden. Möchten Sie diese veraltete Version deinstallieren?</value>
+  </data>
+  <data name="LegacyVersionUninstallT" xml:space="preserve">
+    <value>Inkompatible Version deinstallieren?</value>
+  </data>
   <data name="MergeOverride" xml:space="preserve">
     <value>Ein Vokabelheft vom selben Pfad wurde bereits geladen. Möchten Sie das aktuelle Vokabelheft laden und die Daten überschreiben?</value>
   </data>

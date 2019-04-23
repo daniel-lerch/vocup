@@ -81,6 +81,7 @@
             this.BtnDeleteWord = new Vocup.Controls.ResponsiveButton();
             this.BtnEditWord = new Vocup.Controls.ResponsiveButton();
             this.StatusStrip = new System.Windows.Forms.StatusStrip();
+            this.StatusLbOldVersion = new System.Windows.Forms.ToolStripStatusLabel();
             this.SideBar = new System.Windows.Forms.Panel();
             this.GroupStatistics = new Vocup.Controls.StatisticsPanel();
             this.SplitContainer = new Vocup.Controls.ResponsiveSplitContainer();
@@ -95,7 +96,6 @@
             this.TsbEvaluationInfo = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.TableLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.MenuStrip.SuspendLayout();
             this.GroupBook.SuspendLayout();
             this.GroupSearch.SuspendLayout();
@@ -492,9 +492,17 @@
             // StatusStrip
             // 
             this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
+            this.StatusLbOldVersion});
             resources.ApplyResources(this.StatusStrip, "StatusStrip");
             this.StatusStrip.Name = "StatusStrip";
+            // 
+            // StatusLbOldVersion
+            // 
+            this.StatusLbOldVersion.Image = global::Vocup.Properties.Icons.Warning;
+            this.StatusLbOldVersion.Name = "StatusLbOldVersion";
+            this.StatusLbOldVersion.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            resources.ApplyResources(this.StatusLbOldVersion, "StatusLbOldVersion");
+            this.StatusLbOldVersion.Click += new System.EventHandler(this.StatusLbOldVersion_Click);
             // 
             // SideBar
             // 
@@ -622,11 +630,6 @@
             this.TableLayout.Controls.Add(this.SplitContainer, 0, 0);
             this.TableLayout.Name = "TableLayout";
             // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
-            // 
             // MainForm
             // 
             this.AcceptButton = this.BtnAddWord;
@@ -730,7 +733,7 @@
         private System.Windows.Forms.TableLayoutPanel TableLayout;
         private Controls.FileTreeView FileTreeView;
         private System.Windows.Forms.Label LbEmptyForm;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel StatusLbOldVersion;
     }
 }
 

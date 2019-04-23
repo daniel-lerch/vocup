@@ -3,9 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Management;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Vocup.Util
 {
@@ -15,8 +12,8 @@ namespace Vocup.Util
         {
             if (Environment.OSVersion.Platform == PlatformID.Win32NT)
             {
-                var name = (from x in new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem").Get().Cast<ManagementObject>()
-                            select x.GetPropertyValue("Caption")).FirstOrDefault();
+                var name = new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem").Get().Cast<ManagementObject>()
+                            .Select(x => x.GetPropertyValue("Caption")).FirstOrDefault();
                 return name != null ? name.ToString() : "Unknown";
             }
             else
@@ -25,16 +22,21 @@ namespace Vocup.Util
             }
         }
 
-        public static bool IsApplicationUwp()
+        public static bool TryGetVocupInstallation(out (Version version, string uninstallString) installation)
         {
-            if (IsWindows10())
+            installation = (null, null);
+
+            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
             {
-                int length = 0;
-                StringBuilder sb = new StringBuilder(0);
-                int result = GetCurrentPackageFullName(ref length, sb);
-                sb = new StringBuilder(length);
-                result = GetCurrentPackageFullName(ref length, sb);
-                return result != APPMODEL_ERROR_NO_PACKAGE;
+                // Vocup is installed as 32bit application
+                using (RegistryKey hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32))
+                using (RegistryKey vocup = hklm.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Vocup_is1", writable: false))
+                {
+                    if (vocup == null) return false;
+                    string versionString = (string)vocup.GetValue("DisplayVersion");
+                    installation.uninstallString = (string)vocup.GetValue("UninstallString");
+                    return Version.TryParse(versionString, out installation.version);
+                }
             }
             else return false;
         }
@@ -103,10 +105,5 @@ namespace Vocup.Util
             // that 4.5 or later is installed.
             return "No 4.5 or later version detected";
         }
-
-        private const int APPMODEL_ERROR_NO_PACKAGE = 15700;
-
-        [DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
-        private static extern int GetCurrentPackageFullName(ref int packageFullNameLength, StringBuilder packageFullName);
     }
 }

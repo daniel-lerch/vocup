@@ -10,6 +10,7 @@ using Vocup.Forms;
 using Vocup.IO;
 using Vocup.Models;
 using Vocup.Properties;
+using Vocup.Util;
 
 namespace Vocup
 {
@@ -20,6 +21,8 @@ namespace Vocup
             InitializeComponent();
 
             FileTreeView.RootPath = Settings.Default.VhfPath;
+            if (AppInfo.IsUwp() && SystemInfo.TryGetVocupInstallation(out var installation) && installation.version < AppInfo.GetVersion())
+                StatusLbOldVersion.Visible = true;
         }
 
         public VocabularyBook CurrentBook { get; private set; }
@@ -316,6 +319,16 @@ namespace Vocup
                 return;
 
             UnloadBook(true);
+        }
+
+        private void StatusLbOldVersion_Click(object sender, EventArgs e)
+        {
+            if (SystemInfo.TryGetVocupInstallation(out var installation) &&
+                MessageBox.Show(Messages.LegacyVersionUninstall, 
+                Messages.LegacyVersionUninstallT, MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Process.Start(installation.uninstallString);
+            }
         }
 
         //-----

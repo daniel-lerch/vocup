@@ -21,7 +21,7 @@ namespace Vocup.Forms
         private async void AboutBox_Load(object sender, EventArgs e)
         {
             // tab info
-            if (SystemInfo.IsApplicationUwp())
+            if (AppInfo.IsUwp())
                 LbVersion.Text = string.Format(LbVersion.Text, AppInfo.GetVersion(3) + " (UWP)");
             else
                 LbVersion.Text = string.Format(LbVersion.Text, AppInfo.GetVersion(3));

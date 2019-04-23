@@ -17,8 +17,8 @@ namespace Vocup
         [STAThread]
         private static void Main(string[] args)
         {
-            // Verhindert eine Fehlerhafte Installation falls das Programm geöffnet ist
-            Mutex mutex = new Mutex(false, AppInfo.ProductName, out bool newinstance);
+            // Prevents the installer from executing while the program is running
+            new Mutex(false, AppInfo.ProductName, out _);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -38,7 +38,7 @@ namespace Vocup
             Settings.Default.Save();
             Application.DoEvents();
 
-            Form form = null;
+            Form form;
 
             if (args.Length > 0 && !string.IsNullOrWhiteSpace(args[0]))
             {
@@ -74,7 +74,7 @@ namespace Vocup
             Application.DoEvents();
 
             splash.Close();
-            if (form != null) Application.Run(form);
+            Application.Run(form);
         }
 
         /// <summary>

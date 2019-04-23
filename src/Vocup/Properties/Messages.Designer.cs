@@ -205,6 +205,24 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Es wurde eine veraltete Version von Vocup auf ihrem Computer gefunden. Dadurch können Dateitypzuordnungen nicht automatisch eingerichtet werden und Vokabelhefte können eventuell nicht geöffnet werden. Möchten Sie diese veraltete Version deinstallieren?.
+        /// </summary>
+        internal static string LegacyVersionUninstall {
+            get {
+                return ResourceManager.GetString("LegacyVersionUninstall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inkompatible Version deinstallieren?.
+        /// </summary>
+        internal static string LegacyVersionUninstallT {
+            get {
+                return ResourceManager.GetString("LegacyVersionUninstallT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ein Vokabelheft vom selben Pfad wurde bereits geladen. Möchten Sie das aktuelle Vokabelheft laden und die Daten überschreiben?.
         /// </summary>
         internal static string MergeOverride {
