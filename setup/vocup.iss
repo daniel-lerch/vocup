@@ -81,7 +81,7 @@ Root: HKCR; Subkey: "vdp.File\shell\open";         ValueType: string; ValueName:
 Filename: {app}\Vocup.exe; Description: {cm:LaunchProgram,Vocup}; Flags: nowait postinstall skipifsilent;
 
 [CustomMessages]
-NetFxRequired_Caption0=Vocup benötigt Microsoft .NET Framework 4.6.2
+NetFxRequired_Caption0=Vocup benötigt Microsoft .NET Framework 4.7.2
 NetFxRequired_Caption1=
 NetFxRequired_Caption2=Bitte installieren Sie diese Version über Windows Update
 NetFxRequired_Caption3=und führen Sie die Installation danach erneut aus.
@@ -174,7 +174,7 @@ end;
     
 function InitializeSetup(): Boolean;
 begin
-    if not IsNetFxInstalled('v4.6.2', 0) then begin
+    if not IsNetFxInstalled('v4.7.2', 0) then begin
         MsgBox(
             ExpandConstant('{cm:NetFxRequired_Caption0}') + #13 +
             ExpandConstant('{cm:NetFxRequired_Caption1}') + #13 +
