@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.IO;
 using System.Windows.Forms;
 using Vocup.Controls;
 using Vocup.IO;
@@ -66,7 +65,7 @@ namespace Vocup.Models
             ListView.ForeignLang = VocabularyBook.ForeignLang;
             Parent?.VocabularyBookHasFilePath(!string.IsNullOrWhiteSpace(VocabularyBook.FilePath));
             Parent?.VocabularyBookUnsavedChanges(VocabularyBook.UnsavedChanges);
-            Parent?.VocabularyBookName(Path.GetFileNameWithoutExtension(VocabularyBook.FilePath));
+            Parent?.VocabularyBookName(VocabularyBook.Name);
 
             if (VocabularyBook.UnsavedChanges && Settings.Default.AutoSave && !string.IsNullOrWhiteSpace(VocabularyBook.FilePath))
             {
@@ -100,7 +99,7 @@ namespace Vocup.Models
         private void OnDoubleClick(object sender, EventArgs e)
         {
             if (ListView.SelectedItem != null)
-                Parent?.edit_vokabel_dialog();
+                Parent?.EditWord();
         }
 
         private void AddItem(VocabularyWord item)

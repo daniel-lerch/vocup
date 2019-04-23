@@ -13,9 +13,6 @@ namespace Vocup.Models
         void VocabularyBookUnsavedChanges(bool value);
         void VocabularyBookName(string value);
 
-        void LoadBook(VocabularyBook book);
-        void UnloadBook(bool fullUnload);
-
-        void edit_vokabel_dialog();
+        void EditWord();
     }
 }

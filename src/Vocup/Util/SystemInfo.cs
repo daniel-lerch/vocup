@@ -77,8 +77,10 @@ namespace Vocup.Util
         // Checking the version using >= will enable forward compatibility.
         private static string CheckFor45PlusVersion(int releaseKey)
         {
-            if (releaseKey > 461814)
-                return "> 4.7.2";
+            if (releaseKey > 528049)
+                return "4.8 or later";
+            if (releaseKey >= 528040)
+                return "4.8";
             if (releaseKey >= 461808)
                 return "4.7.2";
             if (releaseKey >= 461308)

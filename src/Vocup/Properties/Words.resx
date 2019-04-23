@@ -123,6 +123,9 @@
   <data name="AddWord" xml:space="preserve">
     <value>Neue Vokabel hinzufügen</value>
   </data>
+  <data name="AllWords" xml:space="preserve">
+    <value>Alle Vokabeln</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Abbrechen</value>
   </data>

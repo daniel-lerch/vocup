@@ -1,6 +1,6 @@
 ﻿namespace Vocup
 {
-    public partial class program_form
+    public partial class MainForm
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(program_form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MenuStrip = new Vocup.Controls.ResponsiveMenuStrip();
             this.TsmiRootFile = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiCreateBook = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,14 +80,12 @@
             this.BtnAddWord = new Vocup.Controls.ResponsiveButton();
             this.BtnDeleteWord = new Vocup.Controls.ResponsiveButton();
             this.BtnEditWord = new Vocup.Controls.ResponsiveButton();
-            this.listView_vokabeln = new System.Windows.Forms.ListView();
             this.StatusStrip = new System.Windows.Forms.StatusStrip();
             this.SideBar = new System.Windows.Forms.Panel();
             this.GroupStatistics = new Vocup.Controls.StatisticsPanel();
             this.SplitContainer = new Vocup.Controls.ResponsiveSplitContainer();
             this.FileTreeView = new Vocup.Controls.FileTreeView();
-            this.printCards = new System.Drawing.Printing.PrintDocument();
-            this.printList = new System.Drawing.Printing.PrintDocument();
+            this.LbEmptyForm = new System.Windows.Forms.Label();
             this.ToolStrip = new Vocup.Controls.ResponsiveToolStrip();
             this.TsbCreateBook = new System.Windows.Forms.ToolStripButton();
             this.TsbOpenBook = new System.Windows.Forms.ToolStripButton();
@@ -491,19 +489,6 @@
             this.BtnEditWord.UseVisualStyleBackColor = true;
             this.BtnEditWord.Click += new System.EventHandler(this.BtnEditWord_Click);
             // 
-            // listView_vokabeln
-            // 
-            this.listView_vokabeln.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.listView_vokabeln, "listView_vokabeln");
-            this.listView_vokabeln.FullRowSelect = true;
-            this.listView_vokabeln.GridLines = true;
-            this.listView_vokabeln.HideSelection = false;
-            this.listView_vokabeln.MultiSelect = false;
-            this.listView_vokabeln.Name = "listView_vokabeln";
-            this.listView_vokabeln.Sorting = System.Windows.Forms.SortOrder.Descending;
-            this.listView_vokabeln.UseCompatibleStateImageBehavior = false;
-            this.listView_vokabeln.View = System.Windows.Forms.View.Details;
-            // 
             // StatusStrip
             // 
             this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -541,7 +526,7 @@
             // 
             // SplitContainer.Panel2
             // 
-            this.SplitContainer.Panel2.Controls.Add(this.listView_vokabeln);
+            this.SplitContainer.Panel2.Controls.Add(this.LbEmptyForm);
             this.SplitContainer.SplitterBaseDistance = 150;
             // 
             // FileTreeView
@@ -552,15 +537,11 @@
             this.FileTreeView.SelectedPath = null;
             this.FileTreeView.FileSelected += new System.EventHandler<Vocup.Controls.FileSelectedEventArgs>(this.FileTreeView_FileSelected);
             // 
-            // printCards
+            // LbEmptyForm
             // 
-            this.printCards.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.printDocument_cards_BeginPrint);
-            this.printCards.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_cards_PrintPage);
-            // 
-            // printList
-            // 
-            this.printList.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.printDocument_list_BeginPrint);
-            this.printList.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_list_PrintPage);
+            this.LbEmptyForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.LbEmptyForm, "LbEmptyForm");
+            this.LbEmptyForm.Name = "LbEmptyForm";
             // 
             // ToolStrip
             // 
@@ -645,9 +626,8 @@
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
-            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
-            // program_form
+            // MainForm
             // 
             this.AcceptButton = this.BtnAddWord;
             resources.ApplyResources(this, "$this");
@@ -657,7 +637,7 @@
             this.Controls.Add(this.ToolStrip);
             this.Controls.Add(this.MenuStrip);
             this.MainMenuStrip = this.MenuStrip;
-            this.Name = "program_form";
+            this.Name = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
             this.Load += new System.EventHandler(this.Form_Load);
             this.Shown += new System.EventHandler(this.Form_Shown);
@@ -745,13 +725,11 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem TsmiCloseBook;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem11;
-        private System.Drawing.Printing.PrintDocument printCards;
-        private System.Drawing.Printing.PrintDocument printList;
         private System.Windows.Forms.ToolStripMenuItem TsmiEvaluationInfo;
         private Controls.StatisticsPanel GroupStatistics;
         private System.Windows.Forms.TableLayoutPanel TableLayout;
-        private System.Windows.Forms.ListView listView_vokabeln;
         private Controls.FileTreeView FileTreeView;
+        private System.Windows.Forms.Label LbEmptyForm;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

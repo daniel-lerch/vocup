@@ -1,286 +1,203 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
+using Vocup.Models;
 using Vocup.Properties;
+using Vocup.Util;
 
 namespace Vocup.Forms
 {
     public partial class PrintWordSelection : Form
     {
-        public PrintWordSelection()
+        VocabularyBook book;
+
+        public PrintWordSelection(VocabularyBook book)
         {
             InitializeComponent();
             Icon = Icon.FromHandle(Icons.Print.GetHicon());
-        }
 
-        //Array, das die Status-Informationen der Vokabeln enthält
-        public int[] vocable_state;
+            this.book = book;
 
-        private void BtnCheckAll_Click(object sender, EventArgs e) //Falls auf alle Auswählen geklickt wurde
-        {
             ListBox.BeginUpdate();
-
-            for (int i = 0; i < ListBox.Items.Count; i++)
-            {
-                ListBox.SetItemChecked(i, true);
-            }
-
+            foreach (VocabularyWord word in book.Words)
+                ListBox.Items.Add($"{word.MotherTongue} - {word.ForeignLangText}", true);
             ListBox.EndUpdate();
 
+            CbUnpracticed.Enabled = book.Statistics.Unpracticed > 0;
+            CbWronglyPracticed.Enabled = book.Statistics.WronglyPracticed > 0;
+            CbCorrectlyPracticed.Enabled = book.Statistics.CorrectlyPracticed > 0;
+            CbFullyPracticed.Enabled = book.Statistics.FullyPracticed > 0;
+        }
+
+        private void BtnCheckAll_Click(object sender, EventArgs e)
+        {
+            SetItemsChecked(x => true, true);
             BtnContinue.Enabled = true;
             BtnContinue.Focus(); //Fokus auf weiter-Button
         }
 
-        private void BtnUncheckAll_Click(object sender, EventArgs e) //Falls auf alle Abwählen geklickt wurde
+        private void BtnUncheckAll_Click(object sender, EventArgs e)
         {
-            ListBox.BeginUpdate();
-
-            for (int i = 0; i < ListBox.Items.Count; i++)
-            {
-                ListBox.SetItemChecked(i, false);
-            }
-
-            ListBox.EndUpdate();
-
+            SetItemsChecked(x => true, false);
             BtnContinue.Enabled = false;
-        }
-
-        private void BtnCancel_Click(object sender, EventArgs e)
-        {
-            Close();
         }
 
         private void BtnContinue_Click(object sender, EventArgs e)
         {
-            if (ListBox.CheckedItems.Count == 0)
+            for (int i = 0; i < book.Words.Count; i++) // Compose print list
             {
-                BtnContinue.Enabled = false;
+                if (ListBox.GetItemChecked(i))
+                {
+                    printList.Add(book.Words[i]);
+                }
             }
-            else
-            {
-                DialogResult = DialogResult.OK;
-            }
-        }
 
-        private void RbList_CheckedChanged(object sender, EventArgs e)
-        {
-            //Schaut ob das GroupBox-Element aktiviert oder deaktiviert werden soll
+            PrintDialog dialog = new PrintDialog()
+            {
+                AllowCurrentPage = false,
+                AllowSomePages = false,
+                UseEXDialog = true
+            };
 
-            if (RbList.Checked == true)
+            if (dialog.ShowDialog() == DialogResult.OK)
             {
-                GroupPracticeMode.Enabled = true;
+                invertSides = RbAskForMotherTongue.Checked;
+
+                PrintList.PrinterSettings = dialog.PrinterSettings;
+                PrintList.DocumentName = book.Name ?? Words.Vocup;
+                PrintList.Print();
             }
-            else
-            {
-                GroupPracticeMode.Enabled = false;
-            }
+
+            dialog.Dispose();
         }
 
         private void ListBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            //Schaut, ob alle Elemente abgewählt worden sind
-
             BtnContinue.Enabled = ListBox.CheckedItems.Count > 0;
         }
 
-        //Nur Vokabeln üben die, noch nie geübt wurden
-        private void CbUnpracticed_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (BtnCheckAll.Enabled)
+            bool selection = CbUnpracticed.Checked || CbWronglyPracticed.Checked || CbCorrectlyPracticed.Checked || CbFullyPracticed.Checked;
+
+            BtnCheckAll.Enabled = !selection;
+            BtnUncheckAll.Enabled = !selection;
+
+            if (selection)
             {
-                //Falls auf alle Abwählen geklickt wurde
-
-                int anzahl = ListBox.Items.Count;
-
-                for (int i = 0; i < anzahl; i++)
-                {
-                    ListBox.SetItemChecked(i, false);
-                }
-
-                BtnCheckAll.Enabled = false;
-                BtnUncheckAll.Enabled = false;
-            }
-
-            if (CbUnpracticed.Checked)
-            {
-                for (int i = 0; i < ListBox.Items.Count; i++)
-                {
-                    if (vocable_state[i] == 0)
-                    {
-                        ListBox.SetItemChecked(i, true);
-                    }
-                }
-
-                BtnContinue.Enabled = true;
+                SetItemsChecked(x => x.PracticeState == PracticeState.Unpracticed, CbUnpracticed.Checked);
+                SetItemsChecked(x => x.PracticeState == PracticeState.WronglyPracticed, CbWronglyPracticed.Checked);
+                SetItemsChecked(x => x.PracticeState == PracticeState.CorrectlyPracticed, CbCorrectlyPracticed.Checked);
+                SetItemsChecked(x => x.PracticeState == PracticeState.FullyPracticed, CbFullyPracticed.Checked);
             }
             else
             {
-                for (int i = 0; i < ListBox.Items.Count; i++)
-                {
-                    if (vocable_state[i] == 0)
-                    {
-                        ListBox.SetItemChecked(i, false);
-                    }
-                }
-            }
-
-            if (CbWronglyPracticed.Checked == false && CbCorrectlyPracticed.Checked == false && CbUnpracticed.Checked == false && CbFullyPracticed.Checked == false)
-            {
-                BtnCheckAll.Enabled = true;
-                BtnUncheckAll.Enabled = true;
-
-                BtnCheckAll_Click(sender, e);
+                SetItemsChecked(x => true, true);
             }
         }
 
-        //Falsch übersetzt wurden
-        private void CbWronglyPracticed_CheckedChanged(object sender, EventArgs e)
+        private void SetItemsChecked(Func<VocabularyWord, bool> predicate, bool value)
         {
-            if (BtnCheckAll.Enabled == true)
+            ListBox.BeginUpdate();
+
+            for (int i = 0; i < book.Words.Count; i++)
             {
-                //Falls auf alle Abwählen geklickt wurde
-
-                int anzahl = ListBox.Items.Count;
-
-                for (int i = 0; i < anzahl; i++)
+                if (predicate(book.Words[i]))
                 {
-                    ListBox.SetItemChecked(i, false);
-                }
-
-                BtnCheckAll.Enabled = false;
-                BtnUncheckAll.Enabled = false;
-            }
-
-            if (CbWronglyPracticed.Checked == true)
-            {
-                for (int i = 0; i < ListBox.Items.Count; i++)
-                {
-                    if (vocable_state[i] == 1)
-                    {
-                        ListBox.SetItemChecked(i, true);
-                    }
-                }
-
-                BtnContinue.Enabled = true;
-            }
-            else
-            {
-                for (int i = 0; i < ListBox.Items.Count; i++)
-                {
-                    if (vocable_state[i] == 1)
-                    {
-                        ListBox.SetItemChecked(i, false);
-                    }
+                    ListBox.SetItemChecked(i, value);
                 }
             }
 
-            if (CbWronglyPracticed.Checked == false && CbCorrectlyPracticed.Checked == false && CbUnpracticed.Checked == false && CbFullyPracticed.Checked == false)
-            {
-                BtnCheckAll.Enabled = true;
-                BtnUncheckAll.Enabled = true;
-
-                BtnCheckAll_Click(sender, e);
-            }
+            ListBox.EndUpdate();
         }
 
-        //mindestens einmal richtig geübt wurden
-        private void CbCorrectlyPracticed_CheckedChanged(object sender, EventArgs e)
+        private List<VocabularyWord> printList = new List<VocabularyWord>();
+        private int wordNumber = 0;
+        private int pageNumber = 1;
+        private bool invertSides;
+
+        private void PrintList_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            if (BtnCheckAll.Enabled == true)
+            Graphics g = e.Graphics;
+            g.PageUnit = GraphicsUnit.Display;
+
+            int hoffset = 0;
+            int sitePrintedWords = 0;
+            int tableBegin = 0;
+
+            int sideOffset = 2;
+            int lineOffset = 2;
+            int lineThickness = 1;
+            int textMinHeight = 17;
+
+            using (Font siteFont = new Font("Arial", 11))
+            using (StringFormat centerFormat = new StringFormat() { Alignment = StringAlignment.Center })
             {
-                //Falls auf alle Abwählen geklickt wurde
-
-                int anzahl = ListBox.Items.Count;
-
-                for (int i = 0; i < anzahl; i++)
-                {
-                    ListBox.SetItemChecked(i, false);
-                }
-
-                BtnCheckAll.Enabled = false;
-                BtnUncheckAll.Enabled = false;
+                g.DrawString($"{Words.Site} {pageNumber}", siteFont, Brushes.Black, e.MarginBounds.SetHeight(20).Move(0, -20), centerFormat);
             }
 
-            if (CbCorrectlyPracticed.Checked == true)
+            using (Font titleFont = new Font("Arial", 12, FontStyle.Bold))
+            using (StringFormat centerFormat = new StringFormat() { Alignment = StringAlignment.Center })
             {
-                for (int i = 0; i < ListBox.Items.Count; i++)
+                string name = string.IsNullOrWhiteSpace(book.Name) ? "" : book.Name + ": ";
+                string left = invertSides ? book.ForeignLang : book.MotherTongue;
+                string right = invertSides ? book.MotherTongue : book.ForeignLang;
+                string title = $"{name}{left} - {right}";
+
+                g.DrawString(title, titleFont, Brushes.Black, e.MarginBounds.MarginTop(hoffset).SetHeight(25), centerFormat);
+                hoffset += 25;
+                tableBegin = hoffset;
+            }
+
+            using (Font font = new Font("Arial", 10))
+            using (StringFormat nearFormat = new StringFormat() { Alignment = StringAlignment.Near })
+            using (Pen pen = new Pen(Brushes.Black, lineThickness))
+            {
+                for (; ; wordNumber++, sitePrintedWords++) // loop through printList
                 {
-                    if (vocable_state[i] > 1 && vocable_state[i] <= Properties.Settings.Default.MaxPracticeCount)
+                    Rectangle rect = e.MarginBounds.MarginTop(hoffset += lineOffset);
+                    g.DrawLine(pen, rect.Left, rect.Top, rect.Right, rect.Top); // Draw horizontal lines
+                    hoffset += (int)pen.Width + lineOffset;
+
+                    if (wordNumber >= printList.Count) break;
+
+                    rect = e.MarginBounds.MarginTop(hoffset);
+                    VocabularyWord word = printList[wordNumber];
+                    Rectangle left = new Rectangle(rect.X, rect.Y, rect.Width / 2, rect.Height).MarginSide(sideOffset);
+                    Rectangle right = new Rectangle(left.Right, rect.Y, rect.Width / 2, rect.Height).MarginSide(sideOffset)
+                        .MarginLeft(lineThickness); // right column is smaller than the left one because of the line
+                    string leftText = invertSides ? word.ForeignLangText : word.MotherTongue;
+                    string rightText = invertSides ? word.MotherTongue : word.ForeignLangText;
+
+                    SizeF leftSize = g.MeasureString(leftText, font, left.Size, nearFormat, out int leftChars, out int leftLines);
+                    SizeF rightSize = g.MeasureString(rightText, font, right.Size, nearFormat, out int rightChars, out int rightLines);
+                    bool missingChars = leftChars < leftText.Length || rightChars < rightText.Length;
+                    int textHeight = (int)Math.Max(textMinHeight, Math.Max(leftSize.Height, rightSize.Height));
+
+                    if (sitePrintedWords > 0 && (missingChars || textHeight > rect.Height))
                     {
-                        ListBox.SetItemChecked(i, true);
+                        e.HasMorePages = true;
+                        break;
                     }
-                }
-                BtnContinue.Enabled = true;
-            }
-            else
-            {
-                for (int i = 0; i < ListBox.Items.Count; i++)
-                {
-                    if (vocable_state[i] > 1 && vocable_state[i] <= Properties.Settings.Default.MaxPracticeCount)
-                    {
-                        ListBox.SetItemChecked(i, false);
-                    }
+
+                    g.DrawString(leftText, font, Brushes.Black, left, nearFormat);
+                    g.DrawString(rightText, font, Brushes.Black, right, nearFormat);
+                    hoffset += textHeight;
                 }
             }
 
-
-            if (CbWronglyPracticed.Checked == false && CbCorrectlyPracticed.Checked == false && CbUnpracticed.Checked == false && CbFullyPracticed.Checked == false)
+            using (Pen pen = new Pen(Brushes.Black, lineThickness)) // Draw vertical lines
             {
-                BtnCheckAll.Enabled = true;
-                BtnUncheckAll.Enabled = true;
-
-                BtnCheckAll_Click(sender, e);
-            }
-        }
-
-        //als gelernt markiert wurden
-        private void CbFullyPracticed_CheckedChanged(object sender, EventArgs e)
-        {
-            if (BtnCheckAll.Enabled == true)
-            {
-                //Falls auf alle Abwählen geklickt wurde
-
-                for (int i = 0; i < ListBox.Items.Count; i++)
-                {
-                    ListBox.SetItemChecked(i, false);
-                }
-
-                BtnCheckAll.Enabled = false;
-                BtnUncheckAll.Enabled = false;
+                Rectangle table = e.MarginBounds.MarginTop(tableBegin + lineOffset)
+                    .SetHeight(hoffset - tableBegin - lineThickness - 2 * lineOffset);
+                g.DrawLine(pen, table.Left, table.Top, table.Left, table.Bottom);
+                g.DrawLine(pen, table.Right, table.Top, table.Right, table.Bottom);
+                int middleX = table.Left + table.Width / 2;
+                g.DrawLine(pen, middleX, table.Top, middleX, table.Bottom);
             }
 
-            if (CbFullyPracticed.Checked == true)
-            {
-                for (int i = 0; i < ListBox.Items.Count; i++)
-                {
-                    if (vocable_state[i] > Settings.Default.MaxPracticeCount)
-                    {
-                        ListBox.SetItemChecked(i, true);
-                    }
-                }
-
-                BtnContinue.Enabled = true;
-            }
-            else
-            {
-                for (int i = 0; i < ListBox.Items.Count; i++)
-                {
-                    if (vocable_state[i] > Settings.Default.MaxPracticeCount)
-                    {
-                        ListBox.SetItemChecked(i, false);
-                    }
-                }
-            }
-
-            if (CbWronglyPracticed.Checked == false && CbCorrectlyPracticed.Checked == false && CbUnpracticed.Checked == false && CbFullyPracticed.Checked == false)
-            {
-                BtnCheckAll.Enabled = true;
-                BtnUncheckAll.Enabled = true;
-
-                BtnCheckAll_Click(sender, e);
-            }
+            pageNumber++;
         }
     }
 }

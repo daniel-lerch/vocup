@@ -19,7 +19,7 @@ namespace Vocup.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Messages {
@@ -132,6 +132,7 @@ namespace Vocup.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to Der CSV Header verfügt über {0} Spalten, muss aber aus genau 2 Spalten bestehen.
+        ///Stellen Sie sicher, dass die CSV Datei mit Excel im UTF-8 Format gespeichert wurde. Von älteren Vocup Versionen exportierte Dateien sind nicht kompatibel..
         /// </summary>
         internal static string CsvInvalidHeaderColumns {
             get {
@@ -149,7 +150,8 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Möchten Sie ein {0} - {1} Vokabelheft importieren, obwohl die Sprachen nicht übereinstimmen?.
+        ///   Looks up a localized string similar to Möchten Sie ein {0} - {1} Vokabelheft importieren, obwohl die Sprachen nicht mit Ihrem Vokabelheft übereinstimmen?
+        ///Falls {0} und {1} keine Sprachen sondern Vokabeln sind, denken Sie bitte daran, in der ersten Zeile der CSV Datei links Ihre Muttersprache und rechts Ihre Fremdsprache einzutragen..
         /// </summary>
         internal static string CsvInvalidLanguages {
             get {
@@ -294,6 +296,34 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Für diese Sprache existieren bereits Sonderzeichen.
+        /// </summary>
+        internal static string SpecialCharAlreadyExists {
+            get {
+                return ResourceManager.GetString("SpecialCharAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Beim Löschen der Sonderzeichendatei für {0} ist ein Fehler aufgetreten:
+        ///{1}.
+        /// </summary>
+        internal static string SpecialCharDeleteError {
+            get {
+                return ResourceManager.GetString("SpecialCharDeleteError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fehler beim Löschen.
+        /// </summary>
+        internal static string SpecialCharDeleteErrorT {
+            get {
+                return ResourceManager.GetString("SpecialCharDeleteErrorT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Die Sonderzeichendatei {0} konnte nicht geladen werden. Überprüfen Sie die Datei unter {1} und löschen sie diese gegebenenfalls..
         /// </summary>
         internal static string SpecialCharInvalidFile {
@@ -312,11 +342,70 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Beim Speichern der Sonderzeichendatei für {0} ist ein Fehler aufgetreten:
+        ///{1}.
+        /// </summary>
+        internal static string SpecialCharSaveError {
+            get {
+                return ResourceManager.GetString("SpecialCharSaveError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fehler beim Speichern.
+        /// </summary>
+        internal static string SpecialCharSaveErrorT {
+            get {
+                return ResourceManager.GetString("SpecialCharSaveErrorT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unerwarteter Fehler.
         /// </summary>
         internal static string UnexpectedErrorT {
             get {
                 return ResourceManager.GetString("UnexpectedErrorT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Die Vocup-Datensicherung ist fehlerhaft und konnte ich geöffnet werden:
+        ///{0}.
+        /// </summary>
+        internal static string VdpInvalidFile {
+            get {
+                return ResourceManager.GetString("VdpInvalidFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fehlerhafte Datei.
+        /// </summary>
+        internal static string VdpInvalidFileT {
+            get {
+                return ResourceManager.GetString("VdpInvalidFileT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zusammenfassung
+        /// -  {0} Datei(en) wiederhergestellt
+        /// -  {1} Datei(en) übersprungen
+        /// -  {2} Datei(en) fehlgeschlagen.
+        /// </summary>
+        internal static string VdpRestored {
+            get {
+                return ResourceManager.GetString("VdpRestored", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wiederherstellung abgeschlossen.
+        /// </summary>
+        internal static string VdpRestoredT {
+            get {
+                return ResourceManager.GetString("VdpRestoredT", resourceCulture);
             }
         }
         

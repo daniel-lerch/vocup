@@ -35,9 +35,6 @@
             this.BtnUncheckAll = new System.Windows.Forms.Button();
             this.BtnContinue = new System.Windows.Forms.Button();
             this.BtnCancel = new System.Windows.Forms.Button();
-            this.GroupType = new System.Windows.Forms.GroupBox();
-            this.RbCards = new System.Windows.Forms.RadioButton();
-            this.RbList = new System.Windows.Forms.RadioButton();
             this.GroupPracticeMode = new System.Windows.Forms.GroupBox();
             this.RbAskForMotherTongue = new System.Windows.Forms.RadioButton();
             this.RbAskForForeignLang = new System.Windows.Forms.RadioButton();
@@ -46,7 +43,7 @@
             this.CbCorrectlyPracticed = new System.Windows.Forms.CheckBox();
             this.CbWronglyPracticed = new System.Windows.Forms.CheckBox();
             this.CbUnpracticed = new System.Windows.Forms.CheckBox();
-            this.GroupType.SuspendLayout();
+            this.PrintList = new System.Drawing.Printing.PrintDocument();
             this.GroupPracticeMode.SuspendLayout();
             this.GroupFilter.SuspendLayout();
             this.SuspendLayout();
@@ -88,33 +85,10 @@
             // 
             // BtnCancel
             // 
+            this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.BtnCancel, "BtnCancel");
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.UseVisualStyleBackColor = true;
-            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
-            // 
-            // GroupType
-            // 
-            this.GroupType.Controls.Add(this.RbCards);
-            this.GroupType.Controls.Add(this.RbList);
-            resources.ApplyResources(this.GroupType, "GroupType");
-            this.GroupType.Name = "GroupType";
-            this.GroupType.TabStop = false;
-            // 
-            // RbCards
-            // 
-            resources.ApplyResources(this.RbCards, "RbCards");
-            this.RbCards.Checked = true;
-            this.RbCards.Name = "RbCards";
-            this.RbCards.TabStop = true;
-            this.RbCards.UseVisualStyleBackColor = true;
-            // 
-            // RbList
-            // 
-            resources.ApplyResources(this.RbList, "RbList");
-            this.RbList.Name = "RbList";
-            this.RbList.UseVisualStyleBackColor = true;
-            this.RbList.CheckedChanged += new System.EventHandler(this.RbList_CheckedChanged);
             // 
             // GroupPracticeMode
             // 
@@ -153,28 +127,32 @@
             resources.ApplyResources(this.CbFullyPracticed, "CbFullyPracticed");
             this.CbFullyPracticed.Name = "CbFullyPracticed";
             this.CbFullyPracticed.UseVisualStyleBackColor = true;
-            this.CbFullyPracticed.CheckedChanged += new System.EventHandler(this.CbFullyPracticed_CheckedChanged);
+            this.CbFullyPracticed.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // CbCorrectlyPracticed
             // 
             resources.ApplyResources(this.CbCorrectlyPracticed, "CbCorrectlyPracticed");
             this.CbCorrectlyPracticed.Name = "CbCorrectlyPracticed";
             this.CbCorrectlyPracticed.UseVisualStyleBackColor = true;
-            this.CbCorrectlyPracticed.CheckedChanged += new System.EventHandler(this.CbCorrectlyPracticed_CheckedChanged);
+            this.CbCorrectlyPracticed.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // CbWronglyPracticed
             // 
             resources.ApplyResources(this.CbWronglyPracticed, "CbWronglyPracticed");
             this.CbWronglyPracticed.Name = "CbWronglyPracticed";
             this.CbWronglyPracticed.UseVisualStyleBackColor = true;
-            this.CbWronglyPracticed.CheckedChanged += new System.EventHandler(this.CbWronglyPracticed_CheckedChanged);
+            this.CbWronglyPracticed.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
             // CbUnpracticed
             // 
             resources.ApplyResources(this.CbUnpracticed, "CbUnpracticed");
             this.CbUnpracticed.Name = "CbUnpracticed";
             this.CbUnpracticed.UseVisualStyleBackColor = true;
-            this.CbUnpracticed.CheckedChanged += new System.EventHandler(this.CbUnpracticed_CheckedChanged);
+            this.CbUnpracticed.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
+            // 
+            // PrintList
+            // 
+            this.PrintList.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintList_PrintPage);
             // 
             // PrintWordSelection
             // 
@@ -183,7 +161,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.GroupFilter);
             this.Controls.Add(this.GroupPracticeMode);
-            this.Controls.Add(this.GroupType);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnContinue);
             this.Controls.Add(this.BtnUncheckAll);
@@ -195,8 +172,6 @@
             this.MinimizeBox = false;
             this.Name = "PrintWordSelection";
             this.ShowInTaskbar = false;
-            this.GroupType.ResumeLayout(false);
-            this.GroupType.PerformLayout();
             this.GroupPracticeMode.ResumeLayout(false);
             this.GroupPracticeMode.PerformLayout();
             this.GroupFilter.ResumeLayout(false);
@@ -213,17 +188,15 @@
         private System.Windows.Forms.Button BtnUncheckAll;
         private System.Windows.Forms.Button BtnContinue;
         private System.Windows.Forms.Button BtnCancel;
-        public System.Windows.Forms.CheckedListBox ListBox;
-        private System.Windows.Forms.GroupBox GroupType;
+        private System.Windows.Forms.CheckedListBox ListBox;
         private System.Windows.Forms.GroupBox GroupPracticeMode;
-        public System.Windows.Forms.RadioButton RbCards;
-        public System.Windows.Forms.RadioButton RbList;
-        public System.Windows.Forms.RadioButton RbAskForMotherTongue;
-        public System.Windows.Forms.RadioButton RbAskForForeignLang;
+        private System.Windows.Forms.RadioButton RbAskForMotherTongue;
+        private System.Windows.Forms.RadioButton RbAskForForeignLang;
         private System.Windows.Forms.GroupBox GroupFilter;
-        public System.Windows.Forms.CheckBox CbWronglyPracticed;
-        public System.Windows.Forms.CheckBox CbUnpracticed;
-        public System.Windows.Forms.CheckBox CbCorrectlyPracticed;
-        public System.Windows.Forms.CheckBox CbFullyPracticed;
+        private System.Windows.Forms.CheckBox CbWronglyPracticed;
+        private System.Windows.Forms.CheckBox CbUnpracticed;
+        private System.Windows.Forms.CheckBox CbCorrectlyPracticed;
+        private System.Windows.Forms.CheckBox CbFullyPracticed;
+        private System.Drawing.Printing.PrintDocument PrintList;
     }
 }

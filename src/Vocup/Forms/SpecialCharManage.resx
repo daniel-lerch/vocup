@@ -118,26 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="listBox.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LanguageList.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 19</value>
   </data>
-  <data name="listBox.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LanguageList.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 95</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="listBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="LanguageList.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;listBox.Name" xml:space="preserve">
-    <value>listBox</value>
+  <data name="&gt;&gt;LanguageList.Name" xml:space="preserve">
+    <value>LanguageList</value>
   </data>
-  <data name="&gt;&gt;listBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;LanguageList.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;listBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LanguageList.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="&gt;&gt;listBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LanguageList.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="BtnDelete.Enabled" type="System.Boolean, mscorlib">

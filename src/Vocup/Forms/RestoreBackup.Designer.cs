@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RestoreBackup));
-            this.TbFilePath = new System.Windows.Forms.TextBox();
-            this.BtnFilePath = new System.Windows.Forms.Button();
-            this.GroupFilePath = new System.Windows.Forms.GroupBox();
             this.GroupBooks = new System.Windows.Forms.GroupBox();
-            this.exact_path = new System.Windows.Forms.CheckBox();
+            this.CbAbsolutePath = new System.Windows.Forms.CheckBox();
             this.ListBooks = new System.Windows.Forms.CheckedListBox();
             this.GroupSpecialChars = new System.Windows.Forms.GroupBox();
             this.ListSpecialChars = new System.Windows.Forms.CheckedListBox();
@@ -47,49 +44,26 @@
             this.RbRestoreNoResults = new System.Windows.Forms.RadioButton();
             this.RbRestoreAllResults = new System.Windows.Forms.RadioButton();
             this.RbRestoreAssociatedResults = new System.Windows.Forms.RadioButton();
-            this.GroupFilePath.SuspendLayout();
             this.GroupBooks.SuspendLayout();
             this.GroupSpecialChars.SuspendLayout();
             this.GroupReplace.SuspendLayout();
             this.GroupResults.SuspendLayout();
             this.SuspendLayout();
             // 
-            // TbFilePath
-            // 
-            resources.ApplyResources(this.TbFilePath, "TbFilePath");
-            this.TbFilePath.Name = "TbFilePath";
-            this.TbFilePath.ReadOnly = true;
-            this.TbFilePath.TextChanged += new System.EventHandler(this.path_field_TextChanged);
-            // 
-            // BtnFilePath
-            // 
-            resources.ApplyResources(this.BtnFilePath, "BtnFilePath");
-            this.BtnFilePath.Name = "BtnFilePath";
-            this.BtnFilePath.UseVisualStyleBackColor = true;
-            this.BtnFilePath.Click += new System.EventHandler(this.BtnFilePath_Click);
-            // 
-            // GroupFilePath
-            // 
-            this.GroupFilePath.Controls.Add(this.TbFilePath);
-            this.GroupFilePath.Controls.Add(this.BtnFilePath);
-            resources.ApplyResources(this.GroupFilePath, "GroupFilePath");
-            this.GroupFilePath.Name = "GroupFilePath";
-            this.GroupFilePath.TabStop = false;
-            // 
             // GroupBooks
             // 
-            this.GroupBooks.Controls.Add(this.exact_path);
+            this.GroupBooks.Controls.Add(this.CbAbsolutePath);
             this.GroupBooks.Controls.Add(this.ListBooks);
             resources.ApplyResources(this.GroupBooks, "GroupBooks");
             this.GroupBooks.Name = "GroupBooks";
             this.GroupBooks.TabStop = false;
             // 
-            // exact_path
+            // CbAbsolutePath
             // 
-            resources.ApplyResources(this.exact_path, "exact_path");
-            this.exact_path.Name = "exact_path";
-            this.exact_path.UseVisualStyleBackColor = true;
-            this.exact_path.CheckedChanged += new System.EventHandler(this.exact_path_CheckedChanged);
+            resources.ApplyResources(this.CbAbsolutePath, "CbAbsolutePath");
+            this.CbAbsolutePath.Name = "CbAbsolutePath";
+            this.CbAbsolutePath.UseVisualStyleBackColor = true;
+            this.CbAbsolutePath.CheckedChanged += new System.EventHandler(this.CbAbsolutePath_CheckedChanged);
             // 
             // ListBooks
             // 
@@ -97,7 +71,6 @@
             this.ListBooks.FormattingEnabled = true;
             resources.ApplyResources(this.ListBooks, "ListBooks");
             this.ListBooks.Name = "ListBooks";
-            this.ListBooks.SelectedValueChanged += new System.EventHandler(this.listbox_vhf_SelectedValueChanged);
             // 
             // GroupSpecialChars
             // 
@@ -112,16 +85,13 @@
             this.ListSpecialChars.FormattingEnabled = true;
             resources.ApplyResources(this.ListSpecialChars, "ListSpecialChars");
             this.ListSpecialChars.Name = "ListSpecialChars";
-            this.ListSpecialChars.SelectedValueChanged += new System.EventHandler(this.listbox_special_chars_SelectedValueChanged);
             // 
             // BtnRestore
             // 
             this.BtnRestore.DialogResult = System.Windows.Forms.DialogResult.OK;
             resources.ApplyResources(this.BtnRestore, "BtnRestore");
             this.BtnRestore.Name = "BtnRestore";
-            this.BtnRestore.UseVisualStyleBackColor = true;
-            this.BtnRestore.Click += new System.EventHandler(this.restore_button_Click);
-            this.BtnRestore.MouseEnter += new System.EventHandler(this.restore_button_MouseEnter);
+            this.BtnRestore.Click += new System.EventHandler(this.BtnRestore_Click);
             // 
             // BtnCancel
             // 
@@ -129,6 +99,7 @@
             resources.ApplyResources(this.BtnCancel, "BtnCancel");
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // GroupReplace
             // 
@@ -144,14 +115,12 @@
             resources.ApplyResources(this.RbReplaceOlder, "RbReplaceOlder");
             this.RbReplaceOlder.Name = "RbReplaceOlder";
             this.RbReplaceOlder.UseVisualStyleBackColor = true;
-            this.RbReplaceOlder.CheckedChanged += new System.EventHandler(this.replace_newer_CheckedChanged);
             // 
             // RbReplaceNothing
             // 
             resources.ApplyResources(this.RbReplaceNothing, "RbReplaceNothing");
             this.RbReplaceNothing.Name = "RbReplaceNothing";
             this.RbReplaceNothing.UseVisualStyleBackColor = true;
-            this.RbReplaceNothing.CheckedChanged += new System.EventHandler(this.replace_nothing_CheckedChanged);
             // 
             // RbReplaceAll
             // 
@@ -160,7 +129,6 @@
             this.RbReplaceAll.Name = "RbReplaceAll";
             this.RbReplaceAll.TabStop = true;
             this.RbReplaceAll.UseVisualStyleBackColor = true;
-            this.RbReplaceAll.CheckedChanged += new System.EventHandler(this.replace_all_CheckedChanged);
             // 
             // GroupResults
             // 
@@ -176,14 +144,12 @@
             resources.ApplyResources(this.RbRestoreNoResults, "RbRestoreNoResults");
             this.RbRestoreNoResults.Name = "RbRestoreNoResults";
             this.RbRestoreNoResults.UseVisualStyleBackColor = true;
-            this.RbRestoreNoResults.CheckedChanged += new System.EventHandler(this.results_restore_nothing_CheckedChanged);
             // 
             // RbRestoreAllResults
             // 
             resources.ApplyResources(this.RbRestoreAllResults, "RbRestoreAllResults");
             this.RbRestoreAllResults.Name = "RbRestoreAllResults";
             this.RbRestoreAllResults.UseVisualStyleBackColor = true;
-            this.RbRestoreAllResults.CheckedChanged += new System.EventHandler(this.results_restore_all_CheckedChanged);
             // 
             // RbRestoreAssociatedResults
             // 
@@ -192,11 +158,9 @@
             this.RbRestoreAssociatedResults.Name = "RbRestoreAssociatedResults";
             this.RbRestoreAssociatedResults.TabStop = true;
             this.RbRestoreAssociatedResults.UseVisualStyleBackColor = true;
-            this.RbRestoreAssociatedResults.CheckedChanged += new System.EventHandler(this.results_restore_choosed_CheckedChanged);
             // 
-            // backup_restore
+            // RestoreBackup
             // 
-            this.AcceptButton = this.BtnFilePath;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnCancel;
@@ -206,15 +170,13 @@
             this.Controls.Add(this.BtnRestore);
             this.Controls.Add(this.GroupSpecialChars);
             this.Controls.Add(this.GroupBooks);
-            this.Controls.Add(this.GroupFilePath);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "backup_restore";
+            this.Name = "RestoreBackup";
             this.ShowInTaskbar = false;
-            this.Load += new System.EventHandler(this.Form_Load);
-            this.GroupFilePath.ResumeLayout(false);
-            this.GroupFilePath.PerformLayout();
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Closed);
+            this.Shown += new System.EventHandler(this.Form_Shown);
             this.GroupBooks.ResumeLayout(false);
             this.GroupBooks.PerformLayout();
             this.GroupSpecialChars.ResumeLayout(false);
@@ -227,24 +189,20 @@
         }
 
         #endregion
-
-        public System.Windows.Forms.TextBox TbFilePath;
-        public System.Windows.Forms.Button BtnFilePath;
-        private System.Windows.Forms.GroupBox GroupFilePath;
         private System.Windows.Forms.GroupBox GroupBooks;
-        public System.Windows.Forms.CheckedListBox ListBooks;
         private System.Windows.Forms.GroupBox GroupSpecialChars;
-        public System.Windows.Forms.CheckedListBox ListSpecialChars;
         private System.Windows.Forms.Button BtnRestore;
         private System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.GroupBox GroupReplace;
-        public System.Windows.Forms.RadioButton RbReplaceOlder;
-        public System.Windows.Forms.RadioButton RbReplaceNothing;
-        public System.Windows.Forms.RadioButton RbReplaceAll;
         private System.Windows.Forms.GroupBox GroupResults;
-        public System.Windows.Forms.RadioButton RbRestoreAllResults;
-        public System.Windows.Forms.RadioButton RbRestoreAssociatedResults;
-        public System.Windows.Forms.RadioButton RbRestoreNoResults;
-        private System.Windows.Forms.CheckBox exact_path;
+        private System.Windows.Forms.CheckBox CbAbsolutePath;
+        private System.Windows.Forms.CheckedListBox ListBooks;
+        private System.Windows.Forms.RadioButton RbReplaceOlder;
+        private System.Windows.Forms.RadioButton RbReplaceNothing;
+        private System.Windows.Forms.RadioButton RbReplaceAll;
+        private System.Windows.Forms.CheckedListBox ListSpecialChars;
+        private System.Windows.Forms.RadioButton RbRestoreAllResults;
+        private System.Windows.Forms.RadioButton RbRestoreAssociatedResults;
+        private System.Windows.Forms.RadioButton RbRestoreNoResults;
     }
 }

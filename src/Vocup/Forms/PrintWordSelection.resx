@@ -144,7 +144,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="ListBox.HorizontalScrollbar" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -172,7 +172,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ListBox.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="BtnCheckAll.Location" type="System.Drawing.Point, System.Drawing">
     <value>166, 289</value>
@@ -196,7 +196,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BtnCheckAll.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="BtnUncheckAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -223,7 +223,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BtnUncheckAll.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="BtnContinue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -250,7 +250,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BtnContinue.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="BtnCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -277,160 +277,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BtnCancel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;RbCards.Name" xml:space="preserve">
-    <value>RbCards</value>
-  </data>
-  <data name="&gt;&gt;RbCards.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RbCards.Parent" xml:space="preserve">
-    <value>GroupType</value>
-  </data>
-  <data name="&gt;&gt;RbCards.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;RbList.Name" xml:space="preserve">
-    <value>RbList</value>
-  </data>
-  <data name="&gt;&gt;RbList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RbList.Parent" xml:space="preserve">
-    <value>GroupType</value>
-  </data>
-  <data name="&gt;&gt;RbList.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="GroupType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 390</value>
-  </data>
-  <data name="GroupType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 70</value>
-  </data>
-  <data name="GroupType.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="GroupType.Text" xml:space="preserve">
-    <value>Was möchten Sie audrucken?</value>
-  </data>
-  <data name="&gt;&gt;GroupType.Name" xml:space="preserve">
-    <value>GroupType</value>
-  </data>
-  <data name="&gt;&gt;GroupType.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupType.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupType.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="RbCards.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="RbCards.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="RbCards.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 17</value>
-  </data>
-  <data name="RbCards.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="RbCards.Text" xml:space="preserve">
-    <value>Kärtchen</value>
-  </data>
-  <data name="&gt;&gt;RbCards.Name" xml:space="preserve">
-    <value>RbCards</value>
-  </data>
-  <data name="&gt;&gt;RbCards.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RbCards.Parent" xml:space="preserve">
-    <value>GroupType</value>
-  </data>
-  <data name="&gt;&gt;RbCards.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="RbList.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="RbList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 43</value>
-  </data>
-  <data name="RbList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 17</value>
-  </data>
-  <data name="RbList.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="RbList.Text" xml:space="preserve">
-    <value>Liste</value>
-  </data>
-  <data name="&gt;&gt;RbList.Name" xml:space="preserve">
-    <value>RbList</value>
-  </data>
-  <data name="&gt;&gt;RbList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RbList.Parent" xml:space="preserve">
-    <value>GroupType</value>
-  </data>
-  <data name="&gt;&gt;RbList.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;RbAskForMotherTongue.Name" xml:space="preserve">
-    <value>RbAskForMotherTongue</value>
-  </data>
-  <data name="&gt;&gt;RbAskForMotherTongue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RbAskForMotherTongue.Parent" xml:space="preserve">
-    <value>GroupPracticeMode</value>
-  </data>
-  <data name="&gt;&gt;RbAskForMotherTongue.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;RbAskForForeignLang.Name" xml:space="preserve">
-    <value>RbAskForForeignLang</value>
-  </data>
-  <data name="&gt;&gt;RbAskForForeignLang.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RbAskForForeignLang.Parent" xml:space="preserve">
-    <value>GroupPracticeMode</value>
-  </data>
-  <data name="&gt;&gt;RbAskForForeignLang.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="GroupPracticeMode.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="GroupPracticeMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 390</value>
-  </data>
-  <data name="GroupPracticeMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 70</value>
-  </data>
-  <data name="GroupPracticeMode.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="GroupPracticeMode.Text" xml:space="preserve">
-    <value>Übersetzungsrichtung</value>
-  </data>
-  <data name="&gt;&gt;GroupPracticeMode.Name" xml:space="preserve">
-    <value>GroupPracticeMode</value>
-  </data>
-  <data name="&gt;&gt;GroupPracticeMode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupPracticeMode.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupPracticeMode.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="RbAskForMotherTongue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -487,6 +334,30 @@
     <value>GroupPracticeMode</value>
   </data>
   <data name="&gt;&gt;RbAskForForeignLang.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="GroupPracticeMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 390</value>
+  </data>
+  <data name="GroupPracticeMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 70</value>
+  </data>
+  <data name="GroupPracticeMode.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="GroupPracticeMode.Text" xml:space="preserve">
+    <value>Übersetzungsrichtung</value>
+  </data>
+  <data name="&gt;&gt;GroupPracticeMode.Name" xml:space="preserve">
+    <value>GroupPracticeMode</value>
+  </data>
+  <data name="&gt;&gt;GroupPracticeMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupPracticeMode.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GroupPracticeMode.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="CbFullyPracticed.AutoSize" type="System.Boolean, mscorlib">
@@ -624,6 +495,9 @@
   <data name="&gt;&gt;GroupFilter.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="PrintList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -638,6 +512,12 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Vokabeln drucken</value>
+  </data>
+  <data name="&gt;&gt;PrintList.Name" xml:space="preserve">
+    <value>PrintList</value>
+  </data>
+  <data name="&gt;&gt;PrintList.Type" xml:space="preserve">
+    <value>System.Drawing.Printing.PrintDocument, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>PrintWordSelection</value>

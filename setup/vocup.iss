@@ -57,7 +57,7 @@ Name: {commondesktop}\Vocup;          Filename: {app}\Vocup.exe; Tasks: desktopi
 
 ;Mit dieser Anweisung wird ein Registryschlüssel namens ".vhf" erzeugt
 Root: HKCR; Subkey: ".vhf";                        ValueType: string; ValueName: ""; ValueData: "vhf.File";                   Flags: uninsdeletekey deletevalue;
-;TYpenSchlüssel erstellen
+;TypenSchlüssel erstellen
 Root: HKCR; Subkey: "vhf.File";                    ValueType: string; ValueName: ""; ValueData: "Vokabelheft";                Flags: uninsdeletekey deletevalue;
 ;Icon Zuordnen
 Root: HKCR; Subkey: "vhf.File\DefaultIcon";        ValueType: string; ValueName: ""; ValueData: "{app}\icon_vhf.ico";         Flags: uninsdeletekey deletevalue;
@@ -68,7 +68,7 @@ Root: HKCR; Subkey: "vhf.File\shell\open";         ValueType: string; ValueName:
 
 ;Mit dieser Anweisung wird ein Registryschlüssel namens ".vdp" erzeugt
 Root: HKCR; Subkey: ".vdp";                        ValueType: string; ValueName: ""; ValueData: "vdp.File";                   Flags: uninsdeletekey deletevalue;
-;TYpenSchlüssel erstellen
+;TypenSchlüssel erstellen
 Root: HKCR; Subkey: "vdp.File";                    ValueType: string; ValueName: ""; ValueData: "Vocup Datensicherung";       Flags: uninsdeletekey deletevalue;
 ;Icon Zuordnen
 Root: HKCR; Subkey: "vdp.File\DefaultIcon";        ValueType: string; ValueName: ""; ValueData: "{app}\icon_vdp.ico";         Flags: uninsdeletekey deletevalue;
@@ -81,7 +81,7 @@ Root: HKCR; Subkey: "vdp.File\shell\open";         ValueType: string; ValueName:
 Filename: {app}\Vocup.exe; Description: {cm:LaunchProgram,Vocup}; Flags: nowait postinstall skipifsilent;
 
 [CustomMessages]
-NetFxRequired_Caption0=Vocup benötigt Microsoft .NET Framework 4.6.2
+NetFxRequired_Caption0=Vocup benötigt Microsoft .NET Framework 4.7.2
 NetFxRequired_Caption1=
 NetFxRequired_Caption2=Bitte installieren Sie diese Version über Windows Update
 NetFxRequired_Caption3=und führen Sie die Installation danach erneut aus.
@@ -108,7 +108,8 @@ function IsNetFxInstalled(version: string; service: cardinal): boolean;
 //    'v4.6.2'        .NET Framework 4.6.2
 //    'v4.7'          .NET Framework 4.7
 //    'v4.7.1'        .NET Framework 4.7.1
-//    'V4.7.2'        .NET Framework 4.7.2
+//    'v4.7.2'        .NET Framework 4.7.2
+//    'v4.8'          .NET Framework 4.8
 //
 // service -- Specify any non-negative integer for the required service pack level:
 //    0               No service packs required
@@ -141,6 +142,7 @@ begin
           'v4.7':   versionRelease := 460798; // 460805 before Win10 Creators Update
           'v4.7.1': versionRelease := 461308; // 461310 before Win10 Fall Creators Update
           'v4.7.2': versionRelease := 461808; // 461814 before Win10 April 2018 Update
+          'v4.8':   versionRelease := 528040; // 528049 before Win10 May 2019 Update
         end;
     end;
 
@@ -172,7 +174,7 @@ end;
     
 function InitializeSetup(): Boolean;
 begin
-    if not IsNetFxInstalled('v4.6.2', 0) then begin
+    if not IsNetFxInstalled('v4.7.2', 0) then begin
         MsgBox(
             ExpandConstant('{cm:NetFxRequired_Caption0}') + #13 +
             ExpandConstant('{cm:NetFxRequired_Caption1}') + #13 +

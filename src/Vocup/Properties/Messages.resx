@@ -148,14 +148,16 @@ Details:
 Bitte stellen Sie sicher, dass die Datei nicht leer ist.</value>
   </data>
   <data name="CsvInvalidHeaderColumns" xml:space="preserve">
-    <value>Der CSV Header verfügt über {0} Spalten, muss aber aus genau 2 Spalten bestehen</value>
+    <value>Der CSV Header verfügt über {0} Spalten, muss aber aus genau 2 Spalten bestehen.
+Stellen Sie sicher, dass die CSV Datei mit Excel im UTF-8 Format gespeichert wurde. Von älteren Vocup Versionen exportierte Dateien sind nicht kompatibel.</value>
     <comment>{0}: Count of columns</comment>
   </data>
   <data name="CsvInvalidHeaderT" xml:space="preserve">
     <value>Fehlerhafter CSV Header</value>
   </data>
   <data name="CsvInvalidLanguages" xml:space="preserve">
-    <value>Möchten Sie ein {0} - {1} Vokabelheft importieren, obwohl die Sprachen nicht übereinstimmen?</value>
+    <value>Möchten Sie ein {0} - {1} Vokabelheft importieren, obwohl die Sprachen nicht mit Ihrem Vokabelheft übereinstimmen?
+Falls {0} und {1} keine Sprachen sondern Vokabeln sind, denken Sie bitte daran, in der ersten Zeile der CSV Datei links Ihre Muttersprache und rechts Ihre Fremdsprache einzutragen.</value>
     <comment>{0}: Source, {1}: Target</comment>
   </data>
   <data name="EditAddDuplicate" xml:space="preserve">
@@ -207,6 +209,17 @@ Details: {0}</value>
   <data name="OpenUnknownFileT" xml:space="preserve">
     <value>Unbekanntes Dateiformat</value>
   </data>
+  <data name="SpecialCharAlreadyExists" xml:space="preserve">
+    <value>Für diese Sprache existieren bereits Sonderzeichen</value>
+  </data>
+  <data name="SpecialCharDeleteError" xml:space="preserve">
+    <value>Beim Löschen der Sonderzeichendatei für {0} ist ein Fehler aufgetreten:
+{1}</value>
+    <comment>{0}: Language, {1}: ErrorDetails</comment>
+  </data>
+  <data name="SpecialCharDeleteErrorT" xml:space="preserve">
+    <value>Fehler beim Löschen</value>
+  </data>
   <data name="SpecialCharInvalidFile" xml:space="preserve">
     <value>Die Sonderzeichendatei {0} konnte nicht geladen werden. Überprüfen Sie die Datei unter {1} und löschen sie diese gegebenenfalls.</value>
     <comment>{0}: Language, {1}: FilePath</comment>
@@ -214,8 +227,34 @@ Details: {0}</value>
   <data name="SpecialCharInvalidFileT" xml:space="preserve">
     <value>Fehlerhafte Datei</value>
   </data>
+  <data name="SpecialCharSaveError" xml:space="preserve">
+    <value>Beim Speichern der Sonderzeichendatei für {0} ist ein Fehler aufgetreten:
+{1}</value>
+    <comment>{0}: Language, {1}: ErrorDetails</comment>
+  </data>
+  <data name="SpecialCharSaveErrorT" xml:space="preserve">
+    <value>Fehler beim Speichern</value>
+  </data>
   <data name="UnexpectedErrorT" xml:space="preserve">
     <value>Unerwarteter Fehler</value>
+  </data>
+  <data name="VdpInvalidFile" xml:space="preserve">
+    <value>Die Vocup-Datensicherung ist fehlerhaft und konnte ich geöffnet werden:
+{0}</value>
+    <comment>{0}: ErrorDetails</comment>
+  </data>
+  <data name="VdpInvalidFileT" xml:space="preserve">
+    <value>Fehlerhafte Datei</value>
+  </data>
+  <data name="VdpRestored" xml:space="preserve">
+    <value>Zusammenfassung
+ -  {0} Datei(en) wiederhergestellt
+ -  {1} Datei(en) übersprungen
+ -  {2} Datei(en) fehlgeschlagen</value>
+    <comment>{0}: Restored, {1}: Skipped, {2}: Failed</comment>
+  </data>
+  <data name="VdpRestoredT" xml:space="preserve">
+    <value>Wiederherstellung abgeschlossen</value>
   </data>
   <data name="VhfInvalidFile" xml:space="preserve">
     <value>Die Vokabelheftdatei ist fehlerhaft und konnte nicht geöffnet werden.</value>
