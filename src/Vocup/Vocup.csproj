@@ -267,7 +267,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\Network\InternetService.cs" />
     <Compile Include="Util\AppInfo.cs" />
-    <Compile Include="Util\Crypto.cs" />
     <Compile Include="Util\ListCompositor.cs" />
     <Compile Include="Util\PatternMatcher.cs" />
     <Compile Include="Util\ReactiveCollection.cs" />
