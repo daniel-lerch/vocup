@@ -345,6 +345,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Icons.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Messages.de.resx" />
     <EmbeddedResource Include="Properties\Messages.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Messages.Designer.cs</LastGenOutput>
@@ -353,6 +354,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Sounds.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Words.de.resx" />
     <EmbeddedResource Include="Properties\Words.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Words.Designer.cs</LastGenOutput>

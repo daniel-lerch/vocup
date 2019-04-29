@@ -35,6 +35,6 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.6.1.0")]
 [assembly: AssemblyFileVersion("1.6.1.0")]
-[assembly: NeutralResourcesLanguage("de")]
+[assembly: NeutralResourcesLanguage("en")]
 
 [assembly: InternalsVisibleTo("Vocup.UnitTests")]
