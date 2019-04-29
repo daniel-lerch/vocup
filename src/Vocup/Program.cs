@@ -20,6 +20,12 @@ namespace Vocup
             // Prevents the installer from executing while the program is running
             new Mutex(false, AppInfo.ProductName, out _);
 
+#if DEBUG
+            //var culture = new System.Globalization.CultureInfo("en-US", true);
+            //System.Globalization.CultureInfo.DefaultThreadCurrentCulture = culture;
+            //System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = culture;
+#endif
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 

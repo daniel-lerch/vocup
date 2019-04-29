@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
 using Vocup.Models;
@@ -43,7 +44,7 @@ namespace Vocup.IO.Internal
                     return false;
                 }
 
-                List<Tuple<int, DateTime>> results = new List<Tuple<int, DateTime>>();
+                List<(int stateNumber, DateTime date)> results = new List<(int stateNumber, DateTime date)>();
 
                 while (true)
                 {
@@ -56,13 +57,12 @@ namespace Vocup.IO.Internal
                         return false;
                     }
                     DateTime time = DateTime.MinValue;
-                    // DateTime.Parse() works with the format dd.MM.yyyy HH:mm
-                    if (!string.IsNullOrWhiteSpace(columns[1]) && !DateTime.TryParse(columns[1], out time))
+                    if (!string.IsNullOrWhiteSpace(columns[1]) && !DateTime.TryParseExact(columns[1], "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out time))
                     {
                         DeleteInvalidFile(vhrInfo);
                         return false;
                     }
-                    results.Add(new Tuple<int, DateTime>(state, time));
+                    results.Add((state, time));
                 }
 
                 bool countMatch = book.Words.Count == results.Count;
@@ -98,9 +98,7 @@ namespace Vocup.IO.Internal
                 for (int i = 0; i < book.Words.Count; i++)
                 {
                     VocabularyWord word = book.Words[i];
-                    Tuple<int, DateTime> result = results[i];
-                    word.PracticeStateNumber = result.Item1;
-                    word.PracticeDate = result.Item2;
+                    (word.PracticeStateNumber, word.PracticeDate) = results[i];
                 }
             }
 

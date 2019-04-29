@@ -34,7 +34,10 @@ namespace Vocup.Models
 
             motherTongueColumn.Text = VocabularyWord.MotherTongue;
             foreignLangColumn.Text = VocabularyWord.ForeignLangText;
-            praticeDateColumn.Text = (VocabularyWord.PracticeDate == default(DateTime)) ? "" : VocabularyWord.PracticeDate.ToString("dd.MM.yyyy HH:mm");
+            if (VocabularyWord.PracticeDate == default)
+                praticeDateColumn.Text = "";
+            else
+                praticeDateColumn.Text = $"{VocabularyWord.PracticeDate.ToShortDateString()} {VocabularyWord.PracticeDate.ToShortTimeString()}";
         }
     }
 }
