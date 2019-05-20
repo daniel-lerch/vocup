@@ -191,7 +191,7 @@
   </data>
   <data name="OverallXWords" xml:space="preserve">
     <value>Insgesamt {0} Vokabeln</value>
-    <comment>{0}: Anzahl</comment>
+    <comment>{0}: Count</comment>
   </data>
   <data name="PartlyCorrect" xml:space="preserve">
     <value>Teilweise korrekt</value>

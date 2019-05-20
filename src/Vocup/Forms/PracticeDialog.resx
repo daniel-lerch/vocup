@@ -282,7 +282,7 @@
     <value>0</value>
   </data>
   <data name="GroupPractice.Text" xml:space="preserve">
-    <value>Übersetzen Sie von {0} nach {1}</value>
+    <value>Übersetzen Sie von %MotherTongue% nach %ForeignLang%</value>
   </data>
   <data name="&gt;&gt;GroupPractice.Name" xml:space="preserve">
     <value>GroupPractice</value>

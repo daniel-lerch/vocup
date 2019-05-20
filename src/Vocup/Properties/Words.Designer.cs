@@ -61,7 +61,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vokabelhefte hinzufügen.
+        ///   Looks up a localized string similar to Add vocabulary books.
         /// </summary>
         internal static string AddVocabularyBooks {
             get {
@@ -70,7 +70,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Neue Vokabel hinzufügen.
+        ///   Looks up a localized string similar to Add new word.
         /// </summary>
         internal static string AddWord {
             get {
@@ -79,7 +79,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alle Vokabeln.
+        ///   Looks up a localized string similar to All words.
         /// </summary>
         internal static string AllWords {
             get {
@@ -88,7 +88,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Abbrechen.
+        ///   Looks up a localized string similar to Cancel.
         /// </summary>
         internal static string Cancel {
             get {
@@ -97,7 +97,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Korrekt.
+        ///   Looks up a localized string similar to Correct.
         /// </summary>
         internal static string Correct {
             get {
@@ -106,7 +106,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Richtig wäre: {0}.
+        ///   Looks up a localized string similar to Right would be: {0}.
         /// </summary>
         internal static string CorrectWasX {
             get {
@@ -115,7 +115,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Richtig wäre: {0} und {1}.
+        ///   Looks up a localized string similar to Right would be: {0} and {1}.
         /// </summary>
         internal static string CorrectWasXAndY {
             get {
@@ -124,7 +124,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Neues Vokabelheft erstellen.
+        ///   Looks up a localized string similar to Create new vocabulary book.
         /// </summary>
         internal static string CreateVocabularyBook {
             get {
@@ -133,7 +133,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Easter Egg.
+        ///   Looks up a localized string similar to Easter egg.
         /// </summary>
         internal static string EasterEgg {
             get {
@@ -142,7 +142,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vokabelheft bearbeiten.
+        ///   Looks up a localized string similar to Edit vocabulary book.
         /// </summary>
         internal static string EditVocabularyBook {
             get {
@@ -151,7 +151,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vokabel bearbeiten.
+        ///   Looks up a localized string similar to Edit word.
         /// </summary>
         internal static string EditWord {
             get {
@@ -160,7 +160,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Exportieren.
+        ///   Looks up a localized string similar to Export.
         /// </summary>
         internal static string Export {
             get {
@@ -169,7 +169,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fertig.
+        ///   Looks up a localized string similar to Finish.
         /// </summary>
         internal static string Finish {
             get {
@@ -178,7 +178,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fremdsprache.
+        ///   Looks up a localized string similar to Foreign language.
         /// </summary>
         internal static string ForeignLanguage {
             get {
@@ -187,7 +187,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Importieren.
+        ///   Looks up a localized string similar to Import.
         /// </summary>
         internal static string Import {
             get {
@@ -196,7 +196,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zuletzt geübt.
+        ///   Looks up a localized string similar to Last practiced.
         /// </summary>
         internal static string LastPracticed {
             get {
@@ -205,7 +205,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vokabelheft {0} - {1}.
+        ///   Looks up a localized string similar to Vocabulary book {0} - {1}.
         /// </summary>
         internal static string MailSubjectVocabularyBook {
             get {
@@ -214,7 +214,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Muttersprache.
+        ///   Looks up a localized string similar to Mother tongue.
         /// </summary>
         internal static string MotherTongue {
             get {
@@ -223,7 +223,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to nicht empfohlen.
+        ///   Looks up a localized string similar to not recommended.
         /// </summary>
         internal static string NotRecommended {
             get {
@@ -241,7 +241,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Datensicherung öffnen.
+        ///   Looks up a localized string similar to Open backup.
         /// </summary>
         internal static string OpenBackup {
             get {
@@ -250,7 +250,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vokabelheft öffnen.
+        ///   Looks up a localized string similar to Open vocabulary book.
         /// </summary>
         internal static string OpenVocabularyBook {
             get {
@@ -259,7 +259,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Insgesamt eine Vokabel.
+        ///   Looks up a localized string similar to One word in total.
         /// </summary>
         internal static string OverallOneWord {
             get {
@@ -268,7 +268,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Insgesamt {0} Vokabeln.
+        ///   Looks up a localized string similar to {0} words in total.
         /// </summary>
         internal static string OverallXWords {
             get {
@@ -277,7 +277,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Teilweise korrekt.
+        ///   Looks up a localized string similar to Partly correct.
         /// </summary>
         internal static string PartlyCorrect {
             get {
@@ -286,7 +286,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Datensicherung speichern.
+        ///   Looks up a localized string similar to Save backup.
         /// </summary>
         internal static string SaveBackup {
             get {
@@ -295,7 +295,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vokabelheft speichern.
+        ///   Looks up a localized string similar to Save vocabulary book.
         /// </summary>
         internal static string SaveVocabularyBook {
             get {
@@ -304,7 +304,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Seite.
+        ///   Looks up a localized string similar to Site.
         /// </summary>
         internal static string Site {
             get {
@@ -322,7 +322,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Übersetzen Sie von {0} nach {1}.
+        ///   Looks up a localized string similar to Please translate from {0} to {1}.
         /// </summary>
         internal static string TranslateFromTo {
             get {
@@ -331,7 +331,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vokabelhefte.
+        ///   Looks up a localized string similar to Vocabulary books.
         /// </summary>
         internal static string VocabularyBooks {
             get {
@@ -349,7 +349,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vocup Backup-Datei.
+        ///   Looks up a localized string similar to Vocup backup file.
         /// </summary>
         internal static string VocupBackupFile {
             get {
@@ -358,7 +358,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vocup Übungsergebnis-Datei.
+        ///   Looks up a localized string similar to Vocup practice result file.
         /// </summary>
         internal static string VocupPracticeResultFile {
             get {
@@ -367,7 +367,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vocup Vokabelheft-Datei.
+        ///   Looks up a localized string similar to Vocup vocabulary book file.
         /// </summary>
         internal static string VocupVocabularyBookFile {
             get {
@@ -376,7 +376,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Falsch.
+        ///   Looks up a localized string similar to Wrong.
         /// </summary>
         internal static string Wrong {
             get {
