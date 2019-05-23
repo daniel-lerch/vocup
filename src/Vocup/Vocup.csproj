@@ -287,8 +287,14 @@
     <EmbeddedResource Include="Controls\FileTreeView.resx">
       <DependentUpon>FileTreeView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\StatisticsPanel.de.resx">
+      <DependentUpon>StatisticsPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\StatisticsPanel.resx">
       <DependentUpon>StatisticsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\VocabularyListView.de.resx">
+      <DependentUpon>VocabularyListView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\VocabularyListView.resx">
       <DependentUpon>VocabularyListView.cs</DependentUpon>

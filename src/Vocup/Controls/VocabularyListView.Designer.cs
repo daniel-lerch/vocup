@@ -45,13 +45,10 @@
             this.motherTongueColumn,
             this.foreignLangColumn,
             this.lastPracticedColumn});
-            this.MainListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            resources.ApplyResources(this.MainListView, "MainListView");
             this.MainListView.FullRowSelect = true;
-            this.MainListView.Location = new System.Drawing.Point(0, 0);
             this.MainListView.MultiSelect = false;
             this.MainListView.Name = "MainListView";
-            this.MainListView.Size = new System.Drawing.Size(497, 487);
-            this.MainListView.TabIndex = 0;
             this.MainListView.UseCompatibleStateImageBehavior = false;
             this.MainListView.View = System.Windows.Forms.View.Details;
             this.MainListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.MainListView_ColumnClick);
@@ -60,23 +57,19 @@
             // 
             // imageColumn
             // 
-            this.imageColumn.Text = "";
-            this.imageColumn.Width = 20;
+            resources.ApplyResources(this.imageColumn, "imageColumn");
             // 
             // motherTongueColumn
             // 
-            this.motherTongueColumn.Text = "Muttersprache";
-            this.motherTongueColumn.Width = 150;
+            resources.ApplyResources(this.motherTongueColumn, "motherTongueColumn");
             // 
             // foreignLangColumn
             // 
-            this.foreignLangColumn.Text = "Fremdsprache";
-            this.foreignLangColumn.Width = 150;
+            resources.ApplyResources(this.foreignLangColumn, "foreignLangColumn");
             // 
             // lastPracticedColumn
             // 
-            this.lastPracticedColumn.Text = "Zuletzt geübt";
-            this.lastPracticedColumn.Width = 100;
+            resources.ApplyResources(this.lastPracticedColumn, "lastPracticedColumn");
             // 
             // IconImageList
             // 
@@ -89,11 +82,10 @@
             // 
             // VocabularyListView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.MainListView);
             this.Name = "VocabularyListView";
-            this.Size = new System.Drawing.Size(497, 487);
             this.ResumeLayout(false);
 
         }

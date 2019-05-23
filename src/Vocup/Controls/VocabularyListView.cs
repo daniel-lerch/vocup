@@ -11,8 +11,8 @@ namespace Vocup.Controls
     public partial class VocabularyListView : UserControl
     {
         private Size _imageBaseSize = new Size(16, 16);
-        private int initialWidthImage = 20;
-        private int initialWidthLastPracticed = 100;
+        private readonly int initialWidthImage = 20;
+        private readonly int initialWidthLastPracticed = 120;
 
         private SizeF scalingFactor = new SizeF(1F, 1F);
         private int scaledWidthImage;
@@ -77,8 +77,9 @@ namespace Vocup.Controls
             scaledWidthLastPracticed = (int)Math.Round(initialWidthLastPracticed * scalingFactor.Width);
 
             imageColumn.Width = scaledWidthImage;
-            motherTongueColumn.Width = (int)Math.Round(motherTongueColumn.Width * factor.Width); // Here we don't save defaults and
-            foreignLangColumn.Width = (int)Math.Round(foreignLangColumn.Width * factor.Width);   // therefore directly scale with factor.
+            // Here we don't save defaults and therefore directly scale with factor.
+            motherTongueColumn.Width = (int)Math.Round(motherTongueColumn.Width * factor.Width);
+            foreignLangColumn.Width = (int)Math.Round(foreignLangColumn.Width * factor.Width);
             lastPracticedColumn.Width = scaledWidthLastPracticed;
 
             ScaleImageList();
