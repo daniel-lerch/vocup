@@ -54,7 +54,7 @@
             this.TsmiAddWord = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiEditWord = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiDeleteWord = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiRootExtras = new System.Windows.Forms.ToolStripMenuItem();
+            this.TsmiRootTools = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiPractice = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiBookOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
@@ -115,7 +115,7 @@
             this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TsmiRootFile,
             this.TsmiRootEdit,
-            this.TsmiRootExtras,
+            this.TsmiRootTools,
             this.TsmiRootHelp});
             resources.ApplyResources(this.MenuStrip, "MenuStrip");
             this.MenuStrip.Name = "MenuStrip";
@@ -296,9 +296,9 @@
             this.TsmiDeleteWord.Name = "TsmiDeleteWord";
             this.TsmiDeleteWord.Click += new System.EventHandler(this.TsmiDeleteWord_Click);
             // 
-            // TsmiRootExtras
+            // TsmiRootTools
             // 
-            this.TsmiRootExtras.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TsmiRootTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TsmiPractice,
             this.TsmiBookOptions,
             this.toolStripMenuItem4,
@@ -307,8 +307,8 @@
             this.TsmiSpecialChar,
             this.toolStripMenuItem6,
             this.TsmiSettings});
-            this.TsmiRootExtras.Name = "TsmiRootExtras";
-            resources.ApplyResources(this.TsmiRootExtras, "TsmiRootExtras");
+            this.TsmiRootTools.Name = "TsmiRootTools";
+            resources.ApplyResources(this.TsmiRootTools, "TsmiRootTools");
             // 
             // TsmiPractice
             // 
@@ -669,7 +669,7 @@
 
         private Controls.ResponsiveMenuStrip MenuStrip;
         private System.Windows.Forms.ToolStripMenuItem TsmiRootFile;
-        private System.Windows.Forms.ToolStripMenuItem TsmiRootExtras;
+        private System.Windows.Forms.ToolStripMenuItem TsmiRootTools;
         private System.Windows.Forms.ToolStripMenuItem TsmiRootHelp;
         private Controls.ResponsiveToolStrip ToolStrip;
         private System.Windows.Forms.ToolStripButton TsbOpenBook;

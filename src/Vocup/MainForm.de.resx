@@ -186,7 +186,7 @@
   <data name="TsmiSettings.Text" xml:space="preserve">
     <value>Einstellungen</value>
   </data>
-  <data name="TsmiRootExtras.Text" xml:space="preserve">
+  <data name="TsmiRootTools.Text" xml:space="preserve">
     <value>Extras</value>
   </data>
   <data name="TsmiHelp.Text" xml:space="preserve">

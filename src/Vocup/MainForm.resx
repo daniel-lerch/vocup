@@ -126,7 +126,7 @@
     <value>Ctrl+N</value>
   </data>
   <data name="TsmiCreateBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 22</value>
+    <value>276, 22</value>
   </data>
   <data name="TsmiCreateBook.Text" xml:space="preserve">
     <value>Create new vocabulary book...</value>
@@ -135,7 +135,7 @@
     <value>Ctrl+O</value>
   </data>
   <data name="TsmiOpenBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 22</value>
+    <value>276, 22</value>
   </data>
   <data name="TsmiOpenBook.Text" xml:space="preserve">
     <value>Open vocabulary book...</value>
@@ -148,13 +148,13 @@
     <value>Ctrl+X</value>
   </data>
   <data name="TsmiCloseBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 22</value>
+    <value>276, 22</value>
   </data>
   <data name="TsmiCloseBook.Text" xml:space="preserve">
     <value>Close vocabulary book</value>
   </data>
   <data name="toolStripMenuItem11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>268, 6</value>
+    <value>273, 6</value>
   </data>
   <data name="TsmiSave.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -163,7 +163,7 @@
     <value>Ctrl+S</value>
   </data>
   <data name="TsmiSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 22</value>
+    <value>276, 22</value>
   </data>
   <data name="TsmiSave.Text" xml:space="preserve">
     <value>Save</value>
@@ -175,19 +175,19 @@
     <value>Alt+S</value>
   </data>
   <data name="TsmiSaveAs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 22</value>
+    <value>276, 22</value>
   </data>
   <data name="TsmiSaveAs.Text" xml:space="preserve">
     <value>Save As</value>
   </data>
   <data name="toolStripMenuItem10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>268, 6</value>
+    <value>273, 6</value>
   </data>
   <data name="TsmiImport.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+I</value>
   </data>
   <data name="TsmiImport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 22</value>
+    <value>276, 22</value>
   </data>
   <data name="TsmiImport.Text" xml:space="preserve">
     <value>Import</value>
@@ -199,13 +199,13 @@
     <value>Ctrl+E</value>
   </data>
   <data name="TsmiExport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 22</value>
+    <value>276, 22</value>
   </data>
   <data name="TsmiExport.Text" xml:space="preserve">
     <value>Export</value>
   </data>
   <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>268, 6</value>
+    <value>273, 6</value>
   </data>
   <data name="TsmiOpenInExplorer.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -214,13 +214,13 @@
     <value>Ctrl+M</value>
   </data>
   <data name="TsmiOpenInExplorer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 22</value>
+    <value>276, 22</value>
   </data>
   <data name="TsmiOpenInExplorer.Text" xml:space="preserve">
     <value>Open in Explorer</value>
   </data>
   <data name="toolStripMenuItem7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>268, 6</value>
+    <value>273, 6</value>
   </data>
   <data name="TsmiPrint.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -229,19 +229,19 @@
     <value>Ctrl+P</value>
   </data>
   <data name="TsmiPrint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 22</value>
+    <value>276, 22</value>
   </data>
   <data name="TsmiPrint.Text" xml:space="preserve">
     <value>Print</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>268, 6</value>
+    <value>273, 6</value>
   </data>
   <data name="TsmiBackupCreate.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+B</value>
   </data>
   <data name="TsmiBackupCreate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 22</value>
+    <value>200, 22</value>
   </data>
   <data name="TsmiBackupCreate.Text" xml:space="preserve">
     <value>Create backup</value>
@@ -250,31 +250,31 @@
     <value>Ctrl+W</value>
   </data>
   <data name="TsmiBackupRestore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 22</value>
+    <value>200, 22</value>
   </data>
   <data name="TsmiBackupRestore.Text" xml:space="preserve">
     <value>Restore backup</value>
   </data>
   <data name="TsmiBackup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 22</value>
+    <value>276, 22</value>
   </data>
   <data name="TsmiBackup.Text" xml:space="preserve">
     <value>Backup</value>
   </data>
   <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>268, 6</value>
+    <value>273, 6</value>
   </data>
   <data name="TsmiExitApplication.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+F4</value>
   </data>
   <data name="TsmiExitApplication.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 22</value>
+    <value>276, 22</value>
   </data>
   <data name="TsmiExitApplication.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
   <data name="TsmiRootFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 20</value>
+    <value>37, 20</value>
   </data>
   <data name="TsmiRootFile.Text" xml:space="preserve">
     <value>File</value>
@@ -286,7 +286,7 @@
     <value>F5</value>
   </data>
   <data name="TsmiAddWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
+    <value>170, 22</value>
   </data>
   <data name="TsmiAddWord.Text" xml:space="preserve">
     <value>Add new word</value>
@@ -298,7 +298,7 @@
     <value>Ctrl+R</value>
   </data>
   <data name="TsmiEditWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
+    <value>170, 22</value>
   </data>
   <data name="TsmiEditWord.Text" xml:space="preserve">
     <value>Edit word</value>
@@ -310,13 +310,13 @@
     <value>Del</value>
   </data>
   <data name="TsmiDeleteWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
+    <value>170, 22</value>
   </data>
   <data name="TsmiDeleteWord.Text" xml:space="preserve">
     <value>Delete word</value>
   </data>
   <data name="TsmiRootEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 20</value>
+    <value>39, 20</value>
   </data>
   <data name="TsmiRootEdit.Text" xml:space="preserve">
     <value>Edit</value>
@@ -328,7 +328,7 @@
     <value>Ctrl+U</value>
   </data>
   <data name="TsmiPractice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
+    <value>280, 22</value>
   </data>
   <data name="TsmiPractice.Text" xml:space="preserve">
     <value>Practice words</value>
@@ -340,62 +340,61 @@
     <value>Ctrl+Shift+O</value>
   </data>
   <data name="TsmiBookOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
+    <value>280, 22</value>
   </data>
   <data name="TsmiBookOptions.Text" xml:space="preserve">
     <value>Vocabulary book options</value>
   </data>
   <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 6</value>
+    <value>277, 6</value>
   </data>
   <data name="TsmiMerge.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Z</value>
   </data>
   <data name="TsmiMerge.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
+    <value>280, 22</value>
   </data>
   <data name="TsmiMerge.Text" xml:space="preserve">
     <value>Merge vocabulary books</value>
   </data>
   <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 6</value>
+    <value>277, 6</value>
   </data>
   <data name="TsmiSpecialChar.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+C</value>
   </data>
   <data name="TsmiSpecialChar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
+    <value>280, 22</value>
   </data>
   <data name="TsmiSpecialChar.Text" xml:space="preserve">
     <value>Manage special chars</value>
   </data>
   <data name="toolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 6</value>
+    <value>277, 6</value>
   </data>
   <data name="TsmiSettings.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Alt+O</value>
   </data>
   <data name="TsmiSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 22</value>
+    <value>280, 22</value>
   </data>
   <data name="TsmiSettings.Text" xml:space="preserve">
     <value>Settings</value>
   </data>
-  <data name="TsmiRootExtras.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+  <data name="TsmiRootTools.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Shift+O</value>
   </data>
-  <data name="TsmiRootExtras.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 20</value>
+  <data name="TsmiRootTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 20</value>
   </data>
-  <data name="TsmiRootExtras.Text" xml:space="preserve">
-    <value>Extras</value>
-    <comment>TODO</comment>
+  <data name="TsmiRootTools.Text" xml:space="preserve">
+    <value>Tools</value>
   </data>
   <data name="TsmiHelp.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F1</value>
   </data>
   <data name="TsmiHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 22</value>
+    <value>248, 22</value>
   </data>
   <data name="TsmiHelp.Text" xml:space="preserve">
     <value>Help</value>
@@ -404,32 +403,31 @@
     <value>F4</value>
   </data>
   <data name="TsmiEvaluationInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 22</value>
+    <value>248, 22</value>
   </data>
   <data name="TsmiEvaluationInfo.Text" xml:space="preserve">
-    <value>Infos zum Bewertungssystem</value>
-    <comment>TODO</comment>
+    <value>Information about evaluation</value>
   </data>
   <data name="toolStripMenuItem8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 6</value>
+    <value>245, 6</value>
   </data>
   <data name="TsmiUpdate.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F12</value>
   </data>
   <data name="TsmiUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 22</value>
+    <value>248, 22</value>
   </data>
   <data name="TsmiUpdate.Text" xml:space="preserve">
     <value>Search for updates...</value>
   </data>
   <data name="infoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 6</value>
+    <value>245, 6</value>
   </data>
   <data name="TsmiAbout.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F2</value>
   </data>
   <data name="TsmiAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 22</value>
+    <value>248, 22</value>
   </data>
   <data name="TsmiAbout.Text" xml:space="preserve">
     <value>About Vocup</value>
@@ -845,8 +843,7 @@
     <value>208, 17</value>
   </data>
   <data name="StatusLbOldVersion.Text" xml:space="preserve">
-    <value>Inkompatible Version gefunden</value>
-    <comment>TODO</comment>
+    <value>An incompatible version was found</value>
   </data>
   <data name="StatusLbOldVersion.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -972,9 +969,8 @@
     <value>0</value>
   </data>
   <data name="LbEmptyForm.Text" xml:space="preserve">
-    <value>Ganz schön leer hier!
-Öffne doch ein Vokabelheft oder erstelle ein neues.</value>
-    <comment>TODO</comment>
+    <value>Looks empty here!
+Just open a vocabulary book or create a new one.</value>
   </data>
   <data name="LbEmptyForm.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -1079,15 +1075,13 @@
     <value>23, 23</value>
   </data>
   <data name="TsbEvaluationInfo.Text" xml:space="preserve">
-    <value>Infos zum Bewertungssystem</value>
-    <comment>TODO</comment>
+    <value>Information about evaluation</value>
   </data>
   <data name="toolStripLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 23</value>
+    <value>165, 23</value>
   </data>
   <data name="toolStripLabel.Text" xml:space="preserve">
-    <value>Infos zum Bewertungssystem:</value>
-    <comment>TODO</comment>
+    <value>Information about evaluation:</value>
   </data>
   <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 24</value>
@@ -7489,10 +7483,10 @@
   <data name="&gt;&gt;TsmiDeleteWord.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TsmiRootExtras.Name" xml:space="preserve">
-    <value>TsmiRootExtras</value>
+  <data name="&gt;&gt;TsmiRootTools.Name" xml:space="preserve">
+    <value>TsmiRootTools</value>
   </data>
-  <data name="&gt;&gt;TsmiRootExtras.Type" xml:space="preserve">
+  <data name="&gt;&gt;TsmiRootTools.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiPractice.Name" xml:space="preserve">
