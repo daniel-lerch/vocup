@@ -110,7 +110,7 @@ namespace Vocup.Models
             }
             catch (Exception ex)
             {
-                MessageBox.Show(string.Format(Messages.VdpInvalidFile, ex), Messages.VdpInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(string.Format(Messages.VdpCorruptFile, ex), Messages.VdpCorruptFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }

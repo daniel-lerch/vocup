@@ -74,7 +74,7 @@ namespace Vocup.IO.Internal
                 {
                     if (!countMatch)
                     {
-                        MessageBox.Show(Messages.VhrInvalidRowCount, Messages.VhrInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(Messages.VhrInvalidRowCount, Messages.VhrCorruptFileT, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         try { vhrInfo.Delete(); } catch { }
                         return false;
                     }
@@ -83,7 +83,7 @@ namespace Vocup.IO.Internal
                 {
                     if (!countMatch)
                     {
-                        MessageBox.Show(Messages.VhrInvalidRowCountAndOtherFile, Messages.VhrInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(Messages.VhrInvalidRowCountAndOtherFile, Messages.VhrCorruptFileT, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return false;
                     }
 
@@ -146,7 +146,7 @@ namespace Vocup.IO.Internal
         /// <param name="info"></param>
         private void DeleteInvalidFile(FileInfo info)
         {
-            MessageBox.Show(Messages.VhrInvalidFile, Messages.VhrInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(Messages.VhrCorruptFile, Messages.VhrCorruptFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
             try
             {
                 info.Delete();

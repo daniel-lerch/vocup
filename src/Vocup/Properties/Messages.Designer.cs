@@ -388,29 +388,29 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Die Vocup-Datensicherung ist fehlerhaft und konnte ich geöffnet werden:
+        ///   Looks up a localized string similar to The Vocup backup file is corrupt and could not be opened:
         ///{0}.
         /// </summary>
-        internal static string VdpInvalidFile {
+        internal static string VdpCorruptFile {
             get {
-                return ResourceManager.GetString("VdpInvalidFile", resourceCulture);
+                return ResourceManager.GetString("VdpCorruptFile", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fehlerhafte Datei.
+        ///   Looks up a localized string similar to Corrupt file.
         /// </summary>
-        internal static string VdpInvalidFileT {
+        internal static string VdpCorruptFileT {
             get {
-                return ResourceManager.GetString("VdpInvalidFileT", resourceCulture);
+                return ResourceManager.GetString("VdpCorruptFileT", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zusammenfassung
-        /// -  {0} Datei(en) wiederhergestellt
-        /// -  {1} Datei(en) übersprungen
-        /// -  {2} Datei(en) fehlgeschlagen.
+        ///   Looks up a localized string similar to Summary
+        /// -  {0} File(s) restored
+        /// -  {1} File(s) skipped
+        /// -  {2} File(s) failed.
         /// </summary>
         internal static string VdpRestored {
             get {
@@ -419,7 +419,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wiederherstellung abgeschlossen.
+        ///   Looks up a localized string similar to Recovery finished.
         /// </summary>
         internal static string VdpRestoredT {
             get {
@@ -428,26 +428,26 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Die Vokabelheftdatei ist fehlerhaft und konnte nicht geöffnet werden..
+        ///   Looks up a localized string similar to The vocabulary book file is corrupt and could not be opened..
         /// </summary>
-        internal static string VhfInvalidFile {
+        internal static string VhfCorruptFile {
             get {
-                return ResourceManager.GetString("VhfInvalidFile", resourceCulture);
+                return ResourceManager.GetString("VhfCorruptFile", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fehlerhafte Vokabelheft-Datei.
+        ///   Looks up a localized string similar to Corrupt vocabulary book file.
         /// </summary>
-        internal static string VhfInvalidFileT {
+        internal static string VhfCorruptFileT {
             get {
-                return ResourceManager.GetString("VhfInvalidFileT", resourceCulture);
+                return ResourceManager.GetString("VhfCorruptFileT", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Die Mutter- und Fremdsprache der Vokabelheft-Datei konnten nicht gelesen werden oder sind identisch.
-        ///Stellen Sie sicher, dass die Datei nicht leer ist..
+        ///   Looks up a localized string similar to Mother tongue and foreign language could not be read from the vocabulary book file or are identical.
+        ///Please ensure that the file is not empty..
         /// </summary>
         internal static string VhfInvalidLanguages {
             get {
@@ -456,7 +456,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ein Eintrag dieser Vokabelheft-Datei ist ungültig. Die Datei kann deshalb nicht gelesen werden..
+        ///   Looks up a localized string similar to An entry of this vocabulary book file is invalid. Therefore the file cannot be opened..
         /// </summary>
         internal static string VhfInvalidRow {
             get {
@@ -465,8 +465,8 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Die Version der Vokabelheft-Datei konnte nicht gelesen werden.
-        ///Bitte stellen Sie sicher, dass die Datei nicht leer ist..
+        ///   Looks up a localized string similar to The version field of the vocabulary book file could not be read.
+        ///Please ensure that the file is not empty..
         /// </summary>
         internal static string VhfInvalidVersion {
             get {
@@ -475,8 +475,8 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Die Vokabelheft-Datei enthält keinen gültigen Verweis auf ihre Ergebnisdatei.
-        ///Stellen Sie sicher, dass die Datei nicht leer ist..
+        ///   Looks up a localized string similar to The result file reference of the vocabulary book file could not be read.
+        ///Please ensure that the file is not empty..
         /// </summary>
         internal static string VhfInvalidVhrCode {
             get {
@@ -485,7 +485,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Die Vokabelheft-Datei erfordert eine neuere Version von Vocup. Sie können entweder im Programm oder im Internet nach Updates suchen..
+        ///   Looks up a localized string similar to The vocabulary book file requires a later version of Vocup. Please search for updates inside the application or on the Internet..
         /// </summary>
         internal static string VhfMustUpdate {
             get {
@@ -494,7 +494,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Update erforderlich.
+        ///   Looks up a localized string similar to Update required.
         /// </summary>
         internal static string VhfMustUpdateT {
             get {
@@ -503,25 +503,25 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Die Ergbnisdatei ist fehlerhaft und wird gelöscht. Die Übungsergebnisse gehen deshalb verloren..
+        ///   Looks up a localized string similar to The result file is corrupt and going to be deleted. Therefore you are going to loose your practice results..
         /// </summary>
-        internal static string VhrInvalidFile {
+        internal static string VhrCorruptFile {
             get {
-                return ResourceManager.GetString("VhrInvalidFile", resourceCulture);
+                return ResourceManager.GetString("VhrCorruptFile", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fehlerhafte Ergebnis-Datei.
+        ///   Looks up a localized string similar to Corrupt result file.
         /// </summary>
-        internal static string VhrInvalidFileT {
+        internal static string VhrCorruptFileT {
             get {
-                return ResourceManager.GetString("VhrInvalidFileT", resourceCulture);
+                return ResourceManager.GetString("VhrCorruptFileT", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Die referenzierte Ergebnisdatei passt nicht zu diesem Vokabelheft. Die Ergebnisse werden gelöscht..
+        ///   Looks up a localized string similar to The referenced result file does not match the current vocabulary book. All results are going to be deleted..
         /// </summary>
         internal static string VhrInvalidRowCount {
             get {
@@ -530,7 +530,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Die referenzierte Ergebnisdatei wird von einem anderen Vokabelheft verwendet und passt nicht zu diesem. Daher werden keine Ergebnisse geladen..
+        ///   Looks up a localized string similar to The referenced result file is in use by another vocabulary book. Results are not going to be loaded..
         /// </summary>
         internal static string VhrInvalidRowCountAndOtherFile {
             get {
@@ -539,7 +539,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Eine Vokabelheft- oder Ergebnisdatei konnte nicht gespeichert werden..
+        ///   Looks up a localized string similar to A vocabulary book or result file could not be saved..
         /// </summary>
         internal static string VocupFileWriteError {
             get {
@@ -548,7 +548,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Eine Vokabelheft- oder Ergebnisdatei konnte nicht gespeichert werden:
+        ///   Looks up a localized string similar to A vocabulary book or result file could not be saved:
         ///{0}.
         /// </summary>
         internal static string VocupFileWriteErrorEx {
@@ -558,7 +558,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fehler beim Speichern.
+        ///   Looks up a localized string similar to Error when saving.
         /// </summary>
         internal static string VocupFileWriteErrorT {
             get {

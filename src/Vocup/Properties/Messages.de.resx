@@ -244,12 +244,12 @@ Details: {0}</value>
   <data name="UnexpectedErrorT" xml:space="preserve">
     <value>Unerwarteter Fehler</value>
   </data>
-  <data name="VdpInvalidFile" xml:space="preserve">
+  <data name="VdpCorruptFile" xml:space="preserve">
     <value>Die Vocup-Datensicherung ist fehlerhaft und konnte ich geöffnet werden:
 {0}</value>
     <comment>{0}: ErrorDetails</comment>
   </data>
-  <data name="VdpInvalidFileT" xml:space="preserve">
+  <data name="VdpCorruptFileT" xml:space="preserve">
     <value>Fehlerhafte Datei</value>
   </data>
   <data name="VdpRestored" xml:space="preserve">
@@ -262,10 +262,10 @@ Details: {0}</value>
   <data name="VdpRestoredT" xml:space="preserve">
     <value>Wiederherstellung abgeschlossen</value>
   </data>
-  <data name="VhfInvalidFile" xml:space="preserve">
+  <data name="VhfCorruptFile" xml:space="preserve">
     <value>Die Vokabelheftdatei ist fehlerhaft und konnte nicht geöffnet werden.</value>
   </data>
-  <data name="VhfInvalidFileT" xml:space="preserve">
+  <data name="VhfCorruptFileT" xml:space="preserve">
     <value>Fehlerhafte Vokabelheft-Datei</value>
   </data>
   <data name="VhfInvalidLanguages" xml:space="preserve">
@@ -289,10 +289,10 @@ Stellen Sie sicher, dass die Datei nicht leer ist.</value>
   <data name="VhfMustUpdateT" xml:space="preserve">
     <value>Update erforderlich</value>
   </data>
-  <data name="VhrInvalidFile" xml:space="preserve">
+  <data name="VhrCorruptFile" xml:space="preserve">
     <value>Die Ergbnisdatei ist fehlerhaft und wird gelöscht. Die Übungsergebnisse gehen deshalb verloren.</value>
   </data>
-  <data name="VhrInvalidFileT" xml:space="preserve">
+  <data name="VhrCorruptFileT" xml:space="preserve">
     <value>Fehlerhafte Ergebnis-Datei</value>
   </data>
   <data name="VhrInvalidRowCount" xml:space="preserve">

@@ -244,72 +244,72 @@ Details: {0}</value>
   <data name="UnexpectedErrorT" xml:space="preserve">
     <value>Unerwarteter Fehler</value>
   </data>
-  <data name="VdpInvalidFile" xml:space="preserve">
-    <value>Die Vocup-Datensicherung ist fehlerhaft und konnte ich geöffnet werden:
+  <data name="VdpCorruptFile" xml:space="preserve">
+    <value>The Vocup backup file is corrupt and could not be opened:
 {0}</value>
     <comment>{0}: ErrorDetails</comment>
   </data>
-  <data name="VdpInvalidFileT" xml:space="preserve">
-    <value>Fehlerhafte Datei</value>
+  <data name="VdpCorruptFileT" xml:space="preserve">
+    <value>Corrupt file</value>
   </data>
   <data name="VdpRestored" xml:space="preserve">
-    <value>Zusammenfassung
- -  {0} Datei(en) wiederhergestellt
- -  {1} Datei(en) übersprungen
- -  {2} Datei(en) fehlgeschlagen</value>
+    <value>Summary
+ -  {0} File(s) restored
+ -  {1} File(s) skipped
+ -  {2} File(s) failed</value>
     <comment>{0}: Restored, {1}: Skipped, {2}: Failed</comment>
   </data>
   <data name="VdpRestoredT" xml:space="preserve">
-    <value>Wiederherstellung abgeschlossen</value>
+    <value>Recovery finished</value>
   </data>
-  <data name="VhfInvalidFile" xml:space="preserve">
-    <value>Die Vokabelheftdatei ist fehlerhaft und konnte nicht geöffnet werden.</value>
+  <data name="VhfCorruptFile" xml:space="preserve">
+    <value>The vocabulary book file is corrupt and could not be opened.</value>
   </data>
-  <data name="VhfInvalidFileT" xml:space="preserve">
-    <value>Fehlerhafte Vokabelheft-Datei</value>
+  <data name="VhfCorruptFileT" xml:space="preserve">
+    <value>Corrupt vocabulary book file</value>
   </data>
   <data name="VhfInvalidLanguages" xml:space="preserve">
-    <value>Die Mutter- und Fremdsprache der Vokabelheft-Datei konnten nicht gelesen werden oder sind identisch.
-Stellen Sie sicher, dass die Datei nicht leer ist.</value>
+    <value>Mother tongue and foreign language could not be read from the vocabulary book file or are identical.
+Please ensure that the file is not empty.</value>
   </data>
   <data name="VhfInvalidRow" xml:space="preserve">
-    <value>Ein Eintrag dieser Vokabelheft-Datei ist ungültig. Die Datei kann deshalb nicht gelesen werden.</value>
+    <value>An entry of this vocabulary book file is invalid. Therefore the file cannot be opened.</value>
   </data>
   <data name="VhfInvalidVersion" xml:space="preserve">
-    <value>Die Version der Vokabelheft-Datei konnte nicht gelesen werden.
-Bitte stellen Sie sicher, dass die Datei nicht leer ist.</value>
+    <value>The version field of the vocabulary book file could not be read.
+Please ensure that the file is not empty.</value>
   </data>
   <data name="VhfInvalidVhrCode" xml:space="preserve">
-    <value>Die Vokabelheft-Datei enthält keinen gültigen Verweis auf ihre Ergebnisdatei.
-Stellen Sie sicher, dass die Datei nicht leer ist.</value>
+    <value>The result file reference of the vocabulary book file could not be read.
+Please ensure that the file is not empty.</value>
   </data>
   <data name="VhfMustUpdate" xml:space="preserve">
-    <value>Die Vokabelheft-Datei erfordert eine neuere Version von Vocup. Sie können entweder im Programm oder im Internet nach Updates suchen.</value>
+    <value>The vocabulary book file requires a later version of Vocup. Please search for updates inside the application or on the Internet.</value>
   </data>
   <data name="VhfMustUpdateT" xml:space="preserve">
-    <value>Update erforderlich</value>
+    <value>Update required</value>
   </data>
-  <data name="VhrInvalidFile" xml:space="preserve">
-    <value>Die Ergbnisdatei ist fehlerhaft und wird gelöscht. Die Übungsergebnisse gehen deshalb verloren.</value>
+  <data name="VhrCorruptFile" xml:space="preserve">
+    <value>The result file is corrupt and going to be deleted. Therefore you are going to loose your practice results.</value>
   </data>
-  <data name="VhrInvalidFileT" xml:space="preserve">
-    <value>Fehlerhafte Ergebnis-Datei</value>
+  <data name="VhrCorruptFileT" xml:space="preserve">
+    <value>Corrupt result file</value>
   </data>
   <data name="VhrInvalidRowCount" xml:space="preserve">
-    <value>Die referenzierte Ergebnisdatei passt nicht zu diesem Vokabelheft. Die Ergebnisse werden gelöscht.</value>
+    <value>The referenced result file does not match the current vocabulary book. All results are going to be deleted.</value>
   </data>
   <data name="VhrInvalidRowCountAndOtherFile" xml:space="preserve">
-    <value>Die referenzierte Ergebnisdatei wird von einem anderen Vokabelheft verwendet und passt nicht zu diesem. Daher werden keine Ergebnisse geladen.</value>
+    <value>The referenced result file is in use by another vocabulary book. Results are not going to be loaded.</value>
   </data>
   <data name="VocupFileWriteError" xml:space="preserve">
-    <value>Eine Vokabelheft- oder Ergebnisdatei konnte nicht gespeichert werden.</value>
+    <value>A vocabulary book or result file could not be saved.</value>
   </data>
   <data name="VocupFileWriteErrorEx" xml:space="preserve">
-    <value>Eine Vokabelheft- oder Ergebnisdatei konnte nicht gespeichert werden:
+    <value>A vocabulary book or result file could not be saved:
 {0}</value>
     <comment>{0}: ErrorDetails</comment>
   </data>
   <data name="VocupFileWriteErrorT" xml:space="preserve">
-    <value>Fehler beim Speichern</value>
+    <value>Error when saving</value>
   </data>
 </root>

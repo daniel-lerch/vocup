@@ -17,12 +17,12 @@ namespace Vocup.IO.Internal
             }
             catch (FormatException)
             {
-                MessageBox.Show(Messages.VhfInvalidFile, Messages.VhfInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Messages.VhfCorruptFile, Messages.VhfCorruptFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             catch (System.Security.Cryptography.CryptographicException)
             {
-                MessageBox.Show(Messages.VhfInvalidFile, Messages.VhfInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Messages.VhfCorruptFile, Messages.VhfCorruptFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -35,7 +35,7 @@ namespace Vocup.IO.Internal
 
                 if (string.IsNullOrWhiteSpace(version) || !Version.TryParse(version, out Version versionObj))
                 {
-                    MessageBox.Show(Messages.VhfInvalidVersion, Messages.VhfInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Messages.VhfInvalidVersion, Messages.VhfCorruptFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
                 else if (versionObj.CompareTo(Util.AppInfo.FileVersion) == 1)
@@ -46,7 +46,7 @@ namespace Vocup.IO.Internal
 
                 if (vhrCode == null)
                 {
-                    MessageBox.Show(Messages.VhfInvalidVhrCode, Messages.VhfInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Messages.VhfInvalidVhrCode, Messages.VhfCorruptFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
 
@@ -57,7 +57,7 @@ namespace Vocup.IO.Internal
                     string.IsNullOrWhiteSpace(foreignLang) ||
                     motherTongue == foreignLang)
                 {
-                    MessageBox.Show(Messages.VhfInvalidLanguages, Messages.VhfInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Messages.VhfInvalidLanguages, Messages.VhfCorruptFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
 
@@ -71,7 +71,7 @@ namespace Vocup.IO.Internal
                     string[] columns = line.Split('#');
                     if (columns.Length != 3)
                     {
-                        MessageBox.Show(Messages.VhfInvalidRow, Messages.VhfInvalidFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(Messages.VhfInvalidRow, Messages.VhfCorruptFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                     VocabularyWord word = new VocabularyWord()
