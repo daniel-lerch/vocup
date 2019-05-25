@@ -111,8 +111,8 @@ namespace Vocup.Forms
                     catch
                     {
                         MessageBox.Show(
-                            string.Format(Messages.SpecialCharInvalidFile, Path.GetFileNameWithoutExtension(info.FullName), info.FullName),
-                            Messages.SpecialCharInvalidFileT,
+                            string.Format(Messages.SpecialCharCorruptedFile, Path.GetFileNameWithoutExtension(info.FullName), info.FullName),
+                            Messages.SpecialCharCorruptedFileT,
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }

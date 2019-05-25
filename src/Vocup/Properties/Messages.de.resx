@@ -193,7 +193,7 @@ Details: {0}</value>
     <comment>{0}: ErrorDetails</comment>
   </data>
   <data name="OpenInExplorerErrorT" xml:space="preserve">
-    <value>Fehler beim Öffnen</value>
+    <value>Fehler beim Öffnen im Explorer</value>
   </data>
   <data name="OpenInExplorerNotFound" xml:space="preserve">
     <value>Die Vokabelheftdatei {0} existiert nicht mehr.</value>
@@ -218,6 +218,13 @@ Details: {0}</value>
   <data name="SpecialCharAlreadyExists" xml:space="preserve">
     <value>Für diese Sprache existieren bereits Sonderzeichen</value>
   </data>
+  <data name="SpecialCharCorruptedFile" xml:space="preserve">
+    <value>Die Sonderzeichendatei {0} konnte nicht geladen werden. Überprüfen Sie die Datei unter {1} und löschen sie diese gegebenenfalls.</value>
+    <comment>{0}: Language, {1}: FilePath</comment>
+  </data>
+  <data name="SpecialCharCorruptedFileT" xml:space="preserve">
+    <value>Fehlerhafte Datei</value>
+  </data>
   <data name="SpecialCharDeleteError" xml:space="preserve">
     <value>Beim Löschen der Sonderzeichendatei für {0} ist ein Fehler aufgetreten:
 {1}</value>
@@ -225,13 +232,6 @@ Details: {0}</value>
   </data>
   <data name="SpecialCharDeleteErrorT" xml:space="preserve">
     <value>Fehler beim Löschen</value>
-  </data>
-  <data name="SpecialCharInvalidFile" xml:space="preserve">
-    <value>Die Sonderzeichendatei {0} konnte nicht geladen werden. Überprüfen Sie die Datei unter {1} und löschen sie diese gegebenenfalls.</value>
-    <comment>{0}: Language, {1}: FilePath</comment>
-  </data>
-  <data name="SpecialCharInvalidFileT" xml:space="preserve">
-    <value>Fehlerhafte Datei</value>
   </data>
   <data name="SpecialCharSaveError" xml:space="preserve">
     <value>Beim Speichern der Sonderzeichendatei für {0} ist ein Fehler aufgetreten:

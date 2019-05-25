@@ -61,9 +61,9 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie haben bereits alle Vokabeln mehrmals hintereinander richtig übersetzt.
-        ///	
-        ///Tipp: Unter Optionen können Sie festlegen, wie oft eine Vokabel richtig hintereinander übersetzt werden muss, damit sie als gelernt eingestuft wird..
+        ///   Looks up a localized string similar to You have correctly translated all words 	successively for multiple times.
+        ///
+        ///Hint: In the settings you can configure how often a word has to be correctly translated in turn before it is marked as learnt..
         /// </summary>
         internal static string BookPracticeFinished {
             get {
@@ -72,7 +72,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Herzlichen Glückwunsch!.
+        ///   Looks up a localized string similar to Congratulations!.
         /// </summary>
         internal static string BookPracticeFinishedT {
             get {
@@ -81,7 +81,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Beim Exportieren einer CSV Datei ist ein unerwarteter Fehler aufgetreten.
+        ///   Looks up a localized string similar to An unexpected error occured when exporting a CSV file.
         ///Details:
         ///{0}.
         /// </summary>
@@ -92,7 +92,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Möchten die Änderungen am Vokabelheft speichern, bevor Sie es in eine CSV-Datei exportieren? Sie können die Änderungen jederzeit auch später speichern. Exportiert wird immer die aktuelle Version inklusive ungespeicherter Änderungen..
+        ///   Looks up a localized string similar to Do you want to save your changes before exporting a CSV file? You can save your changes later on. Vocup always exports the current version including any unsafed changes..
         /// </summary>
         internal static string CsvExportSave {
             get {
@@ -101,7 +101,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Jetzt speichern?.
+        ///   Looks up a localized string similar to Save now?.
         /// </summary>
         internal static string CsvExportSaveT {
             get {
@@ -110,7 +110,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Beim Importieren einer CSV Datei ist ein unerwarteter Fehler aufgetreten.
+        ///   Looks up a localized string similar to An unexpected error occured when importing a CSV file.
         ///Details:
         ///{0}.
         /// </summary>
@@ -121,8 +121,8 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Der CSV Header konnte nicht gelesen werden.
-        ///Bitte stellen Sie sicher, dass die Datei nicht leer ist..
+        ///   Looks up a localized string similar to The CSV header could not be read.
+        ///Please ensure that the file is not empty..
         /// </summary>
         internal static string CsvInvalidHeader {
             get {
@@ -131,8 +131,8 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Der CSV Header verfügt über {0} Spalten, muss aber aus genau 2 Spalten bestehen.
-        ///Stellen Sie sicher, dass die CSV Datei mit Excel im UTF-8 Format gespeichert wurde. Von älteren Vocup Versionen exportierte Dateien sind nicht kompatibel..
+        ///   Looks up a localized string similar to The CSV header consists of {0} column but has to be exactly 2 columns.
+        ///Please ensure the CSV file to be exported with Excel using UTF-8 format. Files exported by older versions of Vocup are not compatible anymore..
         /// </summary>
         internal static string CsvInvalidHeaderColumns {
             get {
@@ -141,7 +141,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fehlerhafter CSV Header.
+        ///   Looks up a localized string similar to Invalid CSV header.
         /// </summary>
         internal static string CsvInvalidHeaderT {
             get {
@@ -150,8 +150,8 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Möchten Sie ein {0} - {1} Vokabelheft importieren, obwohl die Sprachen nicht mit Ihrem Vokabelheft übereinstimmen?
-        ///Falls {0} und {1} keine Sprachen sondern Vokabeln sind, denken Sie bitte daran, in der ersten Zeile der CSV Datei links Ihre Muttersprache und rechts Ihre Fremdsprache einzutragen..
+        ///   Looks up a localized string similar to Do you want to import an {0} - {1} vocabulary book although the languages do not match your vocabulary book?
+        ///If {0} and {1} are vocabulary words and no languages, please remember to fill the first row of the CSV file with your mother tongue in left column and your foreign language in the right column..
         /// </summary>
         internal static string CsvInvalidLanguages {
             get {
@@ -160,7 +160,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Diese Vokabel ist in Ihrem Vokabelheft bereits vorhanden. Möchten Sie Ihre Eingabe verwerfen?.
+        ///   Looks up a localized string similar to This vocabulary word already exists in your vocabulary book. Do you want to discard your input?.
         /// </summary>
         internal static string EditAddDuplicate {
             get {
@@ -169,7 +169,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vokabel bereits vorhanden.
+        ///   Looks up a localized string similar to Word already exists.
         /// </summary>
         internal static string EditDuplicateT {
             get {
@@ -178,7 +178,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Die geänderte Vokabel befindet sich bereits in ihrem Vokabelheft. Möchten Sie diese Vokabel löschen?.
+        ///   Looks up a localized string similar to The changed vocabulary word already exists in your vocabulary book. Do you want to delete this word?.
         /// </summary>
         internal static string EditToDuplicate {
             get {
@@ -187,7 +187,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Möchten Sie Ihre Änderungen und/oder Übungsergebnisse speichern?.
+        ///   Looks up a localized string similar to Do you want to save your changes and/or practice results?.
         /// </summary>
         internal static string GeneralSaveChanges {
             get {
@@ -196,7 +196,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Speichern?.
+        ///   Looks up a localized string similar to Save?.
         /// </summary>
         internal static string GeneralSaveChangesT {
             get {
@@ -205,7 +205,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Es wurde eine veraltete Version von Vocup auf ihrem Computer gefunden. Dadurch können Dateitypzuordnungen nicht automatisch eingerichtet werden und Vokabelhefte können eventuell nicht geöffnet werden. Möchten Sie diese veraltete Version deinstallieren?.
+        ///   Looks up a localized string similar to An outdated version of Vocup has been found on your computer. This could prevent automatic file type association configuration and could cause vocabulary books failing to open. Do you want to uninstall this outdated version?.
         /// </summary>
         internal static string LegacyVersionUninstall {
             get {
@@ -214,7 +214,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inkompatible Version deinstallieren?.
+        ///   Looks up a localized string similar to Uninstall incompatible version?.
         /// </summary>
         internal static string LegacyVersionUninstallT {
             get {
@@ -223,7 +223,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ein Vokabelheft vom selben Pfad wurde bereits geladen. Möchten Sie das aktuelle Vokabelheft laden und die Daten überschreiben?.
+        ///   Looks up a localized string similar to A vocabulary book file from the same path has already been loaded. Do you want to load the current vocabulary book and override existing data?.
         /// </summary>
         internal static string MergeOverride {
             get {
@@ -232,7 +232,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Daten überschreiben?.
+        ///   Looks up a localized string similar to Override data?.
         /// </summary>
         internal static string MergeOverrideT {
             get {
@@ -241,7 +241,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Das aktuelle Vokabelheft konnte nicht im Explorer geöffnet werden. Bitte beachten Sie, dass dieses Feature mit manchen Betriebssystemen wie Linux oder Windows 10 S nicht kompatibel ist.
+        ///   Looks up a localized string similar to The current vocabulary book could not be opened in Explorer. Please be aware that this feature is not avalaible on some operatening systems like Linux or Windows 10 S.
         ///Details: {0}.
         /// </summary>
         internal static string OpenInExplorerError {
@@ -251,7 +251,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fehler beim Öffnen.
+        ///   Looks up a localized string similar to Error when opening in Explorer.
         /// </summary>
         internal static string OpenInExplorerErrorT {
             get {
@@ -260,7 +260,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Die Vokabelheftdatei {0} existiert nicht mehr..
+        ///   Looks up a localized string similar to The vocabulary book file at {0} does not exist anymore..
         /// </summary>
         internal static string OpenInExplorerNotFound {
             get {
@@ -269,7 +269,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Datei nicht gefunden.
+        ///   Looks up a localized string similar to File not found.
         /// </summary>
         internal static string OpenInExplorerNotFoundT {
             get {
@@ -278,7 +278,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Möchten die Änderungen am Vokabelheft speichern, bevor Sie es im Explorer öffnen? Sie können die Änderungen jederzeit auch später speichern..
+        ///   Looks up a localized string similar to Do you want to save your changes to the vocabulary book before opening it in the Explorer? You can save your changes later in every case..
         /// </summary>
         internal static string OpenInExplorerSave {
             get {
@@ -287,7 +287,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Jetzt speichern?.
+        ///   Looks up a localized string similar to Save now?.
         /// </summary>
         internal static string OpenInExplorerSaveT {
             get {
@@ -296,7 +296,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vocup kann die Datei {0} nicht öffnen, weil es sich weder um ein Vokabelheft, noch um eine Vocup-Datensicherung handelt..
+        ///   Looks up a localized string similar to Vocup cannot open the file at {0} because it is neither a vocabulary book file nor a Vocup backup file..
         /// </summary>
         internal static string OpenUnknownFile {
             get {
@@ -305,7 +305,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unbekanntes Dateiformat.
+        ///   Looks up a localized string similar to Unknown file format.
         /// </summary>
         internal static string OpenUnknownFileT {
             get {
@@ -314,7 +314,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Für diese Sprache existieren bereits Sonderzeichen.
+        ///   Looks up a localized string similar to There are already special chars for this language.
         /// </summary>
         internal static string SpecialCharAlreadyExists {
             get {
@@ -323,7 +323,25 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Beim Löschen der Sonderzeichendatei für {0} ist ein Fehler aufgetreten:
+        ///   Looks up a localized string similar to The special char file for {0} could not be loaded. Please check the file at {1} and delete it if necessary..
+        /// </summary>
+        internal static string SpecialCharCorruptedFile {
+            get {
+                return ResourceManager.GetString("SpecialCharCorruptedFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Corrupted file.
+        /// </summary>
+        internal static string SpecialCharCorruptedFileT {
+            get {
+                return ResourceManager.GetString("SpecialCharCorruptedFileT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error occured when deleting the special char file for {0}:
         ///{1}.
         /// </summary>
         internal static string SpecialCharDeleteError {
@@ -333,7 +351,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fehler beim Löschen.
+        ///   Looks up a localized string similar to Error when deleting.
         /// </summary>
         internal static string SpecialCharDeleteErrorT {
             get {
@@ -342,25 +360,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Die Sonderzeichendatei {0} konnte nicht geladen werden. Überprüfen Sie die Datei unter {1} und löschen sie diese gegebenenfalls..
-        /// </summary>
-        internal static string SpecialCharInvalidFile {
-            get {
-                return ResourceManager.GetString("SpecialCharInvalidFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fehlerhafte Datei.
-        /// </summary>
-        internal static string SpecialCharInvalidFileT {
-            get {
-                return ResourceManager.GetString("SpecialCharInvalidFileT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Beim Speichern der Sonderzeichendatei für {0} ist ein Fehler aufgetreten:
+        ///   Looks up a localized string similar to An error occured when saving the special char file for {0}:
         ///{1}.
         /// </summary>
         internal static string SpecialCharSaveError {
@@ -370,7 +370,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fehler beim Speichern.
+        ///   Looks up a localized string similar to Error when saving.
         /// </summary>
         internal static string SpecialCharSaveErrorT {
             get {
@@ -379,7 +379,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unerwarteter Fehler.
+        ///   Looks up a localized string similar to Unexpected error.
         /// </summary>
         internal static string UnexpectedErrorT {
             get {

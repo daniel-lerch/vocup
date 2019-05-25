@@ -118,131 +118,131 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BookPracticeFinished" xml:space="preserve">
-    <value>Sie haben bereits alle Vokabeln mehrmals hintereinander richtig übersetzt.
-	
-Tipp: Unter Optionen können Sie festlegen, wie oft eine Vokabel richtig hintereinander übersetzt werden muss, damit sie als gelernt eingestuft wird.</value>
+    <value>You have correctly translated all words 	successively for multiple times.
+
+Hint: In the settings you can configure how often a word has to be correctly translated in turn before it is marked as learnt.</value>
   </data>
   <data name="BookPracticeFinishedT" xml:space="preserve">
-    <value>Herzlichen Glückwunsch!</value>
+    <value>Congratulations!</value>
   </data>
   <data name="CsvExportError" xml:space="preserve">
-    <value>Beim Exportieren einer CSV Datei ist ein unerwarteter Fehler aufgetreten.
+    <value>An unexpected error occured when exporting a CSV file.
 Details:
 {0}</value>
     <comment>{0}: ErrorDetails</comment>
   </data>
   <data name="CsvExportSave" xml:space="preserve">
-    <value>Möchten die Änderungen am Vokabelheft speichern, bevor Sie es in eine CSV-Datei exportieren? Sie können die Änderungen jederzeit auch später speichern. Exportiert wird immer die aktuelle Version inklusive ungespeicherter Änderungen.</value>
+    <value>Do you want to save your changes before exporting a CSV file? You can save your changes later on. Vocup always exports the current version including any unsafed changes.</value>
   </data>
   <data name="CsvExportSaveT" xml:space="preserve">
-    <value>Jetzt speichern?</value>
+    <value>Save now?</value>
   </data>
   <data name="CsvImportError" xml:space="preserve">
-    <value>Beim Importieren einer CSV Datei ist ein unerwarteter Fehler aufgetreten.
+    <value>An unexpected error occured when importing a CSV file.
 Details:
 {0}</value>
     <comment>{0}: ErrorDetails</comment>
   </data>
   <data name="CsvInvalidHeader" xml:space="preserve">
-    <value>Der CSV Header konnte nicht gelesen werden.
-Bitte stellen Sie sicher, dass die Datei nicht leer ist.</value>
+    <value>The CSV header could not be read.
+Please ensure that the file is not empty.</value>
   </data>
   <data name="CsvInvalidHeaderColumns" xml:space="preserve">
-    <value>Der CSV Header verfügt über {0} Spalten, muss aber aus genau 2 Spalten bestehen.
-Stellen Sie sicher, dass die CSV Datei mit Excel im UTF-8 Format gespeichert wurde. Von älteren Vocup Versionen exportierte Dateien sind nicht kompatibel.</value>
+    <value>The CSV header consists of {0} column but has to be exactly 2 columns.
+Please ensure the CSV file to be exported with Excel using UTF-8 format. Files exported by older versions of Vocup are not compatible anymore.</value>
     <comment>{0}: Count of columns</comment>
   </data>
   <data name="CsvInvalidHeaderT" xml:space="preserve">
-    <value>Fehlerhafter CSV Header</value>
+    <value>Invalid CSV header</value>
   </data>
   <data name="CsvInvalidLanguages" xml:space="preserve">
-    <value>Möchten Sie ein {0} - {1} Vokabelheft importieren, obwohl die Sprachen nicht mit Ihrem Vokabelheft übereinstimmen?
-Falls {0} und {1} keine Sprachen sondern Vokabeln sind, denken Sie bitte daran, in der ersten Zeile der CSV Datei links Ihre Muttersprache und rechts Ihre Fremdsprache einzutragen.</value>
+    <value>Do you want to import an {0} - {1} vocabulary book although the languages do not match your vocabulary book?
+If {0} and {1} are vocabulary words and no languages, please remember to fill the first row of the CSV file with your mother tongue in left column and your foreign language in the right column.</value>
     <comment>{0}: Source, {1}: Target</comment>
   </data>
   <data name="EditAddDuplicate" xml:space="preserve">
-    <value>Diese Vokabel ist in Ihrem Vokabelheft bereits vorhanden. Möchten Sie Ihre Eingabe verwerfen?</value>
+    <value>This vocabulary word already exists in your vocabulary book. Do you want to discard your input?</value>
   </data>
   <data name="EditDuplicateT" xml:space="preserve">
-    <value>Vokabel bereits vorhanden</value>
+    <value>Word already exists</value>
   </data>
   <data name="EditToDuplicate" xml:space="preserve">
-    <value>Die geänderte Vokabel befindet sich bereits in ihrem Vokabelheft. Möchten Sie diese Vokabel löschen?</value>
+    <value>The changed vocabulary word already exists in your vocabulary book. Do you want to delete this word?</value>
   </data>
   <data name="GeneralSaveChanges" xml:space="preserve">
-    <value>Möchten Sie Ihre Änderungen und/oder Übungsergebnisse speichern?</value>
+    <value>Do you want to save your changes and/or practice results?</value>
   </data>
   <data name="GeneralSaveChangesT" xml:space="preserve">
-    <value>Speichern?</value>
+    <value>Save?</value>
   </data>
   <data name="LegacyVersionUninstall" xml:space="preserve">
-    <value>Es wurde eine veraltete Version von Vocup auf ihrem Computer gefunden. Dadurch können Dateitypzuordnungen nicht automatisch eingerichtet werden und Vokabelhefte können eventuell nicht geöffnet werden. Möchten Sie diese veraltete Version deinstallieren?</value>
+    <value>An outdated version of Vocup has been found on your computer. This could prevent automatic file type association configuration and could cause vocabulary books failing to open. Do you want to uninstall this outdated version?</value>
   </data>
   <data name="LegacyVersionUninstallT" xml:space="preserve">
-    <value>Inkompatible Version deinstallieren?</value>
+    <value>Uninstall incompatible version?</value>
   </data>
   <data name="MergeOverride" xml:space="preserve">
-    <value>Ein Vokabelheft vom selben Pfad wurde bereits geladen. Möchten Sie das aktuelle Vokabelheft laden und die Daten überschreiben?</value>
+    <value>A vocabulary book file from the same path has already been loaded. Do you want to load the current vocabulary book and override existing data?</value>
   </data>
   <data name="MergeOverrideT" xml:space="preserve">
-    <value>Daten überschreiben?</value>
+    <value>Override data?</value>
   </data>
   <data name="OpenInExplorerError" xml:space="preserve">
-    <value>Das aktuelle Vokabelheft konnte nicht im Explorer geöffnet werden. Bitte beachten Sie, dass dieses Feature mit manchen Betriebssystemen wie Linux oder Windows 10 S nicht kompatibel ist.
+    <value>The current vocabulary book could not be opened in Explorer. Please be aware that this feature is not avalaible on some operatening systems like Linux or Windows 10 S.
 Details: {0}</value>
     <comment>{0}: ErrorDetails</comment>
   </data>
   <data name="OpenInExplorerErrorT" xml:space="preserve">
-    <value>Fehler beim Öffnen</value>
+    <value>Error when opening in Explorer</value>
   </data>
   <data name="OpenInExplorerNotFound" xml:space="preserve">
-    <value>Die Vokabelheftdatei {0} existiert nicht mehr.</value>
+    <value>The vocabulary book file at {0} does not exist anymore.</value>
     <comment>{0}: FilePath</comment>
   </data>
   <data name="OpenInExplorerNotFoundT" xml:space="preserve">
-    <value>Datei nicht gefunden</value>
+    <value>File not found</value>
   </data>
   <data name="OpenInExplorerSave" xml:space="preserve">
-    <value>Möchten die Änderungen am Vokabelheft speichern, bevor Sie es im Explorer öffnen? Sie können die Änderungen jederzeit auch später speichern.</value>
+    <value>Do you want to save your changes to the vocabulary book before opening it in the Explorer? You can save your changes later in every case.</value>
   </data>
   <data name="OpenInExplorerSaveT" xml:space="preserve">
-    <value>Jetzt speichern?</value>
+    <value>Save now?</value>
   </data>
   <data name="OpenUnknownFile" xml:space="preserve">
-    <value>Vocup kann die Datei {0} nicht öffnen, weil es sich weder um ein Vokabelheft, noch um eine Vocup-Datensicherung handelt.</value>
+    <value>Vocup cannot open the file at {0} because it is neither a vocabulary book file nor a Vocup backup file.</value>
     <comment>{0}: FilePath</comment>
   </data>
   <data name="OpenUnknownFileT" xml:space="preserve">
-    <value>Unbekanntes Dateiformat</value>
+    <value>Unknown file format</value>
   </data>
   <data name="SpecialCharAlreadyExists" xml:space="preserve">
-    <value>Für diese Sprache existieren bereits Sonderzeichen</value>
+    <value>There are already special chars for this language</value>
+  </data>
+  <data name="SpecialCharCorruptedFile" xml:space="preserve">
+    <value>The special char file for {0} could not be loaded. Please check the file at {1} and delete it if necessary.</value>
+    <comment>{0}: Language, {1}: FilePath</comment>
+  </data>
+  <data name="SpecialCharCorruptedFileT" xml:space="preserve">
+    <value>Corrupted file</value>
   </data>
   <data name="SpecialCharDeleteError" xml:space="preserve">
-    <value>Beim Löschen der Sonderzeichendatei für {0} ist ein Fehler aufgetreten:
+    <value>An error occured when deleting the special char file for {0}:
 {1}</value>
     <comment>{0}: Language, {1}: ErrorDetails</comment>
   </data>
   <data name="SpecialCharDeleteErrorT" xml:space="preserve">
-    <value>Fehler beim Löschen</value>
-  </data>
-  <data name="SpecialCharInvalidFile" xml:space="preserve">
-    <value>Die Sonderzeichendatei {0} konnte nicht geladen werden. Überprüfen Sie die Datei unter {1} und löschen sie diese gegebenenfalls.</value>
-    <comment>{0}: Language, {1}: FilePath</comment>
-  </data>
-  <data name="SpecialCharInvalidFileT" xml:space="preserve">
-    <value>Fehlerhafte Datei</value>
+    <value>Error when deleting</value>
   </data>
   <data name="SpecialCharSaveError" xml:space="preserve">
-    <value>Beim Speichern der Sonderzeichendatei für {0} ist ein Fehler aufgetreten:
+    <value>An error occured when saving the special char file for {0}:
 {1}</value>
     <comment>{0}: Language, {1}: ErrorDetails</comment>
   </data>
   <data name="SpecialCharSaveErrorT" xml:space="preserve">
-    <value>Fehler beim Speichern</value>
+    <value>Error when saving</value>
   </data>
   <data name="UnexpectedErrorT" xml:space="preserve">
-    <value>Unerwarteter Fehler</value>
+    <value>Unexpected error</value>
   </data>
   <data name="VdpCorruptFile" xml:space="preserve">
     <value>The Vocup backup file is corrupt and could not be opened:
