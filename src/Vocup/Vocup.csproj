@@ -299,8 +299,14 @@
     <EmbeddedResource Include="Controls\VocabularyListView.resx">
       <DependentUpon>VocabularyListView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutBox.de.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateBackup.de.resx">
+      <DependentUpon>CreateBackup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateBackup.resx">
       <DependentUpon>CreateBackup.cs</DependentUpon>

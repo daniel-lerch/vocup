@@ -37,21 +37,21 @@
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.LlbDownload = new System.Windows.Forms.LinkLabel();
             this.LlbProjectWebsite = new System.Windows.Forms.LinkLabel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.LbWebsite = new System.Windows.Forms.Label();
+            this.LbDownload = new System.Windows.Forms.Label();
+            this.LbLicense = new System.Windows.Forms.Label();
+            this.LbMail = new System.Windows.Forms.Label();
             this.LlbProjectLicense = new System.Windows.Forms.LinkLabel();
-            this.LlbProjectEMail = new System.Windows.Forms.LinkLabel();
+            this.LlbProjectMail = new System.Windows.Forms.LinkLabel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.TpInfo = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TpComponents = new System.Windows.Forms.TabPage();
             this.LwComponents = new System.Windows.Forms.ListView();
-            this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.software_version = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lizenz = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.url = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ColHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ColHeaderVersion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ColHeaderLicense = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ColHeaderUrl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.TpInfo.SuspendLayout();
@@ -93,12 +93,12 @@
             resources.ApplyResources(this.tableLayoutPanel, "tableLayoutPanel");
             this.tableLayoutPanel.Controls.Add(this.LlbDownload, 0, 1);
             this.tableLayoutPanel.Controls.Add(this.LlbProjectWebsite, 1, 0);
-            this.tableLayoutPanel.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel.Controls.Add(this.label5, 0, 3);
-            this.tableLayoutPanel.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel.Controls.Add(this.LbWebsite, 0, 0);
+            this.tableLayoutPanel.Controls.Add(this.LbDownload, 0, 1);
+            this.tableLayoutPanel.Controls.Add(this.LbLicense, 0, 3);
+            this.tableLayoutPanel.Controls.Add(this.LbMail, 0, 2);
             this.tableLayoutPanel.Controls.Add(this.LlbProjectLicense, 1, 3);
-            this.tableLayoutPanel.Controls.Add(this.LlbProjectEMail, 1, 2);
+            this.tableLayoutPanel.Controls.Add(this.LlbProjectMail, 1, 2);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             // 
             // LlbDownload
@@ -121,29 +121,29 @@
             this.LlbProjectWebsite.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
             this.LlbProjectWebsite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LlbProjectWebsite_LinkClicked);
             // 
-            // label2
+            // LbWebsite
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.LbWebsite, "LbWebsite");
+            this.LbWebsite.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.LbWebsite.Name = "LbWebsite";
             // 
-            // label1
+            // LbDownload
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.LbDownload, "LbDownload");
+            this.LbDownload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.LbDownload.Name = "LbDownload";
             // 
-            // label5
+            // LbLicense
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.label5.Name = "label5";
+            resources.ApplyResources(this.LbLicense, "LbLicense");
+            this.LbLicense.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.LbLicense.Name = "LbLicense";
             // 
-            // label3
+            // LbMail
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.label3.Name = "label3";
+            resources.ApplyResources(this.LbMail, "LbMail");
+            this.LbMail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.LbMail.Name = "LbMail";
             // 
             // LlbProjectLicense
             // 
@@ -155,15 +155,15 @@
             this.LlbProjectLicense.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
             this.LlbProjectLicense.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LlbProjectLicense_LinkClicked);
             // 
-            // LlbProjectEMail
+            // LlbProjectMail
             // 
-            this.LlbProjectEMail.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            resources.ApplyResources(this.LlbProjectEMail, "LlbProjectEMail");
-            this.LlbProjectEMail.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.LlbProjectEMail.Name = "LlbProjectEMail";
-            this.LlbProjectEMail.TabStop = true;
-            this.LlbProjectEMail.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.LlbProjectEMail.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LlbProjectEMail_LinkClicked);
+            this.LlbProjectMail.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            resources.ApplyResources(this.LlbProjectMail, "LlbProjectMail");
+            this.LlbProjectMail.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.LlbProjectMail.Name = "LlbProjectMail";
+            this.LlbProjectMail.TabStop = true;
+            this.LlbProjectMail.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            this.LlbProjectMail.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LlbProjectMail_LinkClicked);
             // 
             // tabControl
             // 
@@ -199,10 +199,10 @@
             // LwComponents
             // 
             this.LwComponents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.name,
-            this.software_version,
-            this.lizenz,
-            this.url});
+            this.ColHeaderName,
+            this.ColHeaderVersion,
+            this.ColHeaderLicense,
+            this.ColHeaderUrl});
             resources.ApplyResources(this.LwComponents, "LwComponents");
             this.LwComponents.FullRowSelect = true;
             this.LwComponents.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
@@ -214,21 +214,21 @@
             this.LwComponents.View = System.Windows.Forms.View.Details;
             this.LwComponents.DoubleClick += new System.EventHandler(this.LwComponents_DoubleClick);
             // 
-            // name
+            // ColHeaderName
             // 
-            resources.ApplyResources(this.name, "name");
+            resources.ApplyResources(this.ColHeaderName, "ColHeaderName");
             // 
-            // software_version
+            // ColHeaderVersion
             // 
-            resources.ApplyResources(this.software_version, "software_version");
+            resources.ApplyResources(this.ColHeaderVersion, "ColHeaderVersion");
             // 
-            // lizenz
+            // ColHeaderLicense
             // 
-            resources.ApplyResources(this.lizenz, "lizenz");
+            resources.ApplyResources(this.ColHeaderLicense, "ColHeaderLicense");
             // 
-            // url
+            // ColHeaderUrl
             // 
-            resources.ApplyResources(this.url, "url");
+            resources.ApplyResources(this.ColHeaderUrl, "ColHeaderUrl");
             // 
             // AboutBox
             // 
@@ -264,22 +264,22 @@
         private System.Windows.Forms.Label LbVersion;
         private System.Windows.Forms.Label LbCopyright;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LbWebsite;
         private System.Windows.Forms.LinkLabel LlbProjectWebsite;
-        private System.Windows.Forms.LinkLabel LlbProjectEMail;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.LinkLabel LlbProjectMail;
+        private System.Windows.Forms.Label LbMail;
+        private System.Windows.Forms.Label LbLicense;
         public  System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage TpInfo;
         private System.Windows.Forms.PictureBox pictureBox1;
         public  System.Windows.Forms.TabPage TpComponents;
         public  System.Windows.Forms.ListView LwComponents;
-        private System.Windows.Forms.ColumnHeader name;
-        private System.Windows.Forms.ColumnHeader software_version;
-        private System.Windows.Forms.ColumnHeader lizenz;
-        private System.Windows.Forms.ColumnHeader url;
+        private System.Windows.Forms.ColumnHeader ColHeaderName;
+        private System.Windows.Forms.ColumnHeader ColHeaderVersion;
+        private System.Windows.Forms.ColumnHeader ColHeaderLicense;
+        private System.Windows.Forms.ColumnHeader ColHeaderUrl;
         private System.Windows.Forms.LinkLabel LlbProjectLicense;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LbDownload;
         private System.Windows.Forms.LinkLabel LlbDownload;
     }
 }

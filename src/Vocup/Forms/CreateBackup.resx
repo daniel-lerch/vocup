@@ -136,7 +136,7 @@
     <value>5</value>
   </data>
   <data name="LbSaveSpecificBooks.Text" xml:space="preserve">
-    <value>Folgende Vokabelhefte sichern:</value>
+    <value>Backup the following vocabulary books:</value>
   </data>
   <data name="&gt;&gt;LbSaveSpecificBooks.Name" xml:space="preserve">
     <value>LbSaveSpecificBooks</value>
@@ -166,7 +166,7 @@
     <value>0</value>
   </data>
   <data name="CbSaveAllBooks.Text" xml:space="preserve">
-    <value>Alle Dateien im Ordner Vokabelhefte sichern (insgesamt {0})</value>
+    <value>Backup all files in your vocabulary books folder ({0} in total)</value>
   </data>
   <data name="&gt;&gt;CbSaveAllBooks.Name" xml:space="preserve">
     <value>CbSaveAllBooks</value>
@@ -193,7 +193,7 @@
     <value>3</value>
   </data>
   <data name="BtnAddVocabularyBook.Text" xml:space="preserve">
-    <value>Vokabelheft hinzufügen</value>
+    <value>Add vocabulary book</value>
   </data>
   <data name="&gt;&gt;BtnAddVocabularyBook.Name" xml:space="preserve">
     <value>BtnAddVocabularyBook</value>
@@ -226,7 +226,7 @@
     <value>4</value>
   </data>
   <data name="BtnDeleteVocabularyBook.Text" xml:space="preserve">
-    <value>Löschen</value>
+    <value>Delete</value>
   </data>
   <data name="&gt;&gt;BtnDeleteVocabularyBook.Name" xml:space="preserve">
     <value>BtnDeleteVocabularyBook</value>
@@ -277,7 +277,7 @@
     <value>0</value>
   </data>
   <data name="GroupVocabularyBooks.Text" xml:space="preserve">
-    <value>Wählen Sie die Vokabelhefte, die Sie sichern möchten:</value>
+    <value>Please select vocabulary books to backup:</value>
   </data>
   <data name="&gt;&gt;GroupVocabularyBooks.Name" xml:space="preserve">
     <value>GroupVocabularyBooks</value>
@@ -304,7 +304,7 @@
     <value>4</value>
   </data>
   <data name="BtnCancel.Text" xml:space="preserve">
-    <value>Abbrechen</value>
+    <value>Cancel</value>
   </data>
   <data name="&gt;&gt;BtnCancel.Name" xml:space="preserve">
     <value>BtnCancel</value>
@@ -331,7 +331,7 @@
     <value>3</value>
   </data>
   <data name="BtnCreateBackup.Text" xml:space="preserve">
-    <value>Datensicherung erstellen</value>
+    <value>Create backup</value>
   </data>
   <data name="&gt;&gt;BtnCreateBackup.Name" xml:space="preserve">
     <value>BtnCreateBackup</value>
@@ -388,7 +388,7 @@
     <value>2</value>
   </data>
   <data name="GroupSpecialChar.Text" xml:space="preserve">
-    <value>Welche Sonderzeichentabellen sollen gesichert werden?</value>
+    <value>Which special char tables should be backed up?</value>
   </data>
   <data name="&gt;&gt;GroupSpecialChar.Name" xml:space="preserve">
     <value>GroupSpecialChar</value>
@@ -415,7 +415,7 @@
     <value>5</value>
   </data>
   <data name="CbSaveResults.Text" xml:space="preserve">
-    <value>Ergebnisse der ausgewählten Vokabelhefte sichern</value>
+    <value>Backup results of selected vocabulary books</value>
   </data>
   <data name="&gt;&gt;CbSaveResults.Name" xml:space="preserve">
     <value>CbSaveResults</value>
@@ -439,7 +439,7 @@
     <value>6</value>
   </data>
   <data name="GroupPracticeResults.Text" xml:space="preserve">
-    <value>Übungsergebnisse</value>
+    <value>Practice results</value>
   </data>
   <data name="&gt;&gt;GroupPracticeResults.Name" xml:space="preserve">
     <value>GroupPracticeResults</value>
@@ -453,9 +453,9 @@
   <data name="&gt;&gt;GroupPracticeResults.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -466,7 +466,7 @@
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Neue Datensicherung erstellen</value>
+    <value>Create new backup</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>CreateBackup</value>

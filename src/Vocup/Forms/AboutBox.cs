@@ -45,9 +45,9 @@ namespace Vocup.Forms
                 Process.Start("https://www.microsoft.com/store/apps/9N6W2H3QJQMM");
         }
 
-        private void LlbProjectEMail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LlbProjectMail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("mailto:" + LlbProjectEMail.Text);
+            Process.Start("mailto:" + LlbProjectMail.Text);
         }
 
         private void LlbProjectLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
