@@ -311,8 +311,14 @@
     <EmbeddedResource Include="Forms\CreateBackup.resx">
       <DependentUpon>CreateBackup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EvaluationInfoDialog.de.resx">
+      <DependentUpon>EvaluationInfoDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EvaluationInfoDialog.resx">
       <DependentUpon>EvaluationInfoDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MergeFiles.de.resx">
+      <DependentUpon>MergeFiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MergeFiles.resx">
       <DependentUpon>MergeFiles.cs</DependentUpon>

@@ -29,20 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EvaluationInfoDialog));
-            this.button = new System.Windows.Forms.Button();
+            this.BtnOK = new System.Windows.Forms.Button();
             this.pictureBox0 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.text_noch_nicht = new System.Windows.Forms.Label();
+            this.LbUnpracticed = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.text_falsch_2 = new System.Windows.Forms.Label();
-            this.text_falsch_1 = new System.Windows.Forms.Label();
+            this.LbWronglyPracticed = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.text_fertig = new System.Windows.Forms.Label();
+            this.LbFullyPracticed = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.text_richtig = new System.Windows.Forms.Label();
+            this.LbCorrectlyPracticed = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -53,12 +52,12 @@
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button
+            // BtnOK
             // 
-            this.button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            resources.ApplyResources(this.button, "button");
-            this.button.Name = "button";
-            this.button.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.BtnOK, "BtnOK");
+            this.BtnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.BtnOK.Name = "BtnOK";
+            this.BtnOK.UseVisualStyleBackColor = true;
             // 
             // pictureBox0
             // 
@@ -90,74 +89,67 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.text_noch_nicht);
+            this.groupBox1.Controls.Add(this.LbUnpracticed);
             this.groupBox1.Controls.Add(this.pictureBox0);
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
-            // text_noch_nicht
+            // LbUnpracticed
             // 
-            resources.ApplyResources(this.text_noch_nicht, "text_noch_nicht");
-            this.text_noch_nicht.Name = "text_noch_nicht";
+            resources.ApplyResources(this.LbUnpracticed, "LbUnpracticed");
+            this.LbUnpracticed.Name = "LbUnpracticed";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.text_falsch_2);
-            this.groupBox2.Controls.Add(this.text_falsch_1);
+            this.groupBox2.Controls.Add(this.LbWronglyPracticed);
             this.groupBox2.Controls.Add(this.pictureBox1);
             resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
-            // text_falsch_2
+            // LbWronglyPracticed
             // 
-            resources.ApplyResources(this.text_falsch_2, "text_falsch_2");
-            this.text_falsch_2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.text_falsch_2.Name = "text_falsch_2";
-            // 
-            // text_falsch_1
-            // 
-            resources.ApplyResources(this.text_falsch_1, "text_falsch_1");
-            this.text_falsch_1.Name = "text_falsch_1";
+            resources.ApplyResources(this.LbWronglyPracticed, "LbWronglyPracticed");
+            this.LbWronglyPracticed.Name = "LbWronglyPracticed";
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.text_fertig);
+            this.groupBox4.Controls.Add(this.LbFullyPracticed);
             this.groupBox4.Controls.Add(this.pictureBox3);
             resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
             // 
-            // text_fertig
+            // LbFullyPracticed
             // 
-            resources.ApplyResources(this.text_fertig, "text_fertig");
-            this.text_fertig.Name = "text_fertig";
+            resources.ApplyResources(this.LbFullyPracticed, "LbFullyPracticed");
+            this.LbFullyPracticed.Name = "LbFullyPracticed";
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.text_richtig);
+            this.groupBox3.Controls.Add(this.LbCorrectlyPracticed);
             this.groupBox3.Controls.Add(this.pictureBox2);
             resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
-            // text_richtig
+            // LbCorrectlyPracticed
             // 
-            resources.ApplyResources(this.text_richtig, "text_richtig");
-            this.text_richtig.Name = "text_richtig";
+            resources.ApplyResources(this.LbCorrectlyPracticed, "LbCorrectlyPracticed");
+            this.LbCorrectlyPracticed.Name = "LbCorrectlyPracticed";
             // 
             // EvaluationInfoDialog
             // 
-            this.AcceptButton = this.button;
+            this.AcceptButton = this.BtnOK;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.button;
+            this.CancelButton = this.BtnOK;
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button);
+            this.Controls.Add(this.BtnOK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -174,13 +166,14 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button;
+        private System.Windows.Forms.Button BtnOK;
         private System.Windows.Forms.PictureBox pictureBox0;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -189,10 +182,9 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label text_noch_nicht;
-        private System.Windows.Forms.Label text_falsch_1;
-        private System.Windows.Forms.Label text_richtig;
-        private System.Windows.Forms.Label text_fertig;
-        private System.Windows.Forms.Label text_falsch_2;
+        private System.Windows.Forms.Label LbUnpracticed;
+        private System.Windows.Forms.Label LbWronglyPracticed;
+        private System.Windows.Forms.Label LbCorrectlyPracticed;
+        private System.Windows.Forms.Label LbFullyPracticed;
     }
 }

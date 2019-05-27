@@ -117,33 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>223, 375</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BtnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
-  <data name="button.Size" type="System.Drawing.Size, System.Drawing">
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="BtnOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>224, 361</value>
+  </data>
+  <data name="BtnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="button.TabIndex" type="System.Int32, mscorlib">
+  <data name="BtnOK.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="button.Text" xml:space="preserve">
+  <data name="BtnOK.Text" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="&gt;&gt;button.Name" xml:space="preserve">
-    <value>button</value>
+  <data name="&gt;&gt;BtnOK.Name" xml:space="preserve">
+    <value>BtnOK</value>
   </data>
-  <data name="&gt;&gt;button.Type" xml:space="preserve">
+  <data name="&gt;&gt;BtnOK.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BtnOK.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;button.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BtnOK.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox0.ErrorImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
@@ -281,7 +284,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="pictureBox2.ErrorImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -420,31 +423,31 @@
   <data name="&gt;&gt;pictureBox3.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="text_noch_nicht.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LbUnpracticed.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="text_noch_nicht.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LbUnpracticed.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 35</value>
   </data>
-  <data name="text_noch_nicht.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LbUnpracticed.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 13</value>
   </data>
-  <data name="text_noch_nicht.TabIndex" type="System.Int32, mscorlib">
+  <data name="LbUnpracticed.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="text_noch_nicht.Text" xml:space="preserve">
-    <value>Diese Vokabel wurde bis jetzt noch nicht geübt.</value>
+  <data name="LbUnpracticed.Text" xml:space="preserve">
+    <value>This word has not been practiced yet.</value>
   </data>
-  <data name="&gt;&gt;text_noch_nicht.Name" xml:space="preserve">
-    <value>text_noch_nicht</value>
+  <data name="&gt;&gt;LbUnpracticed.Name" xml:space="preserve">
+    <value>LbUnpracticed</value>
   </data>
-  <data name="&gt;&gt;text_noch_nicht.Type" xml:space="preserve">
+  <data name="&gt;&gt;LbUnpracticed.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;text_noch_nicht.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LbUnpracticed.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="&gt;&gt;text_noch_nicht.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LbUnpracticed.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
@@ -468,61 +471,36 @@
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="text_falsch_2.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LbWronglyPracticed.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="text_falsch_2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 57</value>
-  </data>
-  <data name="text_falsch_2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 39</value>
-  </data>
-  <data name="text_falsch_2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="text_falsch_2.Text" xml:space="preserve">
-    <value>Achtung: Auch Vokabeln die bereits richtig übersetzt
-wurden, werden nach falscher Übersetzung rot
-markiert.</value>
-  </data>
-  <data name="&gt;&gt;text_falsch_2.Name" xml:space="preserve">
-    <value>text_falsch_2</value>
-  </data>
-  <data name="&gt;&gt;text_falsch_2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;text_falsch_2.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;text_falsch_2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="text_falsch_1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="text_falsch_1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LbWronglyPracticed.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 35</value>
   </data>
-  <data name="text_falsch_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 13</value>
+  <data name="LbWronglyPracticed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 65</value>
   </data>
-  <data name="text_falsch_1.TabIndex" type="System.Int32, mscorlib">
+  <data name="LbWronglyPracticed.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="text_falsch_1.Text" xml:space="preserve">
-    <value>Diese Vokabel wurde falsch übersetzt.</value>
+  <data name="LbWronglyPracticed.Text" xml:space="preserve">
+    <value>Diese Vokabel wurde falsch übersetzt.
+
+Warning:
+Even words that have been translated correctly
+are marked in red after being wrongly translated.</value>
   </data>
-  <data name="&gt;&gt;text_falsch_1.Name" xml:space="preserve">
-    <value>text_falsch_1</value>
+  <data name="&gt;&gt;LbWronglyPracticed.Name" xml:space="preserve">
+    <value>LbWronglyPracticed</value>
   </data>
-  <data name="&gt;&gt;text_falsch_1.Type" xml:space="preserve">
+  <data name="&gt;&gt;LbWronglyPracticed.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;text_falsch_1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LbWronglyPracticed.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
-  <data name="&gt;&gt;text_falsch_1.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;LbWronglyPracticed.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 74</value>
@@ -545,39 +523,39 @@ markiert.</value>
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="text_fertig.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LbFullyPracticed.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="text_fertig.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LbFullyPracticed.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 35</value>
   </data>
-  <data name="text_fertig.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LbFullyPracticed.Size" type="System.Drawing.Size, System.Drawing">
     <value>251, 65</value>
   </data>
-  <data name="text_fertig.TabIndex" type="System.Int32, mscorlib">
+  <data name="LbFullyPracticed.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="text_fertig.Text" xml:space="preserve">
-    <value>Diese Vokabel wurde als gelernt markiert.
+  <data name="LbFullyPracticed.Text" xml:space="preserve">
+    <value>This word has been marked as learnt.
 
-Tipp: Unter Extras/Optionen können Sie die Anzahl
-richtigen Übersetzungen, die dazu erforderlich sind, 
-Ihren Wünschen anpassen.</value>
+Hint:
+You can customize the required count
+of correct translations in the settings.</value>
   </data>
-  <data name="&gt;&gt;text_fertig.Name" xml:space="preserve">
-    <value>text_fertig</value>
+  <data name="&gt;&gt;LbFullyPracticed.Name" xml:space="preserve">
+    <value>LbFullyPracticed</value>
   </data>
-  <data name="&gt;&gt;text_fertig.Type" xml:space="preserve">
+  <data name="&gt;&gt;LbFullyPracticed.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;text_fertig.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LbFullyPracticed.Parent" xml:space="preserve">
     <value>groupBox4</value>
   </data>
-  <data name="&gt;&gt;text_fertig.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LbFullyPracticed.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 261</value>
+    <value>12, 247</value>
   </data>
   <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 108</value>
@@ -597,35 +575,38 @@ Ihren Wünschen anpassen.</value>
   <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="text_richtig.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LbCorrectlyPracticed.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LbCorrectlyPracticed.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 35</value>
   </data>
-  <data name="text_richtig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>262, 30</value>
+  <data name="LbCorrectlyPracticed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 13</value>
   </data>
-  <data name="text_richtig.TabIndex" type="System.Int32, mscorlib">
+  <data name="LbCorrectlyPracticed.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="text_richtig.Text" xml:space="preserve">
-    <value>Diese Vokabel wurde mindestens einmal richtig übersetzt.</value>
+  <data name="LbCorrectlyPracticed.Text" xml:space="preserve">
+    <value>This word has been translated correctly at least once.</value>
   </data>
-  <data name="&gt;&gt;text_richtig.Name" xml:space="preserve">
-    <value>text_richtig</value>
+  <data name="&gt;&gt;LbCorrectlyPracticed.Name" xml:space="preserve">
+    <value>LbCorrectlyPracticed</value>
   </data>
-  <data name="&gt;&gt;text_richtig.Type" xml:space="preserve">
+  <data name="&gt;&gt;LbCorrectlyPracticed.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;text_richtig.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LbCorrectlyPracticed.Parent" xml:space="preserve">
     <value>groupBox3</value>
   </data>
-  <data name="&gt;&gt;text_richtig.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LbCorrectlyPracticed.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 187</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 68</value>
+    <value>287, 54</value>
   </data>
   <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -642,20 +623,20 @@ Ihren Wünschen anpassen.</value>
   <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>310, 403</value>
+    <value>310, 390</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Infos zum Bewertungssystem</value>
+    <value>Information about evaluation</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>EvaluationInfoDialog</value>
