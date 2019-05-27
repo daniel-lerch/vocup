@@ -282,7 +282,7 @@
     <value>0</value>
   </data>
   <data name="GroupPractice.Text" xml:space="preserve">
-    <value>Übersetzen Sie von %MotherTongue% nach %ForeignLang%</value>
+    <value>Please translate from %MotherTongue% to %ForeignLang%</value>
   </data>
   <data name="&gt;&gt;GroupPractice.Name" xml:space="preserve">
     <value>GroupPractice</value>
@@ -328,16 +328,16 @@
     <value>True</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>345, 74</value>
+    <value>324, 74</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 13</value>
+    <value>96, 13</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Falsch geübt:</value>
+    <value>Wrongly practiced:</value>
   </data>
   <data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
@@ -382,13 +382,13 @@
     <value>154, 74</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 13</value>
+    <value>72, 13</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Teilweise richtig geübt:</value>
+    <value>Partly correct:</value>
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -409,13 +409,13 @@
     <value>6, 74</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 13</value>
+    <value>98, 13</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Richtig geübt:</value>
+    <value>Correctly practiced:</value>
   </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
@@ -460,13 +460,13 @@
     <value>324, 49</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 13</value>
+    <value>60, 13</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Noch nicht geübt:</value>
+    <value>Remaining:</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -487,13 +487,13 @@
     <value>154, 49</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 13</value>
+    <value>36, 13</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Bereits geübt:</value>
+    <value>Done:</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
@@ -514,13 +514,13 @@
     <value>6, 49</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 13</value>
+    <value>94, 13</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Vokabeln zu üben:</value>
+    <value>Words to practice:</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -637,7 +637,7 @@
     <value>6</value>
   </data>
   <data name="GroupStatistics.Text" xml:space="preserve">
-    <value>Statistik</value>
+    <value>Statistics</value>
   </data>
   <data name="&gt;&gt;GroupStatistics.Name" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -664,7 +664,7 @@
     <value>5</value>
   </data>
   <data name="BtnCancel.Text" xml:space="preserve">
-    <value>Abbrechen</value>
+    <value>Cancel</value>
   </data>
   <data name="&gt;&gt;BtnCancel.Name" xml:space="preserve">
     <value>BtnCancel</value>
@@ -691,7 +691,7 @@
     <value>4</value>
   </data>
   <data name="BtnContinue.Text" xml:space="preserve">
-    <value>Fortfahren</value>
+    <value>Continue</value>
   </data>
   <data name="&gt;&gt;BtnContinue.Name" xml:space="preserve">
     <value>BtnContinue</value>
@@ -745,7 +745,7 @@
     <value>3</value>
   </data>
   <data name="BtnSpecialChar.Text" xml:space="preserve">
-    <value>Sonderzeichen</value>
+    <value>Special chars</value>
   </data>
   <data name="&gt;&gt;BtnSpecialChar.Name" xml:space="preserve">
     <value>BtnSpecialChar</value>
@@ -769,13 +769,13 @@
     <value>187, 6</value>
   </data>
   <data name="RbPartlyCorrect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 17</value>
+    <value>87, 17</value>
   </data>
   <data name="RbPartlyCorrect.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="RbPartlyCorrect.Text" xml:space="preserve">
-    <value>Teilweise korrekt</value>
+    <value>Partly correct</value>
   </data>
   <data name="&gt;&gt;RbPartlyCorrect.Name" xml:space="preserve">
     <value>RbPartlyCorrect</value>
@@ -799,13 +799,13 @@
     <value>406, 6</value>
   </data>
   <data name="RbWrong.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 17</value>
+    <value>57, 17</value>
   </data>
   <data name="RbWrong.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="RbWrong.Text" xml:space="preserve">
-    <value>Falsch</value>
+    <value>Wrong</value>
   </data>
   <data name="&gt;&gt;RbWrong.Name" xml:space="preserve">
     <value>RbWrong</value>
@@ -835,7 +835,7 @@
     <value>0</value>
   </data>
   <data name="RbCorrect.Text" xml:space="preserve">
-    <value>Korrekt</value>
+    <value>Correct</value>
   </data>
   <data name="&gt;&gt;RbCorrect.Name" xml:space="preserve">
     <value>RbCorrect</value>
@@ -886,7 +886,7 @@
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Vokabeln üben</value>
+    <value>Practice words</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>PracticeDialog</value>

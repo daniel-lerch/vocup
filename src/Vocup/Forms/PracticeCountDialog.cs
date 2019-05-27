@@ -29,7 +29,7 @@ namespace Vocup.Forms
             set
             {
                 _count = value;
-                anzahl.Maximum = value;
+                NudCount.Maximum = value;
 
                 BtnCount20.Enabled = value >= 20;
                 BtnCount30.Enabled = value >= 30;
@@ -53,7 +53,7 @@ namespace Vocup.Forms
 
         private void BtnCountAll_Click(object sender, EventArgs e) => Finish(Count);
 
-        private void BtnCountCustom_Click(object sender, EventArgs e) => Finish((int)anzahl.Value);
+        private void BtnCountCustom_Click(object sender, EventArgs e) => Finish((int)NudCount.Value);
 
         private void RbAllStates_CheckedChanged(object sender, EventArgs e)
         {

@@ -33,7 +33,7 @@
             this.BtnCountAll = new System.Windows.Forms.Button();
             this.BtnCount40 = new System.Windows.Forms.Button();
             this.BtnCount30 = new System.Windows.Forms.Button();
-            this.anzahl = new System.Windows.Forms.NumericUpDown();
+            this.NudCount = new System.Windows.Forms.NumericUpDown();
             this.BtnCountCustom = new System.Windows.Forms.Button();
             this.RbUnpracticed = new System.Windows.Forms.RadioButton();
             this.RbWronglyPracticed = new System.Windows.Forms.RadioButton();
@@ -48,7 +48,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.GroupPriority = new System.Windows.Forms.GroupBox();
             this.GroupCount = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.anzahl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NudCount)).BeginInit();
             this.GroupState.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -85,16 +85,16 @@
             this.BtnCount30.UseVisualStyleBackColor = true;
             this.BtnCount30.Click += new System.EventHandler(this.BtnCount30_Click);
             // 
-            // anzahl
+            // NudCount
             // 
-            resources.ApplyResources(this.anzahl, "anzahl");
-            this.anzahl.Minimum = new decimal(new int[] {
+            resources.ApplyResources(this.NudCount, "NudCount");
+            this.NudCount.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.anzahl.Name = "anzahl";
-            this.anzahl.Value = new decimal(new int[] {
+            this.NudCount.Name = "NudCount";
+            this.NudCount.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -210,7 +210,7 @@
             // 
             this.GroupCount.Controls.Add(this.BtnCount20);
             this.GroupCount.Controls.Add(this.BtnCountAll);
-            this.GroupCount.Controls.Add(this.anzahl);
+            this.GroupCount.Controls.Add(this.NudCount);
             this.GroupCount.Controls.Add(this.BtnCount30);
             this.GroupCount.Controls.Add(this.BtnCountCustom);
             this.GroupCount.Controls.Add(this.BtnCount40);
@@ -234,7 +234,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.Form_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.anzahl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NudCount)).EndInit();
             this.GroupState.ResumeLayout(false);
             this.GroupState.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -253,7 +253,7 @@
         public System.Windows.Forms.Button BtnCountAll;
         public System.Windows.Forms.Button BtnCount40;
         public System.Windows.Forms.Button BtnCount30;
-        public System.Windows.Forms.NumericUpDown anzahl;
+        public System.Windows.Forms.NumericUpDown NudCount;
         public System.Windows.Forms.Button BtnCountCustom;
         public System.Windows.Forms.RadioButton RbUnpracticed;
         public System.Windows.Forms.RadioButton RbWronglyPracticed;

@@ -323,8 +323,15 @@
     <EmbeddedResource Include="Forms\MergeFiles.resx">
       <DependentUpon>MergeFiles.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PracticeCountDialog.de.resx">
+      <DependentUpon>PracticeCountDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PracticeCountDialog.resx">
       <DependentUpon>PracticeCountDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PracticeDialog.de.resx">
+      <DependentUpon>PracticeDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PracticeDialog.resx">
       <DependentUpon>PracticeDialog.cs</DependentUpon>

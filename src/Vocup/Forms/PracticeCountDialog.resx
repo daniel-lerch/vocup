@@ -129,7 +129,7 @@
     <value>0</value>
   </data>
   <data name="BtnCount20.Text" xml:space="preserve">
-    <value>20 Vokabeln</value>
+    <value>20 words</value>
   </data>
   <data name="&gt;&gt;BtnCount20.Name" xml:space="preserve">
     <value>BtnCount20</value>
@@ -153,7 +153,7 @@
     <value>3</value>
   </data>
   <data name="BtnCountAll.Text" xml:space="preserve">
-    <value>Alle Vokabeln ({0})</value>
+    <value>All words ({0})</value>
   </data>
   <data name="&gt;&gt;BtnCountAll.Name" xml:space="preserve">
     <value>BtnCountAll</value>
@@ -177,7 +177,7 @@
     <value>2</value>
   </data>
   <data name="BtnCount40.Text" xml:space="preserve">
-    <value>40 Vokabeln</value>
+    <value>40 words</value>
   </data>
   <data name="&gt;&gt;BtnCount40.Name" xml:space="preserve">
     <value>BtnCount40</value>
@@ -201,7 +201,7 @@
     <value>1</value>
   </data>
   <data name="BtnCount30.Text" xml:space="preserve">
-    <value>30 Vokabeln</value>
+    <value>30 words</value>
   </data>
   <data name="&gt;&gt;BtnCount30.Name" xml:space="preserve">
     <value>BtnCount30</value>
@@ -215,29 +215,29 @@
   <data name="&gt;&gt;BtnCount30.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="anzahl.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="NudCount.Location" type="System.Drawing.Point, System.Drawing">
     <value>161, 70</value>
   </data>
-  <data name="anzahl.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="NudCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 20</value>
   </data>
-  <data name="anzahl.TabIndex" type="System.Int32, mscorlib">
+  <data name="NudCount.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="anzahl.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+  <data name="NudCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <data name="&gt;&gt;anzahl.Name" xml:space="preserve">
-    <value>anzahl</value>
+  <data name="&gt;&gt;NudCount.Name" xml:space="preserve">
+    <value>NudCount</value>
   </data>
-  <data name="&gt;&gt;anzahl.Type" xml:space="preserve">
+  <data name="&gt;&gt;NudCount.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;anzahl.Parent" xml:space="preserve">
+  <data name="&gt;&gt;NudCount.Parent" xml:space="preserve">
     <value>GroupCount</value>
   </data>
-  <data name="&gt;&gt;anzahl.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;NudCount.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="BtnCountCustom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -253,7 +253,7 @@
     <value>5</value>
   </data>
   <data name="BtnCountCustom.Text" xml:space="preserve">
-    <value>Vokabeln</value>
+    <value>words     </value>
   </data>
   <data name="BtnCountCustom.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -280,13 +280,13 @@
     <value>6, 42</value>
   </data>
   <data name="RbUnpracticed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 17</value>
+    <value>114, 17</value>
   </data>
   <data name="RbUnpracticed.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="RbUnpracticed.Text" xml:space="preserve">
-    <value>Vokabeln, die noch nie geübt wurden</value>
+    <value>Unpracticed words</value>
   </data>
   <data name="&gt;&gt;RbUnpracticed.Name" xml:space="preserve">
     <value>RbUnpracticed</value>
@@ -307,13 +307,13 @@
     <value>6, 65</value>
   </data>
   <data name="RbWronglyPracticed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 17</value>
+    <value>142, 17</value>
   </data>
   <data name="RbWronglyPracticed.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="RbWronglyPracticed.Text" xml:space="preserve">
-    <value>Vokabeln, die falsch geübt wurden</value>
+    <value>Wrongly practiced words</value>
   </data>
   <data name="&gt;&gt;RbWronglyPracticed.Name" xml:space="preserve">
     <value>RbWronglyPracticed</value>
@@ -334,13 +334,13 @@
     <value>6, 88</value>
   </data>
   <data name="RbCorrectlyPracticed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 17</value>
+    <value>144, 17</value>
   </data>
   <data name="RbCorrectlyPracticed.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="RbCorrectlyPracticed.Text" xml:space="preserve">
-    <value>Vokabeln, die richtig geübt wurden</value>
+    <value>Correctly practiced words</value>
   </data>
   <data name="&gt;&gt;RbCorrectlyPracticed.Name" xml:space="preserve">
     <value>RbCorrectlyPracticed</value>
@@ -361,13 +361,13 @@
     <value>6, 19</value>
   </data>
   <data name="RbAllStates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 17</value>
+    <value>75, 17</value>
   </data>
   <data name="RbAllStates.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="RbAllStates.Text" xml:space="preserve">
-    <value>Alle (gemischt)</value>
+    <value>All (mixedt)</value>
   </data>
   <data name="&gt;&gt;RbAllStates.Name" xml:space="preserve">
     <value>RbAllStates</value>
@@ -388,13 +388,13 @@
     <value>6, 42</value>
   </data>
   <data name="RbEarlierPracticed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 17</value>
+    <value>138, 17</value>
   </data>
   <data name="RbEarlierPracticed.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="RbEarlierPracticed.Text" xml:space="preserve">
-    <value>Vokabeln, die am längsten nicht mehr geübt wurden</value>
+    <value>Earlier practciced words</value>
   </data>
   <data name="&gt;&gt;RbEarlierPracticed.Name" xml:space="preserve">
     <value>RbEarlierPracticed</value>
@@ -415,13 +415,13 @@
     <value>6, 65</value>
   </data>
   <data name="RbLaterPracticed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 17</value>
+    <value>145, 17</value>
   </data>
   <data name="RbLaterPracticed.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="RbLaterPracticed.Text" xml:space="preserve">
-    <value>Vokabeln, die kürzlich geübt wurden</value>
+    <value>Recently practiced words</value>
   </data>
   <data name="&gt;&gt;RbLaterPracticed.Name" xml:space="preserve">
     <value>RbLaterPracticed</value>
@@ -442,13 +442,13 @@
     <value>6, 19</value>
   </data>
   <data name="RbAllDates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 17</value>
+    <value>72, 17</value>
   </data>
   <data name="RbAllDates.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="RbAllDates.Text" xml:space="preserve">
-    <value>Alle (gemischt)</value>
+    <value>All (mixed)</value>
   </data>
   <data name="&gt;&gt;RbAllDates.Name" xml:space="preserve">
     <value>RbAllDates</value>
@@ -544,7 +544,7 @@
     <value>0</value>
   </data>
   <data name="GroupState.Text" xml:space="preserve">
-    <value>Welche Vokabeln möchten Sie üben?</value>
+    <value>Which words do you want to practice?</value>
   </data>
   <data name="&gt;&gt;GroupState.Name" xml:space="preserve">
     <value>GroupState</value>
@@ -568,7 +568,7 @@
     <value>1</value>
   </data>
   <data name="GroupPriority.Text" xml:space="preserve">
-    <value>Welche Vokabeln haben beim Üben Priorität?</value>
+    <value>Which words do have priority?</value>
   </data>
   <data name="&gt;&gt;GroupPriority.Name" xml:space="preserve">
     <value>GroupPriority</value>
@@ -592,7 +592,7 @@
     <value>2</value>
   </data>
   <data name="GroupCount.Text" xml:space="preserve">
-    <value>Wie viele Vokabeln möchten Sie üben?</value>
+    <value>How many words do you want to practice?</value>
   </data>
   <data name="&gt;&gt;GroupCount.Name" xml:space="preserve">
     <value>GroupCount</value>
