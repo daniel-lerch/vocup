@@ -118,32 +118,32 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LbSelectWords.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 9</value>
+  <data name="LbSelectWords.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 13</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LbSelectWords.Size" type="System.Drawing.Size, System.Drawing">
     <value>295, 13</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+  <data name="LbSelectWords.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Bitte wählen Sie die Vokabeln aus, die Sie drucken möchten:</value>
+  <data name="LbSelectWords.Text" xml:space="preserve">
+    <value>Please select the words you want to print</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
+  <data name="&gt;&gt;LbSelectWords.Name" xml:space="preserve">
+    <value>LbSelectWords</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+  <data name="&gt;&gt;LbSelectWords.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LbSelectWords.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LbSelectWords.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="ListBox.HorizontalScrollbar" type="System.Boolean, mscorlib">
@@ -184,7 +184,7 @@
     <value>2</value>
   </data>
   <data name="BtnCheckAll.Text" xml:space="preserve">
-    <value>Alle Auswählen</value>
+    <value>Select all</value>
   </data>
   <data name="&gt;&gt;BtnCheckAll.Name" xml:space="preserve">
     <value>BtnCheckAll</value>
@@ -211,7 +211,7 @@
     <value>3</value>
   </data>
   <data name="BtnUncheckAll.Text" xml:space="preserve">
-    <value>Alle Abwählen</value>
+    <value>Uncheck all</value>
   </data>
   <data name="&gt;&gt;BtnUncheckAll.Name" xml:space="preserve">
     <value>BtnUncheckAll</value>
@@ -238,7 +238,7 @@
     <value>7</value>
   </data>
   <data name="BtnContinue.Text" xml:space="preserve">
-    <value>Weiter</value>
+    <value>Continue</value>
   </data>
   <data name="&gt;&gt;BtnContinue.Name" xml:space="preserve">
     <value>BtnContinue</value>
@@ -265,7 +265,7 @@
     <value>8</value>
   </data>
   <data name="BtnCancel.Text" xml:space="preserve">
-    <value>Abbrechen</value>
+    <value>Cancel</value>
   </data>
   <data name="&gt;&gt;BtnCancel.Name" xml:space="preserve">
     <value>BtnCancel</value>
@@ -295,7 +295,7 @@
     <value>1</value>
   </data>
   <data name="RbAskForMotherTongue.Text" xml:space="preserve">
-    <value>Fremdsprache → Muttersprache</value>
+    <value>Foreign language → Mother tongue</value>
   </data>
   <data name="&gt;&gt;RbAskForMotherTongue.Name" xml:space="preserve">
     <value>RbAskForMotherTongue</value>
@@ -322,7 +322,7 @@
     <value>0</value>
   </data>
   <data name="RbAskForForeignLang.Text" xml:space="preserve">
-    <value>Muttersprache → Fremdsprache</value>
+    <value>Mother tongue → Foreign language</value>
   </data>
   <data name="&gt;&gt;RbAskForForeignLang.Name" xml:space="preserve">
     <value>RbAskForForeignLang</value>
@@ -346,7 +346,7 @@
     <value>6</value>
   </data>
   <data name="GroupPracticeMode.Text" xml:space="preserve">
-    <value>Übersetzungsrichtung</value>
+    <value>Translation direction</value>
   </data>
   <data name="&gt;&gt;GroupPracticeMode.Name" xml:space="preserve">
     <value>GroupPracticeMode</value>
@@ -376,7 +376,7 @@
     <value>3</value>
   </data>
   <data name="CbFullyPracticed.Text" xml:space="preserve">
-    <value>als gelernt markiert wurden</value>
+    <value>have been marked as learnt</value>
   </data>
   <data name="&gt;&gt;CbFullyPracticed.Name" xml:space="preserve">
     <value>CbFullyPracticed</value>
@@ -403,7 +403,7 @@
     <value>2</value>
   </data>
   <data name="CbCorrectlyPracticed.Text" xml:space="preserve">
-    <value>richtig übersetzt wurden</value>
+    <value>have been practiced correctly</value>
   </data>
   <data name="&gt;&gt;CbCorrectlyPracticed.Name" xml:space="preserve">
     <value>CbCorrectlyPracticed</value>
@@ -430,7 +430,7 @@
     <value>1</value>
   </data>
   <data name="CbWronglyPracticed.Text" xml:space="preserve">
-    <value>falsch übersetzt wurden</value>
+    <value>have been practiced wrongly</value>
   </data>
   <data name="&gt;&gt;CbWronglyPracticed.Name" xml:space="preserve">
     <value>CbWronglyPracticed</value>
@@ -457,7 +457,7 @@
     <value>0</value>
   </data>
   <data name="CbUnpracticed.Text" xml:space="preserve">
-    <value>noch nie geübt wurden</value>
+    <value>have not been practiced yet</value>
   </data>
   <data name="&gt;&gt;CbUnpracticed.Name" xml:space="preserve">
     <value>CbUnpracticed</value>
@@ -481,7 +481,7 @@
     <value>4</value>
   </data>
   <data name="GroupFilter.Text" xml:space="preserve">
-    <value>Nur Vokabeln drucken, die</value>
+    <value>Print only words that</value>
   </data>
   <data name="&gt;&gt;GroupFilter.Name" xml:space="preserve">
     <value>GroupFilter</value>
@@ -495,12 +495,12 @@
   <data name="&gt;&gt;GroupFilter.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="PrintList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="PrintList.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  </data>
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -511,7 +511,7 @@
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Vokabeln drucken</value>
+    <value>Print words</value>
   </data>
   <data name="&gt;&gt;PrintList.Name" xml:space="preserve">
     <value>PrintList</value>

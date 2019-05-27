@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrintWordSelection));
-            this.label1 = new System.Windows.Forms.Label();
+            this.LbSelectWords = new System.Windows.Forms.Label();
             this.ListBox = new System.Windows.Forms.CheckedListBox();
             this.BtnCheckAll = new System.Windows.Forms.Button();
             this.BtnUncheckAll = new System.Windows.Forms.Button();
@@ -48,10 +48,10 @@
             this.GroupFilter.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // LbSelectWords
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.LbSelectWords, "LbSelectWords");
+            this.LbSelectWords.Name = "LbSelectWords";
             // 
             // ListBox
             // 
@@ -166,7 +166,7 @@
             this.Controls.Add(this.BtnUncheckAll);
             this.Controls.Add(this.BtnCheckAll);
             this.Controls.Add(this.ListBox);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LbSelectWords);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -183,7 +183,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LbSelectWords;
         private System.Windows.Forms.Button BtnCheckAll;
         private System.Windows.Forms.Button BtnUncheckAll;
         private System.Windows.Forms.Button BtnContinue;

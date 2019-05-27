@@ -52,8 +52,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.GroupGrades = new System.Windows.Forms.GroupBox();
-            this.note_label = new System.Windows.Forms.Label();
-            this.prozent_label = new System.Windows.Forms.Label();
+            this.LbGrade = new System.Windows.Forms.Label();
+            this.LbPercentage = new System.Windows.Forms.Label();
             this.TbPercentage = new System.Windows.Forms.TextBox();
             this.TbGrade = new System.Windows.Forms.TextBox();
             this.GroupStatistics.SuspendLayout();
@@ -66,12 +66,12 @@
             // 
             // ListView
             // 
+            resources.ApplyResources(this.ListView, "ListView");
             this.ListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.imageColumn,
             this.motherTongueColumn,
             this.foreignLangColumn,
             this.wrongInputColumn});
-            resources.ApplyResources(this.ListView, "ListView");
             this.ListView.FullRowSelect = true;
             this.ListView.GridLines = true;
             this.ListView.HideSelection = false;
@@ -187,7 +187,6 @@
             this.pictureBox1.Image = global::Vocup.Properties.Icons.WronglyPracticed;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox4
@@ -195,7 +194,6 @@
             this.pictureBox4.Image = global::Vocup.Properties.Icons.FullyPracticed;
             resources.ApplyResources(this.pictureBox4, "pictureBox4");
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox2
@@ -203,7 +201,6 @@
             this.pictureBox2.Image = global::Vocup.Properties.Icons.Unpracticed;
             resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox3
@@ -211,28 +208,27 @@
             this.pictureBox3.Image = global::Vocup.Properties.Icons.CorrectlyPracticed;
             resources.ApplyResources(this.pictureBox3, "pictureBox3");
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabStop = false;
             // 
             // GroupGrades
             // 
-            this.GroupGrades.Controls.Add(this.note_label);
-            this.GroupGrades.Controls.Add(this.prozent_label);
+            this.GroupGrades.Controls.Add(this.LbGrade);
+            this.GroupGrades.Controls.Add(this.LbPercentage);
             this.GroupGrades.Controls.Add(this.TbPercentage);
             this.GroupGrades.Controls.Add(this.TbGrade);
             resources.ApplyResources(this.GroupGrades, "GroupGrades");
             this.GroupGrades.Name = "GroupGrades";
             this.GroupGrades.TabStop = false;
             // 
-            // note_label
+            // LbGrade
             // 
-            resources.ApplyResources(this.note_label, "note_label");
-            this.note_label.Name = "note_label";
+            resources.ApplyResources(this.LbGrade, "LbGrade");
+            this.LbGrade.Name = "LbGrade";
             // 
-            // prozent_label
+            // LbPercentage
             // 
-            resources.ApplyResources(this.prozent_label, "prozent_label");
-            this.prozent_label.Name = "prozent_label";
+            resources.ApplyResources(this.LbPercentage, "LbPercentage");
+            this.LbPercentage.Name = "LbPercentage";
             // 
             // TbPercentage
             // 
@@ -290,8 +286,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox GroupGrades;
-        public System.Windows.Forms.Label prozent_label;
-        public System.Windows.Forms.Label note_label;
+        public System.Windows.Forms.Label LbPercentage;
+        public System.Windows.Forms.Label LbGrade;
         private System.Windows.Forms.ColumnHeader imageColumn;
         private System.Windows.Forms.ColumnHeader motherTongueColumn;
         private System.Windows.Forms.ColumnHeader foreignLangColumn;

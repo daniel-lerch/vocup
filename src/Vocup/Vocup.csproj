@@ -336,6 +336,12 @@
     <EmbeddedResource Include="Forms\PracticeDialog.resx">
       <DependentUpon>PracticeDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PracticeResultList.de.resx">
+      <DependentUpon>PracticeResultList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrintWordSelection.de.resx">
+      <DependentUpon>PrintWordSelection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.de.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
