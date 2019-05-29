@@ -484,7 +484,7 @@
     <value>0</value>
   </data>
   <data name="LbWronglyPracticed.Text" xml:space="preserve">
-    <value>Diese Vokabel wurde falsch übersetzt.
+    <value>This word has been translated wrongly.
 
 Warning:
 Even words that have been translated correctly

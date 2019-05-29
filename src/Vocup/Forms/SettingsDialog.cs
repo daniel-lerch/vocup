@@ -57,11 +57,11 @@ namespace Vocup
             CbColoredTextfield.Checked = settings.PracticeInputBackColor != SystemColors.Window;
 
             // Teilweise richtig
-            checkbox_leerschläge.Checked = settings.EvaluateTolerateWhiteSpace;
-            checkbox_satzzeichen.Checked = settings.EvaluateToleratePunctuationMark;
-            checkbox_sonderzeichen.Checked = settings.EvaluateTolerateSpecialChar;
-            checkbox_artikel.Checked = settings.EvaluateTolerateArticle;
-            checkbox_synonyme.Checked = settings.EvaluateTolerateNoSynonym;
+            CbTolerateWhiteSpace.Checked = settings.EvaluateTolerateWhiteSpace;
+            CbToleratePunctuationMark.Checked = settings.EvaluateToleratePunctuationMark;
+            CbTolerateSpecialChar.Checked = settings.EvaluateTolerateSpecialChar;
+            CbTolerateArticle.Checked = settings.EvaluateTolerateArticle;
+            CbTolerateNoSynonym.Checked = settings.EvaluateTolerateNoSynonym;
 
             // Fortfahren-Button
             CbSingleContinueButton.Checked = settings.PracticeFastContinue;
@@ -141,11 +141,11 @@ namespace Vocup
             settings.PracticeInputBackColor = CbColoredTextfield.Checked ? Color.FromArgb(250, 250, 150) : SystemColors.Window;
 
             // Teilweise richtig
-            settings.EvaluateTolerateWhiteSpace = checkbox_leerschläge.Checked;
-            settings.EvaluateToleratePunctuationMark = checkbox_satzzeichen.Checked;
-            settings.EvaluateTolerateSpecialChar = checkbox_sonderzeichen.Checked;
-            settings.EvaluateTolerateArticle = checkbox_artikel.Checked;
-            settings.EvaluateTolerateNoSynonym = checkbox_synonyme.Checked;
+            settings.EvaluateTolerateWhiteSpace = CbTolerateWhiteSpace.Checked;
+            settings.EvaluateToleratePunctuationMark = CbToleratePunctuationMark.Checked;
+            settings.EvaluateTolerateSpecialChar = CbTolerateSpecialChar.Checked;
+            settings.EvaluateTolerateArticle = CbTolerateArticle.Checked;
+            settings.EvaluateTolerateNoSynonym = CbTolerateNoSynonym.Checked;
 
             // Fortfahren-Button
             settings.PracticeFastContinue = CbSingleContinueButton.Checked;

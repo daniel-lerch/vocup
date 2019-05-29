@@ -537,7 +537,7 @@ namespace Vocup
 
             using (OpenFileDialog dialog = new OpenFileDialog
             {
-                Title = Words.SaveBackup,
+                Title = Words.OpenBackup,
                 Filter = Words.VocupBackupFile + " (*.vdp)|*.vdp",
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal)
             })
