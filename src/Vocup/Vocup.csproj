@@ -348,6 +348,15 @@
     <EmbeddedResource Include="Forms\SettingsDialog.de.resx">
       <DependentUpon>SettingsDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SpecialCharManage.de.resx">
+      <DependentUpon>SpecialCharManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VocabularyBookSettings.de.resx">
+      <DependentUpon>VocabularyBookSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VocabularyWordDialog.de.resx">
+      <DependentUpon>VocabularyWordDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.de.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

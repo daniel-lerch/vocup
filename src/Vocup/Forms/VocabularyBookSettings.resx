@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="BtnSpecialChar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 213</value>
+    <value>12, 206</value>
   </data>
   <data name="BtnSpecialChar.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 23</value>
@@ -129,7 +129,7 @@
     <value>6</value>
   </data>
   <data name="BtnSpecialChar.Text" xml:space="preserve">
-    <value>Sonderzeichen</value>
+    <value>Special chars</value>
   </data>
   <data name="&gt;&gt;BtnSpecialChar.Name" xml:space="preserve">
     <value>BtnSpecialChar</value>
@@ -150,13 +150,13 @@
     <value>19, 23</value>
   </data>
   <data name="CbResetResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 17</value>
+    <value>184, 17</value>
   </data>
   <data name="CbResetResults.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="CbResetResults.Text" xml:space="preserve">
-    <value>Ergebnisse aller Vokabeln zurücksetzen</value>
+    <value>Reset practice results of all words</value>
   </data>
   <data name="&gt;&gt;CbResetResults.Name" xml:space="preserve">
     <value>CbResetResults</value>
@@ -171,16 +171,16 @@
     <value>0</value>
   </data>
   <data name="GroupOptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 69</value>
+    <value>12, 76</value>
   </data>
   <data name="GroupOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 59</value>
+    <value>266, 48</value>
   </data>
   <data name="GroupOptions.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="GroupOptions.Text" xml:space="preserve">
-    <value>Optionen</value>
+    <value>Options</value>
   </data>
   <data name="&gt;&gt;GroupOptions.Name" xml:space="preserve">
     <value>GroupOptions</value>
@@ -195,7 +195,7 @@
     <value>6</value>
   </data>
   <data name="BtnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>203, 213</value>
+    <value>203, 206</value>
   </data>
   <data name="BtnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -204,7 +204,7 @@
     <value>8</value>
   </data>
   <data name="BtnCancel.Text" xml:space="preserve">
-    <value>Abbrechen</value>
+    <value>Cancel</value>
   </data>
   <data name="&gt;&gt;BtnCancel.Name" xml:space="preserve">
     <value>BtnCancel</value>
@@ -222,7 +222,7 @@
     <value>False</value>
   </data>
   <data name="BtnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 213</value>
+    <value>122, 206</value>
   </data>
   <data name="BtnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -269,58 +269,58 @@
   <data name="&gt;&gt;TbMotherTongue.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="muttersprache.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LbMotherTongue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="muttersprache.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LbMotherTongue.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 19</value>
   </data>
-  <data name="muttersprache.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 13</value>
+  <data name="LbMotherTongue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 13</value>
   </data>
-  <data name="muttersprache.TabIndex" type="System.Int32, mscorlib">
+  <data name="LbMotherTongue.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="muttersprache.Text" xml:space="preserve">
-    <value>Muttersprache:</value>
+  <data name="LbMotherTongue.Text" xml:space="preserve">
+    <value>Mother tongue:</value>
   </data>
-  <data name="&gt;&gt;muttersprache.Name" xml:space="preserve">
-    <value>muttersprache</value>
+  <data name="&gt;&gt;LbMotherTongue.Name" xml:space="preserve">
+    <value>LbMotherTongue</value>
   </data>
-  <data name="&gt;&gt;muttersprache.Type" xml:space="preserve">
+  <data name="&gt;&gt;LbMotherTongue.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;muttersprache.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LbMotherTongue.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;muttersprache.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LbMotherTongue.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="fremdsprache.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LbForeignLang.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="fremdsprache.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LbForeignLang.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 46</value>
   </data>
-  <data name="fremdsprache.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 13</value>
+  <data name="LbForeignLang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 13</value>
   </data>
-  <data name="fremdsprache.TabIndex" type="System.Int32, mscorlib">
+  <data name="LbForeignLang.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="fremdsprache.Text" xml:space="preserve">
-    <value>Fremdsprache:</value>
+  <data name="LbForeignLang.Text" xml:space="preserve">
+    <value>Foreign language:</value>
   </data>
-  <data name="&gt;&gt;fremdsprache.Name" xml:space="preserve">
-    <value>fremdsprache</value>
+  <data name="&gt;&gt;LbForeignLang.Name" xml:space="preserve">
+    <value>LbForeignLang</value>
   </data>
-  <data name="&gt;&gt;fremdsprache.Type" xml:space="preserve">
+  <data name="&gt;&gt;LbForeignLang.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;fremdsprache.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LbForeignLang.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;fremdsprache.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LbForeignLang.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="TbForeignLang.Font" type="System.Drawing.Font, System.Drawing">
@@ -354,13 +354,13 @@
     <value>19, 42</value>
   </data>
   <data name="RbModeAskMotherTongue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 17</value>
+    <value>193, 17</value>
   </data>
   <data name="RbModeAskMotherTongue.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="RbModeAskMotherTongue.Text" xml:space="preserve">
-    <value>Fremdsprache → Muttersprache</value>
+    <value>Foreign language → Mother tonuge</value>
   </data>
   <data name="&gt;&gt;RbModeAskMotherTongue.Name" xml:space="preserve">
     <value>RbModeAskMotherTongue</value>
@@ -381,13 +381,13 @@
     <value>19, 19</value>
   </data>
   <data name="RbModeAskForeignLang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 17</value>
+    <value>193, 17</value>
   </data>
   <data name="RbModeAskForeignLang.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="RbModeAskForeignLang.Text" xml:space="preserve">
-    <value>Muttersprache → Fremdsprache</value>
+    <value>Mother tongue → Foreign language</value>
   </data>
   <data name="&gt;&gt;RbModeAskForeignLang.Name" xml:space="preserve">
     <value>RbModeAskForeignLang</value>
@@ -402,7 +402,7 @@
     <value>1</value>
   </data>
   <data name="GroupPracticeMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 134</value>
+    <value>12, 130</value>
   </data>
   <data name="GroupPracticeMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>266, 70</value>
@@ -411,7 +411,7 @@
     <value>5</value>
   </data>
   <data name="GroupPracticeMode.Text" xml:space="preserve">
-    <value>Übersetzungsrichtung</value>
+    <value>Translation direction</value>
   </data>
   <data name="&gt;&gt;GroupPracticeMode.Name" xml:space="preserve">
     <value>GroupPracticeMode</value>
@@ -432,7 +432,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>290, 248</value>
+    <value>290, 241</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">

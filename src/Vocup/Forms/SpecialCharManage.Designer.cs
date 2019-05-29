@@ -31,16 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SpecialCharManage));
             this.LanguageList = new System.Windows.Forms.ListBox();
             this.BtnDelete = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GroupSpecialCharTables = new System.Windows.Forms.GroupBox();
             this.BtnNew = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.LbLanguage = new System.Windows.Forms.Label();
+            this.LbSpecialChars = new System.Windows.Forms.Label();
             this.TbChars = new System.Windows.Forms.TextBox();
             this.TbLanguage = new System.Windows.Forms.TextBox();
             this.BtnSave = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LbInformation = new System.Windows.Forms.Label();
             this.BtnClose = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.GroupSpecialCharTables.SuspendLayout();
             this.SuspendLayout();
             // 
             // LanguageList
@@ -57,19 +57,19 @@
             this.BtnDelete.UseVisualStyleBackColor = true;
             this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
-            // groupBox1
+            // GroupSpecialCharTables
             // 
-            this.groupBox1.Controls.Add(this.BtnNew);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.TbChars);
-            this.groupBox1.Controls.Add(this.TbLanguage);
-            this.groupBox1.Controls.Add(this.BtnSave);
-            this.groupBox1.Controls.Add(this.LanguageList);
-            this.groupBox1.Controls.Add(this.BtnDelete);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
+            this.GroupSpecialCharTables.Controls.Add(this.BtnNew);
+            this.GroupSpecialCharTables.Controls.Add(this.LbLanguage);
+            this.GroupSpecialCharTables.Controls.Add(this.LbSpecialChars);
+            this.GroupSpecialCharTables.Controls.Add(this.TbChars);
+            this.GroupSpecialCharTables.Controls.Add(this.TbLanguage);
+            this.GroupSpecialCharTables.Controls.Add(this.BtnSave);
+            this.GroupSpecialCharTables.Controls.Add(this.LanguageList);
+            this.GroupSpecialCharTables.Controls.Add(this.BtnDelete);
+            resources.ApplyResources(this.GroupSpecialCharTables, "GroupSpecialCharTables");
+            this.GroupSpecialCharTables.Name = "GroupSpecialCharTables";
+            this.GroupSpecialCharTables.TabStop = false;
             // 
             // BtnNew
             // 
@@ -78,15 +78,15 @@
             this.BtnNew.UseVisualStyleBackColor = true;
             this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
-            // label4
+            // LbLanguage
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
+            resources.ApplyResources(this.LbLanguage, "LbLanguage");
+            this.LbLanguage.Name = "LbLanguage";
             // 
-            // label5
+            // LbSpecialChars
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
+            resources.ApplyResources(this.LbSpecialChars, "LbSpecialChars");
+            this.LbSpecialChars.Name = "LbSpecialChars";
             // 
             // TbChars
             // 
@@ -107,10 +107,10 @@
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
-            // label1
+            // LbInformation
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.LbInformation, "LbInformation");
+            this.LbInformation.Name = "LbInformation";
             // 
             // BtnClose
             // 
@@ -125,16 +125,16 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.BtnClose);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.LbInformation);
+            this.Controls.Add(this.GroupSpecialCharTables);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SpecialCharManage";
             this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.SpecialCharManage_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.GroupSpecialCharTables.ResumeLayout(false);
+            this.GroupSpecialCharTables.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,11 +144,11 @@
 
         private System.Windows.Forms.ListBox LanguageList;
         private System.Windows.Forms.Button BtnDelete;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox GroupSpecialCharTables;
         private System.Windows.Forms.Button BtnSave;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label LbInformation;
+        private System.Windows.Forms.Label LbLanguage;
+        private System.Windows.Forms.Label LbSpecialChars;
         private System.Windows.Forms.TextBox TbChars;
         private System.Windows.Forms.TextBox TbLanguage;
         private System.Windows.Forms.Button BtnClose;

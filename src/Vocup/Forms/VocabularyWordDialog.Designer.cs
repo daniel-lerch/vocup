@@ -38,13 +38,13 @@
             this.LbSynonym = new System.Windows.Forms.Label();
             this.GroupOptions = new System.Windows.Forms.GroupBox();
             this.BtnSpecialChar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GroupForeignLang = new System.Windows.Forms.GroupBox();
             this.TbMotherTongue = new System.Windows.Forms.TextBox();
             this.LbMotherTongue = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.GroupMotherTongue = new System.Windows.Forms.GroupBox();
             this.GroupOptions.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.GroupForeignLang.SuspendLayout();
+            this.GroupMotherTongue.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnContinue
@@ -106,15 +106,15 @@
             this.BtnSpecialChar.Name = "BtnSpecialChar";
             this.BtnSpecialChar.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // GroupForeignLang
             // 
-            this.groupBox1.Controls.Add(this.TbForeignLang);
-            this.groupBox1.Controls.Add(this.TbForeignLangSynonym);
-            this.groupBox1.Controls.Add(this.LbSynonym);
-            this.groupBox1.Controls.Add(this.LbForeignLang);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
+            this.GroupForeignLang.Controls.Add(this.TbForeignLang);
+            this.GroupForeignLang.Controls.Add(this.TbForeignLangSynonym);
+            this.GroupForeignLang.Controls.Add(this.LbSynonym);
+            this.GroupForeignLang.Controls.Add(this.LbForeignLang);
+            resources.ApplyResources(this.GroupForeignLang, "GroupForeignLang");
+            this.GroupForeignLang.Name = "GroupForeignLang";
+            this.GroupForeignLang.TabStop = false;
             // 
             // TbMotherTongue
             // 
@@ -129,13 +129,13 @@
             resources.ApplyResources(this.LbMotherTongue, "LbMotherTongue");
             this.LbMotherTongue.Name = "LbMotherTongue";
             // 
-            // groupBox2
+            // GroupMotherTongue
             // 
-            this.groupBox2.Controls.Add(this.LbMotherTongue);
-            this.groupBox2.Controls.Add(this.TbMotherTongue);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.TabStop = false;
+            this.GroupMotherTongue.Controls.Add(this.LbMotherTongue);
+            this.GroupMotherTongue.Controls.Add(this.TbMotherTongue);
+            resources.ApplyResources(this.GroupMotherTongue, "GroupMotherTongue");
+            this.GroupMotherTongue.Name = "GroupMotherTongue";
+            this.GroupMotherTongue.TabStop = false;
             // 
             // VocabularyWordDialog
             // 
@@ -144,8 +144,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.BtnSpecialChar);
             this.Controls.Add(this.GroupOptions);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.GroupMotherTongue);
+            this.Controls.Add(this.GroupForeignLang);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnContinue);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -155,10 +155,10 @@
             this.ShowInTaskbar = false;
             this.GroupOptions.ResumeLayout(false);
             this.GroupOptions.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.GroupForeignLang.ResumeLayout(false);
+            this.GroupForeignLang.PerformLayout();
+            this.GroupMotherTongue.ResumeLayout(false);
+            this.GroupMotherTongue.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -168,9 +168,9 @@
         public System.Windows.Forms.TextBox TbForeignLang;
         public System.Windows.Forms.CheckBox CbResetResults;
         private System.Windows.Forms.Button BtnSpecialChar;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox GroupForeignLang;
         public System.Windows.Forms.TextBox TbMotherTongue;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox GroupMotherTongue;
         public System.Windows.Forms.Button BtnContinue;
         public System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.Label LbForeignLang;

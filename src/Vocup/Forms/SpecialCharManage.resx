@@ -135,7 +135,7 @@
     <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LanguageList.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>GroupSpecialCharTables</value>
   </data>
   <data name="&gt;&gt;LanguageList.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -153,7 +153,7 @@
     <value>6</value>
   </data>
   <data name="BtnDelete.Text" xml:space="preserve">
-    <value>Entfernen</value>
+    <value>Delete</value>
   </data>
   <data name="&gt;&gt;BtnDelete.Name" xml:space="preserve">
     <value>BtnDelete</value>
@@ -162,7 +162,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnDelete.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>GroupSpecialCharTables</value>
   </data>
   <data name="&gt;&gt;BtnDelete.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -181,7 +181,7 @@
     <value>7</value>
   </data>
   <data name="BtnNew.Text" xml:space="preserve">
-    <value>Hinzufügen</value>
+    <value>Add</value>
   </data>
   <data name="&gt;&gt;BtnNew.Name" xml:space="preserve">
     <value>BtnNew</value>
@@ -190,69 +190,69 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnNew.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>GroupSpecialCharTables</value>
   </data>
   <data name="&gt;&gt;BtnNew.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LbLanguage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LbLanguage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LbLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 123</value>
   </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 13</value>
+  <data name="LbLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
   </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+  <data name="LbLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Sprache:</value>
+  <data name="LbLanguage.Text" xml:space="preserve">
+    <value>Language:</value>
   </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
+  <data name="&gt;&gt;LbLanguage.Name" xml:space="preserve">
+    <value>LbLanguage</value>
   </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+  <data name="&gt;&gt;LbLanguage.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="&gt;&gt;LbLanguage.Parent" xml:space="preserve">
+    <value>GroupSpecialCharTables</value>
   </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LbLanguage.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LbSpecialChars.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LbSpecialChars.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LbSpecialChars.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 149</value>
   </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 13</value>
+  <data name="LbSpecialChars.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
   </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+  <data name="LbSpecialChars.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Sonderzeichen:</value>
+  <data name="LbSpecialChars.Text" xml:space="preserve">
+    <value>Special chars:</value>
   </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
+  <data name="&gt;&gt;LbSpecialChars.Name" xml:space="preserve">
+    <value>LbSpecialChars</value>
   </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+  <data name="&gt;&gt;LbSpecialChars.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="&gt;&gt;LbSpecialChars.Parent" xml:space="preserve">
+    <value>GroupSpecialCharTables</value>
   </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LbSpecialChars.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="TbChars.Enabled" type="System.Boolean, mscorlib">
@@ -274,7 +274,7 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbChars.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>GroupSpecialCharTables</value>
   </data>
   <data name="&gt;&gt;TbChars.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -298,7 +298,7 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbLanguage.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>GroupSpecialCharTables</value>
   </data>
   <data name="&gt;&gt;TbLanguage.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -316,7 +316,7 @@
     <value>5</value>
   </data>
   <data name="BtnSave.Text" xml:space="preserve">
-    <value>Speichern</value>
+    <value>Save</value>
   </data>
   <data name="&gt;&gt;BtnSave.Name" xml:space="preserve">
     <value>BtnSave</value>
@@ -325,62 +325,62 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnSave.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>GroupSpecialCharTables</value>
   </data>
   <data name="&gt;&gt;BtnSave.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="GroupSpecialCharTables.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 61</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="GroupSpecialCharTables.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 209</value>
   </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="GroupSpecialCharTables.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Sonderzeichentabellen</value>
+  <data name="GroupSpecialCharTables.Text" xml:space="preserve">
+    <value>Special char tables</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="&gt;&gt;GroupSpecialCharTables.Name" xml:space="preserve">
+    <value>GroupSpecialCharTables</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;GroupSpecialCharTables.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupSpecialCharTables.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;GroupSpecialCharTables.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LbInformation.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="LbInformation.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 9</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 39</value>
+  <data name="LbInformation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>302, 39</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+  <data name="LbInformation.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Falls für die gewünschte Sprache keine Sonderzeichentabelle 
-vorhanden ist, suchen Sie z.B. im Internet nach den Zeichen, 
-und geben Sie diese ohne Leerschläge in das Textfeld ein.</value>
+  <data name="LbInformation.Text" xml:space="preserve">
+    <value>If Vocup does not offer special chars for your desired language
+you can search all necessary chars on the Internet and paste
+them into the text box without spaces.</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
+  <data name="&gt;&gt;LbInformation.Name" xml:space="preserve">
+    <value>LbInformation</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+  <data name="&gt;&gt;LbInformation.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;LbInformation.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;LbInformation.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="BtnClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -396,7 +396,7 @@ und geben Sie diese ohne Leerschläge in das Textfeld ein.</value>
     <value>3</value>
   </data>
   <data name="BtnClose.Text" xml:space="preserve">
-    <value>Schließen</value>
+    <value>Close</value>
   </data>
   <data name="&gt;&gt;BtnClose.Name" xml:space="preserve">
     <value>BtnClose</value>
@@ -423,7 +423,7 @@ und geben Sie diese ohne Leerschläge in das Textfeld ein.</value>
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Sonderzeichen verwalten</value>
+    <value>Manage special chars</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SpecialCharManage</value>

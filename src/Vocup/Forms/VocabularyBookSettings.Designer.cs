@@ -35,8 +35,8 @@
             this.BtnCancel = new System.Windows.Forms.Button();
             this.BtnOK = new System.Windows.Forms.Button();
             this.TbMotherTongue = new System.Windows.Forms.TextBox();
-            this.muttersprache = new System.Windows.Forms.Label();
-            this.fremdsprache = new System.Windows.Forms.Label();
+            this.LbMotherTongue = new System.Windows.Forms.Label();
+            this.LbForeignLang = new System.Windows.Forms.Label();
             this.TbForeignLang = new System.Windows.Forms.TextBox();
             this.GroupPracticeMode = new System.Windows.Forms.GroupBox();
             this.RbModeAskMotherTongue = new System.Windows.Forms.RadioButton();
@@ -86,15 +86,15 @@
             this.TbMotherTongue.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             this.TbMotherTongue.Enter += new System.EventHandler(this.TextBox_Enter);
             // 
-            // muttersprache
+            // LbMotherTongue
             // 
-            resources.ApplyResources(this.muttersprache, "muttersprache");
-            this.muttersprache.Name = "muttersprache";
+            resources.ApplyResources(this.LbMotherTongue, "LbMotherTongue");
+            this.LbMotherTongue.Name = "LbMotherTongue";
             // 
-            // fremdsprache
+            // LbForeignLang
             // 
-            resources.ApplyResources(this.fremdsprache, "fremdsprache");
-            this.fremdsprache.Name = "fremdsprache";
+            resources.ApplyResources(this.LbForeignLang, "LbForeignLang");
+            this.LbForeignLang.Name = "LbForeignLang";
             // 
             // TbForeignLang
             // 
@@ -133,9 +133,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnCancel;
             this.Controls.Add(this.GroupPracticeMode);
-            this.Controls.Add(this.fremdsprache);
+            this.Controls.Add(this.LbForeignLang);
             this.Controls.Add(this.TbForeignLang);
-            this.Controls.Add(this.muttersprache);
+            this.Controls.Add(this.LbMotherTongue);
             this.Controls.Add(this.TbMotherTongue);
             this.Controls.Add(this.BtnSpecialChar);
             this.Controls.Add(this.GroupOptions);
@@ -163,8 +163,8 @@
         private System.Windows.Forms.Button BtnCancel;
         public System.Windows.Forms.Button BtnOK;
         public System.Windows.Forms.TextBox TbMotherTongue;
-        private System.Windows.Forms.Label muttersprache;
-        private System.Windows.Forms.Label fremdsprache;
+        private System.Windows.Forms.Label LbMotherTongue;
+        private System.Windows.Forms.Label LbForeignLang;
         public System.Windows.Forms.TextBox TbForeignLang;
         private System.Windows.Forms.GroupBox GroupPracticeMode;
         public System.Windows.Forms.RadioButton RbModeAskMotherTongue;
