@@ -123,16 +123,16 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="CbAbsolutePath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 134</value>
+    <value>212, 134</value>
   </data>
   <data name="CbAbsolutePath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 17</value>
+    <value>118, 17</value>
   </data>
   <data name="CbAbsolutePath.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="CbAbsolutePath.Text" xml:space="preserve">
-    <value>Vollständiger Pfad</value>
+    <value>Use Absolute paths</value>
   </data>
   <data name="&gt;&gt;CbAbsolutePath.Name" xml:space="preserve">
     <value>CbAbsolutePath</value>
@@ -180,7 +180,7 @@
     <value>2</value>
   </data>
   <data name="GroupBooks.Text" xml:space="preserve">
-    <value>Welche Vokabelhefte sollen wiederhergestellt werden?</value>
+    <value>Which vocabulary books should be restored?</value>
   </data>
   <data name="&gt;&gt;GroupBooks.Name" xml:space="preserve">
     <value>GroupBooks</value>
@@ -228,7 +228,7 @@
     <value>4</value>
   </data>
   <data name="GroupSpecialChars.Text" xml:space="preserve">
-    <value>Welche Sonderzeichentabellen sollen wiederhergestellt werden?</value>
+    <value>Which special char files do you want to be restored?</value>
   </data>
   <data name="&gt;&gt;GroupSpecialChars.Name" xml:space="preserve">
     <value>GroupSpecialChars</value>
@@ -252,7 +252,7 @@
     <value>5</value>
   </data>
   <data name="BtnRestore.Text" xml:space="preserve">
-    <value>Wiederherstellen</value>
+    <value>Restore</value>
   </data>
   <data name="&gt;&gt;BtnRestore.Name" xml:space="preserve">
     <value>BtnRestore</value>
@@ -276,7 +276,7 @@
     <value>6</value>
   </data>
   <data name="BtnCancel.Text" xml:space="preserve">
-    <value>Abbrechen</value>
+    <value>Cancel</value>
   </data>
   <data name="&gt;&gt;BtnCancel.Name" xml:space="preserve">
     <value>BtnCancel</value>
@@ -297,13 +297,13 @@
     <value>6, 42</value>
   </data>
   <data name="RbReplaceOlder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 17</value>
+    <value>202, 17</value>
   </data>
   <data name="RbReplaceOlder.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="RbReplaceOlder.Text" xml:space="preserve">
-    <value>Nur alte Dateien mit neueren ersetzen</value>
+    <value>Only replace old files with newer ones</value>
   </data>
   <data name="&gt;&gt;RbReplaceOlder.Name" xml:space="preserve">
     <value>RbReplaceOlder</value>
@@ -324,13 +324,13 @@
     <value>6, 65</value>
   </data>
   <data name="RbReplaceNothing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 17</value>
+    <value>151, 17</value>
   </data>
   <data name="RbReplaceNothing.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="RbReplaceNothing.Text" xml:space="preserve">
-    <value>Vorhandene Dateien nicht ersetzen</value>
+    <value>Never replace existing files</value>
   </data>
   <data name="&gt;&gt;RbReplaceNothing.Name" xml:space="preserve">
     <value>RbReplaceNothing</value>
@@ -351,13 +351,13 @@
     <value>6, 19</value>
   </data>
   <data name="RbReplaceAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 17</value>
+    <value>137, 17</value>
   </data>
   <data name="RbReplaceAll.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="RbReplaceAll.Text" xml:space="preserve">
-    <value>Alle vorhandenen Dateien ersetzen</value>
+    <value>Replace all existing files</value>
   </data>
   <data name="&gt;&gt;RbReplaceAll.Name" xml:space="preserve">
     <value>RbReplaceAll</value>
@@ -381,7 +381,7 @@
     <value>1</value>
   </data>
   <data name="GroupReplace.Text" xml:space="preserve">
-    <value>Sollen vorhandene Dateien ersetzt werden?</value>
+    <value>Do you want to replace existing files?</value>
   </data>
   <data name="&gt;&gt;GroupReplace.Name" xml:space="preserve">
     <value>GroupReplace</value>
@@ -408,7 +408,7 @@
     <value>2</value>
   </data>
   <data name="RbRestoreNoResults.Text" xml:space="preserve">
-    <value>Keine Ergebnisse wiederherstellen</value>
+    <value>Do not restore any practice results</value>
   </data>
   <data name="&gt;&gt;RbRestoreNoResults.Name" xml:space="preserve">
     <value>RbRestoreNoResults</value>
@@ -429,13 +429,13 @@
     <value>6, 19</value>
   </data>
   <data name="RbRestoreAllResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 17</value>
+    <value>194, 17</value>
   </data>
   <data name="RbRestoreAllResults.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="RbRestoreAllResults.Text" xml:space="preserve">
-    <value>Alle vorhandenen Ergebnisse wiederherstellen</value>
+    <value>Restore all available practice results</value>
   </data>
   <data name="&gt;&gt;RbRestoreAllResults.Name" xml:space="preserve">
     <value>RbRestoreAllResults</value>
@@ -456,13 +456,13 @@
     <value>6, 42</value>
   </data>
   <data name="RbRestoreAssociatedResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>292, 17</value>
+    <value>278, 17</value>
   </data>
   <data name="RbRestoreAssociatedResults.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="RbRestoreAssociatedResults.Text" xml:space="preserve">
-    <value>Ergebnisse der gewählten Vokabelhefte wiederherstellen</value>
+    <value>Restore practice results of selected vocabulary books</value>
   </data>
   <data name="&gt;&gt;RbRestoreAssociatedResults.Name" xml:space="preserve">
     <value>RbRestoreAssociatedResults</value>
@@ -486,7 +486,7 @@
     <value>3</value>
   </data>
   <data name="GroupResults.Text" xml:space="preserve">
-    <value>Sollen die Übungsergebnisse wiederhergestellt werden?</value>
+    <value>Do you want to restore practice results?</value>
   </data>
   <data name="&gt;&gt;GroupResults.Name" xml:space="preserve">
     <value>GroupResults</value>
@@ -514,7 +514,7 @@
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Datensicherung wiederherstellen</value>
+    <value>Restore backup</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>RestoreBackup</value>

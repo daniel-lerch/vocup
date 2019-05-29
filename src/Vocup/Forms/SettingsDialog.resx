@@ -160,7 +160,7 @@
     <value>2</value>
   </data>
   <data name="BtnCancel.Text" xml:space="preserve">
-    <value>Abbrechen</value>
+    <value>Cancel</value>
   </data>
   <data name="&gt;&gt;BtnCancel.Name" xml:space="preserve">
     <value>BtnCancel</value>
@@ -220,7 +220,7 @@
     <value>0</value>
   </data>
   <data name="GroupStartScreen.Text" xml:space="preserve">
-    <value>Startbild</value>
+    <value>Start screen</value>
   </data>
   <data name="&gt;&gt;GroupStartScreen.Name" xml:space="preserve">
     <value>GroupStartScreen</value>
@@ -244,7 +244,7 @@
     <value>2</value>
   </data>
   <data name="BtnResetStartScreen.Text" xml:space="preserve">
-    <value>Startbild zurücksetzen</value>
+    <value>Reset start screen</value>
   </data>
   <data name="&gt;&gt;BtnResetStartScreen.Name" xml:space="preserve">
     <value>BtnResetStartScreen</value>
@@ -265,13 +265,13 @@
     <value>6, 42</value>
   </data>
   <data name="RbEmptyStart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 17</value>
+    <value>93, 17</value>
   </data>
   <data name="RbEmptyStart.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="RbEmptyStart.Text" xml:space="preserve">
-    <value>Nichts anzeigen</value>
+    <value>Empty window</value>
   </data>
   <data name="&gt;&gt;RbEmptyStart.Name" xml:space="preserve">
     <value>RbEmptyStart</value>
@@ -292,13 +292,13 @@
     <value>6, 19</value>
   </data>
   <data name="RbRecentFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 17</value>
+    <value>142, 17</value>
   </data>
   <data name="RbRecentFile.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="RbRecentFile.Text" xml:space="preserve">
-    <value>Zuletzt geöffnetes Vokabelheft</value>
+    <value>Recent vocabulary book</value>
   </data>
   <data name="&gt;&gt;RbRecentFile.Name" xml:space="preserve">
     <value>RbRecentFile</value>
@@ -353,63 +353,6 @@
   </data>
   <data name="&gt;&gt;TrbUnknown.ZOrder" xml:space="preserve">
     <value>8</value>
-  </data>
-  <data name="&gt;&gt;TabGeneral.Name" xml:space="preserve">
-    <value>TabGeneral</value>
-  </data>
-  <data name="&gt;&gt;TabGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabGeneral.Parent" xml:space="preserve">
-    <value>TabControlMain</value>
-  </data>
-  <data name="&gt;&gt;TabGeneral.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TabPractice.Name" xml:space="preserve">
-    <value>TabPractice</value>
-  </data>
-  <data name="&gt;&gt;TabPractice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabPractice.Parent" xml:space="preserve">
-    <value>TabControlMain</value>
-  </data>
-  <data name="&gt;&gt;TabPractice.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;TabPracticeSelect.Name" xml:space="preserve">
-    <value>TabPracticeSelect</value>
-  </data>
-  <data name="&gt;&gt;TabPracticeSelect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabPracticeSelect.Parent" xml:space="preserve">
-    <value>TabControlMain</value>
-  </data>
-  <data name="&gt;&gt;TabPracticeSelect.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="TabControlMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 2</value>
-  </data>
-  <data name="TabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>297, 423</value>
-  </data>
-  <data name="TabControlMain.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TabControlMain.Name" xml:space="preserve">
-    <value>TabControlMain</value>
-  </data>
-  <data name="&gt;&gt;TabControlMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabControlMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;TabControlMain.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;GroupVocabularyList.Name" xml:space="preserve">
     <value>GroupVocabularyList</value>
@@ -484,7 +427,7 @@
     <value>0</value>
   </data>
   <data name="TabGeneral.Text" xml:space="preserve">
-    <value>Allgemein</value>
+    <value>General</value>
   </data>
   <data name="&gt;&gt;TabGeneral.Name" xml:space="preserve">
     <value>TabGeneral</value>
@@ -496,429 +439,6 @@
     <value>TabControlMain</value>
   </data>
   <data name="&gt;&gt;TabGeneral.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;CbColumnResize.Name" xml:space="preserve">
-    <value>CbColumnResize</value>
-  </data>
-  <data name="&gt;&gt;CbColumnResize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbColumnResize.Parent" xml:space="preserve">
-    <value>GroupVocabularyList</value>
-  </data>
-  <data name="&gt;&gt;CbColumnResize.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;CbGridLines.Name" xml:space="preserve">
-    <value>CbGridLines</value>
-  </data>
-  <data name="&gt;&gt;CbGridLines.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbGridLines.Parent" xml:space="preserve">
-    <value>GroupVocabularyList</value>
-  </data>
-  <data name="&gt;&gt;CbGridLines.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="GroupVocabularyList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 198</value>
-  </data>
-  <data name="GroupVocabularyList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 65</value>
-  </data>
-  <data name="GroupVocabularyList.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="GroupVocabularyList.Text" xml:space="preserve">
-    <value>Vokabelliste</value>
-  </data>
-  <data name="&gt;&gt;GroupVocabularyList.Name" xml:space="preserve">
-    <value>GroupVocabularyList</value>
-  </data>
-  <data name="&gt;&gt;GroupVocabularyList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupVocabularyList.Parent" xml:space="preserve">
-    <value>TabGeneral</value>
-  </data>
-  <data name="&gt;&gt;GroupVocabularyList.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="CbColumnResize.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="CbColumnResize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbColumnResize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 42</value>
-  </data>
-  <data name="CbColumnResize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 17</value>
-  </data>
-  <data name="CbColumnResize.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="CbColumnResize.Text" xml:space="preserve">
-    <value>Spaltenbreite automatisch anpassen</value>
-  </data>
-  <data name="&gt;&gt;CbColumnResize.Name" xml:space="preserve">
-    <value>CbColumnResize</value>
-  </data>
-  <data name="&gt;&gt;CbColumnResize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbColumnResize.Parent" xml:space="preserve">
-    <value>GroupVocabularyList</value>
-  </data>
-  <data name="&gt;&gt;CbColumnResize.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="CbGridLines.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="CbGridLines.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbGridLines.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="CbGridLines.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 17</value>
-  </data>
-  <data name="CbGridLines.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="CbGridLines.Text" xml:space="preserve">
-    <value>Rasterlinien anzeigen</value>
-  </data>
-  <data name="&gt;&gt;CbGridLines.Name" xml:space="preserve">
-    <value>CbGridLines</value>
-  </data>
-  <data name="&gt;&gt;CbGridLines.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbGridLines.Parent" xml:space="preserve">
-    <value>GroupVocabularyList</value>
-  </data>
-  <data name="&gt;&gt;CbGridLines.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;BtnVhrPath.Name" xml:space="preserve">
-    <value>BtnVhrPath</value>
-  </data>
-  <data name="&gt;&gt;BtnVhrPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BtnVhrPath.Parent" xml:space="preserve">
-    <value>GroupVhrPath</value>
-  </data>
-  <data name="&gt;&gt;BtnVhrPath.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TbVhrPath.Name" xml:space="preserve">
-    <value>TbVhrPath</value>
-  </data>
-  <data name="&gt;&gt;TbVhrPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TbVhrPath.Parent" xml:space="preserve">
-    <value>GroupVhrPath</value>
-  </data>
-  <data name="&gt;&gt;TbVhrPath.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="GroupVhrPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 320</value>
-  </data>
-  <data name="GroupVhrPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 45</value>
-  </data>
-  <data name="GroupVhrPath.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="GroupVhrPath.Text" xml:space="preserve">
-    <value>Speicherpfad der Ergebnisse</value>
-  </data>
-  <data name="&gt;&gt;GroupVhrPath.Name" xml:space="preserve">
-    <value>GroupVhrPath</value>
-  </data>
-  <data name="&gt;&gt;GroupVhrPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupVhrPath.Parent" xml:space="preserve">
-    <value>TabGeneral</value>
-  </data>
-  <data name="&gt;&gt;GroupVhrPath.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="BtnVhrPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="BtnVhrPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 17</value>
-  </data>
-  <data name="BtnVhrPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 23</value>
-  </data>
-  <data name="BtnVhrPath.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="BtnVhrPath.Text" xml:space="preserve">
-    <value>Durchsuchen</value>
-  </data>
-  <data name="&gt;&gt;BtnVhrPath.Name" xml:space="preserve">
-    <value>BtnVhrPath</value>
-  </data>
-  <data name="&gt;&gt;BtnVhrPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BtnVhrPath.Parent" xml:space="preserve">
-    <value>GroupVhrPath</value>
-  </data>
-  <data name="&gt;&gt;BtnVhrPath.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="TbVhrPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="TbVhrPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 20</value>
-  </data>
-  <data name="TbVhrPath.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TbVhrPath.Name" xml:space="preserve">
-    <value>TbVhrPath</value>
-  </data>
-  <data name="&gt;&gt;TbVhrPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TbVhrPath.Parent" xml:space="preserve">
-    <value>GroupVhrPath</value>
-  </data>
-  <data name="&gt;&gt;TbVhrPath.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;BtnVhfPath.Name" xml:space="preserve">
-    <value>BtnVhfPath</value>
-  </data>
-  <data name="&gt;&gt;BtnVhfPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BtnVhfPath.Parent" xml:space="preserve">
-    <value>GroupVhfPath</value>
-  </data>
-  <data name="&gt;&gt;BtnVhfPath.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TbVhfPath.Name" xml:space="preserve">
-    <value>TbVhfPath</value>
-  </data>
-  <data name="&gt;&gt;TbVhfPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TbVhfPath.Parent" xml:space="preserve">
-    <value>GroupVhfPath</value>
-  </data>
-  <data name="&gt;&gt;TbVhfPath.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="GroupVhfPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 269</value>
-  </data>
-  <data name="GroupVhfPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 45</value>
-  </data>
-  <data name="GroupVhfPath.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="GroupVhfPath.Text" xml:space="preserve">
-    <value>Speicherpfad der Vokabelhefte</value>
-  </data>
-  <data name="&gt;&gt;GroupVhfPath.Name" xml:space="preserve">
-    <value>GroupVhfPath</value>
-  </data>
-  <data name="&gt;&gt;GroupVhfPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupVhfPath.Parent" xml:space="preserve">
-    <value>TabGeneral</value>
-  </data>
-  <data name="&gt;&gt;GroupVhfPath.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="BtnVhfPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 17</value>
-  </data>
-  <data name="BtnVhfPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 23</value>
-  </data>
-  <data name="BtnVhfPath.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="BtnVhfPath.Text" xml:space="preserve">
-    <value>Durchsuchen</value>
-  </data>
-  <data name="&gt;&gt;BtnVhfPath.Name" xml:space="preserve">
-    <value>BtnVhfPath</value>
-  </data>
-  <data name="&gt;&gt;BtnVhfPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BtnVhfPath.Parent" xml:space="preserve">
-    <value>GroupVhfPath</value>
-  </data>
-  <data name="&gt;&gt;BtnVhfPath.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="TbVhfPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="TbVhfPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 20</value>
-  </data>
-  <data name="TbVhfPath.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TbVhfPath.Name" xml:space="preserve">
-    <value>TbVhfPath</value>
-  </data>
-  <data name="&gt;&gt;TbVhfPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TbVhfPath.Parent" xml:space="preserve">
-    <value>GroupVhfPath</value>
-  </data>
-  <data name="&gt;&gt;TbVhfPath.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;CbDisableInternetServices.Name" xml:space="preserve">
-    <value>CbDisableInternetServices</value>
-  </data>
-  <data name="&gt;&gt;CbDisableInternetServices.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbDisableInternetServices.Parent" xml:space="preserve">
-    <value>GroupUpdate</value>
-  </data>
-  <data name="&gt;&gt;CbDisableInternetServices.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="GroupUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 150</value>
-  </data>
-  <data name="GroupUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 42</value>
-  </data>
-  <data name="GroupUpdate.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="GroupUpdate.Text" xml:space="preserve">
-    <value>Updates</value>
-  </data>
-  <data name="&gt;&gt;GroupUpdate.Name" xml:space="preserve">
-    <value>GroupUpdate</value>
-  </data>
-  <data name="&gt;&gt;GroupUpdate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupUpdate.Parent" xml:space="preserve">
-    <value>TabGeneral</value>
-  </data>
-  <data name="&gt;&gt;GroupUpdate.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="CbDisableInternetServices.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="CbDisableInternetServices.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="CbDisableInternetServices.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 17</value>
-  </data>
-  <data name="CbDisableInternetServices.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="CbDisableInternetServices.Text" xml:space="preserve">
-    <value>Internetdienste deaktivieren</value>
-  </data>
-  <data name="&gt;&gt;CbDisableInternetServices.Name" xml:space="preserve">
-    <value>CbDisableInternetServices</value>
-  </data>
-  <data name="&gt;&gt;CbDisableInternetServices.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbDisableInternetServices.Parent" xml:space="preserve">
-    <value>GroupUpdate</value>
-  </data>
-  <data name="&gt;&gt;CbDisableInternetServices.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;CbAutoSave.Name" xml:space="preserve">
-    <value>CbAutoSave</value>
-  </data>
-  <data name="&gt;&gt;CbAutoSave.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbAutoSave.Parent" xml:space="preserve">
-    <value>GroupSave</value>
-  </data>
-  <data name="&gt;&gt;CbAutoSave.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="GroupSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 102</value>
-  </data>
-  <data name="GroupSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 42</value>
-  </data>
-  <data name="GroupSave.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="GroupSave.Text" xml:space="preserve">
-    <value>Speichern</value>
-  </data>
-  <data name="&gt;&gt;GroupSave.Name" xml:space="preserve">
-    <value>GroupSave</value>
-  </data>
-  <data name="&gt;&gt;GroupSave.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupSave.Parent" xml:space="preserve">
-    <value>TabGeneral</value>
-  </data>
-  <data name="&gt;&gt;GroupSave.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="CbAutoSave.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="CbAutoSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="CbAutoSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 17</value>
-  </data>
-  <data name="CbAutoSave.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="CbAutoSave.Text" xml:space="preserve">
-    <value>Vokabelheft bei Änderungen automatisch speichern</value>
-  </data>
-  <data name="&gt;&gt;CbAutoSave.Name" xml:space="preserve">
-    <value>CbAutoSave</value>
-  </data>
-  <data name="&gt;&gt;CbAutoSave.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbAutoSave.Parent" xml:space="preserve">
-    <value>GroupSave</value>
-  </data>
-  <data name="&gt;&gt;CbAutoSave.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;GroupEvaluation.Name" xml:space="preserve">
@@ -970,7 +490,7 @@
     <value>2</value>
   </data>
   <data name="TabPractice.Text" xml:space="preserve">
-    <value>Übungsoptionen</value>
+    <value>Practice settings</value>
   </data>
   <data name="&gt;&gt;TabPractice.Name" xml:space="preserve">
     <value>TabPractice</value>
@@ -984,633 +504,6 @@
   <data name="&gt;&gt;TabPractice.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;CbManualCheck.Name" xml:space="preserve">
-    <value>CbManualCheck</value>
-  </data>
-  <data name="&gt;&gt;CbManualCheck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbManualCheck.Parent" xml:space="preserve">
-    <value>GroupEvaluation</value>
-  </data>
-  <data name="&gt;&gt;CbManualCheck.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;CbEvaluationSystem.Name" xml:space="preserve">
-    <value>CbEvaluationSystem</value>
-  </data>
-  <data name="&gt;&gt;CbEvaluationSystem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbEvaluationSystem.Parent" xml:space="preserve">
-    <value>GroupEvaluation</value>
-  </data>
-  <data name="&gt;&gt;CbEvaluationSystem.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;LbGradeSystem.Name" xml:space="preserve">
-    <value>LbGradeSystem</value>
-  </data>
-  <data name="&gt;&gt;LbGradeSystem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LbGradeSystem.Parent" xml:space="preserve">
-    <value>GroupEvaluation</value>
-  </data>
-  <data name="&gt;&gt;LbGradeSystem.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;CbPracticeResult.Name" xml:space="preserve">
-    <value>CbPracticeResult</value>
-  </data>
-  <data name="&gt;&gt;CbPracticeResult.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbPracticeResult.Parent" xml:space="preserve">
-    <value>GroupEvaluation</value>
-  </data>
-  <data name="&gt;&gt;CbPracticeResult.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="GroupEvaluation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
-  </data>
-  <data name="GroupEvaluation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 93</value>
-  </data>
-  <data name="GroupEvaluation.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="GroupEvaluation.Text" xml:space="preserve">
-    <value>Auswertung</value>
-  </data>
-  <data name="&gt;&gt;GroupEvaluation.Name" xml:space="preserve">
-    <value>GroupEvaluation</value>
-  </data>
-  <data name="&gt;&gt;GroupEvaluation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupEvaluation.Parent" xml:space="preserve">
-    <value>TabPractice</value>
-  </data>
-  <data name="&gt;&gt;GroupEvaluation.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="CbManualCheck.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="CbManualCheck.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbManualCheck.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="CbManualCheck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 17</value>
-  </data>
-  <data name="CbManualCheck.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="CbManualCheck.Text" xml:space="preserve">
-    <value>Beim Üben Übersetzungen selber bewerten</value>
-  </data>
-  <data name="&gt;&gt;CbManualCheck.Name" xml:space="preserve">
-    <value>CbManualCheck</value>
-  </data>
-  <data name="&gt;&gt;CbManualCheck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbManualCheck.Parent" xml:space="preserve">
-    <value>GroupEvaluation</value>
-  </data>
-  <data name="&gt;&gt;CbManualCheck.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="CbEvaluationSystem.Items" xml:space="preserve">
-    <value>Schweiz</value>
-  </data>
-  <data name="CbEvaluationSystem.Items1" xml:space="preserve">
-    <value>Deutschland</value>
-  </data>
-  <data name="CbEvaluationSystem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 65</value>
-  </data>
-  <data name="CbEvaluationSystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 21</value>
-  </data>
-  <data name="CbEvaluationSystem.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;CbEvaluationSystem.Name" xml:space="preserve">
-    <value>CbEvaluationSystem</value>
-  </data>
-  <data name="&gt;&gt;CbEvaluationSystem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbEvaluationSystem.Parent" xml:space="preserve">
-    <value>GroupEvaluation</value>
-  </data>
-  <data name="&gt;&gt;CbEvaluationSystem.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="LbGradeSystem.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LbGradeSystem.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LbGradeSystem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 68</value>
-  </data>
-  <data name="LbGradeSystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 13</value>
-  </data>
-  <data name="LbGradeSystem.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="LbGradeSystem.Text" xml:space="preserve">
-    <value>Notensystem</value>
-  </data>
-  <data name="&gt;&gt;LbGradeSystem.Name" xml:space="preserve">
-    <value>LbGradeSystem</value>
-  </data>
-  <data name="&gt;&gt;LbGradeSystem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LbGradeSystem.Parent" xml:space="preserve">
-    <value>GroupEvaluation</value>
-  </data>
-  <data name="&gt;&gt;LbGradeSystem.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="CbPracticeResult.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="CbPracticeResult.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbPracticeResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 42</value>
-  </data>
-  <data name="CbPracticeResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 17</value>
-  </data>
-  <data name="CbPracticeResult.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="CbPracticeResult.Text" xml:space="preserve">
-    <value>Nach einer Übung Auswertung anzeigen</value>
-  </data>
-  <data name="&gt;&gt;CbPracticeResult.Name" xml:space="preserve">
-    <value>CbPracticeResult</value>
-  </data>
-  <data name="&gt;&gt;CbPracticeResult.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbPracticeResult.Parent" xml:space="preserve">
-    <value>GroupEvaluation</value>
-  </data>
-  <data name="&gt;&gt;CbPracticeResult.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;CbColoredTextfield.Name" xml:space="preserve">
-    <value>CbColoredTextfield</value>
-  </data>
-  <data name="&gt;&gt;CbColoredTextfield.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbColoredTextfield.Parent" xml:space="preserve">
-    <value>GroupUserInterface</value>
-  </data>
-  <data name="&gt;&gt;CbColoredTextfield.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;CbAcousticFeedback.Name" xml:space="preserve">
-    <value>CbAcousticFeedback</value>
-  </data>
-  <data name="&gt;&gt;CbAcousticFeedback.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbAcousticFeedback.Parent" xml:space="preserve">
-    <value>GroupUserInterface</value>
-  </data>
-  <data name="&gt;&gt;CbAcousticFeedback.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;CbSingleContinueButton.Name" xml:space="preserve">
-    <value>CbSingleContinueButton</value>
-  </data>
-  <data name="&gt;&gt;CbSingleContinueButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbSingleContinueButton.Parent" xml:space="preserve">
-    <value>GroupUserInterface</value>
-  </data>
-  <data name="&gt;&gt;CbSingleContinueButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="GroupUserInterface.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 244</value>
-  </data>
-  <data name="GroupUserInterface.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 88</value>
-  </data>
-  <data name="GroupUserInterface.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="GroupUserInterface.Text" xml:space="preserve">
-    <value>Benutzeroberfläche</value>
-  </data>
-  <data name="&gt;&gt;GroupUserInterface.Name" xml:space="preserve">
-    <value>GroupUserInterface</value>
-  </data>
-  <data name="&gt;&gt;GroupUserInterface.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupUserInterface.Parent" xml:space="preserve">
-    <value>TabPractice</value>
-  </data>
-  <data name="&gt;&gt;GroupUserInterface.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="CbColoredTextfield.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="CbColoredTextfield.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="CbColoredTextfield.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 17</value>
-  </data>
-  <data name="CbColoredTextfield.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="CbColoredTextfield.Text" xml:space="preserve">
-    <value>Eingabefelder mit Farbe hervorheben</value>
-  </data>
-  <data name="&gt;&gt;CbColoredTextfield.Name" xml:space="preserve">
-    <value>CbColoredTextfield</value>
-  </data>
-  <data name="&gt;&gt;CbColoredTextfield.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbColoredTextfield.Parent" xml:space="preserve">
-    <value>GroupUserInterface</value>
-  </data>
-  <data name="&gt;&gt;CbColoredTextfield.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="CbAcousticFeedback.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="CbAcousticFeedback.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 42</value>
-  </data>
-  <data name="CbAcousticFeedback.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 17</value>
-  </data>
-  <data name="CbAcousticFeedback.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="CbAcousticFeedback.Text" xml:space="preserve">
-    <value>Akustische Rückmeldungen aktivieren</value>
-  </data>
-  <data name="&gt;&gt;CbAcousticFeedback.Name" xml:space="preserve">
-    <value>CbAcousticFeedback</value>
-  </data>
-  <data name="&gt;&gt;CbAcousticFeedback.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbAcousticFeedback.Parent" xml:space="preserve">
-    <value>GroupUserInterface</value>
-  </data>
-  <data name="&gt;&gt;CbAcousticFeedback.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="CbSingleContinueButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="CbSingleContinueButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 65</value>
-  </data>
-  <data name="CbSingleContinueButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 17</value>
-  </data>
-  <data name="CbSingleContinueButton.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="CbSingleContinueButton.Text" xml:space="preserve">
-    <value>Nach einer Übersetzung nur einmal Button betätigen</value>
-  </data>
-  <data name="&gt;&gt;CbSingleContinueButton.Name" xml:space="preserve">
-    <value>CbSingleContinueButton</value>
-  </data>
-  <data name="&gt;&gt;CbSingleContinueButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbSingleContinueButton.Parent" xml:space="preserve">
-    <value>GroupUserInterface</value>
-  </data>
-  <data name="&gt;&gt;CbSingleContinueButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateWhiteSpace.Name" xml:space="preserve">
-    <value>CbTolerateWhiteSpace</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateWhiteSpace.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateWhiteSpace.Parent" xml:space="preserve">
-    <value>GroupNearlyCorrect</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateWhiteSpace.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateNoSynonym.Name" xml:space="preserve">
-    <value>CbTolerateNoSynonym</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateNoSynonym.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateNoSynonym.Parent" xml:space="preserve">
-    <value>GroupNearlyCorrect</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateNoSynonym.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateArticle.Name" xml:space="preserve">
-    <value>CbTolerateArticle</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateArticle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateArticle.Parent" xml:space="preserve">
-    <value>GroupNearlyCorrect</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateArticle.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;CbToleratePunctuationMark.Name" xml:space="preserve">
-    <value>CbToleratePunctuationMark</value>
-  </data>
-  <data name="&gt;&gt;CbToleratePunctuationMark.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbToleratePunctuationMark.Parent" xml:space="preserve">
-    <value>GroupNearlyCorrect</value>
-  </data>
-  <data name="&gt;&gt;CbToleratePunctuationMark.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateSpecialChar.Name" xml:space="preserve">
-    <value>CbTolerateSpecialChar</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateSpecialChar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateSpecialChar.Parent" xml:space="preserve">
-    <value>GroupNearlyCorrect</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateSpecialChar.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="GroupNearlyCorrect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 105</value>
-  </data>
-  <data name="GroupNearlyCorrect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 133</value>
-  </data>
-  <data name="GroupNearlyCorrect.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="GroupNearlyCorrect.Text" xml:space="preserve">
-    <value>Als "Teilweise richtig" bewerten, wenn</value>
-  </data>
-  <data name="&gt;&gt;GroupNearlyCorrect.Name" xml:space="preserve">
-    <value>GroupNearlyCorrect</value>
-  </data>
-  <data name="&gt;&gt;GroupNearlyCorrect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupNearlyCorrect.Parent" xml:space="preserve">
-    <value>TabPractice</value>
-  </data>
-  <data name="&gt;&gt;GroupNearlyCorrect.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="CbTolerateWhiteSpace.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="CbTolerateWhiteSpace.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbTolerateWhiteSpace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="CbTolerateWhiteSpace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 17</value>
-  </data>
-  <data name="CbTolerateWhiteSpace.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="CbTolerateWhiteSpace.Text" xml:space="preserve">
-    <value>die Anzahl der Leerzeichen nicht stimmt</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateWhiteSpace.Name" xml:space="preserve">
-    <value>CbTolerateWhiteSpace</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateWhiteSpace.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateWhiteSpace.Parent" xml:space="preserve">
-    <value>GroupNearlyCorrect</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateWhiteSpace.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="CbTolerateNoSynonym.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="CbTolerateNoSynonym.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbTolerateNoSynonym.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 111</value>
-  </data>
-  <data name="CbTolerateNoSynonym.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 17</value>
-  </data>
-  <data name="CbTolerateNoSynonym.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="CbTolerateNoSynonym.Text" xml:space="preserve">
-    <value>nur eines von zwei Synonymen korrekt ist</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateNoSynonym.Name" xml:space="preserve">
-    <value>CbTolerateNoSynonym</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateNoSynonym.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateNoSynonym.Parent" xml:space="preserve">
-    <value>GroupNearlyCorrect</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateNoSynonym.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="CbTolerateArticle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="CbTolerateArticle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbTolerateArticle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 88</value>
-  </data>
-  <data name="CbTolerateArticle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 17</value>
-  </data>
-  <data name="CbTolerateArticle.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="CbTolerateArticle.Text" xml:space="preserve">
-    <value>falsche Artikel verwendet werden</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateArticle.Name" xml:space="preserve">
-    <value>CbTolerateArticle</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateArticle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateArticle.Parent" xml:space="preserve">
-    <value>GroupNearlyCorrect</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateArticle.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="CbToleratePunctuationMark.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="CbToleratePunctuationMark.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbToleratePunctuationMark.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 42</value>
-  </data>
-  <data name="CbToleratePunctuationMark.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 17</value>
-  </data>
-  <data name="CbToleratePunctuationMark.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="CbToleratePunctuationMark.Text" xml:space="preserve">
-    <value>Satzzeichen nicht stimmen</value>
-  </data>
-  <data name="&gt;&gt;CbToleratePunctuationMark.Name" xml:space="preserve">
-    <value>CbToleratePunctuationMark</value>
-  </data>
-  <data name="&gt;&gt;CbToleratePunctuationMark.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbToleratePunctuationMark.Parent" xml:space="preserve">
-    <value>GroupNearlyCorrect</value>
-  </data>
-  <data name="&gt;&gt;CbToleratePunctuationMark.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="CbTolerateSpecialChar.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="CbTolerateSpecialChar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbTolerateSpecialChar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 65</value>
-  </data>
-  <data name="CbTolerateSpecialChar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 17</value>
-  </data>
-  <data name="CbTolerateSpecialChar.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="CbTolerateSpecialChar.Text" xml:space="preserve">
-    <value>Sonderzeichen nicht stimmen</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateSpecialChar.Name" xml:space="preserve">
-    <value>CbTolerateSpecialChar</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateSpecialChar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateSpecialChar.Parent" xml:space="preserve">
-    <value>GroupNearlyCorrect</value>
-  </data>
-  <data name="&gt;&gt;CbTolerateSpecialChar.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;BtnResetPracticeSelect.Name" xml:space="preserve">
-    <value>BtnResetPracticeSelect</value>
-  </data>
-  <data name="&gt;&gt;BtnResetPracticeSelect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BtnResetPracticeSelect.Parent" xml:space="preserve">
-    <value>TabPracticeSelect</value>
-  </data>
-  <data name="&gt;&gt;BtnResetPracticeSelect.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;GroupSelectionMix.Name" xml:space="preserve">
-    <value>GroupSelectionMix</value>
-  </data>
-  <data name="&gt;&gt;GroupSelectionMix.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupSelectionMix.Parent" xml:space="preserve">
-    <value>TabPracticeSelect</value>
-  </data>
-  <data name="&gt;&gt;GroupSelectionMix.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;GroupRepetitions.Name" xml:space="preserve">
-    <value>GroupRepetitions</value>
-  </data>
-  <data name="&gt;&gt;GroupRepetitions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupRepetitions.Parent" xml:space="preserve">
-    <value>TabPracticeSelect</value>
-  </data>
-  <data name="&gt;&gt;GroupRepetitions.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="TabPracticeSelect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="TabPracticeSelect.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="TabPracticeSelect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 397</value>
-  </data>
-  <data name="TabPracticeSelect.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="TabPracticeSelect.Text" xml:space="preserve">
-    <value>Übungszusammensetzung</value>
-  </data>
-  <data name="&gt;&gt;TabPracticeSelect.Name" xml:space="preserve">
-    <value>TabPracticeSelect</value>
-  </data>
-  <data name="&gt;&gt;TabPracticeSelect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TabPracticeSelect.Parent" xml:space="preserve">
-    <value>TabControlMain</value>
-  </data>
-  <data name="&gt;&gt;TabPracticeSelect.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="BtnResetPracticeSelect.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 293</value>
   </data>
@@ -1621,7 +514,7 @@
     <value>2</value>
   </data>
   <data name="BtnResetPracticeSelect.Text" xml:space="preserve">
-    <value>Einstellungen zurücksetzen</value>
+    <value>Reset settings</value>
   </data>
   <data name="&gt;&gt;BtnResetPracticeSelect.Name" xml:space="preserve">
     <value>BtnResetPracticeSelect</value>
@@ -1634,123 +527,6 @@
   </data>
   <data name="&gt;&gt;BtnResetPracticeSelect.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;LbWronglyPracticed.Name" xml:space="preserve">
-    <value>LbWronglyPracticed</value>
-  </data>
-  <data name="&gt;&gt;LbWronglyPracticed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LbWronglyPracticed.Parent" xml:space="preserve">
-    <value>GroupSelectionMix</value>
-  </data>
-  <data name="&gt;&gt;LbWronglyPracticed.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;LbCorrectlyPracticed.Name" xml:space="preserve">
-    <value>LbCorrectlyPracticed</value>
-  </data>
-  <data name="&gt;&gt;LbCorrectlyPracticed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LbCorrectlyPracticed.Parent" xml:space="preserve">
-    <value>GroupSelectionMix</value>
-  </data>
-  <data name="&gt;&gt;LbCorrectlyPracticed.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;LbUnpracticed.Name" xml:space="preserve">
-    <value>LbUnpracticed</value>
-  </data>
-  <data name="&gt;&gt;LbUnpracticed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LbUnpracticed.Parent" xml:space="preserve">
-    <value>GroupSelectionMix</value>
-  </data>
-  <data name="&gt;&gt;LbUnpracticed.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;LbPercentageUnpracticed.Name" xml:space="preserve">
-    <value>LbPercentageUnpracticed</value>
-  </data>
-  <data name="&gt;&gt;LbPercentageUnpracticed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LbPercentageUnpracticed.Parent" xml:space="preserve">
-    <value>GroupSelectionMix</value>
-  </data>
-  <data name="&gt;&gt;LbPercentageUnpracticed.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
-    <value>pictureBox2</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
-    <value>GroupSelectionMix</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>GroupSelectionMix</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;pictureBox3.Name" xml:space="preserve">
-    <value>pictureBox3</value>
-  </data>
-  <data name="&gt;&gt;pictureBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox3.Parent" xml:space="preserve">
-    <value>GroupSelectionMix</value>
-  </data>
-  <data name="&gt;&gt;pictureBox3.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;LbPercentageWrongCorrect.Name" xml:space="preserve">
-    <value>LbPercentageWrongCorrect</value>
-  </data>
-  <data name="&gt;&gt;LbPercentageWrongCorrect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LbPercentageWrongCorrect.Parent" xml:space="preserve">
-    <value>GroupSelectionMix</value>
-  </data>
-  <data name="&gt;&gt;LbPercentageWrongCorrect.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="GroupSelectionMix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 110</value>
-  </data>
-  <data name="GroupSelectionMix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 177</value>
-  </data>
-  <data name="GroupSelectionMix.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;GroupSelectionMix.Name" xml:space="preserve">
-    <value>GroupSelectionMix</value>
-  </data>
-  <data name="&gt;&gt;GroupSelectionMix.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupSelectionMix.Parent" xml:space="preserve">
-    <value>TabPracticeSelect</value>
-  </data>
-  <data name="&gt;&gt;GroupSelectionMix.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="LbWronglyPracticed.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1843,14 +619,14 @@
     <value>6, 16</value>
   </data>
   <data name="LbPercentageUnpracticed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 26</value>
+    <value>197, 26</value>
   </data>
   <data name="LbPercentageUnpracticed.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="LbPercentageUnpracticed.Text" xml:space="preserve">
-    <value>Wie gross soll der Anteil an noch nicht geübten
- Vokabeln sein?</value>
+    <value>Which percentage of unpracticed words
+ do you want to have?</value>
   </data>
   <data name="&gt;&gt;LbPercentageUnpracticed.Name" xml:space="preserve">
     <value>LbPercentageUnpracticed</value>
@@ -1943,14 +719,14 @@
     <value>6, 95</value>
   </data>
   <data name="LbPercentageWrongCorrect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 26</value>
+    <value>257, 26</value>
   </data>
   <data name="LbPercentageWrongCorrect.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="LbPercentageWrongCorrect.Text" xml:space="preserve">
-    <value>Wie gross soll der Anteil an falsch und richtig geübten
- Vokabeln sein?</value>
+    <value>Which percentage of wronlgy and correctly practiced
+ words do you want to have?</value>
   </data>
   <data name="&gt;&gt;LbPercentageWrongCorrect.Name" xml:space="preserve">
     <value>LbPercentageWrongCorrect</value>
@@ -1963,6 +739,27 @@
   </data>
   <data name="&gt;&gt;LbPercentageWrongCorrect.ZOrder" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="GroupSelectionMix.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 110</value>
+  </data>
+  <data name="GroupSelectionMix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>276, 177</value>
+  </data>
+  <data name="GroupSelectionMix.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;GroupSelectionMix.Name" xml:space="preserve">
+    <value>GroupSelectionMix</value>
+  </data>
+  <data name="&gt;&gt;GroupSelectionMix.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupSelectionMix.Parent" xml:space="preserve">
+    <value>TabPracticeSelect</value>
+  </data>
+  <data name="&gt;&gt;GroupSelectionMix.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;LbPracticeCount.Name" xml:space="preserve">
     <value>LbPracticeCount</value>
@@ -2009,6 +806,1041 @@
   <data name="&gt;&gt;GroupRepetitions.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="TabPracticeSelect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="TabPracticeSelect.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="TabPracticeSelect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 397</value>
+  </data>
+  <data name="TabPracticeSelect.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TabPracticeSelect.Text" xml:space="preserve">
+    <value>Practice composition</value>
+  </data>
+  <data name="&gt;&gt;TabPracticeSelect.Name" xml:space="preserve">
+    <value>TabPracticeSelect</value>
+  </data>
+  <data name="&gt;&gt;TabPracticeSelect.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabPracticeSelect.Parent" xml:space="preserve">
+    <value>TabControlMain</value>
+  </data>
+  <data name="&gt;&gt;TabPracticeSelect.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TabControlMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 2</value>
+  </data>
+  <data name="TabControlMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 423</value>
+  </data>
+  <data name="TabControlMain.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TabControlMain.Name" xml:space="preserve">
+    <value>TabControlMain</value>
+  </data>
+  <data name="&gt;&gt;TabControlMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabControlMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TabControlMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;CbColumnResize.Name" xml:space="preserve">
+    <value>CbColumnResize</value>
+  </data>
+  <data name="&gt;&gt;CbColumnResize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbColumnResize.Parent" xml:space="preserve">
+    <value>GroupVocabularyList</value>
+  </data>
+  <data name="&gt;&gt;CbColumnResize.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;CbGridLines.Name" xml:space="preserve">
+    <value>CbGridLines</value>
+  </data>
+  <data name="&gt;&gt;CbGridLines.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbGridLines.Parent" xml:space="preserve">
+    <value>GroupVocabularyList</value>
+  </data>
+  <data name="&gt;&gt;CbGridLines.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="GroupVocabularyList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 198</value>
+  </data>
+  <data name="GroupVocabularyList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 65</value>
+  </data>
+  <data name="GroupVocabularyList.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="GroupVocabularyList.Text" xml:space="preserve">
+    <value>Vocabulary list</value>
+  </data>
+  <data name="&gt;&gt;GroupVocabularyList.Name" xml:space="preserve">
+    <value>GroupVocabularyList</value>
+  </data>
+  <data name="&gt;&gt;GroupVocabularyList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupVocabularyList.Parent" xml:space="preserve">
+    <value>TabGeneral</value>
+  </data>
+  <data name="&gt;&gt;GroupVocabularyList.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CbColumnResize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbColumnResize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CbColumnResize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 42</value>
+  </data>
+  <data name="CbColumnResize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 17</value>
+  </data>
+  <data name="CbColumnResize.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="CbColumnResize.Text" xml:space="preserve">
+    <value>Automatically resize columns</value>
+  </data>
+  <data name="&gt;&gt;CbColumnResize.Name" xml:space="preserve">
+    <value>CbColumnResize</value>
+  </data>
+  <data name="&gt;&gt;CbColumnResize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbColumnResize.Parent" xml:space="preserve">
+    <value>GroupVocabularyList</value>
+  </data>
+  <data name="&gt;&gt;CbColumnResize.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CbGridLines.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbGridLines.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CbGridLines.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="CbGridLines.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 17</value>
+  </data>
+  <data name="CbGridLines.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="CbGridLines.Text" xml:space="preserve">
+    <value>Show grid lines</value>
+  </data>
+  <data name="&gt;&gt;CbGridLines.Name" xml:space="preserve">
+    <value>CbGridLines</value>
+  </data>
+  <data name="&gt;&gt;CbGridLines.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbGridLines.Parent" xml:space="preserve">
+    <value>GroupVocabularyList</value>
+  </data>
+  <data name="&gt;&gt;CbGridLines.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;BtnVhrPath.Name" xml:space="preserve">
+    <value>BtnVhrPath</value>
+  </data>
+  <data name="&gt;&gt;BtnVhrPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnVhrPath.Parent" xml:space="preserve">
+    <value>GroupVhrPath</value>
+  </data>
+  <data name="&gt;&gt;BtnVhrPath.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TbVhrPath.Name" xml:space="preserve">
+    <value>TbVhrPath</value>
+  </data>
+  <data name="&gt;&gt;TbVhrPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TbVhrPath.Parent" xml:space="preserve">
+    <value>GroupVhrPath</value>
+  </data>
+  <data name="&gt;&gt;TbVhrPath.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="GroupVhrPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 320</value>
+  </data>
+  <data name="GroupVhrPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 45</value>
+  </data>
+  <data name="GroupVhrPath.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="GroupVhrPath.Text" xml:space="preserve">
+    <value>Folder for practice results</value>
+  </data>
+  <data name="&gt;&gt;GroupVhrPath.Name" xml:space="preserve">
+    <value>GroupVhrPath</value>
+  </data>
+  <data name="&gt;&gt;GroupVhrPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupVhrPath.Parent" xml:space="preserve">
+    <value>TabGeneral</value>
+  </data>
+  <data name="&gt;&gt;GroupVhrPath.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="BtnVhrPath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="BtnVhrPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>190, 17</value>
+  </data>
+  <data name="BtnVhrPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 23</value>
+  </data>
+  <data name="BtnVhrPath.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="BtnVhrPath.Text" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="&gt;&gt;BtnVhrPath.Name" xml:space="preserve">
+    <value>BtnVhrPath</value>
+  </data>
+  <data name="&gt;&gt;BtnVhrPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnVhrPath.Parent" xml:space="preserve">
+    <value>GroupVhrPath</value>
+  </data>
+  <data name="&gt;&gt;BtnVhrPath.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TbVhrPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="TbVhrPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 20</value>
+  </data>
+  <data name="TbVhrPath.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TbVhrPath.Name" xml:space="preserve">
+    <value>TbVhrPath</value>
+  </data>
+  <data name="&gt;&gt;TbVhrPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TbVhrPath.Parent" xml:space="preserve">
+    <value>GroupVhrPath</value>
+  </data>
+  <data name="&gt;&gt;TbVhrPath.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;BtnVhfPath.Name" xml:space="preserve">
+    <value>BtnVhfPath</value>
+  </data>
+  <data name="&gt;&gt;BtnVhfPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnVhfPath.Parent" xml:space="preserve">
+    <value>GroupVhfPath</value>
+  </data>
+  <data name="&gt;&gt;BtnVhfPath.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TbVhfPath.Name" xml:space="preserve">
+    <value>TbVhfPath</value>
+  </data>
+  <data name="&gt;&gt;TbVhfPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TbVhfPath.Parent" xml:space="preserve">
+    <value>GroupVhfPath</value>
+  </data>
+  <data name="&gt;&gt;TbVhfPath.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="GroupVhfPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 269</value>
+  </data>
+  <data name="GroupVhfPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 45</value>
+  </data>
+  <data name="GroupVhfPath.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="GroupVhfPath.Text" xml:space="preserve">
+    <value>Folder for vocabulary books</value>
+  </data>
+  <data name="&gt;&gt;GroupVhfPath.Name" xml:space="preserve">
+    <value>GroupVhfPath</value>
+  </data>
+  <data name="&gt;&gt;GroupVhfPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupVhfPath.Parent" xml:space="preserve">
+    <value>TabGeneral</value>
+  </data>
+  <data name="&gt;&gt;GroupVhfPath.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="BtnVhfPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>190, 17</value>
+  </data>
+  <data name="BtnVhfPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 23</value>
+  </data>
+  <data name="BtnVhfPath.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="BtnVhfPath.Text" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="&gt;&gt;BtnVhfPath.Name" xml:space="preserve">
+    <value>BtnVhfPath</value>
+  </data>
+  <data name="&gt;&gt;BtnVhfPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnVhfPath.Parent" xml:space="preserve">
+    <value>GroupVhfPath</value>
+  </data>
+  <data name="&gt;&gt;BtnVhfPath.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TbVhfPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="TbVhfPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 20</value>
+  </data>
+  <data name="TbVhfPath.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TbVhfPath.Name" xml:space="preserve">
+    <value>TbVhfPath</value>
+  </data>
+  <data name="&gt;&gt;TbVhfPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TbVhfPath.Parent" xml:space="preserve">
+    <value>GroupVhfPath</value>
+  </data>
+  <data name="&gt;&gt;TbVhfPath.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;CbDisableInternetServices.Name" xml:space="preserve">
+    <value>CbDisableInternetServices</value>
+  </data>
+  <data name="&gt;&gt;CbDisableInternetServices.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbDisableInternetServices.Parent" xml:space="preserve">
+    <value>GroupUpdate</value>
+  </data>
+  <data name="&gt;&gt;CbDisableInternetServices.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GroupUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 150</value>
+  </data>
+  <data name="GroupUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 42</value>
+  </data>
+  <data name="GroupUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="GroupUpdate.Text" xml:space="preserve">
+    <value>Updates</value>
+  </data>
+  <data name="&gt;&gt;GroupUpdate.Name" xml:space="preserve">
+    <value>GroupUpdate</value>
+  </data>
+  <data name="&gt;&gt;GroupUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupUpdate.Parent" xml:space="preserve">
+    <value>TabGeneral</value>
+  </data>
+  <data name="&gt;&gt;GroupUpdate.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="CbDisableInternetServices.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbDisableInternetServices.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="CbDisableInternetServices.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 17</value>
+  </data>
+  <data name="CbDisableInternetServices.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="CbDisableInternetServices.Text" xml:space="preserve">
+    <value>Disable Internet services</value>
+  </data>
+  <data name="&gt;&gt;CbDisableInternetServices.Name" xml:space="preserve">
+    <value>CbDisableInternetServices</value>
+  </data>
+  <data name="&gt;&gt;CbDisableInternetServices.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbDisableInternetServices.Parent" xml:space="preserve">
+    <value>GroupUpdate</value>
+  </data>
+  <data name="&gt;&gt;CbDisableInternetServices.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;CbAutoSave.Name" xml:space="preserve">
+    <value>CbAutoSave</value>
+  </data>
+  <data name="&gt;&gt;CbAutoSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbAutoSave.Parent" xml:space="preserve">
+    <value>GroupSave</value>
+  </data>
+  <data name="&gt;&gt;CbAutoSave.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GroupSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 102</value>
+  </data>
+  <data name="GroupSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 42</value>
+  </data>
+  <data name="GroupSave.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="GroupSave.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;GroupSave.Name" xml:space="preserve">
+    <value>GroupSave</value>
+  </data>
+  <data name="&gt;&gt;GroupSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupSave.Parent" xml:space="preserve">
+    <value>TabGeneral</value>
+  </data>
+  <data name="&gt;&gt;GroupSave.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="CbAutoSave.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbAutoSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="CbAutoSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 17</value>
+  </data>
+  <data name="CbAutoSave.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="CbAutoSave.Text" xml:space="preserve">
+    <value>Automatically save changes in your vocabulary book</value>
+  </data>
+  <data name="&gt;&gt;CbAutoSave.Name" xml:space="preserve">
+    <value>CbAutoSave</value>
+  </data>
+  <data name="&gt;&gt;CbAutoSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbAutoSave.Parent" xml:space="preserve">
+    <value>GroupSave</value>
+  </data>
+  <data name="&gt;&gt;CbAutoSave.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;CbManualCheck.Name" xml:space="preserve">
+    <value>CbManualCheck</value>
+  </data>
+  <data name="&gt;&gt;CbManualCheck.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbManualCheck.Parent" xml:space="preserve">
+    <value>GroupEvaluation</value>
+  </data>
+  <data name="&gt;&gt;CbManualCheck.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;CbEvaluationSystem.Name" xml:space="preserve">
+    <value>CbEvaluationSystem</value>
+  </data>
+  <data name="&gt;&gt;CbEvaluationSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbEvaluationSystem.Parent" xml:space="preserve">
+    <value>GroupEvaluation</value>
+  </data>
+  <data name="&gt;&gt;CbEvaluationSystem.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;LbGradeSystem.Name" xml:space="preserve">
+    <value>LbGradeSystem</value>
+  </data>
+  <data name="&gt;&gt;LbGradeSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LbGradeSystem.Parent" xml:space="preserve">
+    <value>GroupEvaluation</value>
+  </data>
+  <data name="&gt;&gt;LbGradeSystem.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;CbPracticeResult.Name" xml:space="preserve">
+    <value>CbPracticeResult</value>
+  </data>
+  <data name="&gt;&gt;CbPracticeResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbPracticeResult.Parent" xml:space="preserve">
+    <value>GroupEvaluation</value>
+  </data>
+  <data name="&gt;&gt;CbPracticeResult.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="GroupEvaluation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="GroupEvaluation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 93</value>
+  </data>
+  <data name="GroupEvaluation.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="GroupEvaluation.Text" xml:space="preserve">
+    <value>Evaluation</value>
+  </data>
+  <data name="&gt;&gt;GroupEvaluation.Name" xml:space="preserve">
+    <value>GroupEvaluation</value>
+  </data>
+  <data name="&gt;&gt;GroupEvaluation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupEvaluation.Parent" xml:space="preserve">
+    <value>TabPractice</value>
+  </data>
+  <data name="&gt;&gt;GroupEvaluation.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CbManualCheck.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbManualCheck.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CbManualCheck.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="CbManualCheck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 17</value>
+  </data>
+  <data name="CbManualCheck.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="CbManualCheck.Text" xml:space="preserve">
+    <value>Self-evaluate translations when practicing</value>
+  </data>
+  <data name="&gt;&gt;CbManualCheck.Name" xml:space="preserve">
+    <value>CbManualCheck</value>
+  </data>
+  <data name="&gt;&gt;CbManualCheck.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbManualCheck.Parent" xml:space="preserve">
+    <value>GroupEvaluation</value>
+  </data>
+  <data name="&gt;&gt;CbManualCheck.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CbEvaluationSystem.Items" xml:space="preserve">
+    <value>Switzerland</value>
+  </data>
+  <data name="CbEvaluationSystem.Items1" xml:space="preserve">
+    <value>Germany</value>
+  </data>
+  <data name="CbEvaluationSystem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 65</value>
+  </data>
+  <data name="CbEvaluationSystem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 21</value>
+  </data>
+  <data name="CbEvaluationSystem.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;CbEvaluationSystem.Name" xml:space="preserve">
+    <value>CbEvaluationSystem</value>
+  </data>
+  <data name="&gt;&gt;CbEvaluationSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbEvaluationSystem.Parent" xml:space="preserve">
+    <value>GroupEvaluation</value>
+  </data>
+  <data name="&gt;&gt;CbEvaluationSystem.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LbGradeSystem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LbGradeSystem.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LbGradeSystem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 68</value>
+  </data>
+  <data name="LbGradeSystem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 13</value>
+  </data>
+  <data name="LbGradeSystem.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="LbGradeSystem.Text" xml:space="preserve">
+    <value>Grade system</value>
+  </data>
+  <data name="&gt;&gt;LbGradeSystem.Name" xml:space="preserve">
+    <value>LbGradeSystem</value>
+  </data>
+  <data name="&gt;&gt;LbGradeSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LbGradeSystem.Parent" xml:space="preserve">
+    <value>GroupEvaluation</value>
+  </data>
+  <data name="&gt;&gt;LbGradeSystem.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="CbPracticeResult.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbPracticeResult.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CbPracticeResult.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 42</value>
+  </data>
+  <data name="CbPracticeResult.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 17</value>
+  </data>
+  <data name="CbPracticeResult.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="CbPracticeResult.Text" xml:space="preserve">
+    <value>Show results after practicing</value>
+  </data>
+  <data name="&gt;&gt;CbPracticeResult.Name" xml:space="preserve">
+    <value>CbPracticeResult</value>
+  </data>
+  <data name="&gt;&gt;CbPracticeResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbPracticeResult.Parent" xml:space="preserve">
+    <value>GroupEvaluation</value>
+  </data>
+  <data name="&gt;&gt;CbPracticeResult.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;CbColoredTextfield.Name" xml:space="preserve">
+    <value>CbColoredTextfield</value>
+  </data>
+  <data name="&gt;&gt;CbColoredTextfield.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbColoredTextfield.Parent" xml:space="preserve">
+    <value>GroupUserInterface</value>
+  </data>
+  <data name="&gt;&gt;CbColoredTextfield.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;CbAcousticFeedback.Name" xml:space="preserve">
+    <value>CbAcousticFeedback</value>
+  </data>
+  <data name="&gt;&gt;CbAcousticFeedback.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbAcousticFeedback.Parent" xml:space="preserve">
+    <value>GroupUserInterface</value>
+  </data>
+  <data name="&gt;&gt;CbAcousticFeedback.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;CbSingleContinueButton.Name" xml:space="preserve">
+    <value>CbSingleContinueButton</value>
+  </data>
+  <data name="&gt;&gt;CbSingleContinueButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbSingleContinueButton.Parent" xml:space="preserve">
+    <value>GroupUserInterface</value>
+  </data>
+  <data name="&gt;&gt;CbSingleContinueButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="GroupUserInterface.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 244</value>
+  </data>
+  <data name="GroupUserInterface.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 88</value>
+  </data>
+  <data name="GroupUserInterface.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="GroupUserInterface.Text" xml:space="preserve">
+    <value>User interface</value>
+  </data>
+  <data name="&gt;&gt;GroupUserInterface.Name" xml:space="preserve">
+    <value>GroupUserInterface</value>
+  </data>
+  <data name="&gt;&gt;GroupUserInterface.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupUserInterface.Parent" xml:space="preserve">
+    <value>TabPractice</value>
+  </data>
+  <data name="&gt;&gt;GroupUserInterface.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CbColoredTextfield.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbColoredTextfield.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="CbColoredTextfield.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 17</value>
+  </data>
+  <data name="CbColoredTextfield.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="CbColoredTextfield.Text" xml:space="preserve">
+    <value>Highlight input fields with color</value>
+  </data>
+  <data name="&gt;&gt;CbColoredTextfield.Name" xml:space="preserve">
+    <value>CbColoredTextfield</value>
+  </data>
+  <data name="&gt;&gt;CbColoredTextfield.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbColoredTextfield.Parent" xml:space="preserve">
+    <value>GroupUserInterface</value>
+  </data>
+  <data name="&gt;&gt;CbColoredTextfield.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CbAcousticFeedback.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbAcousticFeedback.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 42</value>
+  </data>
+  <data name="CbAcousticFeedback.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 17</value>
+  </data>
+  <data name="CbAcousticFeedback.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="CbAcousticFeedback.Text" xml:space="preserve">
+    <value>Enable acoustic feedback</value>
+  </data>
+  <data name="&gt;&gt;CbAcousticFeedback.Name" xml:space="preserve">
+    <value>CbAcousticFeedback</value>
+  </data>
+  <data name="&gt;&gt;CbAcousticFeedback.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbAcousticFeedback.Parent" xml:space="preserve">
+    <value>GroupUserInterface</value>
+  </data>
+  <data name="&gt;&gt;CbAcousticFeedback.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CbSingleContinueButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbSingleContinueButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 65</value>
+  </data>
+  <data name="CbSingleContinueButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 17</value>
+  </data>
+  <data name="CbSingleContinueButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="CbSingleContinueButton.Text" xml:space="preserve">
+    <value>Press button only once after transalting</value>
+  </data>
+  <data name="&gt;&gt;CbSingleContinueButton.Name" xml:space="preserve">
+    <value>CbSingleContinueButton</value>
+  </data>
+  <data name="&gt;&gt;CbSingleContinueButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbSingleContinueButton.Parent" xml:space="preserve">
+    <value>GroupUserInterface</value>
+  </data>
+  <data name="&gt;&gt;CbSingleContinueButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateWhiteSpace.Name" xml:space="preserve">
+    <value>CbTolerateWhiteSpace</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateWhiteSpace.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateWhiteSpace.Parent" xml:space="preserve">
+    <value>GroupNearlyCorrect</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateWhiteSpace.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateNoSynonym.Name" xml:space="preserve">
+    <value>CbTolerateNoSynonym</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateNoSynonym.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateNoSynonym.Parent" xml:space="preserve">
+    <value>GroupNearlyCorrect</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateNoSynonym.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateArticle.Name" xml:space="preserve">
+    <value>CbTolerateArticle</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateArticle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateArticle.Parent" xml:space="preserve">
+    <value>GroupNearlyCorrect</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateArticle.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;CbToleratePunctuationMark.Name" xml:space="preserve">
+    <value>CbToleratePunctuationMark</value>
+  </data>
+  <data name="&gt;&gt;CbToleratePunctuationMark.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbToleratePunctuationMark.Parent" xml:space="preserve">
+    <value>GroupNearlyCorrect</value>
+  </data>
+  <data name="&gt;&gt;CbToleratePunctuationMark.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateSpecialChar.Name" xml:space="preserve">
+    <value>CbTolerateSpecialChar</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateSpecialChar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateSpecialChar.Parent" xml:space="preserve">
+    <value>GroupNearlyCorrect</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateSpecialChar.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="GroupNearlyCorrect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 105</value>
+  </data>
+  <data name="GroupNearlyCorrect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 133</value>
+  </data>
+  <data name="GroupNearlyCorrect.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="GroupNearlyCorrect.Text" xml:space="preserve">
+    <value>Mark as "Partly correct" when</value>
+  </data>
+  <data name="&gt;&gt;GroupNearlyCorrect.Name" xml:space="preserve">
+    <value>GroupNearlyCorrect</value>
+  </data>
+  <data name="&gt;&gt;GroupNearlyCorrect.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupNearlyCorrect.Parent" xml:space="preserve">
+    <value>TabPractice</value>
+  </data>
+  <data name="&gt;&gt;GroupNearlyCorrect.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="CbTolerateWhiteSpace.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbTolerateWhiteSpace.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CbTolerateWhiteSpace.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="CbTolerateWhiteSpace.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 17</value>
+  </data>
+  <data name="CbTolerateWhiteSpace.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="CbTolerateWhiteSpace.Text" xml:space="preserve">
+    <value>whitespaces do not match</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateWhiteSpace.Name" xml:space="preserve">
+    <value>CbTolerateWhiteSpace</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateWhiteSpace.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateWhiteSpace.Parent" xml:space="preserve">
+    <value>GroupNearlyCorrect</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateWhiteSpace.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CbTolerateNoSynonym.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbTolerateNoSynonym.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CbTolerateNoSynonym.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 111</value>
+  </data>
+  <data name="CbTolerateNoSynonym.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 17</value>
+  </data>
+  <data name="CbTolerateNoSynonym.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="CbTolerateNoSynonym.Text" xml:space="preserve">
+    <value>only one of two synonyms is correct</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateNoSynonym.Name" xml:space="preserve">
+    <value>CbTolerateNoSynonym</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateNoSynonym.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateNoSynonym.Parent" xml:space="preserve">
+    <value>GroupNearlyCorrect</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateNoSynonym.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CbTolerateArticle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbTolerateArticle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CbTolerateArticle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 88</value>
+  </data>
+  <data name="CbTolerateArticle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>171, 17</value>
+  </data>
+  <data name="CbTolerateArticle.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="CbTolerateArticle.Text" xml:space="preserve">
+    <value>wrong articles have been used</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateArticle.Name" xml:space="preserve">
+    <value>CbTolerateArticle</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateArticle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateArticle.Parent" xml:space="preserve">
+    <value>GroupNearlyCorrect</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateArticle.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="CbToleratePunctuationMark.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbToleratePunctuationMark.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CbToleratePunctuationMark.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 42</value>
+  </data>
+  <data name="CbToleratePunctuationMark.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 17</value>
+  </data>
+  <data name="CbToleratePunctuationMark.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="CbToleratePunctuationMark.Text" xml:space="preserve">
+    <value>punctuation marks are incorrect</value>
+  </data>
+  <data name="&gt;&gt;CbToleratePunctuationMark.Name" xml:space="preserve">
+    <value>CbToleratePunctuationMark</value>
+  </data>
+  <data name="&gt;&gt;CbToleratePunctuationMark.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbToleratePunctuationMark.Parent" xml:space="preserve">
+    <value>GroupNearlyCorrect</value>
+  </data>
+  <data name="&gt;&gt;CbToleratePunctuationMark.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="CbTolerateSpecialChar.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbTolerateSpecialChar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CbTolerateSpecialChar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 65</value>
+  </data>
+  <data name="CbTolerateSpecialChar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 17</value>
+  </data>
+  <data name="CbTolerateSpecialChar.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="CbTolerateSpecialChar.Text" xml:space="preserve">
+    <value>special chars are incorrect</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateSpecialChar.Name" xml:space="preserve">
+    <value>CbTolerateSpecialChar</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateSpecialChar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateSpecialChar.Parent" xml:space="preserve">
+    <value>GroupNearlyCorrect</value>
+  </data>
+  <data name="&gt;&gt;CbTolerateSpecialChar.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="LbPracticeCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2016,14 +1848,14 @@
     <value>6, 16</value>
   </data>
   <data name="LbPracticeCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 26</value>
+    <value>242, 26</value>
   </data>
   <data name="LbPracticeCount.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="LbPracticeCount.Text" xml:space="preserve">
-    <value>Wie oft muss eine Vokabel richtig übersetzt werden, 
-damit sie als gelernt eingestuft wird?</value>
+    <value>How often needs a word to be translated correctly
+ to be marked as learnt?</value>
   </data>
   <data name="&gt;&gt;LbPracticeCount.Name" xml:space="preserve">
     <value>LbPracticeCount</value>
@@ -2299,7 +2131,7 @@ damit sie als gelernt eingestuft wird?</value>
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Einstellungen</value>
+    <value>Settings</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SettingsDialog</value>
