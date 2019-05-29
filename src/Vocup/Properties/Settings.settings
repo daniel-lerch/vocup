@@ -9,7 +9,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="SpecialCharTab" Type="System.String" Scope="User">
-      <Value Profile="(Default)">de-DE</Value>
+      <Value Profile="(Default)">de</Value>
     </Setting>
     <Setting Name="MaxPracticeCount" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">3</Value>

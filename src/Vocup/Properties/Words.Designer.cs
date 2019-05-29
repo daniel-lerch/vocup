@@ -313,6 +313,15 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Special chars.
+        /// </summary>
+        internal static string SpecialChars {
+            get {
+                return ResourceManager.GetString("SpecialChars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Synonym.
         /// </summary>
         internal static string Synonym {

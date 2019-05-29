@@ -205,6 +205,9 @@
   <data name="Site" xml:space="preserve">
     <value>Site</value>
   </data>
+  <data name="SpecialChars" xml:space="preserve">
+    <value>Special chars</value>
+  </data>
   <data name="Synonym" xml:space="preserve">
     <value>Synonym</value>
   </data>

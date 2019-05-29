@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -16,6 +17,11 @@ namespace Vocup.Forms
         public SpecialCharKeyboard()
         {
             InitializeComponent();
+
+            Text = Words.SpecialChars;
+            foreach (Control control in TcMain.Controls)
+                if (control is TabPage page)
+                    page.Text = new CultureInfo(page.Tag.ToString()).DisplayName;
         }
 
         public bool DialogEnabled
@@ -63,10 +69,10 @@ namespace Vocup.Forms
                         using (StreamReader reader = new StreamReader(info.FullName, Encoding.UTF8))
                         {
                             string name = Path.GetFileNameWithoutExtension(info.FullName);
-                            TabPage page = new TabPage()
+                            TabPage page = new TabPage
                             {
-                                Name = "Custom_" + name,
-                                Tag = "Custom_" + name,
+                                Name = "TpCustom" + name,
+                                Tag = "Custom" + name,
                                 Text = name,
                                 AutoScroll = true,
                                 UseVisualStyleBackColor = true,
@@ -91,7 +97,7 @@ namespace Vocup.Forms
                                 int x = offset.X + (size.Width + space.X) * (index % itemsPerLine);
                                 int y = offset.Y + (size.Height + space.Y) * (index / itemsPerLine);
 
-                                Button button = new Button()
+                                Button button = new Button
                                 {
                                     Name = page.Name + "_Char_" + (ushort)line[0],
                                     Text = line,
@@ -158,7 +164,7 @@ namespace Vocup.Forms
             if (e.CloseReason == CloseReason.UserClosing)
             {
                 e.Cancel = true;
-                Visible = false;
+                DialogEnabled = false;
             }
         }
     }

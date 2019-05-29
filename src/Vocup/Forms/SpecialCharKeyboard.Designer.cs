@@ -30,7 +30,7 @@
         {
             this.Titel = new System.Windows.Forms.Label();
             this.TcMain = new System.Windows.Forms.TabControl();
-            this.Deutsch = new System.Windows.Forms.TabPage();
+            this.TpGerman = new System.Windows.Forms.TabPage();
             this.doppel_s = new System.Windows.Forms.Button();
             this.ue_big = new System.Windows.Forms.Button();
             this.ae_big = new System.Windows.Forms.Button();
@@ -38,7 +38,7 @@
             this.oe_big = new System.Windows.Forms.Button();
             this.ue = new System.Windows.Forms.Button();
             this.ae = new System.Windows.Forms.Button();
-            this.Französisch = new System.Windows.Forms.TabPage();
+            this.TpFrench = new System.Windows.Forms.TabPage();
             this.û_big = new System.Windows.Forms.Button();
             this.ÿ = new System.Windows.Forms.Button();
             this.ÿ_big = new System.Windows.Forms.Button();
@@ -69,7 +69,7 @@
             this.Â_big = new System.Windows.Forms.Button();
             this.æ = new System.Windows.Forms.Button();
             this.à = new System.Windows.Forms.Button();
-            this.Italienisch = new System.Windows.Forms.TabPage();
+            this.TpItalian = new System.Windows.Forms.TabPage();
             this.ú_big = new System.Windows.Forms.Button();
             this.ù_it = new System.Windows.Forms.Button();
             this.ù_it_big = new System.Windows.Forms.Button();
@@ -90,7 +90,7 @@
             this.é_it = new System.Windows.Forms.Button();
             this.à_it_big = new System.Windows.Forms.Button();
             this.à_it = new System.Windows.Forms.Button();
-            this.Spanisch = new System.Windows.Forms.TabPage();
+            this.TpSpanish = new System.Windows.Forms.TabPage();
             this.um_frag = new System.Windows.Forms.Button();
             this.umg_ausr = new System.Windows.Forms.Button();
             this.º = new System.Windows.Forms.Button();
@@ -109,7 +109,7 @@
             this.é_sp = new System.Windows.Forms.Button();
             this.é_sp_big = new System.Windows.Forms.Button();
             this.á = new System.Windows.Forms.Button();
-            this.Rumaenisch = new System.Windows.Forms.TabPage();
+            this.TpRomanian = new System.Windows.Forms.TabPage();
             this.ţ_ro_big = new System.Windows.Forms.Button();
             this.ţ_ro = new System.Windows.Forms.Button();
             this.ş_ro_big = new System.Windows.Forms.Button();
@@ -121,11 +121,11 @@
             this.â_ro_big = new System.Windows.Forms.Button();
             this.â_ro = new System.Windows.Forms.Button();
             this.TcMain.SuspendLayout();
-            this.Deutsch.SuspendLayout();
-            this.Französisch.SuspendLayout();
-            this.Italienisch.SuspendLayout();
-            this.Spanisch.SuspendLayout();
-            this.Rumaenisch.SuspendLayout();
+            this.TpGerman.SuspendLayout();
+            this.TpFrench.SuspendLayout();
+            this.TpItalian.SuspendLayout();
+            this.TpSpanish.SuspendLayout();
+            this.TpRomanian.SuspendLayout();
             this.SuspendLayout();
             // 
             // Titel
@@ -138,11 +138,11 @@
             // 
             // TcMain
             // 
-            this.TcMain.Controls.Add(this.Deutsch);
-            this.TcMain.Controls.Add(this.Französisch);
-            this.TcMain.Controls.Add(this.Italienisch);
-            this.TcMain.Controls.Add(this.Spanisch);
-            this.TcMain.Controls.Add(this.Rumaenisch);
+            this.TcMain.Controls.Add(this.TpGerman);
+            this.TcMain.Controls.Add(this.TpFrench);
+            this.TcMain.Controls.Add(this.TpItalian);
+            this.TcMain.Controls.Add(this.TpSpanish);
+            this.TcMain.Controls.Add(this.TpRomanian);
             this.TcMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TcMain.Font = new System.Drawing.Font("Arial", 8.25F);
             this.TcMain.Location = new System.Drawing.Point(0, 0);
@@ -152,25 +152,25 @@
             this.TcMain.TabIndex = 0;
             this.TcMain.Tag = "es-ES";
             // 
-            // Deutsch
+            // TpGerman
             // 
-            this.Deutsch.AutoScroll = true;
-            this.Deutsch.Controls.Add(this.doppel_s);
-            this.Deutsch.Controls.Add(this.ue_big);
-            this.Deutsch.Controls.Add(this.ae_big);
-            this.Deutsch.Controls.Add(this.oe);
-            this.Deutsch.Controls.Add(this.oe_big);
-            this.Deutsch.Controls.Add(this.ue);
-            this.Deutsch.Controls.Add(this.ae);
-            this.Deutsch.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Deutsch.Location = new System.Drawing.Point(4, 23);
-            this.Deutsch.Name = "Deutsch";
-            this.Deutsch.Padding = new System.Windows.Forms.Padding(3);
-            this.Deutsch.Size = new System.Drawing.Size(396, 99);
-            this.Deutsch.TabIndex = 0;
-            this.Deutsch.Tag = "de-DE";
-            this.Deutsch.Text = "Deutsch";
-            this.Deutsch.UseVisualStyleBackColor = true;
+            this.TpGerman.AutoScroll = true;
+            this.TpGerman.Controls.Add(this.doppel_s);
+            this.TpGerman.Controls.Add(this.ue_big);
+            this.TpGerman.Controls.Add(this.ae_big);
+            this.TpGerman.Controls.Add(this.oe);
+            this.TpGerman.Controls.Add(this.oe_big);
+            this.TpGerman.Controls.Add(this.ue);
+            this.TpGerman.Controls.Add(this.ae);
+            this.TpGerman.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.TpGerman.Location = new System.Drawing.Point(4, 23);
+            this.TpGerman.Name = "TpGerman";
+            this.TpGerman.Padding = new System.Windows.Forms.Padding(3);
+            this.TpGerman.Size = new System.Drawing.Size(396, 99);
+            this.TpGerman.TabIndex = 0;
+            this.TpGerman.Tag = "de";
+            this.TpGerman.Text = "German";
+            this.TpGerman.UseVisualStyleBackColor = true;
             // 
             // doppel_s
             // 
@@ -243,48 +243,48 @@
             this.ae.UseVisualStyleBackColor = true;
             this.ae.Click += new System.EventHandler(this.Button_Click);
             // 
-            // Französisch
+            // TpFrench
             // 
-            this.Französisch.AutoScroll = true;
-            this.Französisch.Controls.Add(this.û_big);
-            this.Französisch.Controls.Add(this.ÿ);
-            this.Französisch.Controls.Add(this.ÿ_big);
-            this.Französisch.Controls.Add(this.û);
-            this.Französisch.Controls.Add(this.ù_big);
-            this.Französisch.Controls.Add(this.œ);
-            this.Französisch.Controls.Add(this.œ_big);
-            this.Französisch.Controls.Add(this.ù);
-            this.Französisch.Controls.Add(this.ô_big);
-            this.Französisch.Controls.Add(this.ô);
-            this.Französisch.Controls.Add(this.î_big);
-            this.Französisch.Controls.Add(this.ï);
-            this.Französisch.Controls.Add(this.ï_big);
-            this.Französisch.Controls.Add(this.î);
-            this.Französisch.Controls.Add(this.ë_big);
-            this.Französisch.Controls.Add(this.ê);
-            this.Französisch.Controls.Add(this.ê_big);
-            this.Französisch.Controls.Add(this.ë);
-            this.Französisch.Controls.Add(this.é_big);
-            this.Französisch.Controls.Add(this.ç_big);
-            this.Französisch.Controls.Add(this.è);
-            this.Französisch.Controls.Add(this.è_big);
-            this.Französisch.Controls.Add(this.é);
-            this.Französisch.Controls.Add(this.ç);
-            this.Französisch.Controls.Add(this.æ_big);
-            this.Französisch.Controls.Add(this.à_big);
-            this.Französisch.Controls.Add(this.â);
-            this.Französisch.Controls.Add(this.Â_big);
-            this.Französisch.Controls.Add(this.æ);
-            this.Französisch.Controls.Add(this.à);
-            this.Französisch.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Französisch.Location = new System.Drawing.Point(4, 23);
-            this.Französisch.Name = "Französisch";
-            this.Französisch.Padding = new System.Windows.Forms.Padding(3);
-            this.Französisch.Size = new System.Drawing.Size(396, 99);
-            this.Französisch.TabIndex = 1;
-            this.Französisch.Tag = "fr-FR";
-            this.Französisch.Text = "Französisch";
-            this.Französisch.UseVisualStyleBackColor = true;
+            this.TpFrench.AutoScroll = true;
+            this.TpFrench.Controls.Add(this.û_big);
+            this.TpFrench.Controls.Add(this.ÿ);
+            this.TpFrench.Controls.Add(this.ÿ_big);
+            this.TpFrench.Controls.Add(this.û);
+            this.TpFrench.Controls.Add(this.ù_big);
+            this.TpFrench.Controls.Add(this.œ);
+            this.TpFrench.Controls.Add(this.œ_big);
+            this.TpFrench.Controls.Add(this.ù);
+            this.TpFrench.Controls.Add(this.ô_big);
+            this.TpFrench.Controls.Add(this.ô);
+            this.TpFrench.Controls.Add(this.î_big);
+            this.TpFrench.Controls.Add(this.ï);
+            this.TpFrench.Controls.Add(this.ï_big);
+            this.TpFrench.Controls.Add(this.î);
+            this.TpFrench.Controls.Add(this.ë_big);
+            this.TpFrench.Controls.Add(this.ê);
+            this.TpFrench.Controls.Add(this.ê_big);
+            this.TpFrench.Controls.Add(this.ë);
+            this.TpFrench.Controls.Add(this.é_big);
+            this.TpFrench.Controls.Add(this.ç_big);
+            this.TpFrench.Controls.Add(this.è);
+            this.TpFrench.Controls.Add(this.è_big);
+            this.TpFrench.Controls.Add(this.é);
+            this.TpFrench.Controls.Add(this.ç);
+            this.TpFrench.Controls.Add(this.æ_big);
+            this.TpFrench.Controls.Add(this.à_big);
+            this.TpFrench.Controls.Add(this.â);
+            this.TpFrench.Controls.Add(this.Â_big);
+            this.TpFrench.Controls.Add(this.æ);
+            this.TpFrench.Controls.Add(this.à);
+            this.TpFrench.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.TpFrench.Location = new System.Drawing.Point(4, 23);
+            this.TpFrench.Name = "TpFrench";
+            this.TpFrench.Padding = new System.Windows.Forms.Padding(3);
+            this.TpFrench.Size = new System.Drawing.Size(396, 99);
+            this.TpFrench.TabIndex = 1;
+            this.TpFrench.Tag = "fr";
+            this.TpFrench.Text = "French";
+            this.TpFrench.UseVisualStyleBackColor = true;
             // 
             // û_big
             // 
@@ -586,38 +586,38 @@
             this.à.UseVisualStyleBackColor = true;
             this.à.Click += new System.EventHandler(this.Button_Click);
             // 
-            // Italienisch
+            // TpItalian
             // 
-            this.Italienisch.AutoScroll = true;
-            this.Italienisch.Controls.Add(this.ú_big);
-            this.Italienisch.Controls.Add(this.ù_it);
-            this.Italienisch.Controls.Add(this.ù_it_big);
-            this.Italienisch.Controls.Add(this.ú);
-            this.Italienisch.Controls.Add(this.ó_big);
-            this.Italienisch.Controls.Add(this.ò);
-            this.Italienisch.Controls.Add(this.ò_big);
-            this.Italienisch.Controls.Add(this.ó);
-            this.Italienisch.Controls.Add(this.í_big);
-            this.Italienisch.Controls.Add(this.ì);
-            this.Italienisch.Controls.Add(this.Ì_big);
-            this.Italienisch.Controls.Add(this.í);
-            this.Italienisch.Controls.Add(this.ï_it_big);
-            this.Italienisch.Controls.Add(this.ï_it);
-            this.Italienisch.Controls.Add(this.é_it_big);
-            this.Italienisch.Controls.Add(this.è_it);
-            this.Italienisch.Controls.Add(this.è_it_big);
-            this.Italienisch.Controls.Add(this.é_it);
-            this.Italienisch.Controls.Add(this.à_it_big);
-            this.Italienisch.Controls.Add(this.à_it);
-            this.Italienisch.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Italienisch.Location = new System.Drawing.Point(4, 23);
-            this.Italienisch.Name = "Italienisch";
-            this.Italienisch.Padding = new System.Windows.Forms.Padding(3);
-            this.Italienisch.Size = new System.Drawing.Size(396, 99);
-            this.Italienisch.TabIndex = 2;
-            this.Italienisch.Tag = "it-IT";
-            this.Italienisch.Text = "Italienisch";
-            this.Italienisch.UseVisualStyleBackColor = true;
+            this.TpItalian.AutoScroll = true;
+            this.TpItalian.Controls.Add(this.ú_big);
+            this.TpItalian.Controls.Add(this.ù_it);
+            this.TpItalian.Controls.Add(this.ù_it_big);
+            this.TpItalian.Controls.Add(this.ú);
+            this.TpItalian.Controls.Add(this.ó_big);
+            this.TpItalian.Controls.Add(this.ò);
+            this.TpItalian.Controls.Add(this.ò_big);
+            this.TpItalian.Controls.Add(this.ó);
+            this.TpItalian.Controls.Add(this.í_big);
+            this.TpItalian.Controls.Add(this.ì);
+            this.TpItalian.Controls.Add(this.Ì_big);
+            this.TpItalian.Controls.Add(this.í);
+            this.TpItalian.Controls.Add(this.ï_it_big);
+            this.TpItalian.Controls.Add(this.ï_it);
+            this.TpItalian.Controls.Add(this.é_it_big);
+            this.TpItalian.Controls.Add(this.è_it);
+            this.TpItalian.Controls.Add(this.è_it_big);
+            this.TpItalian.Controls.Add(this.é_it);
+            this.TpItalian.Controls.Add(this.à_it_big);
+            this.TpItalian.Controls.Add(this.à_it);
+            this.TpItalian.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.TpItalian.Location = new System.Drawing.Point(4, 23);
+            this.TpItalian.Name = "TpItalian";
+            this.TpItalian.Padding = new System.Windows.Forms.Padding(3);
+            this.TpItalian.Size = new System.Drawing.Size(396, 99);
+            this.TpItalian.TabIndex = 2;
+            this.TpItalian.Tag = "it";
+            this.TpItalian.Text = "Italian";
+            this.TpItalian.UseVisualStyleBackColor = true;
             // 
             // ú_big
             // 
@@ -820,36 +820,36 @@
             this.à_it.UseVisualStyleBackColor = true;
             this.à_it.Click += new System.EventHandler(this.Button_Click);
             // 
-            // Spanisch
+            // TpSpanish
             // 
-            this.Spanisch.AutoScroll = true;
-            this.Spanisch.Controls.Add(this.um_frag);
-            this.Spanisch.Controls.Add(this.umg_ausr);
-            this.Spanisch.Controls.Add(this.º);
-            this.Spanisch.Controls.Add(this.ú_sp_big);
-            this.Spanisch.Controls.Add(this.ü_sp);
-            this.Spanisch.Controls.Add(this.ª);
-            this.Spanisch.Controls.Add(this.ú_sp);
-            this.Spanisch.Controls.Add(this.ñ);
-            this.Spanisch.Controls.Add(this.ñ_big);
-            this.Spanisch.Controls.Add(this.ó_sp);
-            this.Spanisch.Controls.Add(this.ó_sp_big);
-            this.Spanisch.Controls.Add(this.í_sp_big);
-            this.Spanisch.Controls.Add(this.í_sp);
-            this.Spanisch.Controls.Add(this.á_big);
-            this.Spanisch.Controls.Add(this.ç_sp);
-            this.Spanisch.Controls.Add(this.é_sp);
-            this.Spanisch.Controls.Add(this.é_sp_big);
-            this.Spanisch.Controls.Add(this.á);
-            this.Spanisch.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Spanisch.Location = new System.Drawing.Point(4, 23);
-            this.Spanisch.Name = "Spanisch";
-            this.Spanisch.Padding = new System.Windows.Forms.Padding(3);
-            this.Spanisch.Size = new System.Drawing.Size(396, 99);
-            this.Spanisch.TabIndex = 3;
-            this.Spanisch.Tag = "es-ES";
-            this.Spanisch.Text = "Spanisch";
-            this.Spanisch.UseVisualStyleBackColor = true;
+            this.TpSpanish.AutoScroll = true;
+            this.TpSpanish.Controls.Add(this.um_frag);
+            this.TpSpanish.Controls.Add(this.umg_ausr);
+            this.TpSpanish.Controls.Add(this.º);
+            this.TpSpanish.Controls.Add(this.ú_sp_big);
+            this.TpSpanish.Controls.Add(this.ü_sp);
+            this.TpSpanish.Controls.Add(this.ª);
+            this.TpSpanish.Controls.Add(this.ú_sp);
+            this.TpSpanish.Controls.Add(this.ñ);
+            this.TpSpanish.Controls.Add(this.ñ_big);
+            this.TpSpanish.Controls.Add(this.ó_sp);
+            this.TpSpanish.Controls.Add(this.ó_sp_big);
+            this.TpSpanish.Controls.Add(this.í_sp_big);
+            this.TpSpanish.Controls.Add(this.í_sp);
+            this.TpSpanish.Controls.Add(this.á_big);
+            this.TpSpanish.Controls.Add(this.ç_sp);
+            this.TpSpanish.Controls.Add(this.é_sp);
+            this.TpSpanish.Controls.Add(this.é_sp_big);
+            this.TpSpanish.Controls.Add(this.á);
+            this.TpSpanish.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.TpSpanish.Location = new System.Drawing.Point(4, 23);
+            this.TpSpanish.Name = "TpSpanish";
+            this.TpSpanish.Padding = new System.Windows.Forms.Padding(3);
+            this.TpSpanish.Size = new System.Drawing.Size(396, 99);
+            this.TpSpanish.TabIndex = 3;
+            this.TpSpanish.Tag = "es";
+            this.TpSpanish.Text = "Spanish";
+            this.TpSpanish.UseVisualStyleBackColor = true;
             // 
             // um_frag
             // 
@@ -1034,28 +1034,28 @@
             this.á.UseVisualStyleBackColor = true;
             this.á.Click += new System.EventHandler(this.Button_Click);
             // 
-            // Rumaenisch
+            // TpRomanian
             // 
-            this.Rumaenisch.AutoScroll = true;
-            this.Rumaenisch.Controls.Add(this.ţ_ro_big);
-            this.Rumaenisch.Controls.Add(this.ţ_ro);
-            this.Rumaenisch.Controls.Add(this.ş_ro_big);
-            this.Rumaenisch.Controls.Add(this.ş_ro);
-            this.Rumaenisch.Controls.Add(this.î_ro_big);
-            this.Rumaenisch.Controls.Add(this.î_ro);
-            this.Rumaenisch.Controls.Add(this.ă_ro_big);
-            this.Rumaenisch.Controls.Add(this.ă_ro);
-            this.Rumaenisch.Controls.Add(this.â_ro_big);
-            this.Rumaenisch.Controls.Add(this.â_ro);
-            this.Rumaenisch.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Rumaenisch.Location = new System.Drawing.Point(4, 23);
-            this.Rumaenisch.Name = "Rumaenisch";
-            this.Rumaenisch.Padding = new System.Windows.Forms.Padding(3);
-            this.Rumaenisch.Size = new System.Drawing.Size(396, 99);
-            this.Rumaenisch.TabIndex = 4;
-            this.Rumaenisch.Tag = "ro-RO";
-            this.Rumaenisch.Text = "Rumänisch";
-            this.Rumaenisch.UseVisualStyleBackColor = true;
+            this.TpRomanian.AutoScroll = true;
+            this.TpRomanian.Controls.Add(this.ţ_ro_big);
+            this.TpRomanian.Controls.Add(this.ţ_ro);
+            this.TpRomanian.Controls.Add(this.ş_ro_big);
+            this.TpRomanian.Controls.Add(this.ş_ro);
+            this.TpRomanian.Controls.Add(this.î_ro_big);
+            this.TpRomanian.Controls.Add(this.î_ro);
+            this.TpRomanian.Controls.Add(this.ă_ro_big);
+            this.TpRomanian.Controls.Add(this.ă_ro);
+            this.TpRomanian.Controls.Add(this.â_ro_big);
+            this.TpRomanian.Controls.Add(this.â_ro);
+            this.TpRomanian.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.TpRomanian.Location = new System.Drawing.Point(4, 23);
+            this.TpRomanian.Name = "TpRomanian";
+            this.TpRomanian.Padding = new System.Windows.Forms.Padding(3);
+            this.TpRomanian.Size = new System.Drawing.Size(396, 99);
+            this.TpRomanian.TabIndex = 4;
+            this.TpRomanian.Tag = "ro";
+            this.TpRomanian.Text = "Romanian";
+            this.TpRomanian.UseVisualStyleBackColor = true;
             // 
             // ţ_ro_big
             // 
@@ -1182,15 +1182,15 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Sonderzeichen";
+            this.Text = "Special chars";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
             this.Load += new System.EventHandler(this.Form_Load);
             this.TcMain.ResumeLayout(false);
-            this.Deutsch.ResumeLayout(false);
-            this.Französisch.ResumeLayout(false);
-            this.Italienisch.ResumeLayout(false);
-            this.Spanisch.ResumeLayout(false);
-            this.Rumaenisch.ResumeLayout(false);
+            this.TpGerman.ResumeLayout(false);
+            this.TpFrench.ResumeLayout(false);
+            this.TpItalian.ResumeLayout(false);
+            this.TpSpanish.ResumeLayout(false);
+            this.TpRomanian.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1200,10 +1200,10 @@
 
         private System.Windows.Forms.Label Titel;
         private System.Windows.Forms.TabControl TcMain;
-        private System.Windows.Forms.TabPage Deutsch;
-        private System.Windows.Forms.TabPage Französisch;
-        private System.Windows.Forms.TabPage Italienisch;
-        private System.Windows.Forms.TabPage Spanisch;
+        private System.Windows.Forms.TabPage TpGerman;
+        private System.Windows.Forms.TabPage TpFrench;
+        private System.Windows.Forms.TabPage TpItalian;
+        private System.Windows.Forms.TabPage TpSpanish;
         private System.Windows.Forms.Button ue_big;
         private System.Windows.Forms.Button ae_big;
         private System.Windows.Forms.Button oe;
@@ -1278,7 +1278,7 @@
         private System.Windows.Forms.Button é_sp;
         private System.Windows.Forms.Button é_sp_big;
         private System.Windows.Forms.Button á;
-        private System.Windows.Forms.TabPage Rumaenisch;
+        private System.Windows.Forms.TabPage TpRomanian;
         private System.Windows.Forms.Button â_ro;
         private System.Windows.Forms.Button â_ro_big;
         private System.Windows.Forms.Button ţ_ro_big;
