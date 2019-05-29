@@ -11,8 +11,9 @@ namespace Vocup.UnitTests
     public class InitializeTest
     {
         [TestMethod]
-        public void TestHelpFile()
+        public void TestResourceFiles()
         {
+            Assert.IsTrue(File.Exists(Path.Combine("Resources", "easter_egg.vhf")));
             Assert.IsTrue(File.Exists(Path.Combine("Resources", "help.chm")));
         }
 
