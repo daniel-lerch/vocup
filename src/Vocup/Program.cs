@@ -35,7 +35,7 @@ namespace Vocup
 
             if (Settings.Default.StartupCounter == 0)
                 Settings.Default.Upgrade(); // Keep old settings with new version
-            // Warning: Unsaved changes are overridden 
+            // Warning: Unsaved changes are overridden
 
             CreateVhfFolder();
             CreateVhrFolder();
@@ -88,12 +88,10 @@ namespace Vocup
         /// </summary>
         internal static void CreateVhfFolder()
         {
-            string personal = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string folder = Path.Combine(personal, Words.VocabularyBooks); // default path
+            string folder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
 
             if (string.IsNullOrWhiteSpace(Settings.Default.VhfPath) || Settings.Default.VhfPath.Equals(folder, StringComparison.OrdinalIgnoreCase))
             {
-                Directory.CreateDirectory(folder);
                 Settings.Default.VhfPath = folder;
             }
             else
