@@ -125,6 +125,9 @@ Tipp: Unter Optionen können Sie festlegen, wie oft eine Vokabel richtig hintere
   <data name="BookPracticeFinishedT" xml:space="preserve">
     <value>Herzlichen Glückwunsch!</value>
   </data>
+  <data name="BrowseVhfPath" xml:space="preserve">
+    <value>Bitte wählen Sie einen Ordner als Standardspeicherort für Ihre Vokabelhefte aus.</value>
+  </data>
   <data name="CsvExportError" xml:space="preserve">
     <value>Beim Exportieren einer CSV Datei ist ein unerwarteter Fehler aufgetreten.
 Details:

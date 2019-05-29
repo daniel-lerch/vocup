@@ -81,6 +81,15 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select the default folder for your vocabulary books..
+        /// </summary>
+        internal static string BrowseVhfPath {
+            get {
+                return ResourceManager.GetString("BrowseVhfPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An unexpected error occured when exporting a CSV file.
         ///Details:
         ///{0}.

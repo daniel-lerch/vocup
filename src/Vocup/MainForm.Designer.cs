@@ -539,11 +539,13 @@
             // 
             // FileTreeView
             // 
+            this.FileTreeView.BrowseButtonVisible = true;
             resources.ApplyResources(this.FileTreeView, "FileTreeView");
             this.FileTreeView.FileFilter = "*.vhf";
             this.FileTreeView.Name = "FileTreeView";
             this.FileTreeView.SelectedPath = null;
             this.FileTreeView.FileSelected += new System.EventHandler<Vocup.Controls.FileSelectedEventArgs>(this.FileTreeView_FileSelected);
+            this.FileTreeView.BrowseClick += new System.EventHandler(this.FileTreeView_BrowseClick);
             // 
             // LbEmptyForm
             // 

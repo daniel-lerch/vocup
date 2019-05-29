@@ -205,6 +205,25 @@ namespace Vocup
             ReadFile(e.FullName);
         }
 
+        private void FileTreeView_BrowseClick(object sender, EventArgs e)
+        {
+            string oldVhfPath = Settings.Default.VhfPath;
+
+            using (FolderBrowserDialog dialog = new FolderBrowserDialog())
+            {
+                dialog.Description = Messages.BrowseVhfPath;
+                dialog.SelectedPath = oldVhfPath;
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    Settings.Default.VhfPath = dialog.SelectedPath;
+                }
+            }
+
+            // Eventually refresh tree view root path
+            if (oldVhfPath != Settings.Default.VhfPath)
+                FileTreeView.RootPath = Settings.Default.VhfPath;
+        }
+
         private void TsbCreateBook_Click(object sender, EventArgs e) => CreateBook();
         private void TsmiCreateBook_Click(object sender, EventArgs e) => CreateBook();
 
@@ -324,7 +343,7 @@ namespace Vocup
         private void StatusLbOldVersion_Click(object sender, EventArgs e)
         {
             if (SystemInfo.TryGetVocupInstallation(out var installation) &&
-                MessageBox.Show(Messages.LegacyVersionUninstall, 
+                MessageBox.Show(Messages.LegacyVersionUninstall,
                 Messages.LegacyVersionUninstallT, MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Process.Start(installation.uninstallString);

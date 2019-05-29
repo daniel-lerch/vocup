@@ -33,6 +33,7 @@
             this.IconImageList = new System.Windows.Forms.ImageList(this.components);
             this.MainTreeView = new System.Windows.Forms.TreeView();
             this.MainWatcher = new System.IO.FileSystemWatcher();
+            this.BrowseButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MainWatcher)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,10 +66,24 @@
             this.MainWatcher.Deleted += new System.IO.FileSystemEventHandler(this.MainWatcher_Deleted);
             this.MainWatcher.Renamed += new System.IO.RenamedEventHandler(this.MainWatcher_Renamed);
             // 
+            // BrowseButton
+            // 
+            this.BrowseButton.FlatAppearance.BorderSize = 0;
+            this.BrowseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BrowseButton.Location = new System.Drawing.Point(120, 1);
+            this.BrowseButton.Name = "BrowseButton";
+            this.BrowseButton.Size = new System.Drawing.Size(29, 20);
+            this.BrowseButton.TabIndex = 4;
+            this.BrowseButton.Text = "🔍";
+            this.BrowseButton.UseVisualStyleBackColor = true;
+            this.BrowseButton.Visible = false;
+            this.BrowseButton.Click += new System.EventHandler(this.BrowseButton_Click);
+            // 
             // FileTreeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.BrowseButton);
             this.Controls.Add(this.MainTreeView);
             this.Name = "FileTreeView";
             ((System.ComponentModel.ISupportInitialize)(this.MainWatcher)).EndInit();
@@ -81,5 +96,6 @@
         private System.Windows.Forms.ImageList IconImageList;
         private System.Windows.Forms.TreeView MainTreeView;
         private System.IO.FileSystemWatcher MainWatcher;
+        private System.Windows.Forms.Button BrowseButton;
     }
 }

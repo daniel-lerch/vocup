@@ -43,6 +43,9 @@ namespace Vocup.Controls
         [DefaultValue("*.*")]
         public string FileFilter { get; set; } = "*.*";
 
+        [DefaultValue(false)]
+        public bool ShowHiddenFiles { get; set; } = false;
+
         [DefaultValue("")]
         public string RootPath
         {
@@ -85,14 +88,32 @@ namespace Vocup.Controls
             }
         }
 
+        [DefaultValue(false)]
+        public bool BrowseButtonVisible
+        {
+            get => BrowseButton.Visible;
+            set => BrowseButton.Visible = value;
+        }
+
         [Browsable(true), EditorBrowsable(EditorBrowsableState.Always)]
         public event EventHandler<FileSelectedEventArgs> FileSelected;
+
+        [Browsable(true), EditorBrowsable(EditorBrowsableState.Always)]
+        public event EventHandler BrowseClick;
 
         protected virtual void OnFileSelected(FileSelectedEventArgs e)
         {
             if (!interceptEvents)
             {
                 FileSelected?.Invoke(this, e);
+            }
+        }
+
+        protected virtual void OnBrowseClick(EventArgs e)
+        {
+            if (!interceptEvents)
+            {
+                BrowseClick?.Invoke(this, e);
             }
         }
 
@@ -114,28 +135,34 @@ namespace Vocup.Controls
         {
             root.Nodes.Clear();
             DirectoryInfo rootInfo = (DirectoryInfo)root.Tag;
-            DirectoryInfo[] directories = rootInfo.GetDirectories();
-            FileInfo[] files = rootInfo.GetFiles(FileFilter);
-            foreach (DirectoryInfo directory in directories)
+            try
             {
-                root.Nodes.Add(new TreeNode()
+                DirectoryInfo[] directories = rootInfo.GetDirectories();
+                FileInfo[] files = rootInfo.GetFiles(FileFilter);
+                foreach (DirectoryInfo directory in directories
+                    .Where(x => ShowHiddenFiles || !x.Attributes.HasFlag(FileAttributes.Hidden)))
                 {
-                    Tag = directory,
-                    Text = directory.Name,
-                    ImageIndex = ImgDir,
-                    SelectedImageIndex = ImgDirSelected
-                });
-            }
-            foreach (FileInfo file in files)
-            {
-                root.Nodes.Add(new TreeNode()
+                    root.Nodes.Add(new TreeNode
+                    {
+                        Tag = directory,
+                        Text = directory.Name,
+                        ImageIndex = ImgDir,
+                        SelectedImageIndex = ImgDirSelected
+                    });
+                }
+                foreach (FileInfo file in files
+                    .Where(x => ShowHiddenFiles || !x.Attributes.HasFlag(FileAttributes.Hidden)))
                 {
-                    Tag = file,
-                    Text = Path.GetFileNameWithoutExtension(file.FullName),
-                    ImageIndex = ImgFile,
-                    SelectedImageIndex = ImgFileSelected
-                });
+                    root.Nodes.Add(new TreeNode
+                    {
+                        Tag = file,
+                        Text = Path.GetFileNameWithoutExtension(file.FullName),
+                        ImageIndex = ImgFile,
+                        SelectedImageIndex = ImgFileSelected
+                    });
+                }
             }
+            catch (UnauthorizedAccessException) { } // Ignore contents of folders with restricted access
         }
 
         private TreeNode LoadNode(TreeNode parent, string path)
@@ -254,6 +281,11 @@ namespace Vocup.Controls
             SafeRemoveNode(old); // null check because user can change file ending to match FileFilter
             TreeNode root = GetNode(Path.GetDirectoryName(e.FullPath));
             LoadNode(root, e.FullPath);
+        }
+
+        private void BrowseButton_Click(object sender, EventArgs e)
+        {
+            OnBrowseClick(e);
         }
     }
 }

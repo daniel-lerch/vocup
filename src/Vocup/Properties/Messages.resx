@@ -125,6 +125,9 @@ Hint: In the settings you can configure how often a word has to be correctly tra
   <data name="BookPracticeFinishedT" xml:space="preserve">
     <value>Congratulations!</value>
   </data>
+  <data name="BrowseVhfPath" xml:space="preserve">
+    <value>Please select the default folder for your vocabulary books.</value>
+  </data>
   <data name="CsvExportError" xml:space="preserve">
     <value>An unexpected error occured when exporting a CSV file.
 Details:
