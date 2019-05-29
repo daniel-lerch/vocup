@@ -154,10 +154,10 @@
     <value>Internetdienste deaktivieren</value>
   </data>
   <data name="CbEvaluationSystem.Items" xml:space="preserve">
-    <value>Schweiz</value>
+    <value>Deutschland</value>
   </data>
   <data name="CbEvaluationSystem.Items1" xml:space="preserve">
-    <value>Deutschland</value>
+    <value>Schweiz</value>
   </data>
   <data name="CbGridLines.Text" xml:space="preserve">
     <value>Rasterlinien anzeigen</value>

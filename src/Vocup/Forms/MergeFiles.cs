@@ -145,7 +145,7 @@ namespace Vocup.Forms
 
             Cursor.Current = Cursors.WaitCursor;
 
-            VocabularyBook result = new VocabularyBook()
+            VocabularyBook result = new VocabularyBook
             {
                 MotherTongue = TbMotherTongue.Text,
                 ForeignLang = TbForeignLang.Text,
@@ -159,6 +159,8 @@ namespace Vocup.Forms
                     CopyWord(word, result);
                 }
             }
+
+            result.GenerateVhrCode();
 
             if (!VocabularyFile.WriteVhfFile(path, result) ||
                 !VocabularyFile.WriteVhrFile(result))

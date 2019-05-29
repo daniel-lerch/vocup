@@ -12,6 +12,8 @@ namespace Vocup.IO.Internal
     {
         public bool Read(VocabularyBook book)
         {
+            if (string.IsNullOrWhiteSpace(book.VhrCode))
+                return false;
             FileInfo vhrInfo = new FileInfo(Path.Combine(Settings.Default.VhrPath, book.VhrCode + ".vhr"));
             if (!vhrInfo.Exists)
                 return false;
