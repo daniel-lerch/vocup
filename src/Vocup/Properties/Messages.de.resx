@@ -218,6 +218,12 @@ Details: {0}</value>
   <data name="OpenUnknownFileT" xml:space="preserve">
     <value>Unbekanntes Dateiformat</value>
   </data>
+  <data name="SettingsRestartRequired" xml:space="preserve">
+    <value>Um Ihre Änderungen an den Einstellungen vollständig wirksam zu machen, müssen Sie Vocup neustarten.</value>
+  </data>
+  <data name="SettingsRestartRequiredT" xml:space="preserve">
+    <value>Neustart erforderlich</value>
+  </data>
   <data name="SpecialCharAlreadyExists" xml:space="preserve">
     <value>Für diese Sprache existieren bereits Sonderzeichen</value>
   </data>

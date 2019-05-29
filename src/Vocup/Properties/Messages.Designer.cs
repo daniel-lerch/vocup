@@ -323,6 +323,24 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to To apply all changed settings, you have to restart Vocup..
+        /// </summary>
+        internal static string SettingsRestartRequired {
+            get {
+                return ResourceManager.GetString("SettingsRestartRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restart required.
+        /// </summary>
+        internal static string SettingsRestartRequiredT {
+            get {
+                return ResourceManager.GetString("SettingsRestartRequiredT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There are already special chars for this language.
         /// </summary>
         internal static string SpecialCharAlreadyExists {

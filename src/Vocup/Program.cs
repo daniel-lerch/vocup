@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
@@ -20,12 +21,6 @@ namespace Vocup
             // Prevents the installer from executing while the program is running
             new Mutex(false, AppInfo.ProductName, out _);
 
-#if DEBUG
-            //var culture = new System.Globalization.CultureInfo("en-US", true);
-            //System.Globalization.CultureInfo.DefaultThreadCurrentCulture = culture;
-            //System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = culture;
-#endif
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
@@ -37,6 +32,7 @@ namespace Vocup
                 Settings.Default.Upgrade(); // Keep old settings with new version
             // Warning: Unsaved changes are overridden
 
+            SetCulture();
             CreateVhfFolder();
             CreateVhrFolder();
 
@@ -116,6 +112,23 @@ namespace Vocup
             else
             {
                 Directory.CreateDirectory(Settings.Default.VhrPath);
+            }
+        }
+
+        internal static void SetCulture()
+        {
+            if (!string.IsNullOrWhiteSpace(Settings.Default.OverrideCulture))
+            {
+                try
+                {
+                    CultureInfo culture = new CultureInfo(Settings.Default.OverrideCulture);
+                    CultureInfo.DefaultThreadCurrentCulture = culture;
+                    CultureInfo.DefaultThreadCurrentUICulture = culture;
+                }
+                catch (CultureNotFoundException)
+                {
+                    Settings.Default.OverrideCulture = "";
+                }
             }
         }
     }

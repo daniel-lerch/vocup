@@ -22,13 +22,9 @@ namespace Vocup
 
         private void SettingsDialog_Load(object sender, EventArgs e)
         {
-            // Startbild   
             RbRecentFile.Checked = settings.StartScreen == (int)StartScreen.LastFile || settings.StartScreen == (int)StartScreen.AboutBox;
-
-            // Vokabelheft automatisch speichern
             CbAutoSave.Checked = settings.AutoSave;
 
-            // Automatisches Update
             if (AppInfo.IsUwp())
             {
                 GroupUpdate.Enabled = false;
@@ -44,127 +40,102 @@ namespace Vocup
             CbGridLines.Checked = settings.GridLines;
             CbColumnResize.Checked = settings.ColumnResize;
 
-            // Pfad Vokabelhefte
+            // Paths
             TbVhfPath.Text = settings.VhfPath;
-
-            // Pfad Ergebnisse
             TbVhrPath.Text = settings.VhrPath;
 
-            // Selber bewerten
+            switch (Settings.Default.OverrideCulture)
+            {
+                case "en-US": CbLanguage.SelectedIndex = 1; break;
+                case "de-DE": CbLanguage.SelectedIndex = 2; break;
+                default: CbLanguage.SelectedIndex = 0; break; // System language
+            }
+
+            // Evaluation
             CbManualCheck.Checked = settings.UserEvaluates;
+            CbPracticeResult.Checked = settings.PracticeShowResultList;
+            switch (settings.PracticeGradeCulture)
+            {
+                case "de-CH": CbEvaluationSystem.SelectedIndex = 1; break;
+                default: CbEvaluationSystem.SelectedIndex = 0; break; // de-DE
+            }
 
-            // Eingabefelder mit Farbe hervorheben
-            CbColoredTextfield.Checked = settings.PracticeInputBackColor != SystemColors.Window;
-
-            // Teilweise richtig
+            // Partly correct configuration
             CbTolerateWhiteSpace.Checked = settings.EvaluateTolerateWhiteSpace;
             CbToleratePunctuationMark.Checked = settings.EvaluateToleratePunctuationMark;
             CbTolerateSpecialChar.Checked = settings.EvaluateTolerateSpecialChar;
             CbTolerateArticle.Checked = settings.EvaluateTolerateArticle;
             CbTolerateNoSynonym.Checked = settings.EvaluateTolerateNoSynonym;
 
-            // Fortfahren-Button
+            // User interface
+            CbColoredTextfield.Checked = settings.PracticeInputBackColor != SystemColors.Window;
+            CbAcousticFeedback.Checked = settings.PracticeSoundFeedback;
             CbSingleContinueButton.Checked = settings.PracticeFastContinue;
 
-            // Klänge
-            CbAcousticFeedback.Checked = settings.PracticeSoundFeedback;
-
-            // Auswertung
-            CbPracticeResult.Checked = settings.PracticeShowResultList;
-
-            // Notensystem
-            if (settings.PracticeGradeCulture == "de-DE")
-                CbEvaluationSystem.SelectedItem = "Deutschland";
-            else
-                CbEvaluationSystem.SelectedItem = "Schweiz";
-
-
-            // Anzahl richtig
+            // Practice composition
             TrbRepetitions.Value = settings.MaxPracticeCount;
 
-            // Max von trackbar-anzahl_richtig_falsch ermitteln
-            TrbWrongRigtht.Maximum = 10 - TrbUnknown.Value;
-
-            // Prozentualer Anteil an noch nicht geübten Vokabeln
             LbUnpracticed.Text = settings.PracticePercentageUnpracticed + "%";
             TrbUnknown.Value = settings.PracticePercentageUnpracticed / 10;
 
-            // Prozentualer Anteil an falsch geübten Vokabeln
             LbWronglyPracticed.Text = settings.PracticePercentageWrong + "%";
-
-            // Prozentualer Anteil an richtig geübten Vokabeln
             LbCorrectlyPracticed.Text = settings.PracticePercentageCorrect + "%";
-
-            // Trackbar anzahl_falsch_richtig
-            TrbWrongRigtht.Maximum = (settings.PracticePercentageCorrect + settings.PracticePercentageWrong) / 10 - 1;
-            TrbWrongRigtht.Value = settings.PracticePercentageCorrect / 10;
+            TrbWrongRight.Maximum = 10 - TrbUnknown.Value - 1;
+            TrbWrongRight.Value = settings.PracticePercentageCorrect / 10;
         }
 
         private void BtnOk_Click(object sender, EventArgs e)
         {
-            // Startbild
             settings.StartScreen = RbRecentFile.Checked ? (int)StartScreen.LastFile : (int)StartScreen.None;
-
-            // Vokabelheft automatisch speichern
             settings.AutoSave = CbAutoSave.Checked;
-
-            // Automatisches Update
             settings.DisableInternetServices = CbDisableInternetServices.Checked;
 
             // ListView
             settings.GridLines = CbGridLines.Checked;
             settings.ColumnResize = CbColumnResize.Checked;
 
-            // Pfad Vokabelhefte
+            // Paths
             settings.VhfPath = TbVhfPath.Text;
-
-            // Pfad Ergebnisse
             settings.VhrPath = TbVhrPath.Text;
 
-            // Auswertung
-            settings.PracticeShowResultList = CbPracticeResult.Checked;
-
-            // Notensystem
-            if (CbEvaluationSystem.SelectedItem.ToString() == "Deutschland")
+            string oldCulture = settings.OverrideCulture;
+            switch (CbLanguage.SelectedIndex)
             {
-                settings.PracticeGradeCulture = "de-DE";
+                case 1: settings.OverrideCulture = "en-US"; break;
+                case 2: settings.OverrideCulture = "de-DE"; break;
+                default: settings.OverrideCulture = ""; break; // System language
             }
-            else
-            {
-                settings.PracticeGradeCulture = "de-CH";
-            }
+            if (settings.OverrideCulture != oldCulture)
+                MessageBox.Show(Messages.SettingsRestartRequired, Messages.SettingsRestartRequiredT, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Übersetzungen selber bewerten
+            // Evaluation
             settings.UserEvaluates = CbManualCheck.Checked;
+            settings.PracticeShowResultList = CbPracticeResult.Checked;
+            switch (CbEvaluationSystem.SelectedIndex)
+            {
+                case 1: settings.PracticeGradeCulture = "de-CH"; break;
+                default: settings.PracticeGradeCulture = "de-DE"; break;
+            }
 
-            // Eingabefelder mit Farbe hervorheben
-            settings.PracticeInputBackColor = CbColoredTextfield.Checked ? Color.FromArgb(250, 250, 150) : SystemColors.Window;
-
-            // Teilweise richtig
+            // Partly correct configuration
             settings.EvaluateTolerateWhiteSpace = CbTolerateWhiteSpace.Checked;
             settings.EvaluateToleratePunctuationMark = CbToleratePunctuationMark.Checked;
             settings.EvaluateTolerateSpecialChar = CbTolerateSpecialChar.Checked;
             settings.EvaluateTolerateArticle = CbTolerateArticle.Checked;
             settings.EvaluateTolerateNoSynonym = CbTolerateNoSynonym.Checked;
 
-            // Fortfahren-Button
+            // User interface
+            settings.PracticeInputBackColor = CbColoredTextfield.Checked ? Color.FromArgb(250, 250, 150) : SystemColors.Window;
+            settings.PracticeSoundFeedback = CbAcousticFeedback.Checked;
             settings.PracticeFastContinue = CbSingleContinueButton.Checked;
 
-            // Akustische Rückmeldung
-            settings.PracticeSoundFeedback = CbAcousticFeedback.Checked;
-
-            // Anzahl richtig
+            // Practice composition
             settings.MaxPracticeCount = TrbRepetitions.Value;
-
-            // Prozentuale Anteile
             settings.PracticePercentageUnpracticed = TrbUnknown.Value * 10;
-            settings.PracticePercentageCorrect = TrbWrongRigtht.Value * 10;
-            settings.PracticePercentageWrong = (10 - TrbUnknown.Value - TrbWrongRigtht.Value) * 10;
+            settings.PracticePercentageCorrect = TrbWrongRight.Value * 10;
+            settings.PracticePercentageWrong = (10 - TrbUnknown.Value - TrbWrongRight.Value) * 10;
 
-            // Einstellungen speichern
             settings.Save();
-
-            // Dialogfenster beenden
             DialogResult = DialogResult.OK;
             Close();
         }
@@ -180,34 +151,33 @@ namespace Vocup
             // Reset practice settings
 
             TrbRepetitions.Value = 3;
-
             TrbUnknown.Value = 5;
-            TrbWrongRigtht.Value = 2;
+            TrbWrongRight.Value = 2;
         }
 
         private void TrbUnknown_ValueChanged(object sender, EventArgs e)
         {
             LbUnpracticed.Text = TrbUnknown.Value * 10 + "%";
-            TrbWrongRigtht.Maximum = 10 - TrbUnknown.Value - 1;
+            TrbWrongRight.Maximum = 10 - TrbUnknown.Value - 1;
 
             if (TrbUnknown.Value == 8)
             {
-                TrbWrongRigtht.Enabled = false;
+                TrbWrongRight.Enabled = false;
                 LbWronglyPracticed.Text = "10%";
                 LbCorrectlyPracticed.Text = "10%";
             }
             else
             {
-                TrbWrongRigtht.Enabled = true;
-                LbCorrectlyPracticed.Text = TrbWrongRigtht.Value * 10 + "%";
-                LbWronglyPracticed.Text = (10 - TrbUnknown.Value - TrbWrongRigtht.Value) * 10 + "%";
+                TrbWrongRight.Enabled = true;
+                LbCorrectlyPracticed.Text = TrbWrongRight.Value * 10 + "%";
+                LbWronglyPracticed.Text = (10 - TrbUnknown.Value - TrbWrongRight.Value) * 10 + "%";
             }
         }
 
         private void TrbWrongRight_ValueChanged(object sender, EventArgs e)
         {
-            LbCorrectlyPracticed.Text = TrbWrongRigtht.Value * 10 + "%";
-            LbWronglyPracticed.Text = (10 - TrbUnknown.Value - TrbWrongRigtht.Value) * 10 + "%";
+            LbCorrectlyPracticed.Text = TrbWrongRight.Value * 10 + "%";
+            LbWronglyPracticed.Text = (10 - TrbUnknown.Value - TrbWrongRight.Value) * 10 + "%";
         }
 
         private void CbPracticeResult_CheckedChanged(object sender, EventArgs e)

@@ -35,7 +35,7 @@
             this.BtnResetStartScreen = new System.Windows.Forms.Button();
             this.RbEmptyStart = new System.Windows.Forms.RadioButton();
             this.RbRecentFile = new System.Windows.Forms.RadioButton();
-            this.TrbWrongRigtht = new System.Windows.Forms.TrackBar();
+            this.TrbWrongRight = new System.Windows.Forms.TrackBar();
             this.TrbUnknown = new System.Windows.Forms.TrackBar();
             this.TabControlMain = new System.Windows.Forms.TabControl();
             this.TabGeneral = new System.Windows.Forms.TabPage();
@@ -88,8 +88,11 @@
             this.LbTrb3 = new System.Windows.Forms.Label();
             this.LbTrb4 = new System.Windows.Forms.Label();
             this.TrbRepetitions = new System.Windows.Forms.TrackBar();
+            this.GroupLanguage = new System.Windows.Forms.GroupBox();
+            this.CbLanguage = new System.Windows.Forms.ComboBox();
+            this.LbLanguage = new System.Windows.Forms.Label();
             this.GroupStartScreen.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TrbWrongRigtht)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrbWrongRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrbUnknown)).BeginInit();
             this.TabControlMain.SuspendLayout();
             this.TabGeneral.SuspendLayout();
@@ -110,6 +113,7 @@
             this.GroupRepetitions.SuspendLayout();
             this.PnlPracticeCount.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TrbRepetitions)).BeginInit();
+            this.GroupLanguage.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnOk
@@ -141,6 +145,7 @@
             resources.ApplyResources(this.BtnResetStartScreen, "BtnResetStartScreen");
             this.BtnResetStartScreen.Name = "BtnResetStartScreen";
             this.BtnResetStartScreen.UseVisualStyleBackColor = true;
+            this.BtnResetStartScreen.Click += new System.EventHandler(this.BtnResetStartScreen_Click);
             // 
             // RbEmptyStart
             // 
@@ -157,15 +162,15 @@
             this.RbRecentFile.TabStop = true;
             this.RbRecentFile.UseVisualStyleBackColor = true;
             // 
-            // TrbWrongRigtht
+            // TrbWrongRight
             // 
-            this.TrbWrongRigtht.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.TrbWrongRigtht, "TrbWrongRigtht");
-            this.TrbWrongRigtht.Minimum = 1;
-            this.TrbWrongRigtht.Name = "TrbWrongRigtht";
-            this.TrbWrongRigtht.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.TrbWrongRigtht.Value = 5;
-            this.TrbWrongRigtht.ValueChanged += new System.EventHandler(this.TrbWrongRight_ValueChanged);
+            this.TrbWrongRight.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.TrbWrongRight, "TrbWrongRight");
+            this.TrbWrongRight.Minimum = 1;
+            this.TrbWrongRight.Name = "TrbWrongRight";
+            this.TrbWrongRight.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.TrbWrongRight.Value = 5;
+            this.TrbWrongRight.ValueChanged += new System.EventHandler(this.TrbWrongRight_ValueChanged);
             // 
             // TrbUnknown
             // 
@@ -190,6 +195,7 @@
             // TabGeneral
             // 
             this.TabGeneral.BackColor = System.Drawing.Color.White;
+            this.TabGeneral.Controls.Add(this.GroupLanguage);
             this.TabGeneral.Controls.Add(this.GroupVocabularyList);
             this.TabGeneral.Controls.Add(this.GroupVhrPath);
             this.TabGeneral.Controls.Add(this.GroupVhfPath);
@@ -448,7 +454,7 @@
             this.GroupSelectionMix.Controls.Add(this.pictureBox3);
             this.GroupSelectionMix.Controls.Add(this.LbPercentageWrongCorrect);
             this.GroupSelectionMix.Controls.Add(this.TrbUnknown);
-            this.GroupSelectionMix.Controls.Add(this.TrbWrongRigtht);
+            this.GroupSelectionMix.Controls.Add(this.TrbWrongRight);
             resources.ApplyResources(this.GroupSelectionMix, "GroupSelectionMix");
             this.GroupSelectionMix.Name = "GroupSelectionMix";
             this.GroupSelectionMix.TabStop = false;
@@ -559,6 +565,30 @@
             this.TrbRepetitions.Name = "TrbRepetitions";
             this.TrbRepetitions.Value = 3;
             // 
+            // GroupLanguage
+            // 
+            this.GroupLanguage.Controls.Add(this.LbLanguage);
+            this.GroupLanguage.Controls.Add(this.CbLanguage);
+            resources.ApplyResources(this.GroupLanguage, "GroupLanguage");
+            this.GroupLanguage.Name = "GroupLanguage";
+            this.GroupLanguage.TabStop = false;
+            // 
+            // CbLanguage
+            // 
+            this.CbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbLanguage.FormattingEnabled = true;
+            this.CbLanguage.Items.AddRange(new object[] {
+            resources.GetString("CbLanguage.Items"),
+            resources.GetString("CbLanguage.Items1"),
+            resources.GetString("CbLanguage.Items2")});
+            resources.ApplyResources(this.CbLanguage, "CbLanguage");
+            this.CbLanguage.Name = "CbLanguage";
+            // 
+            // LbLanguage
+            // 
+            resources.ApplyResources(this.LbLanguage, "LbLanguage");
+            this.LbLanguage.Name = "LbLanguage";
+            // 
             // SettingsDialog
             // 
             this.AcceptButton = this.BtnOk;
@@ -576,7 +606,7 @@
             this.Load += new System.EventHandler(this.SettingsDialog_Load);
             this.GroupStartScreen.ResumeLayout(false);
             this.GroupStartScreen.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TrbWrongRigtht)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrbWrongRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrbUnknown)).EndInit();
             this.TabControlMain.ResumeLayout(false);
             this.TabGeneral.ResumeLayout(false);
@@ -608,6 +638,8 @@
             this.PnlPracticeCount.ResumeLayout(false);
             this.PnlPracticeCount.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TrbRepetitions)).EndInit();
+            this.GroupLanguage.ResumeLayout(false);
+            this.GroupLanguage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -619,7 +651,7 @@
         private System.Windows.Forms.GroupBox GroupStartScreen;
         private System.Windows.Forms.RadioButton RbEmptyStart;
         private System.Windows.Forms.RadioButton RbRecentFile;
-        private System.Windows.Forms.TrackBar TrbWrongRigtht;
+        private System.Windows.Forms.TrackBar TrbWrongRight;
         private System.Windows.Forms.TrackBar TrbUnknown;
         private System.Windows.Forms.TabControl TabControlMain;
         private System.Windows.Forms.TabPage TabGeneral;
@@ -673,5 +705,8 @@
         private System.Windows.Forms.CheckBox CbGridLines;
         private System.Windows.Forms.CheckBox CbColumnResize;
         private System.Windows.Forms.CheckBox CbTolerateWhiteSpace;
+        private System.Windows.Forms.GroupBox GroupLanguage;
+        private System.Windows.Forms.Label LbLanguage;
+        private System.Windows.Forms.ComboBox CbLanguage;
     }
 }

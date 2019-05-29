@@ -218,6 +218,12 @@ Details: {0}</value>
   <data name="OpenUnknownFileT" xml:space="preserve">
     <value>Unknown file format</value>
   </data>
+  <data name="SettingsRestartRequired" xml:space="preserve">
+    <value>To apply all changed settings, you have to restart Vocup.</value>
+  </data>
+  <data name="SettingsRestartRequiredT" xml:space="preserve">
+    <value>Restart required</value>
+  </data>
   <data name="SpecialCharAlreadyExists" xml:space="preserve">
     <value>There are already special chars for this language</value>
   </data>

@@ -333,5 +333,17 @@ namespace Vocup.Properties {
                 this["EvaluateTolerateNoSynonym"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string OverrideCulture {
+            get {
+                return ((string)(this["OverrideCulture"]));
+            }
+            set {
+                this["OverrideCulture"] = value;
+            }
+        }
     }
 }
