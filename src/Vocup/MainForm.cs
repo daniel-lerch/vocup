@@ -119,6 +119,7 @@ namespace Vocup
             }
         }
 
+        #region Event handlers
         private void Form_Load(object sender, EventArgs e)
         {
             Update();
@@ -136,6 +137,50 @@ namespace Vocup
                 Settings.Default.StartScreen = (int)StartScreen.LastFile;
                 Settings.Default.Save();
             }
+        }
+
+        private void Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (UnsavedChanges)
+            {
+                e.Cancel = !EnsureSaved();
+            }
+        }
+
+        private void FileTreeView_FileSelected(object sender, FileSelectedEventArgs e)
+        {
+            if (CurrentBook != null)
+            {
+                // Prevent the file tree view from loading the book again
+                // if FileTreeView.SelectedPath was assigned in IMainForm.LoadBook(VocabularyBook)
+                if (CurrentBook.FilePath == e.FullName)
+                    return;
+                if (UnsavedChanges && !EnsureSaved())
+                    return;
+
+                UnloadBook(false);
+            }
+
+            ReadFile(e.FullName);
+        }
+
+        private void FileTreeView_BrowseClick(object sender, EventArgs e)
+        {
+            string oldVhfPath = Settings.Default.VhfPath;
+
+            using (FolderBrowserDialog dialog = new FolderBrowserDialog())
+            {
+                dialog.Description = Messages.BrowseVhfPath;
+                dialog.SelectedPath = oldVhfPath;
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    Settings.Default.VhfPath = dialog.SelectedPath;
+                }
+            }
+
+            // Eventually refresh tree view root path
+            if (oldVhfPath != Settings.Default.VhfPath)
+                FileTreeView.RootPath = Settings.Default.VhfPath;
         }
 
 
@@ -187,43 +232,6 @@ namespace Vocup
 
         private void TsmiUpdate_Click(object sender, EventArgs e) { } // TODO: Check online for updates or messages
 
-
-        private void FileTreeView_FileSelected(object sender, FileSelectedEventArgs e)
-        {
-            if (CurrentBook != null)
-            {
-                // Prevent the file tree view from loading the book again
-                // if FileTreeView.SelectedPath was assigned in IMainForm.LoadBook(VocabularyBook)
-                if (CurrentBook.FilePath == e.FullName)
-                    return;
-                if (UnsavedChanges && !EnsureSaved())
-                    return;
-
-                UnloadBook(false);
-            }
-
-            ReadFile(e.FullName);
-        }
-
-        private void FileTreeView_BrowseClick(object sender, EventArgs e)
-        {
-            string oldVhfPath = Settings.Default.VhfPath;
-
-            using (FolderBrowserDialog dialog = new FolderBrowserDialog())
-            {
-                dialog.Description = Messages.BrowseVhfPath;
-                dialog.SelectedPath = oldVhfPath;
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    Settings.Default.VhfPath = dialog.SelectedPath;
-                }
-            }
-
-            // Eventually refresh tree view root path
-            if (oldVhfPath != Settings.Default.VhfPath)
-                FileTreeView.RootPath = Settings.Default.VhfPath;
-        }
-
         private void TsbCreateBook_Click(object sender, EventArgs e) => CreateBook();
         private void TsmiCreateBook_Click(object sender, EventArgs e) => CreateBook();
 
@@ -251,6 +259,151 @@ namespace Vocup
 
         private void TsbPrint_Click(object sender, EventArgs e) => PrintFile();
         private void TsmiPrint_Click(object sender, EventArgs e) => PrintFile();
+
+        private void TsmiCloseBook_Click(object sender, EventArgs e)
+        {
+            if (UnsavedChanges && !EnsureSaved())
+                return;
+
+            UnloadBook(true);
+            Settings.Default.LastFile = "";
+            Settings.Default.Save();
+        }
+
+        private void TsmiMerge_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new MergeFiles()) dialog.ShowDialog();
+        }
+
+        private void TsmiBackupCreate_Click(object sender, EventArgs e)
+        {
+            using (var dialog = new CreateBackup()) dialog.ShowDialog();
+        }
+
+        private void TsmiBackupRestore_Click(object sender, EventArgs e)
+        {
+            if (UnsavedChanges && !EnsureSaved()) return;
+
+            using (OpenFileDialog dialog = new OpenFileDialog
+            {
+                Title = Words.OpenBackup,
+                Filter = Words.VocupBackupFile + " (*.vdp)|*.vdp",
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal)
+            })
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (RestoreBackup restore = new RestoreBackup(dialog.FileName))
+                        restore.ShowDialog();
+                }
+            }
+        }
+
+        private void TsmiOpenInExplorer_Click(object sender, EventArgs e)
+        {
+            if (CurrentBook.UnsavedChanges)
+            {
+                DialogResult dialogResult = MessageBox.Show(Messages.OpenInExplorerSave,
+                    Messages.OpenInExplorerSaveT, MessageBoxButtons.YesNoCancel);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    SaveFile(false);
+                }
+                else if (dialogResult == DialogResult.Cancel)
+                {
+                    return;
+                }
+            }
+            FileInfo info = new FileInfo(CurrentBook.FilePath);
+            if (info.Exists)
+            {
+                try
+                {
+                    string explorer = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "explorer.exe");
+                    Process.Start(explorer, $"/select,\"{info.FullName}\"");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(string.Format(Messages.OpenInExplorerError, ex), Messages.OpenInExplorerErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show(Messages.OpenInExplorerNotFound, Messages.OpenInExplorerNotFoundT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TsmiImport_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openDialog = new OpenFileDialog
+            {
+                Title = Words.Import,
+                Filter = "CSV (*.csv)|*.csv"
+            })
+            {
+                if (openDialog.ShowDialog() == DialogResult.OK)
+                {
+                    if (CurrentBook != null)
+                    {
+                        VocabularyFile.ImportCsvFile(openDialog.FileName, CurrentBook, false);
+                    }
+                    else
+                    {
+                        VocabularyBook book = new VocabularyBook();
+                        if (VocabularyFile.ImportCsvFile(openDialog.FileName, book, true))
+                        {
+                            book.Notify();
+                            book.UnsavedChanges = true;
+                            LoadBook(book);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void TsmiExport_Click(object sender, EventArgs e)
+        {
+            if (UnsavedChanges)
+            {
+                DialogResult dialogResult = MessageBox.Show(Messages.CsvExportSave,
+                    Messages.CsvExportSaveT, MessageBoxButtons.YesNoCancel);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    SaveFile(false);
+                }
+                else if (dialogResult == DialogResult.Cancel)
+                {
+                    return;
+                }
+            }
+
+            using (SaveFileDialog saveDialog = new SaveFileDialog
+            {
+                Title = Words.Export,
+                Filter = "CSV (*.csv)|*.csv",
+                FileName = CurrentBook.Name
+            })
+            {
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    VocabularyFile.ExportCsvFile(saveDialog.FileName, CurrentBook);
+                }
+            }
+        }
+
+        private void TsmiExitAppliaction_Click(object sender, EventArgs e) => Close();
+
+        private void StatusLbOldVersion_Click(object sender, EventArgs e)
+        {
+            if (SystemInfo.TryGetVocupInstallation(out var installation) &&
+                MessageBox.Show(Messages.LegacyVersionUninstall,
+                Messages.LegacyVersionUninstallT, MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Process.Start(installation.uninstallString);
+            }
+        }
 
         private async void BtnSearchWord_Click(object sender, EventArgs e)
         {
@@ -331,32 +484,9 @@ namespace Vocup
                 AcceptButton = BtnAddWord;
             }
         }
+        #endregion
 
-        private void TsmiCloseBook_Click(object sender, EventArgs e)
-        {
-            if (UnsavedChanges && !EnsureSaved())
-                return;
-
-            UnloadBook(true);
-        }
-
-        private void StatusLbOldVersion_Click(object sender, EventArgs e)
-        {
-            if (SystemInfo.TryGetVocupInstallation(out var installation) &&
-                MessageBox.Show(Messages.LegacyVersionUninstall,
-                Messages.LegacyVersionUninstallT, MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                Process.Start(installation.uninstallString);
-            }
-        }
-
-        //-----
-
-
-
-
-        //***Methoden***
-
+        #region Utility methods
         public void ReadFile(string path)
         {
             VocabularyBook book = new VocabularyBook();
@@ -539,146 +669,6 @@ namespace Vocup
         {
             using (var dialog = new PrintWordSelection(CurrentBook)) dialog.ShowDialog();
         }
-
-        private void TsmiMerge_Click(object sender, EventArgs e)
-        {
-            using (var dialog = new MergeFiles()) dialog.ShowDialog();
-        }
-
-        private void TsmiBackupCreate_Click(object sender, EventArgs e)
-        {
-            using (var dialog = new CreateBackup()) dialog.ShowDialog();
-        }
-
-        private void TsmiBackupRestore_Click(object sender, EventArgs e)
-        {
-            if (UnsavedChanges && !EnsureSaved()) return;
-
-            using (OpenFileDialog dialog = new OpenFileDialog
-            {
-                Title = Words.OpenBackup,
-                Filter = Words.VocupBackupFile + " (*.vdp)|*.vdp",
-                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal)
-            })
-            {
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    using (RestoreBackup restore = new RestoreBackup(dialog.FileName))
-                        restore.ShowDialog();
-                }
-            }
-        }
-
-
-        private void TsmiOpenInExplorer_Click(object sender, EventArgs e)
-        {
-            if (CurrentBook.UnsavedChanges)
-            {
-                DialogResult dialogResult = MessageBox.Show(Messages.OpenInExplorerSave,
-                    Messages.OpenInExplorerSaveT, MessageBoxButtons.YesNoCancel);
-
-                if (dialogResult == DialogResult.Yes)
-                {
-                    SaveFile(false);
-                }
-                else if (dialogResult == DialogResult.Cancel)
-                {
-                    return;
-                }
-            }
-            FileInfo info = new FileInfo(CurrentBook.FilePath);
-            if (info.Exists)
-            {
-                try
-                {
-                    string explorer = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "explorer.exe");
-                    Process.Start(explorer, $"/select,\"{info.FullName}\"");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(string.Format(Messages.OpenInExplorerError, ex), Messages.OpenInExplorerErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show(Messages.OpenInExplorerNotFound, Messages.OpenInExplorerNotFoundT, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void TsmiImport_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog openDialog = new OpenFileDialog
-            {
-                Title = Words.Import,
-                Filter = "CSV (*.csv)|*.csv"
-            })
-            {
-                if (openDialog.ShowDialog() == DialogResult.OK)
-                {
-                    if (CurrentBook != null)
-                    {
-                        VocabularyFile.ImportCsvFile(openDialog.FileName, CurrentBook, false);
-                    }
-                    else
-                    {
-                        VocabularyBook book = new VocabularyBook();
-                        if (VocabularyFile.ImportCsvFile(openDialog.FileName, book, true))
-                        {
-                            book.Notify();
-                            book.UnsavedChanges = true;
-                            LoadBook(book);
-                        }
-                    }
-                }
-            }
-        }
-
-        private void TsmiExport_Click(object sender, EventArgs e)
-        {
-            if (UnsavedChanges)
-            {
-                DialogResult dialogResult = MessageBox.Show(Messages.CsvExportSave,
-                    Messages.CsvExportSaveT, MessageBoxButtons.YesNoCancel);
-
-                if (dialogResult == DialogResult.Yes)
-                {
-                    SaveFile(false);
-                }
-                else if (dialogResult == DialogResult.Cancel)
-                {
-                    return;
-                }
-            }
-
-            using (SaveFileDialog saveDialog = new SaveFileDialog
-            {
-                Title = Words.Export,
-                Filter = "CSV (*.csv)|*.csv",
-                FileName = CurrentBook.Name
-            })
-            {
-                if (saveDialog.ShowDialog() == DialogResult.OK)
-                {
-                    VocabularyFile.ExportCsvFile(saveDialog.FileName, CurrentBook);
-                }
-            }
-        }
-
-        //-----
-
-        //Beenden
-
-        private void TsmiExitAppliaction_Click(object sender, EventArgs e) => Close();
-
-        private void Form_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (UnsavedChanges)
-            {
-                e.Cancel = !EnsureSaved();
-            }
-        }
-
-        //-----
-
+        #endregion
     }
 }
