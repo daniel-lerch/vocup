@@ -3,7 +3,7 @@
         xmlns:vm="clr-namespace:Vocup.Avalonia.ViewModels;assembly=Vocup.Avalonia"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
         x:Class="Vocup.Avalonia.Views.MainWindow"
         Icon="/Assets/icon.ico"
         Title="Vocup">
@@ -11,6 +11,19 @@
   <Design.DataContext>
     <vm:MainWindowViewModel/>
   </Design.DataContext>
+
+  <Window.Styles>
+    <Style Selector=".toolbar Button">
+      <Setter Property="Background" Value="White" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="BorderBrush" Value="White" />
+    </Style>
+    <Style Selector=".toolbar Button:pointerover">
+      <Setter Property="Background" Value="#CFECF8" />
+      <Setter Property="BorderBrush" Value="#40B1E1" />
+      <Setter Property="BorderThickness" Value="1" />
+    </Style>
+  </Window.Styles>
 
   <DockPanel>
     <Menu DockPanel.Dock="Top">
@@ -59,6 +72,17 @@
         </MenuItem>
       </MenuItem>
     </Menu>
+    <StackPanel Classes="toolbar" DockPanel.Dock="Top" Orientation="Horizontal">
+      <Button>
+        <Image Source="/Assets/file.png" Width="16" Height="16" />
+      </Button>
+      <Button>
+        <Image Source="/Assets/open.png" Width="16" Height="16" />
+      </Button>
+      <Button>
+        <Image Source="/Assets/save.png" Width="16" Height="16" />
+      </Button>
+    </StackPanel>
     <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center" />
   </DockPanel>
 </Window>
