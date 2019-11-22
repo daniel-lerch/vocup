@@ -1,6 +1,7 @@
 ﻿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:Vocup.Avalonia.ViewModels;assembly=Vocup.Avalonia"
+        xmlns:c="clr-namespace:Vocup.Avalonia.Controls;assembly=Vocup.Avalonia"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
@@ -12,77 +13,11 @@
     <vm:MainWindowViewModel/>
   </Design.DataContext>
 
-  <Window.Styles>
-    <Style Selector=".toolbar Button">
-      <Setter Property="Background" Value="White" />
-      <Setter Property="BorderThickness" Value="1" />
-      <Setter Property="BorderBrush" Value="White" />
-    </Style>
-    <Style Selector=".toolbar Button:pointerover">
-      <Setter Property="Background" Value="#CFECF8" />
-      <Setter Property="BorderBrush" Value="#40B1E1" />
-      <Setter Property="BorderThickness" Value="1" />
-    </Style>
-  </Window.Styles>
-
   <DockPanel>
-    <Menu DockPanel.Dock="Top">
-      <MenuItem Header="File">
-        <MenuItem Header="Save">
-          <MenuItem.Icon>
-            <Image Source="/Assets/save.png" Width="16" Height="16" />
-          </MenuItem.Icon>
-        </MenuItem>
-        <MenuItem Header="Save as">
-          <MenuItem.Icon>
-            <Image Source="/Assets/save_all.png" Width="16" Height="16" />
-          </MenuItem.Icon>
-        </MenuItem>
-        <Separator />
-        <MenuItem Header="Import">
-          <MenuItem.Icon>
-            <Image Source="/Assets/import.png" Width="16" Height="16" />
-          </MenuItem.Icon>
-        </MenuItem>
-        <MenuItem Header="Export" IsEnabled="False">
-          <MenuItem.Icon>
-            <Image Source="/Assets/export.png" Width="16" Height="16" />
-          </MenuItem.Icon>
-        </MenuItem>
-      </MenuItem>
-      <MenuItem Header="Edit">
-        <MenuItem Header="Add new word">
-          <MenuItem.Icon>
-            <Image Source="/Assets/plus.png" Width="16" Height="16" />
-          </MenuItem.Icon>
-        </MenuItem>
-      </MenuItem>
-      <MenuItem Header="Tools">
-        <MenuItem Header="Settings">
-          <MenuItem.Icon>
-            <Image Source="/Assets/settings.png" Width="16" Height="16" />
-          </MenuItem.Icon>
-        </MenuItem>
-      </MenuItem>
-      <MenuItem Header="Help">
-        <MenuItem Header="About Vocup">
-          <MenuItem.Icon>
-            <Image Source="/Assets/info.png" Width="16" Height="16" />
-          </MenuItem.Icon>
-        </MenuItem>
-      </MenuItem>
-    </Menu>
-    <StackPanel Classes="toolbar" DockPanel.Dock="Top" Orientation="Horizontal">
-      <Button>
-        <Image Source="/Assets/file.png" Width="16" Height="16" />
-      </Button>
-      <Button>
-        <Image Source="/Assets/open.png" Width="16" Height="16" />
-      </Button>
-      <Button>
-        <Image Source="/Assets/save.png" Width="16" Height="16" />
-      </Button>
-    </StackPanel>
+    <c:MenuStrip DockPanel.Dock="Top" />
+    <DockPanel DockPanel.Dock="Top">
+      <c:ToolBar DockPanel.Dock="Left" />
+    </DockPanel>
     <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center" />
   </DockPanel>
 </Window>

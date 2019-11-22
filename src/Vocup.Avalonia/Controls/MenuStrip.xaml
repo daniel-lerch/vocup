@@ -1,0 +1,125 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="20"
+             x:Class="Vocup.Avalonia.Controls.MenuStrip">
+  <Menu>
+    <MenuItem Header="File">
+      <MenuItem Header="Create new book">
+        <MenuItem.Icon>
+          <Image Source="avares://Vocup.Avalonia/Assets/plus.png" Width="16" Height="16" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="Open book">
+        <MenuItem.Icon>
+          <Image Source="avares://Vocup.Avalonia/Assets/open.png" Width="16" Height="16" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="Close book" IsEnabled="False">
+        <MenuItem.Icon>
+          <Image Source="avares://Vocup.Avalonia/Assets/cancel.png" Width="16" Height="16" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <Separator />
+      <MenuItem Header="Save" IsEnabled="False">
+        <MenuItem.Icon>
+          <Image Source="avares://Vocup.Avalonia/Assets/save.png" Width="16" Height="16" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="Save as" IsEnabled="False">
+        <MenuItem.Icon>
+          <Image Source="avares://Vocup.Avalonia/Assets/save_all.png" Width="16" Height="16" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <Separator />
+      <MenuItem Header="Open in Explorer" IsEnabled="False">
+        <MenuItem.Icon>
+          <Image Source="avares://Vocup.Avalonia/Assets/open.png" Width="16" Height="16" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <Separator />
+      <MenuItem Header="Print" IsEnabled="False">
+        <MenuItem.Icon>
+          <Image Source="avares://Vocup.Avalonia/Assets/print.png" Width="16" Height="16" />
+        </MenuItem.Icon>
+      </MenuItem>
+    </MenuItem>
+    <MenuItem Header="Edit">
+      <MenuItem Header="Add new word">
+        <MenuItem.Icon>
+          <Image Source="avares://Vocup.Avalonia/Assets/plus.png" Width="16" Height="16" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="Edit word">
+        <MenuItem.Icon>
+          <Image Source="avares://Vocup.Avalonia/Assets/edit.png" Width="16" Height="16" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="Delete word">
+        <MenuItem.Icon>
+          <Image Source="avares://Vocup.Avalonia/Assets/delete.png" Width="16" Height="16" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <Separator />
+      <MenuItem Header="Import">
+        <MenuItem.Icon>
+          <Image Source="avares://Vocup.Avalonia/Assets/import.png" Width="16" Height="16" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="Export" IsEnabled="False">
+        <MenuItem.Icon>
+          <Image Source="avares://Vocup.Avalonia/Assets/export.png" Width="16" Height="16" />
+        </MenuItem.Icon>
+      </MenuItem>
+    </MenuItem>
+    <MenuItem Header="Tools">
+      <MenuItem Header="Practice words">
+        <MenuItem.Icon>
+          <Image Source="avares://Vocup.Avalonia/Assets/lightning_bolt.png" Width="16" Height="16" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="Book options">
+        <MenuItem.Icon>
+          <Image Source="avares://Vocup.Avalonia/Assets/file_settings.png" Width="16" Height="16" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <Separator />
+      <MenuItem Header="Merge books">
+        <MenuItem.Icon>
+          <Image Source="avares://Vocup.Avalonia/Assets/merge_files.png" Width="16" Height="16" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <Separator />
+      <MenuItem Header="Manage special chars">
+        <MenuItem.Icon>
+          <Image Source="avares://Vocup.Avalonia/Assets/alphabet.png" Width="16" Height="16" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <MenuItem Header="Settings">
+        <MenuItem.Icon>
+          <Image Source="avares://Vocup.Avalonia/Assets/settings.png" Width="16" Height="16" />
+        </MenuItem.Icon>
+      </MenuItem>
+    </MenuItem>
+    <MenuItem Header="Help">
+      <MenuItem Header="About evalution">
+        <MenuItem.Icon>
+          <Image Source="avares://Vocup.Avalonia/Assets/info.png" Width="16" Height="16" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <Separator />
+      <MenuItem Header="Search for updates">
+        <MenuItem.Icon>
+          <Image Source="avares://Vocup.Avalonia/Assets/update.png" Width="16" Height="16" />
+        </MenuItem.Icon>
+      </MenuItem>
+      <Separator />
+      <MenuItem Header="About Vocup">
+        <MenuItem.Icon>
+          <Image Source="avares://Vocup.Avalonia/Assets/info.png" Width="16" Height="16" />
+        </MenuItem.Icon>
+      </MenuItem>
+    </MenuItem>
+  </Menu>
+</UserControl>

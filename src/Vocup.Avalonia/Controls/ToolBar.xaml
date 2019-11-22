@@ -1,0 +1,35 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="26"
+             x:Class="Vocup.Avalonia.Controls.ToolBar">
+
+  <UserControl.Styles>
+    <Style Selector="Button">
+      <Setter Property="Background" Value="White" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="BorderBrush" Value="White" />
+    </Style>
+    <Style Selector="Button:pointerover">
+      <Setter Property="Background" Value="#CFECF8" />
+      <Setter Property="BorderBrush" Value="#40B1E1" />
+      <Setter Property="BorderThickness" Value="1" />
+    </Style>
+  </UserControl.Styles>
+
+  <StackPanel Classes="toolbar" DockPanel.Dock="Top" Orientation="Horizontal">
+    <Button>
+      <Image Source="avares://Vocup.Avalonia/Assets/file.png" Width="16" Height="16" />
+    </Button>
+    <Button>
+      <Image Source="avares://Vocup.Avalonia/Assets/open.png" Width="16" Height="16" />
+    </Button>
+    <Button>
+      <Image Source="avares://Vocup.Avalonia/Assets/save.png" Width="16" Height="16" />
+    </Button>
+    <Button Margin="5 0 0 0">
+      <Image Source="avares://Vocup.Avalonia/Assets/print.png" Width="16" Height="16" />
+    </Button>
+  </StackPanel>
+</UserControl>
