@@ -38,7 +38,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DB3F9D1B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vocup.UnitTests", "tests\Vocup.UnitTests\Vocup.UnitTests.csproj", "{AEB8CB75-2A9D-4DE1-B4F8-B529FFA21240}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vocup.Avalonia", "src\Vocup.Avalonia\Vocup.Avalonia.csproj", "{89AFC35C-EC9B-43F1-936B-63ADF1134209}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vocup.Avalonia", "src\Vocup.Avalonia\Vocup.Avalonia.csproj", "{89AFC35C-EC9B-43F1-936B-63ADF1134209}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
