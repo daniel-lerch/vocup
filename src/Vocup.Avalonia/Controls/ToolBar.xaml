@@ -11,10 +11,13 @@
       <Setter Property="BorderThickness" Value="1" />
       <Setter Property="BorderBrush" Value="White" />
     </Style>
-    <Style Selector="Button:pointerover">
+    <Style Selector="Button:pointerover /template/ ContentPresenter">
       <Setter Property="Background" Value="#CFECF8" />
       <Setter Property="BorderBrush" Value="#40B1E1" />
-      <Setter Property="BorderThickness" Value="1" />
+    </Style>
+    <Style Selector="Button:pressed /template/ ContentPresenter">
+      <Setter Property="Background" Value="#CFECF8" />
+      <Setter Property="BorderBrush" Value="#40B1E1" />
     </Style>
   </UserControl.Styles>
 
@@ -25,10 +28,10 @@
     <Button>
       <Image Source="avares://Vocup.Avalonia/Assets/open.png" Width="16" Height="16" />
     </Button>
-    <Button>
+    <Button IsEnabled="{Binding CanSave}">
       <Image Source="avares://Vocup.Avalonia/Assets/save.png" Width="16" Height="16" />
     </Button>
-    <Button Margin="5 0 0 0">
+    <Button IsEnabled="{Binding CanPrint}" Margin="5 0 0 0">
       <Image Source="avares://Vocup.Avalonia/Assets/print.png" Width="16" Height="16" />
     </Button>
   </StackPanel>

@@ -14,9 +14,9 @@
   </Design.DataContext>
 
   <DockPanel>
-    <c:MenuStrip DockPanel.Dock="Top" />
+    <c:MenuStrip DockPanel.Dock="Top" DataContext="{Binding MenuStrip}" />
     <DockPanel DockPanel.Dock="Top">
-      <c:ToolBar DockPanel.Dock="Left" />
+      <c:ToolBar DockPanel.Dock="Left" DataContext="{Binding ToolBar}" />
     </DockPanel>
     <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center" />
   </DockPanel>

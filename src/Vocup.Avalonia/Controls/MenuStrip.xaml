@@ -16,24 +16,24 @@
           <Image Source="avares://Vocup.Avalonia/Assets/open.png" Width="16" Height="16" />
         </MenuItem.Icon>
       </MenuItem>
-      <MenuItem Header="Close book" IsEnabled="False">
+      <MenuItem Header="Close book" IsEnabled="{Binding CanClose}">
         <MenuItem.Icon>
           <Image Source="avares://Vocup.Avalonia/Assets/cancel.png" Width="16" Height="16" />
         </MenuItem.Icon>
       </MenuItem>
       <Separator />
-      <MenuItem Header="Save" IsEnabled="False">
+      <MenuItem Header="Save" IsEnabled="{Binding CanSave}">
         <MenuItem.Icon>
           <Image Source="avares://Vocup.Avalonia/Assets/save.png" Width="16" Height="16" />
         </MenuItem.Icon>
       </MenuItem>
-      <MenuItem Header="Save as" IsEnabled="False">
+      <MenuItem Header="Save as" IsEnabled="{Binding CanSaveAs}">
         <MenuItem.Icon>
           <Image Source="avares://Vocup.Avalonia/Assets/save_all.png" Width="16" Height="16" />
         </MenuItem.Icon>
       </MenuItem>
       <Separator />
-      <MenuItem Header="Open in Explorer" IsEnabled="False">
+      <MenuItem Header="Open in Explorer" IsEnabled="{Binding CanReveal}">
         <MenuItem.Icon>
           <Image Source="avares://Vocup.Avalonia/Assets/open.png" Width="16" Height="16" />
         </MenuItem.Icon>
@@ -46,17 +46,17 @@
       </MenuItem>
     </MenuItem>
     <MenuItem Header="Edit">
-      <MenuItem Header="Add new word">
+      <MenuItem Header="Add new word" IsEnabled="{Binding CanAddWord}">
         <MenuItem.Icon>
           <Image Source="avares://Vocup.Avalonia/Assets/plus.png" Width="16" Height="16" />
         </MenuItem.Icon>
       </MenuItem>
-      <MenuItem Header="Edit word">
+      <MenuItem Header="Edit word" IsEnabled="{Binding CanEditWord}">
         <MenuItem.Icon>
           <Image Source="avares://Vocup.Avalonia/Assets/edit.png" Width="16" Height="16" />
         </MenuItem.Icon>
       </MenuItem>
-      <MenuItem Header="Delete word">
+      <MenuItem Header="Delete word" IsEnabled="{Binding CanDeleteWord}">
         <MenuItem.Icon>
           <Image Source="avares://Vocup.Avalonia/Assets/delete.png" Width="16" Height="16" />
         </MenuItem.Icon>
@@ -67,19 +67,19 @@
           <Image Source="avares://Vocup.Avalonia/Assets/import.png" Width="16" Height="16" />
         </MenuItem.Icon>
       </MenuItem>
-      <MenuItem Header="Export" IsEnabled="False">
+      <MenuItem Header="Export" IsEnabled="{Binding CanExport}">
         <MenuItem.Icon>
           <Image Source="avares://Vocup.Avalonia/Assets/export.png" Width="16" Height="16" />
         </MenuItem.Icon>
       </MenuItem>
     </MenuItem>
     <MenuItem Header="Tools">
-      <MenuItem Header="Practice words">
+      <MenuItem Header="Practice words" IsEnabled="{Binding CanPractice}">
         <MenuItem.Icon>
           <Image Source="avares://Vocup.Avalonia/Assets/lightning_bolt.png" Width="16" Height="16" />
         </MenuItem.Icon>
       </MenuItem>
-      <MenuItem Header="Book options">
+      <MenuItem Header="Book options" IsEnabled="{Binding CanConfigure}">
         <MenuItem.Icon>
           <Image Source="avares://Vocup.Avalonia/Assets/file_settings.png" Width="16" Height="16" />
         </MenuItem.Icon>
