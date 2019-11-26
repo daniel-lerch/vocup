@@ -1,5 +1,55 @@
 # Vocup file formats
 
+## Vocup file formats v2
+
+Vocup v2+ uses only one primary file format with the file ending `.vhf`.
+It is a ZIP archive that contains a `VERSION` and a `book.json` file.
+
+#### Example
+`VERSION`
+```
+VOCUP VOCABULARY BOOK 2.0
+```
+
+`book.json`
+```json
+{
+  "meta": {
+    "motherTongue": "Deutsch",
+	"foreignLanguage": "Englisch",
+	"practiceMode": "AskForForeignLanguage"
+  },
+  "words": [
+    {
+      "motherTongue": [
+	    {
+	      "value": "Farbe",
+	  	  "flags": []
+	    }
+	  ],
+	  "foreignLanguage": [
+	    {
+	      "value": "color",
+	  	  "flags": [ "am." ]
+	    },
+	    {
+	      "value": "colour",
+	  	  "flags": [ "br." ]
+	    }
+	  ],
+	  "practiceHistory": [
+	    {
+	      "date": "2019-11-27 01:40:45+0530",
+		  "result": "Correct"
+	    }
+	  ]
+    }
+  ]
+}
+```
+
+## Vocup file formats v1
+
 Vocup uses different proprietary formats:
 
 | Extension | Name                            | Usage            |
@@ -8,7 +58,7 @@ Vocup uses different proprietary formats:
 | .vhr      | **V**okabel**h**eft **r**esults | Practice results |
 | .vdp      |                                 | Backup file      |
 
-## .vhf
+### .vhf
 
 *Vokabelheft files* contain the base64 encoded ciphertext of the DES encrypted inner file.
 The encryption is done with a hard-coded key and offers no security but complicates reverse engineering of the file format.
@@ -25,7 +75,7 @@ Each word then has its own line:
 mother tongue#foreign language#[foreign language (synonym)]
 ```
 
-### Example
+#### Example
 ```
 1.0
 Q2B0Y7x8R3B1j9s6R4q6W2V5
@@ -50,7 +100,7 @@ harte Arbeit#hard work#
 Haufen, Stapel#pile#
 ```
 
-## .vhr
+### .vhr
 
 Like *Vokabelheft files* *Vokabelheft result* files are DES encrypted and saved as a base64 string.
 
@@ -67,7 +117,7 @@ The `PracticeStateNumber` is associated with the `PracticeState` enum
 but is basically a counter with an offset of `1` because this value means wrongly practiced.
 Depending on the user's settings we reach the state of `FullyPracticed` earlier or later.
 
-### Example
+#### Example
 ```
 D:\Schule\Englisch\Vocabulary\Year 11.vhf
 1
@@ -89,7 +139,7 @@ D:\Schule\Englisch\Vocabulary\Year 11.vhf
 1#16.04.2018 23:03
 ```
 
-## .vdp
+### .vdp
 
 This format is used for Vocup Backups. It is basically a zip file using `Deflate` compression:
 ```
