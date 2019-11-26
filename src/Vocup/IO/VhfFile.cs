@@ -15,6 +15,11 @@ namespace Vocup.IO.Internal
             {
                 plaintext = ReadFile(path);
             }
+            catch (NotSupportedException)
+            {
+                MessageBox.Show(Messages.VhfMustUpdate, Messages.VhfMustUpdateT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             catch (FormatException)
             {
                 MessageBox.Show(Messages.VhfCorruptFile, Messages.VhfCorruptFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
