@@ -265,6 +265,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\Evaluator.cs" />
     <Compile Include="Util\Network\InternetService.cs" />
     <Compile Include="Util\AppInfo.cs" />
     <Compile Include="Util\ListCompositor.cs" />
