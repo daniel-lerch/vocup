@@ -612,14 +612,14 @@ namespace Vocup
 
         private void AddWord()
         {
-            using (var dialog = new AddWordDialog(CurrentBook)) dialog.ShowDialog();
+            using (var dialog = new AddWordDialog(CurrentBook) { Owner = this }) dialog.ShowDialog();
             BtnAddWord.Focus();
         }
 
         public void EditWord()
         {
             VocabularyWord selected = (VocabularyWord)CurrentController.ListView.SelectedItem.Tag;
-            using (var dialog = new EditWordDialog(CurrentBook, selected)) dialog.ShowDialog();
+            using (var dialog = new EditWordDialog(CurrentBook, selected) { Owner = this }) dialog.ShowDialog();
             CurrentController.ListView.SelectedItem.EnsureVisible();
             BtnAddWord.Focus();
         }

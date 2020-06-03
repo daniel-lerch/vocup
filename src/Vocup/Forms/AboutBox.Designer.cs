@@ -79,7 +79,7 @@
             // tableLayoutPanel
             // 
             resources.ApplyResources(this.tableLayoutPanel, "tableLayoutPanel");
-            this.tableLayoutPanel.Controls.Add(this.LlbDownload, 0, 1);
+            this.tableLayoutPanel.Controls.Add(this.LlbDownload, 1, 1);
             this.tableLayoutPanel.Controls.Add(this.LlbProjectWebsite, 1, 0);
             this.tableLayoutPanel.Controls.Add(this.LbWebsite, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.LbDownload, 0, 1);
