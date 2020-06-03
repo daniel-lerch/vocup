@@ -25,7 +25,7 @@ namespace Vocup
             RbRecentFile.Checked = settings.StartScreen == (int)StartScreen.LastFile || settings.StartScreen == (int)StartScreen.AboutBox;
             CbAutoSave.Checked = settings.AutoSave;
 
-            if (AppInfo.IsUwp())
+            if (AppInfo.IsUwp)
             {
                 GroupUpdate.Enabled = false;
                 CbDisableInternetServices.Checked = true;

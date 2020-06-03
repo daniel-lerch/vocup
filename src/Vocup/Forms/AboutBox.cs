@@ -18,10 +18,10 @@ namespace Vocup.Forms
         private void AboutBox_Load(object sender, EventArgs e)
         {
             string versionText = string.Format(LbVersion.Text, AppInfo.GetVersion(3));
-            if (AppInfo.IsUwp())
+            if (AppInfo.IsUwp)
                 versionText += " (UWP)";
-            else if (!AppInfo.IsWindows())
-                versionText += " (Linux)";
+            else if (AppInfo.IsMono)
+                versionText += " (Mono)";
             LbVersion.Text = versionText;
             LbCopyright.Text = AppInfo.CopyrightInfo;
         }
@@ -33,7 +33,7 @@ namespace Vocup.Forms
 
         private void LlbDownload_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (AppInfo.IsWindows10())
+            if (AppInfo.IsWindows10)
                 Process.Start("ms-windows-store://pdp/?productid=9N6W2H3QJQMM");
             else
                 Process.Start("https://www.microsoft.com/store/apps/9N6W2H3QJQMM");

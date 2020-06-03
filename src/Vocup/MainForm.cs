@@ -21,7 +21,7 @@ namespace Vocup
             InitializeComponent();
 
             FileTreeView.RootPath = Settings.Default.VhfPath;
-            if (AppInfo.IsUwp() && AppInfo.TryGetVocupInstallation(out Version version, out _) && version < AppInfo.GetVersion())
+            if (AppInfo.IsUwp && AppInfo.TryGetVocupInstallation(out Version version, out _) && version < AppInfo.GetVersion())
                 StatusLbOldVersion.Visible = true;
         }
 
