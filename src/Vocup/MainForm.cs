@@ -21,7 +21,7 @@ namespace Vocup
             InitializeComponent();
 
             FileTreeView.RootPath = Settings.Default.VhfPath;
-            if (AppInfo.IsUwp() && SystemInfo.TryGetVocupInstallation(out var installation) && installation.version < AppInfo.GetVersion())
+            if (AppInfo.IsUwp() && AppInfo.TryGetVocupInstallation(out Version version, out _) && version < AppInfo.GetVersion())
                 StatusLbOldVersion.Visible = true;
         }
 
@@ -397,11 +397,11 @@ namespace Vocup
 
         private void StatusLbOldVersion_Click(object sender, EventArgs e)
         {
-            if (SystemInfo.TryGetVocupInstallation(out var installation) &&
+            if (AppInfo.TryGetVocupInstallation(out _, out string uninstallString) &&
                 MessageBox.Show(Messages.LegacyVersionUninstall,
                 Messages.LegacyVersionUninstallT, MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                Process.Start(installation.uninstallString);
+                Process.Start(uninstallString);
             }
         }
 

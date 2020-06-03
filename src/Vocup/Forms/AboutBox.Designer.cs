@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
-            this.LbOS = new System.Windows.Forms.Label();
-            this.LbNetFramwork = new System.Windows.Forms.Label();
             this.BtnOK = new System.Windows.Forms.Button();
             this.LbVersion = new System.Windows.Forms.Label();
             this.LbCopyright = new System.Windows.Forms.Label();
@@ -58,16 +56,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TpComponents.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // LbOS
-            // 
-            resources.ApplyResources(this.LbOS, "LbOS");
-            this.LbOS.Name = "LbOS";
-            // 
-            // LbNetFramwork
-            // 
-            resources.ApplyResources(this.LbNetFramwork, "LbNetFramwork");
-            this.LbNetFramwork.Name = "LbNetFramwork";
             // 
             // BtnOK
             // 
@@ -205,6 +193,7 @@
             this.ColHeaderUrl});
             resources.ApplyResources(this.LwComponents, "LwComponents");
             this.LwComponents.FullRowSelect = true;
+            this.LwComponents.HideSelection = false;
             this.LwComponents.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items"))),
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items1"))),
@@ -237,8 +226,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.BtnOK);
-            this.Controls.Add(this.LbNetFramwork);
-            this.Controls.Add(this.LbOS);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -252,14 +239,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.TpComponents.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label LbOS;
-        private System.Windows.Forms.Label LbNetFramwork;
         private System.Windows.Forms.Button BtnOK;
         private System.Windows.Forms.Label LbVersion;
         private System.Windows.Forms.Label LbCopyright;

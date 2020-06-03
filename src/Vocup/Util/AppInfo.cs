@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.Win32;
+using System;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -46,9 +46,38 @@ namespace Vocup.Util
         public static string CopyrightInfo { get; }
             = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyCopyrightAttribute>()?.Copyright;
 
+        public static bool IsWindows()
+        {
+            return Environment.OSVersion.Platform == PlatformID.Win32NT;
+        }
+
+        public static bool IsWindows10()
+        {
+            return Environment.OSVersion.Platform == PlatformID.Win32NT &&
+                Environment.OSVersion.Version >= new Version(10, 0);
+        }
+
+        public static bool TryGetVocupInstallation(out Version version, out string uninstallString)
+        {
+            version = null;
+            uninstallString = null;
+
+            if (!IsWindows()) return false;
+
+            // Vocup is installed as 32bit application
+            using (RegistryKey hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32))
+            using (RegistryKey vocup = hklm.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Vocup_is1", writable: false))
+            {
+                if (vocup == null) return false;
+                string versionString = (string)vocup.GetValue("DisplayVersion");
+                uninstallString = (string)vocup.GetValue("UninstallString");
+                return Version.TryParse(versionString, out version);
+            }
+        }
+
         public static bool IsUwp()
         {
-            if (SystemInfo.IsWindows10())
+            if (IsWindows10())
             {
                 int length = 0;
                 StringBuilder sb = new StringBuilder(0);
