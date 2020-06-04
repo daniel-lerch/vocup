@@ -21,6 +21,8 @@ namespace Vocup
             InitializeComponent();
 
             FileTreeView.RootPath = Settings.Default.VhfPath;
+            if (AppInfo.IsUwp)
+                TsmiUpdate.Enabled = false;
             if (AppInfo.IsUwp && AppInfo.TryGetVocupInstallation(out Version version, out _) && version < AppInfo.GetVersion())
                 StatusLbOldVersion.Visible = true;
         }
@@ -403,6 +405,11 @@ namespace Vocup
             {
                 Process.Start(uninstallString);
             }
+        }
+
+        private void StatusLbUpdateAvailable_Click(object sender, EventArgs e)
+        {
+
         }
 
         private async void BtnSearchWord_Click(object sender, EventArgs e)
