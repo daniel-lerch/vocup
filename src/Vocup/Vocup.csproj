@@ -265,7 +265,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\Evaluator.cs" />
-    <Compile Include="Util\Network\UpdateService.cs" />
+    <Compile Include="Util\UpdateService.cs" />
     <Compile Include="Util\AppInfo.cs" />
     <Compile Include="Util\ListCompositor.cs" />
     <Compile Include="Util\PatternMatcher.cs" />

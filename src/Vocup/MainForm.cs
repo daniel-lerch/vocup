@@ -16,6 +16,8 @@ namespace Vocup
 {
     public partial class MainForm : Form, IMainForm
     {
+        private string updateUrl;
+
         public MainForm()
         {
             InitializeComponent();
@@ -23,7 +25,7 @@ namespace Vocup
             FileTreeView.RootPath = Settings.Default.VhfPath;
             if (AppInfo.IsUwp)
                 TsmiUpdate.Enabled = false;
-            if (AppInfo.IsUwp && AppInfo.TryGetVocupInstallation(out Version version, out _) && version < AppInfo.GetVersion())
+            if (AppInfo.IsUwp && AppInfo.TryGetVocupInstallation(out Version version, out _, out _) && version < AppInfo.Version)
                 StatusLbOldVersion.Visible = true;
         }
 
@@ -122,12 +124,17 @@ namespace Vocup
         }
 
         #region Event handlers
-        private void Form_Load(object sender, EventArgs e)
+        private async void Form_Load(object sender, EventArgs e)
         {
             Update();
             Activate();
 
-            // TODO: Check online for updates or messages
+            // Check online for updates
+            if (!AppInfo.IsUwp && !Settings.Default.DisableInternetServices)
+            {
+                updateUrl = await UpdateService.GetUpdateUrl();
+                StatusLbUpdateAvailable.Visible = !string.IsNullOrWhiteSpace(updateUrl);
+            }
         }
 
         private void Form_Shown(object sender, EventArgs e)
@@ -232,7 +239,12 @@ namespace Vocup
             using (var dialog = new SpecialCharManage()) dialog.ShowDialog();
         }
 
-        private void TsmiUpdate_Click(object sender, EventArgs e) { } // TODO: Check online for updates or messages
+        private async void TsmiUpdate_Click(object sender, EventArgs e)
+        {
+            // Check online for updates
+            updateUrl = await UpdateService.GetUpdateUrl();
+            StatusLbUpdateAvailable.Visible = !string.IsNullOrWhiteSpace(updateUrl);
+        }
 
         private void TsbCreateBook_Click(object sender, EventArgs e) => CreateBook();
         private void TsmiCreateBook_Click(object sender, EventArgs e) => CreateBook();
@@ -399,7 +411,7 @@ namespace Vocup
 
         private void StatusLbOldVersion_Click(object sender, EventArgs e)
         {
-            if (AppInfo.TryGetVocupInstallation(out _, out string uninstallString) &&
+            if (AppInfo.TryGetVocupInstallation(out _, out _, out string uninstallString) &&
                 MessageBox.Show(Messages.LegacyVersionUninstall,
                 Messages.LegacyVersionUninstallT, MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -409,7 +421,7 @@ namespace Vocup
 
         private void StatusLbUpdateAvailable_Click(object sender, EventArgs e)
         {
-
+            Process.Start(updateUrl);
         }
 
         private async void BtnSearchWord_Click(object sender, EventArgs e)

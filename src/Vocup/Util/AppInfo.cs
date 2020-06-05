@@ -23,7 +23,9 @@ namespace Vocup.Util
         /// </summary>
         public static string SpecialCharDirectory { get; } = Path.Combine(Properties.Settings.Default.VhrPath, "specialchar");
 
-        public static Version FileVersion => new Version(1, 0);
+        public static Version Version { get; } = Assembly.GetExecutingAssembly().GetName().Version;
+
+        public static Version FileVersion { get; } = new Version(1, 0);
 
         public static string ProductName { get; }
             = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyProductAttribute>()?.Product;
@@ -34,14 +36,17 @@ namespace Vocup.Util
         public static bool IsWindows { get; } = Environment.OSVersion.Platform == PlatformID.Win32NT;
 
         public static bool IsWindows10 { get; } = Environment.OSVersion.Platform == PlatformID.Win32NT &&
-                Environment.OSVersion.Version >= new Version(10, 0);
+            Environment.OSVersion.Version >= new Version(10, 0);
 
         public static bool IsUwp { get; } = CheckUwp();
+
+        public static bool IsWindowsInstallation { get; }
+            = TryGetVocupInstallation(out _, out string installLocation, out _)
+            && Application.StartupPath.Equals(installLocation, StringComparison.OrdinalIgnoreCase);
 
         public static bool IsMono { get; } = Type.GetType("Mono.Runtime") != null;
 
 
-        public static Version GetVersion() => Assembly.GetExecutingAssembly().GetName().Version;
         /// <summary>
         /// Returns the product version of the currently running instance.
         /// </summary>
@@ -56,9 +61,10 @@ namespace Vocup.Util
             return version;
         }
 
-        public static bool TryGetVocupInstallation(out Version version, out string uninstallString)
+        public static bool TryGetVocupInstallation(out Version version, out string installLocation, out string uninstallString)
         {
             version = null;
+            installLocation = null;
             uninstallString = null;
 
             if (!IsWindows) return false;
@@ -68,9 +74,11 @@ namespace Vocup.Util
             using (RegistryKey vocup = hklm.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Vocup_is1", writable: false))
             {
                 if (vocup == null) return false;
-                string versionString = (string)vocup.GetValue("DisplayVersion");
+                if (!Version.TryParse((string)vocup.GetValue("DisplayVersion"), out Version temp)) return false;
+                version = temp.Revision == -1 ? new Version(temp.Major, temp.Minor, temp.Build, 0) : temp;
+                installLocation = (string)vocup.GetValue("InstallLocation");
                 uninstallString = (string)vocup.GetValue("UninstallString");
-                return Version.TryParse(versionString, out version);
+                return true;
             }
         }
 
