@@ -47,7 +47,6 @@
             this.TpComponents = new System.Windows.Forms.TabPage();
             this.LwComponents = new System.Windows.Forms.ListView();
             this.ColHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ColHeaderVersion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColHeaderLicense = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColHeaderUrl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel.SuspendLayout();
@@ -188,7 +187,6 @@
             // 
             this.LwComponents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ColHeaderName,
-            this.ColHeaderVersion,
             this.ColHeaderLicense,
             this.ColHeaderUrl});
             resources.ApplyResources(this.LwComponents, "LwComponents");
@@ -206,10 +204,6 @@
             // ColHeaderName
             // 
             resources.ApplyResources(this.ColHeaderName, "ColHeaderName");
-            // 
-            // ColHeaderVersion
-            // 
-            resources.ApplyResources(this.ColHeaderVersion, "ColHeaderVersion");
             // 
             // ColHeaderLicense
             // 
@@ -258,7 +252,6 @@
         public  System.Windows.Forms.TabPage TpComponents;
         public  System.Windows.Forms.ListView LwComponents;
         private System.Windows.Forms.ColumnHeader ColHeaderName;
-        private System.Windows.Forms.ColumnHeader ColHeaderVersion;
         private System.Windows.Forms.ColumnHeader ColHeaderLicense;
         private System.Windows.Forms.ColumnHeader ColHeaderUrl;
         private System.Windows.Forms.LinkLabel LlbProjectLicense;

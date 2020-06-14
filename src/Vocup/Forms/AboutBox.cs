@@ -19,9 +19,21 @@ namespace Vocup.Forms
         {
             string versionText = string.Format(LbVersion.Text, AppInfo.GetVersion(3));
             if (AppInfo.IsUwp)
+            {
                 versionText += " (UWP)";
+            }
+            else if (!AppInfo.IsWindowsInstallation)
+            {
+                if (AppInfo.IsMono)
+                    versionText += " (Mono, Portable)";
+                else
+                    versionText += " (Portable)";
+            }
             else if (AppInfo.IsMono)
+            {
                 versionText += " (Mono)";
+            }
+
             LbVersion.Text = versionText;
             LbCopyright.Text = AppInfo.CopyrightInfo;
         }
