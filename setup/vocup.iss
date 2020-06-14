@@ -3,13 +3,13 @@
 
 [Setup]
 AppName=Vocup
-AppVerName=Vocup 1.7.1
-AppVersion=1.7.1
+AppVerName=Vocup 1.7.2
+AppVersion=1.7.2
 AppPublisher=Daniel Lerch
 DefaultDirName={commonpf}\Vocup
 DisableProgramGroupPage=yes
 OutputDir=bin
-OutputBaseFilename=Vocup_1.7.1
+OutputBaseFilename=Vocup_1.7.2
 SetupIconFile=setup_icon.ico
 
 Compression=lzma2
@@ -25,7 +25,7 @@ WizardSmallImageFile=top.bmp
 
 LicenseFile=license.txt
 
-VersionInfoVersion=1.7.1
+VersionInfoVersion=1.7.2
 VersionInfoCompany=Daniel Lerch
 VersionInfoCopyright=© 2011 Florian Amstutz, © 2018-2020 Daniel Lerch
 
