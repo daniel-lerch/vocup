@@ -18,6 +18,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{513AA9B6-F697-45D9-B598-A96030B32541}"
 	ProjectSection(SolutionItems) = preProject
 		docs\fileformats.md = docs\fileformats.md
+		docs\install-on-linux.md = docs\install-on-linux.md
 		docs\privacy.md = docs\privacy.md
 		docs\README.md = docs\README.md
 	EndProjectSection
