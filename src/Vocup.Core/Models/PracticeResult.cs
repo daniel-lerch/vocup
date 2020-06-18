@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Vocup.Avalonia.Models
+namespace Vocup.Models
 {
     public enum PracticeResult
     {

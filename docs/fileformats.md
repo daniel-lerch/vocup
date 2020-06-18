@@ -14,35 +14,41 @@ VOCUP VOCABULARY BOOK 2.0
 `book.json`
 ```json
 {
-  "meta": {
-    "motherTongue": "Deutsch",
-	"foreignLanguage": "Englisch",
-	"practiceMode": "AskForForeignLanguage"
-  },
+  "motherTongue": "Deutsch",
+  "foreignLanguage": "Englisch",
+  "practiceMode": "AskForForeignLanguage",
   "words": [
     {
       "motherTongue": [
-	    {
-	      "value": "Farbe",
-	  	  "flags": []
-	    }
-	  ],
-	  "foreignLanguage": [
-	    {
-	      "value": "color",
-	  	  "flags": [ "am." ]
-	    },
-	    {
-	      "value": "colour",
-	  	  "flags": [ "br." ]
-	    }
-	  ],
-	  "practiceHistory": [
-	    {
-	      "date": "2019-11-27 01:40:45+0530",
-		  "result": "Correct"
-	    }
-	  ]
+        {
+          "value": "Farbe",
+          "flags": [],
+          "practices": []
+        }
+      ],
+      "foreignLanguage": [
+        {
+          "value": "color",
+          "flags": [ "am." ],
+          "practices": [
+            {
+              "date": "2020-06-18 11:24:52+0200",
+              "result": "Correct"
+			}
+		  ]
+        },
+        {
+          "value": "colour",
+          "flags": [ "br." ],
+          "practices": [
+            {
+              "date": "2019-11-27 01:40:45+0530",
+              "result": "Correct"
+            }
+		  ]
+        }
+      ],
+      "creationDate": "2019-09-02 16:35:00+0200"
     }
   ]
 }
