@@ -13,7 +13,7 @@ namespace Vocup.Models
         }
 
         public string Value { get; set; }
-        public IList<string> Flags { get; }
-        public IList<Practice> Practices { get; }
+        public List<string> Flags { get; set; }
+        public List<Practice> Practices { get; set; }
     }
 }

@@ -4,13 +4,13 @@ using System.Text;
 
 namespace Vocup.IO
 {
-    public class Vhf1FormatException : FormatException
+    public class VhfFormatException : FormatException
     {
-        public Vhf1FormatException(Vhf1Error errorCode)
+        public VhfFormatException(VhfError errorCode)
         {
             ErrorCode = errorCode;
         }
 
-        public Vhf1Error ErrorCode { get; }
+        public VhfError ErrorCode { get; }
     }
 }

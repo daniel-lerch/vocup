@@ -21,19 +21,19 @@ namespace Vocup.IO
 
                 if (string.IsNullOrWhiteSpace(version) || version != "1.0")
                 {
-                    throw new Vhf1FormatException(Vhf1Error.InvalidVersion);
+                    throw new VhfFormatException(VhfError.InvalidVersion);
                 }
 
                 if (vhrCode == null)
                 {
-                    throw new Vhf1FormatException(Vhf1Error.InvalidVhrCode);
+                    throw new VhfFormatException(VhfError.InvalidVhrCode);
                 }
 
                 if (string.IsNullOrWhiteSpace(motherTongue) ||
                     string.IsNullOrWhiteSpace(foreignLanguage) ||
                     motherTongue == foreignLanguage)
                 {
-                    throw new Vhf1FormatException(Vhf1Error.InvalidLanguages);
+                    throw new VhfFormatException(VhfError.InvalidLanguages);
                 }
 
                 Book book = new Book
@@ -51,7 +51,7 @@ namespace Vocup.IO
                     string[] columns = line.Split('#');
                     if (columns.Length != 3)
                     {
-                        throw new Vhf1FormatException(Vhf1Error.InvalidRow);
+                        throw new VhfFormatException(VhfError.InvalidRow);
                     }
                     Word word = new Word();
                     word.MotherTongue.Add(new Synonym { Value = columns[0] });

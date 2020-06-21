@@ -4,11 +4,12 @@ using System.Text;
 
 namespace Vocup.IO
 {
-    public enum Vhf1Error
+    public enum VhfError
     {
         InvalidVersion,
         InvalidVhrCode,
         InvalidLanguages,
-        InvalidRow
+        InvalidRow,
+        BookNotFound
     }
 }

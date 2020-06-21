@@ -12,8 +12,8 @@ namespace Vocup.Models
             ForeignLanguage = new List<Synonym>();
         }
 
-        public IList<Synonym> MotherTongue { get; }
-        public IList<Synonym> ForeignLanguage { get; }
+        public List<Synonym> MotherTongue { get; set; }
+        public List<Synonym> ForeignLanguage { get; set; }
         public DateTimeOffset CreationDate { get; set; }
     }
 }

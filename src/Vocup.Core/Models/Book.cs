@@ -17,6 +17,6 @@ namespace Vocup.Models
         public string MotherTongue { get; set; }
         public string ForeignLanguage { get; set; }
         public PracticeMode PracticeMode { get; set; }
-        public IList<Word> Words { get; }
+        public List<Word> Words { get; set; }
     }
 }

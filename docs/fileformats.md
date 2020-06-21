@@ -32,7 +32,7 @@ VOCUP VOCABULARY BOOK 2.0
           "flags": [ "am." ],
           "practices": [
             {
-              "date": "2020-06-18 11:24:52+0200",
+              "date": "2020-06-18T11:24:52+02:00",
               "result": "Correct"
 			}
 		  ]
@@ -42,13 +42,13 @@ VOCUP VOCABULARY BOOK 2.0
           "flags": [ "br." ],
           "practices": [
             {
-              "date": "2019-11-27 01:40:45+0530",
+              "date": "2019-11-27T01:40:45+05:30",
               "result": "Correct"
             }
 		  ]
         }
       ],
-      "creationDate": "2019-09-02 16:35:00+0200"
+      "creationDate": "2019-09-02T16:35:00+02:00"
     }
   ]
 }
