@@ -8,7 +8,7 @@ using Vocup.Models;
 
 namespace Vocup.IO
 {
-    internal class Vhf1Writer : BookWriter
+    public class Vhf1Writer : BookWriter
     {
         public override Task WriteBookAsync(Stream stream, Book book)
         {

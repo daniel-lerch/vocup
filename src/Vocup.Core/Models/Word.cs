@@ -6,8 +6,14 @@ namespace Vocup.Models
 {
     public class Word
     {
-        public IList<Synonym> MotherTongue { get; set; }
-        public IList<Synonym> ForeignLanguage { get; set; }
+        public Word()
+        {
+            MotherTongue = new List<Synonym>();
+            ForeignLanguage = new List<Synonym>();
+        }
+
+        public IList<Synonym> MotherTongue { get; }
+        public IList<Synonym> ForeignLanguage { get; }
         public DateTimeOffset CreationDate { get; set; }
     }
 }

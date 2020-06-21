@@ -7,7 +7,7 @@ using Vocup.Models;
 
 namespace Vocup.IO
 {
-    internal class Vhf2Reader : BookReader
+    public class Vhf2Reader : BookReader
     {
         public override Task<Book> ReadBookAsync(Stream stream)
         {

@@ -6,8 +6,14 @@ namespace Vocup.Models
 {
     public class Synonym
     {
+        public Synonym()
+        {
+            Flags = new List<string>();
+            Practices = new List<Practice>();
+        }
+
         public string Value { get; set; }
-        public IList<string> Flags { get; set; }
-        public IList<Practice> Practices { get; set; }
+        public IList<string> Flags { get; }
+        public IList<Practice> Practices { get; }
     }
 }

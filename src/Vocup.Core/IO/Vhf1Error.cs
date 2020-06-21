@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Vocup.IO
 {
-    internal enum Vhf1Error
+    public enum Vhf1Error
     {
         InvalidVersion,
         InvalidVhrCode,

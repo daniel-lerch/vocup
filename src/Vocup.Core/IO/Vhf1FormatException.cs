@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Vocup.IO
 {
-    internal class Vhf1FormatException : FormatException
+    public class Vhf1FormatException : FormatException
     {
         public Vhf1FormatException(Vhf1Error errorCode)
         {

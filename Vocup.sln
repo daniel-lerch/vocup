@@ -40,7 +40,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vocup.UnitTests", "tests\Vo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vocup.Avalonia", "src\Vocup.Avalonia\Vocup.Avalonia.csproj", "{89AFC35C-EC9B-43F1-936B-63ADF1134209}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vocup.Core", "src\Vocup.Core\Vocup.Core.csproj", "{66BD2766-2E03-4E17-AAE1-A2946D60DEBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vocup.Core", "src\Vocup.Core\Vocup.Core.csproj", "{66BD2766-2E03-4E17-AAE1-A2946D60DEBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vocup.Core.UnitTests", "tests\Vocup.Core.UnitTests\Vocup.Core.UnitTests.csproj", "{F20FBC66-87E7-45E9-AF6E-062DCACF20F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -118,6 +120,18 @@ Global
 		{66BD2766-2E03-4E17-AAE1-A2946D60DEBE}.Release|x64.Build.0 = Release|Any CPU
 		{66BD2766-2E03-4E17-AAE1-A2946D60DEBE}.Release|x86.ActiveCfg = Release|Any CPU
 		{66BD2766-2E03-4E17-AAE1-A2946D60DEBE}.Release|x86.Build.0 = Release|Any CPU
+		{F20FBC66-87E7-45E9-AF6E-062DCACF20F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F20FBC66-87E7-45E9-AF6E-062DCACF20F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F20FBC66-87E7-45E9-AF6E-062DCACF20F3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F20FBC66-87E7-45E9-AF6E-062DCACF20F3}.Debug|x64.Build.0 = Debug|Any CPU
+		{F20FBC66-87E7-45E9-AF6E-062DCACF20F3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F20FBC66-87E7-45E9-AF6E-062DCACF20F3}.Debug|x86.Build.0 = Debug|Any CPU
+		{F20FBC66-87E7-45E9-AF6E-062DCACF20F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F20FBC66-87E7-45E9-AF6E-062DCACF20F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F20FBC66-87E7-45E9-AF6E-062DCACF20F3}.Release|x64.ActiveCfg = Release|Any CPU
+		{F20FBC66-87E7-45E9-AF6E-062DCACF20F3}.Release|x64.Build.0 = Release|Any CPU
+		{F20FBC66-87E7-45E9-AF6E-062DCACF20F3}.Release|x86.ActiveCfg = Release|Any CPU
+		{F20FBC66-87E7-45E9-AF6E-062DCACF20F3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -128,6 +142,7 @@ Global
 		{AEB8CB75-2A9D-4DE1-B4F8-B529FFA21240} = {DB3F9D1B-E719-4A4B-8953-5FB027887083}
 		{89AFC35C-EC9B-43F1-936B-63ADF1134209} = {C15174B9-657C-4871-BD70-E367286C3A48}
 		{66BD2766-2E03-4E17-AAE1-A2946D60DEBE} = {C15174B9-657C-4871-BD70-E367286C3A48}
+		{F20FBC66-87E7-45E9-AF6E-062DCACF20F3} = {DB3F9D1B-E719-4A4B-8953-5FB027887083}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FB786307-C66E-4F63-BF9D-639CCBE07497}

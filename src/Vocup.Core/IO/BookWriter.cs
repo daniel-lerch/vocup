@@ -7,7 +7,7 @@ using Vocup.Models;
 
 namespace Vocup.IO
 {
-    internal abstract class BookWriter
+    public abstract class BookWriter
     {
         public abstract Task WriteBookAsync(Stream stream, Book book);
     }
