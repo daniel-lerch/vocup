@@ -33,16 +33,30 @@ namespace Vocup.Util
         public static string CopyrightInfo { get; }
             = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyCopyrightAttribute>()?.Copyright;
 
-        public static bool IsWindows { get; } = Environment.OSVersion.Platform == PlatformID.Win32NT;
+        public static bool IsWindows10 { get; } = Environment.OSVersion.Platform == PlatformID.Win32NT
+            && Environment.OSVersion.Version >= new Version(10, 0);
 
-        public static bool IsWindows10 { get; } = Environment.OSVersion.Platform == PlatformID.Win32NT &&
-            Environment.OSVersion.Version >= new Version(10, 0);
+        private static readonly Lazy<bool> isUwp = new Lazy<bool>(() =>
+        {
+            if (IsWindows10)
+            {
+                int length = 0;
+                StringBuilder sb = new StringBuilder(0);
+                GetCurrentPackageFullName(ref length, sb);
+                sb = new StringBuilder(length);
+                int result = GetCurrentPackageFullName(ref length, sb);
+                return result != APPMODEL_ERROR_NO_PACKAGE;
+            }
+            else return false;
+        });
+        public static bool IsUwp => isUwp.Value;
 
-        public static bool IsUwp { get; } = CheckUwp();
-
-        public static bool IsWindowsInstallation { get; }
-            = TryGetVocupInstallation(out _, out string installLocation, out _)
-            && Application.StartupPath.Equals(installLocation, StringComparison.OrdinalIgnoreCase);
+        private static readonly Lazy<bool> isInstallation = new Lazy<bool>(() =>
+        {
+            return TryGetVocupInstallation(out _, out string installLocation, out _)
+                && Application.StartupPath.TrimEnd('\\').Equals(installLocation.TrimEnd('\\'), StringComparison.OrdinalIgnoreCase);
+        });
+        public static bool IsWindowsInstallation => isInstallation.Value;
 
         public static bool IsMono { get; } = Type.GetType("Mono.Runtime") != null;
 
@@ -67,7 +81,7 @@ namespace Vocup.Util
             installLocation = null;
             uninstallString = null;
 
-            if (!IsWindows) return false;
+            if (Environment.OSVersion.Platform != PlatformID.Win32NT) return false;
 
             // Vocup is installed as 32bit application
             using (RegistryKey hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32))
@@ -80,20 +94,6 @@ namespace Vocup.Util
                 uninstallString = (string)vocup.GetValue("UninstallString");
                 return true;
             }
-        }
-
-        private static bool CheckUwp()
-        {
-            if (IsWindows10)
-            {
-                int length = 0;
-                StringBuilder sb = new StringBuilder(0);
-                GetCurrentPackageFullName(ref length, sb);
-                sb = new StringBuilder(length);
-                int result = GetCurrentPackageFullName(ref length, sb);
-                return result != APPMODEL_ERROR_NO_PACKAGE;
-            }
-            else return false;
         }
 
         private const int APPMODEL_ERROR_NO_PACKAGE = 15700;
