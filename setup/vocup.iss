@@ -3,13 +3,13 @@
 
 [Setup]
 AppName=Vocup
-AppVerName=Vocup 1.7.2
-AppVersion=1.7.2
+AppVerName=Vocup 1.7.3
+AppVersion=1.7.3
 AppPublisher=Daniel Lerch
 DefaultDirName={commonpf}\Vocup
 DisableProgramGroupPage=yes
 OutputDir=bin
-OutputBaseFilename=Vocup_1.7.2
+OutputBaseFilename=Vocup_1.7.3
 SetupIconFile=setup_icon.ico
 
 Compression=lzma2
@@ -25,7 +25,7 @@ WizardSmallImageFile=top.bmp
 
 LicenseFile=license.txt
 
-VersionInfoVersion=1.7.2
+VersionInfoVersion=1.7.3
 VersionInfoCompany=Daniel Lerch
 VersionInfoCopyright=© 2011 Florian Amstutz, © 2018-2020 Daniel Lerch
 
@@ -36,15 +36,18 @@ Name: german; MessagesFile: compiler:Languages\German.isl;
 Name: desktopicon; Description: {cm:CreateDesktopIcon}; GroupDescription: {cm:AdditionalIcons};
 
 [Files]
-Source: ..\src\Vocup\bin\Release\de\Vocup.resources.dll;       DestDir: {app}\de;        Flags: ignoreversion replacesameversion;
-Source: ..\src\Vocup\bin\Release\Resources\easter_egg.vhf;     DestDir: {app}\Resources; Flags: ignoreversion replacesameversion;
-Source: ..\src\Vocup\bin\Release\Resources\help.chm;           DestDir: {app}\Resources; Flags: ignoreversion replacesameversion;
-Source: ..\src\Vocup\bin\Release\CsvHelper.dll;                DestDir: {app}; Flags: ignoreversion replacesameversion;
-Source: ..\src\Vocup\bin\Release\Octokit.dll;                  DestDir: {app}; Flags: ignoreversion replacesameversion;
-Source: ..\src\Vocup\bin\Release\System.ValueTuple.dll;        DestDir: {app}; Flags: ignoreversion replacesameversion;
-Source: ..\src\Vocup\bin\Release\Vocup.exe;                    DestDir: {app}; Flags: ignoreversion replacesameversion;
-Source: ..\src\Vocup\bin\Release\Vocup.exe.config;             DestDir: {app}; Flags: ignoreversion replacesameversion;
-Source: ..\src\Vocup\bin\Release\Vocup.pdb;                    DestDir: {app}; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\de\Vocup.resources.dll;                     DestDir: {app}\de;        Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\Resources\easter_egg.vhf;                   DestDir: {app}\Resources; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\Resources\help.chm;                         DestDir: {app}\Resources; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\CsvHelper.dll;                              DestDir: {app}; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll;          DestDir: {app}; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\Octokit.dll;                                DestDir: {app}; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\System.Runtime.CompilerServices.Unsafe.dll; DestDir: {app}; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\System.Threading.Tasks.Extensions.dll;      DestDir: {app}; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\System.ValueTuple.dll;                      DestDir: {app}; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\Vocup.exe;                                  DestDir: {app}; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\Vocup.exe.config;                           DestDir: {app}; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\Vocup.pdb;                                  DestDir: {app}; Flags: ignoreversion replacesameversion;
 
 ; Icons for file associations
 Source: icon_vhf.ico;                 DestDir: {app}; Flags: ignoreversion replacesameversion;
