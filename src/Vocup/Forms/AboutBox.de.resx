@@ -147,12 +147,6 @@
   <data name="LbMail.Text" xml:space="preserve">
     <value>E-Mail:</value>
   </data>
-  <data name="LbNetFramwork.Text" xml:space="preserve">
-    <value>%NetFramwork%</value>
-  </data>
-  <data name="LbOS.Text" xml:space="preserve">
-    <value>%OSName%</value>
-  </data>
   <data name="LbVersion.Text" xml:space="preserve">
     <value>Version {0}</value>
   </data>

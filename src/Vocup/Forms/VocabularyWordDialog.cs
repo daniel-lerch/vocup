@@ -97,10 +97,6 @@ namespace Vocup.Forms
                 DialogResult = DialogResult.Cancel;
                 Close();
             }
-            else
-            {
-                DialogResult = DialogResult.None; // Prevent close
-            }
         }
 
         private void BtnContinue_Click(object sender, EventArgs e)
@@ -109,10 +105,6 @@ namespace Vocup.Forms
             {
                 DialogResult = DialogResult.OK;
                 Close();
-            }
-            else
-            {
-                DialogResult = DialogResult.None; // Prevent close
             }
         }
     }

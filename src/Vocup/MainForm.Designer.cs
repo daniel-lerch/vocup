@@ -82,6 +82,7 @@
             this.BtnEditWord = new Vocup.Controls.ResponsiveButton();
             this.StatusStrip = new System.Windows.Forms.StatusStrip();
             this.StatusLbOldVersion = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StatusLbUpdateAvailable = new System.Windows.Forms.ToolStripStatusLabel();
             this.SideBar = new System.Windows.Forms.Panel();
             this.GroupStatistics = new Vocup.Controls.StatisticsPanel();
             this.SplitContainer = new Vocup.Controls.ResponsiveSplitContainer();
@@ -492,7 +493,8 @@
             // StatusStrip
             // 
             this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StatusLbOldVersion});
+            this.StatusLbOldVersion,
+            this.StatusLbUpdateAvailable});
             resources.ApplyResources(this.StatusStrip, "StatusStrip");
             this.StatusStrip.Name = "StatusStrip";
             // 
@@ -503,6 +505,14 @@
             this.StatusLbOldVersion.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             resources.ApplyResources(this.StatusLbOldVersion, "StatusLbOldVersion");
             this.StatusLbOldVersion.Click += new System.EventHandler(this.StatusLbOldVersion_Click);
+            // 
+            // StatusLbUpdateAvailable
+            // 
+            this.StatusLbUpdateAvailable.Image = global::Vocup.Properties.Icons.DownloadingUpdates;
+            this.StatusLbUpdateAvailable.Name = "StatusLbUpdateAvailable";
+            this.StatusLbUpdateAvailable.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            resources.ApplyResources(this.StatusLbUpdateAvailable, "StatusLbUpdateAvailable");
+            this.StatusLbUpdateAvailable.Click += new System.EventHandler(this.StatusLbUpdateAvailable_Click);
             // 
             // SideBar
             // 
@@ -736,6 +746,7 @@
         private Controls.FileTreeView FileTreeView;
         private System.Windows.Forms.Label LbEmptyForm;
         private System.Windows.Forms.ToolStripStatusLabel StatusLbOldVersion;
+        private System.Windows.Forms.ToolStripStatusLabel StatusLbUpdateAvailable;
     }
 }
 

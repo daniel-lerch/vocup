@@ -3,14 +3,13 @@
 
 [Setup]
 AppName=Vocup
-AppVerName=Vocup 1.4.3
-AppVersion=1.4.3
+AppVerName=Vocup 1.7.3
+AppVersion=1.7.3
 AppPublisher=Daniel Lerch
-DefaultDirName={pf}\Vocup
-; DefaultGroupName=Vocup
+DefaultDirName={commonpf}\Vocup
 DisableProgramGroupPage=yes
 OutputDir=bin
-OutputBaseFilename=Vocup_1.4.3
+OutputBaseFilename=Vocup_1.7.3
 SetupIconFile=setup_icon.ico
 
 Compression=lzma2
@@ -26,9 +25,9 @@ WizardSmallImageFile=top.bmp
 
 LicenseFile=license.txt
 
-VersionInfoVersion=1.4.3
+VersionInfoVersion=1.7.3
 VersionInfoCompany=Daniel Lerch
-VersionInfoCopyright=© 2011 Florian Amstutz, © 2018 Daniel Lerch
+VersionInfoCopyright=© 2011 Florian Amstutz, © 2018-2020 Daniel Lerch
 
 [Languages]
 Name: german; MessagesFile: compiler:Languages\German.isl;
@@ -37,17 +36,29 @@ Name: german; MessagesFile: compiler:Languages\German.isl;
 Name: desktopicon; Description: {cm:CreateDesktopIcon}; GroupDescription: {cm:AdditionalIcons};
 
 [Files]
-Source: ..\src\Vocup\bin\Release\CsvHelper.dll;                DestDir: {app}; Flags: ignoreversion replacesameversion;
-Source: ..\src\Vocup\bin\Release\help.chm;                     DestDir: {app}; Flags: ignoreversion replacesameversion;
-Source: ..\src\Vocup\bin\Release\ICSharpCode.SharpZipLib.dll;  DestDir: {app}; Flags: ignoreversion replacesameversion;
-Source: ..\src\Vocup\bin\Release\K_Updater.dll;                DestDir: {app}; Flags: ignoreversion replacesameversion;
-Source: ..\src\Vocup\bin\Release\Vocup.exe;                    DestDir: {app}; Flags: ignoreversion replacesameversion;
-Source: ..\src\Vocup\bin\Release\Vocup.exe.config;             DestDir: {app}; Flags: ignoreversion replacesameversion;
-Source: ..\src\Vocup\bin\Release\Vocup.pdb;                    DestDir: {app}; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\de\Vocup.resources.dll;                     DestDir: {app}\de;        Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\Resources\easter_egg.vhf;                   DestDir: {app}\Resources; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\Resources\help.chm;                         DestDir: {app}\Resources; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\CsvHelper.dll;                              DestDir: {app}; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll;          DestDir: {app}; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\Octokit.dll;                                DestDir: {app}; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\System.Runtime.CompilerServices.Unsafe.dll; DestDir: {app}; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\System.Threading.Tasks.Extensions.dll;      DestDir: {app}; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\System.ValueTuple.dll;                      DestDir: {app}; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\Vocup.exe;                                  DestDir: {app}; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\Vocup.exe.config;                           DestDir: {app}; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\Vocup.pdb;                                  DestDir: {app}; Flags: ignoreversion replacesameversion;
 
 ; Icons for file associations
 Source: icon_vhf.ico;                 DestDir: {app}; Flags: ignoreversion replacesameversion;
 Source: icon_vdp.ico;                 DestDir: {app}; Flags: ignoreversion replacesameversion;
+
+[InstallDelete]
+Type: files; Name: {app}\Hilfe.chm;
+Type: files; Name: {app}\ICSharpCode.SharpZipLib.dll;
+Type: files; Name: {app}\K_Updater.dll;
+Type: files; Name: {app}\sound_correct.wav;
+Type: files; Name: {app}\sound_wrong.wav;
 
 [Icons]
 Name: {commonprograms}\Vocup;         Filename: {app}\Vocup.exe;
@@ -81,10 +92,11 @@ Root: HKCR; Subkey: "vdp.File\shell\open";         ValueType: string; ValueName:
 Filename: {app}\Vocup.exe; Description: {cm:LaunchProgram,Vocup}; Flags: nowait postinstall skipifsilent;
 
 [CustomMessages]
-NetFxRequired_Caption0=Vocup benötigt Microsoft .NET Framework 4.7.2
+NetFxRequired_Caption0=Vocup benötigt .NET 4.8 oder Mono
 NetFxRequired_Caption1=
-NetFxRequired_Caption2=Bitte installieren Sie diese Version über Windows Update
-NetFxRequired_Caption3=und führen Sie die Installation danach erneut aus.
+NetFxRequired_Caption2=Das Setup konnte Microsoft .NET Framework 4.8 nicht finden. Sie können diese Version über Windows Update installieren.
+NetFxRequired_Caption3=
+NetFxRequired_Caption4=Falls Sie Wine verwenden, stellen Sie sicher, dass Wine Mono installiert ist und fahren Sie mit der Installation fort.
 
 [Code]
 function IsNetFxInstalled(version: string; service: cardinal): boolean;
@@ -128,7 +140,7 @@ begin
     end else if version = 'v2.0' then begin
         versionKey := 'v2.0.50727';
     end
-
+    
     // .NET 4.5 and newer install as update to .NET 4.0 Full
     else if Pos('v4.', version) = 1 then begin
         versionKey := 'v4\Full';
@@ -171,18 +183,19 @@ begin
 
     result := success and (install = 1) and (serviceCount >= service);
 end;
-    
-function InitializeSetup(): Boolean;
+   
+function InitializeSetup(): boolean;
 begin
-    if not IsNetFxInstalled('v4.7.2', 0) then begin
+    if not IsNetFxInstalled('v4.8', 0) then begin
         MsgBox(
             ExpandConstant('{cm:NetFxRequired_Caption0}') + #13 +
             ExpandConstant('{cm:NetFxRequired_Caption1}') + #13 +
             ExpandConstant('{cm:NetFxRequired_Caption2}') + #13 +
-            ExpandConstant('{cm:NetFxRequired_Caption3}'),
+            ExpandConstant('{cm:NetFxRequired_Caption3}') + #13 +
+            ExpandConstant('{cm:NetFxRequired_Caption4}'),
             mbError,
             MB_OK);
-        Result := false;
-    end else
-        Result := true;
+    end;
+    
+    Result := true;
 end;

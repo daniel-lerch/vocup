@@ -259,7 +259,7 @@
     <value>9, 24</value>
   </data>
   <data name="CbResetResults.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 17</value>
+    <value>185, 17</value>
   </data>
   <data name="CbResetResults.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -459,9 +459,9 @@
   <data name="&gt;&gt;GroupMotherTongue.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>

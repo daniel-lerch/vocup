@@ -92,7 +92,7 @@ namespace Vocup.Controls
         public bool BrowseButtonVisible
         {
             get => BrowseButton.Visible;
-            set => BrowseButton.Visible = value;
+            set => BrowseButton.Visible = !AppInfo.IsMono && value;
         }
 
         [Browsable(true), EditorBrowsable(EditorBrowsableState.Always)]

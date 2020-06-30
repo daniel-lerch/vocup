@@ -27,13 +27,22 @@ namespace Vocup.IO.Internal
         /// <exception cref="ArgumentNullException"/>
         /// <exception cref="FileNotFoundException"/>
         /// <exception cref="DirectoryNotFoundException"/>
+        /// <exception cref="NotSupportedException"/>
         /// <exception cref="FormatException"/>
         /// <exception cref="CryptographicException"/>
         protected string ReadFile(string path)
         {
             byte[] ciphertext;
-            using (StreamReader reader = new StreamReader(path, Encoding.UTF8))
-                ciphertext = Convert.FromBase64String(reader.ReadToEnd());
+            using (FileStream file = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
+            {
+                if (file.ReadByte() == 0x50 && file.ReadByte() == 0x4B && file.ReadByte() == 0x03 && file.ReadByte() == 0x04)
+                    throw new NotSupportedException($"The file {path} cannot be opened by Vocup. A later version might be required.");
+
+                file.Position = 0;
+
+                using (StreamReader reader = new StreamReader(file, Encoding.UTF8))
+                    ciphertext = Convert.FromBase64String(reader.ReadToEnd());
+            }
 
             using (MemoryStream plainstream = new MemoryStream())
             using (ICryptoTransform transform = csp.CreateDecryptor())

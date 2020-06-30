@@ -49,7 +49,6 @@
             // 
             // BtnContinue
             // 
-            this.BtnContinue.DialogResult = System.Windows.Forms.DialogResult.OK;
             resources.ApplyResources(this.BtnContinue, "BtnContinue");
             this.BtnContinue.Name = "BtnContinue";
             this.BtnContinue.UseVisualStyleBackColor = true;
@@ -57,7 +56,6 @@
             // 
             // BtnCancel
             // 
-            this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.BtnCancel, "BtnCancel");
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.UseVisualStyleBackColor = true;

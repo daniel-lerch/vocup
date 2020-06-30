@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.Win32;
+using System;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -23,7 +23,44 @@ namespace Vocup.Util
         /// </summary>
         public static string SpecialCharDirectory { get; } = Path.Combine(Properties.Settings.Default.VhrPath, "specialchar");
 
-        public static Version GetVersion() => Assembly.GetExecutingAssembly().GetName().Version;
+        public static Version Version { get; } = Assembly.GetExecutingAssembly().GetName().Version;
+
+        public static Version FileVersion { get; } = new Version(1, 0);
+
+        public static string ProductName { get; }
+            = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyProductAttribute>()?.Product;
+
+        public static string CopyrightInfo { get; }
+            = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyCopyrightAttribute>()?.Copyright;
+
+        public static bool IsWindows10 { get; } = Environment.OSVersion.Platform == PlatformID.Win32NT
+            && Environment.OSVersion.Version >= new Version(10, 0);
+
+        private static readonly Lazy<bool> isUwp = new Lazy<bool>(() =>
+        {
+            if (IsWindows10)
+            {
+                int length = 0;
+                StringBuilder sb = new StringBuilder(0);
+                GetCurrentPackageFullName(ref length, sb);
+                sb = new StringBuilder(length);
+                int result = GetCurrentPackageFullName(ref length, sb);
+                return result != APPMODEL_ERROR_NO_PACKAGE;
+            }
+            else return false;
+        });
+        public static bool IsUwp => isUwp.Value;
+
+        private static readonly Lazy<bool> isInstallation = new Lazy<bool>(() =>
+        {
+            return TryGetVocupInstallation(out _, out string installLocation, out _)
+                && Application.StartupPath.TrimEnd('\\').Equals(installLocation.TrimEnd('\\'), StringComparison.OrdinalIgnoreCase);
+        });
+        public static bool IsWindowsInstallation => isInstallation.Value;
+
+        public static bool IsMono { get; } = Type.GetType("Mono.Runtime") != null;
+
+
         /// <summary>
         /// Returns the product version of the currently running instance.
         /// </summary>
@@ -38,26 +75,25 @@ namespace Vocup.Util
             return version;
         }
 
-        public static Version FileVersion => new Version(1, 0);
-
-        public static string ProductName { get; }
-            = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyProductAttribute>()?.Product;
-
-        public static string CopyrightInfo { get; }
-            = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyCopyrightAttribute>()?.Copyright;
-
-        public static bool IsUwp()
+        public static bool TryGetVocupInstallation(out Version version, out string installLocation, out string uninstallString)
         {
-            if (SystemInfo.IsWindows10())
+            version = null;
+            installLocation = null;
+            uninstallString = null;
+
+            if (Environment.OSVersion.Platform != PlatformID.Win32NT) return false;
+
+            // Vocup is installed as 32bit application
+            using (RegistryKey hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32))
+            using (RegistryKey vocup = hklm.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Vocup_is1", writable: false))
             {
-                int length = 0;
-                StringBuilder sb = new StringBuilder(0);
-                GetCurrentPackageFullName(ref length, sb);
-                sb = new StringBuilder(length);
-                int result = GetCurrentPackageFullName(ref length, sb);
-                return result != APPMODEL_ERROR_NO_PACKAGE;
+                if (vocup == null) return false;
+                if (!Version.TryParse((string)vocup.GetValue("DisplayVersion"), out Version temp)) return false;
+                version = temp.Revision == -1 ? new Version(temp.Major, temp.Minor, temp.Build, 0) : temp;
+                installLocation = (string)vocup.GetValue("InstallLocation");
+                uninstallString = (string)vocup.GetValue("UninstallString");
+                return true;
             }
-            else return false;
         }
 
         private const int APPMODEL_ERROR_NO_PACKAGE = 15700;
