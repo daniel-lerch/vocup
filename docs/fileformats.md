@@ -34,8 +34,8 @@ VOCUP VOCABULARY BOOK 2.0
             {
               "date": "2020-06-18T11:24:52+02:00",
               "result": "Correct"
-			}
-		  ]
+            }
+          ]
         },
         {
           "value": "colour",
@@ -45,7 +45,7 @@ VOCUP VOCABULARY BOOK 2.0
               "date": "2019-11-27T01:40:45+05:30",
               "result": "Correct"
             }
-		  ]
+          ]
         }
       ],
       "creationDate": "2019-09-02T16:35:00+02:00"

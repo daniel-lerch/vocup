@@ -11,6 +11,11 @@ namespace Vocup.IO
             ErrorCode = errorCode;
         }
 
+        public VhfFormatException(VhfError errorCode, Exception innerException) : base(null, innerException)
+        {
+            ErrorCode = errorCode;
+        }
+
         public VhfError ErrorCode { get; }
     }
 }

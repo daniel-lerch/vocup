@@ -6,10 +6,13 @@ namespace Vocup.IO
 {
     public enum VhfError
     {
+        InvalidCiphertext,
         InvalidVersion,
         InvalidVhrCode,
         InvalidLanguages,
         InvalidRow,
-        BookNotFound
+        CorruptedArchive,
+        UpdateRequired,
+        EmptyArchive
     }
 }
