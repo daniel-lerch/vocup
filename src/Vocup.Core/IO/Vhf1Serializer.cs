@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace Vocup.IO
 {
     internal class Vhf1Serializer
     {
-        public async Task<Book> ReadBookAsync(Stream stream)
+        public async Task<Book> ReadBookAsync(FileStream stream, string vhrPath)
         {
             using (StringReader reader = new StringReader(await ReadAndDecryptAsync(stream).ConfigureAwait(false)))
             {
@@ -36,7 +37,7 @@ namespace Vocup.IO
                     throw new VhfFormatException(VhfError.InvalidLanguages);
                 }
 
-                Book book = new Book
+                var book = new Book
                 {
                     FileVersion = new Version(1, 0),
                     VhrCode = vhrCode,
@@ -68,11 +69,11 @@ namespace Vocup.IO
             }
         }
 
-        public Task WriteBookAsync(Stream stream, Book book)
+        public async Task WriteBookAsync(FileStream stream, string vhrPath, Book book)
         {
             string content;
 
-            using (StringWriter writer = new StringWriter())
+            using (var writer = new StringWriter())
             {
                 writer.WriteLine("1.0");
                 writer.WriteLine(book.VhrCode);
@@ -93,9 +94,45 @@ namespace Vocup.IO
                 content = writer.ToString();
             }
 
-            return EncryptAndWriteAsync(stream, content);
+            await EncryptAndWriteAsync(stream, content).ConfigureAwait(false);
 
-            // TODO: Write .vhr file
+            // Write results to a .vhr file
+
+            if (!string.IsNullOrEmpty(book.VhrCode) && !string.IsNullOrEmpty(vhrPath))
+            {
+                string results;
+
+                using (var writer = new StringWriter())
+                {
+                    writer.WriteLine(stream.Name);
+                    writer.Write((int)book.PracticeMode);
+
+                    foreach (Word word in book.Words)
+                    {
+                        writer.WriteLine();
+
+                        List<Synonym> synonyms = book.PracticeMode == PracticeMode.AskForForeignLanguage ?
+                            word.ForeignLanguage :
+                            word.MotherTongue;
+
+                        int minPracticeStateNumber = synonyms.Min(synonym => synonym.GetPracticeStateNumber());
+                        DateTimeOffset lastPractice = synonyms.SelectMany(synonym => synonym.Practices).Max(practice => practice.Date);
+
+                        writer.Write(minPracticeStateNumber);
+                        writer.Write('#');
+                        if (lastPractice != default)
+                            writer.Write(lastPractice.DateTime.ToString("dd.MM.yyyy HH:mm"));
+                    }
+
+                    results = writer.ToString();
+                }
+
+                string vhrFileName = Path.Combine(vhrPath, book.VhrCode + ".vhr");
+                using (var resultFile = new FileStream(vhrFileName, FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    await EncryptAndWriteAsync(resultFile, results).ConfigureAwait(false);
+                }
+            }
         }
 
         private static async Task<string> ReadAndDecryptAsync(Stream stream)
@@ -118,11 +155,7 @@ namespace Vocup.IO
                     return Encoding.UTF8.GetString(plainstream.ToArray());
                 }
             }
-            catch (FormatException ex)
-            {
-                throw new VhfFormatException(VhfError.InvalidCiphertext, ex);
-            }
-            catch (CryptographicException ex)
+            catch (Exception ex) when (ex is FormatException || ex is CryptographicException)
             {
                 throw new VhfFormatException(VhfError.InvalidCiphertext, ex);
             }

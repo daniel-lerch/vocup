@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Vocup.IO
+﻿namespace Vocup.IO
 {
     public enum VhfError
     {
@@ -13,6 +9,7 @@ namespace Vocup.IO
         InvalidRow,
         CorruptedArchive,
         UpdateRequired,
-        EmptyArchive
+        EmptyArchive,
+        InvalidJsonBook
     }
 }

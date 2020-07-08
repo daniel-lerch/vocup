@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
-using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Vocup.Models;
@@ -62,6 +60,10 @@ namespace Vocup.IO
             catch (InvalidDataException ex)
             {
                 throw new VhfFormatException(VhfError.CorruptedArchive, ex);
+            }
+            catch (JsonException ex)
+            {
+                throw new VhfFormatException(VhfError.InvalidJsonBook, ex);
             }
         }
 
