@@ -23,7 +23,7 @@ namespace Vocup.IO
                 stream.Seek(0, SeekOrigin.Begin);
 
                 if (!zipHeader)
-                    return await new Vhf1Serializer().ReadBookAsync(stream, VhrPath).ConfigureAwait(false);
+                    return await new Vhf1Serializer(VhrPath).ReadBookAsync(stream).ConfigureAwait(false);
                 else
                     return await new Vhf2Serializer().ReadBookAsync(stream).ConfigureAwait(false);
             }
@@ -36,7 +36,7 @@ namespace Vocup.IO
             using (var stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None))
             {
                 if (book.FileVersion == new Version(1, 0))
-                    await new Vhf1Serializer().WriteBookAsync(stream, VhrPath, book).ConfigureAwait(false);
+                    await new Vhf1Serializer(VhrPath).WriteBookAsync(stream, book).ConfigureAwait(false);
                 else if (book.FileVersion == new Version(2, 0))
                     await new Vhf2Serializer().WriteBookAsync(stream, book).ConfigureAwait(false);
                 else

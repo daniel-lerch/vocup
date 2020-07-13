@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -11,9 +12,16 @@ namespace Vocup.IO
 {
     internal class Vhf1Serializer
     {
-        public async Task<Book> ReadBookAsync(FileStream stream, string vhrPath)
+        private readonly string vhrPath;
+
+        public Vhf1Serializer(string vhrPath)
         {
-            using (StringReader reader = new StringReader(await ReadAndDecryptAsync(stream).ConfigureAwait(false)))
+            this.vhrPath = vhrPath;
+        }
+
+        public async Task<Book> ReadBookAsync(FileStream stream)
+        {
+            using (var reader = new StringReader(await ReadAndDecryptAsync(stream).ConfigureAwait(false)))
             {
                 string version = reader.ReadLine();
                 string vhrCode = reader.ReadLine();
@@ -63,13 +71,19 @@ namespace Vocup.IO
                     book.Words.Add(word);
                 }
 
-                // TODO: Read .vhr file
+                // Read results from .vhr file
+
+                if (!string.IsNullOrWhiteSpace(book.VhrCode)
+                    && !await ReadResults(book, stream.Name).ConfigureAwait(false))
+                {
+                    book.VhrCode = null;
+                }
 
                 return book;
             }
         }
 
-        public async Task WriteBookAsync(FileStream stream, string vhrPath, Book book)
+        public async Task WriteBookAsync(FileStream stream, Book book)
         {
             string content;
 
@@ -100,38 +114,117 @@ namespace Vocup.IO
 
             if (!string.IsNullOrEmpty(book.VhrCode) && !string.IsNullOrEmpty(vhrPath))
             {
-                string results;
+                await WriteResults(book, stream.Name).ConfigureAwait(false);
+            }
+        }
 
-                using (var writer = new StringWriter())
+        private async Task<bool> ReadResults(Book book, string fileName)
+        {
+            try
+            {
+                using (var file = new FileStream(Path.Combine(vhrPath, book.VhrCode + ".vhr"), FileMode.Open, FileAccess.Read, FileShare.Read))
+                using (var reader = new StringReader(await ReadAndDecryptAsync(file).ConfigureAwait(false)))
                 {
-                    writer.WriteLine(stream.Name);
-                    writer.Write((int)book.PracticeMode);
+                    string path = reader.ReadLine();
+                    string mode = reader.ReadLine();
 
-                    foreach (Word word in book.Words)
+                    if (string.IsNullOrWhiteSpace(path) ||
+                        string.IsNullOrWhiteSpace(mode) || !int.TryParse(mode, out int imode) || imode != 1 || imode != 2)
                     {
-                        writer.WriteLine();
+                        return false; // Ignore files with invalid header
+                    }
+
+                    var results = new List<(int stateNumber, DateTime date)>();
+
+                    while (true)
+                    {
+                        string line = reader.ReadLine();
+                        if (line == null) break;
+                        string[] columns = line.Split('#');
+                        if (columns.Length != 2 || !int.TryParse(columns[0], out int state) || state < 0)
+                        {
+                            return false;
+                        }
+                        DateTime time = default;
+                        if (!string.IsNullOrWhiteSpace(columns[1])
+                            && !DateTime.TryParseExact(columns[1], "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out time))
+                        {
+                            return false;
+                        }
+                        results.Add((state, time));
+                    }
+
+                    if (book.Words.Count != results.Count)
+                    {
+                        return false;
+                    }
+
+                    FileInfo vhfInfo = new FileInfo(fileName);
+                    FileInfo pathInfo = new FileInfo(path);
+
+                    if (!vhfInfo.FullName.Equals(pathInfo.FullName, StringComparison.OrdinalIgnoreCase) && pathInfo.Exists)
+                    {
+                        book.GenerateVhrCode(); // Save new results file if the old one is in use by another file
+                    }
+
+                    book.PracticeMode = (PracticeMode)imode;
+
+                    for (int i = 0; i < book.Words.Count; i++)
+                    {
+                        Word word = book.Words[i];
 
                         List<Synonym> synonyms = book.PracticeMode == PracticeMode.AskForForeignLanguage ?
                             word.ForeignLanguage :
                             word.MotherTongue;
 
-                        int minPracticeStateNumber = synonyms.Min(synonym => synonym.GetPracticeStateNumber());
-                        DateTimeOffset lastPractice = synonyms.SelectMany(synonym => synonym.Practices).Max(practice => practice.Date);
-
-                        writer.Write(minPracticeStateNumber);
-                        writer.Write('#');
-                        if (lastPractice != default)
-                            writer.Write(lastPractice.DateTime.ToString("dd.MM.yyyy HH:mm"));
+                        foreach (Synonym synonym in synonyms)
+                        {
+                            synonym.GeneratePracticeHistory(results[i].stateNumber, results[1].date);
+                        }
                     }
 
-                    results = writer.ToString();
+                    return true;
+                }
+            }
+            catch (Exception ex) when (ex is IOException || ex is VhfFormatException)
+            {
+                return false; // Results are useful but not necessary so we ignore file not found and all other exceptions
+            }
+        }
+
+        private async Task WriteResults(Book book, string fileName)
+        {
+            string results;
+
+            using (var writer = new StringWriter())
+            {
+                writer.WriteLine(fileName);
+                writer.Write((int)book.PracticeMode);
+
+                foreach (Word word in book.Words)
+                {
+                    writer.WriteLine();
+
+                    List<Synonym> synonyms = book.PracticeMode == PracticeMode.AskForForeignLanguage ?
+                        word.ForeignLanguage :
+                        word.MotherTongue;
+
+                    int minPracticeStateNumber = synonyms.Min(synonym => synonym.GetPracticeStateNumber());
+                    DateTimeOffset lastPractice = synonyms.SelectMany(synonym => synonym.Practices).Max(practice => practice.Date);
+
+                    writer.Write(minPracticeStateNumber);
+                    writer.Write('#');
+                    if (lastPractice != default)
+                        writer.Write(lastPractice.DateTime.ToString("dd.MM.yyyy HH:mm"));
                 }
 
-                string vhrFileName = Path.Combine(vhrPath, book.VhrCode + ".vhr");
-                using (var resultFile = new FileStream(vhrFileName, FileMode.Create, FileAccess.Write, FileShare.None))
-                {
-                    await EncryptAndWriteAsync(resultFile, results).ConfigureAwait(false);
-                }
+                results = writer.ToString();
+            }
+
+            string absoluteFileName = Path.Combine(vhrPath, book.VhrCode + ".vhr");
+            using (var file = new FileStream(absoluteFileName, FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                await EncryptAndWriteAsync(file, results).ConfigureAwait(false);
             }
         }
 
