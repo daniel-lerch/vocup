@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Vocup.Models
+﻿namespace Vocup.Models
 {
     public enum PracticeMode
     {
@@ -14,5 +10,14 @@ namespace Vocup.Models
         /// The word is displayed in the foreign language and the user has to enter the word in the mother tongue.
         /// </summary>
         AskForMotherTongue = 2
+    }
+
+    public static class PracticeModeExtensions
+    {
+        public static bool IsValid(this PracticeMode practiceMode)
+        {
+            return practiceMode == PracticeMode.AskForForeignLanguage 
+                || practiceMode == PracticeMode.AskForMotherTongue;
+        }
     }
 }

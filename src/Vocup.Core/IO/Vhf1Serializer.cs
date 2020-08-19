@@ -73,7 +73,7 @@ namespace Vocup.IO
 
                 // Read results from .vhr file
 
-                if (!string.IsNullOrWhiteSpace(book.VhrCode)
+                if (!string.IsNullOrWhiteSpace(book.VhrCode) && !string.IsNullOrWhiteSpace(vhrPath)
                     && !await ReadResults(book, stream.Name).ConfigureAwait(false))
                 {
                     book.VhrCode = null;
@@ -102,7 +102,9 @@ namespace Vocup.IO
                     writer.Write('#');
 
                     if (word.ForeignLanguage.Count > 1)
-                        writer.WriteLine(word.ForeignLanguage[1].Value);
+                        writer.Write(word.ForeignLanguage[1].Value);
+
+                    writer.WriteLine();
                 }
 
                 content = writer.ToString();
@@ -112,7 +114,7 @@ namespace Vocup.IO
 
             // Write results to a .vhr file
 
-            if (!string.IsNullOrEmpty(book.VhrCode) && !string.IsNullOrEmpty(vhrPath))
+            if (!string.IsNullOrWhiteSpace(book.VhrCode) && !string.IsNullOrWhiteSpace(vhrPath))
             {
                 await WriteResults(book, stream.Name).ConfigureAwait(false);
             }
@@ -129,7 +131,7 @@ namespace Vocup.IO
                     string mode = reader.ReadLine();
 
                     if (string.IsNullOrWhiteSpace(path) ||
-                        string.IsNullOrWhiteSpace(mode) || !int.TryParse(mode, out int imode) || imode != 1 || imode != 2)
+                        string.IsNullOrWhiteSpace(mode) || !int.TryParse(mode, out int imode) || !((PracticeMode)imode).IsValid())
                     {
                         return false; // Ignore files with invalid header
                     }
@@ -210,7 +212,7 @@ namespace Vocup.IO
                         word.MotherTongue;
 
                     int minPracticeStateNumber = synonyms.Min(synonym => synonym.GetPracticeStateNumber());
-                    DateTimeOffset lastPractice = synonyms.SelectMany(synonym => synonym.Practices).Max(practice => practice.Date);
+                    DateTimeOffset lastPractice = synonyms.Max(synonym => synonym.GetLastPracticeDate());
 
                     writer.Write(minPracticeStateNumber);
                     writer.Write('#');

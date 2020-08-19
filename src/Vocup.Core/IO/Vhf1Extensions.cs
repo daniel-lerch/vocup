@@ -49,6 +49,19 @@ namespace Vocup.IO
             return practiceStateNumber;
         }
 
+        public static DateTimeOffset GetLastPracticeDate(this Synonym synonym)
+        {
+            DateTimeOffset lastPractice = default;
+
+            foreach (Practice pratice in synonym.Practices)
+            {
+                if (pratice.Date > lastPractice)
+                    lastPractice = pratice.Date;
+            }
+
+            return lastPractice;
+        }
+
         public static void GeneratePracticeHistory(this Synonym synonym, int practiceStateNumber, DateTime practiceDate)
         {
             if (practiceStateNumber == 1)

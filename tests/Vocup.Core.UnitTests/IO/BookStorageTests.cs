@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 using Vocup.IO;
 using Vocup.Models;
@@ -36,14 +35,16 @@ namespace Vocup.Core.UnitTests.IO
         public async Task TestWriteReadVhf1()
         {
             Book sample = GenerateSampleBook(new Version(1, 0));
-            var storage = new BookStorage();
+            sample.VhrCode = "o5xqm7rdg6y9fecs9ykuuckv";
+            var storage = new BookStorage { VhrPath = Path.GetTempPath() };
             string path = Path.Combine(Path.GetTempPath(), "Vocup_751e0198-5ed8-439d-9041-efb3d594c400.vhf");
             await storage.WriteBookAsync(path, sample).ConfigureAwait(false);
 
             Book book = await storage.ReadBookAsync(path).ConfigureAwait(false);
             File.Delete(path);
+            File.Delete(Path.Combine(Path.GetTempPath(), "o5xqm7rdg6y9fecs9ykuuckv.vhr"));
             Assert.AreEqual(new Version(1, 0), book.FileVersion);
-            AssertSampleBook(book);
+            BookAssert.AreEqual(sample, book);
         }
 
         [TestMethod]
@@ -57,7 +58,7 @@ namespace Vocup.Core.UnitTests.IO
             Book book = await storage.ReadBookAsync(path).ConfigureAwait(false);
             File.Delete(path);
             Assert.AreEqual(new Version(2, 0), book.FileVersion);
-            AssertSampleBook(book);
+            BookAssert.AreEqual(sample, book);
         }
 
         private Book GenerateSampleBook(Version fileVersion)
@@ -65,25 +66,29 @@ namespace Vocup.Core.UnitTests.IO
             var book = new Book { FileVersion = fileVersion };
             book.MotherTongue = "Deutsch";
             book.ForeignLanguage = "Englisch";
-            var word1 = new Word();
-            word1.MotherTongue.Add(new Synonym { Value = "Farbe" });
-            word1.ForeignLanguage.Add(new Synonym { Value = "colour" });
-            word1.ForeignLanguage.Add(new Synonym { Value = "color" });
-            book.Words.Add(word1);
-            return book;
-        }
+            book.PracticeMode = PracticeMode.AskForForeignLanguage;
 
-        private void AssertSampleBook(Book book)
-        {
-            Assert.IsNotNull(book);
-            Assert.AreEqual("Deutsch", book.MotherTongue);
-            Assert.AreEqual("Englisch", book.ForeignLanguage);
-            Assert.AreEqual(1, book.Words.Count);
-            Assert.AreEqual(1, book.Words[0].MotherTongue.Count);
-            Assert.AreEqual(2, book.Words[0].ForeignLanguage.Count);
-            Assert.AreEqual("Farbe", book.Words[0].MotherTongue[0].Value);
-            Assert.AreEqual("colour", book.Words[0].ForeignLanguage[0].Value);
-            Assert.AreEqual("color", book.Words[0].ForeignLanguage[1].Value);
+            var word1 = new Word();
+            word1.MotherTongue.Add(new Synonym { Value = "Katze" });
+            word1.ForeignLanguage.Add(new Synonym { Value = "cat" });
+
+            var word2 = new Word();
+            var pratice2 = new List<Practice>
+            {
+                new Practice
+                {
+                    // Vocup v1 file formats do not support seconds or timezones of practices
+                    Date = new DateTimeOffset(2020, 8, 19, 16, 17, 17, default),
+                    Result = PracticeResult.Correct
+                } 
+            };
+            word2.MotherTongue.Add(new Synonym { Value = "Farbe" });
+            word2.ForeignLanguage.Add(new Synonym { Value = "colour", Practices = pratice2 });
+            word2.ForeignLanguage.Add(new Synonym { Value = "color", Practices = pratice2 });
+
+            book.Words.Add(word1);
+            book.Words.Add(word2);
+            return book;
         }
     }
 }

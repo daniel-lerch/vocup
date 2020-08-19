@@ -32,6 +32,8 @@ namespace Vocup.IO
         public async Task WriteBookAsync(string path, Book book)
         {
             if (book == null) throw new ArgumentNullException(nameof(book));
+            if (!book.PracticeMode.IsValid()) throw new ArgumentOutOfRangeException(nameof(book), "Invalid pratice PracticeMode");
+
             await default(HopToThreadPoolAwaitable);
             using (var stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None))
             {

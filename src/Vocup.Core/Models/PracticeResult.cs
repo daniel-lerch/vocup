@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Vocup.Models
+﻿namespace Vocup.Models
 {
     public enum PracticeResult
     {
