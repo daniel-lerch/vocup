@@ -1,0 +1,47 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:Vocup.Avalonia.ViewModels;assembly=Vocup.Avalonia"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Vocup.Avalonia.Views.MenuPage"
+             Background="#326598">
+
+  <Design.DataContext>
+    <vm:MenuPageViewModel />
+  </Design.DataContext>
+    
+  <UserControl.Styles>
+    <Style Selector="Button.ToggleTab StackPanel">
+      <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
+    <Style Selector="Button.ToggleTab StackPanel Image">
+      <Setter Property="Width" Value="48" />
+    </Style>
+    <Style Selector="Button.ToggleTab StackPanel TextBlock">
+      <Setter Property="TextAlignment" Value="Center" />
+    </Style>
+  </UserControl.Styles>
+
+  <Grid ColumnDefinitions="96,Auto" RowDefinitions="96,96,Auto,96">
+    <Button Grid.Row="0" Grid.Column="0" Classes="ToggleTab">
+      <StackPanel>
+        <Image Source="/Assets/file.png" />
+        <TextBlock>Neu</TextBlock>
+      </StackPanel>
+    </Button>
+    <Button Grid.Row="1" Grid.Column="0" Classes="ToggleTab">
+      <StackPanel>
+        <Image Source="/Assets/open.png" />
+        <TextBlock>Öffnen</TextBlock>
+      </StackPanel>
+    </Button>
+    <Button Grid.Row="3" Grid.Column="0" Classes="ToggleTab">
+      <StackPanel>
+        <Image Source="/Assets/settings.png" />
+        <TextBlock>Einstellungen</TextBlock>
+      </StackPanel>
+    </Button>
+  </Grid>
+
+</UserControl>
