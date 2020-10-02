@@ -12,6 +12,13 @@
   </Design.DataContext>
     
   <UserControl.Styles>
+    <Style Selector="Button.ToggleTab">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0" />
+    </Style>
+    <Style Selector="Button.ToggleTab:pointerover">
+      <Setter Property="Background" Value="#40FFFFFF" />
+    </Style>
     <Style Selector="Button.ToggleTab StackPanel">
       <Setter Property="HorizontalAlignment" Value="Center" />
     </Style>
@@ -20,10 +27,11 @@
     </Style>
     <Style Selector="Button.ToggleTab StackPanel TextBlock">
       <Setter Property="TextAlignment" Value="Center" />
+      <Setter Property="Foreground" Value="White" />
     </Style>
   </UserControl.Styles>
 
-  <Grid ColumnDefinitions="96,Auto" RowDefinitions="96,96,Auto,96">
+  <Grid ColumnDefinitions="96,*" RowDefinitions="96,96,*,96">
     <Button Grid.Row="0" Grid.Column="0" Classes="ToggleTab">
       <StackPanel>
         <Image Source="/Assets/file.png" />
@@ -42,7 +50,7 @@
         <TextBlock>Einstellungen</TextBlock>
       </StackPanel>
     </Button>
-    <ContentControl Grid.Row="1" Grid.Column="1" Content="{Binding Content}" />
+    <ContentControl Grid.Row="0" Grid.RowSpan="4" Grid.Column="1" Content="{Binding Content}" Background="White"/>
   </Grid>
 
 </UserControl>

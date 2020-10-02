@@ -3,7 +3,6 @@
         xmlns:v="clr-namespace:Vocup.Avalonia.Views"
         xmlns:vm="clr-namespace:Vocup.Avalonia.ViewModels;assembly=Vocup.Avalonia"
         xmlns:c="clr-namespace:Vocup.Avalonia.Controls;assembly=Vocup.Avalonia"
-        xmlns:dg="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.DataGrid"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
@@ -20,7 +19,6 @@
     <DockPanel DockPanel.Dock="Top">
       <c:ToolBar DockPanel.Dock="Left" DataContext="{Binding ToolBar}" />
     </DockPanel>
-    <dg:DataGrid></dg:DataGrid>
     <v:MenuPage DataContext="{Binding MenuPage}"/>
   </DockPanel>
 </Window>
