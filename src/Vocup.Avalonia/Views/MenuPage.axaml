@@ -8,7 +8,7 @@
              Background="#326598">
 
   <Design.DataContext>
-    <vm:MenuPageViewModel />
+    <vm:MenuPageVM />
   </Design.DataContext>
     
   <UserControl.Styles>
@@ -42,6 +42,7 @@
         <TextBlock>Einstellungen</TextBlock>
       </StackPanel>
     </Button>
+    <ContentControl Grid.Row="1" Grid.Column="1" Content="{Binding Content}" />
   </Grid>
 
 </UserControl>

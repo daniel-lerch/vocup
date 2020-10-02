@@ -1,7 +1,6 @@
 ﻿namespace Vocup.Avalonia.ViewModels
 {
-    public class MenuPageViewModel
+    public class MenuPageNewVM : ViewModelBase
     {
-
     }
 }

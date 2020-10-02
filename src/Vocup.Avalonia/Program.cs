@@ -28,7 +28,7 @@ namespace Vocup.Avalonia
         {
             var window = new MainWindow
             {
-                DataContext = new MainWindowViewModel(),
+                DataContext = new MainWindowVM(),
             };
 
             app.Run(window);
