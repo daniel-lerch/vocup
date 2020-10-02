@@ -51,6 +51,7 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EvaluatorTest.cs" />
     <Compile Include="ListCompositorTest.cs" />
     <Compile Include="InitializeTest.cs" />
     <Compile Include="SaintLagueTest.cs" />

@@ -71,7 +71,7 @@ namespace Vocup.Util
 
             foreach (string item in keywords)
             {
-                if (!input.Contains(item))
+                if (!input.Contains(item.Trim()))
                     return PracticeResult.Wrong;
             }
 
@@ -116,8 +116,9 @@ namespace Vocup.Util
                 text = text.Replace("à", "a");
                 text = text.Replace("â", "a");
                 text = text.Replace("ă", "a");
-                text = text.Replace("æ", "oe");
+                text = text.Replace("æ", "ae");
                 text = text.Replace("ç", "c");
+                text = text.Replace("č", "c");
                 text = text.Replace("é", "e");
                 text = text.Replace("è", "e");
                 text = text.Replace("ê", "e");
@@ -132,6 +133,7 @@ namespace Vocup.Util
                 text = text.Replace("ó", "o");
                 text = text.Replace("œ", "oe");
                 text = text.Replace("ş", "s");
+                text = text.Replace("š", "s");
                 text = text.Replace("ţ", "t");
                 text = text.Replace("ù", "u");
                 text = text.Replace("ú", "u");
@@ -142,7 +144,6 @@ namespace Vocup.Util
                 text = text.Replace("º", "");
                 text = text.Replace("¡", "");
                 text = text.Replace("¿", "");
-
             }
 
             // Remove articles
