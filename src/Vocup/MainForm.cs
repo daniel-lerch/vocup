@@ -348,33 +348,9 @@ namespace Vocup
             }
         }
 
-        private void TsmiImport_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog openDialog = new OpenFileDialog
-            {
-                Title = Words.Import,
-                Filter = "CSV (*.csv)|*.csv"
-            })
-            {
-                if (openDialog.ShowDialog() == DialogResult.OK)
-                {
-                    if (CurrentBook != null)
-                    {
-                        VocabularyFile.ImportCsvFile(openDialog.FileName, CurrentBook, false);
-                    }
-                    else
-                    {
-                        VocabularyBook book = new VocabularyBook();
-                        if (VocabularyFile.ImportCsvFile(openDialog.FileName, book, true))
-                        {
-                            book.Notify();
-                            book.UnsavedChanges = true;
-                            LoadBook(book);
-                        }
-                    }
-                }
-            }
-        }
+        private void TsmiImport_Click(object sender, EventArgs e) => ImportCsv();
+
+        private void TsmiImportAnsi_Click(object sender, EventArgs e) => ImportCsv(ansiEncoding: true);
 
         private void TsmiExport_Click(object sender, EventArgs e)
         {
@@ -625,6 +601,34 @@ namespace Vocup
                     LoadBook(book);
 
                     BtnAddWord.Focus();
+                }
+            }
+        }
+
+        private void ImportCsv(bool ansiEncoding = false)
+        {
+            using (OpenFileDialog openDialog = new OpenFileDialog
+            {
+                Title = Words.Import,
+                Filter = $"CSV (*.csv)|*.csv"
+            })
+            {
+                if (openDialog.ShowDialog() == DialogResult.OK)
+                {
+                    if (CurrentBook != null)
+                    {
+                        VocabularyFile.ImportCsvFile(openDialog.FileName, CurrentBook, false, ansiEncoding);
+                    }
+                    else
+                    {
+                        VocabularyBook book = new VocabularyBook();
+                        if (VocabularyFile.ImportCsvFile(openDialog.FileName, book, true, ansiEncoding))
+                        {
+                            book.Notify();
+                            book.UnsavedChanges = true;
+                            LoadBook(book);
+                        }
+                    }
                 }
             }
         }
