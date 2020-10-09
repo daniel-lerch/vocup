@@ -885,7 +885,7 @@
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Auswertung</value>
+    <value>Evaluation</value>
   </data>
   <data name="&gt;&gt;imageColumn.Name" xml:space="preserve">
     <value>imageColumn</value>
