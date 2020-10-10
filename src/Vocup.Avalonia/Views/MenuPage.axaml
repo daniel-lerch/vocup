@@ -31,26 +31,32 @@
     </Style>
   </UserControl.Styles>
 
-  <Grid ColumnDefinitions="96,*" RowDefinitions="96,96,*,96">
+  <Grid ColumnDefinitions="96,*" RowDefinitions="96,96,96,*,96">
     <Button Grid.Row="0" Grid.Column="0" Classes="ToggleTab">
+      <StackPanel>
+        <Image Source="/Assets/icon.ico" />
+        <TextBlock>Home</TextBlock>
+      </StackPanel>
+    </Button>
+    <Button Grid.Row="1" Grid.Column="0" Classes="ToggleTab">
       <StackPanel>
         <Image Source="/Assets/file.png" />
         <TextBlock>Neu</TextBlock>
       </StackPanel>
     </Button>
-    <Button Grid.Row="1" Grid.Column="0" Classes="ToggleTab">
+    <Button Grid.Row="2" Grid.Column="0" Classes="ToggleTab">
       <StackPanel>
         <Image Source="/Assets/open.png" />
         <TextBlock>Öffnen</TextBlock>
       </StackPanel>
     </Button>
-    <Button Grid.Row="3" Grid.Column="0" Classes="ToggleTab">
+    <Button Grid.Row="4" Grid.Column="0" Classes="ToggleTab">
       <StackPanel>
         <Image Source="/Assets/settings.png" />
         <TextBlock>Einstellungen</TextBlock>
       </StackPanel>
     </Button>
-    <ContentControl Grid.Row="0" Grid.RowSpan="4" Grid.Column="1" Content="{Binding Content}" Background="White"/>
+    <ContentControl Grid.Row="0" Grid.RowSpan="5" Grid.Column="1" Content="{Binding Content}" Background="White"/>
   </Grid>
 
 </UserControl>
