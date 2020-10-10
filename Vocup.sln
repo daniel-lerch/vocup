@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_", "_", "{58EAD674-3665-45
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		build.ps1 = build.ps1
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
