@@ -17,10 +17,10 @@ begin {
     $setupDirectory = Join-Path $PSScriptRoot "setup"
     $outputDirectory = Join-Path $setupDirectory "bin"
     $buildDirectory = Join-Path $PSScriptRoot "src\Vocup\bin\Release"
+    $executable = Join-Path $buildDirectory "Vocup.exe"
 
     function GetAppVersion () {
-        $binary = Join-Path $buildDirectory "Vocup.exe"
-        $version = [System.Diagnostics.FileVersionInfo]::GetVersionInfo($binary)
+        $version = [System.Diagnostics.FileVersionInfo]::GetVersionInfo($executable)
         return "$($version.FileMajorPart).$($version.FileMinorPart).$($version.FileBuildPart)"
     }
 
@@ -54,19 +54,44 @@ begin {
 
     function CreateZipArchive () {
         $archive = Join-Path $outputDirectory "Vocup_$(GetAppVersion).zip"
-        Invoke7zip -ArgumentList "a","`"$archive`"","`"$buildDirectory\*`""
+        if (Test-Path -Path $archive -PathType Leaf) {
+            Remove-Item -Path $archive
+        }
+        Invoke7zip -ArgumentList "a","`"$archive`"","`"$buildDirectory\*`"","-x!*.xml"
     }
 
     function CreateTarGzArchive () {
         $temp = Join-Path $outputDirectory "Vocup_$(GetAppVersion)_Mono.tar"
-        Invoke7zip -ArgumentList "a","-ttar","`"$temp`"","`"$buildDirectory\*`""
+        Invoke7zip -ArgumentList "a","-ttar","`"$temp`"","`"$buildDirectory\*`"","-x!*.xml"
         $archive = Join-Path $outputDirectory "Vocup_$(GetAppVersion)_Mono.tar.gz"
+        if (Test-Path -Path $archive -PathType Leaf) {
+            Remove-Item -Path $archive
+        }
         Invoke7zip -ArgumentList "a","`"$archive`"","`"$temp`""
         Remove-Item -Path $temp
+    }
+
+    function RemoveConfigSection () {
+        [string]$configuration = Get-Content -Path "$executable.config" -Raw
+
+        [int]$start1 = $configuration.IndexOf("  <configSections>")
+        $search1 = "</userSettings>`r`n"
+        [int]$end1 = $configuration.IndexOf($search1) + $search1.Length
+        Write-Host "Start: $start1 End: $end1"
+        $configuration = $configuration.Remove($start1, $end1 - $start1)
+
+        [int]$start2 = $configuration.IndexOf("  <System.Windows.Forms.ApplicationConfigurationSection>")
+        $search2 = "</System.Windows.Forms.ApplicationConfigurationSection>`r`n"
+        [int]$end2 = $configuration.IndexOf($search2) + $search2.Length
+        Write-Host "Start: $start2 End: $end2"
+        $configuration = $configuration.Remove($start2, $end2 - $start2)
+
+        Set-Content -Path "$executable.config" -Value $configuration -NoNewline
     }
 }
 
 process {
+    $ErrorActionPreference = "Stop"
     Write-Host "MSBuild integration is not implemented yet. Please build Vocup using Visual Studio."
     Write-Host "Press any key to continue..."
     [System.Console]::ReadKey($true) | Out-Null
@@ -77,11 +102,9 @@ process {
     if ($CreateArchives) {
         CreateZipArchive
     }
-    Write-Host
-    Write-Host "Modification for Mono are not automated yet. Please apply necessary changes manually."
-    Write-Host "Press any key to continue..."
-    [System.Console]::ReadKey($true) | Out-Null
-    Write-Host
+
+    RemoveConfigSection
+
     if ($CreateSetup) {
         InvokeInnoSetup -Mono
     }
