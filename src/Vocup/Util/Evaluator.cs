@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Vocup.Models;
 
@@ -6,13 +7,20 @@ namespace Vocup.Util
 {
     public class Evaluator
     {
+        public bool OptionalExpressions { get; set; }
         public bool TolerateNoSynonym { get; set; }
         public bool TolerateWhiteSpace { get; set; }
         public bool ToleratePunctuationMark { get; set; }
         public bool TolerateSpecialChar { get; set; }
         public bool TolerateArticle { get; set; }
 
-        public PracticeResult GetResult(string[] inputs, string[] results)
+        // Evaluating vocabulary words requires multiple steps:
+        //
+        // Question 1: Does an input contain multiple synonyms?
+        // Question 2: Does a synonym contain optional expressions?
+        // Question 3: Is a synonym at least partly correct?
+
+        public PracticeResult GetResult(string[] results, string[] inputs)
         {
             int missed = 0;
 
@@ -63,6 +71,57 @@ namespace Vocup.Util
                 return PracticeResult.Correct;
             else
                 return PracticeResult.Wrong;
+        }
+
+        private PracticeResult EvaluateOptionalExpressions(string result, string input)
+        {
+            if (!OptionalExpressions) return EvaluateToleratedMistakes(result, input);
+
+            var optionalRanges = new List<(int start, int end)>();
+            bool optional = false;
+            int start = -1;
+
+            for (int i = 0; i < result.Length; i++)
+            {
+                if (result[i] == '(')
+                {
+                    // Nested parentheses or a non whitespace character in front of an opening parenthesis
+                    // will not be treated as the start of an optional expression.
+
+                    if (!optional && (i == 0 || result[i - 1] == ' '))
+                        start = i;
+                    optional = true;
+                }
+                else if (result[i] == ')')
+                {
+                    // A leading closing parenthesis or a non whitespace character after a closing
+                    // parenthesis will not be treated as the end of an optional expression.
+
+                    if (optional && (i == result.Length - 1 || result[i + 1] == ' '))
+                        optionalRanges.Add((start, i));
+                    optional = false;
+                }
+            }
+
+            // TODO: Compose all possible candidates and return the result of the best match.
+
+            throw new NotImplementedException();
+        }
+
+        private PracticeResult EvaluateToleratedMistakes(string result, string input)
+        {
+            if (result.Equals(input, StringComparison.Ordinal))
+            {
+                return PracticeResult.Correct;
+            }
+            else if (SimplifyText(result).Equals(SimplifyText(input), StringComparison.Ordinal))
+            {
+                return PracticeResult.PartlyCorrect;
+            }
+            else
+            {
+                return PracticeResult.Wrong;
+            }
         }
 
         private PracticeResult GetPartitialResult(string input, string result)

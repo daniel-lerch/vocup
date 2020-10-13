@@ -39,6 +39,9 @@
             this.TrbUnknown = new System.Windows.Forms.TrackBar();
             this.TabControlMain = new System.Windows.Forms.TabControl();
             this.TabGeneral = new System.Windows.Forms.TabPage();
+            this.GroupLanguage = new System.Windows.Forms.GroupBox();
+            this.LbLanguage = new System.Windows.Forms.Label();
+            this.CbLanguage = new System.Windows.Forms.ComboBox();
             this.GroupVocabularyList = new System.Windows.Forms.GroupBox();
             this.CbColumnResize = new System.Windows.Forms.CheckBox();
             this.CbGridLines = new System.Windows.Forms.CheckBox();
@@ -88,14 +91,13 @@
             this.LbTrb3 = new System.Windows.Forms.Label();
             this.LbTrb4 = new System.Windows.Forms.Label();
             this.TrbRepetitions = new System.Windows.Forms.TrackBar();
-            this.GroupLanguage = new System.Windows.Forms.GroupBox();
-            this.CbLanguage = new System.Windows.Forms.ComboBox();
-            this.LbLanguage = new System.Windows.Forms.Label();
+            this.CbOptionalExpressions = new System.Windows.Forms.CheckBox();
             this.GroupStartScreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TrbWrongRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrbUnknown)).BeginInit();
             this.TabControlMain.SuspendLayout();
             this.TabGeneral.SuspendLayout();
+            this.GroupLanguage.SuspendLayout();
             this.GroupVocabularyList.SuspendLayout();
             this.GroupVhrPath.SuspendLayout();
             this.GroupVhfPath.SuspendLayout();
@@ -113,7 +115,6 @@
             this.GroupRepetitions.SuspendLayout();
             this.PnlPracticeCount.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TrbRepetitions)).BeginInit();
-            this.GroupLanguage.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnOk
@@ -204,6 +205,30 @@
             this.TabGeneral.Controls.Add(this.GroupStartScreen);
             resources.ApplyResources(this.TabGeneral, "TabGeneral");
             this.TabGeneral.Name = "TabGeneral";
+            // 
+            // GroupLanguage
+            // 
+            this.GroupLanguage.Controls.Add(this.LbLanguage);
+            this.GroupLanguage.Controls.Add(this.CbLanguage);
+            resources.ApplyResources(this.GroupLanguage, "GroupLanguage");
+            this.GroupLanguage.Name = "GroupLanguage";
+            this.GroupLanguage.TabStop = false;
+            // 
+            // LbLanguage
+            // 
+            resources.ApplyResources(this.LbLanguage, "LbLanguage");
+            this.LbLanguage.Name = "LbLanguage";
+            // 
+            // CbLanguage
+            // 
+            this.CbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbLanguage.FormattingEnabled = true;
+            this.CbLanguage.Items.AddRange(new object[] {
+            resources.GetString("CbLanguage.Items"),
+            resources.GetString("CbLanguage.Items1"),
+            resources.GetString("CbLanguage.Items2")});
+            resources.ApplyResources(this.CbLanguage, "CbLanguage");
+            this.CbLanguage.Name = "CbLanguage";
             // 
             // GroupVocabularyList
             // 
@@ -307,6 +332,7 @@
             // 
             // GroupEvaluation
             // 
+            this.GroupEvaluation.Controls.Add(this.CbOptionalExpressions);
             this.GroupEvaluation.Controls.Add(this.CbManualCheck);
             this.GroupEvaluation.Controls.Add(this.CbEvaluationSystem);
             this.GroupEvaluation.Controls.Add(this.LbGradeSystem);
@@ -565,29 +591,13 @@
             this.TrbRepetitions.Name = "TrbRepetitions";
             this.TrbRepetitions.Value = 3;
             // 
-            // GroupLanguage
+            // CbOptionalExpressions
             // 
-            this.GroupLanguage.Controls.Add(this.LbLanguage);
-            this.GroupLanguage.Controls.Add(this.CbLanguage);
-            resources.ApplyResources(this.GroupLanguage, "GroupLanguage");
-            this.GroupLanguage.Name = "GroupLanguage";
-            this.GroupLanguage.TabStop = false;
-            // 
-            // CbLanguage
-            // 
-            this.CbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CbLanguage.FormattingEnabled = true;
-            this.CbLanguage.Items.AddRange(new object[] {
-            resources.GetString("CbLanguage.Items"),
-            resources.GetString("CbLanguage.Items1"),
-            resources.GetString("CbLanguage.Items2")});
-            resources.ApplyResources(this.CbLanguage, "CbLanguage");
-            this.CbLanguage.Name = "CbLanguage";
-            // 
-            // LbLanguage
-            // 
-            resources.ApplyResources(this.LbLanguage, "LbLanguage");
-            this.LbLanguage.Name = "LbLanguage";
+            resources.ApplyResources(this.CbOptionalExpressions, "CbOptionalExpressions");
+            this.CbOptionalExpressions.Checked = true;
+            this.CbOptionalExpressions.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CbOptionalExpressions.Name = "CbOptionalExpressions";
+            this.CbOptionalExpressions.UseVisualStyleBackColor = true;
             // 
             // SettingsDialog
             // 
@@ -610,6 +620,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.TrbUnknown)).EndInit();
             this.TabControlMain.ResumeLayout(false);
             this.TabGeneral.ResumeLayout(false);
+            this.GroupLanguage.ResumeLayout(false);
+            this.GroupLanguage.PerformLayout();
             this.GroupVocabularyList.ResumeLayout(false);
             this.GroupVocabularyList.PerformLayout();
             this.GroupVhrPath.ResumeLayout(false);
@@ -638,8 +650,6 @@
             this.PnlPracticeCount.ResumeLayout(false);
             this.PnlPracticeCount.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TrbRepetitions)).EndInit();
-            this.GroupLanguage.ResumeLayout(false);
-            this.GroupLanguage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -708,5 +718,6 @@
         private System.Windows.Forms.GroupBox GroupLanguage;
         private System.Windows.Forms.Label LbLanguage;
         private System.Windows.Forms.ComboBox CbLanguage;
+        private System.Windows.Forms.CheckBox CbOptionalExpressions;
     }
 }

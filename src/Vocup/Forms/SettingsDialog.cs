@@ -1,7 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Vocup.Models;
 using Vocup.Properties;
@@ -54,6 +52,7 @@ namespace Vocup
             // Evaluation
             CbManualCheck.Checked = settings.UserEvaluates;
             CbPracticeResult.Checked = settings.PracticeShowResultList;
+            CbOptionalExpressions.Checked = settings.EvaluateOptionalExpressions;
             switch (settings.PracticeGradeCulture)
             {
                 case "de-CH": CbEvaluationSystem.SelectedIndex = 1; break;
@@ -111,6 +110,7 @@ namespace Vocup
             // Evaluation
             settings.UserEvaluates = CbManualCheck.Checked;
             settings.PracticeShowResultList = CbPracticeResult.Checked;
+            settings.EvaluateOptionalExpressions = CbOptionalExpressions.Checked;
             switch (CbEvaluationSystem.SelectedIndex)
             {
                 case 1: settings.PracticeGradeCulture = "de-CH"; break;
