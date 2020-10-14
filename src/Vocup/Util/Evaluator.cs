@@ -75,8 +75,67 @@ namespace Vocup.Util
         {
             if (!OptionalExpressions) return EvaluateToleratedMistakes(result, input);
 
+            List<Segment> segments = GetSegments(result, out int optionalCount);
+
+            if (segments.Count == 1) return EvaluateToleratedMistakes(result, input);
+
+            // Evaluating optional expressions range by range would be efficient but difficult
+            // because it's not possible to match result and input indices for partly correct statements.
+            // The alternative is to compute all possible combinations which are as many as  3 to the power
+            // of n where n is the number of optional segments.
+
+            string[] candidiates = new string[(int)Math.Pow(3, optionalCount)];
+            int optionalIndex = -1;
+
+            for (int i = 0; i < segments.Count; i++)
+            {
+                Segment seg = segments[i];
+                var variations = new string[3];
+                variations[0] = result.Substring(seg.Start, seg.End - seg.Start + 1);
+
+                if (segments[i].Optional)
+                {
+                    if (seg.Space == 0)
+                        variations[1] = result.Substring(seg.Start + 1, seg.End - seg.Start - 1);
+                    else if (seg.Space == -1)
+                        variations[1] = ' ' + result.Substring(seg.Start + 2, seg.End - seg.Start - 2);
+                    else if (seg.Space == 1)
+                        variations[1] = result.Substring(seg.Start + 1, seg.End - seg.Start - 2) + ' ';
+
+                    variations[2] = string.Empty;
+                    optionalIndex++;
+                }
+
+                for (int k = 0; k < candidiates.Length; k++)
+                {
+                    int variation = seg.Optional
+                        ? k / (int)Math.Pow(3, optionalCount - 1 - optionalIndex) % 3
+                        : 0;
+
+                    if (i == 0)
+                        candidiates[k] = variations[variation];
+                    else
+                        candidiates[k] += variations[variation];
+                }
+            }
+
+            // Iterate through all possible candidates and return the result of the best match.
+
+            PracticeResult bestMatch = PracticeResult.Wrong;
+
+            foreach (string candidate in candidiates)
+            {
+                PracticeResult match = EvaluateToleratedMistakes(candidate, input);
+                if (match > bestMatch) bestMatch = match;
+            }
+
+            return bestMatch;
+        }
+
+        private List<Segment> GetSegments(string result, out int optionalCount)
+        {
             var segments = new List<Segment>();
-            int optionalCount = 0;
+            optionalCount = 0;
             bool isOptional = false;
             int previousStart = 0;
             int optionalStart = -1;
@@ -145,47 +204,7 @@ namespace Vocup.Util
                 segments.Add(new Segment(previousStart, result.Length - 1, false, 0));
             }
 
-            if (segments.Count == 1) return EvaluateToleratedMistakes(result, input);
-
-            // Evaluating optional expressions range by range would be efficient but difficult
-            // because it's not possible to match result and input indices for partly correct statements.
-            // The alternative is to compute all possible combinations which are as many as  3 to the power
-            // of n where n is the number of optional segments.
-
-            string[] candidiates = new string[(int)Math.Pow(3, optionalCount)];
-
-            for (int i = 0; i < segments.Count; i++)
-            {
-                Segment seg = segments[i];
-                var variations = new string[3];
-                variations[0] = result.Substring(seg.Start, seg.End - seg.Start + 1);
-
-                if (segments[i].Optional)
-                {
-                    if (seg.Space == 0)
-                        variations[1] = result.Substring(seg.Start + 1, seg.End - seg.Start - 1);
-                    else if (seg.Space == -1)
-                        variations[1] = ' ' + result.Substring(seg.Start + 2, seg.End - seg.Start - 2);
-                    else if (seg.Space == 1)
-                        variations[1] = result.Substring(seg.Start + 1, seg.End - seg.Start - 2) + ' ';
-
-                    variations[2] = string.Empty;
-                }
-                else
-                {
-                    variations[1] = variations[0];
-                    variations[2] = variations[0];
-                }
-
-                for (int k = 0; k < candidiates.Length; k++)
-                {
-
-                }
-            }
-
-            // TODO: Compose all possible candidates and return the result of the best match.
-
-            throw new NotImplementedException();
+            return segments;
         }
 
         private PracticeResult EvaluateToleratedMistakes(string result, string input)
