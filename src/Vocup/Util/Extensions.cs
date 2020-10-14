@@ -19,9 +19,21 @@ namespace Vocup.Util
         {
             foreach (char item in chars)
             {
-                if (value.Contains(item)) return true;
+                if (value.IndexOf(item) != -1) return true;
             }
             return false;
+        }
+
+        public static string[] SplitAndTrim(this string value, char[] separator, StringSplitOptions options)
+        {
+            string[] result = value.Split(separator, options);
+
+            for (int i = 0; i < result.Length; i++)
+            {
+                result[i] = result[i].Trim();
+            }
+
+            return result;
         }
     }
 
