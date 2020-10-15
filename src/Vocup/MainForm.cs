@@ -289,11 +289,6 @@ namespace Vocup
             using (var dialog = new MergeFiles()) dialog.ShowDialog();
         }
 
-        private void TsmiBackupCreate_Click(object sender, EventArgs e)
-        {
-            using (var dialog = new CreateBackup()) dialog.ShowDialog();
-        }
-
         private void TsmiBackupRestore_Click(object sender, EventArgs e)
         {
             if (UnsavedChanges && !EnsureSaved()) return;
