@@ -38,7 +38,7 @@ namespace Vocup.Util
         private static Random local;
 
         private static Random Random
-            => local ??= new Random(unchecked(Environment.TickCount * 31 + Thread.CurrentThread.ManagedThreadId));
+            => local ?? (local = new Random(unchecked(Environment.TickCount * 31 + Thread.CurrentThread.ManagedThreadId)));
 
         /// <summary>
         /// Shuffles a <see cref="IList{T}"/> by reordering all elements randomly.
