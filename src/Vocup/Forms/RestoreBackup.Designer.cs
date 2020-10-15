@@ -44,6 +44,7 @@
             this.RbRestoreNoResults = new System.Windows.Forms.RadioButton();
             this.RbRestoreAllResults = new System.Windows.Forms.RadioButton();
             this.RbRestoreAssociatedResults = new System.Windows.Forms.RadioButton();
+            this.LbDeprecated = new System.Windows.Forms.Label();
             this.GroupBooks.SuspendLayout();
             this.GroupSpecialChars.SuspendLayout();
             this.GroupReplace.SuspendLayout();
@@ -159,11 +160,20 @@
             this.RbRestoreAssociatedResults.TabStop = true;
             this.RbRestoreAssociatedResults.UseVisualStyleBackColor = true;
             // 
+            // LbDeprecated
+            // 
+            this.LbDeprecated.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.LbDeprecated.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LbDeprecated.ForeColor = System.Drawing.Color.DarkRed;
+            resources.ApplyResources(this.LbDeprecated, "LbDeprecated");
+            this.LbDeprecated.Name = "LbDeprecated";
+            // 
             // RestoreBackup
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnCancel;
+            this.Controls.Add(this.LbDeprecated);
             this.Controls.Add(this.GroupResults);
             this.Controls.Add(this.GroupReplace);
             this.Controls.Add(this.BtnCancel);
@@ -204,5 +214,6 @@
         private System.Windows.Forms.RadioButton RbRestoreAllResults;
         private System.Windows.Forms.RadioButton RbRestoreAssociatedResults;
         private System.Windows.Forms.RadioButton RbRestoreNoResults;
+        private System.Windows.Forms.Label LbDeprecated;
     }
 }

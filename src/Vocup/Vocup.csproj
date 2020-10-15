@@ -343,6 +343,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RestoreBackup.de.resx">
       <DependentUpon>RestoreBackup.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsDialog.de.resx">
       <DependentUpon>SettingsDialog.cs</DependentUpon>
