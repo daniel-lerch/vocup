@@ -17,6 +17,7 @@ namespace Vocup
     public partial class MainForm : Form, IMainForm
     {
         private string updateUrl;
+        private int lastSearchResult;
 
         public MainForm()
         {
@@ -434,25 +435,25 @@ namespace Vocup
             }
             else // ListView durchsuchen
             {
-                bool found = false;
-
-                foreach (VocabularyWord word in CurrentBook.Words)
+                int index = CurrentBook.Words.NextIndexOf(word =>
                 {
-                    if (word.MotherTongue.ToUpper().Contains(search_text) ||
-                        word.ForeignLang.ToUpper().Contains(search_text) ||
-                        (word.ForeignLangSynonym?.ToUpper().Contains(search_text) ?? false))
-                    {
-                        ListViewItem item = CurrentController.GetController(word).ListViewItem;
-                        item.Selected = true;
-                        item.Focused = true;
-                        item.EnsureVisible();
-                        CurrentController.ListView.Focus();
-                        found = true;
-                    }
+                    return word.MotherTongue.ToUpper().Contains(search_text)
+                           || word.ForeignLang.ToUpper().Contains(search_text)
+                           || (word.ForeignLangSynonym?.ToUpper().Contains(search_text) ?? false);
+                }, lastSearchResult);
+
+                if (index != -1)
+                {
+                    ListViewItem item = CurrentController.GetController(CurrentBook.Words[index]).ListViewItem;
+                    item.Selected = true;
+                    item.Focused = true;
+                    item.EnsureVisible();
+                    CurrentController.ListView.Focus();
+                    lastSearchResult = index;
                 }
 
                 Color @default = Color.White;
-                Color highlight = found ? Color.FromArgb(144, 238, 144) : Color.FromArgb(255, 192, 203);
+                Color highlight = index == -1 ? Color.FromArgb(255, 192, 203) : Color.FromArgb(144, 238, 144);
 
                 TbSearchWord.BackColor = highlight;
 
