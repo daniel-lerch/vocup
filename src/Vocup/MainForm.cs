@@ -32,6 +32,7 @@ namespace Vocup
         public VocabularyBook CurrentBook { get; private set; }
         public VocabularyBookController CurrentController { get; private set; }
         public StatisticsPanel StatisticsPanel => GroupStatistics;
+        public TextBox SearchText => TbSearchWord;
         public bool UnsavedChanges => CurrentBook?.UnsavedChanges ?? false;
 
         public void VocabularyWordSelected(bool value)
