@@ -31,6 +31,9 @@ VersionInfoVersion={#AppVersion}
 VersionInfoCompany=Daniel Lerch
 VersionInfoCopyright=© 2011 Florian Amstutz, © 2018-2020 Daniel Lerch
 
+UninstallDisplayIcon={app}\Vocup.exe
+UninstallDisplayName=Vocup (classic installation)
+
 [Languages]
 Name: german; MessagesFile: compiler:Languages\German.isl;
 
