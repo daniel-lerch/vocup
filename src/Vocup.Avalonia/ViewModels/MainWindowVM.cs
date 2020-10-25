@@ -1,18 +1,28 @@
-﻿using Vocup.Avalonia.Controls;
+﻿using ReactiveUI;
+using Vocup.Models;
 
 namespace Vocup.Avalonia.ViewModels
 {
     public class MainWindowVM : ViewModelBase
     {
+        private ViewModelBase content;
+
         public MainWindowVM()
         {
-            MenuStrip = new MenuStripViewModel();
-            ToolBar = new ToolBarViewModel();
-            MenuPage = new MenuPageVM();
+            Content = MenuPage = new MenuPageVM(ShowBook);
         }
 
-        public MenuStripViewModel MenuStrip { get; }
-        public ToolBarViewModel ToolBar { get; }
+        public ViewModelBase Content
+        {
+            get => content; 
+            set => this.RaiseAndSetIfChanged(ref content, value);
+        }
+
         public MenuPageVM MenuPage { get; }
+
+        public void ShowBook(Book book)
+        {
+            Content = new BookPageVM(book);
+        }
     }
 }

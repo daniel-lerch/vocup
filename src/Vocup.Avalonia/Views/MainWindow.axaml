@@ -8,17 +8,10 @@
         mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
         x:Class="Vocup.Avalonia.Views.MainWindow"
         Icon="/Assets/icon.ico"
-        Title="Vocup">
+        Title="Vocup"
+        Content="{Binding Content}">
 
   <Design.DataContext>
     <vm:MainWindowVM />
   </Design.DataContext>
-
-  <DockPanel>
-    <c:MenuStrip DockPanel.Dock="Top" DataContext="{Binding MenuStrip}" />
-    <DockPanel DockPanel.Dock="Top">
-      <c:ToolBar DockPanel.Dock="Left" DataContext="{Binding ToolBar}" />
-    </DockPanel>
-    <v:MenuPage DataContext="{Binding MenuPage}"/>
-  </DockPanel>
 </Window>
