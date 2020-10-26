@@ -1,20 +1,43 @@
-﻿using System;
+﻿using ReactiveUI;
+using System;
+using System.Reactive;
 using Vocup.Models;
 
 namespace Vocup.Avalonia.ViewModels
 {
     public class MenuPageNewVM : ViewModelBase
     {
-        private readonly Action<Book> showBook;
+        private string motherTongue;
+        private string foreignLanguage;
 
         public MenuPageNewVM(Action<Book> showBook)
         {
-            this.showBook = showBook;
+            void commit() => showBook(new Book
+            {
+                MotherTongue = MotherTongue,
+                ForeignLanguage = ForeignLanguage
+            });
+
+            IObservable<bool> canCommit = this.WhenAnyValue(
+                x => x.MotherTongue,
+                x => x.ForeignLanguage,
+                (p1, p2) => !string.IsNullOrWhiteSpace(p1) && !string.IsNullOrWhiteSpace(p2));
+
+            Commit = ReactiveCommand.Create(commit, canCommit);
         }
 
-        public void Commit()
+        public string MotherTongue
         {
-            showBook(new Book());
+            get => motherTongue;
+            set => this.RaiseAndSetIfChanged(ref motherTongue, value);
         }
+
+        public string ForeignLanguage
+        {
+            get => foreignLanguage;
+            set => this.RaiseAndSetIfChanged(ref foreignLanguage, value);
+        }
+
+        public ReactiveCommand<Unit, Unit> Commit { get; }
     }
 }

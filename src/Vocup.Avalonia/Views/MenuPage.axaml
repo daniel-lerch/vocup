@@ -7,10 +7,6 @@
              x:Class="Vocup.Avalonia.Views.MenuPage"
              Background="#326598">
 
-  <Design.DataContext>
-    <vm:MenuPageVM />
-  </Design.DataContext>
-    
   <UserControl.Styles>
     <Style Selector="Button.ToggleTab">
       <Setter Property="Background" Value="Transparent" />
