@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using Vocup.IO;
 using Vocup.Models;
@@ -14,10 +15,15 @@ namespace Vocup.Core.UnitTests.IO
         [TestMethod]
         public async Task TestReadVhf1()
         {
-            Book book = await new BookStorage().ReadBookAsync(Path.Join("Resources", "Year 11.vhf")).ConfigureAwait(false);
+            var storage = new BookStorage { VhrPath = "Resources" };
+            Book book = await storage.ReadBookAsync(Path.Join("Resources", "Year 11.vhf")).ConfigureAwait(false);
 
             Assert.AreEqual(new Version(1, 0), book.FileVersion);
+            Assert.AreEqual("Deutsch", book.MotherTongue);
+            Assert.AreEqual("Englisch", book.ForeignLanguage);
+            Assert.AreEqual(PracticeMode.AskForForeignLanguage, book.PracticeMode);
             Assert.AreEqual(113, book.Words.Count);
+            Assert.IsTrue(book.Words.Any(word => word.ForeignLanguage.Any(synonym => synonym.Practices.Count > 0)));
         }
 
         [TestMethod]
@@ -26,6 +32,9 @@ namespace Vocup.Core.UnitTests.IO
             Book book = await new BookStorage().ReadBookAsync(Path.Join("Resources", "Year 12.vhf")).ConfigureAwait(false);
 
             Assert.AreEqual(new Version(2, 0), book.FileVersion);
+            Assert.AreEqual("Deutsch", book.MotherTongue);
+            Assert.AreEqual("Englisch", book.ForeignLanguage);
+            Assert.AreEqual(PracticeMode.AskForForeignLanguage, book.PracticeMode);
             Assert.AreEqual(1, book.Words.Count);
             Assert.AreEqual(2, book.Words[0].MotherTongue.Count);
             Assert.AreEqual(2, book.Words[0].ForeignLanguage.Count);

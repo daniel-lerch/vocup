@@ -131,7 +131,7 @@ namespace Vocup.IO
                     string mode = reader.ReadLine();
 
                     if (string.IsNullOrWhiteSpace(path) ||
-                        string.IsNullOrWhiteSpace(mode) || !int.TryParse(mode, out int imode) || !((PracticeMode)imode).IsValid())
+                        string.IsNullOrWhiteSpace(mode) || !int.TryParse(mode, out int imode) || !((PracticeMode)(imode - 1)).IsValid())
                     {
                         return false; // Ignore files with invalid header
                     }
@@ -169,7 +169,7 @@ namespace Vocup.IO
                         book.GenerateVhrCode(); // Save new results file if the old one is in use by another file
                     }
 
-                    book.PracticeMode = (PracticeMode)imode;
+                    book.PracticeMode = (PracticeMode)(imode - 1);
 
                     for (int i = 0; i < book.Words.Count; i++)
                     {
@@ -201,7 +201,7 @@ namespace Vocup.IO
             using (var writer = new StringWriter())
             {
                 writer.WriteLine(fileName);
-                writer.Write((int)book.PracticeMode);
+                writer.Write((int)book.PracticeMode + 1);
 
                 foreach (Word word in book.Words)
                 {

@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Resources\3jgh9u3tuPCfYLxhhCJXGyPN.vhr">
+    <None Update="Resources\2jgh9u3tuPCfYLxhhCJXGyPN.vhr">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Resources\Year 11.vhf">
