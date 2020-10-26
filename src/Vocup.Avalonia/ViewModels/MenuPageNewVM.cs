@@ -15,7 +15,8 @@ namespace Vocup.Avalonia.ViewModels
             void commit() => showBook(new Book
             {
                 MotherTongue = MotherTongue,
-                ForeignLanguage = ForeignLanguage
+                ForeignLanguage = ForeignLanguage,
+                PracticeMode = PracticeMode
             });
 
             IObservable<bool> canCommit = this.WhenAnyValue(
@@ -37,6 +38,8 @@ namespace Vocup.Avalonia.ViewModels
             get => foreignLanguage;
             set => this.RaiseAndSetIfChanged(ref foreignLanguage, value);
         }
+
+        public PracticeMode PracticeMode { get; set; }
 
         public ReactiveCommand<Unit, Unit> Commit { get; }
     }
