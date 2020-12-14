@@ -646,8 +646,18 @@ namespace Vocup
 
         private void DeleteWord()
         {
+            int index = CurrentController.ListView.SelectedItem.Index;
             VocabularyWord selected = (VocabularyWord)CurrentController.ListView.SelectedItem.Tag;
             CurrentBook.Words.Remove(selected);
+            
+            // Limit index of the deleted word to the highest possible index
+            index = Math.Min(index, CurrentBook.Words.Count - 1);
+            
+            foreach (ListViewItem item in CurrentController.ListView.Items)
+            {
+                if (item.Index == index) item.Selected = true;
+            }
+
             BtnAddWord.Focus();
         }
 

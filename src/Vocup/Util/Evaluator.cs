@@ -106,10 +106,12 @@ namespace Vocup.Util
                     optionalIndex++;
                 }
 
+                int variationBlockLength = (int)Math.Pow(3, optionalCount - 1 - optionalIndex);
+
                 for (int k = 0; k < candidiates.Length; k++)
                 {
                     int variation = seg.Optional
-                        ? k / (int)Math.Pow(3, optionalCount - 1 - optionalIndex) % 3
+                        ? k / variationBlockLength % 3
                         : 0;
 
                     if (i == 0)
