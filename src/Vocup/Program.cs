@@ -33,8 +33,11 @@ namespace Vocup
             // Warning: Unsaved changes are overridden
 
             SetCulture();
-            CreateVhfFolder();
-            CreateVhrFolder();
+            if (!CreateVhfFolder() || !CreateVhrFolder())
+            {
+                Application.Exit();
+                return;
+            }
 
             Settings.Default.StartupCounter++;
             Settings.Default.Save();
@@ -82,37 +85,51 @@ namespace Vocup
         /// <summary>
         /// Checks the currently configured folder for .vhf files and creates it if not existing.
         /// </summary>
-        internal static void CreateVhfFolder()
+        internal static bool CreateVhfFolder()
         {
             string folder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
 
-            if (string.IsNullOrWhiteSpace(Settings.Default.VhfPath) || Settings.Default.VhfPath.Equals(folder, StringComparison.OrdinalIgnoreCase))
+            if (string.IsNullOrWhiteSpace(Settings.Default.VhfPath))
             {
                 Settings.Default.VhfPath = folder;
             }
-            else
+            else if (!Directory.Exists(Settings.Default.VhfPath))
             {
-                Directory.CreateDirectory(Settings.Default.VhfPath);
+                if (MessageBox.Show(Messages.VhfPathNotFound, Messages.VhfPathNotFoundT, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    Settings.Default.VhfPath = folder;
+                }
+                else return false;
             }
+
+            return true;
         }
 
         /// <summary>
         /// Checks the currently configured folder for .vhr files and creates it if not existing.
         /// </summary>
-        internal static void CreateVhrFolder()
+        internal static bool CreateVhrFolder()
         {
-            string appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            string folder = Path.Combine(appdata, AppInfo.ProductName); // default path
+            string folder = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                AppInfo.ProductName);
 
-            if (string.IsNullOrWhiteSpace(Settings.Default.VhrPath) || Settings.Default.VhrPath.Equals(folder, StringComparison.OrdinalIgnoreCase))
+            if (string.IsNullOrWhiteSpace(Settings.Default.VhrPath))
             {
                 Directory.CreateDirectory(folder);
                 Settings.Default.VhrPath = folder;
             }
-            else
+            else if (!Directory.Exists(Settings.Default.VhrPath))
             {
-                Directory.CreateDirectory(Settings.Default.VhrPath);
+                if (MessageBox.Show(Messages.VhrPathNotFound, Messages.VhrPathNotFoundT, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    Directory.CreateDirectory(folder);
+                    Settings.Default.VhrPath = folder;
+                }
+                else return false;
             }
+
+            return true;
         }
 
         internal static void SetCulture()

@@ -298,6 +298,13 @@ Please ensure that the file is not empty.</value>
   <data name="VhfMustUpdateT" xml:space="preserve">
     <value>Update required</value>
   </data>
+  <data name="VhfPathNotFound" xml:space="preserve">
+    <value>The folder for vocabulary books was not found at {0}. Vocup will replace your configuration with the default documents directory. You change that in the settings at any time.</value>
+    <comment>{0}: Path</comment>
+  </data>
+  <data name="VhfPathNotFoundT" xml:space="preserve">
+    <value>Folder for vocabulary books not found</value>
+  </data>
   <data name="VhrCorruptFile" xml:space="preserve">
     <value>The result file is corrupt and going to be deleted. Therefore you are going to loose your practice results.</value>
   </data>
@@ -309,6 +316,12 @@ Please ensure that the file is not empty.</value>
   </data>
   <data name="VhrInvalidRowCountAndOtherFile" xml:space="preserve">
     <value>The referenced result file is in use by another vocabulary book. Results are not going to be loaded.</value>
+  </data>
+  <data name="VhrPathNotFound" xml:space="preserve">
+    <value>The folder for practice results was not found at {0}. Vocup will replace your configuration with the default application data directory. You change that in the settings at any time.</value>
+  </data>
+  <data name="VhrPathNotFoundT" xml:space="preserve">
+    <value>Folder for practice results not found</value>
   </data>
   <data name="VocupFileWriteError" xml:space="preserve">
     <value>A vocabulary book or result file could not be saved.</value>
