@@ -11,7 +11,7 @@
     <local:ComparisonConverter x:Key="converter" />
   </UserControl.Resources>
 
-  <StackPanel>
+  <StackPanel MaxWidth="300" VerticalAlignment="Center">
     <TextBox Text="{Binding MotherTongue}" Watermark="Mother tongue" UseFloatingWatermark="True" />
     <TextBox Text="{Binding ForeignLanguage}" Watermark="Foreign language" UseFloatingWatermark="True" />
     <RadioButton IsChecked="{Binding PracticeMode, Converter={StaticResource converter}, ConverterParameter={x:Static models:PracticeMode.AskForForeignLanguage}}">
