@@ -530,6 +530,24 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The folder for vocabulary books was not found at {0}. Vocup will replace your configuration with the default documents directory. You change that in the settings at any time..
+        /// </summary>
+        internal static string VhfPathNotFound {
+            get {
+                return ResourceManager.GetString("VhfPathNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder for vocabulary books not found.
+        /// </summary>
+        internal static string VhfPathNotFoundT {
+            get {
+                return ResourceManager.GetString("VhfPathNotFoundT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The result file is corrupt and going to be deleted. Therefore you are going to loose your practice results..
         /// </summary>
         internal static string VhrCorruptFile {
@@ -562,6 +580,24 @@ namespace Vocup.Properties {
         internal static string VhrInvalidRowCountAndOtherFile {
             get {
                 return ResourceManager.GetString("VhrInvalidRowCountAndOtherFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The folder for practice results was not found at {0}. Vocup will replace your configuration with the default application data directory. You change that in the settings at any time..
+        /// </summary>
+        internal static string VhrPathNotFound {
+            get {
+                return ResourceManager.GetString("VhrPathNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder for practice results not found.
+        /// </summary>
+        internal static string VhrPathNotFoundT {
+            get {
+                return ResourceManager.GetString("VhrPathNotFoundT", resourceCulture);
             }
         }
         

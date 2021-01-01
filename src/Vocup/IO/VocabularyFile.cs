@@ -53,14 +53,14 @@ namespace Vocup.IO
             return vhrFile.Write(book);
         }
 
-        public static bool ImportCsvFile(string path, VocabularyBook book, bool importSettings)
+        public static bool ImportCsvFile(string path, VocabularyBook book, bool importSettings, bool ansiEncoding)
         {
             if (path == null)
                 throw new ArgumentNullException(nameof(path));
             if (book == null)
                 throw new ArgumentNullException(nameof(book));
 
-            return csvFile.Import(path, book, importSettings);
+            return csvFile.Import(path, book, importSettings, ansiEncoding);
         }
 
         public static bool ExportCsvFile(string path, VocabularyBook book)

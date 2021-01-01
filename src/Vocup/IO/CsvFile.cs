@@ -14,7 +14,7 @@ namespace Vocup.IO.Internal
 {
     internal class CsvFile
     {
-        public bool Import(string path, VocabularyBook book, bool importSettings)
+        public bool Import(string path, VocabularyBook book, bool importSettings, bool ansiEncoding)
         {
             try
             {
@@ -23,7 +23,9 @@ namespace Vocup.IO.Internal
                     CsvConfiguration config = new CsvConfiguration(CultureInfo.CurrentCulture);
                     config.RegisterClassMap(new EntryMap());
 
-                    using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, detectEncodingFromByteOrderMarks: true, 1024, leaveOpen: true))
+                    var encoding = ansiEncoding ? Encoding.GetEncoding(1252) : Encoding.UTF8;
+
+                    using (var streamReader = new StreamReader(fileStream, encoding, detectEncodingFromByteOrderMarks: true, 1024, leaveOpen: true))
                     {
                         char delimiter = DetectDelimiter(streamReader, 10, new[] { ',', ';', '\t', '|' });
                         if (delimiter != 0) config.Delimiter = delimiter.ToString();
@@ -32,7 +34,7 @@ namespace Vocup.IO.Internal
                     // Reset to start of file and create a new StreamReader to detect byte order marks again
                     fileStream.Seek(0, SeekOrigin.Begin);
 
-                    using (var streamReader = new StreamReader(fileStream, detectEncodingFromByteOrderMarks: true))
+                    using (var streamReader = new StreamReader(fileStream, encoding, detectEncodingFromByteOrderMarks: true))
                     using (var reader = new CsvReader(streamReader, config))
                     {
                         if (!reader.Read() || !reader.ReadHeader())

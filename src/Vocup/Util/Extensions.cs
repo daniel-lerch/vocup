@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Vocup.Util
 {
@@ -12,16 +10,25 @@ namespace Vocup.Util
         /// <summary>
         /// Checks whether one of the specified chars is present in this string.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="chars"></param>
-        /// <returns></returns>
         public static bool ContainsAny(this string value, string chars)
         {
             foreach (char item in chars)
             {
-                if (value.Contains(item)) return true;
+                if (value.IndexOf(item) != -1) return true;
             }
             return false;
+        }
+
+        public static string[] SplitAndTrim(this string value, char[] separator, StringSplitOptions options)
+        {
+            string[] result = value.Split(separator, options);
+
+            for (int i = 0; i < result.Length; i++)
+            {
+                result[i] = result[i].Trim();
+            }
+
+            return result;
         }
     }
 
@@ -30,7 +37,7 @@ namespace Vocup.Util
         [ThreadStatic]
         private static Random local;
 
-        private static Random Random 
+        private static Random Random
             => local ?? (local = new Random(unchecked(Environment.TickCount * 31 + Thread.CurrentThread.ManagedThreadId)));
 
         /// <summary>
@@ -55,6 +62,30 @@ namespace Vocup.Util
         public static IOrderedEnumerable<T> Shuffle<T>(this IEnumerable<T> enumerable)
         {
             return enumerable.OrderBy(x => Random.Next());
+        }
+
+        public static int NextIndexOf<T>(this IList<T> collection, Predicate<T> predicate, int previousIndex)
+        {
+            int first, last;
+
+            if (previousIndex > collection.Count - 2)
+            {
+                first = 0;
+                last = collection.Count - 1;
+            }
+            else
+            {
+                first = previousIndex + 1;
+                last = previousIndex;
+            }
+
+            for (int i = first; i != last; i = (i + 1) % collection.Count)
+            {
+                if (predicate(collection[i]))
+                    return i;
+            }
+
+            return -1;
         }
     }
 }

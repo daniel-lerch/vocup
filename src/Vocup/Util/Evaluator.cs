@@ -1,81 +1,228 @@
 ﻿using System;
-using System.Linq;
+using System.Collections.Generic;
 using Vocup.Models;
 
 namespace Vocup.Util
 {
     public class Evaluator
     {
+        public bool OptionalExpressions { get; set; }
         public bool TolerateNoSynonym { get; set; }
         public bool TolerateWhiteSpace { get; set; }
         public bool ToleratePunctuationMark { get; set; }
         public bool TolerateSpecialChar { get; set; }
         public bool TolerateArticle { get; set; }
 
-        public PracticeResult GetResult(string[] inputs, string[] results)
+        // Evaluating vocabulary words requires multiple steps:
+        //
+        // Question 1: Does an input contain multiple synonyms?
+        // Question 2: Does a synonym contain optional expressions?
+        // Question 3: Is a synonym at least partly correct?
+
+        public PracticeResult GetResult(string[] results, string[] inputs)
         {
-            int missed = 0;
+            if (results is null) throw new ArgumentNullException(nameof(results));
+            if (results.Length < 1) throw new ArgumentOutOfRangeException(nameof(results));
+            if (inputs is null) throw new ArgumentNullException(nameof(inputs));
+            if (inputs.Length < 1) throw new ArgumentOutOfRangeException(nameof(inputs));
+
+            (PracticeResult bestResult, PracticeResult worstResult) = EvaluatePartialResults(results, inputs);
+
+            return TolerateNoSynonym && worstResult == PracticeResult.Wrong && bestResult == PracticeResult.Correct
+                ? PracticeResult.PartlyCorrect
+                : worstResult;
+        }
+
+        private (PracticeResult bestResult, PracticeResult worstResult) EvaluatePartialResults(string[] results, string[] inputs)
+        {
+            var bestResult = PracticeResult.Wrong;
+            var worstResult = PracticeResult.Correct;
 
             foreach (string result in results)
             {
-                if (!inputs.Contains(result))
-                    missed++;
-            }
+                var bestMatch = PracticeResult.Wrong;
 
-            if (missed == 0)
-                return PracticeResult.Correct;
-            else if (missed < results.Length && TolerateNoSynonym)
-                return PracticeResult.PartlyCorrect;
-
-            string[] simplifiedInputs = inputs.Select(x => SimplifyText(x)).ToArray();
-            string[] simplifiedResults = results.Select(x => SimplifyText(x)).ToArray();
-
-            missed = 0;
-
-            foreach (string result in simplifiedResults)
-            {
-                if (!simplifiedInputs.Contains(result))
-                    missed++;
-            }
-
-            if (missed == 0)
-                return PracticeResult.PartlyCorrect;
-
-            int correctCount = 0;
-
-            foreach (string result in results)
-            {
-                if (result.ContainsAny(",;"))
+                foreach (string input in inputs)
                 {
-                    bool found = false;
+                    PracticeResult match = EvaluateOptionalExpressions(result, input);
 
-                    foreach (string input in inputs)
+                    if (match != PracticeResult.Correct)
                     {
-                        if (GetPartitialResult(input, result) == PracticeResult.Correct)
-                            found = true;
+                        string[] partialResults = result.SplitAndTrim(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
+                        string[] partialInputs = input.SplitAndTrim(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
+
+                        // If the synonym contains separators which match with the input in term of count
+                        // we evaluate each part of the input as a synonym and check if we get a better score
+
+                        if (partialResults.Length == partialInputs.Length && partialResults.Length > 1)
+                        {
+                            (_, PracticeResult partialMatch) = EvaluatePartialResults(partialResults, partialInputs);
+                            if (partialMatch > match) match = partialMatch;
+                        }
                     }
 
-                    if (found) correctCount++;
+                    if (match > bestMatch) bestMatch = match;
+                }
+
+                if (bestMatch > bestResult) bestResult = bestMatch;
+                if (bestMatch < worstResult) worstResult = bestMatch;
+            }
+
+            return (bestResult, worstResult);
+        }
+
+        private PracticeResult EvaluateOptionalExpressions(string result, string input)
+        {
+            if (!OptionalExpressions) return EvaluateToleratedMistakes(result, input);
+
+            List<Segment> segments = GetSegments(result, out int optionalCount);
+
+            if (segments.Count == 1) return EvaluateToleratedMistakes(result, input);
+
+            // Evaluating optional expressions range by range would be efficient but difficult
+            // because it's not possible to match result and input indices for partly correct statements.
+            // The alternative is to compute all possible combinations which are as many as  3 to the power
+            // of n where n is the number of optional segments.
+
+            string[] candidiates = new string[(int)Math.Pow(3, optionalCount)];
+            int optionalIndex = -1;
+
+            for (int i = 0; i < segments.Count; i++)
+            {
+                Segment seg = segments[i];
+                var variations = new string[3];
+                variations[0] = result.Substring(seg.Start, seg.End - seg.Start + 1);
+
+                if (segments[i].Optional)
+                {
+                    if (seg.Space == 0)
+                        variations[1] = result.Substring(seg.Start + 1, seg.End - seg.Start - 1);
+                    else if (seg.Space == -1)
+                        variations[1] = ' ' + result.Substring(seg.Start + 2, seg.End - seg.Start - 2);
+                    else if (seg.Space == 1)
+                        variations[1] = result.Substring(seg.Start + 1, seg.End - seg.Start - 2) + ' ';
+
+                    variations[2] = string.Empty;
+                    optionalIndex++;
+                }
+
+                int variationBlockLength = (int)Math.Pow(3, optionalCount - 1 - optionalIndex);
+
+                for (int k = 0; k < candidiates.Length; k++)
+                {
+                    int variation = seg.Optional
+                        ? k / variationBlockLength % 3
+                        : 0;
+
+                    if (i == 0)
+                        candidiates[k] = variations[variation];
+                    else
+                        candidiates[k] += variations[variation];
                 }
             }
 
-            if (correctCount == results.Length)
-                return PracticeResult.Correct;
-            else
-                return PracticeResult.Wrong;
-        }
+            // Iterate through all possible candidates and return the result of the best match.
 
-        private PracticeResult GetPartitialResult(string input, string result)
-        {
-            string[] keywords = result.Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
+            PracticeResult bestMatch = PracticeResult.Wrong;
 
-            foreach (string item in keywords)
+            foreach (string candidate in candidiates)
             {
-                if (!input.Contains(item))
-                    return PracticeResult.Wrong;
+                PracticeResult match = EvaluateToleratedMistakes(candidate, input);
+                if (match > bestMatch) bestMatch = match;
             }
 
-            return PracticeResult.Correct;
+            return bestMatch;
+        }
+
+        private List<Segment> GetSegments(string result, out int optionalCount)
+        {
+            var segments = new List<Segment>();
+            optionalCount = 0;
+            bool isOptional = false;
+            int previousStart = 0;
+            int optionalStart = -1;
+            int optionalSpace = 0;
+            int lastSegmentEnd = -1;
+
+            for (int i = 0; i < result.Length; i++)
+            {
+                if (result[i] == '(')
+                {
+                    // Nested parentheses or a non whitespace character in front of an opening parenthesis
+                    // will not be treated as the start of an optional expression.
+
+                    if (!isOptional)
+                    {
+                        if (i == 0)
+                        {
+                            optionalStart = i;
+                        }
+                        else if (result[i - 1] == ' ')
+                        {
+                            optionalStart = i - 1;
+                            optionalSpace = -1;
+                        }
+                    }
+
+                    isOptional = true;
+                }
+                else if (result[i] == ')')
+                {
+                    // A leading closing parenthesis or a non whitespace character after a closing
+                    // parenthesis will not be treated as the end of an optional expression.
+
+                    bool end;
+                    if (optionalStart != -1 && ((end = i == result.Length - 1) || result[i + 1] == ' '))
+                    {
+                        // If there are characters in front of an optional segment, it must be mandatory.
+                        if (optionalStart - 1 >= previousStart)
+                        {
+                            segments.Add(new Segment(previousStart, optionalStart - 1, false, 0));
+                        }
+
+                        int tail = 0;
+
+                        if (!end)
+                        {
+                            if (optionalSpace != -1) tail = optionalSpace = 1;
+
+                            // After an optional segment must follow a mandatory segment.
+                            previousStart = i + tail + 1;
+                        }
+
+                        segments.Add(new Segment(optionalStart, i + tail, true, optionalSpace));
+                        optionalCount++;
+                        lastSegmentEnd = i + tail;
+                    }
+
+                    optionalStart = -1;
+                    optionalSpace = 0;
+                    isOptional = false;
+                }
+            }
+
+            if (lastSegmentEnd != result.Length - 1)
+            {
+                segments.Add(new Segment(previousStart, result.Length - 1, false, 0));
+            }
+
+            return segments;
+        }
+
+        private PracticeResult EvaluateToleratedMistakes(string result, string input)
+        {
+            if (result.Equals(input, StringComparison.Ordinal))
+            {
+                return PracticeResult.Correct;
+            }
+            else if (SimplifyText(result).Equals(SimplifyText(input), StringComparison.Ordinal))
+            {
+                return PracticeResult.PartlyCorrect;
+            }
+            else
+            {
+                return PracticeResult.Wrong;
+            }
         }
 
         /// <summary>
@@ -116,8 +263,9 @@ namespace Vocup.Util
                 text = text.Replace("à", "a");
                 text = text.Replace("â", "a");
                 text = text.Replace("ă", "a");
-                text = text.Replace("æ", "oe");
+                text = text.Replace("æ", "ae");
                 text = text.Replace("ç", "c");
+                text = text.Replace("č", "c");
                 text = text.Replace("é", "e");
                 text = text.Replace("è", "e");
                 text = text.Replace("ê", "e");
@@ -132,6 +280,7 @@ namespace Vocup.Util
                 text = text.Replace("ó", "o");
                 text = text.Replace("œ", "oe");
                 text = text.Replace("ş", "s");
+                text = text.Replace("š", "s");
                 text = text.Replace("ţ", "t");
                 text = text.Replace("ù", "u");
                 text = text.Replace("ú", "u");
@@ -142,7 +291,6 @@ namespace Vocup.Util
                 text = text.Replace("º", "");
                 text = text.Replace("¡", "");
                 text = text.Replace("¿", "");
-
             }
 
             // Remove articles
@@ -198,6 +346,22 @@ namespace Vocup.Util
 
             text = text.ToUpper();
             return text;
+        }
+
+        private readonly struct Segment
+        {
+            public Segment(int start, int end, bool optional, int space)
+            {
+                Start = start;
+                End = end;
+                Optional = optional;
+                Space = space;
+            }
+
+            public int Start { get; }
+            public int End { get; }
+            public bool Optional { get; }
+            public int Space { get; }
         }
     }
 }

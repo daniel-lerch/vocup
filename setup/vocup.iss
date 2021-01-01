@@ -2,14 +2,16 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 [Setup]
+#define LongAppVersion GetFileVersion("..\src\Vocup\bin\Release\Vocup.exe")
+#define AppVersion Copy(LongAppVersion, 1, RPos(".", LongAppVersion) - 1)
+
 AppName=Vocup
-AppVerName=Vocup 1.7.3
-AppVersion=1.7.3
+AppVerName=Vocup {#AppVersion}
+AppVersion={#AppVersion}
 AppPublisher=Daniel Lerch
 DefaultDirName={commonpf}\Vocup
 DisableProgramGroupPage=yes
 OutputDir=bin
-OutputBaseFilename=Vocup_1.7.3
 SetupIconFile=setup_icon.ico
 
 Compression=lzma2
@@ -25,9 +27,12 @@ WizardSmallImageFile=top.bmp
 
 LicenseFile=license.txt
 
-VersionInfoVersion=1.7.3
+VersionInfoVersion={#AppVersion}
 VersionInfoCompany=Daniel Lerch
 VersionInfoCopyright=© 2011 Florian Amstutz, © 2018-2020 Daniel Lerch
+
+UninstallDisplayIcon={app}\Vocup.exe
+UninstallDisplayName=Vocup (classic installation)
 
 [Languages]
 Name: german; MessagesFile: compiler:Languages\German.isl;

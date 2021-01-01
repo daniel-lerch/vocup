@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Vocup.Models
@@ -15,7 +11,7 @@ namespace Vocup.Models
 
         public VocabularyWordController(VocabularyWord vocabularyWord)
         {
-            ListViewItem = new ListViewItem { Tag = vocabularyWord };
+            ListViewItem = new ListViewItem { Tag = vocabularyWord, UseItemStyleForSubItems = false };
             motherTongueColumn = ListViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(ListViewItem, ""));
             foreignLangColumn = ListViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(ListViewItem, ""));
             praticeDateColumn = ListViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(ListViewItem, ""));
@@ -27,6 +23,19 @@ namespace Vocup.Models
 
         public ListViewItem ListViewItem { get; }
         public VocabularyWord VocabularyWord { get; }
+
+        public void Highlight(string upperCaseQuery)
+        {
+            motherTongueColumn.BackColor = !string.IsNullOrEmpty(upperCaseQuery)
+                && VocabularyWord.MotherTongue.ToUpper().Contains(upperCaseQuery)
+                ? Color.LightGreen
+                : default;
+
+            foreignLangColumn.BackColor = !string.IsNullOrEmpty(upperCaseQuery)
+                && (VocabularyWord.ForeignLang.ToUpper().Contains(upperCaseQuery) || (VocabularyWord.ForeignLangSynonym?.ToUpper().Contains(upperCaseQuery) ?? false))
+                ? Color.LightGreen
+                : default;
+        }
 
         private void UpdateUI()
         {

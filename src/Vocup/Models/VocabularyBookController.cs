@@ -39,7 +39,9 @@ namespace Vocup.Models
             get => _parent;
             set
             {
+                if (_parent != null) _parent.SearchText.TextChanged -= OnSearchTextChanged;
                 _parent = value;
+                _parent.SearchText.TextChanged += OnSearchTextChanged;
                 OnPropertyChanged(this, new PropertyChangedEventArgs(null));
                 OnStatisticsChanged(this, new EventArgs());
                 OnSelectionChanged(this, new EventArgs());
@@ -100,6 +102,14 @@ namespace Vocup.Models
         {
             if (ListView.SelectedItem != null)
                 Parent?.EditWord();
+        }
+
+        private void OnSearchTextChanged(object sender, EventArgs e)
+        {
+            foreach (VocabularyWordController controller in WordControllers)
+            {
+                controller.Highlight(Parent.SearchText.Text.ToUpper());
+            }
         }
 
         private void AddItem(VocabularyWord item)

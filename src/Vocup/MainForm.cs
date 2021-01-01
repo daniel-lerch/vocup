@@ -17,6 +17,7 @@ namespace Vocup
     public partial class MainForm : Form, IMainForm
     {
         private string updateUrl;
+        private int lastSearchResult;
 
         public MainForm()
         {
@@ -32,6 +33,7 @@ namespace Vocup
         public VocabularyBook CurrentBook { get; private set; }
         public VocabularyBookController CurrentController { get; private set; }
         public StatisticsPanel StatisticsPanel => GroupStatistics;
+        public TextBox SearchText => TbSearchWord;
         public bool UnsavedChanges => CurrentBook?.UnsavedChanges ?? false;
 
         public void VocabularyWordSelected(bool value)
@@ -289,11 +291,6 @@ namespace Vocup
             using (var dialog = new MergeFiles()) dialog.ShowDialog();
         }
 
-        private void TsmiBackupCreate_Click(object sender, EventArgs e)
-        {
-            using (var dialog = new CreateBackup()) dialog.ShowDialog();
-        }
-
         private void TsmiBackupRestore_Click(object sender, EventArgs e)
         {
             if (UnsavedChanges && !EnsureSaved()) return;
@@ -348,33 +345,9 @@ namespace Vocup
             }
         }
 
-        private void TsmiImport_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog openDialog = new OpenFileDialog
-            {
-                Title = Words.Import,
-                Filter = "CSV (*.csv)|*.csv"
-            })
-            {
-                if (openDialog.ShowDialog() == DialogResult.OK)
-                {
-                    if (CurrentBook != null)
-                    {
-                        VocabularyFile.ImportCsvFile(openDialog.FileName, CurrentBook, false);
-                    }
-                    else
-                    {
-                        VocabularyBook book = new VocabularyBook();
-                        if (VocabularyFile.ImportCsvFile(openDialog.FileName, book, true))
-                        {
-                            book.Notify();
-                            book.UnsavedChanges = true;
-                            LoadBook(book);
-                        }
-                    }
-                }
-            }
-        }
+        private void TsmiImport_Click(object sender, EventArgs e) => ImportCsv();
+
+        private void TsmiImportAnsi_Click(object sender, EventArgs e) => ImportCsv(ansiEncoding: true);
 
         private void TsmiExport_Click(object sender, EventArgs e)
         {
@@ -462,25 +435,25 @@ namespace Vocup
             }
             else // ListView durchsuchen
             {
-                bool found = false;
-
-                foreach (VocabularyWord word in CurrentBook.Words)
+                int index = CurrentBook.Words.NextIndexOf(word =>
                 {
-                    if (word.MotherTongue.ToUpper().Contains(search_text) ||
-                        word.ForeignLang.ToUpper().Contains(search_text) ||
-                        (word.ForeignLangSynonym?.ToUpper().Contains(search_text) ?? false))
-                    {
-                        ListViewItem item = CurrentController.GetController(word).ListViewItem;
-                        item.Selected = true;
-                        item.Focused = true;
-                        item.EnsureVisible();
-                        CurrentController.ListView.Focus();
-                        found = true;
-                    }
+                    return word.MotherTongue.ToUpper().Contains(search_text)
+                           || word.ForeignLang.ToUpper().Contains(search_text)
+                           || (word.ForeignLangSynonym?.ToUpper().Contains(search_text) ?? false);
+                }, lastSearchResult);
+
+                if (index != -1)
+                {
+                    ListViewItem item = CurrentController.GetController(CurrentBook.Words[index]).ListViewItem;
+                    item.Selected = true;
+                    item.Focused = true;
+                    item.EnsureVisible();
+                    CurrentController.ListView.Focus();
+                    lastSearchResult = index;
                 }
 
                 Color @default = Color.White;
-                Color highlight = found ? Color.FromArgb(144, 238, 144) : Color.FromArgb(255, 192, 203);
+                Color highlight = index == -1 ? Color.FromArgb(255, 192, 203) : Color.FromArgb(144, 238, 144);
 
                 TbSearchWord.BackColor = highlight;
 
@@ -629,6 +602,34 @@ namespace Vocup
             }
         }
 
+        private void ImportCsv(bool ansiEncoding = false)
+        {
+            using (OpenFileDialog openDialog = new OpenFileDialog
+            {
+                Title = Words.Import,
+                Filter = $"CSV (*.csv)|*.csv"
+            })
+            {
+                if (openDialog.ShowDialog() == DialogResult.OK)
+                {
+                    if (CurrentBook != null)
+                    {
+                        VocabularyFile.ImportCsvFile(openDialog.FileName, CurrentBook, false, ansiEncoding);
+                    }
+                    else
+                    {
+                        VocabularyBook book = new VocabularyBook();
+                        if (VocabularyFile.ImportCsvFile(openDialog.FileName, book, true, ansiEncoding))
+                        {
+                            book.Notify();
+                            book.UnsavedChanges = true;
+                            LoadBook(book);
+                        }
+                    }
+                }
+            }
+        }
+
         private void AddWord()
         {
             using (var dialog = new AddWordDialog(CurrentBook) { Owner = this }) dialog.ShowDialog();
@@ -645,8 +646,18 @@ namespace Vocup
 
         private void DeleteWord()
         {
+            int index = CurrentController.ListView.SelectedItem.Index;
             VocabularyWord selected = (VocabularyWord)CurrentController.ListView.SelectedItem.Tag;
             CurrentBook.Words.Remove(selected);
+            
+            // Limit index of the deleted word to the highest possible index
+            index = Math.Min(index, CurrentBook.Words.Count - 1);
+            
+            foreach (ListViewItem item in CurrentController.ListView.Items)
+            {
+                if (item.Index == index) item.Selected = true;
+            }
+
             BtnAddWord.Focus();
         }
 

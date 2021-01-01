@@ -141,6 +141,9 @@
   <data name="GroupSpecialChars.Text" xml:space="preserve">
     <value>Welche Sonderzeichentabellen sollen wiederhergestellt werden?</value>
   </data>
+  <data name="LbDeprecated.Text" xml:space="preserve">
+    <value>⚠ Warnung: Vocup Datensicherungen werden in Zukunft entfernt. Stellen Sie Ihre Backups wieder her und speichern Sie die Dateien.</value>
+  </data>
   <data name="RbReplaceAll.Text" xml:space="preserve">
     <value>Alle vorhandenen Dateien ersetzen</value>
   </data>

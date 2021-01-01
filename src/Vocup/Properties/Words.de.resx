@@ -158,21 +158,8 @@
   <data name="Finish" xml:space="preserve">
     <value>Fertig</value>
   </data>
-  <data name="ForeignLanguage" xml:space="preserve">
-    <value>Fremdsprache</value>
-  </data>
   <data name="Import" xml:space="preserve">
     <value>Importieren</value>
-  </data>
-  <data name="LastPracticed" xml:space="preserve">
-    <value>Zuletzt geübt</value>
-  </data>
-  <data name="MailSubjectVocabularyBook" xml:space="preserve">
-    <value>Vokabelheft {0} - {1}</value>
-    <comment>{0}: Source, {1}: Target</comment>
-  </data>
-  <data name="MotherTongue" xml:space="preserve">
-    <value>Muttersprache</value>
   </data>
   <data name="NotRecommended" xml:space="preserve">
     <value>nicht empfohlen</value>
@@ -196,9 +183,6 @@
   <data name="PartlyCorrect" xml:space="preserve">
     <value>Teilweise korrekt</value>
   </data>
-  <data name="SaveBackup" xml:space="preserve">
-    <value>Datensicherung speichern</value>
-  </data>
   <data name="SaveVocabularyBook" xml:space="preserve">
     <value>Vokabelheft speichern</value>
   </data>
@@ -215,18 +199,12 @@
     <value>Übersetzen Sie von {0} nach {1}</value>
     <comment>{0}: Source, {1}: Target</comment>
   </data>
-  <data name="VocabularyBooks" xml:space="preserve">
-    <value>Vokabelhefte</value>
-  </data>
   <data name="Vocup" xml:space="preserve">
     <value>Vocup</value>
     <comment>Localizable program name</comment>
   </data>
   <data name="VocupBackupFile" xml:space="preserve">
     <value>Vocup Backup-Datei</value>
-  </data>
-  <data name="VocupPracticeResultFile" xml:space="preserve">
-    <value>Vocup Übungsergebnis-Datei</value>
   </data>
   <data name="VocupVocabularyBookFile" xml:space="preserve">
     <value>Vocup Vokabelheft-Datei</value>

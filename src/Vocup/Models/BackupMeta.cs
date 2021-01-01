@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Vocup.Properties;
 
@@ -20,43 +18,6 @@ namespace Vocup.Models
             Books = new List<BookMeta>();
             Results = new List<string>();
             SpecialChars = new List<string>();
-        }
-
-        public void Write(ZipArchive archive)
-        {
-            var books = archive.CreateEntry("vhf_vhr.log");
-            using (StreamWriter writer = new StreamWriter(books.Open()))
-            {
-                for (int i = 0; i < Books.Count; i++)
-                {
-                    if (i != 0) writer.WriteLine();
-                    writer.Write(Books[i].FileId);
-                    writer.Write('|');
-                    writer.Write(Books[i].VhfPath);
-                    writer.Write('|');
-                    writer.Write(Books[i].VhrCode);
-                }
-            }
-
-            var results = archive.CreateEntry("vhr.log");
-            using (StreamWriter writer = new StreamWriter(results.Open()))
-            {
-                for (int i = 0; i < Results.Count; i++)
-                {
-                    if (i != 0) writer.WriteLine();
-                    writer.Write(Results[i]);
-                }
-            }
-
-            var chars = archive.CreateEntry("chars.log");
-            using (StreamWriter writer = new StreamWriter(chars.Open()))
-            {
-                for (int i = 0; i < SpecialChars.Count; i++)
-                {
-                    if (i != 0) writer.WriteLine();
-                    writer.Write(SpecialChars[i]);
-                }
-            }
         }
 
         public static bool TryRead(ZipArchive archive, out BackupMeta backup)
@@ -113,17 +74,6 @@ namespace Vocup.Models
                 MessageBox.Show(string.Format(Messages.VdpCorruptFile, ex), Messages.VdpCorruptFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-        }
-
-        public static string ShrinkPath(string path)
-        {
-            return path
-                .Replace(Settings.Default.VhfPath, "%vhf%")
-                .Replace(Settings.Default.VhrPath, "%vhr%")
-                .Replace(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "%personal%")
-                .Replace(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "%desktop%")
-                .Replace(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "%program%")
-                .Replace(Environment.GetFolderPath(Environment.SpecialFolder.System), "%system%");
         }
 
         public static string ExpandPath(string path)

@@ -28,25 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ToolStripSeparator toolStripMenuItem11;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.ToolStripSeparator toolStripMenuItem10;
+            System.Windows.Forms.ToolStripSeparator toolStripMenuItem9;
+            System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+            System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
+            System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
+            System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
+            System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
+            System.Windows.Forms.ToolStripSeparator infoToolStripMenuItem;
             this.MenuStrip = new Vocup.Controls.ResponsiveMenuStrip();
             this.TsmiRootFile = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiCreateBook = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiOpenBook = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiCloseBook = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripSeparator();
             this.TsmiSave = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiSaveAs = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
             this.TsmiImport = new System.Windows.Forms.ToolStripMenuItem();
+            this.TsmiImportAnsi = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiExport = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
             this.TsmiOpenInExplorer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
             this.TsmiPrint = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.TsmiBackup = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiBackupCreate = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiBackupRestore = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.TsmiExitApplication = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,18 +61,13 @@
             this.TsmiRootTools = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiPractice = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiBookOptions = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.TsmiMerge = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
             this.TsmiSpecialChar = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
             this.TsmiSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiRootHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiEvaluationInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
             this.TsmiUpdate = new System.Windows.Forms.ToolStripMenuItem();
-            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.TsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.TbSearchWord = new System.Windows.Forms.TextBox();
             this.GroupBook = new System.Windows.Forms.GroupBox();
@@ -97,6 +96,15 @@
             this.TsbEvaluationInfo = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.TableLayout = new System.Windows.Forms.TableLayoutPanel();
+            toolStripMenuItem11 = new System.Windows.Forms.ToolStripSeparator();
+            toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
+            toolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
+            toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+            toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
+            toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
+            toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
+            infoToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.MenuStrip.SuspendLayout();
             this.GroupBook.SuspendLayout();
             this.GroupSearch.SuspendLayout();
@@ -110,6 +118,51 @@
             this.ToolStrip.SuspendLayout();
             this.TableLayout.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // toolStripMenuItem11
+            // 
+            toolStripMenuItem11.Name = "toolStripMenuItem11";
+            resources.ApplyResources(toolStripMenuItem11, "toolStripMenuItem11");
+            // 
+            // toolStripMenuItem10
+            // 
+            toolStripMenuItem10.Name = "toolStripMenuItem10";
+            resources.ApplyResources(toolStripMenuItem10, "toolStripMenuItem10");
+            // 
+            // toolStripMenuItem9
+            // 
+            toolStripMenuItem9.Name = "toolStripMenuItem9";
+            resources.ApplyResources(toolStripMenuItem9, "toolStripMenuItem9");
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            resources.ApplyResources(toolStripMenuItem1, "toolStripMenuItem1");
+            // 
+            // toolStripMenuItem4
+            // 
+            toolStripMenuItem4.Name = "toolStripMenuItem4";
+            resources.ApplyResources(toolStripMenuItem4, "toolStripMenuItem4");
+            // 
+            // toolStripMenuItem5
+            // 
+            toolStripMenuItem5.Name = "toolStripMenuItem5";
+            resources.ApplyResources(toolStripMenuItem5, "toolStripMenuItem5");
+            // 
+            // toolStripMenuItem6
+            // 
+            toolStripMenuItem6.Name = "toolStripMenuItem6";
+            resources.ApplyResources(toolStripMenuItem6, "toolStripMenuItem6");
+            // 
+            // toolStripMenuItem8
+            // 
+            toolStripMenuItem8.Name = "toolStripMenuItem8";
+            resources.ApplyResources(toolStripMenuItem8, "toolStripMenuItem8");
+            // 
+            // infoToolStripMenuItem
+            // 
+            infoToolStripMenuItem.Name = "infoToolStripMenuItem";
+            resources.ApplyResources(infoToolStripMenuItem, "infoToolStripMenuItem");
             // 
             // MenuStrip
             // 
@@ -127,18 +180,19 @@
             this.TsmiCreateBook,
             this.TsmiOpenBook,
             this.TsmiCloseBook,
-            this.toolStripMenuItem11,
+            toolStripMenuItem11,
             this.TsmiSave,
             this.TsmiSaveAs,
-            this.toolStripMenuItem10,
+            toolStripMenuItem10,
             this.TsmiImport,
+            this.TsmiImportAnsi,
             this.TsmiExport,
-            this.toolStripMenuItem9,
+            toolStripMenuItem9,
             this.TsmiOpenInExplorer,
             this.toolStripMenuItem7,
             this.TsmiPrint,
-            this.toolStripMenuItem1,
-            this.TsmiBackup,
+            toolStripMenuItem1,
+            this.TsmiBackupRestore,
             this.toolStripMenuItem3,
             this.TsmiExitApplication});
             this.TsmiRootFile.Name = "TsmiRootFile";
@@ -165,11 +219,6 @@
             this.TsmiCloseBook.Name = "TsmiCloseBook";
             this.TsmiCloseBook.Click += new System.EventHandler(this.TsmiCloseBook_Click);
             // 
-            // toolStripMenuItem11
-            // 
-            this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            resources.ApplyResources(this.toolStripMenuItem11, "toolStripMenuItem11");
-            // 
             // TsmiSave
             // 
             resources.ApplyResources(this.TsmiSave, "TsmiSave");
@@ -184,11 +233,6 @@
             this.TsmiSaveAs.Name = "TsmiSaveAs";
             this.TsmiSaveAs.Click += new System.EventHandler(this.TsmiSaveAs_Click);
             // 
-            // toolStripMenuItem10
-            // 
-            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            resources.ApplyResources(this.toolStripMenuItem10, "toolStripMenuItem10");
-            // 
             // TsmiImport
             // 
             this.TsmiImport.Image = global::Vocup.Properties.Icons.Import;
@@ -196,17 +240,19 @@
             resources.ApplyResources(this.TsmiImport, "TsmiImport");
             this.TsmiImport.Click += new System.EventHandler(this.TsmiImport_Click);
             // 
+            // TsmiImportAnsi
+            // 
+            this.TsmiImportAnsi.Image = global::Vocup.Properties.Icons.Import;
+            this.TsmiImportAnsi.Name = "TsmiImportAnsi";
+            resources.ApplyResources(this.TsmiImportAnsi, "TsmiImportAnsi");
+            this.TsmiImportAnsi.Click += new System.EventHandler(this.TsmiImportAnsi_Click);
+            // 
             // TsmiExport
             // 
             resources.ApplyResources(this.TsmiExport, "TsmiExport");
             this.TsmiExport.Image = global::Vocup.Properties.Icons.Export;
             this.TsmiExport.Name = "TsmiExport";
             this.TsmiExport.Click += new System.EventHandler(this.TsmiExport_Click);
-            // 
-            // toolStripMenuItem9
-            // 
-            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            resources.ApplyResources(this.toolStripMenuItem9, "toolStripMenuItem9");
             // 
             // TsmiOpenInExplorer
             // 
@@ -226,27 +272,6 @@
             this.TsmiPrint.Image = global::Vocup.Properties.Icons.Print;
             this.TsmiPrint.Name = "TsmiPrint";
             this.TsmiPrint.Click += new System.EventHandler(this.TsmiPrint_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
-            // 
-            // TsmiBackup
-            // 
-            this.TsmiBackup.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TsmiBackupCreate,
-            this.TsmiBackupRestore});
-            this.TsmiBackup.Image = global::Vocup.Properties.Icons.Database;
-            this.TsmiBackup.Name = "TsmiBackup";
-            resources.ApplyResources(this.TsmiBackup, "TsmiBackup");
-            // 
-            // TsmiBackupCreate
-            // 
-            this.TsmiBackupCreate.Image = global::Vocup.Properties.Icons.DatabaseAdd;
-            this.TsmiBackupCreate.Name = "TsmiBackupCreate";
-            resources.ApplyResources(this.TsmiBackupCreate, "TsmiBackupCreate");
-            this.TsmiBackupCreate.Click += new System.EventHandler(this.TsmiBackupCreate_Click);
             // 
             // TsmiBackupRestore
             // 
@@ -302,11 +327,11 @@
             this.TsmiRootTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TsmiPractice,
             this.TsmiBookOptions,
-            this.toolStripMenuItem4,
+            toolStripMenuItem4,
             this.TsmiMerge,
-            this.toolStripMenuItem5,
+            toolStripMenuItem5,
             this.TsmiSpecialChar,
-            this.toolStripMenuItem6,
+            toolStripMenuItem6,
             this.TsmiSettings});
             this.TsmiRootTools.Name = "TsmiRootTools";
             resources.ApplyResources(this.TsmiRootTools, "TsmiRootTools");
@@ -325,11 +350,6 @@
             this.TsmiBookOptions.Name = "TsmiBookOptions";
             this.TsmiBookOptions.Click += new System.EventHandler(this.TsmiBookOptions_Click);
             // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
-            // 
             // TsmiMerge
             // 
             this.TsmiMerge.Image = global::Vocup.Properties.Icons.MergeFiles;
@@ -337,22 +357,12 @@
             resources.ApplyResources(this.TsmiMerge, "TsmiMerge");
             this.TsmiMerge.Click += new System.EventHandler(this.TsmiMerge_Click);
             // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
-            // 
             // TsmiSpecialChar
             // 
             this.TsmiSpecialChar.Image = global::Vocup.Properties.Icons.Alphabet;
             this.TsmiSpecialChar.Name = "TsmiSpecialChar";
             resources.ApplyResources(this.TsmiSpecialChar, "TsmiSpecialChar");
             this.TsmiSpecialChar.Click += new System.EventHandler(this.TsmiSpecialChar_Click);
-            // 
-            // toolStripMenuItem6
-            // 
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            resources.ApplyResources(this.toolStripMenuItem6, "toolStripMenuItem6");
             // 
             // TsmiSettings
             // 
@@ -366,9 +376,9 @@
             this.TsmiRootHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TsmiHelp,
             this.TsmiEvaluationInfo,
-            this.toolStripMenuItem8,
+            toolStripMenuItem8,
             this.TsmiUpdate,
-            this.infoToolStripMenuItem,
+            infoToolStripMenuItem,
             this.TsmiAbout});
             this.TsmiRootHelp.Name = "TsmiRootHelp";
             resources.ApplyResources(this.TsmiRootHelp, "TsmiRootHelp");
@@ -387,22 +397,12 @@
             resources.ApplyResources(this.TsmiEvaluationInfo, "TsmiEvaluationInfo");
             this.TsmiEvaluationInfo.Click += new System.EventHandler(this.TsmiEvaluationInfo_Click);
             // 
-            // toolStripMenuItem8
-            // 
-            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            resources.ApplyResources(this.toolStripMenuItem8, "toolStripMenuItem8");
-            // 
             // TsmiUpdate
             // 
             this.TsmiUpdate.Image = global::Vocup.Properties.Icons.Update;
             this.TsmiUpdate.Name = "TsmiUpdate";
             resources.ApplyResources(this.TsmiUpdate, "TsmiUpdate");
             this.TsmiUpdate.Click += new System.EventHandler(this.TsmiUpdate_Click);
-            // 
-            // infoToolStripMenuItem
-            // 
-            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            resources.ApplyResources(this.infoToolStripMenuItem, "infoToolStripMenuItem");
             // 
             // TsmiAbout
             // 
@@ -692,7 +692,6 @@
         private System.Windows.Forms.ToolStripMenuItem TsmiOpenBook;
         private System.Windows.Forms.ToolStripMenuItem TsmiSave;
         private System.Windows.Forms.ToolStripMenuItem TsmiSaveAs;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem TsmiPrint;
         private System.Windows.Forms.ToolStripMenuItem TsmiExitApplication;
         private System.Windows.Forms.ToolStripButton TsbPrint;
@@ -705,10 +704,8 @@
         private System.Windows.Forms.ToolStripMenuItem TsmiSettings;
         private System.Windows.Forms.ToolStripMenuItem TsmiEditWord;
         private System.Windows.Forms.ToolStripMenuItem TsmiDeleteWord;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem TsmiPractice;
         private System.Windows.Forms.ToolStripMenuItem TsmiHelp;
-        private System.Windows.Forms.ToolStripSeparator infoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem TsmiAbout;
         private Vocup.Controls.ResponsiveButton BtnEditWord;
         private Vocup.Controls.ResponsiveButton BtnDeleteWord;
@@ -723,23 +720,15 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem TsmiUpdate;
         private System.Windows.Forms.ToolStripMenuItem TsmiMerge;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem TsmiImport;
         private System.Windows.Forms.ToolStripMenuItem TsmiExport;
         private System.Windows.Forms.ToolStripMenuItem TsmiOpenInExplorer;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem9;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem TsmiSpecialChar;
         private System.Windows.Forms.Panel SideBar;
         private Controls.ResponsiveSplitContainer SplitContainer;
-        private System.Windows.Forms.ToolStripMenuItem TsmiBackup;
-        private System.Windows.Forms.ToolStripMenuItem TsmiBackupCreate;
         private System.Windows.Forms.ToolStripMenuItem TsmiBackupRestore;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem TsmiCloseBook;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem11;
         private System.Windows.Forms.ToolStripMenuItem TsmiEvaluationInfo;
         private Controls.StatisticsPanel GroupStatistics;
         private System.Windows.Forms.TableLayoutPanel TableLayout;
@@ -747,6 +736,7 @@
         private System.Windows.Forms.Label LbEmptyForm;
         private System.Windows.Forms.ToolStripStatusLabel StatusLbOldVersion;
         private System.Windows.Forms.ToolStripStatusLabel StatusLbUpdateAvailable;
+        private System.Windows.Forms.ToolStripMenuItem TsmiImportAnsi;
     }
 }
 

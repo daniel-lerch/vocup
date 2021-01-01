@@ -1,6 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
 using System.IO;
 using Vocup.Forms;
 using Vocup.Models;
@@ -27,7 +25,6 @@ namespace Vocup.UnitTests
             new MainForm().Dispose();
             new AboutBox().Dispose();
             new AddWordDialog(book).Dispose();
-            new CreateBackup().Dispose();
             // new EditWordDialog(book: null, word: null).Dispose();
             new EvaluationInfoDialog().Dispose();
             new MergeFiles().Dispose();

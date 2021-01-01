@@ -753,6 +753,36 @@
   <data name="&gt;&gt;TabGeneral.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="CbOptionalExpressions.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CbOptionalExpressions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CbOptionalExpressions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 65</value>
+  </data>
+  <data name="CbOptionalExpressions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 17</value>
+  </data>
+  <data name="CbOptionalExpressions.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="CbOptionalExpressions.Text" xml:space="preserve">
+    <value>Treat expressions in parantheses as optional</value>
+  </data>
+  <data name="&gt;&gt;CbOptionalExpressions.Name" xml:space="preserve">
+    <value>CbOptionalExpressions</value>
+  </data>
+  <data name="&gt;&gt;CbOptionalExpressions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CbOptionalExpressions.Parent" xml:space="preserve">
+    <value>GroupEvaluation</value>
+  </data>
+  <data name="&gt;&gt;CbOptionalExpressions.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="CbManualCheck.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -781,7 +811,7 @@
     <value>GroupEvaluation</value>
   </data>
   <data name="&gt;&gt;CbManualCheck.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="CbEvaluationSystem.Items" xml:space="preserve">
     <value>Germany</value>
@@ -790,7 +820,7 @@
     <value>Switzerland</value>
   </data>
   <data name="CbEvaluationSystem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 65</value>
+    <value>80, 88</value>
   </data>
   <data name="CbEvaluationSystem.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 21</value>
@@ -808,7 +838,7 @@
     <value>GroupEvaluation</value>
   </data>
   <data name="&gt;&gt;CbEvaluationSystem.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="LbGradeSystem.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -817,7 +847,7 @@
     <value>NoControl</value>
   </data>
   <data name="LbGradeSystem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 68</value>
+    <value>6, 91</value>
   </data>
   <data name="LbGradeSystem.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 13</value>
@@ -838,7 +868,7 @@
     <value>GroupEvaluation</value>
   </data>
   <data name="&gt;&gt;LbGradeSystem.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="CbPracticeResult.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -868,13 +898,13 @@
     <value>GroupEvaluation</value>
   </data>
   <data name="&gt;&gt;CbPracticeResult.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="GroupEvaluation.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
   </data>
   <data name="GroupEvaluation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 93</value>
+    <value>277, 116</value>
   </data>
   <data name="GroupEvaluation.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -976,7 +1006,7 @@
     <value>2</value>
   </data>
   <data name="GroupUserInterface.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 244</value>
+    <value>6, 267</value>
   </data>
   <data name="GroupUserInterface.Size" type="System.Drawing.Size, System.Drawing">
     <value>277, 88</value>
@@ -1150,7 +1180,7 @@
     <value>4</value>
   </data>
   <data name="GroupNearlyCorrect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 105</value>
+    <value>6, 128</value>
   </data>
   <data name="GroupNearlyCorrect.Size" type="System.Drawing.Size, System.Drawing">
     <value>277, 133</value>

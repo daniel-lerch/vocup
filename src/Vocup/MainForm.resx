@@ -117,6 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="toolStripMenuItem11.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="toolStripMenuItem11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 6</value>
+  </data>
+  <metadata name="toolStripMenuItem10.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="toolStripMenuItem10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 6</value>
+  </data>
+  <metadata name="toolStripMenuItem9.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 6</value>
+  </data>
+  <metadata name="toolStripMenuItem1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 6</value>
+  </data>
+  <metadata name="toolStripMenuItem4.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 6</value>
+  </data>
+  <metadata name="toolStripMenuItem5.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 6</value>
+  </data>
+  <metadata name="toolStripMenuItem6.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="toolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 6</value>
+  </data>
+  <metadata name="toolStripMenuItem8.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="toolStripMenuItem8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>245, 6</value>
+  </data>
+  <metadata name="infoToolStripMenuItem.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="infoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>245, 6</value>
+  </data>
   <metadata name="MenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 0</value>
   </metadata>
@@ -124,7 +179,6 @@
   <data name="TsmiCreateBook.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+N</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="TsmiCreateBook.Size" type="System.Drawing.Size, System.Drawing">
     <value>276, 22</value>
   </data>
@@ -153,9 +207,6 @@
   <data name="TsmiCloseBook.Text" xml:space="preserve">
     <value>Close vocabulary book</value>
   </data>
-  <data name="toolStripMenuItem11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 6</value>
-  </data>
   <data name="TsmiSave.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -180,9 +231,6 @@
   <data name="TsmiSaveAs.Text" xml:space="preserve">
     <value>Save As</value>
   </data>
-  <data name="toolStripMenuItem10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 6</value>
-  </data>
   <data name="TsmiImport.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+I</value>
   </data>
@@ -191,6 +239,12 @@
   </data>
   <data name="TsmiImport.Text" xml:space="preserve">
     <value>Import</value>
+  </data>
+  <data name="TsmiImportAnsi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>276, 22</value>
+  </data>
+  <data name="TsmiImportAnsi.Text" xml:space="preserve">
+    <value>Import (ANSI encoding)</value>
   </data>
   <data name="TsmiExport.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -203,9 +257,6 @@
   </data>
   <data name="TsmiExport.Text" xml:space="preserve">
     <value>Export</value>
-  </data>
-  <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 6</value>
   </data>
   <data name="TsmiOpenInExplorer.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -234,32 +285,14 @@
   <data name="TsmiPrint.Text" xml:space="preserve">
     <value>Print</value>
   </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 6</value>
-  </data>
-  <data name="TsmiBackupCreate.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+B</value>
-  </data>
-  <data name="TsmiBackupCreate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
-  </data>
-  <data name="TsmiBackupCreate.Text" xml:space="preserve">
-    <value>Create backup</value>
-  </data>
   <data name="TsmiBackupRestore.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+W</value>
   </data>
   <data name="TsmiBackupRestore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 22</value>
+    <value>276, 22</value>
   </data>
   <data name="TsmiBackupRestore.Text" xml:space="preserve">
     <value>Restore backup</value>
-  </data>
-  <data name="TsmiBackup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 22</value>
-  </data>
-  <data name="TsmiBackup.Text" xml:space="preserve">
-    <value>Backup</value>
   </data>
   <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
     <value>273, 6</value>
@@ -278,6 +311,48 @@
   </data>
   <data name="TsmiRootFile.Text" xml:space="preserve">
     <value>File</value>
+  </data>
+  <data name="TsmiRootEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 20</value>
+  </data>
+  <data name="TsmiRootEdit.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="TsmiRootTools.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Shift+O</value>
+  </data>
+  <data name="TsmiRootTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 20</value>
+  </data>
+  <data name="TsmiRootTools.Text" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="TsmiRootHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="TsmiRootHelp.Text" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="MenuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="MenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>784, 24</value>
+  </data>
+  <data name="MenuStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip.Name" xml:space="preserve">
+    <value>MenuStrip</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip.Type" xml:space="preserve">
+    <value>Vocup.Controls.ResponsiveMenuStrip, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="TsmiAddWord.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -315,12 +390,6 @@
   <data name="TsmiDeleteWord.Text" xml:space="preserve">
     <value>Delete word</value>
   </data>
-  <data name="TsmiRootEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 20</value>
-  </data>
-  <data name="TsmiRootEdit.Text" xml:space="preserve">
-    <value>Edit</value>
-  </data>
   <data name="TsmiPractice.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -345,9 +414,6 @@
   <data name="TsmiBookOptions.Text" xml:space="preserve">
     <value>Vocabulary book options</value>
   </data>
-  <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 6</value>
-  </data>
   <data name="TsmiMerge.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Z</value>
   </data>
@@ -356,9 +422,6 @@
   </data>
   <data name="TsmiMerge.Text" xml:space="preserve">
     <value>Merge vocabulary books</value>
-  </data>
-  <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 6</value>
   </data>
   <data name="TsmiSpecialChar.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+C</value>
@@ -369,9 +432,6 @@
   <data name="TsmiSpecialChar.Text" xml:space="preserve">
     <value>Manage special chars</value>
   </data>
-  <data name="toolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 6</value>
-  </data>
   <data name="TsmiSettings.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Alt+O</value>
   </data>
@@ -380,15 +440,6 @@
   </data>
   <data name="TsmiSettings.Text" xml:space="preserve">
     <value>Settings</value>
-  </data>
-  <data name="TsmiRootTools.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Shift+O</value>
-  </data>
-  <data name="TsmiRootTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 20</value>
-  </data>
-  <data name="TsmiRootTools.Text" xml:space="preserve">
-    <value>Tools</value>
   </data>
   <data name="TsmiHelp.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F1</value>
@@ -408,9 +459,6 @@
   <data name="TsmiEvaluationInfo.Text" xml:space="preserve">
     <value>Information about evaluation</value>
   </data>
-  <data name="toolStripMenuItem8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 6</value>
-  </data>
   <data name="TsmiUpdate.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F12</value>
   </data>
@@ -420,9 +468,6 @@
   <data name="TsmiUpdate.Text" xml:space="preserve">
     <value>Search for updates...</value>
   </data>
-  <data name="infoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 6</value>
-  </data>
   <data name="TsmiAbout.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F2</value>
   </data>
@@ -431,33 +476,6 @@
   </data>
   <data name="TsmiAbout.Text" xml:space="preserve">
     <value>About Vocup</value>
-  </data>
-  <data name="TsmiRootHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
-  </data>
-  <data name="TsmiRootHelp.Text" xml:space="preserve">
-    <value>Help</value>
-  </data>
-  <data name="MenuStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="MenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>784, 24</value>
-  </data>
-  <data name="MenuStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip.Name" xml:space="preserve">
-    <value>MenuStrip</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveMenuStrip, Vocup, Version=1.7.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="TbSearchWord.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 43</value>
@@ -479,6 +497,57 @@
   </data>
   <data name="&gt;&gt;TbSearchWord.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;BtnBookSettings.Name" xml:space="preserve">
+    <value>BtnBookSettings</value>
+  </data>
+  <data name="&gt;&gt;BtnBookSettings.Type" xml:space="preserve">
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BtnBookSettings.Parent" xml:space="preserve">
+    <value>GroupBook</value>
+  </data>
+  <data name="&gt;&gt;BtnBookSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;BtnPractice.Name" xml:space="preserve">
+    <value>BtnPractice</value>
+  </data>
+  <data name="&gt;&gt;BtnPractice.Type" xml:space="preserve">
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BtnPractice.Parent" xml:space="preserve">
+    <value>GroupBook</value>
+  </data>
+  <data name="&gt;&gt;BtnPractice.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="GroupBook.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="GroupBook.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 0</value>
+  </data>
+  <data name="GroupBook.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 88</value>
+  </data>
+  <data name="GroupBook.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="GroupBook.Text" xml:space="preserve">
+    <value>Vocabulary book:</value>
+  </data>
+  <data name="&gt;&gt;GroupBook.Name" xml:space="preserve">
+    <value>GroupBook</value>
+  </data>
+  <data name="&gt;&gt;GroupBook.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBook.Parent" xml:space="preserve">
+    <value>SideBar</value>
+  </data>
+  <data name="&gt;&gt;GroupBook.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="BtnBookSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -518,7 +587,7 @@
     <value>BtnBookSettings</value>
   </data>
   <data name="&gt;&gt;BtnBookSettings.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnBookSettings.Parent" xml:space="preserve">
     <value>GroupBook</value>
@@ -563,7 +632,7 @@
     <value>BtnPractice</value>
   </data>
   <data name="&gt;&gt;BtnPractice.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnPractice.Parent" xml:space="preserve">
     <value>GroupBook</value>
@@ -571,32 +640,44 @@
   <data name="&gt;&gt;BtnPractice.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="GroupBook.Enabled" type="System.Boolean, mscorlib">
+  <data name="&gt;&gt;BtnSearchWord.Name" xml:space="preserve">
+    <value>BtnSearchWord</value>
+  </data>
+  <data name="&gt;&gt;BtnSearchWord.Type" xml:space="preserve">
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BtnSearchWord.Parent" xml:space="preserve">
+    <value>GroupSearch</value>
+  </data>
+  <data name="&gt;&gt;BtnSearchWord.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="GroupSearch.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="GroupBook.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 0</value>
+  <data name="GroupSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 234</value>
   </data>
-  <data name="GroupBook.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 88</value>
+  <data name="GroupSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 100</value>
   </data>
-  <data name="GroupBook.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="GroupSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="GroupBook.Text" xml:space="preserve">
-    <value>Vocabulary book:</value>
+  <data name="GroupSearch.Text" xml:space="preserve">
+    <value>Search for vocabulary words:</value>
   </data>
-  <data name="&gt;&gt;GroupBook.Name" xml:space="preserve">
-    <value>GroupBook</value>
+  <data name="&gt;&gt;GroupSearch.Name" xml:space="preserve">
+    <value>GroupSearch</value>
   </data>
-  <data name="&gt;&gt;GroupBook.Type" xml:space="preserve">
+  <data name="&gt;&gt;GroupSearch.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupBook.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupSearch.Parent" xml:space="preserve">
     <value>SideBar</value>
   </data>
-  <data name="&gt;&gt;GroupBook.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;GroupSearch.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="BtnSearchWord.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -638,7 +719,7 @@
     <value>BtnSearchWord</value>
   </data>
   <data name="&gt;&gt;BtnSearchWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnSearchWord.Parent" xml:space="preserve">
     <value>GroupSearch</value>
@@ -646,32 +727,68 @@
   <data name="&gt;&gt;BtnSearchWord.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="GroupSearch.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;BtnAddWord.Name" xml:space="preserve">
+    <value>BtnAddWord</value>
   </data>
-  <data name="GroupSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 234</value>
+  <data name="&gt;&gt;BtnAddWord.Type" xml:space="preserve">
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="GroupSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 100</value>
+  <data name="&gt;&gt;BtnAddWord.Parent" xml:space="preserve">
+    <value>GroupWord</value>
   </data>
-  <data name="GroupSearch.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;BtnAddWord.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;BtnDeleteWord.Name" xml:space="preserve">
+    <value>BtnDeleteWord</value>
+  </data>
+  <data name="&gt;&gt;BtnDeleteWord.Type" xml:space="preserve">
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BtnDeleteWord.Parent" xml:space="preserve">
+    <value>GroupWord</value>
+  </data>
+  <data name="&gt;&gt;BtnDeleteWord.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;BtnEditWord.Name" xml:space="preserve">
+    <value>BtnEditWord</value>
+  </data>
+  <data name="&gt;&gt;BtnEditWord.Type" xml:space="preserve">
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BtnEditWord.Parent" xml:space="preserve">
+    <value>GroupWord</value>
+  </data>
+  <data name="&gt;&gt;BtnEditWord.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="GroupSearch.Text" xml:space="preserve">
-    <value>Search for vocabulary words:</value>
+  <data name="GroupWord.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;GroupSearch.Name" xml:space="preserve">
-    <value>GroupSearch</value>
+  <data name="GroupWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 103</value>
   </data>
-  <data name="&gt;&gt;GroupSearch.Type" xml:space="preserve">
+  <data name="GroupWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 115</value>
+  </data>
+  <data name="GroupWord.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="GroupWord.Text" xml:space="preserve">
+    <value>Word:</value>
+  </data>
+  <data name="&gt;&gt;GroupWord.Name" xml:space="preserve">
+    <value>GroupWord</value>
+  </data>
+  <data name="&gt;&gt;GroupWord.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GroupSearch.Parent" xml:space="preserve">
+  <data name="&gt;&gt;GroupWord.Parent" xml:space="preserve">
     <value>SideBar</value>
   </data>
-  <data name="&gt;&gt;GroupSearch.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;GroupWord.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="BtnAddWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -712,7 +829,7 @@
     <value>BtnAddWord</value>
   </data>
   <data name="&gt;&gt;BtnAddWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnAddWord.Parent" xml:space="preserve">
     <value>GroupWord</value>
@@ -758,7 +875,7 @@
     <value>BtnDeleteWord</value>
   </data>
   <data name="&gt;&gt;BtnDeleteWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnDeleteWord.Parent" xml:space="preserve">
     <value>GroupWord</value>
@@ -803,7 +920,7 @@
     <value>BtnEditWord</value>
   </data>
   <data name="&gt;&gt;BtnEditWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnEditWord.Parent" xml:space="preserve">
     <value>GroupWord</value>
@@ -811,54 +928,9 @@
   <data name="&gt;&gt;BtnEditWord.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="GroupWord.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="GroupWord.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 103</value>
-  </data>
-  <data name="GroupWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 115</value>
-  </data>
-  <data name="GroupWord.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="GroupWord.Text" xml:space="preserve">
-    <value>Word:</value>
-  </data>
-  <data name="&gt;&gt;GroupWord.Name" xml:space="preserve">
-    <value>GroupWord</value>
-  </data>
-  <data name="&gt;&gt;GroupWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupWord.Parent" xml:space="preserve">
-    <value>SideBar</value>
-  </data>
-  <data name="&gt;&gt;GroupWord.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <metadata name="StatusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 28</value>
   </metadata>
-  <data name="StatusLbOldVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 17</value>
-  </data>
-  <data name="StatusLbOldVersion.Text" xml:space="preserve">
-    <value>An incompatible version was found</value>
-  </data>
-  <data name="StatusLbOldVersion.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="StatusLbUpdateAvailable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 17</value>
-  </data>
-  <data name="StatusLbUpdateAvailable.Text" xml:space="preserve">
-    <value>Download update for Vocup</value>
-  </data>
-  <data name="StatusLbUpdateAvailable.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="StatusStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 539</value>
   </data>
@@ -880,20 +952,29 @@
   <data name="&gt;&gt;StatusStrip.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="GroupStatistics.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 349</value>
+  <data name="StatusLbOldVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 17</value>
   </data>
-  <data name="GroupStatistics.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 134</value>
+  <data name="StatusLbOldVersion.Text" xml:space="preserve">
+    <value>An incompatible version was found</value>
   </data>
-  <data name="GroupStatistics.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="StatusLbOldVersion.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="StatusLbUpdateAvailable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 17</value>
+  </data>
+  <data name="StatusLbUpdateAvailable.Text" xml:space="preserve">
+    <value>Download update for Vocup</value>
+  </data>
+  <data name="StatusLbUpdateAvailable.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;GroupStatistics.Name" xml:space="preserve">
     <value>GroupStatistics</value>
   </data>
   <data name="&gt;&gt;GroupStatistics.Type" xml:space="preserve">
-    <value>Vocup.Controls.StatisticsPanel, Vocup, Version=1.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.StatisticsPanel, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;GroupStatistics.Parent" xml:space="preserve">
     <value>SideBar</value>
@@ -925,6 +1006,27 @@
   <data name="&gt;&gt;SideBar.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="GroupStatistics.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 349</value>
+  </data>
+  <data name="GroupStatistics.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 134</value>
+  </data>
+  <data name="GroupStatistics.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;GroupStatistics.Name" xml:space="preserve">
+    <value>GroupStatistics</value>
+  </data>
+  <data name="&gt;&gt;GroupStatistics.Type" xml:space="preserve">
+    <value>Vocup.Controls.StatisticsPanel, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;GroupStatistics.Parent" xml:space="preserve">
+    <value>SideBar</value>
+  </data>
+  <data name="&gt;&gt;GroupStatistics.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="SplitContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -947,7 +1049,7 @@
     <value>FileTreeView</value>
   </data>
   <data name="&gt;&gt;FileTreeView.Type" xml:space="preserve">
-    <value>Vocup.Controls.FileTreeView, Vocup, Version=1.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.FileTreeView, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;FileTreeView.Parent" xml:space="preserve">
     <value>SplitContainer.Panel1</value>
@@ -1023,7 +1125,7 @@ Just open a vocabulary book or create a new one.</value>
     <value>SplitContainer</value>
   </data>
   <data name="&gt;&gt;SplitContainer.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveSplitContainer, Vocup, Version=1.7.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveSplitContainer, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SplitContainer.Parent" xml:space="preserve">
     <value>TableLayout</value>
@@ -1034,6 +1136,27 @@ Just open a vocabulary book or create a new one.</value>
   <metadata name="ToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 24</value>
   </metadata>
+  <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="ToolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>784, 25</value>
+  </data>
+  <data name="ToolStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip.Name" xml:space="preserve">
+    <value>ToolStrip</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip.Type" xml:space="preserve">
+    <value>Vocup.Controls.ResponsiveToolStrip, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="TsbCreateBook.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
@@ -1093,27 +1216,6 @@ Just open a vocabulary book or create a new one.</value>
   </data>
   <data name="toolStripLabel.Text" xml:space="preserve">
     <value>Information about evaluation:</value>
-  </data>
-  <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="ToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>784, 25</value>
-  </data>
-  <data name="ToolStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip.Name" xml:space="preserve">
-    <value>ToolStrip</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveToolStrip, Vocup, Version=1.7.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="TableLayout.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
@@ -7350,6 +7452,60 @@ Just open a vocabulary book or create a new one.</value>
   <data name="$this.Text" xml:space="preserve">
     <value>Vocup</value>
   </data>
+  <data name="&gt;&gt;toolStripMenuItem11.Name" xml:space="preserve">
+    <value>toolStripMenuItem11</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem10.Name" xml:space="preserve">
+    <value>toolStripMenuItem10</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem9.Name" xml:space="preserve">
+    <value>toolStripMenuItem9</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
+    <value>toolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem4.Name" xml:space="preserve">
+    <value>toolStripMenuItem4</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem5.Name" xml:space="preserve">
+    <value>toolStripMenuItem5</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem6.Name" xml:space="preserve">
+    <value>toolStripMenuItem6</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem8.Name" xml:space="preserve">
+    <value>toolStripMenuItem8</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;infoToolStripMenuItem.Name" xml:space="preserve">
+    <value>infoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;infoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;TsmiRootFile.Name" xml:space="preserve">
     <value>TsmiRootFile</value>
   </data>
@@ -7374,12 +7530,6 @@ Just open a vocabulary book or create a new one.</value>
   <data name="&gt;&gt;TsmiCloseBook.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripMenuItem11.Name" xml:space="preserve">
-    <value>toolStripMenuItem11</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;TsmiSave.Name" xml:space="preserve">
     <value>TsmiSave</value>
   </data>
@@ -7392,16 +7542,16 @@ Just open a vocabulary book or create a new one.</value>
   <data name="&gt;&gt;TsmiSaveAs.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripMenuItem10.Name" xml:space="preserve">
-    <value>toolStripMenuItem10</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;TsmiImport.Name" xml:space="preserve">
     <value>TsmiImport</value>
   </data>
   <data name="&gt;&gt;TsmiImport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TsmiImportAnsi.Name" xml:space="preserve">
+    <value>TsmiImportAnsi</value>
+  </data>
+  <data name="&gt;&gt;TsmiImportAnsi.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiExport.Name" xml:space="preserve">
@@ -7409,12 +7559,6 @@ Just open a vocabulary book or create a new one.</value>
   </data>
   <data name="&gt;&gt;TsmiExport.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem9.Name" xml:space="preserve">
-    <value>toolStripMenuItem9</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiOpenInExplorer.Name" xml:space="preserve">
     <value>TsmiOpenInExplorer</value>
@@ -7432,24 +7576,6 @@ Just open a vocabulary book or create a new one.</value>
     <value>TsmiPrint</value>
   </data>
   <data name="&gt;&gt;TsmiPrint.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
-    <value>toolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TsmiBackup.Name" xml:space="preserve">
-    <value>TsmiBackup</value>
-  </data>
-  <data name="&gt;&gt;TsmiBackup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TsmiBackupCreate.Name" xml:space="preserve">
-    <value>TsmiBackupCreate</value>
-  </data>
-  <data name="&gt;&gt;TsmiBackupCreate.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiBackupRestore.Name" xml:space="preserve">
@@ -7512,35 +7638,17 @@ Just open a vocabulary book or create a new one.</value>
   <data name="&gt;&gt;TsmiBookOptions.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripMenuItem4.Name" xml:space="preserve">
-    <value>toolStripMenuItem4</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;TsmiMerge.Name" xml:space="preserve">
     <value>TsmiMerge</value>
   </data>
   <data name="&gt;&gt;TsmiMerge.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripMenuItem5.Name" xml:space="preserve">
-    <value>toolStripMenuItem5</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;TsmiSpecialChar.Name" xml:space="preserve">
     <value>TsmiSpecialChar</value>
   </data>
   <data name="&gt;&gt;TsmiSpecialChar.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem6.Name" xml:space="preserve">
-    <value>toolStripMenuItem6</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiSettings.Name" xml:space="preserve">
     <value>TsmiSettings</value>
@@ -7566,23 +7674,11 @@ Just open a vocabulary book or create a new one.</value>
   <data name="&gt;&gt;TsmiEvaluationInfo.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripMenuItem8.Name" xml:space="preserve">
-    <value>toolStripMenuItem8</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;TsmiUpdate.Name" xml:space="preserve">
     <value>TsmiUpdate</value>
   </data>
   <data name="&gt;&gt;TsmiUpdate.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;infoToolStripMenuItem.Name" xml:space="preserve">
-    <value>infoToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;infoToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiAbout.Name" xml:space="preserve">
     <value>TsmiAbout</value>

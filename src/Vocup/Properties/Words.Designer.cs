@@ -178,47 +178,11 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Foreign language.
-        /// </summary>
-        internal static string ForeignLanguage {
-            get {
-                return ResourceManager.GetString("ForeignLanguage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Import.
         /// </summary>
         internal static string Import {
             get {
                 return ResourceManager.GetString("Import", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Last practiced.
-        /// </summary>
-        internal static string LastPracticed {
-            get {
-                return ResourceManager.GetString("LastPracticed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Vocabulary book {0} - {1}.
-        /// </summary>
-        internal static string MailSubjectVocabularyBook {
-            get {
-                return ResourceManager.GetString("MailSubjectVocabularyBook", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Mother tongue.
-        /// </summary>
-        internal static string MotherTongue {
-            get {
-                return ResourceManager.GetString("MotherTongue", resourceCulture);
             }
         }
         
@@ -286,15 +250,6 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save backup.
-        /// </summary>
-        internal static string SaveBackup {
-            get {
-                return ResourceManager.GetString("SaveBackup", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Save vocabulary book.
         /// </summary>
         internal static string SaveVocabularyBook {
@@ -340,15 +295,6 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vocabulary books.
-        /// </summary>
-        internal static string VocabularyBooks {
-            get {
-                return ResourceManager.GetString("VocabularyBooks", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Vocup.
         /// </summary>
         internal static string Vocup {
@@ -363,15 +309,6 @@ namespace Vocup.Properties {
         internal static string VocupBackupFile {
             get {
                 return ResourceManager.GetString("VocupBackupFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Vocup practice result file.
-        /// </summary>
-        internal static string VocupPracticeResultFile {
-            get {
-                return ResourceManager.GetString("VocupPracticeResultFile", resourceCulture);
             }
         }
         
