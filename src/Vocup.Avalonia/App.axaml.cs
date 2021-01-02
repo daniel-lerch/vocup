@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using System;
+using Vocup.Avalonia.Controls;
 using Vocup.Avalonia.ViewModels;
 using Vocup.Avalonia.Views;
 
@@ -23,24 +24,23 @@ namespace Vocup.Avalonia
                 {
                     DataContext = new MainWindowVM(),
                 };
+            }
 
-#if WINDOWS
-                desktop.MainWindow.Opened += OnMainWindowOpened;
-#endif
+            if (ApplicationLifetime is ISplashScreenLifetime splashScreen)
+            {
+                splashScreen.MainWindow.Opened += OnMainWindowOpened;
             }
 
             base.OnFrameworkInitializationCompleted();
         }
 
-#if WINDOWS
-        private static void OnMainWindowOpened(object sender, EventArgs e)
+        private void OnMainWindowOpened(object sender, EventArgs e)
         {
-            if (sender is not Window window)
-                throw new ArgumentException("This event handler must be registered on a window", nameof(sender));
+            var window = (Window)sender;
+            var splashScreen = (ISplashScreenLifetime)ApplicationLifetime;
 
             window.Opened -= OnMainWindowOpened;
-            Program.CloseSplashScreen(window.PlatformImpl.Handle.Handle);
+            splashScreen.WindowCreated(window.PlatformImpl.Handle.Handle);
         }
-#endif
     }
 }
