@@ -125,11 +125,10 @@ namespace Vocup
             }
         }
 
+        /// <summary>
+        ///  Save the location and size of this window.
+        /// </summary>
         private void StoreSettings()
-        {
-            //
-            // save the forms location and size
-            //
             Settings.Default.MainFormLocation = this.Location;
 
             if (this.WindowState == FormWindowState.Normal)
