@@ -152,7 +152,7 @@ namespace Vocup
                 this.Location = Settings.Default.MainFormLocation;
             }
 
-            if (Settings.Default.MainFormSize != null)
+            if (Settings.Default.MainFormSize != default)
             {
                 this.Size = Settings.Default.MainFormSize;
             }
