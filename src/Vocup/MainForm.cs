@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -126,7 +126,7 @@ namespace Vocup
         }
 
         /// <summary>
-        ///  Save the location and size of this window.
+        /// Save the location and size of this window.
         /// </summary>
         private void StoreSettings()
             Settings.Default.MainFormLocation = this.Location;
@@ -142,6 +142,9 @@ namespace Vocup
             Settings.Default.Save();
         }
 
+        /// <summary>
+        /// Restore the MainForm Location and Size
+        /// </summary>
         private void RestoreSettings()
         {
             //
