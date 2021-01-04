@@ -125,9 +125,45 @@ namespace Vocup
             }
         }
 
+        private void StoreSettings()
+        {
+            //
+            // save the forms location and size
+            //
+            Settings.Default.MainFormLocation = this.Location;
+
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                Settings.Default.MainFormSize = this.Size;
+            }
+            else
+            {
+                Settings.Default.MainFormSize = this.RestoreBounds.Size;
+            }
+            Settings.Default.Save();
+        }
+
+        private void RestoreSettings()
+        {
+            //
+            // Restore the MainForm Location and Size
+            //
+            if (Settings.Default.MainFormLocation != null)
+            {
+                this.Location = Settings.Default.MainFormLocation;
+            }
+
+            if (Settings.Default.MainFormSize != null)
+            {
+                this.Size = Settings.Default.MainFormSize;
+            }
+        }
+
         #region Event handlers
         private async void Form_Load(object sender, EventArgs e)
         {
+            RestoreSettings();
+
             Update();
             Activate();
 
@@ -156,6 +192,9 @@ namespace Vocup
             {
                 e.Cancel = !EnsureSaved();
             }
+
+            StoreSettings();
+
         }
 
         private void FileTreeView_FileSelected(object sender, FileSelectedEventArgs e)
