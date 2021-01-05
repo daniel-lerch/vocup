@@ -132,15 +132,8 @@ namespace Vocup
         {
             switch (WindowState)
             {
-                // RestoreBounds are not
                 case FormWindowState.Normal:
-                    var bounds = new Rectangle
-                        (
-                            location: Location,
-                            size: Size
-                        );
-
-                    Settings.Default.MainFormBounds = bounds;
+                    Settings.Default.MainFormBounds = Bounds;
                     break;
 
                 case FormWindowState.Maximized:
