@@ -34,7 +34,9 @@ namespace Vocup.Windows
 
         private static void RunSplashScreen(object state)
         {
-            Application.Run(new SplashScreen());
+            Application.SetCompatibleTextRenderingDefault(false);
+            using SplashScreen splashScreen = new();
+            Application.Run(splashScreen);
         }
 
         public static void Close(IntPtr handle)
