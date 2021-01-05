@@ -126,7 +126,7 @@ namespace Vocup
         }
 
         /// <summary>
-        /// Save the location, state and size of this form.
+        /// Save the bounds and the splitter distance of this form.
         /// </summary>
         private void StoreSettings()
         {
@@ -144,11 +144,13 @@ namespace Vocup
 
             Settings.Default.MainFormWindowState = WindowState;
 
+            Settings.Default.MainFormSplitterDistance = SplitContainer.SplitterDistance;
+
             Settings.Default.Save();
         }
 
         /// <summary>
-        /// Restore the saved location, state and size of this form.
+        /// Restore the saved bounds and the splitter distance of this form.
         /// </summary>
         private void RestoreSettings()
         {
@@ -161,6 +163,11 @@ namespace Vocup
                     isVisible = true;
                     break;
                 }
+            }
+
+            if (Settings.Default.MainFormSplitterDistance != 0)
+            {
+                SplitContainer.SplitterDistance = Settings.Default.MainFormSplitterDistance;
             }
 
             if (isVisible && Settings.Default.MainFormBounds != default)
