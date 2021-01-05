@@ -381,5 +381,17 @@ namespace Vocup.Properties {
                 this["MainFormWindowState"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int MainFormSplitterDistance {
+            get {
+                return ((int)(this["MainFormSplitterDistance"]));
+            }
+            set {
+                this["MainFormSplitterDistance"] = value;
+            }
+        }
     }
 }
