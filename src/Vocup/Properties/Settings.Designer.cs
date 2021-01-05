@@ -381,5 +381,17 @@ namespace Vocup.Properties {
                 this["MainFormSize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
+        public global::System.Windows.Forms.FormWindowState MainFormWindowState {
+            get {
+                return ((global::System.Windows.Forms.FormWindowState)(this["MainFormWindowState"]));
+            }
+            set {
+                this["MainFormWindowState"] = value;
+            }
+        }
     }
 }

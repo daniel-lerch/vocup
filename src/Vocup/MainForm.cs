@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -126,39 +126,55 @@ namespace Vocup
         }
 
         /// <summary>
-        /// Save the location and size of this window.
+        /// Save the location, state and size of this from.
         /// </summary>
         private void StoreSettings()
-            Settings.Default.MainFormLocation = this.Location;
+        { 
+            Settings.Default.MainFormLocation    = RestoreBounds.Location;
+            Settings.Default.MainFormWindowState = WindowState;
+            Settings.Default.MainFormSize        = RestoreBounds.Size;
 
-            if (this.WindowState == FormWindowState.Normal)
-            {
-                Settings.Default.MainFormSize = this.Size;
-            }
-            else
-            {
-                Settings.Default.MainFormSize = this.RestoreBounds.Size;
-            }
             Settings.Default.Save();
         }
 
         /// <summary>
-        /// Restore the MainForm Location and Size
+        /// Restore the saved location, state and size of this from.
         /// </summary>
         private void RestoreSettings()
         {
-            //
-            // Restore the MainForm Location and Size
-            //
-            if (Settings.Default.MainFormLocation != null)
+            Location = Settings.Default.MainFormLocation;
+            
+            // Do not restore the window state when the form was minimzed
+            if (Settings.Default.MainFormWindowState != FormWindowState.Minimized)
             {
-                this.Location = Settings.Default.MainFormLocation;
+                WindowState = Settings.Default.MainFormWindowState;
             }
 
             if (Settings.Default.MainFormSize != default)
             {
-                this.Size = Settings.Default.MainFormSize;
+                Size = Settings.Default.MainFormSize;
             }
+
+            Location = Settings.Default.MainFormLocation;
+
+            // check if form is visible on any screen 
+            bool isVisible = false;
+            foreach (Screen screen in Screen.AllScreens)
+            {
+                if (screen.Bounds.IntersectsWith(this.Bounds))
+                {
+                    isVisible = true;
+                    break;
+                }
+            }
+
+            if (!isVisible)
+            {
+                // Not visible => reset to default location and size
+                Location = Point.Empty;
+                Size = MinimumSize;
+            }
+
         }
 
         #region Event handlers
