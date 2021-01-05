@@ -125,9 +125,66 @@ namespace Vocup
             }
         }
 
+        /// <summary>
+        /// Save the location, state and size of this form.
+        /// </summary>
+        private void StoreSettings()
+        {
+            switch (WindowState)
+            {
+                case FormWindowState.Normal:
+                    Settings.Default.MainFormBounds = Bounds;
+                    break;
+
+                case FormWindowState.Maximized:
+                case FormWindowState.Minimized:
+                    Settings.Default.MainFormBounds = RestoreBounds;
+                    break;
+            }
+
+            Settings.Default.MainFormWindowState = WindowState;
+
+            Settings.Default.Save();
+        }
+
+        /// <summary>
+        /// Restore the saved location, state and size of this form.
+        /// </summary>
+        private void RestoreSettings()
+        {
+            // check if stored form bound is visible on any screen
+            bool isVisible = false;
+            foreach (Screen screen in Screen.AllScreens)
+            {
+                if (screen.Bounds.IntersectsWith(Settings.Default.MainFormBounds))
+                {
+                    isVisible = true;
+                    break;
+                }
+            }
+
+            if (isVisible && Settings.Default.MainFormBounds != default)
+            {
+                // visible => restore the bounds of the main form
+                Bounds = Settings.Default.MainFormBounds;
+
+                // Do not restore the window state when the form was minimzed
+                if (Settings.Default.MainFormWindowState != FormWindowState.Minimized)
+                {
+                    WindowState = Settings.Default.MainFormWindowState;
+                }
+            }
+            else
+            {
+                // Not visible => use default do nothing
+            }
+        }
+
         #region Event handlers
         private async void Form_Load(object sender, EventArgs e)
         {
+            RestoreSettings();
+
             Update();
             Activate();
 
@@ -156,6 +213,9 @@ namespace Vocup
             {
                 e.Cancel = !EnsureSaved();
             }
+
+            StoreSettings();
+
         }
 
         private void FileTreeView_FileSelected(object sender, FileSelectedEventArgs e)
