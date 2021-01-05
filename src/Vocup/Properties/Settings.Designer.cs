@@ -360,25 +360,13 @@ namespace Vocup.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
-        public global::System.Drawing.Point MainFormLocation {
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0, 0, 0")]
+        public global::System.Drawing.Rectangle MainFormBounds {
             get {
-                return ((global::System.Drawing.Point)(this["MainFormLocation"]));
+                return ((global::System.Drawing.Rectangle)(this["MainFormBounds"]));
             }
             set {
-                this["MainFormLocation"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
-        public global::System.Drawing.Size MainFormSize {
-            get {
-                return ((global::System.Drawing.Size)(this["MainFormSize"]));
-            }
-            set {
-                this["MainFormSize"] = value;
+                this["MainFormBounds"] = value;
             }
         }
         

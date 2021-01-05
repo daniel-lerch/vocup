@@ -129,10 +129,27 @@ namespace Vocup
         /// Save the location, state and size of this form.
         /// </summary>
         private void StoreSettings()
-        { 
-            Settings.Default.MainFormLocation    = RestoreBounds.Location;
+        {
+            switch (WindowState)
+            {
+                // RestoreBounds are not
+                case FormWindowState.Normal:
+                    var bounds = new Rectangle
+                        (
+                            location: Location,
+                            size: Size
+                        );
+
+                    Settings.Default.MainFormBounds = bounds;
+                    break;
+
+                case FormWindowState.Maximized:
+                case FormWindowState.Minimized:
+                    Settings.Default.MainFormBounds = RestoreBounds;
+                    break;
+            }
+
             Settings.Default.MainFormWindowState = WindowState;
-            Settings.Default.MainFormSize        = RestoreBounds.Size;
 
             Settings.Default.Save();
         }
@@ -142,39 +159,32 @@ namespace Vocup
         /// </summary>
         private void RestoreSettings()
         {
-            Location = Settings.Default.MainFormLocation;
-            
-            // Do not restore the window state when the form was minimzed
-            if (Settings.Default.MainFormWindowState != FormWindowState.Minimized)
-            {
-                WindowState = Settings.Default.MainFormWindowState;
-            }
-
-            if (Settings.Default.MainFormSize != default)
-            {
-                Size = Settings.Default.MainFormSize;
-            }
-
-            Location = Settings.Default.MainFormLocation;
-
-            // check if form is visible on any screen 
+            // check if stored form bound is visible on any screen
             bool isVisible = false;
             foreach (Screen screen in Screen.AllScreens)
             {
-                if (screen.Bounds.IntersectsWith(this.Bounds))
+                if (screen.Bounds.IntersectsWith(Settings.Default.MainFormBounds))
                 {
                     isVisible = true;
                     break;
                 }
             }
 
-            if (!isVisible)
+            if (isVisible && Settings.Default.MainFormBounds != default)
             {
-                // Not visible => reset to default location and size
-                Location = Point.Empty;
-                Size = MinimumSize;
-            }
+                // visible => restore the bounds of the main form
+                Bounds = Settings.Default.MainFormBounds;
 
+                // Do not restore the window state when the form was minimzed
+                if (Settings.Default.MainFormWindowState != FormWindowState.Minimized)
+                {
+                    WindowState = Settings.Default.MainFormWindowState;
+                }
+            }
+            else
+            {
+                // Not visible => use default do nothing
+            }
         }
 
         #region Event handlers
