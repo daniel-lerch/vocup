@@ -8,11 +8,79 @@
         mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
         x:Class="Vocup.Avalonia.Views.MainWindow"
         Icon="/Assets/icon.ico"
-        Title="Vocup"
-        Content="{Binding Content}">
+        Title="Vocup">
+
+  <Window.Background>
+    <RadialGradientBrush Radius="0.6">
+      <GradientStop Color="#4679AC" Offset="0" />
+      <GradientStop Color="#1E5184" Offset="1" />
+    </RadialGradientBrush>
+  </Window.Background>
+
+  <Window.Styles>
+    <Style Selector="Button">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Foreground" Value="White" />
+      <Setter Property="BorderBrush" Value="Transparent" />
+      <Setter Property="HorizontalContentAlignment" Value="Left" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <!--
+        This transition doesn't work in XAML is therefore implemented in C#
+        
+      <Setter Property="Transitions">
+        <Transitions>
+          <c:SolidColorBrushTransition Property="Background" Duration="0:0:0.25" />
+        </Transitions>
+      </Setter>
+      -->
+    </Style>
+    <Style Selector="Button:pointerover">
+      <Setter Property="BorderBrush" Value="#FFFFFFFF" />
+      <Setter Property="Background" Value="#40FFFFFF" />
+    </Style>
+    <Style Selector="Button StackPanel">
+      <Setter Property="Orientation" Value="Horizontal" />
+    </Style>
+    <Style Selector="Button Image">
+      <Setter Property="Margin" Value="15,0,10,0" />
+      <Setter Property="Width" Value="24" />
+    </Style>
+    <Style Selector="Button TextBlock">
+      <Setter Property="Margin" Value="10,0,0,0" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+      <Setter Property="FontSize" Value="12" />
+    </Style>
+  </Window.Styles>
 
   <Design.DataContext>
     <vm:MainWindowVM />
   </Design.DataContext>
+
+  <Grid ColumnDefinitions="180,*" RowDefinitions="50,50,50,*,50">
+    <Button Grid.Column="0" Grid.Row="0">
+      <StackPanel Orientation="Horizontal">
+        <Image Source="/Assets/new_copy_white.png" />
+        <TextBlock>New</TextBlock>
+      </StackPanel>
+    </Button>
+    <Button Grid.Column="0" Grid.Row="1">
+      <StackPanel Orientation="Horizontal">
+        <Image Source="/Assets/file_white.png" />
+        <TextBlock>Open</TextBlock>
+      </StackPanel>
+    </Button>
+    <Button Grid.Column="0" Grid.Row="2">
+      <StackPanel Orientation="Horizontal">
+        <Image Source="/Assets/import_white.png" />
+        <TextBlock>Import</TextBlock>
+      </StackPanel>
+    </Button>
+    <Button Grid.Column="0" Grid.Row="4">
+      <StackPanel Orientation="Horizontal">
+        <Image Source="/Assets/settings_white.png" Width="24" />
+        <TextBlock>Settings</TextBlock>
+      </StackPanel>
+    </Button>
+  </Grid>
 
 </Window>
