@@ -126,7 +126,7 @@ namespace Vocup
         }
 
         /// <summary>
-        /// Save the location, state and size of this from.
+        /// Save the location, state and size of this form.
         /// </summary>
         private void StoreSettings()
         { 
@@ -138,7 +138,7 @@ namespace Vocup
         }
 
         /// <summary>
-        /// Restore the saved location, state and size of this from.
+        /// Restore the saved location, state and size of this form.
         /// </summary>
         private void RestoreSettings()
         {
