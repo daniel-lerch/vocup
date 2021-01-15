@@ -40,12 +40,14 @@ namespace Vocup.Windows
             this.NameLabel.BackColor = System.Drawing.Color.Transparent;
             this.NameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.NameLabel.ForeColor = System.Drawing.Color.White;
-            this.NameLabel.Location = new System.Drawing.Point(12, 9);
+            this.NameLabel.Location = new System.Drawing.Point(0, 0);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(476, 232);
+            this.NameLabel.Size = new System.Drawing.Size(500, 250);
             this.NameLabel.TabIndex = 0;
             this.NameLabel.Text = "vocup";
             this.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NameLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NameLabel_MouseDown);
+            this.NameLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NameLabel_MouseMove);
             // 
             // SplashScreen
             // 

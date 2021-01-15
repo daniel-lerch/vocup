@@ -9,6 +9,30 @@ namespace Vocup.Windows
 {
     public partial class SplashScreen : Form
     {
+        public static void StartShow()
+        {
+            ThreadPool.QueueUserWorkItem(RunSplashScreen);
+        }
+
+        private static void RunSplashScreen(object? state)
+        {
+            Application.SetCompatibleTextRenderingDefault(false);
+            using SplashScreen splashScreen = new();
+            Application.Run(splashScreen);
+        }
+
+        public static void Close(IntPtr handle)
+        {
+            User32.SetForegroundWindow(handle);
+            Application.Exit();
+        }
+
+
+        /// <summary>
+        /// The position relative to the control where the left mouse button down was pressed last.
+        /// </summary>
+        private Point dragOffset;
+
         public SplashScreen()
         {
             InitializeComponent();
@@ -27,22 +51,21 @@ namespace Vocup.Windows
             e.Graphics.FillRectangle(brush, e.ClipRectangle);
         }
 
-        public static void StartShow()
+        private void NameLabel_MouseDown(object sender, MouseEventArgs e)
         {
-            ThreadPool.QueueUserWorkItem(RunSplashScreen);
+            if (e.Button.HasFlag(MouseButtons.Left))
+            {
+                dragOffset = e.Location;
+            }
         }
 
-        private static void RunSplashScreen(object state)
+        private void NameLabel_MouseMove(object sender, MouseEventArgs e)
         {
-            Application.SetCompatibleTextRenderingDefault(false);
-            using SplashScreen splashScreen = new();
-            Application.Run(splashScreen);
-        }
-
-        public static void Close(IntPtr handle)
-        {
-            User32.SetForegroundWindow(handle);
-            Application.Exit();
+            if (e.Button.HasFlag(MouseButtons.Left))
+            {
+                // The coordinates of e.X and e.Y are relative to the control
+                Location = new Point(Location.X + e.X - dragOffset.X, Location.Y + e.Y - dragOffset.Y);
+            }
         }
     }
 }
