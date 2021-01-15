@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("VectorData")]
 [assembly: AssemblyProduct("Vocup")]
-[assembly: AssemblyCopyright("Copyright © 2011 Florian Amstutz, © 2018-2020 Daniel Lerch.")]
+[assembly: AssemblyCopyright("Copyright © 2011 Florian Amstutz, © 2018-2021 Daniel Lerch.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

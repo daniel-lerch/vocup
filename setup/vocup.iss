@@ -29,7 +29,7 @@ LicenseFile=license.txt
 
 VersionInfoVersion={#AppVersion}
 VersionInfoCompany=Daniel Lerch
-VersionInfoCopyright=© 2011 Florian Amstutz, © 2018-2020 Daniel Lerch
+VersionInfoCopyright=© 2011 Florian Amstutz, © 2018-2021 Daniel Lerch
 
 UninstallDisplayIcon={app}\Vocup.exe
 UninstallDisplayName=Vocup (classic installation)
@@ -46,6 +46,7 @@ Source: ..\src\Vocup\bin\Release\Resources\easter_egg.vhf;                   Des
 Source: ..\src\Vocup\bin\Release\Resources\help.chm;                         DestDir: {app}\Resources; Flags: ignoreversion replacesameversion;
 Source: ..\src\Vocup\bin\Release\CsvHelper.dll;                              DestDir: {app}; Flags: ignoreversion replacesameversion;
 Source: ..\src\Vocup\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll;          DestDir: {app}; Flags: ignoreversion replacesameversion;
+Source: ..\src\Vocup\bin\Release\Microsoft.Bcl.HashCode.dll;                 DestDir: {app}; Flags: ignoreversion replacesameversion;
 Source: ..\src\Vocup\bin\Release\Octokit.dll;                                DestDir: {app}; Flags: ignoreversion replacesameversion;
 Source: ..\src\Vocup\bin\Release\System.Runtime.CompilerServices.Unsafe.dll; DestDir: {app}; Flags: ignoreversion replacesameversion;
 Source: ..\src\Vocup\bin\Release\System.Threading.Tasks.Extensions.dll;      DestDir: {app}; Flags: ignoreversion replacesameversion;
