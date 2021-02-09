@@ -65,7 +65,7 @@ namespace Vocup.Forms
         {
             if (LwComponents.SelectedItems.Count > 0)
             {
-                Process.Start(LwComponents.SelectedItems[0].SubItems[3].Text);
+                Process.Start(LwComponents.SelectedItems[0].SubItems[2].Text);
             }
         }
     }
