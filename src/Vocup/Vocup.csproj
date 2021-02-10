@@ -292,8 +292,12 @@
     <None Include="Resources\help.chm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <EmbeddedResource Include="Controls\FileTreeView.de.resx">
+      <DependentUpon>FileTreeView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\FileTreeView.resx">
       <DependentUpon>FileTreeView.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\StatisticsPanel.de.resx">
       <DependentUpon>StatisticsPanel.cs</DependentUpon>
