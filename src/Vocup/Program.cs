@@ -95,7 +95,8 @@ namespace Vocup
             }
             else if (!Directory.Exists(Settings.Default.VhfPath))
             {
-                if (MessageBox.Show(Messages.VhfPathNotFound, Messages.VhfPathNotFoundT, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                if (MessageBox.Show(string.Format(Messages.VhfPathNotFound, Settings.Default.VhfPath), Messages.VhfPathNotFoundT, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+                    == DialogResult.OK)
                 {
                     Settings.Default.VhfPath = folder;
                 }
@@ -121,7 +122,8 @@ namespace Vocup
             }
             else if (!Directory.Exists(Settings.Default.VhrPath))
             {
-                if (MessageBox.Show(Messages.VhrPathNotFound, Messages.VhrPathNotFoundT, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                if (MessageBox.Show(string.Format(Messages.VhrPathNotFound, Settings.Default.VhrPath), Messages.VhrPathNotFoundT, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+                    == DialogResult.OK)
                 {
                     Directory.CreateDirectory(folder);
                     Settings.Default.VhrPath = folder;

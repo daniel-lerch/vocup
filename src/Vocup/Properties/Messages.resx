@@ -298,6 +298,9 @@ Please ensure that the file is not empty.</value>
   <data name="VhfMustUpdateT" xml:space="preserve">
     <value>Update required</value>
   </data>
+  <data name="VhfPathInvalid" xml:space="preserve">
+    <value>The selected path for is not suitable to save vocabulary books. Do not use optical disk drives or system folders here.</value>
+  </data>
   <data name="VhfPathNotFound" xml:space="preserve">
     <value>The folder for vocabulary books was not found at {0}. Vocup will replace your configuration with the default documents directory. You change that in the settings at any time.</value>
     <comment>{0}: Path</comment>
@@ -316,6 +319,9 @@ Please ensure that the file is not empty.</value>
   </data>
   <data name="VhrInvalidRowCountAndOtherFile" xml:space="preserve">
     <value>The referenced result file is in use by another vocabulary book. Results are not going to be loaded.</value>
+  </data>
+  <data name="VhrPathInvalid" xml:space="preserve">
+    <value>The selected path for is not suitable to save practice results. Do not use optical disk drives or system folders here.</value>
   </data>
   <data name="VhrPathNotFound" xml:space="preserve">
     <value>The folder for practice results was not found at {0}. Vocup will replace your configuration with the default application data directory. You change that in the settings at any time.</value>

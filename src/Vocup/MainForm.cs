@@ -222,7 +222,6 @@ namespace Vocup
             }
 
             StoreSettings();
-
         }
 
         private void FileTreeView_FileSelected(object sender, FileSelectedEventArgs e)
@@ -244,21 +243,32 @@ namespace Vocup
 
         private void FileTreeView_BrowseClick(object sender, EventArgs e)
         {
-            string oldVhfPath = Settings.Default.VhfPath;
-
-            using (FolderBrowserDialog dialog = new FolderBrowserDialog())
+            using FolderBrowserDialog dialog = new()
             {
-                dialog.Description = Messages.BrowseVhfPath;
-                dialog.SelectedPath = oldVhfPath;
-                if (dialog.ShowDialog() == DialogResult.OK)
+                Description = Messages.BrowseVhfPath,
+                SelectedPath = Settings.Default.VhfPath
+            };
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                try
                 {
-                    Settings.Default.VhfPath = dialog.SelectedPath;
+                    // This call fails for inaccessible paths like optical disk drives
+                    _ = Directory.GetFiles(dialog.SelectedPath);
+
+                    // Eventually refresh tree view root path
+                    if (dialog.SelectedPath != Settings.Default.VhfPath)
+                    {
+                        Settings.Default.VhfPath = dialog.SelectedPath;
+                        FileTreeView.RootPath = dialog.SelectedPath;
+                        Settings.Default.Save();
+                    }
+                }
+                catch (IOException)
+                {
+                    MessageBox.Show(Messages.VhfPathInvalid, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
-            // Eventually refresh tree view root path
-            if (oldVhfPath != Settings.Default.VhfPath)
-                FileTreeView.RootPath = Settings.Default.VhfPath;
         }
 
 
@@ -716,10 +726,10 @@ namespace Vocup
             int index = CurrentController.ListView.SelectedItem.Index;
             VocabularyWord selected = (VocabularyWord)CurrentController.ListView.SelectedItem.Tag;
             CurrentBook.Words.Remove(selected);
-            
+
             // Limit index of the deleted word to the highest possible index
             index = Math.Min(index, CurrentBook.Words.Count - 1);
-            
+
             foreach (ListViewItem item in CurrentController.ListView.Items)
             {
                 if (item.Index == index) item.Selected = true;

@@ -530,6 +530,15 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The selected path for is not suitable to save vocabulary books. Do not use optical disk drives or system folders here..
+        /// </summary>
+        internal static string VhfPathInvalid {
+            get {
+                return ResourceManager.GetString("VhfPathInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The folder for vocabulary books was not found at {0}. Vocup will replace your configuration with the default documents directory. You change that in the settings at any time..
         /// </summary>
         internal static string VhfPathNotFound {
@@ -580,6 +589,15 @@ namespace Vocup.Properties {
         internal static string VhrInvalidRowCountAndOtherFile {
             get {
                 return ResourceManager.GetString("VhrInvalidRowCountAndOtherFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The selected path for is not suitable to save practice results. Do not use optical disk drives or system folders here..
+        /// </summary>
+        internal static string VhrPathInvalid {
+            get {
+                return ResourceManager.GetString("VhrPathInvalid", resourceCulture);
             }
         }
         

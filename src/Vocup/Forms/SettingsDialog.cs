@@ -1,5 +1,6 @@
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using Vocup.Models;
 using Vocup.Properties;
@@ -187,26 +188,44 @@ namespace Vocup
 
         private void BtnVhfPath_Click(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+            using FolderBrowserDialog fbd = new()
             {
-                fbd.SelectedPath = settings.VhfPath;
+                Description = Messages.BrowseVhfPath,
+                SelectedPath = settings.VhfPath
+            };
 
-                if (fbd.ShowDialog() == DialogResult.OK)
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                try
                 {
+                    // This call fails for inaccessible paths like optical disk drives
+                    _ = Directory.GetFiles(fbd.SelectedPath);
+
                     TbVhfPath.Text = fbd.SelectedPath;
+                }
+                catch (IOException)
+                {
+                    MessageBox.Show(Messages.VhfPathInvalid, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
         private void BtnVhrPath_Click(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
-            {
-                fbd.SelectedPath = settings.VhrPath;
+            using FolderBrowserDialog fbd = new() { SelectedPath = settings.VhrPath };
 
-                if (fbd.ShowDialog() == DialogResult.OK)
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                try
                 {
+                    // This call fails for inaccessible paths like optical disk drives
+                    _ = Directory.GetFiles(fbd.SelectedPath);
+
                     TbVhrPath.Text = fbd.SelectedPath;
+                }
+                catch (IOException)
+                {
+                    MessageBox.Show(Messages.VhrPathInvalid, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
