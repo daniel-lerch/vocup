@@ -16,6 +16,8 @@ namespace Vocup.Windows
 
         private static void RunSplashScreen(object? state)
         {
+            Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
+            // Visual stlyes are not necessary for the splash screen so we omit this step
             Application.SetCompatibleTextRenderingDefault(false);
             using SplashScreen splashScreen = new();
             Application.Run(splashScreen);
