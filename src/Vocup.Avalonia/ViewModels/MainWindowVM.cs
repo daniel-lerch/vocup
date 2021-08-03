@@ -1,4 +1,7 @@
 ﻿using ReactiveUI;
+using System.Reactive;
+using System.Reactive.Linq;
+using System.Windows.Input;
 using Vocup.Models;
 
 namespace Vocup.Avalonia.ViewModels
@@ -9,16 +12,30 @@ namespace Vocup.Avalonia.ViewModels
 
         public MainWindowVM()
         {
-            Content = MenuPage = new MenuPageVM(ShowBook);
+            BrowseVocabularyBook = new Interaction<Unit, string[]>();
+
+            OpenBook = ReactiveCommand.CreateFromTask(async () =>
+            {
+                string[] result = await BrowseVocabularyBook.Handle(default);
+
+                // TODO: Load vocabulary book from disk
+            });
         }
 
         public ViewModelBase Content
         {
-            get => content; 
+            get => content;
             set => this.RaiseAndSetIfChanged(ref content, value);
         }
 
-        public MenuPageVM MenuPage { get; }
+        public ICommand OpenBook { get; }
+
+        public Interaction<Unit, string[]> BrowseVocabularyBook { get; }
+
+        public void CreateBook()
+        {
+            Content = new MenuPageNewVM(ShowBook);
+        }
 
         public void ShowBook(Book book)
         {

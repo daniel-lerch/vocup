@@ -57,13 +57,13 @@
   </Design.DataContext>
 
   <Grid ColumnDefinitions="180,*" RowDefinitions="50,50,50,*,50">
-    <Button Grid.Column="0" Grid.Row="0">
+    <Button Grid.Column="0" Grid.Row="0" Command="{Binding CreateBook}">
       <StackPanel Orientation="Horizontal">
         <Image Source="/Assets/new_copy_white.png" />
         <TextBlock>New</TextBlock>
       </StackPanel>
     </Button>
-    <Button Grid.Column="0" Grid.Row="1">
+    <Button Grid.Column="0" Grid.Row="1" Command="{Binding OpenBook}">
       <StackPanel Orientation="Horizontal">
         <Image Source="/Assets/file_white.png" />
         <TextBlock>Open</TextBlock>
@@ -81,6 +81,7 @@
         <TextBlock>Settings</TextBlock>
       </StackPanel>
     </Button>
+    <ContentControl Grid.Column="1" Grid.Row="0" Grid.RowSpan="5" Content="{Binding Content}" />
   </Grid>
 
 </Window>

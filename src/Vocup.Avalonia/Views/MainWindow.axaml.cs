@@ -1,13 +1,18 @@
 ﻿using Avalonia.Animation;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Avalonia.ReactiveUI;
 using Avalonia.Styling;
+using ReactiveUI;
 using System;
+using System.Reactive;
+using System.Threading.Tasks;
 using Vocup.Avalonia.Controls;
+using Vocup.Avalonia.ViewModels;
 
 namespace Vocup.Avalonia.Views
 {
-    public class MainWindow : Window
+    public class MainWindow : ReactiveWindow<MainWindowVM>
     {
         public MainWindow()
         {
@@ -24,11 +29,21 @@ namespace Vocup.Avalonia.Views
             }));
 
             Styles.Add(style);
+
+            this.WhenActivated(d => d(ViewModel!.BrowseVocabularyBook.RegisterHandler(DoBrowseVocabularyBookAsync)));
         }
 
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
+        }
+
+        private async Task DoBrowseVocabularyBookAsync(InteractionContext<Unit, string[]> interaction)
+        {
+            OpenFileDialog dialog = new();
+
+            string[] result = await dialog.ShowAsync(this);
+            interaction.SetOutput(result);
         }
     }
 }
