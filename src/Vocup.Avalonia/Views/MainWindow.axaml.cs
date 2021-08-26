@@ -1,13 +1,9 @@
-﻿using Avalonia.Animation;
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.ReactiveUI;
-using Avalonia.Styling;
 using ReactiveUI;
-using System;
 using System.Reactive;
 using System.Threading.Tasks;
-using Vocup.Avalonia.Controls;
 using Vocup.Avalonia.ViewModels;
 
 namespace Vocup.Avalonia.Views
@@ -17,18 +13,6 @@ namespace Vocup.Avalonia.Views
         public MainWindow()
         {
             InitializeComponent();
-
-            Style style = new Style(x => x.OfType<Button>());
-            style.Setters.Add(new Setter(TransitionsProperty, new Transitions()
-            {
-                new SolidColorBrushTransition
-                {
-                    Duration = TimeSpan.FromMilliseconds(250),
-                    Property = BackgroundProperty,
-                }
-            }));
-
-            Styles.Add(style);
 
             this.WhenActivated(d => d(ViewModel!.BrowseVocabularyBook.RegisterHandler(DoBrowseVocabularyBookAsync)));
         }
