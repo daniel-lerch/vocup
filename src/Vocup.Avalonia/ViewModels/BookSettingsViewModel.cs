@@ -5,12 +5,12 @@ using Vocup.Models;
 
 namespace Vocup.Avalonia.ViewModels
 {
-    public class MenuPageNewVM : ViewModelBase
+    public class BookSettingsViewModel : ViewModelBase
     {
         private string motherTongue;
         private string foreignLanguage;
 
-        public MenuPageNewVM(Action<Book> showBook)
+        public BookSettingsViewModel(Action<Book> showBook)
         {
             void commit() => showBook(new Book
             {

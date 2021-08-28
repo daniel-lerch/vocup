@@ -1,13 +1,14 @@
-﻿using Avalonia.Controls;
+﻿using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
 namespace Vocup.Avalonia.Views
 {
-    public class MenuPage : UserControl
+    public class BookSettingsView : UserControl
     {
-        public MenuPage()
+        public BookSettingsView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         private void InitializeComponent()

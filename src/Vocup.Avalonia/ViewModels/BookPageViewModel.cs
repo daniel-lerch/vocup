@@ -3,9 +3,9 @@ using Vocup.Models;
 
 namespace Vocup.Avalonia.ViewModels
 {
-    public class BookPageVM : ViewModelBase
+    public class BookPageViewModel : ViewModelBase
     {
-        public BookPageVM(Book book)
+        public BookPageViewModel(Book book)
         {
             MenuStrip = new MenuStripViewModel();
             ToolBar = new ToolBarViewModel();

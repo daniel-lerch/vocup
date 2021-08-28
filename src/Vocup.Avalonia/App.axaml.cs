@@ -22,7 +22,7 @@ namespace Vocup.Avalonia
             {
                 desktop.MainWindow = new MainWindow
                 {
-                    DataContext = new MainWindowVM(),
+                    DataContext = new MainWindowViewModel(),
                 };
             }
 
@@ -34,9 +34,9 @@ namespace Vocup.Avalonia
             base.OnFrameworkInitializationCompleted();
         }
 
-        private void OnMainWindowOpened(object sender, EventArgs e)
+        private void OnMainWindowOpened(object? sender, EventArgs e)
         {
-            var window = (Window)sender;
+            var window = (Window)sender!;
             var splashScreen = (ISplashScreenLifetime)ApplicationLifetime;
 
             window.Opened -= OnMainWindowOpened;

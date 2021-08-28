@@ -49,7 +49,7 @@
   </Window.Styles>
 
   <Design.DataContext>
-    <vm:MainWindowVM />
+    <vm:MainWindowViewModel />
   </Design.DataContext>
 
   <Grid ColumnDefinitions="180,*" RowDefinitions="50,50,50,*,50">
@@ -65,13 +65,13 @@
         <TextBlock>Open</TextBlock>
       </StackPanel>
     </Button>
-    <Button Grid.Column="0" Grid.Row="2">
+    <Button Grid.Column="0" Grid.Row="2" IsEnabled="False">
       <StackPanel Orientation="Horizontal">
         <Image Source="/Assets/import_white.png" />
         <TextBlock>Import</TextBlock>
       </StackPanel>
     </Button>
-    <Button Grid.Column="0" Grid.Row="4">
+    <Button Grid.Column="0" Grid.Row="4" IsEnabled="False">
       <StackPanel Orientation="Horizontal">
         <Image Source="/Assets/settings_white.png" Width="24" />
         <TextBlock>Settings</TextBlock>

@@ -2,13 +2,14 @@
 using Avalonia.Markup.Xaml;
 using Avalonia.ReactiveUI;
 using ReactiveUI;
+using System.Linq;
 using System.Reactive;
 using System.Threading.Tasks;
 using Vocup.Avalonia.ViewModels;
 
 namespace Vocup.Avalonia.Views
 {
-    public class MainWindow : ReactiveWindow<MainWindowVM>
+    public class MainWindow : ReactiveWindow<MainWindowViewModel>
     {
         public MainWindow()
         {

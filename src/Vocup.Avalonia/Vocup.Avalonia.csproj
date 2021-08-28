@@ -4,6 +4,7 @@
     <OutputType>Library</OutputType>
     <TargetFramework>net5.0</TargetFramework>
     <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   
   <ItemGroup>
@@ -24,6 +25,12 @@
   
   <ItemGroup>
     <ProjectReference Include="..\Vocup.Core\Vocup.Core.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Update="Views\BookSettingsView.axaml.cs">
+      <DependentUpon>BookSettingsView.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   
 </Project>

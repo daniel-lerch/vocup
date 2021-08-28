@@ -6,11 +6,11 @@ using Vocup.Models;
 
 namespace Vocup.Avalonia.ViewModels
 {
-    public class MainWindowVM : ViewModelBase
+    public class MainWindowViewModel : ViewModelBase
     {
         private ViewModelBase content;
 
-        public MainWindowVM()
+        public MainWindowViewModel()
         {
             BrowseVocabularyBook = new Interaction<Unit, string[]>();
 
@@ -34,12 +34,12 @@ namespace Vocup.Avalonia.ViewModels
 
         public void CreateBook()
         {
-            Content = new MenuPageNewVM(ShowBook);
+            Content = new BookSettingsViewModel(ShowBook);
         }
 
         public void ShowBook(Book book)
         {
-            Content = new BookPageVM(book);
+            Content = new BookPageViewModel(book);
         }
     }
 }

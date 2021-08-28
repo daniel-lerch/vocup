@@ -7,7 +7,8 @@ namespace Vocup.Avalonia.Views
 {
     public class ComparisonConverter : IValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        // Sets a property to true if the value from the model equals a given parameter
+        public object? Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (targetType != typeof(bool?))
             {
@@ -17,6 +18,7 @@ namespace Vocup.Avalonia.Views
             return value?.Equals(parameter);
         }
 
+        // Writes the parameter back to the model if value is true
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (!parameter.GetType().IsAssignableFrom(targetType))
