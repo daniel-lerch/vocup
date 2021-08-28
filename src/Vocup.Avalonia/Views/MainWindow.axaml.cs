@@ -23,12 +23,13 @@ namespace Vocup.Avalonia.Views
             AvaloniaXamlLoader.Load(this);
         }
 
-        private async Task DoBrowseVocabularyBookAsync(InteractionContext<Unit, string[]> interaction)
+        private async Task DoBrowseVocabularyBookAsync(InteractionContext<Unit, string?> interaction)
         {
             OpenFileDialog dialog = new();
+            dialog.Filters.Add(new FileDialogFilter() { Name = "Vocup vocabulary file", Extensions = { "vhf" } });
 
             string[] result = await dialog.ShowAsync(this);
-            interaction.SetOutput(result);
+            interaction.SetOutput(result.FirstOrDefault());
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Windows.Input;
+using Vocup.IO;
 using Vocup.Models;
 
 namespace Vocup.Avalonia.ViewModels
@@ -12,13 +13,17 @@ namespace Vocup.Avalonia.ViewModels
 
         public MainWindowViewModel()
         {
-            BrowseVocabularyBook = new Interaction<Unit, string[]>();
+            BrowseVocabularyBook = new Interaction<Unit, string?>();
 
             OpenBook = ReactiveCommand.CreateFromTask(async () =>
             {
-                string[] result = await BrowseVocabularyBook.Handle(default);
-
-                // TODO: Load vocabulary book from disk
+                string? result = await BrowseVocabularyBook.Handle(default);
+                if (result is not null)
+                {
+                    BookStorage storage = new();
+                    Book book = await storage.ReadBookAsync(result);
+                    ShowBook(book);
+                }
             });
         }
 
@@ -30,7 +35,7 @@ namespace Vocup.Avalonia.ViewModels
 
         public ICommand OpenBook { get; }
 
-        public Interaction<Unit, string[]> BrowseVocabularyBook { get; }
+        public Interaction<Unit, string?> BrowseVocabularyBook { get; }
 
         public void CreateBook()
         {
@@ -39,7 +44,7 @@ namespace Vocup.Avalonia.ViewModels
 
         public void ShowBook(Book book)
         {
-            Content = new BookPageViewModel(book);
+            Content = new BookViewModel(book);
         }
     }
 }
