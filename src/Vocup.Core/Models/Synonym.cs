@@ -1,17 +1,35 @@
-﻿using System.Collections.Generic;
+﻿using ReactiveUI;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Text.Json.Serialization;
 
 namespace Vocup.Models
 {
-    public class Synonym
+    public class Synonym : ReactiveObject
     {
-        public Synonym()
+        private string value;
+
+        public Synonym(string value)
         {
-            Flags = new List<string>();
-            Practices = new List<Practice>();
+            this.value = value;
+            Flags = new ObservableCollection<string>();
+            Practices = new ObservableCollection<Practice>();
         }
 
-        public string Value { get; set; }
-        public List<string> Flags { get; set; }
-        public List<Practice> Practices { get; set; }
+        [JsonConstructor]
+        public Synonym(string value, List<string> flags, List<Practice> practices)
+        {
+            this.value = value;
+            Flags = new ObservableCollection<string>(flags);
+            Practices = new ObservableCollection<Practice>(practices);
+        }
+
+        public string Value
+        {
+            get => value;
+            set => this.RaiseAndSetIfChanged(ref this.value, value);
+        }
+        public ObservableCollection<string> Flags { get; }
+        public ObservableCollection<Practice> Practices { get; }
     }
 }

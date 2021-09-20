@@ -1,18 +1,28 @@
-﻿using System;
+﻿using ReactiveUI;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Text.Json.Serialization;
 
 namespace Vocup.Models
 {
-    public class Word
+    public class Word : ReactiveObject
     {
-        public Word()
+        private DateTimeOffset creationDate;
+
+        [JsonConstructor]
+        public Word(List<Synonym> motherTongue, List<Synonym> foreignLanguage)
         {
-            MotherTongue = new List<Synonym>();
-            ForeignLanguage = new List<Synonym>();
+            MotherTongue = new ObservableCollection<Synonym>(motherTongue);
+            ForeignLanguage = new ObservableCollection<Synonym>(foreignLanguage);
         }
 
-        public List<Synonym> MotherTongue { get; set; }
-        public List<Synonym> ForeignLanguage { get; set; }
-        public DateTimeOffset CreationDate { get; set; }
+        public ObservableCollection<Synonym> MotherTongue { get; }
+        public ObservableCollection<Synonym> ForeignLanguage { get; }
+        public DateTimeOffset CreationDate
+        {
+            get => creationDate;
+            set => this.RaiseAndSetIfChanged(ref creationDate, value);
+        }
     }
 }

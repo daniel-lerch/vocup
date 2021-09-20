@@ -7,9 +7,26 @@ namespace Vocup.IO
 {
     public class BookStorage
     {
-        public string VhrPath { get; set; }
+        private readonly Vhf1Serializer vhf1Serializer;
+        private readonly Vhf2Serializer vhf2Serializer;
 
-        public async Task<Book> ReadBookAsync(string path)
+        public BookStorage()
+        {
+            vhf1Serializer = new Vhf1Serializer();
+            vhf2Serializer = new Vhf2Serializer();
+        }
+
+        public BookSerializer GetSerializer(BookFileFormat fileFormat)
+        {
+            return fileFormat switch
+            {
+                BookFileFormat.Vhf_1_0 => vhf1Serializer,
+                BookFileFormat.Vhf_2_0 => vhf2Serializer,
+                _ => throw new ArgumentException("Unsupported file format")
+            };
+        }
+
+        public async Task<Book> ReadBookAsync(string path, string? vhrPath)
         {
             await default(HopToThreadPoolAwaitable);
             using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
@@ -22,28 +39,22 @@ namespace Vocup.IO
                     && buffer[3] == 0x04;
                 stream.Seek(0, SeekOrigin.Begin);
 
-                if (!zipHeader)
-                    return await new Vhf1Serializer(VhrPath).ReadBookAsync(stream).ConfigureAwait(false);
-                else
-                    return await new Vhf2Serializer().ReadBookAsync(stream).ConfigureAwait(false);
+                var serializer = zipHeader ? (BookSerializer)vhf2Serializer : vhf1Serializer;
+
+                return await serializer.ReadBookAsync(stream, vhrPath).ConfigureAwait(false);
             }
         }
 
-        public async Task WriteBookAsync(string path, Book book)
+        public async Task WriteBookAsync(string path, Book book, string? vhrPath)
         {
             if (book == null) throw new ArgumentNullException(nameof(book));
             if (!book.PracticeMode.IsValid()) throw new ArgumentOutOfRangeException(nameof(book), "Invalid pratice PracticeMode");
 
             await default(HopToThreadPoolAwaitable);
-            using (var stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None))
-            {
-                if (book.FileVersion == new Version(1, 0))
-                    await new Vhf1Serializer(VhrPath).WriteBookAsync(stream, book).ConfigureAwait(false);
-                else if (book.FileVersion == new Version(2, 0))
-                    await new Vhf2Serializer().WriteBookAsync(stream, book).ConfigureAwait(false);
-                else
-                    throw new NotSupportedException($"Cannot write a vocabulary book {book.FileVersion}");
-            }
+            book.Serializer ??= vhf2Serializer;
+
+            using var stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None);
+            await book.Serializer.WriteBookAsync(stream, book, vhrPath).ConfigureAwait(false);
         }
     }
 }

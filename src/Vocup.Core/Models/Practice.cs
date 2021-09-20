@@ -1,10 +1,22 @@
-﻿using System;
+﻿using ReactiveUI;
+using System;
 
 namespace Vocup.Models
 {
-    public class Practice
+    public class Practice : ReactiveObject
     {
-        public DateTimeOffset Date { get; set; }
-        public PracticeResult Result { get; set; }
+        private DateTimeOffset date;
+        private PracticeResult result;
+
+        public DateTimeOffset Date
+        {
+            get => date;
+            set => this.RaiseAndSetIfChanged(ref date, value);
+        }
+        public PracticeResult Result
+        {
+            get => result;
+            set => this.RaiseAndSetIfChanged(ref result, value);
+        }
     }
 }

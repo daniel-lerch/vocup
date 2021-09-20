@@ -9,7 +9,7 @@ namespace Vocup.Avalonia.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private ViewModelBase content;
+        private ViewModelBase? content;
 
         public MainWindowViewModel()
         {
@@ -21,13 +21,13 @@ namespace Vocup.Avalonia.ViewModels
                 if (result is not null)
                 {
                     BookStorage storage = new();
-                    Book book = await storage.ReadBookAsync(result);
+                    Book book = await storage.ReadBookAsync(result, null);
                     ShowBook(book);
                 }
             });
         }
 
-        public ViewModelBase Content
+        public ViewModelBase? Content
         {
             get => content;
             set => this.RaiseAndSetIfChanged(ref content, value);

@@ -12,10 +12,11 @@ namespace Vocup.Avalonia.ViewModels
 
         public BookSettingsViewModel(Action<Book> showBook)
         {
-            void commit() => showBook(new Book
+            motherTongue = string.Empty;
+            foreignLanguage = string.Empty;
+
+            void commit() => showBook(new Book(MotherTongue, ForeignLanguage)
             {
-                MotherTongue = MotherTongue,
-                ForeignLanguage = ForeignLanguage,
                 PracticeMode = PracticeMode
             });
 
