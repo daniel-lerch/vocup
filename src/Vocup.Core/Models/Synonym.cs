@@ -1,5 +1,4 @@
 ﻿using ReactiveUI;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text.Json.Serialization;
 
@@ -17,11 +16,11 @@ namespace Vocup.Models
         }
 
         [JsonConstructor]
-        public Synonym(string value, List<string> flags, List<Practice> practices)
+        public Synonym(string value, ObservableCollection<string> flags, ObservableCollection<Practice> practices)
         {
             this.value = value;
-            Flags = new ObservableCollection<string>(flags);
-            Practices = new ObservableCollection<Practice>(practices);
+            Flags = flags;
+            Practices = practices;
         }
 
         public string Value

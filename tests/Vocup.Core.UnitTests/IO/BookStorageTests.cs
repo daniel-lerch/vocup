@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -75,7 +75,7 @@ namespace Vocup.Core.UnitTests.IO
 
         private Book GenerateSampleBook(BookFileFormat fileFormat)
         {
-            var pratice2 = new List<Practice>
+            var pratice2 = new ObservableCollection<Practice>
             {
                 new Practice
                 {
@@ -85,13 +85,13 @@ namespace Vocup.Core.UnitTests.IO
                 }
             };
 
-            return new Book("Deutsch", "Englisch", new List<Word>
+            return new Book("Deutsch", "Englisch", new ObservableCollection<Word>
             {
-                new Word(new List<Synonym> { new Synonym("Katze") }, new List<Synonym> { new Synonym("cat") }),
-                new Word(new List<Synonym> { new Synonym("Farbe") }, new List<Synonym>
+                new Word(new ObservableCollection<Synonym> { new Synonym("Katze") }, new ObservableCollection<Synonym> { new Synonym("cat") }),
+                new Word(new ObservableCollection<Synonym> { new Synonym("Farbe") }, new ObservableCollection<Synonym>
                 {
-                    new Synonym("colour", new List<string>(), pratice2),
-                    new Synonym("color", new List<string>(), pratice2)
+                    new Synonym("colour", new ObservableCollection<string>(), pratice2),
+                    new Synonym("color", new ObservableCollection<string>(), pratice2)
                 })
             })
             {

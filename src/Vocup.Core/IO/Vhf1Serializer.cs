@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -40,7 +41,7 @@ namespace Vocup.IO
                 throw new VhfFormatException(VhfError.InvalidLanguages);
             }
 
-            var words = new List<Word>();
+            var words = new ObservableCollection<Word>();
 
             while (true)
             {
@@ -52,14 +53,17 @@ namespace Vocup.IO
                     throw new VhfFormatException(VhfError.InvalidRow);
                 }
                 words.Add(new Word(
-                    motherTongue: new List<Synonym> { new Synonym(value: columns[0]) },
+                    motherTongue: new ObservableCollection<Synonym> { new Synonym(value: columns[0]) },
                     foreignLanguage: string.IsNullOrWhiteSpace(columns[2])
-                        ? new List<Synonym> { new Synonym(value: columns[1]) }
-                        : new List<Synonym> { new Synonym(value: columns[1]), new Synonym(value: columns[2]) }));
+                        ? new ObservableCollection<Synonym> { new Synonym(value: columns[1]) }
+                        : new ObservableCollection<Synonym> { new Synonym(value: columns[1]), new Synonym(value: columns[2]) }));
             }
 
-            var book = new Book(motherTongue, foreignLanguage, words);
-            book.Serializer = this;
+            var book = new Book(motherTongue, foreignLanguage, words)
+            {
+                Serializer = this,
+                VhrCode = vhrCode
+            };
 
             // Read results from .vhr file
 

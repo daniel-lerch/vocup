@@ -1,5 +1,4 @@
 ﻿using ReactiveUI;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text.Json.Serialization;
 using Vocup.IO;
@@ -24,11 +23,11 @@ namespace Vocup.Models
         }
 
         [JsonConstructor]
-        public Book(string motherTongue, string foreignLanguage, List<Word> words)
+        public Book(string motherTongue, string foreignLanguage, ObservableCollection<Word> words)
         {
             this.motherTongue = motherTongue;
             this.foreignLanguage = foreignLanguage;
-            Words = new ObservableCollection<Word>(words);
+            Words = words;
         }
 
         public string MotherTongue

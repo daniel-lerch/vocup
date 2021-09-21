@@ -1,6 +1,5 @@
 ﻿using ReactiveUI;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text.Json.Serialization;
 
@@ -11,10 +10,10 @@ namespace Vocup.Models
         private DateTimeOffset creationDate;
 
         [JsonConstructor]
-        public Word(List<Synonym> motherTongue, List<Synonym> foreignLanguage)
+        public Word(ObservableCollection<Synonym> motherTongue, ObservableCollection<Synonym> foreignLanguage)
         {
-            MotherTongue = new ObservableCollection<Synonym>(motherTongue);
-            ForeignLanguage = new ObservableCollection<Synonym>(foreignLanguage);
+            MotherTongue = motherTongue;
+            ForeignLanguage = foreignLanguage;
         }
 
         public ObservableCollection<Synonym> MotherTongue { get; }
