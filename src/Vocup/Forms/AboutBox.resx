@@ -481,13 +481,13 @@
     <value>68, 44</value>
   </data>
   <data name="LlbProjectMail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 14</value>
+    <value>121, 14</value>
   </data>
   <data name="LlbProjectMail.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="LlbProjectMail.Text" xml:space="preserve">
-    <value>daniel.p.lerch@gmail.com</value>
+    <value>daniel.dev@lerchen.net</value>
   </data>
   <data name="LlbProjectMail.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>

@@ -21,7 +21,6 @@ namespace Vocup.IO.Internal
                 using (var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
                 {
                     CsvConfiguration config = new CsvConfiguration(CultureInfo.CurrentCulture);
-                    config.RegisterClassMap(new EntryMap());
 
                     var encoding = ansiEncoding ? Encoding.GetEncoding(1252) : Encoding.UTF8;
 
@@ -37,31 +36,33 @@ namespace Vocup.IO.Internal
                     using (var streamReader = new StreamReader(fileStream, encoding, detectEncodingFromByteOrderMarks: true))
                     using (var reader = new CsvReader(streamReader, config))
                     {
+                        reader.Context.RegisterClassMap(new EntryMap());
+
                         if (!reader.Read() || !reader.ReadHeader())
                         {
                             MessageBox.Show(Messages.CsvInvalidHeader, Messages.CsvInvalidHeaderT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return false;
                         }
 
-                        if (reader.Context.HeaderRecord.Length != 2)
+                        if (reader.HeaderRecord.Length != 2)
                         {
-                            MessageBox.Show(string.Format(Messages.CsvInvalidHeaderColumns, reader.Context.HeaderRecord.Length),
+                            MessageBox.Show(string.Format(Messages.CsvInvalidHeaderColumns, reader.HeaderRecord.Length),
                                 Messages.CsvInvalidHeaderT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return false;
                         }
 
                         if (importSettings)
                         {
-                            book.MotherTongue = reader.Context.HeaderRecord[0];
-                            book.ForeignLang = reader.Context.HeaderRecord[1];
+                            book.MotherTongue = reader.HeaderRecord[0];
+                            book.ForeignLang = reader.HeaderRecord[1];
                         }
                         else
                         {
-                            if (!book.MotherTongue.Equals(reader.Context.HeaderRecord[0], StringComparison.OrdinalIgnoreCase)
-                          || !book.ForeignLang.Equals(reader.Context.HeaderRecord[1], StringComparison.OrdinalIgnoreCase))
+                            if (!book.MotherTongue.Equals(reader.HeaderRecord[0], StringComparison.OrdinalIgnoreCase) 
+                                || !book.ForeignLang.Equals(reader.HeaderRecord[1], StringComparison.OrdinalIgnoreCase))
                             {
                                 DialogResult dialogResult = MessageBox.Show(
-                                    string.Format(Messages.CsvInvalidLanguages, reader.Context.HeaderRecord[0], reader.Context.HeaderRecord[1]),
+                                    string.Format(Messages.CsvInvalidLanguages, reader.HeaderRecord[0], reader.HeaderRecord[1]),
                                     Messages.CsvInvalidHeaderT, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                                 if (dialogResult == DialogResult.No)
@@ -97,12 +98,10 @@ namespace Vocup.IO.Internal
         {
             try
             {
-                CsvConfiguration config = new CsvConfiguration(CultureInfo.CurrentCulture);
-                config.RegisterClassMap(new EntryMap(book.MotherTongue, book.ForeignLang));
-
                 using (TextWriter file = new StreamWriter(path, false, Encoding.UTF8))
-                using (CsvWriter writer = new CsvWriter(file, config))
+                using (CsvWriter writer = new CsvWriter(file, CultureInfo.CurrentCulture))
                 {
+                    writer.Context.RegisterClassMap(new EntryMap(book.MotherTongue, book.ForeignLang));
                     writer.WriteRecords(book.Words.Select(x => new Entry() { MotherTongue = x.MotherTongue, ForeignLang = x.ForeignLangText }));
                 }
 

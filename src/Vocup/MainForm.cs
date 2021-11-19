@@ -243,30 +243,31 @@ namespace Vocup
 
         private void FileTreeView_BrowseClick(object sender, EventArgs e)
         {
-            using FolderBrowserDialog dialog = new()
+            using (FolderBrowserDialog dialog = new FolderBrowserDialog
             {
                 Description = Messages.BrowseVhfPath,
                 SelectedPath = Settings.Default.VhfPath
-            };
-
-            if (dialog.ShowDialog() == DialogResult.OK)
+            })
             {
-                try
+                if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    // This call fails for inaccessible paths like optical disk drives
-                    _ = Directory.GetFiles(dialog.SelectedPath);
-
-                    // Eventually refresh tree view root path
-                    if (dialog.SelectedPath != Settings.Default.VhfPath)
+                    try
                     {
-                        Settings.Default.VhfPath = dialog.SelectedPath;
-                        FileTreeView.RootPath = dialog.SelectedPath;
-                        Settings.Default.Save();
+                        // This call fails for inaccessible paths like optical disk drives
+                        _ = Directory.GetFiles(dialog.SelectedPath);
+
+                        // Eventually refresh tree view root path
+                        if (dialog.SelectedPath != Settings.Default.VhfPath)
+                        {
+                            Settings.Default.VhfPath = dialog.SelectedPath;
+                            FileTreeView.RootPath = dialog.SelectedPath;
+                            Settings.Default.Save();
+                        }
                     }
-                }
-                catch (IOException)
-                {
-                    MessageBox.Show(Messages.VhfPathInvalid, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    catch (IOException)
+                    {
+                        MessageBox.Show(Messages.VhfPathInvalid, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
