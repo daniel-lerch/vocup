@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using Vocup.Forms;
@@ -19,10 +21,17 @@ namespace Vocup
         private static void Main(string[] args)
         {
             // Prevents the installer from executing while the program is running
-            new Mutex(false, AppInfo.ProductName, out _);
+            new Mutex(initiallyOwned: true, AppInfo.ProductName, out bool createdNew);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            if (!createdNew)
+            {
+                // Another instance of Vocup is already running so we change the focus
+                SwitchFocus();
+                return;
+            }
 
             SplashScreen splash = new SplashScreen();
             splash.Show();
@@ -80,6 +89,20 @@ namespace Vocup
 
             splash.Close();
             Application.Run(form);
+        }
+
+        private static void SwitchFocus()
+        {
+            // Take the Vocup process which was started first because there might be multiple newer processes racing for bringing one to front
+            Process process = Process.GetProcessesByName(AppInfo.ProductName).OrderBy(x => x.StartTime).FirstOrDefault();
+            if (process != null && process.MainWindowHandle != IntPtr.Zero)
+            {
+                PInvoke.User32.SetForegroundWindow(process.MainWindowHandle);
+            }
+            else
+            {
+                MessageBox.Show(Messages.MutexLockedButNoOtherProcess, Messages.MutexLockedButNoOtherProcessT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>

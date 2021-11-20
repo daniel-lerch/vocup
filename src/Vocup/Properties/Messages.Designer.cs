@@ -19,7 +19,7 @@ namespace Vocup.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Messages {
@@ -246,6 +246,24 @@ namespace Vocup.Properties {
         internal static string MergeOverrideT {
             get {
                 return ResourceManager.GetString("MergeOverrideT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There is either another instance of Vocup running or an update for Vocup is currently being installed. If this problems persists try to search for Vocup processes in Task-Manager or restart your computer..
+        /// </summary>
+        internal static string MutexLockedButNoOtherProcess {
+            get {
+                return ResourceManager.GetString("MutexLockedButNoOtherProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vocup could not be started.
+        /// </summary>
+        internal static string MutexLockedButNoOtherProcessT {
+            get {
+                return ResourceManager.GetString("MutexLockedButNoOtherProcessT", resourceCulture);
             }
         }
         

@@ -190,6 +190,12 @@ Falls {0} und {1} keine Sprachen sondern Vokabeln sind, denken Sie bitte daran, 
   <data name="MergeOverrideT" xml:space="preserve">
     <value>Daten überschreiben?</value>
   </data>
+  <data name="MutexLockedButNoOtherProcess" xml:space="preserve">
+    <value>Entweder läuft bereits eine andere Instanz von Vocup oder Vocup wird gerade aktualisiert. Falls dieses Problem wiederholt auftritt, versuchen Sie Vocup Prozesse im Task-Manager zu finden oder starten Sie Ihren Computer neu.</value>
+  </data>
+  <data name="MutexLockedButNoOtherProcessT" xml:space="preserve">
+    <value>Vocup konnte nicht gestartet werden</value>
+  </data>
   <data name="OpenInExplorerError" xml:space="preserve">
     <value>Das aktuelle Vokabelheft konnte nicht im Explorer geöffnet werden. Bitte beachten Sie, dass dieses Feature mit manchen Betriebssystemen wie Linux oder Windows 10 S nicht kompatibel ist.
 Details: {0}</value>
