@@ -368,6 +368,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PracticeDialog.resx">
       <DependentUpon>PracticeDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PracticeResultList.de.resx">
       <DependentUpon>PracticeResultList.cs</DependentUpon>
@@ -401,6 +402,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PracticeResultList.resx">
       <DependentUpon>PracticeResultList.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PrintWordSelection.resx">
       <DependentUpon>PrintWordSelection.cs</DependentUpon>
@@ -426,6 +428,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\VocabularyWordDialog.resx">
       <DependentUpon>VocabularyWordDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Icons.resx">
       <Generator>ResXFileCodeGenerator</Generator>

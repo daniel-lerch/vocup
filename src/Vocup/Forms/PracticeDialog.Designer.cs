@@ -66,13 +66,13 @@
             // 
             // GroupPractice
             // 
+            resources.ApplyResources(this.GroupPractice, "GroupPractice");
             this.GroupPractice.Controls.Add(this.TbForeignLangSynonym);
             this.GroupPractice.Controls.Add(this.TbForeignLang);
             this.GroupPractice.Controls.Add(this.TbMotherTongue);
             this.GroupPractice.Controls.Add(this.LbForeignLangSynonym);
             this.GroupPractice.Controls.Add(this.LbForeignLang);
             this.GroupPractice.Controls.Add(this.LbMotherTongue);
-            resources.ApplyResources(this.GroupPractice, "GroupPractice");
             this.GroupPractice.Name = "GroupPractice";
             this.GroupPractice.TabStop = false;
             // 
@@ -223,8 +223,8 @@
             // 
             // TbCorrectAnswer
             // 
-            this.TbCorrectAnswer.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this.TbCorrectAnswer, "TbCorrectAnswer");
+            this.TbCorrectAnswer.BackColor = System.Drawing.SystemColors.Control;
             this.TbCorrectAnswer.Name = "TbCorrectAnswer";
             this.TbCorrectAnswer.ReadOnly = true;
             // 
@@ -281,9 +281,6 @@
             this.Controls.Add(this.TbCorrectAnswer);
             this.Controls.Add(this.GroupStatistics);
             this.Controls.Add(this.GroupPractice);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "PracticeDialog";
             this.ShowInTaskbar = false;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_FormClosed);

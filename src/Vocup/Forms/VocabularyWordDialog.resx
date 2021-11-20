@@ -117,11 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BtnContinue.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="BtnContinue.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="BtnContinue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -150,6 +153,9 @@
   <data name="&gt;&gt;BtnContinue.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="BtnCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="BtnCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>357, 243</value>
   </data>
@@ -174,6 +180,9 @@
   <data name="&gt;&gt;BtnCancel.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="TbForeignLangSynonym.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <data name="TbForeignLangSynonym.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
@@ -197,6 +206,9 @@
   </data>
   <data name="&gt;&gt;TbForeignLangSynonym.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="TbForeignLang.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="TbForeignLang.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
@@ -306,6 +318,9 @@
   <data name="&gt;&gt;LbSynonym.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="GroupOptions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <data name="GroupOptions.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -357,6 +372,9 @@
   <data name="&gt;&gt;BtnSpecialChar.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="GroupForeignLang.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <data name="GroupForeignLang.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 80</value>
   </data>
@@ -380,6 +398,9 @@
   </data>
   <data name="&gt;&gt;GroupForeignLang.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="TbMotherTongue.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="TbMotherTongue.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
@@ -435,6 +456,9 @@
   <data name="&gt;&gt;LbMotherTongue.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="GroupMotherTongue.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <data name="GroupMotherTongue.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 14</value>
   </data>
@@ -467,6 +491,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>444, 278</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>460, 317</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
