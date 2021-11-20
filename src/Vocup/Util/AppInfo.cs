@@ -3,8 +3,10 @@ using System;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
 using System.Text;
 using System.Windows.Forms;
+using Windows.Management.Deployment;
 
 namespace Vocup.Util
 {
@@ -94,6 +96,24 @@ namespace Vocup.Util
                 uninstallString = (string)vocup.GetValue("UninstallString");
                 return true;
             }
+        }
+
+        public static bool TryGetVocupUwpApp(out Version version)
+        {
+            if (IsWindows10)
+            {
+                var packageManager = new PackageManager();
+                foreach (var package in packageManager.FindPackagesForUser(WindowsIdentity.GetCurrent().User.Value, "9961VectorData.Vocup_ffrs9s78t67f2"))
+                {
+                    if (!package.IsResourcePackage)
+                    {
+                        version = new Version(package.Id.Version.Major, package.Id.Version.Minor, package.Id.Version.Build, package.Id.Version.Revision);
+                        return true;
+                    }
+                }
+            }
+            version = null;
+            return false;
         }
 
         private const int APPMODEL_ERROR_NO_PACKAGE = 15700;

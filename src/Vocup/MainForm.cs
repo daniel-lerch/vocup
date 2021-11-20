@@ -25,9 +25,18 @@ namespace Vocup
 
             FileTreeView.RootPath = Settings.Default.VhfPath;
             if (AppInfo.IsUwp)
+            {
                 TsmiUpdate.Enabled = false;
-            if (AppInfo.IsUwp && AppInfo.TryGetVocupInstallation(out Version version, out _, out _) && version < AppInfo.Version)
-                StatusLbOldVersion.Visible = true;
+                if (AppInfo.TryGetVocupInstallation(out Version version, out _, out _) && version < AppInfo.Version)
+                    StatusLbOldVersion.Visible = true;
+            }
+            else if (AppInfo.IsWindows10)
+            {
+                if (AppInfo.TryGetVocupUwpApp(out Version version))
+                    StatusLbOpenUwpApp.Visible = version >= AppInfo.Version;
+                else
+                    StatusLbInstallUwpApp.Visible = true;
+            }
         }
 
         public VocabularyBook CurrentBook { get; private set; }
@@ -473,6 +482,21 @@ namespace Vocup
         private void StatusLbUpdateAvailable_Click(object sender, EventArgs e)
         {
             Process.Start(updateUrl);
+        }
+
+        private void StatusLbOpenUwpApp_Click(object sender, EventArgs e)
+        {
+            if (!UnsavedChanges || EnsureSaved())
+            {
+                Close();
+                Program.ReleaseMutex();
+                Process.Start("explorer.exe", @"shell:appsFolder\9961VectorData.Vocup_ffrs9s78t67f2!App");
+            }
+        }
+
+        private void StatusLbInstallUwpApp_Click(object sender, EventArgs e)
+        {
+            Process.Start("ms-windows-store://pdp/?ProductId=9N6W2H3QJQMM");
         }
 
         private async void BtnSearchWord_Click(object sender, EventArgs e)

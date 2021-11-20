@@ -14,6 +14,8 @@ namespace Vocup
 {
     static class Program
     {
+        private static Mutex mutex;
+
         /// <summary>
         /// The main entry-point for the application.
         /// </summary>
@@ -21,7 +23,7 @@ namespace Vocup
         private static void Main(string[] args)
         {
             // Prevents the installer from executing while the program is running
-            new Mutex(initiallyOwned: true, AppInfo.ProductName, out bool createdNew);
+            mutex = new Mutex(initiallyOwned: true, AppInfo.ProductName, out bool createdNew);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -89,6 +91,11 @@ namespace Vocup
 
             splash.Close();
             Application.Run(form);
+        }
+
+        public static void ReleaseMutex()
+        {
+            mutex.ReleaseMutex();
         }
 
         private static void SwitchFocus()
