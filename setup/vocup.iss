@@ -18,7 +18,7 @@ Compression=lzma2
 SolidCompression=true
 ShowLanguageDialog=no
 AppMutex=Vocup
-MinVersion=6.1.7601
+MinVersion=6.1sp1
 DirExistsWarning=no
 ChangesAssociations=yes
 
