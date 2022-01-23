@@ -204,8 +204,10 @@ namespace Vocup
             Update();
             Activate();
 
+            TrackingService.Action("App/Start");
+
             // Check online for updates
-            if (!AppInfo.IsUwp && !Settings.Default.DisableInternetServices)
+            if (!Settings.Default.DisableInternetServices && !AppInfo.IsUwp)
             {
                 updateUrl = await UpdateService.GetUpdateUrl();
                 StatusLbUpdateAvailable.Visible = !string.IsNullOrWhiteSpace(updateUrl);
@@ -230,7 +232,11 @@ namespace Vocup
                 e.Cancel = !EnsureSaved();
             }
 
-            StoreSettings();
+            if (!e.Cancel)
+            {
+                TrackingService.Action("App/Close");
+                StoreSettings();
+            }
         }
 
         private void FileTreeView_FileSelected(object sender, FileSelectedEventArgs e)
@@ -696,6 +702,8 @@ namespace Vocup
                         UnloadBook(false);
                     }
 
+                    TrackingService.Action("Book/Create");
+
                     // VocabularyBookSettings enables notification on creation
                     LoadBook(book);
 
@@ -714,6 +722,8 @@ namespace Vocup
             {
                 if (openDialog.ShowDialog() == DialogResult.OK)
                 {
+                    TrackingService.Action("Book/Import");
+
                     if (CurrentBook != null)
                     {
                         VocabularyFile.ImportCsvFile(openDialog.FileName, CurrentBook, false, ansiEncoding);

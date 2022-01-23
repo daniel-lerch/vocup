@@ -62,6 +62,8 @@ namespace Vocup.Forms
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
+                TrackingService.Action("Book/Print");
+
                 invertSides = RbAskForMotherTongue.Checked;
 
                 PrintList.PrinterSettings = dialog.PrinterSettings;

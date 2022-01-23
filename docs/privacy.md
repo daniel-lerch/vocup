@@ -5,42 +5,22 @@
 Vocup collects the following information for analytics:
 
 - Anonymized IP address
-- Random Session ID
+- OS version
+- Vocup version
+- How often you open Vocup
 - Usage statistics about specific features
 
 This information is used to find out how our software is being used and to improve the application.
-We process your data on an own server and will not share it with any other company.
+We process your data on an own server and will not share it with any other company.  
 
 Your vocabulary books are only processed locally on your computer and never shared with us.
+
+If you do not want to share statistics about your Vocup usage you can disable internet services in the settings.
 
 ### Technical details
 
 We use a self hosted instance of the excellent [Matomo](https://matomo.org/) analytics software.
 It is configured to remove the last byte of all IP addresses in order to anonymize them but still allow basic Geo IP locations.
-
-The Session ID is computed from a persistent random device identifier and the current date using an SHA256 hash truncated to the first 128bits.
-When users decides to have their data deleted they must submit their device identifier so that we can reconstruct all Session IDs and delete the respective data.
-
-Events that are tracked for usage statistics:
-
-- Application start and close
-- Practice start and end
-- Vocabulary book creation, merge or print
-- CSV import and export
-- Special char keyboard open
-
-## Your rights
-
-You have the right to be informed of Personal Data processed by Vocup, a right to rectification/correction, erasure and restriction of processing.
-You also have the right to ask from us a structured, common and machine-readable format of Personal Data you provided to us.
-
-Vocup is legally represented by:
-
-Daniel Lerch  
-Rebschulweg 6  
-64646 Heppenheim
-
-Requests can be sent via post or via email. You will the address in the about window of Vocup.
 
 ## Third party services
 

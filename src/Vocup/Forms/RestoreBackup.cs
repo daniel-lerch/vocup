@@ -70,6 +70,8 @@ namespace Vocup.Forms
 
         private void BtnRestore_Click(object sender, EventArgs e)
         {
+            TrackingService.Action("App/RestoreBackup");
+
             int restored = 0, skipped = 0, failed = 0;
 
             void stats(RestoreResult result)
