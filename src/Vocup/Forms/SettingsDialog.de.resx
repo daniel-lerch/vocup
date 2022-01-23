@@ -151,7 +151,7 @@
     <value>Spaltenbreite automatisch anpassen</value>
   </data>
   <data name="CbDisableInternetServices.Text" xml:space="preserve">
-    <value>Internetdienste deaktivieren</value>
+    <value>Internetdienste deaktivieren (nicht empfohlen)</value>
   </data>
   <data name="CbEvaluationSystem.Items" xml:space="preserve">
     <value>Deutschland</value>

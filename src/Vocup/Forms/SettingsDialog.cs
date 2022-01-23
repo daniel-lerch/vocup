@@ -24,16 +24,7 @@ namespace Vocup
             RbRecentFile.Checked = settings.StartScreen == (int)StartScreen.LastFile || settings.StartScreen == (int)StartScreen.AboutBox;
             CbAutoSave.Checked = settings.AutoSave;
 
-            if (AppInfo.IsUwp)
-            {
-                GroupUpdate.Enabled = false;
-                CbDisableInternetServices.Checked = true;
-            }
-            else
-            {
-                CbDisableInternetServices.Text += $" ({Words.NotRecommended})";
-                CbDisableInternetServices.Checked = settings.DisableInternetServices;
-            }
+            CbDisableInternetServices.Checked = settings.DisableInternetServices;
 
             // ListView
             CbGridLines.Checked = settings.GridLines;

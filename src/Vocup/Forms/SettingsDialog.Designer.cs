@@ -57,6 +57,7 @@
             this.CbAutoSave = new System.Windows.Forms.CheckBox();
             this.TabPractice = new System.Windows.Forms.TabPage();
             this.GroupEvaluation = new System.Windows.Forms.GroupBox();
+            this.CbOptionalExpressions = new System.Windows.Forms.CheckBox();
             this.CbManualCheck = new System.Windows.Forms.CheckBox();
             this.CbEvaluationSystem = new System.Windows.Forms.ComboBox();
             this.LbGradeSystem = new System.Windows.Forms.Label();
@@ -91,7 +92,6 @@
             this.LbTrb3 = new System.Windows.Forms.Label();
             this.LbTrb4 = new System.Windows.Forms.Label();
             this.TrbRepetitions = new System.Windows.Forms.TrackBar();
-            this.CbOptionalExpressions = new System.Windows.Forms.CheckBox();
             this.GroupStartScreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TrbWrongRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrbUnknown)).BeginInit();
@@ -340,6 +340,14 @@
             resources.ApplyResources(this.GroupEvaluation, "GroupEvaluation");
             this.GroupEvaluation.Name = "GroupEvaluation";
             this.GroupEvaluation.TabStop = false;
+            // 
+            // CbOptionalExpressions
+            // 
+            resources.ApplyResources(this.CbOptionalExpressions, "CbOptionalExpressions");
+            this.CbOptionalExpressions.Checked = true;
+            this.CbOptionalExpressions.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CbOptionalExpressions.Name = "CbOptionalExpressions";
+            this.CbOptionalExpressions.UseVisualStyleBackColor = true;
             // 
             // CbManualCheck
             // 
@@ -590,14 +598,6 @@
             this.TrbRepetitions.Minimum = 2;
             this.TrbRepetitions.Name = "TrbRepetitions";
             this.TrbRepetitions.Value = 3;
-            // 
-            // CbOptionalExpressions
-            // 
-            resources.ApplyResources(this.CbOptionalExpressions, "CbOptionalExpressions");
-            this.CbOptionalExpressions.Checked = true;
-            this.CbOptionalExpressions.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CbOptionalExpressions.Name = "CbOptionalExpressions";
-            this.CbOptionalExpressions.UseVisualStyleBackColor = true;
             // 
             // SettingsDialog
             // 

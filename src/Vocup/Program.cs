@@ -40,8 +40,16 @@ namespace Vocup
             Application.DoEvents();
 
             if (Settings.Default.StartupCounter == 0)
+            {
                 Settings.Default.Upgrade(); // Keep old settings with new version
-            // Warning: Unsaved changes are overridden
+                                            // Warning: Unsaved changes are overridden
+                
+                // Reset DisableInternetSettings on update to 1.8.4
+                if (AppInfo.IsUwp && (!Version.TryParse(Settings.Default.Version, out Version version) || version < new Version(1, 8, 4)))
+                {
+                    Settings.Default.DisableInternetServices = false;
+                }
+            }
 
             SetCulture();
             if (!CreateVhfFolder() || !CreateVhrFolder())
@@ -51,6 +59,7 @@ namespace Vocup
             }
 
             Settings.Default.StartupCounter++;
+            Settings.Default.Version = AppInfo.GetVersion(3);
             Settings.Default.Save();
             Application.DoEvents();
 
