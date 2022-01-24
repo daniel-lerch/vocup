@@ -8,8 +8,9 @@
     <Description>Vocabulary training application</Description>
     <Company>VectorData</Company>
     <Copyright>Copyright © 2011 Florian Amstutz, © 2018-2022 Daniel Lerch.</Copyright>
-    <Version>1.8.3.0</Version>
+    <Version>1.8.4.0</Version>
     <NeutralLanguage>en</NeutralLanguage>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
