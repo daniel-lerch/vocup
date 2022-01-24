@@ -4,9 +4,8 @@ using System.IO;
 using System.Windows.Forms;
 using Vocup.Models;
 using Vocup.Properties;
-using Vocup.Util;
 
-namespace Vocup
+namespace Vocup.Forms
 {
     public partial class SettingsDialog : Form
     {

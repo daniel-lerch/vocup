@@ -16,12 +16,23 @@ param (
 begin {
     $setupDirectory = Join-Path $PSScriptRoot "setup"
     $outputDirectory = Join-Path $setupDirectory "bin"
-    $buildDirectory = Join-Path $PSScriptRoot "src\Vocup\bin\Release"
+    $projectDirectory = Join-Path $PSScriptRoot "src\Vocup"
+    $buildDirectory = Join-Path $projectDirectory "bin\Release\net48"
     $executable = Join-Path $buildDirectory "Vocup.exe"
 
     function GetAppVersion () {
         $version = [System.Diagnostics.FileVersionInfo]::GetVersionInfo($executable)
         return "$($version.FileMajorPart).$($version.FileMinorPart).$($version.FileBuildPart)"
+    }
+
+    function InvokeMsbuild ([string[]]$ArgumentList, [string]$WorkingDirectory) {
+        $msbuild = Join-Path $env:ProgramFiles "Microsoft Visual Studio\2022\Community\Msbuild\Current\Bin\Msbuild.exe"
+        if (Test-Path -Path $msbuild -PathType Leaf) {
+            Start-Process -FilePath $msbuild -ArgumentList $ArgumentList -WorkingDirectory $WorkingDirectory -NoNewWindow -Wait
+        } else {
+            Write-Error "MSBuild.exe of Visual Studio 2022 Community was not found at $msbuild"
+            exit 1
+        }
     }
 
     function InvokeInnoSetup ([switch]$Mono) {
@@ -57,12 +68,12 @@ begin {
         if (Test-Path -Path $archive -PathType Leaf) {
             Remove-Item -Path $archive
         }
-        Invoke7zip -ArgumentList "a","`"$archive`"","`"$buildDirectory\*`"","-x!*.xml"
+        Invoke7zip -ArgumentList "a","`"$archive`"","`"$buildDirectory\*`"","-x!*.winmd"
     }
 
     function CreateTarGzArchive () {
         $temp = Join-Path $outputDirectory "Vocup_$(GetAppVersion)_Mono.tar"
-        Invoke7zip -ArgumentList "a","-ttar","`"$temp`"","`"$buildDirectory\*`"","-x!*.xml"
+        Invoke7zip -ArgumentList "a","-ttar","`"$temp`"","`"$buildDirectory\*`"","-x!*.winmd"
         $archive = Join-Path $outputDirectory "Vocup_$(GetAppVersion)_Mono.tar.gz"
         if (Test-Path -Path $archive -PathType Leaf) {
             Remove-Item -Path $archive
@@ -92,10 +103,9 @@ begin {
 
 process {
     $ErrorActionPreference = "Stop"
-    Write-Host "MSBuild integration is not implemented yet. Please build Vocup using Visual Studio."
-    Write-Host "Press any key to continue..."
-    [System.Console]::ReadKey($true) | Out-Null
-    Write-Host
+
+    InvokeMsbuild -ArgumentList "Vocup.csproj","-t:Rebuild","-p:Configuration=Release" -WorkingDirectory $projectDirectory
+
     if ($CreateSetup) {
         InvokeInnoSetup
     }

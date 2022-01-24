@@ -195,7 +195,8 @@
             this.LwComponents.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items"))),
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items1"))),
-            ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items2")))});
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items2"))),
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items3")))});
             this.LwComponents.Name = "LwComponents";
             this.LwComponents.UseCompatibleStateImageBehavior = false;
             this.LwComponents.View = System.Windows.Forms.View.Details;

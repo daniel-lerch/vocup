@@ -29,7 +29,7 @@ LicenseFile=license.txt
 
 VersionInfoVersion={#AppVersion}
 VersionInfoCompany=Daniel Lerch
-VersionInfoCopyright=© 2011 Florian Amstutz, © 2018-2021 Daniel Lerch
+VersionInfoCopyright=© 2011 Florian Amstutz, © 2018-2022 Daniel Lerch
 
 UninstallDisplayIcon={app}\Vocup.exe
 UninstallDisplayName=Vocup (classic installation)
@@ -57,7 +57,6 @@ Source: ..\src\Vocup\bin\Release\System.Memory.dll;                          Des
 Source: ..\src\Vocup\bin\Release\System.Numerics.Vectors.dll;                DestDir: {app}; Flags: ignoreversion replacesameversion;
 Source: ..\src\Vocup\bin\Release\System.Runtime.CompilerServices.Unsafe.dll; DestDir: {app}; Flags: ignoreversion replacesameversion;
 Source: ..\src\Vocup\bin\Release\System.Threading.Tasks.Extensions.dll;      DestDir: {app}; Flags: ignoreversion replacesameversion;
-Source: ..\src\Vocup\bin\Release\System.ValueTuple.dll;                      DestDir: {app}; Flags: ignoreversion replacesameversion;
 Source: ..\src\Vocup\bin\Release\Validation.dll;                             DestDir: {app}; Flags: ignoreversion replacesameversion;
 Source: ..\src\Vocup\bin\Release\Vocup.exe;                                  DestDir: {app}; Flags: ignoreversion replacesameversion;
 Source: ..\src\Vocup\bin\Release\Vocup.exe.config;                           DestDir: {app}; Flags: ignoreversion replacesameversion;

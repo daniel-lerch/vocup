@@ -1,4 +1,4 @@
-﻿namespace Vocup
+﻿namespace Vocup.Forms
 {
     partial class SettingsDialog
     {

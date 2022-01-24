@@ -1,477 +1,93 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.50727</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{004AE06A-96F3-4B2E-9AF4-524835814A36}</ProjectGuid>
+    <TargetFramework>net48</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Vocup</RootNamespace>
-    <AssemblyName>Vocup</AssemblyName>
+    <LangVersion>8.0</LangVersion>
+    <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>icon.ico</ApplicationIcon>
-    <SignAssembly>false</SignAssembly>
-    <SignManifests>false</SignManifests>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>2.0</OldToolsVersion>
-    <TargetFrameworkProfile />
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.0</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-    <LangVersion>default</LangVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Description>Vocabulary training application</Description>
+    <Company>VectorData</Company>
+    <Copyright>Copyright © 2011 Florian Amstutz, © 2018-2022 Daniel Lerch.</Copyright>
+    <Version>1.8.3.0</Version>
+    <NeutralLanguage>en</NeutralLanguage>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CsvHelper, Version=27.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CsvHelper.27.2.0\lib\net47\CsvHelper.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Octokit, Version=0.50.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Octokit.0.50.0\lib\net46\Octokit.dll</HintPath>
-    </Reference>
-    <Reference Include="PInvoke.Kernel32, Version=0.7.0.0, Culture=neutral, PublicKeyToken=9e300f9f87f04a7a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PInvoke.Kernel32.0.7.104\lib\net46\PInvoke.Kernel32.dll</HintPath>
-    </Reference>
-    <Reference Include="PInvoke.User32, Version=0.7.0.0, Culture=neutral, PublicKeyToken=9e300f9f87f04a7a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PInvoke.User32.0.7.104\lib\net45\PInvoke.User32.dll</HintPath>
-    </Reference>
-    <Reference Include="PInvoke.Windows.Core, Version=0.7.0.0, Culture=neutral, PublicKeyToken=9e300f9f87f04a7a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PInvoke.Windows.Core.0.7.104\lib\net45\PInvoke.Windows.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="PInvoke.Windows.ShellScalingApi, Version=0.7.0.0, Culture=neutral, PublicKeyToken=9e300f9f87f04a7a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PInvoke.Windows.ShellScalingApi.0.7.104\lib\net45\PInvoke.Windows.ShellScalingApi.dll</HintPath>
-    </Reference>
-    <Reference Include="System">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing">
-      <Private>False</Private>
-    </Reference>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="27.2.1" />
+    <PackageReference Include="Octokit" Version="0.50.0" />
+    <PackageReference Include="PInvoke.User32" Version="0.7.104" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System.IO.Compression" />
-    <Reference Include="System.IO.Compression.FileSystem" />
-    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows.Forms">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Validation, Version=2.4.0.0, Culture=neutral, PublicKeyToken=2fc06f0d701809a7, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Validation.2.4.15\lib\net45\Validation.dll</HintPath>
-    </Reference>
-    <Reference Include="Windows, Version=255.255.255.255, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd</HintPath>
+    <Reference Include="Windows">
+      <HintPath>C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd</HintPath>
+      <IsWinMDFile>true</IsWinMDFile>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\FileSelectedEventArgs.cs" />
-    <Compile Include="Controls\FileTreeView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\FileTreeView.Designer.cs">
-      <DependentUpon>FileTreeView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ImageListExtensions.cs" />
-    <Compile Include="Controls\ResponsiveButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\ResponsiveMenuStrip.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\ResponsiveSplitContainer.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\ResponsiveToolStrip.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\StatisticsPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\StatisticsPanel.Designer.cs">
-      <DependentUpon>StatisticsPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\VocabularyListView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\VocabularyListView.Designer.cs">
-      <DependentUpon>VocabularyListView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\AboutBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\AboutBox.Designer.cs">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\AddWordDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\EditWordDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\EvaluationInfoDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\EvaluationInfoDialog.Designer.cs">
-      <DependentUpon>EvaluationInfoDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\MergeFiles.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MergeFiles.Designer.cs">
-      <DependentUpon>MergeFiles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\PracticeCountDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PracticeCountDialog.Designer.cs">
-      <DependentUpon>PracticeCountDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\PracticeDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PracticeDialog.Designer.cs">
-      <DependentUpon>PracticeDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\PracticeResultList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PracticeResultList.Designer.cs">
-      <DependentUpon>PracticeResultList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\PrintWordSelection.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PrintWordSelection.Designer.cs">
-      <DependentUpon>PrintWordSelection.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\RestoreBackup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\RestoreBackup.Designer.cs">
-      <DependentUpon>RestoreBackup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\SettingsDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SettingsDialog.Designer.cs">
-      <DependentUpon>SettingsDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\SpecialCharKeyboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SpecialCharKeyboard.Designer.cs">
-      <DependentUpon>SpecialCharKeyboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\SpecialCharManage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SpecialCharManage.Designer.cs">
-      <DependentUpon>SpecialCharManage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\SplashScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SplashScreen.Designer.cs">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\VocabularyBookSettings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\VocabularyBookSettings.Designer.cs">
-      <DependentUpon>VocabularyBookSettings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\VocabularyWordDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\VocabularyWordDialog.Designer.cs">
-      <DependentUpon>VocabularyWordDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="IO\CsvFile.cs" />
-    <Compile Include="IO\VhfFile.cs" />
-    <Compile Include="IO\VhrFile.cs" />
-    <Compile Include="IO\VocabularyFile.cs" />
-    <Compile Include="IO\VocupFile.cs" />
-    <Compile Include="Models\BackupMeta.cs" />
-    <Compile Include="Models\IMainForm.cs" />
-    <Compile Include="Models\PracticeMode.cs" />
-    <Compile Include="Models\PracticeResult.cs" />
-    <Compile Include="Models\PracticeState.cs" />
-    <Compile Include="Models\StartScreen.cs" />
-    <Compile Include="Models\VocabularyBook.cs" />
-    <Compile Include="Models\VocabularyBookController.cs" />
-    <Compile Include="Models\VocabularyBookStatistics.cs" />
-    <Compile Include="Models\VocabularyWord.cs" />
-    <Compile Include="Models\VocabularyWordController.cs" />
-    <Compile Include="Models\VocabularyWordPractice.cs" />
-    <Compile Include="Properties\Icons.Designer.cs">
-      <DependentUpon>Icons.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Properties\Messages.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Messages.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <DependentUpon>Settings.settings</DependentUpon>
-      <AutoGen>True</AutoGen>
+    <None Update="Resources\easter_egg.vhf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\help.chm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="Properties\Sounds.Designer.cs">
-      <DependentUpon>Sounds.resx</DependentUpon>
       <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
+      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Words.Designer.cs">
-      <DependentUpon>Words.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Util\Evaluator.cs" />
-    <Compile Include="Util\TrackingService.cs" />
-    <Compile Include="Util\UpdateService.cs" />
-    <Compile Include="Util\AppInfo.cs" />
-    <Compile Include="Util\ListCompositor.cs" />
-    <Compile Include="Util\PatternMatcher.cs" />
-    <Compile Include="Util\ReactiveCollection.cs" />
-    <Compile Include="Util\SaintLague.cs" />
-    <Compile Include="Util\Extensions.cs" />
-    <Compile Include="Util\DrawingMath.cs" />
-    <None Include="app.config" />
-    <None Include="app.manifest" />
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
+    <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Resources\easter_egg.vhf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\help.chm">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <EmbeddedResource Include="Controls\FileTreeView.de.resx">
-      <DependentUpon>FileTreeView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\FileTreeView.resx">
-      <DependentUpon>FileTreeView.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\StatisticsPanel.de.resx">
-      <DependentUpon>StatisticsPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\StatisticsPanel.resx">
-      <DependentUpon>StatisticsPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\VocabularyListView.de.resx">
-      <DependentUpon>VocabularyListView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\VocabularyListView.resx">
-      <DependentUpon>VocabularyListView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AboutBox.de.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AboutBox.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EvaluationInfoDialog.de.resx">
-      <DependentUpon>EvaluationInfoDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\EvaluationInfoDialog.resx">
-      <DependentUpon>EvaluationInfoDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MergeFiles.de.resx">
-      <DependentUpon>MergeFiles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MergeFiles.resx">
-      <DependentUpon>MergeFiles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PracticeCountDialog.de.resx">
-      <DependentUpon>PracticeCountDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PracticeCountDialog.resx">
-      <DependentUpon>PracticeCountDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PracticeDialog.de.resx">
-      <DependentUpon>PracticeDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PracticeDialog.resx">
-      <DependentUpon>PracticeDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PracticeResultList.de.resx">
-      <DependentUpon>PracticeResultList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PrintWordSelection.de.resx">
-      <DependentUpon>PrintWordSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RestoreBackup.de.resx">
-      <DependentUpon>RestoreBackup.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SettingsDialog.de.resx">
-      <DependentUpon>SettingsDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SpecialCharManage.de.resx">
-      <DependentUpon>SpecialCharManage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\VocabularyBookSettings.de.resx">
-      <DependentUpon>VocabularyBookSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\VocabularyWordDialog.de.resx">
-      <DependentUpon>VocabularyWordDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.de.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PracticeResultList.resx">
-      <DependentUpon>PracticeResultList.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PrintWordSelection.resx">
-      <DependentUpon>PrintWordSelection.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RestoreBackup.resx">
-      <DependentUpon>RestoreBackup.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SettingsDialog.resx">
-      <DependentUpon>SettingsDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SpecialCharKeyboard.resx">
-      <DependentUpon>SpecialCharKeyboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SpecialCharManage.resx">
-      <DependentUpon>SpecialCharManage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SplashScreen.resx">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\VocabularyBookSettings.resx">
-      <DependentUpon>VocabularyBookSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\VocabularyWordDialog.resx">
-      <DependentUpon>VocabularyWordDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Icons.resx">
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Icons.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Icons.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Properties\Icons.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Icons.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Messages.de.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Messages.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Sounds.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Sounds.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Words.de.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Words.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Words.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="icon.ico" />
+    <Compile Update="Properties\Messages.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Properties\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <ItemGroup>
+    <Compile Update="Properties\Sounds.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Sounds.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Properties\Sounds.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Sounds.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Words.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Words.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Properties\Words.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Words.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

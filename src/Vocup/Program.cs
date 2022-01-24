@@ -12,7 +12,7 @@ using Vocup.Util;
 
 namespace Vocup
 {
-    static class Program
+    public static class Program
     {
         private static Mutex mutex;
 
@@ -124,7 +124,7 @@ namespace Vocup
         /// <summary>
         /// Checks the currently configured folder for .vhf files and creates it if not existing.
         /// </summary>
-        internal static bool CreateVhfFolder()
+        public static bool CreateVhfFolder()
         {
             string folder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
 
@@ -148,7 +148,7 @@ namespace Vocup
         /// <summary>
         /// Checks the currently configured folder for .vhr files and creates it if not existing.
         /// </summary>
-        internal static bool CreateVhrFolder()
+        public static bool CreateVhrFolder()
         {
             string folder = Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
