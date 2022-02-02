@@ -29,6 +29,7 @@ begin {
         $msbuild = Join-Path $env:ProgramFiles "Microsoft Visual Studio\2022\Community\Msbuild\Current\Bin\Msbuild.exe"
         if (Test-Path -Path $msbuild -PathType Leaf) {
             Start-Process -FilePath $msbuild -ArgumentList $ArgumentList -WorkingDirectory $WorkingDirectory -NoNewWindow -Wait
+            Write-Host "Sucessfully rebuilt Vocup"
         } else {
             Write-Error "MSBuild.exe of Visual Studio 2022 Community was not found at $msbuild"
             exit 1
