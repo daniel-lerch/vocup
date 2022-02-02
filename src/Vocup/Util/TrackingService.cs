@@ -8,6 +8,23 @@ namespace Vocup.Util
 {
     public static class TrackingService
     {
+        private static string userAgent;
+
+        static TrackingService()
+        {
+            string suffix = (AppInfo.IsUwp, AppInfo.IsWindowsInstallation) switch
+            {
+                (true, _) => "; UWP",
+                (false, true) => "; Win32_Installer",
+                (false, false) => "; Win32_Portable"
+            };
+
+            if (AppInfo.IsMono)
+                userAgent = $"Vocup/{AppInfo.GetVersion(3)} (Unknown{suffix})";
+            else
+                userAgent = $"Vocup/{AppInfo.GetVersion(3)} (Windows NT {Environment.OSVersion.Version}{suffix})";
+        }
+
         public static async void Action(string actionName)
         {
             if (Settings.Default.DisableInternetServices) return;
@@ -15,7 +32,7 @@ namespace Vocup.Util
             try
             {
                 using var httpClient = new HttpClient();
-                httpClient.DefaultRequestHeaders.UserAgent.ParseAdd($"Vocup/{AppInfo.GetVersion(3)} (Windows NT {Environment.OSVersion.Version})");
+                httpClient.DefaultRequestHeaders.UserAgent.ParseAdd(userAgent);
                 var query = new Dictionary<string, string>()
                 {
                     ["idsite"] = "1",
