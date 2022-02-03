@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -27,6 +28,8 @@ namespace Vocup
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetDefaultFont(new Font("Microsoft Sans Serif", 8.25f, FontStyle.Regular, GraphicsUnit.Point));
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
 
             if (!createdNew)
             {

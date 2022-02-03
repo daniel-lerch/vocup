@@ -27,6 +27,9 @@ namespace Vocup.Controls
         {
             InitializeComponent();
             MainTreeView.PathSeparator = Path.DirectorySeparatorChar.ToString();
+
+            // Workaround for .NET 6.0 which does not call ScaleControl at 100% scaling
+            ScaleControl(new SizeF(1.0f, 1.0f), BoundsSpecified.None);
         }
 
         [DefaultValue(typeof(Size), "16,16")]

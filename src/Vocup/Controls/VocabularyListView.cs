@@ -28,6 +28,9 @@ namespace Vocup.Controls
             MainListView.ListViewItemSorter = new Sorter() { Column = 1, SortOrder = SortOrder.Ascending };
             MainListView.Sorting = SortOrder.Ascending;
             MainListView.ItemSelectionChanged += MainListView_ItemSelectionChanged;
+
+            // Workaround for .NET 6.0 which does not call ScaleControl at 100% scaling
+            ScaleControl(new SizeF(1.0f, 1.0f), BoundsSpecified.None);
         }
 
         public ListView Control => MainListView;
