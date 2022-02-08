@@ -1,16 +1,14 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Vocup.Models;
+﻿using Vocup.Models;
 using Vocup.Util;
+using Xunit;
 
 namespace Vocup.UnitTests
 {
-    [TestClass]
     public class EvaluatorTest
     {
-        private Evaluator evaluator;
+        private readonly Evaluator evaluator;
 
-        [TestInitialize]
-        public void Initialize()
+        public EvaluatorTest()
         {
             evaluator = new Evaluator
             {
@@ -23,45 +21,45 @@ namespace Vocup.UnitTests
             };
         }
 
-        [TestMethod]
+        [Fact]
         public void TestSynonymOrder()
         {
             var results = new[] { "anxiety", "fear" };
             var inputs = new[] { "fear", "anxiety" };
 
-            Assert.AreEqual(PracticeResult.Correct, evaluator.GetResult(results, inputs));
+            Assert.Equal(PracticeResult.Correct, evaluator.GetResult(results, inputs));
         }
 
-        [DataTestMethod]
-        [DataRow("anxiety,fear", "fear, anxiety")]
-        [DataRow("anxiety, fear", "fear,anxiety")]
-        [DataRow("anxiety; fear", "fear; anxiety")]
+        [Theory]
+        [InlineData("anxiety,fear", "fear, anxiety")]
+        [InlineData("anxiety, fear", "fear,anxiety")]
+        [InlineData("anxiety; fear", "fear; anxiety")]
         public void TestInlineSynonymOrder(string result, string input)
         {
-            Assert.AreEqual(PracticeResult.Correct, evaluator.GetResult(new[] { result }, new[] { input }));
+            Assert.Equal(PracticeResult.Correct, evaluator.GetResult(new[] { result }, new[] { input }));
         }
 
-        [DataTestMethod]
-        [DataRow("(to) walk", "(to) walk")]                     // original
-        [DataRow("(to) walk", "to walk")]                       // long form
-        [DataRow("(to) walk", "walk")]                          // short form
-        [DataRow("(to) culminate (in)", "culminate (in)")]      // half short, half original
-        [DataRow("(to) crave (for) sth", "crave sth")]          // short form (intermediate)
-        [DataRow("(to) crave (for) sth", "to crave (for) sth")] // half long, half original
+        [Theory]
+        [InlineData("(to) walk", "(to) walk")]                     // original
+        [InlineData("(to) walk", "to walk")]                       // long form
+        [InlineData("(to) walk", "walk")]                          // short form
+        [InlineData("(to) culminate (in)", "culminate (in)")]      // half short, half original
+        [InlineData("(to) crave (for) sth", "crave sth")]          // short form (intermediate)
+        [InlineData("(to) crave (for) sth", "to crave (for) sth")] // half long, half original
         public void TestOptionalExpressions(string result, string input)
         {
-            Assert.AreEqual(PracticeResult.Correct, evaluator.GetResult(new[] { result }, new[] { input }));
+            Assert.Equal(PracticeResult.Correct, evaluator.GetResult(new[] { result }, new[] { input }));
         }
 
-        [DataTestMethod]
-        [DataRow(PracticeResult.Correct, "upset (about sth)/(that)", "upset (about sth)/(that)")]
-        [DataRow(PracticeResult.Wrong, "upset (about sth)/(that)", "upset about sth/that")]
-        [DataRow(PracticeResult.Wrong, "upset (about sth)/(that)", "upset about sth/")]
-        [DataRow(PracticeResult.Wrong, "upset (about sth)/(that)", "upset /that")]
-        [DataRow(PracticeResult.Wrong, "upset (about sth)/(that)", "upset/")]
+        [Theory]
+        [InlineData(PracticeResult.Correct, "upset (about sth)/(that)", "upset (about sth)/(that)")]
+        [InlineData(PracticeResult.Wrong, "upset (about sth)/(that)", "upset about sth/that")]
+        [InlineData(PracticeResult.Wrong, "upset (about sth)/(that)", "upset about sth/")]
+        [InlineData(PracticeResult.Wrong, "upset (about sth)/(that)", "upset /that")]
+        [InlineData(PracticeResult.Wrong, "upset (about sth)/(that)", "upset/")]
         public void TestOptionalEdgeCases(PracticeResult expected, string result, string input)
         {
-            Assert.AreEqual(expected, evaluator.GetResult(new[] { result }, new[] { input }));
+            Assert.Equal(expected, evaluator.GetResult(new[] { result }, new[] { input }));
         }
     }
 }
