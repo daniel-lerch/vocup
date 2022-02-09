@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28803.202
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C15174B9-657C-4871-BD70-E367286C3A48}"
 EndProject
@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_", "_", "{58EAD674-3665-45
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vocup", "src\Vocup\Vocup.csproj", "{004AE06A-96F3-4B2E-9AF4-524835814A36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vocup", "src\Vocup\Vocup.csproj", "{004AE06A-96F3-4B2E-9AF4-524835814A36}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{513AA9B6-F697-45D9-B598-A96030B32541}"
 	ProjectSection(SolutionItems) = preProject
@@ -39,7 +39,7 @@ Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "Vocup.Packaging", "src\Vocu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DB3F9D1B-E719-4A4B-8953-5FB027887083}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vocup.UnitTests", "tests\Vocup.UnitTests\Vocup.UnitTests.csproj", "{AEB8CB75-2A9D-4DE1-B4F8-B529FFA21240}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vocup.UnitTests", "tests\Vocup.UnitTests\Vocup.UnitTests.csproj", "{AEB8CB75-2A9D-4DE1-B4F8-B529FFA21240}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,19 +53,17 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{004AE06A-96F3-4B2E-9AF4-524835814A36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{004AE06A-96F3-4B2E-9AF4-524835814A36}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{004AE06A-96F3-4B2E-9AF4-524835814A36}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{004AE06A-96F3-4B2E-9AF4-524835814A36}.Debug|x64.Build.0 = Debug|Any CPU
-		{004AE06A-96F3-4B2E-9AF4-524835814A36}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{004AE06A-96F3-4B2E-9AF4-524835814A36}.Debug|x86.Build.0 = Debug|Any CPU
+		{004AE06A-96F3-4B2E-9AF4-524835814A36}.Debug|x64.ActiveCfg = Debug|x64
+		{004AE06A-96F3-4B2E-9AF4-524835814A36}.Debug|x64.Build.0 = Debug|x64
+		{004AE06A-96F3-4B2E-9AF4-524835814A36}.Debug|x86.ActiveCfg = Debug|x86
+		{004AE06A-96F3-4B2E-9AF4-524835814A36}.Debug|x86.Build.0 = Debug|x86
 		{004AE06A-96F3-4B2E-9AF4-524835814A36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{004AE06A-96F3-4B2E-9AF4-524835814A36}.Release|Any CPU.Build.0 = Release|Any CPU
-		{004AE06A-96F3-4B2E-9AF4-524835814A36}.Release|x64.ActiveCfg = Release|Any CPU
-		{004AE06A-96F3-4B2E-9AF4-524835814A36}.Release|x64.Build.0 = Release|Any CPU
-		{004AE06A-96F3-4B2E-9AF4-524835814A36}.Release|x86.ActiveCfg = Release|Any CPU
-		{004AE06A-96F3-4B2E-9AF4-524835814A36}.Release|x86.Build.0 = Release|Any CPU
+		{004AE06A-96F3-4B2E-9AF4-524835814A36}.Release|x64.ActiveCfg = Release|x64
+		{004AE06A-96F3-4B2E-9AF4-524835814A36}.Release|x64.Build.0 = Release|x64
+		{004AE06A-96F3-4B2E-9AF4-524835814A36}.Release|x86.ActiveCfg = Release|x86
+		{004AE06A-96F3-4B2E-9AF4-524835814A36}.Release|x86.Build.0 = Release|x86
 		{B6986B1F-50BC-4E36-87B4-1C195B15F953}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B6986B1F-50BC-4E36-87B4-1C195B15F953}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B6986B1F-50BC-4E36-87B4-1C195B15F953}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{B6986B1F-50BC-4E36-87B4-1C195B15F953}.Debug|x64.ActiveCfg = Debug|x64
 		{B6986B1F-50BC-4E36-87B4-1C195B15F953}.Debug|x64.Build.0 = Debug|x64
 		{B6986B1F-50BC-4E36-87B4-1C195B15F953}.Debug|x64.Deploy.0 = Debug|x64
@@ -73,8 +71,6 @@ Global
 		{B6986B1F-50BC-4E36-87B4-1C195B15F953}.Debug|x86.Build.0 = Debug|x86
 		{B6986B1F-50BC-4E36-87B4-1C195B15F953}.Debug|x86.Deploy.0 = Debug|x86
 		{B6986B1F-50BC-4E36-87B4-1C195B15F953}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B6986B1F-50BC-4E36-87B4-1C195B15F953}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B6986B1F-50BC-4E36-87B4-1C195B15F953}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{B6986B1F-50BC-4E36-87B4-1C195B15F953}.Release|x64.ActiveCfg = Release|x64
 		{B6986B1F-50BC-4E36-87B4-1C195B15F953}.Release|x64.Build.0 = Release|x64
 		{B6986B1F-50BC-4E36-87B4-1C195B15F953}.Release|x64.Deploy.0 = Release|x64
