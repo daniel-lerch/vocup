@@ -48,6 +48,7 @@
     <PackageCertificateKeyFile>Vocup.Packaging_TemporaryKey.pfx</PackageCertificateKeyFile>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+    <NoWarn>$(NoWarn);NU1702</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

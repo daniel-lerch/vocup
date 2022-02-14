@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using System.Security.Principal;
 using System.Text;
 using System.Windows.Forms;
@@ -35,12 +36,9 @@ namespace Vocup.Util
         public static string CopyrightInfo { get; }
             = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyCopyrightAttribute>()?.Copyright;
 
-        public static bool IsWindows10 { get; } = Environment.OSVersion.Platform == PlatformID.Win32NT
-            && Environment.OSVersion.Version >= new Version(10, 0);
-
         private static readonly Lazy<bool> isUwp = new Lazy<bool>(() =>
         {
-            if (IsWindows10)
+            if (OperatingSystem.IsWindowsVersionAtLeast(10, 0, 10240))
             {
                 int length = 0;
                 StringBuilder sb = new StringBuilder(0);
@@ -60,8 +58,16 @@ namespace Vocup.Util
         });
         public static bool IsWindowsInstallation => isInstallation.Value;
 
-        public static bool IsMono { get; } = Type.GetType("Mono.Runtime") != null;
 
+        public static string GetDeployment()
+        {
+            return (IsUwp, IsWindowsInstallation) switch
+            {
+                (true, _) => "UWP",
+                (false, true) => "Installer",
+                (false, false) => "Portable"
+            };
+        }
 
         /// <summary>
         /// Returns the product version of the currently running instance.
@@ -83,8 +89,6 @@ namespace Vocup.Util
             installLocation = null;
             uninstallString = null;
 
-            if (Environment.OSVersion.Platform != PlatformID.Win32NT) return false;
-
             // Vocup is installed as 32bit application
             using (RegistryKey hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32))
             using (RegistryKey vocup = hklm.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Vocup_is1", writable: false))
@@ -98,18 +102,16 @@ namespace Vocup.Util
             }
         }
 
+        [SupportedOSPlatform("windows10.0.10240.0")]
         public static bool TryGetVocupUwpApp(out Version version)
         {
-            if (IsWindows10)
+            var packageManager = new PackageManager();
+            foreach (var package in packageManager.FindPackagesForUser(WindowsIdentity.GetCurrent().User.Value, "9961VectorData.Vocup_ffrs9s78t67f2"))
             {
-                var packageManager = new PackageManager();
-                foreach (var package in packageManager.FindPackagesForUser(WindowsIdentity.GetCurrent().User.Value, "9961VectorData.Vocup_ffrs9s78t67f2"))
+                if (!package.IsResourcePackage)
                 {
-                    if (!package.IsResourcePackage)
-                    {
-                        version = new Version(package.Id.Version.Major, package.Id.Version.Minor, package.Id.Version.Build, package.Id.Version.Revision);
-                        return true;
-                    }
+                    version = new Version(package.Id.Version.Major, package.Id.Version.Minor, package.Id.Version.Build, package.Id.Version.Revision);
+                    return true;
                 }
             }
             version = null;

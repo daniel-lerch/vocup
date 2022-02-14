@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Vocup.Properties;
 using Vocup.Util;
@@ -17,22 +18,9 @@ namespace Vocup.Forms
 
         private void AboutBox_Load(object sender, EventArgs e)
         {
-            string versionText = string.Format(LbVersion.Text, AppInfo.GetVersion(3));
-            if (AppInfo.IsUwp)
-            {
-                versionText += " (UWP)";
-            }
-            else if (!AppInfo.IsWindowsInstallation)
-            {
-                if (AppInfo.IsMono)
-                    versionText += " (Mono, Portable)";
-                else
-                    versionText += " (Portable)";
-            }
-            else if (AppInfo.IsMono)
-            {
-                versionText += " (Mono)";
-            }
+            string architecture = RuntimeInformation.ProcessArchitecture.ToString().ToLowerInvariant();
+
+            string versionText = string.Format(LbVersion.Text, AppInfo.GetVersion(3), architecture, AppInfo.GetDeployment());
 
             LbVersion.Text = versionText;
             LbCopyright.Text = AppInfo.CopyrightInfo;
@@ -45,7 +33,7 @@ namespace Vocup.Forms
 
         private void LlbDownload_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (AppInfo.IsWindows10)
+            if (OperatingSystem.IsWindowsVersionAtLeast(10, 0, 10240))
                 Process.Start("ms-windows-store://pdp/?productid=9N6W2H3QJQMM");
             else
                 Process.Start("https://www.microsoft.com/store/apps/9N6W2H3QJQMM");

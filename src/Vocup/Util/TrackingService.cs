@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
+using System.Runtime.InteropServices;
 using Vocup.Properties;
 
 namespace Vocup.Util
@@ -12,17 +13,15 @@ namespace Vocup.Util
 
         static TrackingService()
         {
-            string suffix = (AppInfo.IsUwp, AppInfo.IsWindowsInstallation) switch
+            string osArch = RuntimeInformation.OSArchitecture.ToString().ToLowerInvariant();
+            string processArch = RuntimeInformation.ProcessArchitecture switch
             {
-                (true, _) => "; UWP",
-                (false, true) => "; Win32_Installer",
-                (false, false) => "; Win32_Portable"
+                Architecture.X86 => "Win32",
+                Architecture.X64 => "Win64",
+                Architecture.Arm64 => "WoA64",
+                _ => "Unknown Runtime"
             };
-
-            if (AppInfo.IsMono)
-                userAgent = $"Vocup/{AppInfo.GetVersion(3)} (Unknown{suffix})";
-            else
-                userAgent = $"Vocup/{AppInfo.GetVersion(3)} (Windows NT {Environment.OSVersion.Version}{suffix})";
+            userAgent = $"Vocup/{AppInfo.GetVersion(3)} (Windows NT {Environment.OSVersion.Version}; {processArch}; {osArch}; {AppInfo.GetDeployment()})";
         }
 
         public static async void Action(string actionName)
@@ -36,7 +35,11 @@ namespace Vocup.Util
                 var query = new Dictionary<string, string>()
                 {
                     ["idsite"] = "1",
+#if DEBUG
+                    ["rec"] = "0",
+#else
                     ["rec"] = "1",
+#endif
                     ["action_name"] = actionName,
                     ["apiv"] = "1"
                 };

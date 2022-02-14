@@ -30,7 +30,7 @@ namespace Vocup
                 if (AppInfo.TryGetVocupInstallation(out Version version, out _, out _) && version < AppInfo.Version)
                     StatusLbOldVersion.Visible = true;
             }
-            else if (AppInfo.IsWindows10)
+            else if (OperatingSystem.IsWindowsVersionAtLeast(10, 0, 10240))
             {
                 if (AppInfo.TryGetVocupUwpApp(out Version version))
                     StatusLbOpenUwpApp.Visible = version >= AppInfo.Version;
