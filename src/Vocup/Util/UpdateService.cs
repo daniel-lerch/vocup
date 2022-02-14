@@ -34,9 +34,7 @@ namespace Vocup.Util
                 if (AppInfo.Version >= releaseVersion)
                     return null;
 
-                string pattern = AppInfo.IsWindowsInstallation ?
-                    (AppInfo.IsMono ? @"^Vocup_\d+\.\d+\.\d+_Mono\.exe$" : @"^Vocup_\d+\.\d+\.\d+\.exe$") :
-                    (AppInfo.IsMono ? @"^Vocup_\d+\.\d+\.\d+_Mono\.tar\.gz$" : @"^Vocup_\d+\.\d+\.\d+\.zip$");
+                string pattern = AppInfo.IsWindowsInstallation ? @"^Vocup_\d+\.\d+\.\d+\.exe$" : @"^Vocup_\d+\.\d+\.\d+\.zip$";
 
                 foreach (ReleaseAsset asset in release.Assets)
                 {

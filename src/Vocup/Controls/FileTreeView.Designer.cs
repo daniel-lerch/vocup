@@ -34,6 +34,7 @@
             this.MainTreeView = new System.Windows.Forms.TreeView();
             this.MainWatcher = new System.IO.FileSystemWatcher();
             this.BrowseButton = new System.Windows.Forms.Button();
+            this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.MainWatcher)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,11 +48,8 @@
             // 
             // MainTreeView
             // 
-            this.MainTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainTreeView.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.MainTreeView, "MainTreeView");
             this.MainTreeView.Name = "MainTreeView";
-            this.MainTreeView.Size = new System.Drawing.Size(150, 150);
-            this.MainTreeView.TabIndex = 1;
             this.MainTreeView.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.MainTreeView_AfterCollapse);
             this.MainTreeView.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.MainTreeView_BeforeExpand);
             this.MainTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.MainTreeView_AfterSelect);
@@ -69,19 +67,15 @@
             // BrowseButton
             // 
             this.BrowseButton.FlatAppearance.BorderSize = 0;
-            this.BrowseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BrowseButton.Location = new System.Drawing.Point(120, 1);
+            resources.ApplyResources(this.BrowseButton, "BrowseButton");
             this.BrowseButton.Name = "BrowseButton";
-            this.BrowseButton.Size = new System.Drawing.Size(29, 20);
-            this.BrowseButton.TabIndex = 4;
-            this.BrowseButton.Text = "🔍";
+            this.ToolTip.SetToolTip(this.BrowseButton, resources.GetString("BrowseButton.ToolTip"));
             this.BrowseButton.UseVisualStyleBackColor = true;
-            this.BrowseButton.Visible = false;
             this.BrowseButton.Click += new System.EventHandler(this.BrowseButton_Click);
             // 
             // FileTreeView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.BrowseButton);
             this.Controls.Add(this.MainTreeView);
@@ -97,5 +91,6 @@
         private System.Windows.Forms.TreeView MainTreeView;
         private System.IO.FileSystemWatcher MainWatcher;
         private System.Windows.Forms.Button BrowseButton;
+        private System.Windows.Forms.ToolTip ToolTip;
     }
 }

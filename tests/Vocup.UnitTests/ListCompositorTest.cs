@@ -1,38 +1,34 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Vocup.Util;
+using Xunit;
 
 namespace Vocup.UnitTests
 {
-    [TestClass]
     public class ListCompositorTest
     {
-        [TestMethod]
+        [Fact]
         public void TestAddArgumentNull()
         {
             var compositor = new ListCompositor<int>();
-            Assert.ThrowsException<ArgumentNullException>(() => compositor.AddSource(null, 0));
+            Assert.Throws<ArgumentNullException>(() => compositor.AddSource(null, 0));
         }
 
-        [TestMethod]
+        [Fact]
         public void TestAddArgumentOutOfRange()
         {
             var compositor = new ListCompositor<int>();
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => compositor.AddSource(new List<int>(), -0.3));
+            Assert.Throws<ArgumentOutOfRangeException>(() => compositor.AddSource(new List<int>(), -0.3));
         }
 
-        [TestMethod]
+        [Fact]
         public void TestToListArgumentOutOfRange()
         {
             var compositor = new ListCompositor<int>();
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => compositor.ToList(-1));
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => compositor.ToList(1));
+            Assert.Throws<ArgumentOutOfRangeException>(() => compositor.ToList(-1));
+            Assert.Throws<ArgumentOutOfRangeException>(() => compositor.ToList(1));
             compositor.AddSource(new List<int>() { 3, 4, 5, 6, 7, 8 }, 0.3);
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => compositor.ToList(13));
+            Assert.Throws<ArgumentOutOfRangeException>(() => compositor.ToList(13));
         }
     }
 }

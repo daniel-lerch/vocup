@@ -86,6 +86,18 @@ namespace Vocup.Forms
             }
         }
 
+        private void ListView_Resize(object sender, EventArgs e)
+        {
+            if (Settings.Default.ColumnResize)
+            {
+                int include = SystemInformation.VerticalScrollBarWidth + ListView.Columns.Count;
+                int width = (ListView.Width - imageColumn.Width - include) / 3;
+                motherTongueColumn.Width = width;
+                foreignLangColumn.Width = width;
+                wrongInputColumn.Width = width;
+            }
+        }
+
         private void BtnContinue_Click(object sender, EventArgs e)
         {
             if (CbDoNotShowAgain.Checked)

@@ -35,39 +35,20 @@
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.props" />
   <PropertyGroup>
     <ProjectGuid>b6986b1f-50bc-4e36-87b4-1c195b15f953</ProjectGuid>
-    <TargetPlatformVersion>10.0.18362.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
     <DefaultLanguage>en</DefaultLanguage>
     <EntryPointProjectUniqueName>..\Vocup\Vocup.csproj</EntryPointProjectUniqueName>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
-    <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
-    <AppInstallerUpdateFrequency>0</AppInstallerUpdateFrequency>
-    <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
+    <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+    <PackageCertificateKeyFile>Vocup.Packaging_TemporaryKey.pfx</PackageCertificateKeyFile>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
-    <PackageCertificateThumbprint>9C503A44C755504352901E2766267CEA3C7FAA82</PackageCertificateThumbprint>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <AppxBundle>Always</AppxBundle>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <AppxBundle>Always</AppxBundle>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-    <AppxBundle>Always</AppxBundle>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <AppxBundle>Always</AppxBundle>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
-    <AppxBundle>Always</AppxBundle>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <AppxBundle>Always</AppxBundle>
+    <NoWarn>$(NoWarn);NU1702</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -107,7 +88,11 @@
     <Content Include="Images\Wide310x150Logo.scale-100.png" />
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
     <Content Include="Images\Wide310x150Logo.scale-400.png" />
+    <None Include="Vocup.Packaging_TemporaryKey.pfx" />
     <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22000.194" PrivateAssets="all" />
+  </ItemGroup>
 </Project>

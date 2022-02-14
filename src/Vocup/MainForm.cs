@@ -25,9 +25,18 @@ namespace Vocup
 
             FileTreeView.RootPath = Settings.Default.VhfPath;
             if (AppInfo.IsUwp)
+            {
                 TsmiUpdate.Enabled = false;
-            if (AppInfo.IsUwp && AppInfo.TryGetVocupInstallation(out Version version, out _, out _) && version < AppInfo.Version)
-                StatusLbOldVersion.Visible = true;
+                if (AppInfo.TryGetVocupInstallation(out Version version, out _, out _) && version < AppInfo.Version)
+                    StatusLbOldVersion.Visible = true;
+            }
+            else if (OperatingSystem.IsWindowsVersionAtLeast(10, 0, 10240))
+            {
+                if (AppInfo.TryGetVocupUwpApp(out Version version))
+                    StatusLbOpenUwpApp.Visible = version >= AppInfo.Version;
+                else
+                    StatusLbInstallUwpApp.Visible = true;
+            }
         }
 
         public VocabularyBook CurrentBook { get; private set; }
@@ -125,14 +134,80 @@ namespace Vocup
             }
         }
 
+        /// <summary>
+        /// Save the bounds and the splitter distance of this form.
+        /// </summary>
+        private void StoreSettings()
+        {
+            switch (WindowState)
+            {
+                case FormWindowState.Normal:
+                    Settings.Default.MainFormBounds = Bounds;
+                    break;
+
+                case FormWindowState.Maximized:
+                case FormWindowState.Minimized:
+                    Settings.Default.MainFormBounds = RestoreBounds;
+                    break;
+            }
+
+            Settings.Default.MainFormWindowState = WindowState;
+
+            Settings.Default.MainFormSplitterDistance = SplitContainer.SplitterDistance;
+
+            Settings.Default.Save();
+        }
+
+        /// <summary>
+        /// Restore the saved bounds and the splitter distance of this form.
+        /// </summary>
+        private void RestoreSettings()
+        {
+            // check if stored form bound is visible on any screen
+            bool isVisible = false;
+            foreach (Screen screen in Screen.AllScreens)
+            {
+                if (screen.Bounds.IntersectsWith(Settings.Default.MainFormBounds))
+                {
+                    isVisible = true;
+                    break;
+                }
+            }
+
+            if (Settings.Default.MainFormSplitterDistance != 0)
+            {
+                SplitContainer.SplitterDistance = Settings.Default.MainFormSplitterDistance;
+            }
+
+            if (isVisible && Settings.Default.MainFormBounds != default)
+            {
+                // visible => restore the bounds of the main form
+                Bounds = Settings.Default.MainFormBounds;
+
+                // Do not restore the window state when the form was minimzed
+                if (Settings.Default.MainFormWindowState != FormWindowState.Minimized)
+                {
+                    WindowState = Settings.Default.MainFormWindowState;
+                }
+            }
+            else
+            {
+                // Not visible => use default do nothing
+            }
+        }
+
         #region Event handlers
         private async void Form_Load(object sender, EventArgs e)
         {
+            RestoreSettings();
+
             Update();
             Activate();
 
+            TrackingService.Action("App/Start");
+
             // Check online for updates
-            if (!AppInfo.IsUwp && !Settings.Default.DisableInternetServices)
+            if (!Settings.Default.DisableInternetServices && !AppInfo.IsUwp)
             {
                 updateUrl = await UpdateService.GetUpdateUrl();
                 StatusLbUpdateAvailable.Visible = !string.IsNullOrWhiteSpace(updateUrl);
@@ -156,6 +231,12 @@ namespace Vocup
             {
                 e.Cancel = !EnsureSaved();
             }
+
+            if (!e.Cancel)
+            {
+                TrackingService.Action("App/Close");
+                StoreSettings();
+            }
         }
 
         private void FileTreeView_FileSelected(object sender, FileSelectedEventArgs e)
@@ -177,21 +258,33 @@ namespace Vocup
 
         private void FileTreeView_BrowseClick(object sender, EventArgs e)
         {
-            string oldVhfPath = Settings.Default.VhfPath;
-
-            using (FolderBrowserDialog dialog = new FolderBrowserDialog())
+            using (FolderBrowserDialog dialog = new FolderBrowserDialog
             {
-                dialog.Description = Messages.BrowseVhfPath;
-                dialog.SelectedPath = oldVhfPath;
+                Description = Messages.BrowseVhfPath,
+                SelectedPath = Settings.Default.VhfPath
+            })
+            {
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    Settings.Default.VhfPath = dialog.SelectedPath;
+                    try
+                    {
+                        // This call fails for inaccessible paths like optical disk drives
+                        _ = Directory.GetFiles(dialog.SelectedPath);
+
+                        // Eventually refresh tree view root path
+                        if (dialog.SelectedPath != Settings.Default.VhfPath)
+                        {
+                            Settings.Default.VhfPath = dialog.SelectedPath;
+                            FileTreeView.RootPath = dialog.SelectedPath;
+                            Settings.Default.Save();
+                        }
+                    }
+                    catch (IOException)
+                    {
+                        MessageBox.Show(Messages.VhfPathInvalid, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
-
-            // Eventually refresh tree view root path
-            if (oldVhfPath != Settings.Default.VhfPath)
-                FileTreeView.RootPath = Settings.Default.VhfPath;
         }
 
 
@@ -397,6 +490,21 @@ namespace Vocup
             Process.Start(updateUrl);
         }
 
+        private void StatusLbOpenUwpApp_Click(object sender, EventArgs e)
+        {
+            if (!UnsavedChanges || EnsureSaved())
+            {
+                Close();
+                Program.ReleaseMutex();
+                Process.Start("explorer.exe", @"shell:appsFolder\9961VectorData.Vocup_ffrs9s78t67f2!App");
+            }
+        }
+
+        private void StatusLbInstallUwpApp_Click(object sender, EventArgs e)
+        {
+            Process.Start("ms-windows-store://pdp/?ProductId=9N6W2H3QJQMM");
+        }
+
         private async void BtnSearchWord_Click(object sender, EventArgs e)
         {
             string search_text = TbSearchWord.Text.ToUpper();
@@ -594,6 +702,8 @@ namespace Vocup
                         UnloadBook(false);
                     }
 
+                    TrackingService.Action("Book/Create");
+
                     // VocabularyBookSettings enables notification on creation
                     LoadBook(book);
 
@@ -612,6 +722,8 @@ namespace Vocup
             {
                 if (openDialog.ShowDialog() == DialogResult.OK)
                 {
+                    TrackingService.Action("Book/Import");
+
                     if (CurrentBook != null)
                     {
                         VocabularyFile.ImportCsvFile(openDialog.FileName, CurrentBook, false, ansiEncoding);
@@ -649,10 +761,10 @@ namespace Vocup
             int index = CurrentController.ListView.SelectedItem.Index;
             VocabularyWord selected = (VocabularyWord)CurrentController.ListView.SelectedItem.Tag;
             CurrentBook.Words.Remove(selected);
-            
+
             // Limit index of the deleted word to the highest possible index
             index = Math.Min(index, CurrentBook.Words.Count - 1);
-            
+
             foreach (ListViewItem item in CurrentController.ListView.Items)
             {
                 if (item.Index == index) item.Selected = true;

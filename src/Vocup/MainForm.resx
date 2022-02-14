@@ -175,9 +175,37 @@
   <metadata name="MenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 0</value>
   </metadata>
+  <data name="MenuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="MenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>784, 24</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="MenuStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip.Name" xml:space="preserve">
+    <value>MenuStrip</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip.Type" xml:space="preserve">
+    <value>Vocup.Controls.ResponsiveMenuStrip, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="TsmiRootFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="TsmiRootFile.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TsmiCreateBook.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+N</value>
+    <value>Control+N</value>
   </data>
   <data name="TsmiCreateBook.Size" type="System.Drawing.Size, System.Drawing">
     <value>276, 22</value>
@@ -186,7 +214,7 @@
     <value>Create new vocabulary book...</value>
   </data>
   <data name="TsmiOpenBook.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+O</value>
+    <value>Control+O</value>
   </data>
   <data name="TsmiOpenBook.Size" type="System.Drawing.Size, System.Drawing">
     <value>276, 22</value>
@@ -194,12 +222,11 @@
   <data name="TsmiOpenBook.Text" xml:space="preserve">
     <value>Open vocabulary book...</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TsmiCloseBook.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="TsmiCloseBook.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+X</value>
+    <value>Control+X</value>
   </data>
   <data name="TsmiCloseBook.Size" type="System.Drawing.Size, System.Drawing">
     <value>276, 22</value>
@@ -211,7 +238,7 @@
     <value>False</value>
   </data>
   <data name="TsmiSave.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+S</value>
+    <value>Control+S</value>
   </data>
   <data name="TsmiSave.Size" type="System.Drawing.Size, System.Drawing">
     <value>276, 22</value>
@@ -232,7 +259,7 @@
     <value>Save As</value>
   </data>
   <data name="TsmiImport.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+I</value>
+    <value>Control+I</value>
   </data>
   <data name="TsmiImport.Size" type="System.Drawing.Size, System.Drawing">
     <value>276, 22</value>
@@ -250,7 +277,7 @@
     <value>False</value>
   </data>
   <data name="TsmiExport.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+E</value>
+    <value>Control+E</value>
   </data>
   <data name="TsmiExport.Size" type="System.Drawing.Size, System.Drawing">
     <value>276, 22</value>
@@ -262,7 +289,7 @@
     <value>False</value>
   </data>
   <data name="TsmiOpenInExplorer.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+M</value>
+    <value>Control+M</value>
   </data>
   <data name="TsmiOpenInExplorer.Size" type="System.Drawing.Size, System.Drawing">
     <value>276, 22</value>
@@ -277,7 +304,7 @@
     <value>False</value>
   </data>
   <data name="TsmiPrint.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+P</value>
+    <value>Control+P</value>
   </data>
   <data name="TsmiPrint.Size" type="System.Drawing.Size, System.Drawing">
     <value>276, 22</value>
@@ -286,7 +313,7 @@
     <value>Print</value>
   </data>
   <data name="TsmiBackupRestore.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+W</value>
+    <value>Control+W</value>
   </data>
   <data name="TsmiBackupRestore.Size" type="System.Drawing.Size, System.Drawing">
     <value>276, 22</value>
@@ -306,53 +333,11 @@
   <data name="TsmiExitApplication.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="TsmiRootFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="TsmiRootFile.Text" xml:space="preserve">
-    <value>File</value>
-  </data>
   <data name="TsmiRootEdit.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 20</value>
   </data>
   <data name="TsmiRootEdit.Text" xml:space="preserve">
     <value>Edit</value>
-  </data>
-  <data name="TsmiRootTools.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Shift+O</value>
-  </data>
-  <data name="TsmiRootTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 20</value>
-  </data>
-  <data name="TsmiRootTools.Text" xml:space="preserve">
-    <value>Tools</value>
-  </data>
-  <data name="TsmiRootHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
-  </data>
-  <data name="TsmiRootHelp.Text" xml:space="preserve">
-    <value>Help</value>
-  </data>
-  <data name="MenuStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="MenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>784, 24</value>
-  </data>
-  <data name="MenuStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip.Name" xml:space="preserve">
-    <value>MenuStrip</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveMenuStrip, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="TsmiAddWord.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -370,7 +355,7 @@
     <value>False</value>
   </data>
   <data name="TsmiEditWord.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+R</value>
+    <value>Control+R</value>
   </data>
   <data name="TsmiEditWord.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 22</value>
@@ -382,7 +367,7 @@
     <value>False</value>
   </data>
   <data name="TsmiDeleteWord.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Del</value>
+    <value>Delete</value>
   </data>
   <data name="TsmiDeleteWord.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 22</value>
@@ -390,11 +375,20 @@
   <data name="TsmiDeleteWord.Text" xml:space="preserve">
     <value>Delete word</value>
   </data>
+  <data name="TsmiRootTools.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Control+Shift+O</value>
+  </data>
+  <data name="TsmiRootTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 20</value>
+  </data>
+  <data name="TsmiRootTools.Text" xml:space="preserve">
+    <value>Tools</value>
+  </data>
   <data name="TsmiPractice.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="TsmiPractice.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+U</value>
+    <value>Control+U</value>
   </data>
   <data name="TsmiPractice.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 22</value>
@@ -406,7 +400,7 @@
     <value>False</value>
   </data>
   <data name="TsmiBookOptions.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Shift+O</value>
+    <value>Control+Shift+O</value>
   </data>
   <data name="TsmiBookOptions.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 22</value>
@@ -415,7 +409,7 @@
     <value>Vocabulary book options</value>
   </data>
   <data name="TsmiMerge.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Z</value>
+    <value>Control+Z</value>
   </data>
   <data name="TsmiMerge.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 22</value>
@@ -433,13 +427,19 @@
     <value>Manage special chars</value>
   </data>
   <data name="TsmiSettings.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Alt+O</value>
+    <value>Control+Alt+O</value>
   </data>
   <data name="TsmiSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 22</value>
   </data>
   <data name="TsmiSettings.Text" xml:space="preserve">
     <value>Settings</value>
+  </data>
+  <data name="TsmiRootHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="TsmiRootHelp.Text" xml:space="preserve">
+    <value>Help</value>
   </data>
   <data name="TsmiHelp.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F1</value>
@@ -502,7 +502,7 @@
     <value>BtnBookSettings</value>
   </data>
   <data name="&gt;&gt;BtnBookSettings.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnBookSettings.Parent" xml:space="preserve">
     <value>GroupBook</value>
@@ -514,7 +514,7 @@
     <value>BtnPractice</value>
   </data>
   <data name="&gt;&gt;BtnPractice.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnPractice.Parent" xml:space="preserve">
     <value>GroupBook</value>
@@ -552,16 +552,16 @@
   <data name="BtnBookSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIuSURBVDhPjZLdT1JhHMe56F/puos2r7zoxvKiS71o5eaR
-        2tqKNYGiQcYcMHBz2JKX5ctJF5GdIhU3Q4a8OIJjgwEn9GCw0TCbFUgz01jht3M6T9GLWN/te/E85/l8
-        zu/sObIf0QzSPVrrJH25b4hW6BsV11rrXfrqwMgNcvTgKI0OxhPPY5HfgI9rVFw7n0RgvPMYVwwOOzn+
-        dxR9VjrAv0OxDuR2Gi1+BeyeEIKxJBg/i/M66zBBfo84rvjG3CcgU2lUlAy5F8DxeYiZ8sWg6Lfd0uv1
-        Rwgq5TDB7Sk/Bhz38GA2AJqZx81hN1QmWwdBpTQTZD8Ai6ubcIcyuB/i8OhZFqPeKExO1wWCSmkmSJeB
-        lW1hEmFfnOblniAtf0G4sttJUCnNBH+WE2Tc5h5iKnUw2tKiJfj/CTjhczLC87BWg7W2dlS7zoHg/xZ8
-        h6v7CC9YkGfkKMrPItl2apvghwtEOC3AwTkT1lklUHMhNdb5du74sRMEby74CXuNWF9Wol4Zx6pfgZkZ
-        wyWCSjlIwG2JrSEyb8br52rUy2NgPd1I8Umwr/a7CCrl11+ZF66LqwrXJ8ieem2Iu9rx+Y0dy9PdYNcy
-        yAv7S6ksRVApKrOTmfAl4Aok8DDyArmtOtKl95g0dyA4choscwZpPoH8LrBRA6Jc4SJBpegGx1uvWUYp
-        qtdAXbfYqThfotS6/tnenpMfnZrWiWmXSR4v7FBLSZ7iSmUqvlI4KpPJZN8ACPCCYWHfLXcAAAAASUVO
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIuSURBVDhPjZLdT1JhHMe56F/puos2r7zoxvKiS71ojc0T
+        tbUVawJFg4w5IGRz2JKX5ctJF5Gd8iXcDBmhOINjgwEn7ECw4TCbFUQz01jht+d4HscqqT7b9+J3zvP5
+        nnOe8ygO0Pez5wyOcfZyzwCrNjUizQbHPfaqfegGXXo4Goubm4zl8VzcQEBoRJo9UxFY7j7BFbPbRZf/
+        ibrHwYbEDyjWgezXRoo/ANfkAsLRBLggj/NGxyBVfkV6XemJkpSuNJLdBgZ88xDEPCQmAlGoe523TSbT
+        EarKNCvIkfnORBB293089IfAcnO4OeiD1ursoKpMs4LMZ5B92IRvQcADkscvMhj2L8Pq8V6gqkyzglQZ
+        WN1q7MmbXVJa/o7Fyk4nVWWaFfwegZQJm7uIanXhaEuLger/VyCQz0mT+xGDHrm2dlSVSlD93wX7cnUP
+        i/N25DkViqqzSLSd2qL63wsO5PDsLazzGqDmRXKk8/3s8WMnqN68QJJT+7IF6ysa1CujeB1UY2bGfImq
+        MocVCJ+k1BCZs+HtSx3q5RHwU11Iignwa3tKqsqoTfJRXiNHWSSnT6iS30fKnvmdiHnb8e2dCyvTXeBz
+        aeTJ9aVkhqGqjNbm4cYCcXhDcTyKvEK2Wkeq9BHjtg6Eh06D584gJcaR3wE2asCyULhIVRlj/2jrtb5h
+        huk2M9f7XExMLDE6Y+/TbtXJLx5969i016qKFbaZpYTICKUyE1stHFUoFIqfNDSCeHaYJgYAAAAASUVO
         RK5CYII=
 </value>
   </data>
@@ -587,7 +587,7 @@
     <value>BtnBookSettings</value>
   </data>
   <data name="&gt;&gt;BtnBookSettings.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnBookSettings.Parent" xml:space="preserve">
     <value>GroupBook</value>
@@ -598,16 +598,16 @@
   <data name="BtnPractice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH5SURBVDhPY8AH9vZ7lR6b5Dxvd5cHGO+b6D/v5JywxYem
-        h2hBleAGm5sMVM8vS///6+mh/99vTvj//U7f/y9n6/7vn+T/bNtEDz6oMtxgR5vFhE83t/3////b//9f
-        l/7//3PN/0e7C/9vb3UJgyrBDdZVSAkfnRX5/t/Pj0DNu////7zk/4+7E/7v6fO9UF/PwARVhhvsaDIt
-        fn12EdD2z///v5v////HZf/vbM76v7XFORiqBDdYFcrAtn+y392/X57////jONCMRf+/3+7/v6vHex9U
-        CX6wvUk/7NGBXqDtP/7/f7/k/5+3C/9fWBb/f2e7+8ljs0LmHpsZMv/I5AgpqHJMsG+i97H/X58CDbgF
-        9P/i/39fz/v/9HT9/3cX2/8/25L2/8CkgP5Vq0KZocpRwf4Jvj5316b8f3lq5v8XR2r/39yS9f/JqQlA
-        wx7//3Cu6f/ePp9VUKXYwaEZweaXFkYkbW0wTNzSbB+7tdnq6oeHp/7/fH7q/74+10s7u125oUoJg4ke
-        DHwXVhe///fxxv+TcyLfb603VYNKEQd297h2fLy04P/1jaX/N9Ua+kKFiQP7p4TyHJkZ/uLh1nxg9LlV
-        Q4WJBwcnBSU/Wpf4/8BkP/yBhgscmhZ85+TssFskBRoMHJoWGAFMLP939QdoQoXwAAYGACjDF+LRa110
-        AAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH3SURBVDhPldFdSFNhHMfxQ0E3hTfdeV9QN+aFKN10odZQ
+        p6u9NC8iLCnwJkIEQWwxrYnZdraFNbPlW7uYvVDt+LI1tw5zsiPqSiKn7sLh1BCdx5e2BfbrIZ4uos5a
+        Hzg3//N9nofzHCYTr6msIWgptnvaZT+fMXOVPdSt6ecfqk7SRJpbf+rYjOM6vsV5JCMsklEjdqduwWep
+        Whkyy3JoJm3kbhG7HRkC8BXYewaknyPmuYnhOyUamkh72Zh7dLyrOoG0SBZ7gJ0BpKIs3hnlYZ2OOUAz
+        aSP6gvr1qT5y+g6w+RQQHVh8WweutVhJE2lONXPIZ62M7u+uAqkJskcfkgsmuDvKx2iS2bA+TxPz3yen
+        p4CtAexv9CLsuIxRw7lQsEv1ZNym6glYtbk0/5OXLZ/AXpxsME++vx/f1+2IT+qw+cGAFdc1+C0Kk9Op
+        Pkjz3/lYeUX0RS2+CDasBZoRcdVhWWDJZssQp/XwGiucNP07/pGy8GOv9gp3O7/G1XLmEtdy+tPWkoD0
+        qkAWl8yO3is9TNN/M8uYnPBgfQLiHELd1QlOV3CcvsqOp6O0TZztwefXDXjTnC+n4+z4HqiPBGwX15a4
+        G+T3nW2i4+y9t1y4GntVA7+1MvOlSeE7lYvCY838f13aL3zneW3QpoLbpDhBRxkwzA9UERfyqnFGywAA
+        AABJRU5ErkJggg==
 </value>
   </data>
   <data name="BtnPractice.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
@@ -632,7 +632,7 @@
     <value>BtnPractice</value>
   </data>
   <data name="&gt;&gt;BtnPractice.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnPractice.Parent" xml:space="preserve">
     <value>GroupBook</value>
@@ -644,7 +644,7 @@
     <value>BtnSearchWord</value>
   </data>
   <data name="&gt;&gt;BtnSearchWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnSearchWord.Parent" xml:space="preserve">
     <value>GroupSearch</value>
@@ -685,16 +685,16 @@
   <data name="BtnSearchWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIXSURBVDhPjZLPT9NgGMeXaAwXDx48ePAfMejRcDKGpDHR
-        A3ohdmzGTAbtuq1EhdG1Xbstjiktm9BIBDO07sIPRSNkmhCMG3ZjxMREZ5QERZmQJerj2+1dqg6BT/K9
-        vE8/fd7naW07QRDEgQ6vdOpST4R3suEhlJ6LdOg4Lu+MnRGau4JKdiD1BPSFNzCZK0EqswzicBpcvbH0
-        ZU/oCH60EZIRjvkiI5vTxkfIbwAUvteyjLK0/gsmnq9AZ2Ag76TDh7Fi0cayTa7eG4UZ4xOsbAFkPwO8
-        WrOS+wJQ3AQYn8uD0y8nsGbRTvOt8Ymn1c7/yvUsfQV4ufoD/FGtgjULByPKDxfeVq+7nVyP2UDR5wFr
-        Fg6flJzMfajOvJ1YT6EMoE0vNr7AzojXU5nirjcw0A1i92YbX9DeLTTzSR1y67WF/U9+8X4LKF5dw9rf
-        OFlpauyZAUX0FcyF/Smbs79GZ0o6A3ZfyIMViyuB+AmPmHjnC2swOptF265AHs1r7sT4hjqXyqAiGf2d
-        4wQxtg9rNTr74i1e+XY5oN4HN3cz2eGXoldjoxuD+hxoM4to5sfglUdKDlZu7NzVH29FcqV/6AFQQeUu
-        Pradd107StLCaZLiL5BM6ORZkjqESxZu7tY5rzz80+xMCarOsux+XNodihs8449o0KekgBbUR21sogmX
-        9kZ3UIlKd6aAFtV5N8cdxMd7xGb7DYrS0ZL191FgAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAISSURBVDhPY8AHQkND2bKq+vzzGiZ159ZPnAfEDRmVfbZQ
+        afwgq7rHpqxrzqXp6w7833Tm7v+dl5/+X3f85v/eRVv+F7VO21JQ1ScJVYoJMqt7rGonLf62+9qL/9c/
+        //9/4ysE3wTiKx/+/19/4vb/kvYZ13MrJ4pCtSBAfH09R1Hr1Bt7rr38f/v7//+X3v3/f/EtAl8GGnAL
+        KL76yPX/uXUT5kO1IUBaZXfQjPUHwTaja4bhKx///z//6s//uklLfkG1IUBOde+EzWcegJ2LTTMMX//y
+        //+cTUf/Q7UhQE5t/4Kdl5+B/YxNIwzfABqwZPc5TAOyqntb1h+/jd8FQK9dA3px2pr9mAaklffYdC/Y
+        BA7ty++xaAZiUPicfPr9f0X33LdQbaggt75/16rD18ChDQowdM1XgWJzthz/n1XbVwXVggClnbNsq3rn
+        P66duOT/8v2XgKH9ExxgoDC59glk85f/c4GagalzdWjoKmaoNgioaJvhUTNh4Zf2uRv+l3bOXJBd1z+5
+        adryz7M3Hfm/ZM85oJ/3/a+ZsOhZTv0ETJvLOmYEATX/7Ji38X9F15yVUGGGhKJm2czKnoDMiu7EzOo+
+        t6jMCkGoFAIAnR0NNPkvyOaKnrmb6uvrWaBShEFF5+xwYIr63zZn3f/Knrl74+vnc0CliAPlXXMm9y/b
+        9b+yd+7R0s5OXqgwkYCBAQCmo9Gjd9NqSwAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="BtnSearchWord.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
@@ -719,7 +719,7 @@
     <value>BtnSearchWord</value>
   </data>
   <data name="&gt;&gt;BtnSearchWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnSearchWord.Parent" xml:space="preserve">
     <value>GroupSearch</value>
@@ -731,7 +731,7 @@
     <value>BtnAddWord</value>
   </data>
   <data name="&gt;&gt;BtnAddWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnAddWord.Parent" xml:space="preserve">
     <value>GroupWord</value>
@@ -743,7 +743,7 @@
     <value>BtnDeleteWord</value>
   </data>
   <data name="&gt;&gt;BtnDeleteWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnDeleteWord.Parent" xml:space="preserve">
     <value>GroupWord</value>
@@ -755,7 +755,7 @@
     <value>BtnEditWord</value>
   </data>
   <data name="&gt;&gt;BtnEditWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnEditWord.Parent" xml:space="preserve">
     <value>GroupWord</value>
@@ -793,18 +793,18 @@
   <data name="BtnAddWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        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
+        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
 </value>
   </data>
   <data name="BtnAddWord.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
@@ -829,7 +829,7 @@
     <value>BtnAddWord</value>
   </data>
   <data name="&gt;&gt;BtnAddWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnAddWord.Parent" xml:space="preserve">
     <value>GroupWord</value>
@@ -843,14 +843,14 @@
   <data name="BtnDeleteWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVDhPYxhcoJ6Bge2wtXUUlIsBVmppCQHlw6BcVLBe
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGuSURBVDhPYxhcoJ6Bge2wtXUUlIsBVmppCQHlw6BcVLBe
         X1/gmr//qj8ZGf/PeHj0QoXhoJiBgftmQMD+n2lp/895eVWcMTZmhUpBwAE7u6j/6en//1dU/P+blfX/
         lKtrD1QKrPman9+e/4WFYPlHYWH/dxgba0ClIWAm0MTT7u7dfzIz//8vLYUZ0t7DwyNyycdnL1gzUPxl
-        bOy/Y46OOL3JcAJo81+oIe9TUv5f9vN7/Dc3F8x/FRf3f6+NTSRUKW5w0sWl7XNq6s+/IFuB+G9Bwf/X
+        bOy/Y46OOL3JcAJo81+oIe9TUv5f9vN7/Dc3F8x/FRf3f6+NTSRUKW5w0sWl7VNKyq+/IFuB+G9Bwf/X
         cXHv9llZhUOVEAQsN/z87oM0/wZq/p+X9/+4i8tmqBx+kMbAwHXVz2/XH6CzwS4AagbRX9LT/510de2G
-        KsMOQKF9xdd3z3+QrUA/P4qK+n7CxWXTF2DUgQMWGDbIsYMC9lhYSN8MDNwPC21ggP07YGMTCpIDhkkX
-        LGBBsXPBy2vyJmNjLrBGGDgATGG/U1PB8fwqNvYvemifdHaGRHFl5f87ISH/turpqUGlEOC0h0f5i6io
-        r4dxxPN5T8+JTyMiPh22t3eBCmGCNTo6qCkMDawxMFCFMqkBGBgAIS7mc3GS/F4AAAAASUVORK5CYII=
+        KsMOQKF9xdd3z3+QrUA/P4qK+n7CxWXTF2DUIQUsPHZQwB4LC+mbgYH7YaENDLB/B2xsQkFywDDpggUs
+        yJALXl6TNxkbc4E1wsABYAr7nZoKjufXsbF/0UP7pLMzJIorK//fCQn5t1VPTw0qhQCnPTzKn0dFfTuM
+        I57Pe3pOfBoR8emwvb0LVAgTrNHRQU1haGCNgYEqlEkNwMAAACBp5nRus0ZQAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="BtnDeleteWord.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
@@ -875,7 +875,7 @@
     <value>BtnDeleteWord</value>
   </data>
   <data name="&gt;&gt;BtnDeleteWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnDeleteWord.Parent" xml:space="preserve">
     <value>GroupWord</value>
@@ -889,13 +889,13 @@
   <data name="BtnEditWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFvSURBVDhPY6A7uGRh4vIwMnLWISenCKgQ8SCvoTt5a2PX
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFuSURBVDhPY6A7uGRh4vIwMnLWISenCKgQ8SCvoTt5a2PX
         ///Tpv7/XF7+/4CZmS1UijAob+9P2nPm1v8DN1/93z9t3v//rS3/j9vahkOl8YPWytCYZduP/X/+7f//
-        J1/+/z9w7fn/+RmFB5+Li3NDleAGazrNw59dqvt76tSa/ztPPfh///3//9OXbzzBX9EuCFWCG6zpAWq+
-        UP/v/5+1//9/XfL/7Jk1/zumLzumZKzED1WCG8A1/wJq/rzy///vS/5f2Bq/20qdgReqBDfA0Pxtyf8z
-        62N2+zAwcEGV4AbYbD4L1GxMjOaNU1wTnl9E1xxHnOZ5tSa+N/dm/f//dwNQ8yqws89tiNtLlGYQ2DE9
-        as+nU6X/n51v/P//x7L/ZzfEHXYVZyAczyCgrG0rGxcb/vfdma7/zw/k/T+wKOh4vj2DAFSaMHBw8y42
-        tg/4GRcdtGtdT0BmqBYDD1SKOODm7W3m6+urAuWSABgYAP1+3TqUut+fAAAAAElFTkSuQmCC
+        J1/+/z9w7fn/+RmFB5+Li3NDleAGazrNw59dqvt76tSa/ztPP/h//z3QB8s2nOSvaBeEKsEN1vQANV+o
+        //f/z9r//78u+X/27Jr/HdOXHVMyVuKHKsEN4Jp/ATV/Xvn///cl/y9sjd9tpc7AC1WCG2Bo/rbk/5n1
+        Mbt9GBi4oEpwA2w2nwVqNiZG84bJLonPL6JrjiNO87xaE9+be7P+//+7Aah5FVjzuQ1xe4nSDAI7pkft
+        +XS69P+z843///9c9v/shrjDruIMhOMZBJS0rOXiYsP/vjvT9f/5gbz/BxYFHc+3ZxCAShMGDm7excb2
+        AT/jooN2resJyAzVYuCBShEH3Ly9zXx9fVWgXBIAAwMA+zDdOGvqPskAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="BtnEditWord.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
@@ -920,7 +920,7 @@
     <value>BtnEditWord</value>
   </data>
   <data name="&gt;&gt;BtnEditWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnEditWord.Parent" xml:space="preserve">
     <value>GroupWord</value>
@@ -931,6 +931,42 @@
   <metadata name="StatusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 28</value>
   </metadata>
+  <data name="StatusLbOldVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 17</value>
+  </data>
+  <data name="StatusLbOldVersion.Text" xml:space="preserve">
+    <value>An incompatible version was found</value>
+  </data>
+  <data name="StatusLbOldVersion.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="StatusLbUpdateAvailable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 17</value>
+  </data>
+  <data name="StatusLbUpdateAvailable.Text" xml:space="preserve">
+    <value>Download update for Vocup</value>
+  </data>
+  <data name="StatusLbUpdateAvailable.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="StatusLbOpenUwpApp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 17</value>
+  </data>
+  <data name="StatusLbOpenUwpApp.Text" xml:space="preserve">
+    <value>Open Vocup Windows app</value>
+  </data>
+  <data name="StatusLbOpenUwpApp.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="StatusLbInstallUwpApp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 17</value>
+  </data>
+  <data name="StatusLbInstallUwpApp.Text" xml:space="preserve">
+    <value>Install Vocup as Windows app</value>
+  </data>
+  <data name="StatusLbInstallUwpApp.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="StatusStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 539</value>
   </data>
@@ -952,29 +988,11 @@
   <data name="&gt;&gt;StatusStrip.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="StatusLbOldVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 17</value>
-  </data>
-  <data name="StatusLbOldVersion.Text" xml:space="preserve">
-    <value>An incompatible version was found</value>
-  </data>
-  <data name="StatusLbOldVersion.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="StatusLbUpdateAvailable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 17</value>
-  </data>
-  <data name="StatusLbUpdateAvailable.Text" xml:space="preserve">
-    <value>Download update for Vocup</value>
-  </data>
-  <data name="StatusLbUpdateAvailable.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;GroupStatistics.Name" xml:space="preserve">
     <value>GroupStatistics</value>
   </data>
   <data name="&gt;&gt;GroupStatistics.Type" xml:space="preserve">
-    <value>Vocup.Controls.StatisticsPanel, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.StatisticsPanel, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;GroupStatistics.Parent" xml:space="preserve">
     <value>SideBar</value>
@@ -1019,7 +1037,7 @@
     <value>GroupStatistics</value>
   </data>
   <data name="&gt;&gt;GroupStatistics.Type" xml:space="preserve">
-    <value>Vocup.Controls.StatisticsPanel, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.StatisticsPanel, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;GroupStatistics.Parent" xml:space="preserve">
     <value>SideBar</value>
@@ -1049,7 +1067,7 @@
     <value>FileTreeView</value>
   </data>
   <data name="&gt;&gt;FileTreeView.Type" xml:space="preserve">
-    <value>Vocup.Controls.FileTreeView, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.FileTreeView, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;FileTreeView.Parent" xml:space="preserve">
     <value>SplitContainer.Panel1</value>
@@ -1125,7 +1143,7 @@ Just open a vocabulary book or create a new one.</value>
     <value>SplitContainer</value>
   </data>
   <data name="&gt;&gt;SplitContainer.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveSplitContainer, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveSplitContainer, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SplitContainer.Parent" xml:space="preserve">
     <value>TableLayout</value>
@@ -1149,7 +1167,7 @@ Just open a vocabulary book or create a new one.</value>
     <value>ToolStrip</value>
   </data>
   <data name="&gt;&gt;ToolStrip.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveToolStrip, Vocup, Version=1.7.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveToolStrip, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ToolStrip.Parent" xml:space="preserve">
     <value>$this</value>
@@ -7696,6 +7714,18 @@ Just open a vocabulary book or create a new one.</value>
     <value>StatusLbUpdateAvailable</value>
   </data>
   <data name="&gt;&gt;StatusLbUpdateAvailable.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StatusLbOpenUwpApp.Name" xml:space="preserve">
+    <value>StatusLbOpenUwpApp</value>
+  </data>
+  <data name="&gt;&gt;StatusLbOpenUwpApp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StatusLbInstallUwpApp.Name" xml:space="preserve">
+    <value>StatusLbInstallUwpApp</value>
+  </data>
+  <data name="&gt;&gt;StatusLbInstallUwpApp.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsbCreateBook.Name" xml:space="preserve">

@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=6.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=6.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
     <value>Über Vocup</value>
@@ -148,7 +148,7 @@
     <value>E-Mail:</value>
   </data>
   <data name="LbVersion.Text" xml:space="preserve">
-    <value>Version {0}</value>
+    <value>Version {0} ({1}; {2})</value>
   </data>
   <data name="LbWebsite.Text" xml:space="preserve">
     <value>Website:</value>
@@ -160,7 +160,7 @@
     <value>AGPL-3.0</value>
   </data>
   <data name="LlbProjectMail.Text" xml:space="preserve">
-    <value>daniel.p.lerch@gmail.com</value>
+    <value>daniel.dev@lerchen.net</value>
   </data>
   <data name="LlbProjectWebsite.Text" xml:space="preserve">
     <value>Vocup auf GitHub</value>

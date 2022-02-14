@@ -12,7 +12,7 @@ namespace Vocup.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.7.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.0.3.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -355,6 +355,54 @@ namespace Vocup.Properties {
             }
             set {
                 this["EvaluateOptionalExpressions"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0, 0, 0")]
+        public global::System.Drawing.Rectangle MainFormBounds {
+            get {
+                return ((global::System.Drawing.Rectangle)(this["MainFormBounds"]));
+            }
+            set {
+                this["MainFormBounds"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
+        public global::System.Windows.Forms.FormWindowState MainFormWindowState {
+            get {
+                return ((global::System.Windows.Forms.FormWindowState)(this["MainFormWindowState"]));
+            }
+            set {
+                this["MainFormWindowState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int MainFormSplitterDistance {
+            get {
+                return ((int)(this["MainFormSplitterDistance"]));
+            }
+            set {
+                this["MainFormSplitterDistance"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1.8.3")]
+        public string Version {
+            get {
+                return ((string)(this["Version"]));
+            }
+            set {
+                this["Version"] = value;
             }
         }
     }

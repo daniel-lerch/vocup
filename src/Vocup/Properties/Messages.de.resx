@@ -190,6 +190,12 @@ Falls {0} und {1} keine Sprachen sondern Vokabeln sind, denken Sie bitte daran, 
   <data name="MergeOverrideT" xml:space="preserve">
     <value>Daten überschreiben?</value>
   </data>
+  <data name="MutexLockedButNoOtherProcess" xml:space="preserve">
+    <value>Entweder läuft bereits eine andere Instanz von Vocup oder Vocup wird gerade aktualisiert. Falls dieses Problem wiederholt auftritt, versuchen Sie Vocup Prozesse im Task-Manager zu finden oder starten Sie Ihren Computer neu.</value>
+  </data>
+  <data name="MutexLockedButNoOtherProcessT" xml:space="preserve">
+    <value>Vocup konnte nicht gestartet werden</value>
+  </data>
   <data name="OpenInExplorerError" xml:space="preserve">
     <value>Das aktuelle Vokabelheft konnte nicht im Explorer geöffnet werden. Bitte beachten Sie, dass dieses Feature mit manchen Betriebssystemen wie Linux oder Windows 10 S nicht kompatibel ist.
 Details: {0}</value>
@@ -298,6 +304,9 @@ Stellen Sie sicher, dass die Datei nicht leer ist.</value>
   <data name="VhfMustUpdateT" xml:space="preserve">
     <value>Update erforderlich</value>
   </data>
+  <data name="VhfPathInvalid" xml:space="preserve">
+    <value>Der ausgewählte Pfad ist nicht zum Speichern von Vokabelheften geeignet. Verwenden Sie bitte keine optischen Laufwerke oder Systemordner an dieser Stelle.</value>
+  </data>
   <data name="VhfPathNotFound" xml:space="preserve">
     <value>Der Ordner für Vokabelhefte existiert nicht unter {0}. Vocup wird Ihre Einstellung mit dem Standardordner für Dokumente ersetzen. Das können Sie in den Einstellungen jederzeit wieder ändern.</value>
     <comment>{0}: Path</comment>
@@ -316,6 +325,9 @@ Stellen Sie sicher, dass die Datei nicht leer ist.</value>
   </data>
   <data name="VhrInvalidRowCountAndOtherFile" xml:space="preserve">
     <value>Die referenzierte Ergebnisdatei wird von einem anderen Vokabelheft verwendet und passt nicht zu diesem. Daher werden keine Ergebnisse geladen.</value>
+  </data>
+  <data name="VhrPathInvalid" xml:space="preserve">
+    <value>Der ausgewählte Pfad ist nicht zum Speichern von Übungsergebnissen geeignet. Verwenden Sie bitte keine optischen Laufwerke oder Systemordner an dieser Stelle.</value>
   </data>
   <data name="VhrPathNotFound" xml:space="preserve">
     <value>Der Ordner für Übungsergebnisse existiert nicht unter {0}. Vocup wird Ihre Einstellung mit dem Standardordner für Anwendungsdateien ersetzen. Das können Sie in den Einstellungen jederzeit wieder ändern.</value>

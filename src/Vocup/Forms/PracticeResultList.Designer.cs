@@ -81,6 +81,7 @@
             this.ListView.UseCompatibleStateImageBehavior = false;
             this.ListView.View = System.Windows.Forms.View.Details;
             this.ListView.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.ListView_ColumnWidthChanging);
+            this.ListView.Resize += new System.EventHandler(this.ListView_Resize);
             // 
             // imageColumn
             // 
@@ -142,6 +143,7 @@
             // 
             // GroupStatistics
             // 
+            resources.ApplyResources(this.GroupStatistics, "GroupStatistics");
             this.GroupStatistics.Controls.Add(this.TbCorrectCount);
             this.GroupStatistics.Controls.Add(this.TbPartlyCorrectCount);
             this.GroupStatistics.Controls.Add(this.TbNotPracticedCount);
@@ -154,7 +156,6 @@
             this.GroupStatistics.Controls.Add(this.label2);
             this.GroupStatistics.Controls.Add(this.label3);
             this.GroupStatistics.Controls.Add(this.pictureBox3);
-            resources.ApplyResources(this.GroupStatistics, "GroupStatistics");
             this.GroupStatistics.Name = "GroupStatistics";
             this.GroupStatistics.TabStop = false;
             // 
@@ -212,11 +213,11 @@
             // 
             // GroupGrades
             // 
+            resources.ApplyResources(this.GroupGrades, "GroupGrades");
             this.GroupGrades.Controls.Add(this.LbGrade);
             this.GroupGrades.Controls.Add(this.LbPercentage);
             this.GroupGrades.Controls.Add(this.TbPercentage);
             this.GroupGrades.Controls.Add(this.TbGrade);
-            resources.ApplyResources(this.GroupGrades, "GroupGrades");
             this.GroupGrades.Name = "GroupGrades";
             this.GroupGrades.TabStop = false;
             // 
@@ -252,9 +253,6 @@
             this.Controls.Add(this.CbDoNotShowAgain);
             this.Controls.Add(this.BtnContinue);
             this.Controls.Add(this.ListView);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "PracticeResultList";
             this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.Form_Load);

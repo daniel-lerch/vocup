@@ -46,9 +46,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TpComponents = new System.Windows.Forms.TabPage();
             this.LwComponents = new System.Windows.Forms.ListView();
-            this.ColHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ColHeaderLicense = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ColHeaderUrl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ColHeaderName = new System.Windows.Forms.ColumnHeader();
+            this.ColHeaderLicense = new System.Windows.Forms.ColumnHeader();
+            this.ColHeaderUrl = new System.Windows.Forms.ColumnHeader();
             this.tableLayoutPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.TpInfo.SuspendLayout();
@@ -191,11 +191,11 @@
             this.ColHeaderUrl});
             resources.ApplyResources(this.LwComponents, "LwComponents");
             this.LwComponents.FullRowSelect = true;
-            this.LwComponents.HideSelection = false;
             this.LwComponents.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items"))),
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items1"))),
-            ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items2")))});
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items2"))),
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items3")))});
             this.LwComponents.Name = "LwComponents";
             this.LwComponents.UseCompatibleStateImageBehavior = false;
             this.LwComponents.View = System.Windows.Forms.View.Details;

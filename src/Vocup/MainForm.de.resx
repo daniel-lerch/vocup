@@ -259,4 +259,10 @@
   <data name="TsmiImportAnsi.Text" xml:space="preserve">
     <value>Importieren (ANSI Kodierung)</value>
   </data>
+  <data name="StatusLbInstallUwpApp.Text" xml:space="preserve">
+    <value>Vocup als Windows-App installieren</value>
+  </data>
+  <data name="StatusLbOpenUwpApp.Text" xml:space="preserve">
+    <value>Vocup Windows-App öffnen</value>
+  </data>
 </root>

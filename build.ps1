@@ -16,7 +16,8 @@ param (
 begin {
     $setupDirectory = Join-Path $PSScriptRoot "setup"
     $outputDirectory = Join-Path $setupDirectory "bin"
-    $buildDirectory = Join-Path $PSScriptRoot "src\Vocup\bin\Release"
+    $projectDirectory = Join-Path $PSScriptRoot "src\Vocup"
+    $buildDirectory = Join-Path $projectDirectory "bin\Release\net6.0-windows10.0.19041.0\win-x86\publish"
     $executable = Join-Path $buildDirectory "Vocup.exe"
 
     function GetAppVersion () {
@@ -57,58 +58,22 @@ begin {
         if (Test-Path -Path $archive -PathType Leaf) {
             Remove-Item -Path $archive
         }
-        Invoke7zip -ArgumentList "a","`"$archive`"","`"$buildDirectory\*`"","-x!*.xml"
-    }
-
-    function CreateTarGzArchive () {
-        $temp = Join-Path $outputDirectory "Vocup_$(GetAppVersion)_Mono.tar"
-        Invoke7zip -ArgumentList "a","-ttar","`"$temp`"","`"$buildDirectory\*`"","-x!*.xml"
-        $archive = Join-Path $outputDirectory "Vocup_$(GetAppVersion)_Mono.tar.gz"
-        if (Test-Path -Path $archive -PathType Leaf) {
-            Remove-Item -Path $archive
-        }
-        Invoke7zip -ArgumentList "a","`"$archive`"","`"$temp`""
-        Remove-Item -Path $temp
-    }
-
-    function RemoveConfigSection () {
-        [string]$configuration = Get-Content -Path "$executable.config" -Raw
-
-        [int]$start1 = $configuration.IndexOf("  <configSections>")
-        $search1 = "</userSettings>`r`n"
-        [int]$end1 = $configuration.IndexOf($search1) + $search1.Length
-        Write-Host "Start: $start1 End: $end1"
-        $configuration = $configuration.Remove($start1, $end1 - $start1)
-
-        [int]$start2 = $configuration.IndexOf("  <System.Windows.Forms.ApplicationConfigurationSection>")
-        $search2 = "</System.Windows.Forms.ApplicationConfigurationSection>`r`n"
-        [int]$end2 = $configuration.IndexOf($search2) + $search2.Length
-        Write-Host "Start: $start2 End: $end2"
-        $configuration = $configuration.Remove($start2, $end2 - $start2)
-
-        Set-Content -Path "$executable.config" -Value $configuration -NoNewline
+        Invoke7zip -ArgumentList "a","`"$archive`"","`"$buildDirectory\*`"","-x!*.winmd"
     }
 }
 
 process {
     $ErrorActionPreference = "Stop"
-    Write-Host "MSBuild integration is not implemented yet. Please build Vocup using Visual Studio."
-    Write-Host "Press any key to continue..."
-    [System.Console]::ReadKey($true) | Out-Null
-    Write-Host
+
+    Start-Process -FilePath "dotnet" -ArgumentList "publish","-c","Release","-a","x86","--sc","-p:PublishSingleFile=true" -WorkingDirectory $projectDirectory -NoNewWindow -Wait
+    if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
     if ($CreateSetup) {
         InvokeInnoSetup
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     }
     if ($CreateArchives) {
         CreateZipArchive
-    }
-
-    RemoveConfigSection
-
-    if ($CreateSetup) {
-        InvokeInnoSetup -Mono
-    }
-    if ($CreateArchives) {
-        CreateTarGzArchive
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     }
 }

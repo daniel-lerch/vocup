@@ -161,9 +161,6 @@
   <data name="Import" xml:space="preserve">
     <value>Import</value>
   </data>
-  <data name="NotRecommended" xml:space="preserve">
-    <value>not recommended</value>
-  </data>
   <data name="Ok" xml:space="preserve">
     <value>OK</value>
   </data>

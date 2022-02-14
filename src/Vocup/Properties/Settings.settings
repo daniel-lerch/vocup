@@ -86,5 +86,17 @@
     <Setting Name="EvaluateOptionalExpressions" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="MainFormBounds" Type="System.Drawing.Rectangle" Scope="User">
+      <Value Profile="(Default)">0, 0, 0, 0</Value>
+    </Setting>
+    <Setting Name="MainFormWindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="MainFormSplitterDistance" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Version" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1.8.3</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

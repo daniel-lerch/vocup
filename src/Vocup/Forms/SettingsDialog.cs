@@ -1,11 +1,11 @@
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using Vocup.Models;
 using Vocup.Properties;
-using Vocup.Util;
 
-namespace Vocup
+namespace Vocup.Forms
 {
     public partial class SettingsDialog : Form
     {
@@ -23,16 +23,7 @@ namespace Vocup
             RbRecentFile.Checked = settings.StartScreen == (int)StartScreen.LastFile || settings.StartScreen == (int)StartScreen.AboutBox;
             CbAutoSave.Checked = settings.AutoSave;
 
-            if (AppInfo.IsUwp)
-            {
-                GroupUpdate.Enabled = false;
-                CbDisableInternetServices.Checked = true;
-            }
-            else
-            {
-                CbDisableInternetServices.Text += $" ({Words.NotRecommended})";
-                CbDisableInternetServices.Checked = settings.DisableInternetServices;
-            }
+            CbDisableInternetServices.Checked = settings.DisableInternetServices;
 
             // ListView
             CbGridLines.Checked = settings.GridLines;
@@ -187,26 +178,46 @@ namespace Vocup
 
         private void BtnVhfPath_Click(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+            using (FolderBrowserDialog fbd = new FolderBrowserDialog
             {
-                fbd.SelectedPath = settings.VhfPath;
-
+                Description = Messages.BrowseVhfPath,
+                SelectedPath = settings.VhfPath
+            })
+            {
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
-                    TbVhfPath.Text = fbd.SelectedPath;
+                    try
+                    {
+                        // This call fails for inaccessible paths like optical disk drives
+                        _ = Directory.GetFiles(fbd.SelectedPath);
+
+                        TbVhfPath.Text = fbd.SelectedPath;
+                    }
+                    catch (IOException)
+                    {
+                        MessageBox.Show(Messages.VhfPathInvalid, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
 
         private void BtnVhrPath_Click(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+            using (FolderBrowserDialog fbd = new FolderBrowserDialog { SelectedPath = settings.VhrPath })
             {
-                fbd.SelectedPath = settings.VhrPath;
-
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
-                    TbVhrPath.Text = fbd.SelectedPath;
+                    try
+                    {
+                        // This call fails for inaccessible paths like optical disk drives
+                        _ = Directory.GetFiles(fbd.SelectedPath);
+
+                        TbVhrPath.Text = fbd.SelectedPath;
+                    }
+                    catch (IOException)
+                    {
+                        MessageBox.Show(Messages.VhrPathInvalid, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }

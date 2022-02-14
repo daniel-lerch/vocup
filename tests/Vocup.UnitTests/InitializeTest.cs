@@ -1,21 +1,20 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.IO;
+﻿using System.IO;
 using Vocup.Forms;
 using Vocup.Models;
+using Xunit;
 
 namespace Vocup.UnitTests
 {
-    [TestClass]
     public class InitializeTest
     {
-        [TestMethod]
+        [Fact]
         public void TestResourceFiles()
         {
-            Assert.IsTrue(File.Exists(Path.Combine("Resources", "easter_egg.vhf")));
-            Assert.IsTrue(File.Exists(Path.Combine("Resources", "help.chm")));
+            Assert.True(File.Exists(Path.Combine("Resources", "easter_egg.vhf")));
+            Assert.True(File.Exists(Path.Combine("Resources", "help.chm")));
         }
 
-        [TestMethod]
+        [Fact]
         public void TestFormConstructors()
         {
             Program.CreateVhfFolder();
