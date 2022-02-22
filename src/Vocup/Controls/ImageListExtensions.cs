@@ -20,8 +20,12 @@ namespace Vocup.Controls
                 Bitmap bitmap = new Bitmap(size.Width, size.Height);
                 using (Graphics g = Graphics.FromImage(bitmap))
                 {
-                    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                    g.SmoothingMode = SmoothingMode.AntiAlias;
+                    // Make sharper edges for integer scaling factors
+                    if (original.ImageSize.Width % size.Width == 0 && original.ImageSize.Height % size.Height == 0)
+                        g.InterpolationMode = InterpolationMode.NearestNeighbor;
+                    else
+                        g.InterpolationMode = InterpolationMode.HighQualityBilinear;
+
                     g.DrawImage(original.Images[i], 0, 0, size.Width, size.Height);
                 }
                 result.Images.Add(bitmap);

@@ -40,6 +40,7 @@
             // 
             // IconImageList
             // 
+            this.IconImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
             this.IconImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("IconImageList.ImageStream")));
             this.IconImageList.TransparentColor = System.Drawing.Color.Transparent;
             this.IconImageList.Images.SetKeyName(0, "folder.png");
@@ -66,8 +67,8 @@
             // 
             // BrowseButton
             // 
-            this.BrowseButton.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.BrowseButton, "BrowseButton");
+            this.BrowseButton.FlatAppearance.BorderSize = 0;
             this.BrowseButton.Name = "BrowseButton";
             this.ToolTip.SetToolTip(this.BrowseButton, resources.GetString("BrowseButton.ToolTip"));
             this.BrowseButton.UseVisualStyleBackColor = true;
