@@ -38,6 +38,8 @@ namespace Vocup
             splash.Show();
             Application.DoEvents();
 
+            SettingsImporter.Run();
+
             if (Settings.Default.StartupCounter == 0)
             {
                 Settings.Default.Upgrade(); // Keep old settings with new version
