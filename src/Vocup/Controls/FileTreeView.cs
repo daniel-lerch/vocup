@@ -27,9 +27,6 @@ namespace Vocup.Controls
         {
             InitializeComponent();
             MainTreeView.PathSeparator = Path.DirectorySeparatorChar.ToString();
-
-            // Since .NET 6.0 ScaleControl is not called at 100% scaling anymore
-            ScaleImageList();
         }
 
         [DefaultValue(typeof(Size), "16,16")]
@@ -125,6 +122,14 @@ namespace Vocup.Controls
             scalingFactor = scalingFactor.Multiply(factor);
             ScaleImageList();
             base.ScaleControl(factor, specified);
+        }
+
+        protected override void OnLayout(LayoutEventArgs e)
+        {
+            // Since .NET 6.0 ScaleControl is not called at 100% scaling anymore
+            if (MainTreeView.ImageList is null && scalingFactor.Width == 1 && scalingFactor.Height == 1)
+                ScaleImageList();
+            base.OnLayout(e);
         }
 
         private void ScaleImageList()

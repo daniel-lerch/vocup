@@ -28,9 +28,6 @@ namespace Vocup.Controls
             MainListView.ListViewItemSorter = new Sorter() { Column = 1, SortOrder = SortOrder.Ascending };
             MainListView.Sorting = SortOrder.Ascending;
             MainListView.ItemSelectionChanged += MainListView_ItemSelectionChanged;
-
-            // Workaround for .NET 6.0 which does not call ScaleControl at 100% scaling
-            ScaleControl(new SizeF(1.0f, 1.0f), BoundsSpecified.None);
         }
 
         public ListView Control => MainListView;
@@ -88,6 +85,14 @@ namespace Vocup.Controls
             ScaleImageList();
 
             base.ScaleControl(factor, specified);
+        }
+
+        protected override void OnLayout(LayoutEventArgs e)
+        {
+            // Since .NET 6.0 ScaleControl is not called at 100% scaling anymore
+            if (MainListView.SmallImageList is null && scalingFactor.Width == 1 && scalingFactor.Height == 1)
+                ScaleImageList();
+            base.OnLayout(e);
         }
 
         private void ScaleImageList()
