@@ -13,44 +13,52 @@ public static class SettingsImporter
     {
         string? currentDirectory = GetSettingsDirectory();
         string? baseDirectory = Path.GetDirectoryName(currentDirectory);
+        string? rootDirectory = Path.GetDirectoryName(baseDirectory);
+
         if (baseDirectory is null)
         {
             Debug.WriteLine("Could not determine current user settings hash directory");
             return;
         }
-        
-        if (!Directory.Exists(baseDirectory))
-        {
-            Version? version = null;
-            FileInfo? settingsFile = null;
 
-            string rootDirectory = Path.GetDirectoryName(baseDirectory)!;
-            foreach (string hashDirectory in Directory.EnumerateDirectories(rootDirectory))
+        try
+        {
+            if (!Directory.Exists(baseDirectory) && Directory.Exists(rootDirectory))
             {
-                foreach (string versionDirectory in Directory.EnumerateDirectories(hashDirectory))
+                Version? version = null;
+                FileInfo? settingsFile = null;
+
+                foreach (string hashDirectory in Directory.EnumerateDirectories(rootDirectory))
                 {
-                    if (Version.TryParse(Path.GetFileName(versionDirectory.AsSpan()), out Version? newVersion))
+                    foreach (string versionDirectory in Directory.EnumerateDirectories(hashDirectory))
                     {
-                        FileInfo fileInfo = new(Path.Combine(versionDirectory, "user.config"));
-                        if (fileInfo.Exists)
+                        if (Version.TryParse(Path.GetFileName(versionDirectory.AsSpan()), out Version? newVersion))
                         {
-                            int cmp = newVersion.CompareTo(version);
-                            if (cmp == 1 || (cmp == 0 && fileInfo.LastWriteTime > settingsFile!.LastWriteTime))
+                            FileInfo fileInfo = new(Path.Combine(versionDirectory, "user.config"));
+                            if (fileInfo.Exists)
                             {
-                                version = newVersion;
-                                settingsFile = fileInfo;
+                                int cmp = newVersion.CompareTo(version);
+                                if (cmp == 1 || (cmp == 0 && fileInfo.LastWriteTime > settingsFile!.LastWriteTime))
+                                {
+                                    version = newVersion;
+                                    settingsFile = fileInfo;
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            if (settingsFile != null)
-            {
-                string restoreDirectory = Path.Combine(baseDirectory, version!.ToString());
-                Directory.CreateDirectory(restoreDirectory);
-                settingsFile.CopyTo(Path.Combine(restoreDirectory, "user.config"));
+                if (settingsFile is not null)
+                {
+                    string restoreDirectory = Path.Combine(baseDirectory, version!.ToString());
+                    Directory.CreateDirectory(restoreDirectory);
+                    settingsFile.CopyTo(Path.Combine(restoreDirectory, "user.config"));
+                }
             }
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine(ex);
         }
     }
 
