@@ -234,7 +234,7 @@ namespace Vocup
 
             if (!e.Cancel)
             {
-                TrackingService.Action("App/Close");
+                // Tracking is done in Program.cs because starting tasks while the scheduler is shutting down does not work
                 StoreSettings();
             }
         }

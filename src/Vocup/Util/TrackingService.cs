@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using Vocup.Properties;
 
 namespace Vocup.Util
 {
     public static class TrackingService
     {
-        private static string userAgent;
+        private static readonly string userAgent;
 
         static TrackingService()
         {
@@ -24,14 +25,27 @@ namespace Vocup.Util
             userAgent = $"Vocup/{AppInfo.GetVersion(3)} (Windows NT {Environment.OSVersion.Version}; {processArch}; {osArch}; {AppInfo.GetDeployment()})";
         }
 
-        public static async void Action(string actionName)
+        public static void Action(string actionName)
         {
             if (Settings.Default.DisableInternetServices) return;
 
+            _ = SendAction(actionName);
+        }
+
+        public static Task ActionAsync(string actionName)
+        {
+            if (Settings.Default.DisableInternetServices) return Task.CompletedTask;
+
+            return SendAction(actionName);
+        }
+
+        private static async Task SendAction(string actionName)
+        {
             try
             {
                 using var httpClient = new HttpClient();
                 httpClient.DefaultRequestHeaders.UserAgent.ParseAdd(userAgent);
+                httpClient.Timeout = TimeSpan.FromSeconds(10);
                 var query = new Dictionary<string, string>()
                 {
                     ["idsite"] = "1",
@@ -53,7 +67,7 @@ namespace Vocup.Util
             }
             catch (Exception e)
             {
-                Debug.WriteLine(e.Message);
+                Debug.WriteLine(e);
             }
         }
     }

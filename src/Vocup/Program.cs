@@ -101,6 +101,8 @@ namespace Vocup
 
             splash.Close();
             Application.Run(form);
+
+            TrackingService.ActionAsync("App/Close").GetAwaiter().GetResult();
         }
 
         public static void ReleaseMutex()
