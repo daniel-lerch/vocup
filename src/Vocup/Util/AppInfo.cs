@@ -58,6 +58,14 @@ namespace Vocup.Util
         });
         public static bool IsWindowsInstallation => isInstallation.Value;
 
+        private static readonly Lazy<bool> isWine = new Lazy<bool>(() =>
+        {
+            using RegistryKey hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
+            using RegistryKey wine = hklm.OpenSubKey(@"SOFTWARE\Wine", writable: false);
+            return wine is not null;
+        });
+        public static bool IsWine => isWine.Value;
+
 
         public static string GetDeployment()
         {
