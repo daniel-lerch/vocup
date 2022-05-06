@@ -2,6 +2,13 @@
 
 <p>Current count: @currentCount</p>
 
+<form>
+    @for (int i = 0; i < currentCount; i++)
+    {
+    <input type="text" />        
+    }
+</form>
+
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
