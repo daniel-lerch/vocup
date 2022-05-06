@@ -1,0 +1,31 @@
+﻿<div class="my-component">
+    This component is defined in the <strong>Vocup.Razor</strong> library.
+
+    <p>Counter: @inputs.Count</p>
+
+    @for (int i = 0; i < inputs.Count; i++)
+    {
+        <p>@inputs[i]</p>
+    }
+    <p>@text</p>
+
+    <form>
+        @for (int i = 0; i < inputs.Count; i++)
+        {
+            <input type="text" @bind-value="inputs[i]" />
+        }
+        <input type="text" @bind-value="text" @bind-value:event="oninput" />
+    </form>
+
+    <button type="button" @onclick="Increment">Increment</button>
+</div>
+
+@code {
+    string text = string.Empty;
+    List<string> inputs = new();
+
+    void Increment()
+    {
+        inputs.Add(string.Empty);
+    }
+}

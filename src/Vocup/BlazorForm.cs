@@ -14,7 +14,7 @@ namespace Vocup
             services.AddWindowsFormsBlazorWebView();
             blazorWebView1.HostPage = "wwwroot\\index.html";
             blazorWebView1.Services = services.BuildServiceProvider();
-            blazorWebView1.RootComponents.Add<Counter>("#app");
+            blazorWebView1.RootComponents.Add<Razor.Component1>("#app");
         }
 
         private void button1_Click(object sender, System.EventArgs e)

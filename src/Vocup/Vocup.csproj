@@ -25,6 +25,9 @@
     <PackageReference Include="PInvoke.User32" Version="0.7.104" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Vocup.Razor\Vocup.Razor.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <None Update="Resources\easter_egg.vhf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
