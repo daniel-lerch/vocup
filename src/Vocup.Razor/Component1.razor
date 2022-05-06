@@ -1,4 +1,6 @@
-﻿<div class="my-component">
+﻿@using Microsoft.Fast.Components.FluentUI
+
+<div class="my-component">
     This component is defined in the <strong>Vocup.Razor</strong> library.
 
     <p>Counter: @inputs.Count</p>
@@ -8,6 +10,10 @@
         <p>@inputs[i]</p>
     }
     <p>@text</p>
+
+    <FluentButton Appearance="@Appearance.Accent">Click Me</FluentButton>
+
+    <FluentTextArea>Mother tongue</FluentTextArea>
 
     <form>
         @for (int i = 0; i < inputs.Count; i++)
