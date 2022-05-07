@@ -1,17 +1,17 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using Vocup.IO;
 using Vocup.Models;
+using Xunit;
 
 namespace Vocup.Core.UnitTests
 {
     public static class BookAssert
     {
-        public static void AreEqual(Book expected, Book actual)
+        public static void Equal(Book expected, Book actual)
         {
-            Assert.AreEqual(expected.MotherTongue, actual.MotherTongue);
-            Assert.AreEqual(expected.ForeignLanguage, actual.ForeignLanguage);
-            Assert.AreEqual(expected.Words.Count, actual.Words.Count);
+            Assert.Equal(expected.MotherTongue, actual.MotherTongue);
+            Assert.Equal(expected.ForeignLanguage, actual.ForeignLanguage);
+            Assert.Equal(expected.Words.Count, actual.Words.Count);
 
             for (int i = 0; i < expected.Words.Count; i++)
             {
@@ -21,9 +21,9 @@ namespace Vocup.Core.UnitTests
 
         public static void WordsEqual(Word expected, Word actual, BookFileFormat fileFormat)
         {
-            Assert.AreEqual(expected.MotherTongue.Count, actual.MotherTongue.Count);
-            Assert.AreEqual(expected.ForeignLanguage.Count, actual.ForeignLanguage.Count);
-            Assert.AreEqual(expected.CreationDate, actual.CreationDate);
+            Assert.Equal(expected.MotherTongue.Count, actual.MotherTongue.Count);
+            Assert.Equal(expected.ForeignLanguage.Count, actual.ForeignLanguage.Count);
+            Assert.Equal(expected.CreationDate, actual.CreationDate);
 
             for (int i = 0; i < expected.MotherTongue.Count; i++)
             {
@@ -38,9 +38,9 @@ namespace Vocup.Core.UnitTests
 
         public static void SynonymsEqual(Synonym expected, Synonym actual, BookFileFormat fileFormat)
         {
-            Assert.AreEqual(expected.Value, actual.Value);
-            CollectionAssert.AreEqual(expected.Flags, actual.Flags);
-            Assert.AreEqual(expected.Practices.Count, actual.Practices.Count);
+            Assert.Equal(expected.Value, actual.Value);
+            Assert.Equal(expected.Flags, actual.Flags);
+            Assert.Equal(expected.Practices.Count, actual.Practices.Count);
 
             for (int i = 0; i < expected.Practices.Count; i++)
             {
@@ -50,17 +50,17 @@ namespace Vocup.Core.UnitTests
 
         public static void PracticesEqual(Practice expected, Practice actual, BookFileFormat fileFormat)
         {
-            Assert.AreEqual(expected.Result, actual.Result);
+            Assert.Equal(expected.Result, actual.Result);
             if (fileFormat == BookFileFormat.Vhf_1_0)
             {
                 var expectedDate = new DateTime(expected.Date.Year, expected.Date.Month, expected.Date.Day, expected.Date.Hour, expected.Date.Minute, 0);
                 var actualDate = new DateTime(actual.Date.Year, actual.Date.Month, actual.Date.Day, actual.Date.Hour, actual.Date.Minute, 0);
 
-                Assert.AreEqual(expectedDate, actualDate);
+                Assert.Equal(expectedDate, actualDate);
             }
             else
             {
-                Assert.AreEqual(expected.Date, actual.Date);
+                Assert.Equal(expected.Date, actual.Date);
             }
         }
     }

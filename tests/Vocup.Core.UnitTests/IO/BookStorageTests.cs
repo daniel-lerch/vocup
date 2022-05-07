@@ -1,49 +1,48 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Vocup.IO;
 using Vocup.Models;
+using Xunit;
 
 namespace Vocup.Core.UnitTests.IO
 {
-    [TestClass]
     public class BookStorageTests
     {
         private readonly BookStorage bookStorage = new BookStorage();
         private readonly string tempPath = Path.GetTempPath();
 
-        [TestMethod]
+        [Fact]
         public async Task TestReadVhf1()
         {
             var storage = new BookStorage();
             Book book = await storage.ReadBookAsync(Path.Join("Resources", "Year 11.vhf"), "Resources").ConfigureAwait(false);
 
-            Assert.AreEqual(BookFileFormat.Vhf_1_0, book.Serializer!.FileFormat);
-            Assert.AreEqual("Deutsch", book.MotherTongue);
-            Assert.AreEqual("Englisch", book.ForeignLanguage);
-            Assert.AreEqual(PracticeMode.AskForForeignLanguage, book.PracticeMode);
-            Assert.AreEqual(113, book.Words.Count);
-            Assert.IsTrue(book.Words.Any(word => word.ForeignLanguage.Any(synonym => synonym.Practices.Count > 0)));
+            Assert.Equal(BookFileFormat.Vhf_1_0, book.Serializer!.FileFormat);
+            Assert.Equal("Deutsch", book.MotherTongue);
+            Assert.Equal("Englisch", book.ForeignLanguage);
+            Assert.Equal(PracticeMode.AskForForeignLanguage, book.PracticeMode);
+            Assert.Equal(113, book.Words.Count);
+            Assert.Contains(book.Words, word => word.ForeignLanguage.Any(synonym => synonym.Practices.Count > 0));
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestReadVhf2()
         {
             Book book = await new BookStorage().ReadBookAsync(Path.Join("Resources", "Year 12.vhf"), tempPath).ConfigureAwait(false);
 
-            Assert.AreEqual(BookFileFormat.Vhf_2_0, book.Serializer!.FileFormat);
-            Assert.AreEqual("Deutsch", book.MotherTongue);
-            Assert.AreEqual("Englisch", book.ForeignLanguage);
-            Assert.AreEqual(PracticeMode.AskForForeignLanguage, book.PracticeMode);
-            Assert.AreEqual(1, book.Words.Count);
-            Assert.AreEqual(2, book.Words[0].MotherTongue.Count);
-            Assert.AreEqual(2, book.Words[0].ForeignLanguage.Count);
+            Assert.Equal(BookFileFormat.Vhf_2_0, book.Serializer!.FileFormat);
+            Assert.Equal("Deutsch", book.MotherTongue);
+            Assert.Equal("Englisch", book.ForeignLanguage);
+            Assert.Equal(PracticeMode.AskForForeignLanguage, book.PracticeMode);
+            Assert.Single(book.Words);
+            Assert.Equal(2, book.Words[0].MotherTongue.Count);
+            Assert.Equal(2, book.Words[0].ForeignLanguage.Count);
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestWriteReadVhf1()
         {
             Book sample = GenerateSampleBook(BookFileFormat.Vhf_1_0);
@@ -55,11 +54,11 @@ namespace Vocup.Core.UnitTests.IO
             Book book = await storage.ReadBookAsync(path, tempPath).ConfigureAwait(false);
             File.Delete(path);
             File.Delete(Path.Combine(Path.GetTempPath(), "o5xqm7rdg6y9fecs9ykuuckv.vhr"));
-            Assert.AreEqual(BookFileFormat.Vhf_1_0, book.Serializer!.FileFormat);
-            BookAssert.AreEqual(sample, book);
+            Assert.Equal(BookFileFormat.Vhf_1_0, book.Serializer!.FileFormat);
+            BookAssert.Equal(sample, book);
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestWriteReadVhf2()
         {
             Book sample = GenerateSampleBook(BookFileFormat.Vhf_2_0);
@@ -69,8 +68,8 @@ namespace Vocup.Core.UnitTests.IO
 
             Book book = await storage.ReadBookAsync(path, tempPath).ConfigureAwait(false);
             File.Delete(path);
-            Assert.AreEqual(BookFileFormat.Vhf_2_0, book.Serializer!.FileFormat);
-            BookAssert.AreEqual(sample, book);
+            Assert.Equal(BookFileFormat.Vhf_2_0, book.Serializer!.FileFormat);
+            BookAssert.Equal(sample, book);
         }
 
         private Book GenerateSampleBook(BookFileFormat fileFormat)
