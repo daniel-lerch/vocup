@@ -1,0 +1,30 @@
+﻿@using Microsoft.Fast.Components.FluentUI
+
+<div class="my-component">
+    This component is defined in the <strong>Vocup.Razor</strong> library.
+
+    <form @onsubmit="Continue">
+        <FluentTextField Value="@motherTongue" Disabled="true">Mother tongue</FluentTextField>
+        <FluentTextField @ref="_foreignLang" @bind-Value="foreignLang">Mother tongue</FluentTextField>
+        <FluentTextField @bind-Value="foreignLangSynonym">Mother tongue</FluentTextField>
+
+        <FluentButton Appearance="@Appearance.Accent" type="submit">Continue</FluentButton>
+        <FluentButton Appearance="@Appearance.Outline" type="button" @onclick="cancel">Cancel</FluentButton>
+    </form>
+</div>
+
+@inject Action cancel; 
+
+@code {
+    FluentTextField _foreignLang;
+    string motherTongue = "Schiff, Boot";
+    string foreignLang = string.Empty;
+    string foreignLangSynonym = string.Empty;
+
+    async void Continue()
+    {
+        await _foreignLang.Element.FocusAsync();
+        foreignLang = string.Empty;
+        foreignLangSynonym = string.Empty;
+    }
+}
