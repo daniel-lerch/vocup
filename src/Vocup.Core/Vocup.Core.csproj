@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ReactiveUI" Version="16.2.6" />
+    <PackageReference Include="ReactiveUI" Version="18.0.10" />
     <PackageReference Include="System.Reactive" Version="5.0.0" />
-    <PackageReference Include="System.Text.Json" Version="5.0.2" />
+    <PackageReference Include="System.Text.Json" Version="6.0.3" />
   </ItemGroup>
 
 </Project>
