@@ -25,7 +25,12 @@ namespace Vocup
             // Prevents the installer from executing while the program is running
             mutex = new Mutex(initiallyOwned: true, AppInfo.ProductName, out bool createdNew);
 
-            ApplicationConfiguration.Initialize();
+            //ApplicationConfiguration.Initialize();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
+            Application.SetDefaultFont(new System.Drawing.Font("Microsoft Sans Serif", 8.25f));
+            Application.Run(new PracticeDialog2());
 
             if (!createdNew)
             {
