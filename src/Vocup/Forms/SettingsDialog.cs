@@ -42,13 +42,8 @@ namespace Vocup.Forms
 
             // Evaluation
             CbManualCheck.Checked = settings.UserEvaluates;
-            CbPracticeResult.Checked = settings.PracticeShowResultList;
+            CbShowPracticeResult.Checked = settings.PracticeShowResultList;
             CbOptionalExpressions.Checked = settings.EvaluateOptionalExpressions;
-            switch (settings.PracticeGradeCulture)
-            {
-                case "de-CH": CbEvaluationSystem.SelectedIndex = 1; break;
-                default: CbEvaluationSystem.SelectedIndex = 0; break; // de-DE
-            }
 
             // Partly correct configuration
             CbTolerateWhiteSpace.Checked = settings.EvaluateTolerateWhiteSpace;
@@ -100,13 +95,8 @@ namespace Vocup.Forms
 
             // Evaluation
             settings.UserEvaluates = CbManualCheck.Checked;
-            settings.PracticeShowResultList = CbPracticeResult.Checked;
+            settings.PracticeShowResultList = CbShowPracticeResult.Checked;
             settings.EvaluateOptionalExpressions = CbOptionalExpressions.Checked;
-            switch (CbEvaluationSystem.SelectedIndex)
-            {
-                case 1: settings.PracticeGradeCulture = "de-CH"; break;
-                default: settings.PracticeGradeCulture = "de-DE"; break;
-            }
 
             // Partly correct configuration
             settings.EvaluateTolerateWhiteSpace = CbTolerateWhiteSpace.Checked;
@@ -169,11 +159,6 @@ namespace Vocup.Forms
         {
             LbCorrectlyPracticed.Text = TrbWrongRight.Value * 10 + "%";
             LbWronglyPracticed.Text = (10 - TrbUnknown.Value - TrbWrongRight.Value) * 10 + "%";
-        }
-
-        private void CbPracticeResult_CheckedChanged(object sender, EventArgs e)
-        {
-            CbEvaluationSystem.Enabled = CbPracticeResult.Checked;
         }
 
         private void BtnVhfPath_Click(object sender, EventArgs e)

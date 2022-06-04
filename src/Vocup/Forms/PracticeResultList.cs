@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Vocup.Models;
 using Vocup.Properties;
@@ -113,42 +112,21 @@ namespace Vocup.Forms
         {
             if (notPracticed == practiceList.Count)
             {
-                TbGrade.Text = "-";
                 TbPercentage.Text = "-";
             }
             else // Calculate percentage and grade
             {
-                decimal grade;
-                if (Settings.Default.PracticeGradeCulture == "de-DE")
+                double correctRatio = (correct + 0.5 * partlyCorrect) / (practiceList.Count - notPracticed);
+
+                TbPercentage.BackColor = correctRatio switch
                 {
-                    grade = 7M - Math.Round(((correct + partlyCorrect / 2M) * 5M / (practiceList.Count - notPracticed)) + 1, 1);
+                    // Steps taken from https://de.wikipedia.org/wiki/Vorlage:Punktesystem_der_gymnasialen_Oberstufe
+                    >= 0.70 => Color.FromArgb(144, 238, 144), // at least 70% -> green background
+                    >= 0.45 => Color.FromArgb(255, 215, 0), // at least 45% -> yellow background
+                    _ => Color.FromArgb(255, 192, 203) // less than 45% -> red background
+                };
 
-                    //Hintergrundfarbe bestimmen
-                    if (grade > 3)
-                        TbGrade.BackColor = Color.FromArgb(255, 192, 203);
-                    else if (grade > 2)
-                        TbGrade.BackColor = Color.FromArgb(255, 215, 0);
-                    else
-                        TbGrade.BackColor = Color.FromArgb(144, 238, 144);
-                }
-                else
-                {
-                    grade = Math.Round(((correct + partlyCorrect / 2M) * 5M / (practiceList.Count - notPracticed)) + 1, 1);
-
-                    //Hintergrundfarbe bestimmen
-                    if (grade < 4)
-                        TbGrade.BackColor = Color.FromArgb(255, 192, 203);
-                    else if (grade < 5)
-                        TbGrade.BackColor = Color.FromArgb(255, 215, 0);
-                    else
-                        TbGrade.BackColor = Color.FromArgb(144, 238, 144);
-                }
-
-                //Prozent berechnen
-                TbPercentage.Text = Math.Round((correct + partlyCorrect / 2M) / (practiceList.Count - notPracticed) * 100M) + "%";
-
-                //Note anzeigen
-                TbGrade.Text = grade.ToString();
+                TbPercentage.Text = Math.Round(correctRatio * 100) + "%";
             }
         }
     }

@@ -138,9 +138,6 @@
   <data name="label4.Text" xml:space="preserve">
     <value>Richtig übersetzt</value>
   </data>
-  <data name="LbGrade.Text" xml:space="preserve">
-    <value>Note:</value>
-  </data>
   <data name="LbPercentage.Text" xml:space="preserve">
     <value>Prozent:</value>
   </data>
