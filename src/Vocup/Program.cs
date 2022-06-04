@@ -16,6 +16,8 @@ namespace Vocup
     {
         private static Mutex mutex;
 
+        public static Settings2.VocupSettings Settings2 { get; }
+
         /// <summary>
         /// The main entry-point for the application.
         /// </summary>
