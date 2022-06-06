@@ -1,11 +1,54 @@
-﻿using System;
+﻿using LostTech.App.DataBinding;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 #nullable enable
 
 namespace Vocup.Settings2
 {
-    public class VocupSettings : SettingsBase
+    public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
     {
+        public VocupSettings() { }
+
+        public VocupSettings Copy()
+        {
+            return new VocupSettings
+            {
+                GridLines = GridLines,
+                LastFile = LastFile,
+                StartScreen = StartScreen,
+                AutoSave = AutoSave,
+                DisableInternetServices = DisableInternetServices,
+                LastInternetConnection = LastInternetConnection,
+                VhfPath = VhfPath,
+                VhrPath = VhrPath,
+                StartupCounter = StartupCounter,
+                ColumnResize = ColumnResize,
+                OverrideCulture = OverrideCulture,
+                PracticePercentageUnpracticed = PracticePercentageUnpracticed,
+                PracticePercentageCorrect = PracticePercentageCorrect,
+                PracticePercentageWrong = PracticePercentageWrong,
+                MaxPracticeCount = MaxPracticeCount,
+                PracticeHighlightInput = PracticeHighlightInput,
+                UserEvaluates = UserEvaluates,
+                PracticeFastContinue = PracticeFastContinue,
+                PracticeSoundFeedback = PracticeSoundFeedback,
+                PracticeShowResultList = PracticeShowResultList,
+                EvaluateOptionalExpressions = EvaluateOptionalExpressions,
+                EvaluateTolerateNoSynonym = EvaluateTolerateNoSynonym,
+                EvaluateTolerateWhiteSpace = EvaluateTolerateWhiteSpace,
+                EvaluateToleratePunctuationMark = EvaluateToleratePunctuationMark,
+                EvaluateTolerateSpecialChar = EvaluateTolerateSpecialChar,
+                EvaluateTolerateArticle = EvaluateTolerateArticle,
+                MainFormBounds = MainFormBounds,
+                MainFormWindowState = MainFormWindowState,
+                MainFormSplitterDistance = MainFormSplitterDistance,
+                SpecialCharTab = SpecialCharTab,
+                Version = Version
+            };
+        }
+
         private bool _gridLines = true;
         public bool GridLines
         {
@@ -126,11 +169,11 @@ namespace Vocup.Settings2
         }
 
 
-        private bool _practiceHightlightInput = true;
+        private bool _practiceHighlightInput = true;
         public bool PracticeHighlightInput
         {
-            get => _practiceHightlightInput;
-            set => RaiseAndSetIfChanged(ref _practiceHightlightInput, value);
+            get => _practiceHighlightInput;
+            set => RaiseAndSetIfChanged(ref _practiceHighlightInput, value);
         }
 
 
@@ -216,16 +259,16 @@ namespace Vocup.Settings2
         #endregion
 
         #region UI state
-        private System.Drawing.Rectangle _mainFormBounds;
-        public System.Drawing.Rectangle MainFormBounds
+        private Rectangle _mainFormBounds;
+        public Rectangle MainFormBounds
         {
             get => _mainFormBounds;
             set => RaiseAndSetIfChanged(ref _mainFormBounds, value);
         }
 
 
-        private System.Windows.Forms.FormWindowState _mainFormWindowState;
-        public System.Windows.Forms.FormWindowState MainFormWindowState
+        private FormWindowState _mainFormWindowState;
+        public FormWindowState MainFormWindowState
         {
             get => _mainFormWindowState;
             set => RaiseAndSetIfChanged(ref _mainFormWindowState, value);
@@ -240,7 +283,7 @@ namespace Vocup.Settings2
         }
 
 
-        private string _specialCharTab;
+        private string _specialCharTab = "de";
         public string SpecialCharTab
         {
             get => _specialCharTab;
