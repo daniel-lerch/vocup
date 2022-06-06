@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -25,7 +26,11 @@ namespace Vocup
             // Prevents the installer from executing while the program is running
             mutex = new Mutex(initiallyOwned: true, AppInfo.ProductName, out bool createdNew);
 
-            ApplicationConfiguration.Initialize();
+            // ApplicationConfiguration.Initialize() does not handle PerMonitorV2 correctly.
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
+            Application.SetDefaultFont(new Font("Microsoft Sans Serif", 8.25f));
 
             if (!createdNew)
             {

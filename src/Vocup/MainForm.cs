@@ -139,23 +139,28 @@ namespace Vocup
         /// </summary>
         private void StoreSettings()
         {
-            switch (WindowState)
+            Rectangle bounds = WindowState switch
             {
-                case FormWindowState.Normal:
-                    Settings.Default.MainFormBounds = Bounds;
-                    break;
+                FormWindowState.Normal => Bounds,
+                FormWindowState.Maximized => RestoreBounds,
+                FormWindowState.Minimized => RestoreBounds,
+                _ => throw new ArgumentException($"Unknown FormWindowState {WindowState}")
+            };
 
-                case FormWindowState.Maximized:
-                case FormWindowState.Minimized:
-                    Settings.Default.MainFormBounds = RestoreBounds;
-                    break;
-            }
+            Rectangle logicalBounds = new(bounds.Location, bounds.Size.Multiply(96f / DeviceDpi).Round());
+
+            Settings.Default.MainFormBounds = logicalBounds;
 
             Settings.Default.MainFormWindowState = WindowState;
 
             Settings.Default.MainFormSplitterDistance = SplitContainer.SplitterDistance;
 
             Settings.Default.Save();
+        }
+
+        protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
+        {
+            base.ScaleControl(factor, specified);
         }
 
         /// <summary>

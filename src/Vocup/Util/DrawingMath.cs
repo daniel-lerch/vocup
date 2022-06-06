@@ -10,14 +10,14 @@ namespace Vocup.Util
             return new SizeF(first.Width * other.Width, first.Height * other.Height);
         }
 
-        public static SizeF Multiply(this SizeF first, Size other)
+        public static SizeF Multiply(this Size first, SizeF other)
         {
             return new SizeF(first.Width * other.Width, first.Height * other.Height);
         }
 
-        public static SizeF Multiply(this Size first, SizeF other)
+        public static SizeF Multiply(this Size first, float other)
         {
-            return new SizeF(first.Width * other.Width, first.Height * other.Height);
+            return new SizeF(first.Width * other, first.Height * other);
         }
 
         public static Size Round(this SizeF size)

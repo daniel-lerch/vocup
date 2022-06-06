@@ -1,64 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -175,35 +115,7 @@
   <metadata name="MenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 0</value>
   </metadata>
-  <data name="MenuStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="MenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>784, 24</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="MenuStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip.Name" xml:space="preserve">
-    <value>MenuStrip</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveMenuStrip, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;MenuStrip.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="TsmiRootFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="TsmiRootFile.Text" xml:space="preserve">
-    <value>File</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TsmiCreateBook.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Control+N</value>
   </data>
@@ -222,6 +134,7 @@
   <data name="TsmiOpenBook.Text" xml:space="preserve">
     <value>Open vocabulary book...</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TsmiCloseBook.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -333,11 +246,11 @@
   <data name="TsmiExitApplication.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="TsmiRootEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 20</value>
+  <data name="TsmiRootFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
   </data>
-  <data name="TsmiRootEdit.Text" xml:space="preserve">
-    <value>Edit</value>
+  <data name="TsmiRootFile.Text" xml:space="preserve">
+    <value>File</value>
   </data>
   <data name="TsmiAddWord.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -375,14 +288,11 @@
   <data name="TsmiDeleteWord.Text" xml:space="preserve">
     <value>Delete word</value>
   </data>
-  <data name="TsmiRootTools.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Control+Shift+O</value>
+  <data name="TsmiRootEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 20</value>
   </data>
-  <data name="TsmiRootTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 20</value>
-  </data>
-  <data name="TsmiRootTools.Text" xml:space="preserve">
-    <value>Tools</value>
+  <data name="TsmiRootEdit.Text" xml:space="preserve">
+    <value>Edit</value>
   </data>
   <data name="TsmiPractice.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -435,11 +345,14 @@
   <data name="TsmiSettings.Text" xml:space="preserve">
     <value>Settings</value>
   </data>
-  <data name="TsmiRootHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
+  <data name="TsmiRootTools.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Control+Shift+O</value>
   </data>
-  <data name="TsmiRootHelp.Text" xml:space="preserve">
-    <value>Help</value>
+  <data name="TsmiRootTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 20</value>
+  </data>
+  <data name="TsmiRootTools.Text" xml:space="preserve">
+    <value>Tools</value>
   </data>
   <data name="TsmiHelp.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F1</value>
@@ -477,6 +390,33 @@
   <data name="TsmiAbout.Text" xml:space="preserve">
     <value>About Vocup</value>
   </data>
+  <data name="TsmiRootHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="TsmiRootHelp.Text" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="MenuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="MenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>784, 24</value>
+  </data>
+  <data name="MenuStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip.Name" xml:space="preserve">
+    <value>MenuStrip</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip.Type" xml:space="preserve">
+    <value>Vocup.Controls.ResponsiveMenuStrip, Vocup, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MenuStrip.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="TbSearchWord.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 43</value>
   </data>
@@ -490,7 +430,7 @@
     <value>TbSearchWord</value>
   </data>
   <data name="&gt;&gt;TbSearchWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbSearchWord.Parent" xml:space="preserve">
     <value>GroupSearch</value>
@@ -498,11 +438,44 @@
   <data name="&gt;&gt;TbSearchWord.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="BtnBookSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wQAADsEBuJFr7QAAAi5JREFUOE+Nkt1PUmEcx7noX+m6izavvOjG8qJLvWiNzRO1tRVrAkWDjDkgZHPY
+        kpfly0kXkZ3yJdwMGaE4g2ODASfsQLDhMJsVRDPTWOG353gexyqpPtv34nfO8/mec57zKA7Q97PnDI5x
+        9nLPAKs2NSLNBsc99qp96AZdejgai5ubjOXxXNxAQGhEmj1TEVjuPsEVs9tFl/+JusfBhsQPKNaB7NdG
+        ij8A1+QCwtEEuCCP80bHIFV+RXpd6YmSlK40kt0GBnzzEMQ8JCYCUah7nbdNJtMRqso0K8iR+c5EEHb3
+        fTz0h8Byc7g56IPW6uygqkyzgsxnkH3YhG9BwAOSxy8yGPYvw+rxXqCqTLOCVBlY3WrsyZtdUlr+jsXK
+        TidVZZoV/B6BlAmbu4hqdeFoS4uB6v9XIJDPSZP7EYMeubZ2VJVKUP3fBftydQ+L83bkORWKqrNItJ3a
+        ovrfCw7k8OwtrPMaoOZFcqTz/ezxYyeo3rxAklP7sgXrKxrUK6N4HVRjZsZ8iaoyhxUIn6TUEJmz4e1L
+        HerlEfBTXUiKCfBre0qqyqhN8lFeI0dZJKdPqJLfR8qe+Z2Iedvx7Z0LK9Nd4HNp5Mn1pWSGoaqM1ubh
+        xgJxeENxPIq8QrZaR6r0EeO2DoSHToPnziAlxpHfATZqwLJQuEhVGWP/aOu1vmGG6TYz1/tcTEwsMTpj
+        79Nu1ckvHn3r2LTXqooVtpmlhMgIpTITWy0cVSgUip80NIJ4dpgmBgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="BtnBookSettings.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="BtnBookSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="BtnBookSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 50</value>
+  </data>
+  <data name="BtnBookSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 23</value>
+  </data>
+  <data name="BtnBookSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="BtnBookSettings.Text" xml:space="preserve">
+    <value>Options</value>
+  </data>
   <data name="&gt;&gt;BtnBookSettings.Name" xml:space="preserve">
     <value>BtnBookSettings</value>
   </data>
   <data name="&gt;&gt;BtnBookSettings.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnBookSettings.Parent" xml:space="preserve">
     <value>GroupBook</value>
@@ -510,11 +483,43 @@
   <data name="&gt;&gt;BtnBookSettings.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="BtnPractice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wQAADsEBuJFr7QAAAfdJREFUOE+V0V1IU2Ecx/FDQTeFN915X1A35oUo3XSh1lCnq700LyIsKfAmQgRB
+        bDGtidl2toU1s+Vbu5i9UO34sjW3DnOyI+pKIqfuwuHUEJ3Hl7YF9ushni6izlofODf/832eh/McJhOv
+        qawhaCm2e9plP58xc5U91K3p5x+qTtJEmlt/6tiM4zq+xXkkIyySUSN2p27BZ6laGTLLcmgmbeRuEbsd
+        GQLwFdh7BqSfI+a5ieE7JRqaSHvZmHt0vKs6gbRIFnuAnQGkoizeGeVhnY45QDNpI/qC+vWpPnL6DrD5
+        FBAdWHxbB661WEkTaU41c8hnrYzu764CqQmyRx+SCya4O8rHaJLZsD5PE/PfJ6engK0B7G/0Iuy4jFHD
+        uVCwS/Vk3KbqCVi1uTT/k5ctn8BenGwwT76/H9/X7YhP6rD5wYAV1zX4LQqT06k+SPPf+Vh5RfRFLb4I
+        NqwFmhFx1WFZYMlmyxCn9fAaK5w0/Tv+kbLwY6/2Cnc7v8bVcuYS13L609aSgPSqQBaXzI7eKz1M038z
+        y5ic8GB9AuIcQt3VCU5XcJy+yo6no7RNnO3B59cNeNOcL6fj7PgeqI8EbBfXlrgb5PedbaLj7L23XLga
+        e1UDv7Uy86VJ4TuVi8Jjzfx/XdovfOd5bdCmgtukOEFHGTDMD1QRF/KqcUbLAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="BtnPractice.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="BtnPractice.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="BtnPractice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 21</value>
+  </data>
+  <data name="BtnPractice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 23</value>
+  </data>
+  <data name="BtnPractice.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="BtnPractice.Text" xml:space="preserve">
+    <value>Practice</value>
+  </data>
   <data name="&gt;&gt;BtnPractice.Name" xml:space="preserve">
     <value>BtnPractice</value>
   </data>
   <data name="&gt;&gt;BtnPractice.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnPractice.Parent" xml:space="preserve">
     <value>GroupBook</value>
@@ -541,7 +546,7 @@
     <value>GroupBook</value>
   </data>
   <data name="&gt;&gt;GroupBook.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupBook.Parent" xml:space="preserve">
     <value>SideBar</value>
@@ -549,102 +554,47 @@
   <data name="&gt;&gt;GroupBook.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="BtnBookSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnSearchWord.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BtnSearchWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIuSURBVDhPjZLdT1JhHMe56F/puos2r7zoxvKiS71ojc0T
-        tbUVawJFg4w5IGRz2JKX5ctJF5Gd8iXcDBmhOINjgwEn7ECw4TCbFUQz01jht+d4HscqqT7b9+J3zvP5
-        nnOe8ygO0Pez5wyOcfZyzwCrNjUizQbHPfaqfegGXXo4Goubm4zl8VzcQEBoRJo9UxFY7j7BFbPbRZf/
-        ibrHwYbEDyjWgezXRoo/ANfkAsLRBLggj/NGxyBVfkV6XemJkpSuNJLdBgZ88xDEPCQmAlGoe523TSbT
-        EarKNCvIkfnORBB293089IfAcnO4OeiD1ursoKpMs4LMZ5B92IRvQcADkscvMhj2L8Pq8V6gqkyzglQZ
-        WN1q7MmbXVJa/o7Fyk4nVWWaFfwegZQJm7uIanXhaEuLger/VyCQz0mT+xGDHrm2dlSVSlD93wX7cnUP
-        i/N25DkViqqzSLSd2qL63wsO5PDsLazzGqDmRXKk8/3s8WMnqN68QJJT+7IF6ysa1CujeB1UY2bGfImq
-        MocVCJ+k1BCZs+HtSx3q5RHwU11Iignwa3tKqsqoTfJRXiNHWSSnT6iS30fKnvmdiHnb8e2dCyvTXeBz
-        aeTJ9aVkhqGqjNbm4cYCcXhDcTyKvEK2Wkeq9BHjtg6Eh06D584gJcaR3wE2asCyULhIVRlj/2jrtb5h
-        huk2M9f7XExMLDE6Y+/TbtXJLx5969i016qKFbaZpYTICKUyE1stHFUoFIqfNDSCeHaYJgYAAAAASUVO
-        RK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wQAADsEBuJFr7QAAAhJJREFUOE9jwAdCQ0PZsqr6/PMaJnXn1k+cB8QNGZV9tlBp/CCrusemrGvOpenr
+        DvzfdObu/52Xn/5fd/zm/95FW/4XtU7bUlDVJwlVigkyq3usaict/rb72ov/1z///3/jKwTfBOIrH/7/
+        X3/i9v+S9hnXcysnikK1IEB8fT1HUevUG3uuvfx/+/v//5fe/f9/8S0CXwYacAsovvrI9f+5dRPmQ7Uh
+        QFpld9CM9QfBNqNrhuErH///P//qz/+6SUt+QbUhQE5174TNZx6AnYtNMwxf//L//5xNR/9DtSFATm3/
+        gp2Xn4H9jE0jDN8AGrBk9zlMA7Kqe1vWH7+N3wVAr10DenHamv2YBqSV99h0L9gEDu3L77FoBmJQ+Jx8
+        +v1/Rffct1BtqCC3vn/XqsPXwKENCjB0zVeBYnO2HP+fVdtXBdWCAKWds2yreuc/rp245P/y/ZeAof0T
+        HGCgMLn2CWTzl/9zgZqBqXN1aOgqZqg2CKhom+FRM2Hhl/a5G/6Xds5ckF3XP7lp2vLPszcd+b9kzzmg
+        n/f9r5mw6FlO/QRMm8s6ZgQBNf/smLfxf0XXnJVQYYaEombZzMqegMyK7sTM6j63qMwKQagUAgCdHQ00
+        +S/I5oqeuZvq6+tZoFKEQUXn7HBgivrfNmfd/8qeuXvj6+dzQKWIA+Vdcyb3L9v1v7J37tHSzk5eqDCR
+        gIEBAKaj0aN302pLAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="BtnBookSettings.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="BtnSearchWord.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="BtnBookSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="BtnSearchWord.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="BtnBookSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 50</value>
+  <data name="BtnSearchWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 69</value>
   </data>
-  <data name="BtnBookSettings.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BtnSearchWord.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 23</value>
   </data>
-  <data name="BtnBookSettings.TabIndex" type="System.Int32, mscorlib">
+  <data name="BtnSearchWord.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="BtnBookSettings.Text" xml:space="preserve">
-    <value>Options</value>
-  </data>
-  <data name="&gt;&gt;BtnBookSettings.Name" xml:space="preserve">
-    <value>BtnBookSettings</value>
-  </data>
-  <data name="&gt;&gt;BtnBookSettings.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;BtnBookSettings.Parent" xml:space="preserve">
-    <value>GroupBook</value>
-  </data>
-  <data name="&gt;&gt;BtnBookSettings.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="BtnPractice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH3SURBVDhPldFdSFNhHMfxQ0E3hTfdeV9QN+aFKN10odZQ
-        p6u9NC8iLCnwJkIEQWwxrYnZdraFNbPlW7uYvVDt+LI1tw5zsiPqSiKn7sLh1BCdx5e2BfbrIZ4uos5a
-        Hzg3//N9nofzHCYTr6msIWgptnvaZT+fMXOVPdSt6ecfqk7SRJpbf+rYjOM6vsV5JCMsklEjdqduwWep
-        Whkyy3JoJm3kbhG7HRkC8BXYewaknyPmuYnhOyUamkh72Zh7dLyrOoG0SBZ7gJ0BpKIs3hnlYZ2OOUAz
-        aSP6gvr1qT5y+g6w+RQQHVh8WweutVhJE2lONXPIZ62M7u+uAqkJskcfkgsmuDvKx2iS2bA+TxPz3yen
-        p4CtAexv9CLsuIxRw7lQsEv1ZNym6glYtbk0/5OXLZ/AXpxsME++vx/f1+2IT+qw+cGAFdc1+C0Kk9Op
-        Pkjz3/lYeUX0RS2+CDasBZoRcdVhWWDJZssQp/XwGiucNP07/pGy8GOv9gp3O7/G1XLmEtdy+tPWkoD0
-        qkAWl8yO3is9TNN/M8uYnPBgfQLiHELd1QlOV3CcvsqOp6O0TZztwefXDXjTnC+n4+z4HqiPBGwX15a4
-        G+T3nW2i4+y9t1y4GntVA7+1MvOlSeE7lYvCY838f13aL3zneW3QpoLbpDhBRxkwzA9UERfyqnFGywAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="BtnPractice.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="BtnPractice.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="BtnPractice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 21</value>
-  </data>
-  <data name="BtnPractice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 23</value>
-  </data>
-  <data name="BtnPractice.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="BtnPractice.Text" xml:space="preserve">
-    <value>Practice</value>
-  </data>
-  <data name="&gt;&gt;BtnPractice.Name" xml:space="preserve">
-    <value>BtnPractice</value>
-  </data>
-  <data name="&gt;&gt;BtnPractice.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;BtnPractice.Parent" xml:space="preserve">
-    <value>GroupBook</value>
-  </data>
-  <data name="&gt;&gt;BtnPractice.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="BtnSearchWord.Text" xml:space="preserve">
+    <value>Search</value>
   </data>
   <data name="&gt;&gt;BtnSearchWord.Name" xml:space="preserve">
     <value>BtnSearchWord</value>
   </data>
   <data name="&gt;&gt;BtnSearchWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnSearchWord.Parent" xml:space="preserve">
     <value>GroupSearch</value>
@@ -671,7 +621,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;GroupSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupSearch.Parent" xml:space="preserve">
     <value>SideBar</value>
@@ -679,59 +629,46 @@
   <data name="&gt;&gt;GroupSearch.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="BtnSearchWord.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="BtnSearchWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtnAddWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAISSURBVDhPY8AHQkND2bKq+vzzGiZ159ZPnAfEDRmVfbZQ
-        afwgq7rHpqxrzqXp6w7833Tm7v+dl5/+X3f85v/eRVv+F7VO21JQ1ScJVYoJMqt7rGonLf62+9qL/9c/
-        //9/4ysE3wTiKx/+/19/4vb/kvYZ13MrJ4pCtSBAfH09R1Hr1Bt7rr38f/v7//+X3v3/f/EtAl8GGnAL
-        KL76yPX/uXUT5kO1IUBaZXfQjPUHwTaja4bhKx///z//6s//uklLfkG1IUBOde+EzWcegJ2LTTMMX//y
-        //+cTUf/Q7UhQE5t/4Kdl5+B/YxNIwzfABqwZPc5TAOyqntb1h+/jd8FQK9dA3px2pr9mAaklffYdC/Y
-        BA7ty++xaAZiUPicfPr9f0X33LdQbaggt75/16rD18ChDQowdM1XgWJzthz/n1XbVwXVggClnbNsq3rn
-        P66duOT/8v2XgKH9ExxgoDC59glk85f/c4GagalzdWjoKmaoNgioaJvhUTNh4Zf2uRv+l3bOXJBd1z+5
-        adryz7M3Hfm/ZM85oJ/3/a+ZsOhZTv0ETJvLOmYEATX/7Ji38X9F15yVUGGGhKJm2czKnoDMiu7EzOo+
-        t6jMCkGoFAIAnR0NNPkvyOaKnrmb6uvrWaBShEFF5+xwYIr63zZn3f/Knrl74+vnc0CliAPlXXMm9y/b
-        9b+yd+7R0s5OXqgwkYCBAQCmo9Gjd9NqSwAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wQAADsEBuJFr7QAAAqFJREFUOE99Uu1LU3EUviDUx4roU/QPVFCfCoJeCAJrNHV6jZaxosZevFuKL2Pl
+        siKRcvfeubvmZnupZQlatnSGuuZ23XyLfak+hIahTR0U9BcYp9/53WsqVAcO9+Hec55znvNc5m+hFa0n
+        dI9sTpLdlRLn13qtdo3HfFD9/O/QkcaLoaZcY/wBeN/HIPKxH0If+sA9FQFr7921C4G63jK3ZZ9avjXK
+        PVyNsce19vTTK0gVMiCvZCFXnIRsMUfx2FIKfPkeqAk3L1fw3CG1TYmyTssx43PXr4H5Yciu5iC5NE4z
+        PvcWEl9GKE59S1My3Erf3bBULtXups0sy5ZU++vyOBmbxxZTNOWVCbj5xg0eOUwxvkuSxBp+Ogo6LydS
+        Ao1gPo6acW2ctJnAGe8AcRMB5nhBhsGFETCEmn+eFA07GW1n7W3vbIwWIQE+MWe+z0DLkAC+3BOK8Q6Z
+        ZVkhWc6Ac4iHs4L5NKOTuDDqyhF98blhujZObhnkwRRzga33HsWO1w/h/ohECSZWs9AuB4FsbyAEtgBa
+        hdrwYKhZzITI5ChtRjLEQuYx+CdjqrwstKW7CIHpEqP1WOvdk4rODQlZmP2xIQGxIkGpSRXS0DDQDmc6
+        jEeZ88L1A5YXd2CU+IxWrR8LiXBtgWyDeP19huCX8wnQBxu/ltps26kTlZK9X8o/U/6BRcUJPBhq9k/F
+        /hwPB6QJbn3ng3KvlaPNGFVdpr01oaZVPCaSjKOl6kRMXBvXRyJ+JgpVPnuS7WNL1HYlykTrYUKy4J6O
+        EJ9HiVUyvTZqx38E125N+aA6UD/KBh071LatUdp2dU+V/4ZwLXar6Ezw1Kq2dIAe7HLE8bnCx9nV0v+H
+        pl2/SyPVnjonmq6gVRredGQ/y25TP28KhvkNSa1DO5Et2jQAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="BtnSearchWord.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="BtnAddWord.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="BtnSearchWord.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="BtnAddWord.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="BtnSearchWord.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 69</value>
+  <data name="BtnAddWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 19</value>
   </data>
-  <data name="BtnSearchWord.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BtnAddWord.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 23</value>
   </data>
-  <data name="BtnSearchWord.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="BtnAddWord.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="BtnSearchWord.Text" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="&gt;&gt;BtnSearchWord.Name" xml:space="preserve">
-    <value>BtnSearchWord</value>
-  </data>
-  <data name="&gt;&gt;BtnSearchWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;BtnSearchWord.Parent" xml:space="preserve">
-    <value>GroupSearch</value>
-  </data>
-  <data name="&gt;&gt;BtnSearchWord.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="BtnAddWord.Text" xml:space="preserve">
+    <value>Add</value>
   </data>
   <data name="&gt;&gt;BtnAddWord.Name" xml:space="preserve">
     <value>BtnAddWord</value>
   </data>
   <data name="&gt;&gt;BtnAddWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnAddWord.Parent" xml:space="preserve">
     <value>GroupWord</value>
@@ -739,11 +676,45 @@
   <data name="&gt;&gt;BtnAddWord.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="BtnDeleteWord.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BtnDeleteWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wQAADsEBuJFr7QAAAa5JREFUOE9jGFygnoGB7bC1dRSUiwFWamkJAeXDoFxUsF5fX+Cav/+qPxkZ/894
+        ePRCheGgmIGB+2ZAwP6faWn/z3l5VZwxNmaFSkHAATu7qP/p6f//V1T8/5uV9f+Uq2sPVAqs+Zqf357/
+        hYVg+UdhYf93GBtrQKUhYCbQxNPu7t1/MjP//y8thRnS3sPDI3LJx2cvWDNQ/GVs7L9jjo44vclwAmjz
+        X6gh71NS/l/283v8NzcXzH8VF/d/r41NJFQpbnDSxaXtU0rKr78gW4H4b0HB/9dxce/2WVmFQ5UQBCw3
+        /PzugzT/Bmr+n5f3/7iLy2aoHH6QxsDAddXPb9cfoLPBLgBqBtFf0tP/nXR17YYqww5AoX3F13fPf5Ct
+        QD8/ior6fsLFZdMXYNQhBSw8dlDAHgsL6ZuBgfthoQ0MsH8HbGxCQXLAMOmCBSzIkAteXpM3GRtzgTXC
+        wAFgCvudmgqO59exsX/RQ/ukszMkiisr/98JCfm3VU9PDSqFAKc9PMqfR0V9O4wjns97ek58GhHx6bC9
+        vQtUCBOs0dFBTWFoYI2BgSqUSQ3AwAAAIGnmdG6zRlAAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="BtnDeleteWord.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="BtnDeleteWord.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="BtnDeleteWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 77</value>
+  </data>
+  <data name="BtnDeleteWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 23</value>
+  </data>
+  <data name="BtnDeleteWord.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="BtnDeleteWord.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
   <data name="&gt;&gt;BtnDeleteWord.Name" xml:space="preserve">
     <value>BtnDeleteWord</value>
   </data>
   <data name="&gt;&gt;BtnDeleteWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnDeleteWord.Parent" xml:space="preserve">
     <value>GroupWord</value>
@@ -751,11 +722,44 @@
   <data name="&gt;&gt;BtnDeleteWord.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="BtnEditWord.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="BtnEditWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wQAADsEBuJFr7QAAAW5JREFUOE9joDu4ZGHi8jAyctYhJ6cIqBDxIK+hO3lrY9f//9Om/v9cXv7/gJmZ
+        LVSKMChv70/ac+bW/wM3X/3fP23e//+tLf+P29qGQ6Xxg9bK0Jhl24/9f/7t//8nX/7/P3Dt+f/5GYUH
+        n4uLc0OV4AZrOs3Dn12q+3vq1Jr/O08/+H//PdAHyzac5K9oF4QqwQ3W9AA1X6j/9//P2v//vy75f/bs
+        mv8d05cdUzJW4ocqwQ3gmn8BNX9e+f//9yX/L2yN322lzsALVYIbYGj+tuT/mfUxu30YGLigSnADbDaf
+        BWo2Jkbzhskuic8vomuOI07zvFoT35t7s/7//7sBqHkVWPO5DXF7idIMAjumR+35dLr0/7Pzjf///1z2
+        /+yGuMOu4gyE4xkElLSs5eJiw/++O9P1//mBvP8HFgUdz7dnEIBKEwYObt7FxvYBP+Oig3at6wnIDNVi
+        4IFKEQfcvL3NfH19VaBcEgADAwD7MN04a+o+yQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="BtnEditWord.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="BtnEditWord.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="BtnEditWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 48</value>
+  </data>
+  <data name="BtnEditWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 23</value>
+  </data>
+  <data name="BtnEditWord.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="BtnEditWord.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
   <data name="&gt;&gt;BtnEditWord.Name" xml:space="preserve">
     <value>BtnEditWord</value>
   </data>
   <data name="&gt;&gt;BtnEditWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveButton, Vocup, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;BtnEditWord.Parent" xml:space="preserve">
     <value>GroupWord</value>
@@ -782,150 +786,12 @@
     <value>GroupWord</value>
   </data>
   <data name="&gt;&gt;GroupWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupWord.Parent" xml:space="preserve">
     <value>SideBar</value>
   </data>
   <data name="&gt;&gt;GroupWord.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="BtnAddWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKhSURBVDhPfVLtS1NxFL4g1MeK6FP0D1RQnwqCXggCazR1
-        eo2WsaLGXrxbii9j5bIikXL33rm75mZ7qWUJWrZ0hrrmdt18i32pPoSGoU0dFPQXGKff+d1rKlQHDvfh
-        3nOec57zXOZvoRWtJ3SPbE6S3ZUS59d6rXaNx3xQ/fzv0JHGi6GmXGP8AXjfxyDysR9CH/rAPRUBa+/d
-        tQuBut4yt2WfWr41yj1cjbHHtfb00ytIFTIgr2QhV5yEbDFH8dhSCnz5HqgJNy9X8NwhtU2Jsk7LMeNz
-        16+B+WHIruYguTROMz73FhJfRihOfUtTMtxK392wVC7V7qbNLMuWVPvr8jgZm8cWUzTllQm4+cYNHjlM
-        Mb5LksQafjoKOi8nUgKNYD6OmnFtnLSZwBnvAHETAeZ4QYbBhREwhJp/nhQNOxltZ+1t72yMFiEBPjFn
-        vs9Ay5AAvtwTivEOmWVZIVnOgHOIh7OC+TSjk7gw6soRffG5Ybo2Tm4Z5MEUc4Gt9x7FjtcP4f6IRAkm
-        VrPQLgeBbG8gBLYAWoXa8GCoWcyEyOQobUYyxELmMfgnY6q8LLSluwiB6RKj9Vjr3ZOKzg0JWZj9sSEB
-        sSJBqUkV0tAw0A5nOoxHmfPC9QOWF3dglPiMVq0fC4lwbYFsg3j9fYbgl/MJ0Acbv5babNupE5WSvV/K
-        P1P+gUXFCTwYavZPxf4cDwekCW5954Nyr5WjzRhVXaa9NaGmVTwmkoyjpepETFwb10cifiYKVT57ku1j
-        S9R2JcpE62FCsuCejhCfR4lVMr02asd/BNduTfmgOlA/ygYdO9S2rVHadnVPlf+GcC12q+hM8NSqtnSA
-        HuxyxPG5wsfZ1dL/h6Zdv0sj1Z46J5quoFUa3nRkP8tuUz9vCob5DUmtQzuRLdo0AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="BtnAddWord.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="BtnAddWord.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="BtnAddWord.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 19</value>
-  </data>
-  <data name="BtnAddWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 23</value>
-  </data>
-  <data name="BtnAddWord.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="BtnAddWord.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <data name="&gt;&gt;BtnAddWord.Name" xml:space="preserve">
-    <value>BtnAddWord</value>
-  </data>
-  <data name="&gt;&gt;BtnAddWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;BtnAddWord.Parent" xml:space="preserve">
-    <value>GroupWord</value>
-  </data>
-  <data name="&gt;&gt;BtnAddWord.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="BtnDeleteWord.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="BtnDeleteWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGuSURBVDhPYxhcoJ6Bge2wtXUUlIsBVmppCQHlw6BcVLBe
-        X1/gmr//qj8ZGf/PeHj0QoXhoJiBgftmQMD+n2lp/895eVWcMTZmhUpBwAE7u6j/6en//1dU/P+blfX/
-        lKtrD1QKrPman9+e/4WFYPlHYWH/dxgba0ClIWAm0MTT7u7dfzIz//8vLYUZ0t7DwyNyycdnL1gzUPxl
-        bOy/Y46OOL3JcAJo81+oIe9TUv5f9vN7/Dc3F8x/FRf3f6+NTSRUKW5w0sWl7VNKyq+/IFuB+G9Bwf/X
-        cXHv9llZhUOVEAQsN/z87oM0/wZq/p+X9/+4i8tmqBx+kMbAwHXVz2/XH6CzwS4AagbRX9LT/510de2G
-        KsMOQKF9xdd3z3+QrUA/P4qK+n7CxWXTF2DUIQUsPHZQwB4LC+mbgYH7YaENDLB/B2xsQkFywDDpggUs
-        yJALXl6TNxkbc4E1wsABYAr7nZoKjufXsbF/0UP7pLMzJIorK//fCQn5t1VPTw0qhQCnPTzKn0dFfTuM
-        I57Pe3pOfBoR8emwvb0LVAgTrNHRQU1haGCNgYEqlEkNwMAAACBp5nRus0ZQAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="BtnDeleteWord.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="BtnDeleteWord.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="BtnDeleteWord.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 77</value>
-  </data>
-  <data name="BtnDeleteWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 23</value>
-  </data>
-  <data name="BtnDeleteWord.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="BtnDeleteWord.Text" xml:space="preserve">
-    <value>Delete</value>
-  </data>
-  <data name="&gt;&gt;BtnDeleteWord.Name" xml:space="preserve">
-    <value>BtnDeleteWord</value>
-  </data>
-  <data name="&gt;&gt;BtnDeleteWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;BtnDeleteWord.Parent" xml:space="preserve">
-    <value>GroupWord</value>
-  </data>
-  <data name="&gt;&gt;BtnDeleteWord.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="BtnEditWord.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="BtnEditWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFuSURBVDhPY6A7uGRh4vIwMnLWISenCKgQ8SCvoTt5a2PX
-        ///Tpv7/XF7+/4CZmS1UijAob+9P2nPm1v8DN1/93z9t3v//rS3/j9vahkOl8YPWytCYZduP/X/+7f//
-        J1/+/z9w7fn/+RmFB5+Li3NDleAGazrNw59dqvt76tSa/ztPP/h//z3QB8s2nOSvaBeEKsEN1vQANV+o
-        //f/z9r//78u+X/27Jr/HdOXHVMyVuKHKsEN4Jp/ATV/Xvn///cl/y9sjd9tpc7AC1WCG2Bo/rbk/5n1
-        Mbt9GBi4oEpwA2w2nwVqNiZG84bJLonPL6JrjiNO87xaE9+be7P+//+7Aah5FVjzuQ1xe4nSDAI7pkft
-        +XS69P+z843///9c9v/shrjDruIMhOMZBJS0rOXiYsP/vjvT9f/5gbz/BxYFHc+3ZxCAShMGDm7excb2
-        AT/jooN2resJyAzVYuCBShEH3Ly9zXx9fVWgXBIAAwMA+zDdOGvqPskAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="BtnEditWord.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="BtnEditWord.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="BtnEditWord.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 48</value>
-  </data>
-  <data name="BtnEditWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 23</value>
-  </data>
-  <data name="BtnEditWord.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="BtnEditWord.Text" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="&gt;&gt;BtnEditWord.Name" xml:space="preserve">
-    <value>BtnEditWord</value>
-  </data>
-  <data name="&gt;&gt;BtnEditWord.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveButton, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;BtnEditWord.Parent" xml:space="preserve">
-    <value>GroupWord</value>
-  </data>
-  <data name="&gt;&gt;BtnEditWord.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <metadata name="StatusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -980,7 +846,7 @@
     <value>StatusStrip</value>
   </data>
   <data name="&gt;&gt;StatusStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;StatusStrip.Parent" xml:space="preserve">
     <value>$this</value>
@@ -988,11 +854,24 @@
   <data name="&gt;&gt;StatusStrip.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="GroupStatistics.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 349</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="GroupStatistics.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="GroupStatistics.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 134</value>
+  </data>
+  <data name="GroupStatistics.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
   <data name="&gt;&gt;GroupStatistics.Name" xml:space="preserve">
     <value>GroupStatistics</value>
   </data>
   <data name="&gt;&gt;GroupStatistics.Type" xml:space="preserve">
-    <value>Vocup.Controls.StatisticsPanel, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.StatisticsPanel, Vocup, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;GroupStatistics.Parent" xml:space="preserve">
     <value>SideBar</value>
@@ -1016,33 +895,12 @@
     <value>SideBar</value>
   </data>
   <data name="&gt;&gt;SideBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;SideBar.Parent" xml:space="preserve">
     <value>TableLayout</value>
   </data>
   <data name="&gt;&gt;SideBar.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="GroupStatistics.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 349</value>
-  </data>
-  <data name="GroupStatistics.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 134</value>
-  </data>
-  <data name="GroupStatistics.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;GroupStatistics.Name" xml:space="preserve">
-    <value>GroupStatistics</value>
-  </data>
-  <data name="&gt;&gt;GroupStatistics.Type" xml:space="preserve">
-    <value>Vocup.Controls.StatisticsPanel, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;GroupStatistics.Parent" xml:space="preserve">
-    <value>SideBar</value>
-  </data>
-  <data name="&gt;&gt;GroupStatistics.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="SplitContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -1057,6 +915,9 @@
   <data name="FileTreeView.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="FileTreeView.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
   <data name="FileTreeView.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 482</value>
   </data>
@@ -1067,7 +928,7 @@
     <value>FileTreeView</value>
   </data>
   <data name="&gt;&gt;FileTreeView.Type" xml:space="preserve">
-    <value>Vocup.Controls.FileTreeView, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.FileTreeView, Vocup, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;FileTreeView.Parent" xml:space="preserve">
     <value>SplitContainer.Panel1</value>
@@ -1079,7 +940,7 @@
     <value>SplitContainer.Panel1</value>
   </data>
   <data name="&gt;&gt;SplitContainer.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;SplitContainer.Panel1.Parent" xml:space="preserve">
     <value>SplitContainer</value>
@@ -1110,7 +971,7 @@ Just open a vocabulary book or create a new one.</value>
     <value>LbEmptyForm</value>
   </data>
   <data name="&gt;&gt;LbEmptyForm.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbEmptyForm.Parent" xml:space="preserve">
     <value>SplitContainer.Panel2</value>
@@ -1122,7 +983,7 @@ Just open a vocabulary book or create a new one.</value>
     <value>SplitContainer.Panel2</value>
   </data>
   <data name="&gt;&gt;SplitContainer.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;SplitContainer.Panel2.Parent" xml:space="preserve">
     <value>SplitContainer</value>
@@ -1143,7 +1004,7 @@ Just open a vocabulary book or create a new one.</value>
     <value>SplitContainer</value>
   </data>
   <data name="&gt;&gt;SplitContainer.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveSplitContainer, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>Vocup.Controls.ResponsiveSplitContainer, Vocup, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;SplitContainer.Parent" xml:space="preserve">
     <value>TableLayout</value>
@@ -1154,27 +1015,6 @@ Just open a vocabulary book or create a new one.</value>
   <metadata name="ToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 24</value>
   </metadata>
-  <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="ToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>784, 25</value>
-  </data>
-  <data name="ToolStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip.Name" xml:space="preserve">
-    <value>ToolStrip</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip.Type" xml:space="preserve">
-    <value>Vocup.Controls.ResponsiveToolStrip, Vocup, Version=1.8.2.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="TsbCreateBook.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
@@ -1235,6 +1075,27 @@ Just open a vocabulary book or create a new one.</value>
   <data name="toolStripLabel.Text" xml:space="preserve">
     <value>Information about evaluation:</value>
   </data>
+  <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="ToolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>784, 25</value>
+  </data>
+  <data name="ToolStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip.Name" xml:space="preserve">
+    <value>ToolStrip</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip.Type" xml:space="preserve">
+    <value>Vocup.Controls.ResponsiveToolStrip, Vocup, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="TableLayout.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -1260,7 +1121,7 @@ Just open a vocabulary book or create a new one.</value>
     <value>TableLayout</value>
   </data>
   <data name="&gt;&gt;TableLayout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TableLayout.Parent" xml:space="preserve">
     <value>$this</value>
@@ -7474,306 +7335,306 @@ Just open a vocabulary book or create a new one.</value>
     <value>toolStripMenuItem11</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem10.Name" xml:space="preserve">
     <value>toolStripMenuItem10</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem9.Name" xml:space="preserve">
     <value>toolStripMenuItem9</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
     <value>toolStripMenuItem1</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem4.Name" xml:space="preserve">
     <value>toolStripMenuItem4</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem5.Name" xml:space="preserve">
     <value>toolStripMenuItem5</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem6.Name" xml:space="preserve">
     <value>toolStripMenuItem6</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem8.Name" xml:space="preserve">
     <value>toolStripMenuItem8</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;infoToolStripMenuItem.Name" xml:space="preserve">
     <value>infoToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;infoToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiRootFile.Name" xml:space="preserve">
     <value>TsmiRootFile</value>
   </data>
   <data name="&gt;&gt;TsmiRootFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiCreateBook.Name" xml:space="preserve">
     <value>TsmiCreateBook</value>
   </data>
   <data name="&gt;&gt;TsmiCreateBook.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiOpenBook.Name" xml:space="preserve">
     <value>TsmiOpenBook</value>
   </data>
   <data name="&gt;&gt;TsmiOpenBook.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiCloseBook.Name" xml:space="preserve">
     <value>TsmiCloseBook</value>
   </data>
   <data name="&gt;&gt;TsmiCloseBook.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiSave.Name" xml:space="preserve">
     <value>TsmiSave</value>
   </data>
   <data name="&gt;&gt;TsmiSave.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiSaveAs.Name" xml:space="preserve">
     <value>TsmiSaveAs</value>
   </data>
   <data name="&gt;&gt;TsmiSaveAs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiImport.Name" xml:space="preserve">
     <value>TsmiImport</value>
   </data>
   <data name="&gt;&gt;TsmiImport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiImportAnsi.Name" xml:space="preserve">
     <value>TsmiImportAnsi</value>
   </data>
   <data name="&gt;&gt;TsmiImportAnsi.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiExport.Name" xml:space="preserve">
     <value>TsmiExport</value>
   </data>
   <data name="&gt;&gt;TsmiExport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiOpenInExplorer.Name" xml:space="preserve">
     <value>TsmiOpenInExplorer</value>
   </data>
   <data name="&gt;&gt;TsmiOpenInExplorer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem7.Name" xml:space="preserve">
     <value>toolStripMenuItem7</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiPrint.Name" xml:space="preserve">
     <value>TsmiPrint</value>
   </data>
   <data name="&gt;&gt;TsmiPrint.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiBackupRestore.Name" xml:space="preserve">
     <value>TsmiBackupRestore</value>
   </data>
   <data name="&gt;&gt;TsmiBackupRestore.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem3.Name" xml:space="preserve">
     <value>toolStripMenuItem3</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiExitApplication.Name" xml:space="preserve">
     <value>TsmiExitApplication</value>
   </data>
   <data name="&gt;&gt;TsmiExitApplication.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiRootEdit.Name" xml:space="preserve">
     <value>TsmiRootEdit</value>
   </data>
   <data name="&gt;&gt;TsmiRootEdit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiAddWord.Name" xml:space="preserve">
     <value>TsmiAddWord</value>
   </data>
   <data name="&gt;&gt;TsmiAddWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiEditWord.Name" xml:space="preserve">
     <value>TsmiEditWord</value>
   </data>
   <data name="&gt;&gt;TsmiEditWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiDeleteWord.Name" xml:space="preserve">
     <value>TsmiDeleteWord</value>
   </data>
   <data name="&gt;&gt;TsmiDeleteWord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiRootTools.Name" xml:space="preserve">
     <value>TsmiRootTools</value>
   </data>
   <data name="&gt;&gt;TsmiRootTools.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiPractice.Name" xml:space="preserve">
     <value>TsmiPractice</value>
   </data>
   <data name="&gt;&gt;TsmiPractice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiBookOptions.Name" xml:space="preserve">
     <value>TsmiBookOptions</value>
   </data>
   <data name="&gt;&gt;TsmiBookOptions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiMerge.Name" xml:space="preserve">
     <value>TsmiMerge</value>
   </data>
   <data name="&gt;&gt;TsmiMerge.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiSpecialChar.Name" xml:space="preserve">
     <value>TsmiSpecialChar</value>
   </data>
   <data name="&gt;&gt;TsmiSpecialChar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiSettings.Name" xml:space="preserve">
     <value>TsmiSettings</value>
   </data>
   <data name="&gt;&gt;TsmiSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiRootHelp.Name" xml:space="preserve">
     <value>TsmiRootHelp</value>
   </data>
   <data name="&gt;&gt;TsmiRootHelp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiHelp.Name" xml:space="preserve">
     <value>TsmiHelp</value>
   </data>
   <data name="&gt;&gt;TsmiHelp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiEvaluationInfo.Name" xml:space="preserve">
     <value>TsmiEvaluationInfo</value>
   </data>
   <data name="&gt;&gt;TsmiEvaluationInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiUpdate.Name" xml:space="preserve">
     <value>TsmiUpdate</value>
   </data>
   <data name="&gt;&gt;TsmiUpdate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiAbout.Name" xml:space="preserve">
     <value>TsmiAbout</value>
   </data>
   <data name="&gt;&gt;TsmiAbout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;StatusLbOldVersion.Name" xml:space="preserve">
     <value>StatusLbOldVersion</value>
   </data>
   <data name="&gt;&gt;StatusLbOldVersion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;StatusLbUpdateAvailable.Name" xml:space="preserve">
     <value>StatusLbUpdateAvailable</value>
   </data>
   <data name="&gt;&gt;StatusLbUpdateAvailable.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;StatusLbOpenUwpApp.Name" xml:space="preserve">
     <value>StatusLbOpenUwpApp</value>
   </data>
   <data name="&gt;&gt;StatusLbOpenUwpApp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;StatusLbInstallUwpApp.Name" xml:space="preserve">
     <value>StatusLbInstallUwpApp</value>
   </data>
   <data name="&gt;&gt;StatusLbInstallUwpApp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsbCreateBook.Name" xml:space="preserve">
     <value>TsbCreateBook</value>
   </data>
   <data name="&gt;&gt;TsbCreateBook.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsbOpenBook.Name" xml:space="preserve">
     <value>TsbOpenBook</value>
   </data>
   <data name="&gt;&gt;TsbOpenBook.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsbSave.Name" xml:space="preserve">
     <value>TsbSave</value>
   </data>
   <data name="&gt;&gt;TsbSave.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
     <value>toolStripSeparator1</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsbPrint.Name" xml:space="preserve">
     <value>TsbPrint</value>
   </data>
   <data name="&gt;&gt;TsbPrint.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsbEvaluationInfo.Name" xml:space="preserve">
     <value>TsbEvaluationInfo</value>
   </data>
   <data name="&gt;&gt;TsbEvaluationInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripLabel.Name" xml:space="preserve">
     <value>toolStripLabel</value>
   </data>
   <data name="&gt;&gt;toolStripLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
