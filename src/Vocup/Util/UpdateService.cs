@@ -7,7 +7,7 @@ namespace Vocup.Util
 {
     public static class UpdateService
     {
-        public static async Task<string> GetUpdateUrl()
+        public static async Task<string?> GetUpdateUrl()
         {
             Release release;
             try
@@ -25,7 +25,7 @@ namespace Vocup.Util
                 release.TagName.Substring(1) :
                 release.TagName;
 
-            if (Version.TryParse(tagName, out Version releaseVersion))
+            if (Version.TryParse(tagName, out Version? releaseVersion))
             {
                 // Add zero as revision because otherwise 1.7.1.0 would be greater than 1.7.1
                 if (releaseVersion.Revision == -1)

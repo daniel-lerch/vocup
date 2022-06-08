@@ -11,7 +11,7 @@ namespace Vocup.UnitTests
         public void TestAddArgumentNull()
         {
             var compositor = new ListCompositor<int>();
-            Assert.Throws<ArgumentNullException>(() => compositor.AddSource(null, 0));
+            Assert.Throws<ArgumentNullException>(() => compositor.AddSource(null!, 0));
         }
 
         [Fact]

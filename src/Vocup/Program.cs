@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace Vocup
 {
     public static class Program
     {
-        private static Mutex mutex;
+        private static Mutex? mutex;
 
         public static Settings2.VocupSettings Settings2 { get; }
 
@@ -27,7 +28,11 @@ namespace Vocup
             // Prevents the installer from executing while the program is running
             mutex = new Mutex(initiallyOwned: true, AppInfo.ProductName, out bool createdNew);
 
-            ApplicationConfiguration.Initialize();
+            // ApplicationConfiguration.Initialize() does not handle PerMonitorV2 correctly.
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
+            Application.SetDefaultFont(new Font("Microsoft Sans Serif", 8.25f));
 
             if (!createdNew)
             {
@@ -48,7 +53,7 @@ namespace Vocup
                                             // Warning: Unsaved changes are overridden
                 
                 // Reset DisableInternetSettings on update to 1.8.4
-                if (AppInfo.IsUwp && (!Version.TryParse(Settings.Default.Version, out Version version) || version < new Version(1, 8, 4)))
+                if (AppInfo.IsUwp && (!Version.TryParse(Settings.Default.Version, out Version? version) || version < new Version(1, 8, 4)))
                 {
                     Settings.Default.DisableInternetServices = false;
                 }
@@ -109,13 +114,13 @@ namespace Vocup
 
         public static void ReleaseMutex()
         {
-            mutex.ReleaseMutex();
+            mutex?.ReleaseMutex();
         }
 
         private static void SwitchFocus()
         {
             // Take the Vocup process which was started first because there might be multiple newer processes racing for bringing one to front
-            Process process = Process.GetProcessesByName(AppInfo.ProductName).OrderBy(x => x.StartTime).FirstOrDefault();
+            Process? process = Process.GetProcessesByName(AppInfo.ProductName).OrderBy(x => x.StartTime).FirstOrDefault();
             if (process != null && process.MainWindowHandle != IntPtr.Zero)
             {
                 PInvoke.User32.SetForegroundWindow(process.MainWindowHandle);
