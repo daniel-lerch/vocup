@@ -10,195 +10,200 @@ using System.Windows.Forms;
 using Vocup.Models;
 using Vocup.Properties;
 
-namespace Vocup.IO.Internal
+namespace Vocup.IO.Internal;
+
+internal class CsvFile
 {
-    internal class CsvFile
+    public bool Import(string path, VocabularyBook book, bool importSettings, bool ansiEncoding)
     {
-        public bool Import(string path, VocabularyBook book, bool importSettings, bool ansiEncoding)
+        try
         {
-            try
+            using (var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
-                using (var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
+                CsvConfiguration config = new CsvConfiguration(CultureInfo.CurrentCulture);
+
+                var encoding = ansiEncoding ? Encoding.GetEncoding(1252) : Encoding.UTF8;
+
+                using (var streamReader = new StreamReader(fileStream, encoding, detectEncodingFromByteOrderMarks: true, 1024, leaveOpen: true))
                 {
-                    CsvConfiguration config = new CsvConfiguration(CultureInfo.CurrentCulture);
+                    char delimiter = DetectDelimiter(streamReader, 10, new[] { ',', ';', '\t', '|' });
+                    if (delimiter != 0) config.Delimiter = delimiter.ToString();
+                }
 
-                    var encoding = ansiEncoding ? Encoding.GetEncoding(1252) : Encoding.UTF8;
+                // Reset to start of file and create a new StreamReader to detect byte order marks again
+                fileStream.Seek(0, SeekOrigin.Begin);
 
-                    using (var streamReader = new StreamReader(fileStream, encoding, detectEncodingFromByteOrderMarks: true, 1024, leaveOpen: true))
+                using (var streamReader = new StreamReader(fileStream, encoding, detectEncodingFromByteOrderMarks: true))
+                using (var reader = new CsvReader(streamReader, config))
+                {
+                    reader.Context.RegisterClassMap(new EntryMap());
+
+                    if (!reader.Read() || !reader.ReadHeader())
                     {
-                        char delimiter = DetectDelimiter(streamReader, 10, new[] { ',', ';', '\t', '|' });
-                        if (delimiter != 0) config.Delimiter = delimiter.ToString();
+                        MessageBox.Show(Messages.CsvInvalidHeader, Messages.CsvInvalidHeaderT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
                     }
 
-                    // Reset to start of file and create a new StreamReader to detect byte order marks again
-                    fileStream.Seek(0, SeekOrigin.Begin);
-
-                    using (var streamReader = new StreamReader(fileStream, encoding, detectEncodingFromByteOrderMarks: true))
-                    using (var reader = new CsvReader(streamReader, config))
+                    if (reader.HeaderRecord.Length != 2)
                     {
-                        reader.Context.RegisterClassMap(new EntryMap());
+                        MessageBox.Show(string.Format(Messages.CsvInvalidHeaderColumns, reader.HeaderRecord.Length),
+                            Messages.CsvInvalidHeaderT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
 
-                        if (!reader.Read() || !reader.ReadHeader())
+                    if (importSettings)
+                    {
+                        book.MotherTongue = reader.HeaderRecord[0];
+                        book.ForeignLang = reader.HeaderRecord[1];
+                    }
+                    else
+                    {
+                        if (!book.MotherTongue.Equals(reader.HeaderRecord[0], StringComparison.OrdinalIgnoreCase) 
+                            || !book.ForeignLang.Equals(reader.HeaderRecord[1], StringComparison.OrdinalIgnoreCase))
                         {
-                            MessageBox.Show(Messages.CsvInvalidHeader, Messages.CsvInvalidHeaderT, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return false;
-                        }
+                            DialogResult dialogResult = MessageBox.Show(
+                                string.Format(Messages.CsvInvalidLanguages, reader.HeaderRecord[0], reader.HeaderRecord[1]),
+                                Messages.CsvInvalidHeaderT, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                        if (reader.HeaderRecord.Length != 2)
-                        {
-                            MessageBox.Show(string.Format(Messages.CsvInvalidHeaderColumns, reader.HeaderRecord.Length),
-                                Messages.CsvInvalidHeaderT, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return false;
+                            if (dialogResult == DialogResult.No)
+                                return false;
                         }
+                    }
 
-                        if (importSettings)
+                    foreach (Entry entry in reader.GetRecords<Entry>())
+                    {
+                        if (!book.Words.Any(x => x.MotherTongue == entry.MotherTongue && x.ForeignLangText == entry.ForeignLang))
                         {
-                            book.MotherTongue = reader.HeaderRecord[0];
-                            book.ForeignLang = reader.HeaderRecord[1];
-                        }
-                        else
-                        {
-                            if (!book.MotherTongue.Equals(reader.HeaderRecord[0], StringComparison.OrdinalIgnoreCase) 
-                                || !book.ForeignLang.Equals(reader.HeaderRecord[1], StringComparison.OrdinalIgnoreCase))
+                            int idx = entry.ForeignLang.LastIndexOf('=');
+                            if (idx == -1)
                             {
-                                DialogResult dialogResult = MessageBox.Show(
-                                    string.Format(Messages.CsvInvalidLanguages, reader.HeaderRecord[0], reader.HeaderRecord[1]),
-                                    Messages.CsvInvalidHeaderT, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                                if (dialogResult == DialogResult.No)
-                                    return false;
-                            }
-                        }
-
-                        foreach (Entry entry in reader.GetRecords<Entry>())
-                        {
-                            if (!book.Words.Any(x => x.MotherTongue == entry.MotherTongue && x.ForeignLangText == entry.ForeignLang))
-                            {
-                                book.Words.Add(new VocabularyWord
+                                book.Words.Add(new VocabularyWord(entry.MotherTongue, entry.ForeignLang)
                                 {
                                     Owner = book,
-                                    MotherTongue = entry.MotherTongue,
-                                    ForeignLangText = entry.ForeignLang
+                                });
+                            }
+                            else
+                            {
+                                book.Words.Add(new VocabularyWord(entry.MotherTongue, entry.ForeignLang.Remove(idx))
+                                {
+                                    ForeignLangSynonym = entry.ForeignLang.Substring(idx + 1),
+                                    Owner = book,
                                 });
                             }
                         }
                     }
                 }
+            }
 
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(string.Format(Messages.CsvImportError, ex), Messages.UnexpectedErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return false;
+            return true;
         }
-
-        public bool Export(string path, VocabularyBook book)
+        catch (Exception ex)
         {
-            try
-            {
-                using (TextWriter file = new StreamWriter(path, false, Encoding.UTF8))
-                using (CsvWriter writer = new CsvWriter(file, CultureInfo.CurrentCulture))
-                {
-                    writer.Context.RegisterClassMap(new EntryMap(book.MotherTongue, book.ForeignLang));
-                    writer.WriteRecords(book.Words.Select(x => new Entry() { MotherTongue = x.MotherTongue, ForeignLang = x.ForeignLangText }));
-                }
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(string.Format(Messages.CsvExportError, ex), Messages.UnexpectedErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return false;
+            MessageBox.Show(string.Format(Messages.CsvImportError, ex), Messages.UnexpectedErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+        return false;
+    }
 
-        public static char DetectDelimiter(TextReader reader, int rowCount, IList<char> separators)
+    public bool Export(string path, VocabularyBook book)
+    {
+        try
         {
-            // Taken from https://stackoverflow.com/questions/33341307/csvhelper-how-to-detect-the-delimiter-from-the-given-csv-file
-
-            IList<int> separatorsCount = new int[separators.Count];
-
-            int character;
-            int row = 0;
-
-            bool quoted = false;
-            bool firstChar = true;
-
-            while (row < rowCount)
+            using (TextWriter file = new StreamWriter(path, false, Encoding.UTF8))
+            using (CsvWriter writer = new CsvWriter(file, CultureInfo.CurrentCulture))
             {
-                character = reader.Read();
+                writer.Context.RegisterClassMap(new EntryMap(book.MotherTongue, book.ForeignLang));
+                writer.WriteRecords(book.Words.Select(x => new Entry(x.MotherTongue, x.ForeignLangText)));
+            }
 
-                switch (character)
-                {
-                    case '"':
-                        if (quoted)
-                        {
-                            if (reader.Peek() != '"') // Value is quoted and current character is " and next character is not ".
-                                quoted = false;
-                            else
-                                reader.Read(); // Value is quoted and current and next characters are "" - read (skip) peeked qoute.
-                        }
+            return true;
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(string.Format(Messages.CsvExportError, ex), Messages.UnexpectedErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        return false;
+    }
+
+    public static char DetectDelimiter(TextReader reader, int rowCount, IList<char> separators)
+    {
+        // Taken from https://stackoverflow.com/questions/33341307/csvhelper-how-to-detect-the-delimiter-from-the-given-csv-file
+
+        IList<int> separatorsCount = new int[separators.Count];
+
+        int character;
+        int row = 0;
+
+        bool quoted = false;
+        bool firstChar = true;
+
+        while (row < rowCount)
+        {
+            character = reader.Read();
+
+            switch (character)
+            {
+                case '"':
+                    if (quoted)
+                    {
+                        if (reader.Peek() != '"') // Value is quoted and current character is " and next character is not ".
+                            quoted = false;
                         else
+                            reader.Read(); // Value is quoted and current and next characters are "" - read (skip) peeked qoute.
+                    }
+                    else
+                    {
+                        if (firstChar)  // Set value as quoted only if this quote is the first char in the value.
+                            quoted = true;
+                    }
+                    break;
+                case '\n':
+                    if (!quoted)
+                    {
+                        ++row;
+                        firstChar = true;
+                        continue;
+                    }
+                    break;
+                case -1:
+                    row = rowCount;
+                    break;
+                default:
+                    if (!quoted)
+                    {
+                        int index = separators.IndexOf((char)character);
+                        if (index != -1)
                         {
-                            if (firstChar)  // Set value as quoted only if this quote is the first char in the value.
-                                quoted = true;
-                        }
-                        break;
-                    case '\n':
-                        if (!quoted)
-                        {
-                            ++row;
+                            ++separatorsCount[index];
                             firstChar = true;
                             continue;
                         }
-                        break;
-                    case -1:
-                        row = rowCount;
-                        break;
-                    default:
-                        if (!quoted)
-                        {
-                            int index = separators.IndexOf((char)character);
-                            if (index != -1)
-                            {
-                                ++separatorsCount[index];
-                                firstChar = true;
-                                continue;
-                            }
-                        }
-                        break;
-                }
-
-                if (firstChar)
-                    firstChar = false;
+                    }
+                    break;
             }
 
-            int maxCount = separatorsCount.Max();
-
-            return maxCount == 0 ? '\0' : separators[separatorsCount.IndexOf(maxCount)];
+            if (firstChar)
+                firstChar = false;
         }
 
-        private class Entry
+        int maxCount = separatorsCount.Max();
+
+        return maxCount == 0 ? '\0' : separators[separatorsCount.IndexOf(maxCount)];
+    }
+
+    private record Entry(string MotherTongue, string ForeignLang);
+
+    private class EntryMap : ClassMap<Entry>
+    {
+        public EntryMap()
         {
-            public string MotherTongue { get; set; }
-            public string ForeignLang { get; set; }
+            Map(x => x.MotherTongue).Index(0);
+            Map(x => x.ForeignLang).Index(1);
         }
 
-        private class EntryMap : ClassMap<Entry>
+        public EntryMap(string motherTongue, string foreignLang)
         {
-            public EntryMap()
-            {
-                Map(x => x.MotherTongue).Index(0);
-                Map(x => x.ForeignLang).Index(1);
-            }
-
-            public EntryMap(string motherTongue, string foreignLang)
-            {
-                Map(x => x.MotherTongue).Name(motherTongue);
-                Map(x => x.ForeignLang).Name(foreignLang);
-            }
+            Map(x => x.MotherTongue).Name(motherTongue);
+            Map(x => x.ForeignLang).Name(foreignLang);
         }
     }
 }

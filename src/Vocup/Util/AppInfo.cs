@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -26,15 +27,18 @@ namespace Vocup.Util
         /// </summary>
         public static string SpecialCharDirectory { get; } = Path.Combine(Properties.Settings.Default.VhrPath, "specialchar");
 
-        public static Version Version { get; } = Assembly.GetExecutingAssembly().GetName().Version;
+        public static Version Version { get; } = 
+            Assembly.GetExecutingAssembly().GetName().Version ?? throw new ApplicationException("Assembly version is undefined");
 
         public static Version FileVersion { get; } = new Version(1, 0);
 
         public static string ProductName { get; }
-            = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyProductAttribute>()?.Product;
+            = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyProductAttribute>()?.Product 
+            ?? throw new ApplicationException("Assemly product name is undefined");
 
         public static string CopyrightInfo { get; }
-            = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyCopyrightAttribute>()?.Copyright;
+            = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyCopyrightAttribute>()?.Copyright 
+            ?? throw new ApplicationException("Assembly copyright information is undefined");
 
         private static readonly Lazy<bool> isUwp = new Lazy<bool>(() =>
         {
@@ -53,7 +57,7 @@ namespace Vocup.Util
 
         private static readonly Lazy<bool> isInstallation = new Lazy<bool>(() =>
         {
-            return TryGetVocupInstallation(out _, out string installLocation, out _)
+            return TryGetVocupInstallation(out _, out string? installLocation, out _)
                 && Application.StartupPath.TrimEnd('\\').Equals(installLocation.TrimEnd('\\'), StringComparison.OrdinalIgnoreCase);
         });
         public static bool IsWindowsInstallation => isInstallation.Value;
@@ -61,7 +65,7 @@ namespace Vocup.Util
         private static readonly Lazy<bool> isWine = new Lazy<bool>(() =>
         {
             using RegistryKey hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
-            using RegistryKey wine = hklm.OpenSubKey(@"SOFTWARE\Wine", writable: false);
+            using RegistryKey? wine = hklm.OpenSubKey(@"SOFTWARE\Wine", writable: false);
             return wine is not null;
         });
         public static bool IsWine => isWine.Value;
@@ -91,35 +95,41 @@ namespace Vocup.Util
             return version;
         }
 
-        public static bool TryGetVocupInstallation(out Version version, out string installLocation, out string uninstallString)
+        public static bool TryGetVocupInstallation(
+            [NotNullWhen(true)] out Version? version,
+            [NotNullWhen(true)] out string? installLocation,
+            [NotNullWhen(true)] out string? uninstallString)
         {
             version = null;
             installLocation = null;
             uninstallString = null;
 
             // Vocup is installed as 32bit application
-            using (RegistryKey hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32))
-            using (RegistryKey vocup = hklm.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Vocup_is1", writable: false))
-            {
-                if (vocup == null) return false;
-                if (!Version.TryParse((string)vocup.GetValue("DisplayVersion"), out Version temp)) return false;
-                version = temp.Revision == -1 ? new Version(temp.Major, temp.Minor, temp.Build, 0) : temp;
-                installLocation = (string)vocup.GetValue("InstallLocation");
-                uninstallString = (string)vocup.GetValue("UninstallString");
-                return true;
-            }
+            using RegistryKey hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
+            using RegistryKey? vocup = hklm.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Vocup_is1", writable: false);
+            
+            if (vocup == null) return false;
+            if (!Version.TryParse((string?)vocup.GetValue("DisplayVersion"), out Version? temp)) return false;
+            version = temp.Revision == -1 ? new Version(temp.Major, temp.Minor, temp.Build, 0) : temp;
+            installLocation = (string?)vocup.GetValue("InstallLocation");
+            uninstallString = (string?)vocup.GetValue("UninstallString");
+            return installLocation is not null && uninstallString is not null;
         }
 
         [SupportedOSPlatform("windows10.0.10240.0")]
-        public static bool TryGetVocupUwpApp(out Version version)
+        public static bool TryGetVocupUwpApp([NotNullWhen(true)] out Version? version)
         {
             var packageManager = new PackageManager();
-            foreach (var package in packageManager.FindPackagesForUser(WindowsIdentity.GetCurrent().User.Value, "9961VectorData.Vocup_ffrs9s78t67f2"))
+            string? userSecurityId = WindowsIdentity.GetCurrent().User?.Value;
+            if (userSecurityId is not null)
             {
-                if (!package.IsResourcePackage)
+                foreach (var package in packageManager.FindPackagesForUser(userSecurityId, "9961VectorData.Vocup_ffrs9s78t67f2"))
                 {
-                    version = new Version(package.Id.Version.Major, package.Id.Version.Minor, package.Id.Version.Build, package.Id.Version.Revision);
-                    return true;
+                    if (!package.IsResourcePackage)
+                    {
+                        version = new Version(package.Id.Version.Major, package.Id.Version.Minor, package.Id.Version.Build, package.Id.Version.Revision);
+                        return true;
+                    }
                 }
             }
             version = null;

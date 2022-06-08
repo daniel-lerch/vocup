@@ -15,7 +15,7 @@ namespace Vocup
 {
     public static class Program
     {
-        private static Mutex mutex;
+        private static Mutex? mutex;
 
         /// <summary>
         /// The main entry-point for the application.
@@ -51,7 +51,7 @@ namespace Vocup
                                             // Warning: Unsaved changes are overridden
                 
                 // Reset DisableInternetSettings on update to 1.8.4
-                if (AppInfo.IsUwp && (!Version.TryParse(Settings.Default.Version, out Version version) || version < new Version(1, 8, 4)))
+                if (AppInfo.IsUwp && (!Version.TryParse(Settings.Default.Version, out Version? version) || version < new Version(1, 8, 4)))
                 {
                     Settings.Default.DisableInternetServices = false;
                 }
@@ -112,13 +112,13 @@ namespace Vocup
 
         public static void ReleaseMutex()
         {
-            mutex.ReleaseMutex();
+            mutex?.ReleaseMutex();
         }
 
         private static void SwitchFocus()
         {
             // Take the Vocup process which was started first because there might be multiple newer processes racing for bringing one to front
-            Process process = Process.GetProcessesByName(AppInfo.ProductName).OrderBy(x => x.StartTime).FirstOrDefault();
+            Process? process = Process.GetProcessesByName(AppInfo.ProductName).OrderBy(x => x.StartTime).FirstOrDefault();
             if (process != null && process.MainWindowHandle != IntPtr.Zero)
             {
                 PInvoke.User32.SetForegroundWindow(process.MainWindowHandle);

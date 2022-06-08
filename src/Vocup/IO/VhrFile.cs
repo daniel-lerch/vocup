@@ -36,8 +36,8 @@ namespace Vocup.IO.Internal
 
             using (StringReader reader = new StringReader(plaintext))
             {
-                string path = reader.ReadLine();
-                string mode = reader.ReadLine();
+                string? path = reader.ReadLine();
+                string? mode = reader.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(path) ||
                     string.IsNullOrWhiteSpace(mode) || !int.TryParse(mode, out int imode) || !((PracticeMode)imode).IsValid())
@@ -50,7 +50,7 @@ namespace Vocup.IO.Internal
 
                 while (true)
                 {
-                    string line = reader.ReadLine();
+                    string? line = reader.ReadLine();
                     if (line == null) break;
                     string[] columns = line.Split('#');
                     if (columns.Length != 2 || !int.TryParse(columns[0], out int state) || !PracticeStateHelper.Parse(state).IsValid())
@@ -69,7 +69,7 @@ namespace Vocup.IO.Internal
 
                 bool countMatch = book.Words.Count == results.Count;
 
-                FileInfo vhfInfo = new FileInfo(book.FilePath);
+                FileInfo vhfInfo = new FileInfo(book.FilePath!);
                 FileInfo pathInfo = new FileInfo(path);
 
                 if (vhfInfo.FullName.Equals(pathInfo.FullName, StringComparison.OrdinalIgnoreCase))
