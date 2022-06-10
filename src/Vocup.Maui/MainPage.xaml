@@ -1,7 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Vocup.Maui"
              x:Class="Vocup.Maui.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel />
+    </ContentPage.BindingContext>
 			 
     <ScrollView>
         <VerticalStackLayout 
@@ -29,15 +34,15 @@
                 HorizontalOptions="Center" />
 
             <Label
-                Text="{Binding Battery}"
+                Text="{Binding Battery.ChargeLevel}"
                 FontSize="18"
                 HorizontalOptions="Center" />
 
             <Button 
                 x:Name="CounterBtn"
-                Text="Click me"
+                Text="{Binding ButtonText}"
                 SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
+                Command="{Binding ButtonCommand}"
                 HorizontalOptions="Center" />
 
         </VerticalStackLayout>
