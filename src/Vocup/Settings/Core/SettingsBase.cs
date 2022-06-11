@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-#nullable enable
-
-namespace Vocup.Settings2;
+namespace Vocup.Settings.Core;
 
 public abstract class SettingsBase : INotifyPropertyChanged
 {
@@ -26,6 +24,7 @@ public abstract class SettingsBase : INotifyPropertyChanged
             return newValue;
         }
 
+        backingField = newValue;
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         return newValue;
     }
