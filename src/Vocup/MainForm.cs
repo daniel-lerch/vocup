@@ -25,7 +25,7 @@ public partial class MainForm : Form, IMainForm
     {
         InitializeComponent();
 
-        FileTreeView.RootPath = Settings.Default.VhfPath;
+        FileTreeView.RootPath = Program.Settings.VhfPath;
         if (AppInfo.IsUwp)
         {
             TsmiUpdate.Enabled = false;
@@ -109,8 +109,7 @@ public partial class MainForm : Form, IMainForm
 
         FileTreeView.SelectedPath = book.FilePath;
 
-        Settings.Default.LastFile = book.FilePath;
-        Settings.Default.Save();
+        Program.Settings.LastFile = book.FilePath;
     }
     public void UnloadBook(bool fullUnload)
     {
@@ -154,13 +153,11 @@ public partial class MainForm : Form, IMainForm
 
         Rectangle logicalBounds = new(bounds.Location, bounds.Size.Multiply(96f / DeviceDpi).Round());
 
-        Settings.Default.MainFormBounds = logicalBounds;
+        Program.Settings.MainFormBounds = logicalBounds;
 
-        Settings.Default.MainFormWindowState = WindowState;
+        Program.Settings.MainFormWindowState = WindowState;
 
-        Settings.Default.MainFormSplitterDistance = SplitContainer.SplitterDistance;
-
-        Settings.Default.Save();
+        Program.Settings.MainFormSplitterDistance = SplitContainer.SplitterDistance;
     }
 
     protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
@@ -177,27 +174,27 @@ public partial class MainForm : Form, IMainForm
         bool isVisible = false;
         foreach (Screen screen in Screen.AllScreens)
         {
-            if (screen.Bounds.IntersectsWith(Settings.Default.MainFormBounds))
+            if (screen.Bounds.IntersectsWith(Program.Settings.MainFormBounds))
             {
                 isVisible = true;
                 break;
             }
         }
 
-        if (Settings.Default.MainFormSplitterDistance != 0)
+        if (Program.Settings.MainFormSplitterDistance != 0)
         {
-            SplitContainer.SplitterDistance = Settings.Default.MainFormSplitterDistance;
+            SplitContainer.SplitterDistance = Program.Settings.MainFormSplitterDistance;
         }
 
-        if (isVisible && Settings.Default.MainFormBounds != default)
+        if (isVisible && Program.Settings.MainFormBounds != default)
         {
             // visible => restore the bounds of the main form
-            Bounds = Settings.Default.MainFormBounds;
+            Bounds = Program.Settings.MainFormBounds;
 
             // Do not restore the window state when the form was minimzed
-            if (Settings.Default.MainFormWindowState != FormWindowState.Minimized)
+            if (Program.Settings.MainFormWindowState != FormWindowState.Minimized)
             {
-                WindowState = Settings.Default.MainFormWindowState;
+                WindowState = Program.Settings.MainFormWindowState;
             }
         }
         else
@@ -217,7 +214,7 @@ public partial class MainForm : Form, IMainForm
         TrackingService.Action("App/Start");
 
         // Check online for updates
-        if (!Settings.Default.DisableInternetServices && !AppInfo.IsUwp)
+        if (!Program.Settings.DisableInternetServices && !AppInfo.IsUwp)
         {
             updateUrl = await UpdateService.GetUpdateUrl();
             StatusLbUpdateAvailable.Visible = !string.IsNullOrWhiteSpace(updateUrl);
@@ -226,12 +223,11 @@ public partial class MainForm : Form, IMainForm
 
     private void Form_Shown(object sender, EventArgs e)
     {
-        if (Settings.Default.StartScreen == (int)StartScreen.AboutBox)
+        if (Program.Settings.StartScreen == (int)StartScreen.AboutBox)
         {
             using (var dialog = new AboutBox()) dialog.ShowDialog();
 
-            Settings.Default.StartScreen = (int)StartScreen.LastFile;
-            Settings.Default.Save();
+            Program.Settings.StartScreen = (int)StartScreen.LastFile;
         }
     }
 
@@ -271,7 +267,7 @@ public partial class MainForm : Form, IMainForm
         using (FolderBrowserDialog dialog = new FolderBrowserDialog
         {
             Description = Messages.BrowseVhfPath,
-            SelectedPath = Settings.Default.VhfPath
+            SelectedPath = Program.Settings.VhfPath
         })
         {
             if (dialog.ShowDialog() == DialogResult.OK)
@@ -282,11 +278,10 @@ public partial class MainForm : Form, IMainForm
                     _ = Directory.GetFiles(dialog.SelectedPath);
 
                     // Eventually refresh tree view root path
-                    if (dialog.SelectedPath != Settings.Default.VhfPath)
+                    if (dialog.SelectedPath != Program.Settings.VhfPath)
                     {
-                        Settings.Default.VhfPath = dialog.SelectedPath;
+                        Program.Settings.VhfPath = dialog.SelectedPath;
                         FileTreeView.RootPath = dialog.SelectedPath;
-                        Settings.Default.Save();
                     }
                 }
                 catch (IOException)
@@ -314,9 +309,9 @@ public partial class MainForm : Form, IMainForm
 
     private void TsmiSettings_Click(object sender, EventArgs e)
     {
-        string oldVhfPath = Settings.Default.VhfPath;
+        string oldVhfPath = Program.Settings.VhfPath;
 
-        using (SettingsDialog optionen = new SettingsDialog())
+        using (SettingsDialog optionen = new SettingsDialog(Program.Settings))
         {
             if (optionen.ShowDialog() == DialogResult.OK)
             {
@@ -324,14 +319,14 @@ public partial class MainForm : Form, IMainForm
                 CurrentBook?.Words.ForEach(x => x.RenewPracticeState());
 
                 if (CurrentController != null)
-                    CurrentController.ListView.GridLines = Settings.Default.GridLines;
+                    CurrentController.ListView.GridLines = Program.Settings.GridLines;
 
                 // Eventually refresh tree view root path
-                if (oldVhfPath != Settings.Default.VhfPath)
-                    FileTreeView.RootPath = Settings.Default.VhfPath;
+                if (oldVhfPath != Program.Settings.VhfPath)
+                    FileTreeView.RootPath = Program.Settings.VhfPath;
 
                 //Autosave
-                if (Settings.Default.AutoSave && UnsavedChanges)
+                if (Program.Settings.AutoSave && UnsavedChanges)
                 {
                     SaveFile(false);
                 }
@@ -385,8 +380,7 @@ public partial class MainForm : Form, IMainForm
             return;
 
         UnloadBook(true);
-        Settings.Default.LastFile = "";
-        Settings.Default.Save();
+        Program.Settings.LastFile = string.Empty;
     }
 
     private void TsmiMerge_Click(object sender, EventArgs e)
@@ -638,7 +632,7 @@ public partial class MainForm : Form, IMainForm
             {
                 Title = Words.SaveVocabularyBook,
                 FileName = CurrentBook.MotherTongue + " - " + CurrentBook.ForeignLang,
-                InitialDirectory = Settings.Default.VhfPath,
+                InitialDirectory = Program.Settings.VhfPath,
                 Filter = Words.VocupVocabularyBookFile + " (*.vhf)|*.vhf"
             })
             {
@@ -661,8 +655,7 @@ public partial class MainForm : Form, IMainForm
         {
             CurrentBook.UnsavedChanges = false;
 
-            Settings.Default.LastFile = CurrentBook.FilePath;
-            Settings.Default.Save();
+            Program.Settings.LastFile = CurrentBook.FilePath;
 
             Cursor.Current = Cursors.Default;
             return true;
@@ -679,7 +672,7 @@ public partial class MainForm : Form, IMainForm
         using (OpenFileDialog open = new OpenFileDialog
         {
             Title = Words.OpenVocabularyBook,
-            InitialDirectory = Settings.Default.VhfPath,
+            InitialDirectory = Program.Settings.VhfPath,
             Filter = Words.VocupVocabularyBookFile + " (*.vhf)|*.vhf"
         })
         {
@@ -802,7 +795,7 @@ public partial class MainForm : Form, IMainForm
 
             using (var dialog = new PracticeDialog(CurrentBook, practiceList) { Owner = this }) dialog.ShowDialog();
 
-            if (Settings.Default.PracticeShowResultList)
+            if (Program.Settings.PracticeShowResultList)
             {
                 using (var dialog = new PracticeResultList(CurrentBook, practiceList)) dialog.ShowDialog();
             }

@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using Vocup.Controls;
 using Vocup.IO;
-using Vocup.Properties;
 
 #nullable disable
 
@@ -21,7 +20,7 @@ public class VocabularyBookController : IDisposable
         ListView = new VocabularyListView()
         {
             Dock = DockStyle.Fill,
-            GridLines = Settings.Default.GridLines,
+            GridLines = Program.Settings.GridLines,
         };
         ListView.ItemSelectionChanged += OnSelectionChanged;
         ListView.Control.DoubleClick += OnDoubleClick;
@@ -71,7 +70,7 @@ public class VocabularyBookController : IDisposable
         Parent?.VocabularyBookUnsavedChanges(VocabularyBook.UnsavedChanges);
         Parent?.VocabularyBookName(VocabularyBook.Name);
 
-        if (VocabularyBook.UnsavedChanges && Settings.Default.AutoSave && !string.IsNullOrWhiteSpace(VocabularyBook.FilePath))
+        if (VocabularyBook.UnsavedChanges && Program.Settings.AutoSave && !string.IsNullOrWhiteSpace(VocabularyBook.FilePath))
         {
             if (VocabularyFile.WriteVhfFile(VocabularyBook.FilePath, VocabularyBook) &&
                 VocabularyFile.WriteVhrFile(VocabularyBook))

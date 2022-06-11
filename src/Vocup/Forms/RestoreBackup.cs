@@ -100,7 +100,7 @@ public partial class RestoreBackup : Form
             stats(result);
             if (result == RestoreResult.Success && RbRestoreAssociatedResults.Checked && !string.IsNullOrWhiteSpace(item.VhrCode))
             {
-                var resultDestination = new FileInfo(Path.Combine(Settings.Default.VhrPath, item.VhrCode));
+                var resultDestination = new FileInfo(Path.Combine(Program.Settings.VhrPath, item.VhrCode));
                 stats(Restore(archive, $"vhr\\{item.VhrCode}.vhr", resultDestination, GetOverrideMode()));
             }
         }
@@ -109,7 +109,7 @@ public partial class RestoreBackup : Form
         {
             for (int i = 0; i < meta.Results.Count; i++)
             {
-                var destination = new FileInfo(Path.Combine(Settings.Default.VhrPath, meta.Results[i]));
+                var destination = new FileInfo(Path.Combine(Program.Settings.VhrPath, meta.Results[i]));
                 stats(Restore(archive, "vhr\\" + meta.Results[i], destination, GetOverrideMode()));
             }
         }

@@ -3,7 +3,6 @@ using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using Vocup.Properties;
 using Vocup.Util;
 
 #nullable disable
@@ -154,7 +153,7 @@ public partial class VocabularyListView : UserControl
 
     private void MainListView_Resize(object sender, EventArgs e)
     {
-        if (Settings.Default.ColumnResize)
+        if (Program.Settings.ColumnResize)
         {
             int include = SystemInformation.VerticalScrollBarWidth + MainListView.Columns.Count;
             int width = (MainListView.Width - imageColumn.Width - lastPracticedColumn.Width - include) / 2;

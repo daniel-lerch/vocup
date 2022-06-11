@@ -36,7 +36,7 @@ public partial class MergeFiles : Form
         OpenFileDialog addFile = new OpenFileDialog
         {
             Title = Words.AddVocabularyBooks,
-            InitialDirectory = Settings.Default.VhfPath,
+            InitialDirectory = Program.Settings.VhfPath,
             Filter = Words.VocupVocabularyBookFile + " (*.vhf)|*.vhf",
             Multiselect = true
         };
@@ -130,7 +130,7 @@ public partial class MergeFiles : Form
         {
             Title = Words.SaveVocabularyBook,
             FileName = TbMotherTongue.Text + " - " + TbForeignLang.Text,
-            InitialDirectory = Settings.Default.VhfPath,
+            InitialDirectory = Program.Settings.VhfPath,
             Filter = Words.VocupVocabularyBookFile + " (*.vhf)|*.vhf"
         })
         {

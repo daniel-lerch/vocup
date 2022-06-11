@@ -4,9 +4,6 @@ using System.Diagnostics;
 using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
-using Vocup.Properties;
-
-#nullable enable
 
 namespace Vocup.Util;
 
@@ -32,14 +29,14 @@ public static class TrackingService
 
     public static void Action(string actionName)
     {
-        if (Settings.Default.DisableInternetServices) return;
+        if (Program.Settings.DisableInternetServices) return;
 
         _ = SendAction(actionName);
     }
 
     public static Task ActionAsync(string actionName)
     {
-        if (Settings.Default.DisableInternetServices) return Task.CompletedTask;
+        if (Program.Settings.DisableInternetServices) return Task.CompletedTask;
 
         return SendAction(actionName);
     }

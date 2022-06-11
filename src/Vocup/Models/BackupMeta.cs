@@ -79,8 +79,8 @@ public class BackupMeta
     public static string ExpandPath(string path)
     {
         return path
-            .Replace("%vhf%", Settings.Default.VhfPath)
-            .Replace("%vhr%", Settings.Default.VhrPath)
+            .Replace("%vhf%", Program.Settings.VhfPath)
+            .Replace("%vhr%", Program.Settings.VhrPath)
             .Replace("%personal%", Environment.GetFolderPath(Environment.SpecialFolder.Personal))
             .Replace("%desktop%", Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory))
             .Replace("%program%", Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles))

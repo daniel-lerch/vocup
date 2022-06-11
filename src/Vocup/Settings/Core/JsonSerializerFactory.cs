@@ -4,32 +4,31 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using LostTech.App;
 
-namespace Vocup.Settings.Core
+namespace Vocup.Settings.Core;
+
+public class JsonSerializerFactory : ISerializerFactory, IDeserializerFactory
 {
-    public class JsonSerializerFactory : ISerializerFactory, IDeserializerFactory
+    public static JsonSerializerFactory Instance { get; } = new JsonSerializerFactory();
+
+    private readonly JsonSerializerOptions options;
+
+    public JsonSerializerFactory()
     {
-        public static JsonSerializerFactory Instance { get; } = new JsonSerializerFactory();
+        options = new JsonSerializerOptions { WriteIndented = true };
+    }
 
-        private readonly JsonSerializerOptions options;
+    public Func<Stream, T, Task> MakeSerializer<T>() => Serialize;
 
-        public JsonSerializerFactory()
-        {
-            options = new JsonSerializerOptions { WriteIndented = true };
-        }
+    private Task Serialize<T>(Stream output, T value)
+    {
+        return JsonSerializer.SerializeAsync(output, value, options);
+    }
 
-        public Func<Stream, T, Task> MakeSerializer<T>() => Serialize;
+    public Func<Stream, Task<T>> MakeDeserializer<T>() => Deserialize<T>;
 
-        private Task Serialize<T>(Stream output, T value)
-        {
-            return JsonSerializer.SerializeAsync(output, value, options);
-        }
-
-        public Func<Stream, Task<T>> MakeDeserializer<T>() => Deserialize<T>;
-
-        private async Task<T> Deserialize<T>(Stream input)
-        {
-            return await JsonSerializer.DeserializeAsync<T>(input).ConfigureAwait(false) 
-                ?? throw new InvalidDataException("JSON deserialization returned null");
-        }
+    private async Task<T> Deserialize<T>(Stream input)
+    {
+        return await JsonSerializer.DeserializeAsync<T>(input).ConfigureAwait(false) 
+            ?? throw new InvalidDataException("JSON deserialization returned null");
     }
 }

@@ -129,7 +129,7 @@ public partial class SpecialCharKeyboard : Form
         // Try to open recent tab
         foreach (TabPage page in TcMain.TabPages)
         {
-            if (page.Tag.ToString().Equals(Settings.Default.SpecialCharTab, StringComparison.OrdinalIgnoreCase))
+            if (page.Tag.ToString().Equals(Program.Settings.SpecialCharTab, StringComparison.OrdinalIgnoreCase))
                 TcMain.SelectTab(page);
         }
     }
@@ -159,8 +159,7 @@ public partial class SpecialCharKeyboard : Form
 
     private void Form_FormClosing(object sender, FormClosingEventArgs e)
     {
-        Settings.Default.SpecialCharTab = TcMain.SelectedTab.Tag.ToString();
-        Settings.Default.Save();
+        Program.Settings.SpecialCharTab = TcMain.SelectedTab.Tag.ToString();
 
         if (e.CloseReason == CloseReason.UserClosing)
         {
