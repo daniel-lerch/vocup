@@ -54,13 +54,13 @@ Source: ..\src\Vocup\bin\Release\net6.0-windows10.0.19041.0\win-x86\publish\wpfg
 
 ; Icons for file associations
 Source: icon_vhf.ico;                 DestDir: {app}; Flags: ignoreversion replacesameversion;
-Source: icon_vdp.ico;                 DestDir: {app}; Flags: ignoreversion replacesameversion;
 
 [InstallDelete]
 Type: files; Name: {app}\de\Vocup.resources.dll;
 Type: files; Name: {app}\CsvHelper.dll;
 Type: files; Name: {app}\Hilfe.chm;
 Type: files; Name: {app}\ICSharpCode.SharpZipLib.dll;
+Type: files; Name: {app}\icon_vdp.ico
 Type: files; Name: {app}\K_Updater.dll;
 Type: files; Name: {app}\Microsoft.Bcl.AsyncInterfaces.dll;
 Type: files; Name: {app}\Microsoft.Bcl.HashCode.dll;
@@ -98,15 +98,9 @@ Root: HKCR; Subkey: "vhf.File\shell\open\command"; ValueType: string; ValueName:
 Root: HKCR; Subkey: "vhf.File\shell\open";         ValueType: string; ValueName: ""; ValueData: "Mit Vocup öffnen";           Flags: uninsdeletekey deletevalue;
 
 ;Mit dieser Anweisung wird ein Registryschlüssel namens ".vdp" erzeugt
-Root: HKCR; Subkey: ".vdp";                        ValueType: string; ValueName: ""; ValueData: "vdp.File";                   Flags: uninsdeletekey deletevalue;
+Root: HKCR; Subkey: ".vdp";                        ValueType: none; ValueName: "";   Flags: deletekey;
 ;TypenSchlüssel erstellen
-Root: HKCR; Subkey: "vdp.File";                    ValueType: string; ValueName: ""; ValueData: "Vocup Datensicherung";       Flags: uninsdeletekey deletevalue;
-;Icon Zuordnen
-Root: HKCR; Subkey: "vdp.File\DefaultIcon";        ValueType: string; ValueName: ""; ValueData: "{app}\icon_vdp.ico";         Flags: uninsdeletekey deletevalue;
-;Aktion beim Klicken festlegen
-Root: HKCR; Subkey: "vdp.File\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\Vocup.exe"" ""%1"""; Flags: uninsdeletekey deletevalue;
-;Beschreibung der Aktion festlegen
-Root: HKCR; Subkey: "vdp.File\shell\open";         ValueType: string; ValueName: ""; ValueData: "Mit Vocup öffnen";           Flags: uninsdeletekey deletevalue;
+Root: HKCR; Subkey: "vdp.File";                    ValueType: none; ValueName: "";   Flags: deletekey;
 
 [Run]
 Filename: {app}\Vocup.exe; Description: {cm:LaunchProgram,Vocup}; Flags: nowait postinstall skipifsilent;

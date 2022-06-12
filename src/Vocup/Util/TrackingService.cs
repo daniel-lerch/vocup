@@ -22,9 +22,9 @@ public static class TrackingService
             _ => "Unknown Runtime"
         };
         if (AppInfo.IsWine)
-            userAgent = $"Vocup/{AppInfo.GetVersion(3)} (Wine; Linux; {processArch}; {osArch}; {AppInfo.GetDeployment()})";
+            userAgent = $"Vocup/{AppInfo.Version} (Wine; Linux; {processArch}; {osArch}; {AppInfo.GetDeployment()})";
         else
-            userAgent = $"Vocup/{AppInfo.GetVersion(3)} (Windows NT {Environment.OSVersion.Version}; {processArch}; {osArch}; {AppInfo.GetDeployment()})";
+            userAgent = $"Vocup/{AppInfo.Version} (Windows NT {Environment.OSVersion.Version}; {processArch}; {osArch}; {AppInfo.GetDeployment()})";
     }
 
     public static void Action(string actionName)

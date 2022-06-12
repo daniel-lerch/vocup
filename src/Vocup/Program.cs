@@ -61,37 +61,24 @@ public static class Program
         Settings.Version = AppInfo.Version;
         Application.DoEvents();
 
-        Form form;
+        MainForm form = new();
 
         if (args.Length > 0 && !string.IsNullOrWhiteSpace(args[0]))
         {
             FileInfo info = new FileInfo(args[0]);
             if (info.Extension == ".vhf")
             {
-                var mainForm = new MainForm();
-                mainForm.ReadFile(info.FullName);
-                form = mainForm;
-            }
-            else if (info.Extension == ".vdp")
-            {
-                form = new RestoreBackup(info.FullName);
+                form.ReadFile(info.FullName);
             }
             else
             {
-                form = new MainForm();
                 MessageBox.Show(string.Format(Messages.OpenUnknownFile, info.FullName),
                     Messages.OpenUnknownFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         else if (Settings.StartScreen == (int)StartScreen.LastFile && File.Exists(Settings.LastFile))
         {
-            var mainForm = new MainForm();
-            mainForm.ReadFile(Settings.LastFile);
-            form = mainForm;
-        }
-        else
-        {
-            form = new MainForm();
+            form.ReadFile(Settings.LastFile);
         }
 
         Application.DoEvents();

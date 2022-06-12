@@ -76,12 +76,6 @@
   <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
     <value>273, 6</value>
   </data>
-  <metadata name="toolStripMenuItem1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 6</value>
-  </data>
   <metadata name="toolStripMenuItem4.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
@@ -224,15 +218,6 @@
   </data>
   <data name="TsmiPrint.Text" xml:space="preserve">
     <value>Print</value>
-  </data>
-  <data name="TsmiBackupRestore.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Control+W</value>
-  </data>
-  <data name="TsmiBackupRestore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 22</value>
-  </data>
-  <data name="TsmiBackupRestore.Text" xml:space="preserve">
-    <value>Restore backup</value>
   </data>
   <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
     <value>273, 6</value>
@@ -441,7 +426,7 @@
   <data name="BtnBookSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAi5JREFUOE+Nkt1PUmEcx7noX+m6izavvOjG8qJLvWiNzRO1tRVrAkWDjDkgZHPY
+        wAAADsABataJCQAAAi5JREFUOE+Nkt1PUmEcx7noX+m6izavvOjG8qJLvWiNzRO1tRVrAkWDjDkgZHPY
         kpfly0kXkZ3yJdwMGaE4g2ODASfsQLDhMJsVRDPTWOG353gexyqpPtv34nfO8/mec57zKA7Q97PnDI5x
         9nLPAKs2NSLNBsc99qp96AZdejgai5ubjOXxXNxAQGhEmj1TEVjuPsEVs9tFl/+JusfBhsQPKNaB7NdG
         ij8A1+QCwtEEuCCP80bHIFV+RXpd6YmSlK40kt0GBnzzEMQ8JCYCUah7nbdNJtMRqso0K8iR+c5EEHb3
@@ -486,7 +471,7 @@
   <data name="BtnPractice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAfdJREFUOE+V0V1IU2Ecx/FDQTeFN915X1A35oUo3XSh1lCnq700LyIsKfAmQgRB
+        wAAADsABataJCQAAAfdJREFUOE+V0V1IU2Ecx/FDQTeFN915X1A35oUo3XSh1lCnq700LyIsKfAmQgRB
         bDGtidl2toU1s+Vbu5i9UO34sjW3DnOyI+pKIqfuwuHUEJ3Hl7YF9ushni6izlofODf/832eh/McJhOv
         qawhaCm2e9plP58xc5U91K3p5x+qTtJEmlt/6tiM4zq+xXkkIyySUSN2p27BZ6laGTLLcmgmbeRuEbsd
         GQLwFdh7BqSfI+a5ieE7JRqaSHvZmHt0vKs6gbRIFnuAnQGkoizeGeVhnY45QDNpI/qC+vWpPnL6DrD5
@@ -560,7 +545,7 @@
   <data name="BtnSearchWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAhJJREFUOE9jwAdCQ0PZsqr6/PMaJnXn1k+cB8QNGZV9tlBp/CCrusemrGvOpenr
+        wAAADsABataJCQAAAhJJREFUOE9jwAdCQ0PZsqr6/PMaJnXn1k+cB8QNGZV9tlBp/CCrusemrGvOpenr
         DvzfdObu/52Xn/5fd/zm/95FW/4XtU7bUlDVJwlVigkyq3usaict/rb72ov/1z///3/jKwTfBOIrH/7/
         X3/i9v+S9hnXcysnikK1IEB8fT1HUevUG3uuvfx/+/v//5fe/f9/8S0CXwYacAsovvrI9f+5dRPmQ7Uh
         QFpld9CM9QfBNqNrhuErH///P//qz/+6SUt+QbUhQE5174TNZx6AnYtNMwxf//L//5xNR/9DtSFATm3/
@@ -632,7 +617,7 @@
   <data name="BtnAddWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAqFJREFUOE99Uu1LU3EUviDUx4roU/QPVFCfCoJeCAJrNHV6jZaxosZevFuKL2Pl
+        wAAADsABataJCQAAAqFJREFUOE99Uu1LU3EUviDUx4roU/QPVFCfCoJeCAJrNHV6jZaxosZevFuKL2Pl
         siKRcvfeubvmZnupZQlatnSGuuZ23XyLfak+hIahTR0U9BcYp9/53WsqVAcO9+Hec55znvNc5m+hFa0n
         dI9sTpLdlRLn13qtdo3HfFD9/O/QkcaLoaZcY/wBeN/HIPKxH0If+sA9FQFr7921C4G63jK3ZZ9avjXK
         PVyNsce19vTTK0gVMiCvZCFXnIRsMUfx2FIKfPkeqAk3L1fw3CG1TYmyTssx43PXr4H5Yciu5iC5NE4z
@@ -682,7 +667,7 @@
   <data name="BtnDeleteWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAa5JREFUOE9jGFygnoGB7bC1dRSUiwFWamkJAeXDoFxUsF5fX+Cav/+qPxkZ/894
+        wAAADsABataJCQAAAa5JREFUOE9jGFygnoGB7bC1dRSUiwFWamkJAeXDoFxUsF5fX+Cav/+qPxkZ/894
         ePRCheGgmIGB+2ZAwP6faWn/z3l5VZwxNmaFSkHAATu7qP/p6f//V1T8/5uV9f+Uq2sPVAqs+Zqf357/
         hYVg+UdhYf93GBtrQKUhYCbQxNPu7t1/MjP//y8thRnS3sPDI3LJx2cvWDNQ/GVs7L9jjo44vclwAmjz
         X6gh71NS/l/283v8NzcXzH8VF/d/r41NJFQpbnDSxaXtU0rKr78gW4H4b0HB/9dxce/2WVmFQ5UQBCw3
@@ -728,7 +713,7 @@
   <data name="BtnEditWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAW5JREFUOE9joDu4ZGHi8jAyctYhJ6cIqBDxIK+hO3lrY9f//9Om/v9cXv7/gJmZ
+        wAAADsABataJCQAAAW5JREFUOE9joDu4ZGHi8jAyctYhJ6cIqBDxIK+hO3lrY9f//9Om/v9cXv7/gJmZ
         LVSKMChv70/ac+bW/wM3X/3fP23e//+tLf+P29qGQ6Xxg9bK0Jhl24/9f/7t//8nX/7/P3Dt+f/5GYUH
         n4uLc0OV4AZrOs3Dn12q+3vq1Jr/O08/+H//PdAHyzac5K9oF4QqwQ3W9AA1X6j/9//P2v//vy75f/bs
         mv8d05cdUzJW4ocqwQ3gmn8BNX9e+f//9yX/L2yN322lzsALVYIbYGj+tuT/mfUxu30YGLigSnADbDaf
@@ -7349,12 +7334,6 @@ Just open a vocabulary book or create a new one.</value>
   <data name="&gt;&gt;toolStripMenuItem9.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
-    <value>toolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;toolStripMenuItem4.Name" xml:space="preserve">
     <value>toolStripMenuItem4</value>
   </data>
@@ -7455,12 +7434,6 @@ Just open a vocabulary book or create a new one.</value>
     <value>TsmiPrint</value>
   </data>
   <data name="&gt;&gt;TsmiPrint.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TsmiBackupRestore.Name" xml:space="preserve">
-    <value>TsmiBackupRestore</value>
-  </data>
-  <data name="&gt;&gt;TsmiBackupRestore.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem3.Name" xml:space="preserve">

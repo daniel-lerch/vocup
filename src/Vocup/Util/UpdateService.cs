@@ -12,7 +12,7 @@ namespace Vocup.Util
             Release release;
             try
             {
-                var github = new GitHubClient(new ProductHeaderValue(AppInfo.ProductName, AppInfo.GetVersion(3)));
+                var github = new GitHubClient(new ProductHeaderValue(AppInfo.ProductName, AppInfo.Version.ToString()));
                 release = await github.Repository.Release.GetLatest("daniel-lerch", "vocup").ConfigureAwait(false);
             }
             catch (Exception ex)

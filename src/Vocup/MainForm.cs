@@ -388,25 +388,6 @@ public partial class MainForm : Form, IMainForm
         using (var dialog = new MergeFiles()) dialog.ShowDialog();
     }
 
-    private void TsmiBackupRestore_Click(object sender, EventArgs e)
-    {
-        if (UnsavedChanges && !EnsureSaved()) return;
-
-        using (OpenFileDialog dialog = new OpenFileDialog
-        {
-            Title = Words.OpenBackup,
-            Filter = Words.VocupBackupFile + " (*.vdp)|*.vdp",
-            InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal)
-        })
-        {
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                using (RestoreBackup restore = new RestoreBackup(dialog.FileName))
-                    restore.ShowDialog();
-            }
-        }
-    }
-
     private void TsmiOpenInExplorer_Click(object sender, EventArgs e)
     {
         if (CurrentBook.UnsavedChanges)
