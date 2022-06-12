@@ -46,22 +46,9 @@ public static class Program
         splash.Show();
         Application.DoEvents();
 
-        //SettingsImporter.Run();
-        var loader = new Settings.Core.VersionedSettingsLoader<VocupSettings>(new(Path.GetTempPath()), "vocup_settings");
-        var settings = loader.LoadAsync().GetAwaiter().GetResult();
+        var loader = new VocupSettingsLoader();
+        var settings = loader.LoadAsync().AsTask().GetAwaiter().GetResult();
         Settings = settings.Value;
-
-        if (Settings.StartupCounter == 0)
-        {
-            //Settings.Default.Upgrade(); // Keep old settings with new version
-            //                            // Warning: Unsaved changes are overridden
-            
-            // Reset DisableInternetSettings on update to 1.8.4
-            if (AppInfo.IsUwp && Settings.Version < new Version(1, 8, 4))
-            {
-                Settings.DisableInternetServices = false;
-            }
-        }
 
         SetCulture();
         if (!CreateVhfFolder() || !CreateVhrFolder())
