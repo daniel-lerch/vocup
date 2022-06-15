@@ -26,34 +26,34 @@ namespace Vocup.Forms
             LbCopyright.Text = AppInfo.CopyrightInfo;
         }
 
-        private void LlbProjectWebsite_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private async void LlbProjectWebsite_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("https://github.com/daniel-lerch/vocup");
+            await Launcher.LaunchUriAsync("https://github.com/daniel-lerch/vocup");
         }
 
-        private void LlbDownload_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private async void LlbDownload_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (OperatingSystem.IsWindowsVersionAtLeast(10, 0, 10240))
-                Process.Start("ms-windows-store://pdp/?productid=9N6W2H3QJQMM");
+                await Launcher.LaunchUriAsync("ms-windows-store://pdp/?productid=9N6W2H3QJQMM");
             else
-                Process.Start("https://www.microsoft.com/store/apps/9N6W2H3QJQMM");
+                await Launcher.LaunchUriAsync("https://www.microsoft.com/store/apps/9N6W2H3QJQMM");
         }
 
-        private void LlbProjectMail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private async void LlbProjectMail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("mailto:" + LlbProjectMail.Text);
+            await Launcher.LaunchUriAsync("mailto:" + LlbProjectMail.Text);
         }
 
-        private void LlbProjectLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private async void LlbProjectLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("https://github.com/daniel-lerch/vocup/blob/master/LICENSE");
+            await Launcher.LaunchUriAsync("https://github.com/daniel-lerch/vocup/blob/master/LICENSE");
         }
 
-        private void LwComponents_DoubleClick(object sender, EventArgs e)
+        private async void LwComponents_DoubleClick(object sender, EventArgs e)
         {
             if (LwComponents.SelectedItems.Count > 0)
             {
-                Process.Start(LwComponents.SelectedItems[0].SubItems[2].Text);
+                await Launcher.LaunchUriAsync(LwComponents.SelectedItems[0].SubItems[2].Text);
             }
         }
     }

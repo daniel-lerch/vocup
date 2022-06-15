@@ -485,9 +485,9 @@ namespace Vocup
             }
         }
 
-        private void StatusLbUpdateAvailable_Click(object sender, EventArgs e)
+        private async void StatusLbUpdateAvailable_Click(object sender, EventArgs e)
         {
-            Process.Start(updateUrl);
+            await Launcher.LaunchUriAsync(updateUrl);
         }
 
         private void StatusLbOpenUwpApp_Click(object sender, EventArgs e)
@@ -500,9 +500,11 @@ namespace Vocup
             }
         }
 
-        private void StatusLbInstallUwpApp_Click(object sender, EventArgs e)
+        private async void StatusLbInstallUwpApp_Click(object sender, EventArgs e)
         {
-            Process.Start("ms-windows-store://pdp/?ProductId=9N6W2H3QJQMM");
+            Rectangle bounds = Screen.GetBounds(this);
+            await Launcher.LaunchUriAsync(
+                $"ms-windows-store://pdp/?ProductId=9N6W2H3QJQMM&mode=mini&pos={bounds.X},{bounds.Y},{bounds.Width},{bounds.Height}");
         }
 
         private async void BtnSearchWord_Click(object sender, EventArgs e)
