@@ -31,7 +31,6 @@ public class InitializeTest
         // new PracticeDialog(book: null, practiceList: null).Dispose();
         // new PracticeResultList(book: null, practiceList: null).Dispose();
         new PrintWordSelection(book).Dispose();
-        new RestoreBackup(null).Dispose();
         //new SettingsDialog(settings: null).Dispose();
         new SpecialCharKeyboard().Dispose();
         new SpecialCharManage().Dispose();
