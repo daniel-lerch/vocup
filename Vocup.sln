@@ -23,7 +23,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{513AA9B6-F
 		docs\fileformats.md = docs\fileformats.md
 		docs\install-on-linux.md = docs\install-on-linux.md
 		docs\privacy.md = docs\privacy.md
-		docs\README.md = docs\README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "setup", "setup", "{2EC721A1-43D9-4567-BF3F-F2CBB7F215F5}"
