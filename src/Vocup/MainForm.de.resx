@@ -144,9 +144,6 @@
   <data name="TsmiPrint.Text" xml:space="preserve">
     <value>Drucken</value>
   </data>
-  <data name="TsmiBackupRestore.Text" xml:space="preserve">
-    <value>Datensicherung wiederherstellen</value>
-  </data>
   <data name="TsmiExitApplication.Text" xml:space="preserve">
     <value>Beenden</value>
   </data>

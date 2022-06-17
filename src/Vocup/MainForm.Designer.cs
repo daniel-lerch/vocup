@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.ToolStripSeparator toolStripMenuItem10;
             System.Windows.Forms.ToolStripSeparator toolStripMenuItem9;
-            System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
             System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
             System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
             System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
@@ -51,7 +50,6 @@
             this.TsmiOpenInExplorer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
             this.TsmiPrint = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiBackupRestore = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.TsmiExitApplication = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiRootEdit = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,7 +99,6 @@
             toolStripMenuItem11 = new System.Windows.Forms.ToolStripSeparator();
             toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
             toolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
-            toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
             toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
@@ -135,11 +132,6 @@
             // 
             toolStripMenuItem9.Name = "toolStripMenuItem9";
             resources.ApplyResources(toolStripMenuItem9, "toolStripMenuItem9");
-            // 
-            // toolStripMenuItem1
-            // 
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            resources.ApplyResources(toolStripMenuItem1, "toolStripMenuItem1");
             // 
             // toolStripMenuItem4
             // 
@@ -193,8 +185,6 @@
             this.TsmiOpenInExplorer,
             this.toolStripMenuItem7,
             this.TsmiPrint,
-            toolStripMenuItem1,
-            this.TsmiBackupRestore,
             this.toolStripMenuItem3,
             this.TsmiExitApplication});
             this.TsmiRootFile.Name = "TsmiRootFile";
@@ -274,13 +264,6 @@
             this.TsmiPrint.Image = global::Vocup.Properties.Icons.Print;
             this.TsmiPrint.Name = "TsmiPrint";
             this.TsmiPrint.Click += new System.EventHandler(this.TsmiPrint_Click);
-            // 
-            // TsmiBackupRestore
-            // 
-            this.TsmiBackupRestore.Image = global::Vocup.Properties.Icons.DatabaseRestore;
-            this.TsmiBackupRestore.Name = "TsmiBackupRestore";
-            resources.ApplyResources(this.TsmiBackupRestore, "TsmiBackupRestore");
-            this.TsmiBackupRestore.Click += new System.EventHandler(this.TsmiBackupRestore_Click);
             // 
             // toolStripMenuItem3
             // 
@@ -747,7 +730,6 @@
         private System.Windows.Forms.ToolStripMenuItem TsmiSpecialChar;
         private System.Windows.Forms.Panel SideBar;
         private Controls.ResponsiveSplitContainer SplitContainer;
-        private System.Windows.Forms.ToolStripMenuItem TsmiBackupRestore;
         private System.Windows.Forms.ToolStripMenuItem TsmiCloseBook;
         private System.Windows.Forms.ToolStripMenuItem TsmiEvaluationInfo;
         private Controls.StatisticsPanel GroupStatistics;

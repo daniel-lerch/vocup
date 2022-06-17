@@ -38,15 +38,6 @@
             </uap:SupportedFileTypes>
           </uap:FileTypeAssociation>
         </uap:Extension>
-        <uap:Extension Category="windows.fileTypeAssociation">
-          <uap:FileTypeAssociation Name="vdp">
-            <uap:DisplayName>Vocup Datensicherung</uap:DisplayName>
-            <uap:Logo>Images\VdpLogo.png</uap:Logo>
-            <uap:SupportedFileTypes>
-              <uap:FileType>.vdp</uap:FileType>
-            </uap:SupportedFileTypes>
-          </uap:FileTypeAssociation>
-        </uap:Extension>
       </Extensions>
     </Application>
   </Applications>

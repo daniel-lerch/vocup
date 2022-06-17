@@ -153,12 +153,6 @@
   <data name="CbDisableInternetServices.Text" xml:space="preserve">
     <value>Internetdienste deaktivieren (nicht empfohlen)</value>
   </data>
-  <data name="CbEvaluationSystem.Items" xml:space="preserve">
-    <value>Deutschland</value>
-  </data>
-  <data name="CbEvaluationSystem.Items1" xml:space="preserve">
-    <value>Schweiz</value>
-  </data>
   <data name="CbGridLines.Text" xml:space="preserve">
     <value>Rasterlinien anzeigen</value>
   </data>
@@ -177,7 +171,7 @@
   <data name="CbOptionalExpressions.Text" xml:space="preserve">
     <value>Ausdrücke in Klammers als optional behandeln</value>
   </data>
-  <data name="CbPracticeResult.Text" xml:space="preserve">
+  <data name="CbShowPracticeResult.Text" xml:space="preserve">
     <value>Nach einer Übung Auswertung anzeigen</value>
   </data>
   <data name="CbSingleContinueButton.Text" xml:space="preserve">
@@ -227,9 +221,6 @@
   </data>
   <data name="GroupVocabularyList.Text" xml:space="preserve">
     <value>Vokabelliste</value>
-  </data>
-  <data name="LbGradeSystem.Text" xml:space="preserve">
-    <value>Notensystem</value>
   </data>
   <data name="LbLanguage.Text" xml:space="preserve">
     <value>Setze Oberflächensprache</value>

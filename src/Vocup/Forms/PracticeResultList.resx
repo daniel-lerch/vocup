@@ -1,64 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -117,7 +57,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ListView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -161,113 +101,113 @@
   </metadata>
   <data name="listview_imagelist.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAA2
-        GAAAAk1TRnQBSQFMAgEBBAEAAYgBAAGIAQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
-        AwABIAMAAQEBAAEgBgABIP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wAnAAMmATkBYQJc
-        AdYBXgJaAdcCXgFaAdcCXgFaAdcCXgFaAdcCXgFaAdcCXgFaAdcCXgFaAdcCXgFaAdcCXgFaAdcCXgFa
-        AdcCXgFaAdcDVgGyBAEEAAMmATkCXAFhAdYCWgFeAdcCWgFeAdcCWgFeAdcCWgFeAdcCWgFeAdcCWgFe
-        AdcCWgFeAdcCWgFeAdcCWgFeAdcCWgFeAdcCWgFeAdcDVgGyBAEEAAMmATkBXAJhAdYBWgJeAdcBWgJe
-        AdcBWgJeAdcBWgJeAdcBWgJeAdcBWgJeAdcBWgJeAdcBWgJeAdcBWgJeAdcBWgJeAdcBWgJeAdcDVgGy
-        BAEEAAMmATkBXAFhAVwB1gFaAV4BWgHXAVoBXgFaAdcBWgFeAVoB1wFaAV4BWgHXAVoBXgFaAdcBWgFe
-        AVoB1wFaAV4BWgHXAVoBXgFaAdcBWgFeAVoB1wFaAV4BWgHXAVoBXgFaAdcDVgGyBAEEAAMyAU8B0AFK
-        AQwB/wHOAUoBDAH/AdcBTgENAf8B4AFRAQ0B/wHnAVUBDwH/AdkBaAE0Af8B0wFUARkB/wHuAVUBDAH/
-        AekBVgEPAf8B4QFSAQ4B/wHYAU4BDQH/AdcBTQENAf8BYQJbAeQEAQQAAzIBTwETAQwB0AH/ARMBDAHO
-        Af8BFQENAdcB/wEVAQ0B4wH/ARgBDwHpAf8BGQEQAe0B/wEZARAB8AH/ARkBEAHuAf8BFQEMAesB/wEW
-        AQ0B5AH/ARUBDQHYAf8BFQENAdcB/wJbAWEB5AQBBAADMgFPAQABrwL/AQABrQL/AQABsQL/AQABtAL/
-        AQUBtgL/AQcBugL/ARABugL/AQ4BuAL/AQgBtwL/AQEBtAL/AQABsQL/AQABtAL/AVsBYQFiAeQEAQQA
-        AzIBTwERAdABDAH/ARABzgEMAf8BEgHXAQ0B/wETAeABDwH/ARIB6AENAf8BEAHyAQsB/wEVAfEBEAH/
-        ARUB7gEQAf8BFAHpAQ8B/wETAeEBDgH/ARIB2AENAf8BEgHXAQ0B/wFbAWEBWwHkBAEEAAMwAUsBxAFF
-        AQoB/wHBAUQBCgH/AckBRwELAf8B0gFDAQAB/wHLAYkBWQH/AckB4AHsAf8BvwG4AbUB/wHKAUYBCAH/
-        AdoBTgEMAf8B0QFLAQwB/wHKAUgBCwH/AcoBSAELAf8BXgJcAdkEAQQAAzABSwERAQoBxAH/ARIBCwHB
-        Af8BDgEGAcwB/wEPAQcBwgH/AQ8BBwHVAf8BFgEOAd0B/wEXAQ4B3AH/ARABBwHdAf8BFQENAc0B/wEM
-        AQUBwgH/ARIBCgHNAf8BEwELAckB/wJcAV4B2QQBBAADMAFLAQABpgH7Af8BAAGjAfcB/wEAAacB/QH/
-        AQABqgL/AQABrQL/ARIBngHgAf8BAAGoAfoB/wEEAa8C/wEAAawC/wEAAasC/wEAAagB/gH/AQABqQL/
-        AVwCXgHZBAEEAAMwAUsBDwHEAQoB/wEPAcEBCgH/ARAByQEMAf8BDgHRAQkB/wERAdcBDAH/AR4BwwEa
-        Af8BCwHXAQYB/wETAd0BDgH/ARIB1wENAf8BEQHRAQwB/wEQAcoBCwH/ARABygELAf8BXAFeAVwB2QQB
-        BAADMAFLAcABQwEKAf8BvQFCAQoB/wHDAUUBCwH/AcsBQwEDAf8BwgFmAT0B/wG7AbUBsgH/AdQBpwGQ
-        Af8BzQFHAQgB/wHPAUoBCwH/AcoBSAELAf8BxAFFAQsB/wHFAUUBCwH/AV4CXAHZBAEEAAMwAUsBEQEK
-        AcAB/wEKAQMBvgH/ATQBLwG6Af8CjQGUAf8BJQEhAZYB/wEKAQEB1QH/AQwBBAHXAf8BHgEWAc4B/wG7
-        AboB0AH/AYkBhwGtAf8BCgEEAbcB/wERAQoBxwH/AlwBXgHZBAEEAAMwAUsBAAGjAfgB/wEAAZ8B8QH/
-        AQABowH5Af8BAAGkAv8BawG5AdsB/wHXAcYBvQH/ASABlQHLAf8BAAGrAv8BAAGqAv8BAAGoAf4B/wEA
-        AaQB+QH/AQABpgH8Af8BXAJeAdkEAQQAAzABSwEPAcABCgH/AQ4BvQEKAf8BCwHDAQcB/wEDAckBAAH/
-        AYIBxwGBAf8B1QHCAdYB/wEuAa8BKwH/AQcB1QECAf8BEQHPAQwB/wEQAcoBCwH/AQ8BxAELAf8BDwHF
-        AQsB/wFcAV4BXAHZBAEEAAMwAUsBvAFCAQoB/wG3AUABCQH/AbwBQgEKAf8BwgFEAQkB/wHDAUYBDAH/
-        AasBUwEsAf8BtQFDAQ4B/wHMAUYBCAH/AcUBRgELAf8BwgFEAQoB/wG9AUIBCgH/Ab8BQwEKAf8BXgJc
-        AdkEAQQAAzABSwEQAQoBvAH/AQYBAAG5Af8BUAFMAa4B/wG9Ab4BowH/ApwBkgH/AR0BGAGVAf8BEQEK
-        AcAB/wGXAZYBrgH/AeMB5AHHAf8BtAGzAdMB/wEOAQgBtgH/AQ4BCAHAAf8CXAFeAdkEAQQAAzABSwEA
-        AaEB9AH/AQABnAHtAf8BAAGcAfIB/wFWAakBzQH/AcMBrQGiAf8B2QHKAcEB/wGcAa8BuQH/AQABlQHq
-        Af8BAAGpAv8BAAGiAfcB/wEAAZ8B8gH/AQABogH2Af8BXAJeAdkEAQQAAzABSwEOAbwBCgH/AQwBtwEH
-        Af8BBAG6AQAB/wFiAbYBYAH/AcABqQHBAf8B1gHGAdcB/wGgAbMBnwH/AQEBtgEAAf8BDwHKAQoB/wEP
-        AcIBCgH/AQ4BvQEKAf8BDgG/AQoB/wFcAV4BXAHZBAEEAAMwAUsBuQFAAQkB/wGyAT4BCAH/AbYBPwEJ
-        Af8BugE6AQAB/wG9AV8BNgH/AaEBsQG5Af8BkAFjAVIB/wG7ATYBAAH/AcABRAEKAf8BugFBAQkB/wG2
-        AT8BCQH/AboBQQEJAf8BXgJcAdkEAQQAAzABSwEQAQkBuQH/AQ4BCAGyAf8BBwEBAbgB/wFWAVMBrQH/
-        ArUBpQH/ApMBlQH/AogBmAH/AbgBuQGlAf8BlgGVAboB/wETAQ0BvAH/AQoBAwG3Af8BEAEKAbkB/wJc
-        AV4B2QQBBAADMAFLAQABnwHwAf8BAAGWAeoB/wFxAb8B4AH/AegBxQGyAf8BXAGmAcYB/wFRAawB1AH/
-        AdcBvwGyAf8BKQGNAboB/wEAAZ4B9wH/AQABngHvAf8BAAGbAesB/wEAAZ8B8QH/AVwCXgHZBAEEAAMw
-        AUsBDQG5AQkB/wEBAbEBAAH/AYkBygGIAf8B4gG+AeMB/wFnAbIBZQH/AV8BugFcAf8B0wG6AdQB/wE5
-        AZ0BNgH/AQEBvgEAAf8BDgG7AQoB/wENAbYBCQH/AQ4BugEJAf8BXAFeAVwB2QQBBAADMAFLAbcBPQEF
-        Af8BrwE8AQcB/wGwAT0BCAH/AbMBOwEEAf8BtwFIARYB/wGqAaUBowH/AZgBoQGmAf8BhwFBASQB/wGy
-        ATcBAAH/AbUBPwEJAf8BsQE9AQgB/wG2AT8BCQH/AV4CXAHZBAEEAAMwAUsBDAEFAbcB/wEOAQgBrwH/
-        AQ0BBwGxAf8CAAG1Af8BVwFUAakB/wGwAbEBpAH/Aa8BsAGkAf8BjAGLAaEB/wEMAQUBtAH/AQgBAQG1
-        Af8BDwEJAbEB/wEPAQkBtgH/AlwBXgHZBAEEAAMwAUsBAAGdAe8B/wEAAZMB5AH/AWUBvwHmAf8BggG/
-        Ad4B/wEAAZgB6wH/AQABnAHsAf8BrQGyAbUB/wGpAaYBpAH/AQABhQHKAf8BAAGdAfAB/wEAAZcB5QH/
-        AQABnAHtAf8BXAJeAdkEAQQAAzABSwEJAbcBBQH/AQIBrQEAAf8BgAHLAXAB/wGMAckBigH/AQUBtAEA
-        Af8BDwG3AQsB/wGuAbQBrgH/AagBpQGoAf8BCgGcAQYB/wEJAbgBBQH/AQ0BsAEIAf8BDQG2AQkB/wFc
-        AV4BXAHZBAEEAAMwAUwBvwFOARwB/wGuATkBBAH/Aa0BNwECAf8BrwE7AQcB/wGwATcBAAH/Aa0BUQEp
-        Af8BpgGkAaMB/wGWAaEBpwH/AYsBQgEjAf8BsAE3AQAB/wGvATwBCAH/AbYBPwEJAf8BXgJcAdkEAQQA
-        AzABTAEhARwBvwH/AQsBBQGuAf8BAQEAAa0B/wERAQsBqgH/AoEBogH/Aa8BsAGiAf8CsgGmAf8CkgGV
-        Af8BGgEWAYQB/wEEAQABsAH/AQ8BCQGwAf8BDwEJAbUB/wJcAV4B2QQBBAADMAFMAQcBpwHyAf8BAAGU
-        AeMB/wEAAY8B4gH/AQABkgHlAf8BAAGWAeUB/wEAAZYB6gH/ATIBnQHNAf8BygGzAaYB/wFcAY4BoAH/
-        AQABigHZAf8BAAGZAecB/wEAAZsB7AH/AVwCXgHZBAEEAAMwAUwBIAG/ARwB/wEJAa4BBQH/AQABqgEA
-        Af8BAAGtAQAB/wEKAbABBgH/AQEBsQEAAf8BQgGtAUAB/wHGAa8BxwH/AWMBlAFiAf8BAAGjAQAB/wEM
-        AbIBCAH/AQ0BtQEJAf8BXAFeAVwB2QQBBAADMAFMAdIBhQFRAf8BwAFjAToB/wG3AU4BHwH/AasBOAED
-        Af8BqgEwAQAB/wGxASwBAAH/AbABXwE8Af8BqQG1AbsB/wGVAYsBhgH/AaIBMwEBAf8BsQE8AQcB/wG2
-        AT8BCQH/AV4CXAHZBAEEAAMwAUwBVgFRAdIB/wE7ATYBwAH/AS8BKgG2Af8BnwGeAbYB/wHAAcEBqgH/
-        AXABbgGuAf8BVAFRAagB/wK0AaUB/wKbAZMB/wEgAR0BgwH/AQgBAgGtAf8BDwEJAbcB/wJcAV4B2QQB
-        BAADMAFMAUEBvwH5Af8BKgGtAeoB/wEMAZ8B5QH/AQABlgHjAf8BAAGTAeIB/wEAAZMB4gH/AQABlAHn
-        Af8BawGjAbkB/wHFAawBnwH/ASsBgQGlAf8BAAGRAeIB/wEAAZ0B7gH/AVwCXgHZBAEEAAMwAUwBVAHS
-        AVEB/wE9AcABOgH/ASEBtgEeAf8BDgGvAQoB/wEGAa0BAgH/AQUBrAEBAf8BAAGvAQAB/wGBAaoBgAH/
-        AcEBqAHCAf8BOAGMATYB/wEAAasBAAH/AQ0BtwEJAf8BXAFeAVwB2QQBBAADMAFMAdUBjgFcAf8BywGI
-        AVkB/wHKAYMBUgH/AcgBmAGAAf8BpAFtAVcB/wGgAUEBFwH/Aa8BcAFWAf8BpQGtAbEB/wGdAZgBlgH/
-        AaQBOQEIAf8BsQE6AQUB/wG2AT8BCQH/AV4CXAHZBAEEAAMwAUwBYAFcAdUB/wFTAU8ByQH/AbEBsAHY
-        Af8B8wH0AdkB/wGrAaoBxQH/ASkBIwG4Af8BCQEDAbMB/wFaAVcBqQH/AboBuwGkAf8BkQGQAZsB/wEJ
-        AQQBpAH/AQ0BBwG4Af8CXAFeAdkEAQQAAzABTAFNAcQB+gH/AUsBuwHuAf8BSQG6Ae0B/wE7AbQB6wH/
-        ASUBqgHoAf8BEAGhAeYB/wEAAZoB5gH/AQUBmQHgAf8BnAGpAa8B/wGyAZ4BkwH/AQkBhAG+Af8BAAGe
-        AfMB/wFcAl4B2QQBBAADMAFMAV8B1QFcAf8BXAHLAVkB/wFaAcoBWAH/AU0BxQFKAf8BOQG+ATUB/wEl
-        AbcBIgH/AREBswENAf8BGQGwARYB/wGfAasBngH/Aa8BmgGvAf8BGQGXARYB/wEIAboBBAH/AVwBXgFc
-        AdkEAQQAAzABTAHaAZgBaQH/Ac4BjwFiAf8ByQGEAVMB/wHiAcQBtQH/AfID/wHcAeQB6AH/AcsB0wHX
-        Af8BrgG4Ab0B/wGsAY4BcQH/AbsBVQEoAf8BugFVASgB/wG/AVUBJQH/AV4CXAHZBAEEAAMwAUwBbQFp
-        AdoB/wFjAV8BzQH/AXABbQHRAf8BrwGtAdoB/wFhAV0BywH/AVUBUQHJAf8BUAFMAccB/wE/AToBwgH/
-        AYABbwG4Af8BVgFSAb8B/wEpASQBuwH/ASsBJQG/Af8CXAFeAdkEAQQAAzABTAFbAcoB/AH/AVUBvwHv
-        Af8BUgG9Ae4B/wFRAb0B7QH/AU8BvAHtAf8BSQG6Ae0B/wE/AbUB6wH/ASkBrwHuAf8BPgGsAd4B/wGM
-        AbABwgH/ASYBpAHdAf8BDwGpAfIB/wFcAl4B2QQBBAADMAFMAWwB2gFpAf8BZQHOAWIB/wFiAc0BYAH/
-        AWEBzAFeAf8BYAHMAV0B/wFaAcoBVwH/AVEBxgFOAf8BPAHDATkB/wFOAbwBTAH/AZIBtgGRAf8BOgG2
-        ATYB/wElAcABIQH/AVwBXgFcAdkEAQQAAzABTAHfAaMBhAH/AdMBmgFvAf8B0QGVAWkB/wHUAaABhQH/
-        AeIBygG9Af8B6wHdAdYB/wHhAdEByAH/AcwBpwGTAf8BxAFuAUgB/wHDAWgBQAH/AcABYgE5Af8BxAFg
-        ATIB/wFhAl8B2gQBBAADMAFMAYgBhAHfAf8BgQFwAdMB/wFtAWoB0QH/AWMBXwHOAf8BZgFiAc8B/wFi
-        AV8BzQH/AVwBWAHKAf8BVQFQAcgB/wFGAUEBxwH/AUABOwHDAf8BPgE6AcAB/wE4ATIBxAH/Al8BYQHa
-        BAEEAAMwAUwBagHRAf4B/wFjAcUB8QH/AWABwwHwAf8BXAHCAe8B/wFXAcAB7wH/AVEBvQHuAf8BSgG6
-        Ae0B/wFDAbcB7AH/ATUBswHuAf8BJgGwAfAB/wEmAa0B6wH/ASABrwHyAf8BXwJhAdoEAQQAAzABTAGH
-        Ad8BhAH/AYAB0wFvAf8BbwHSAW0B/wFrAdABaQH/AWcBzwFkAf8BYQHNAV4B/wFbAcoBWAH/AVUByAFS
-        Af8BSAHGAUUB/wE7AcQBOAH/AToBwQE3Af8BNwHEATMB/wFfAWEBXwHaBAEEAAMyAU8B8QG4AZsB/wHk
-        Aa4BkgH/AeMBrAGPAf8B4AGlAYYB/wHcAZsBbQH/AdsBmQFrAf8B2QGTAWMB/wHXAYsBWAH/AdQBiQFV
-        Af8B0AGCAU0B/wHNAW4BQwH/AdIBawE9Af8CYAFZAeMEAQQAAzIBTwGeAZsB8QH/AZUBkgHkAf8BkgGO
-        AeIB/wGOAYoB4QH/AYgBhAHfAf8BgQFxAdwB/wFtAWkB2gH/AWQBYAHXAf8BWwFXAdMB/wFSAU0B0AH/
-        AUgBQwHNAf8BQgE9AdIB/wJZAWAB4wQBBAADMgFPAY8B4wL/AYYB1wL/AYMB1QL/AXEB0wL/AWsB0AH+
-        Af8BYwHNAf0B/wFbAcoB/AH/AVEBxgH7Af8BRwHCAfoB/wE9Ab0B+QH/ATIBuQH3Af8BKgG8Av8BWQFg
-        AWEB4wQBBAADMgFPAZ0B8QGbAf8BlAHkAZIB/wGRAeIBjwH/AY0B4QGKAf8BhwHfAYQB/wGBAdwBcAH/
-        AWsB2gFpAf8BYwHXAWAB/wFaAdMBVwH/AVAB0AFNAf8BRwHNAUMB/wFAAdIBPQH/AVkBYAFZAeMEAQQA
-        Aw8BEwMwAUwDMQFNAzABTAMwAUwDMAFMAzABTAMwAUwDMAFMAzABTAMwAUwDMAFMAzABTAMoATsIAAMP
-        ARMDMAFMAzEBTQMwAUwDMAFMAzABTAMwAUwDMAFMAzABTAMwAUwDMAFMAzABTAMwAUwDKAE7CAADDwET
-        AzABTAMxAU0DMAFMAzABTAMwAUwDMAFMAzABTAMwAUwDMAFMAzABTAMwAUwDMAFMAygBOwgAAw8BEwMw
-        AUwDMQFNAzABTAMwAUwDMAFMAzABTAMwAUwDMAFMAzABTAMwAUwDMAFMAzABTAMoATv/AAUAAUIBTQE+
-        BwABPgMAASgDAAFAAwABIAMAAQEBAAEBBgABARYAA/+BAAj/AYABAAGAAQABgAEAAYABAAGAAQABgAEA
-        AYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEA
-        AYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEA
-        AYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEA
-        AYABAAGAAQEBgAEBAYABAQGAAQEI/ws=
+        AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
+        LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
+        SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAANBgAAAJNU0Z0AUkBTAIBAQQB
+        AAGQAQABkAEAARABAAEQAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwABQAMAASADAAEBAQABIAYAASD/
+        AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8AJwADJgE5AWECXAHWAV4CXAHXAl4BXAHXAl4B
+        XAHXAl4BXAHXAl4BXAHXAl4BXAHXAl4BXAHXAl4BXAHXAl4BXAHXAl4BXAHXAl4BXAHXA1YBsgQBBAAD
+        JgE5AlwBYQHWAlwBXgHXAlwBXgHXAlwBXgHXAlwBXgHXAlwBXgHXAlwBXgHXAlwBXgHXAlwBXgHXAlwB
+        XgHXAlwBXgHXAlwBXgHXA1YBsgQBBAADJgE5AVwCYQHWAVwCXgHXAVwCXgHXAVwCXgHXAVwCXgHXAVwC
+        XgHXAVwCXgHXAVwCXgHXAVwCXgHXAVwCXgHXAVwCXgHXAVwCXgHXA1YBsgQBBAADJgE5AVwBYQFcAdYB
+        XAFeAVwB1wFcAV4BXAHXAVwBXgFcAdcBXAFeAVwB1wFcAV4BXAHXAVwBXgFcAdcBXAFeAVwB1wFcAV4B
+        XAHXAVwBXgFcAdcBXAFeAVwB1wFcAV4BXAHXA1YBsgQBBAADMgFPAdABSgEMAf8BzgFKAQwB/wHXAU4B
+        DQH/AeABUQENAf8B5wFVAQ8B/wHZAWgBNAH/AdMBVAEZAf8B7gFVAQwB/wHpAVYBDwH/AeEBUgEOAf8B
+        2AFOAQ0B/wHXAU0BDQH/AWECWwHkBAEEAAMyAU8BEwEMAdAB/wETAQwBzgH/ARUBDQHXAf8BFQENAeMB
+        /wEYAQ8B6QH/ARkBEAHtAf8BGQEQAfAB/wEZARAB7gH/ARUBDAHrAf8BFgENAeQB/wEVAQ0B2AH/ARUB
+        DQHXAf8CWwFhAeQEAQQAAzIBTwEAAa8C/wEAAa0C/wEAAbEC/wEAAbQC/wEFAbYC/wEHAboC/wEQAboC
+        /wEOAbgC/wEIAbcC/wEBAbQC/wEAAbEC/wEAAbQC/wFbAWEBYgHkBAEEAAMyAU8BEQHQAQwB/wEQAc4B
+        DAH/ARIB1wENAf8BEwHgAQ8B/wESAegBDQH/ARAB8gELAf8BFQHxARAB/wEVAe4BEAH/ARQB6QEPAf8B
+        EwHhAQ4B/wESAdgBDQH/ARIB1wENAf8BWwFhAVsB5AQBBAADMAFLAcQBRQEKAf8BwQFEAQoB/wHJAUcB
+        CwH/AdIBQwEAAf8BywGJAVkB/wHJAeAB7AH/Ab8BuAG1Af8BygFGAQgB/wHaAU4BDAH/AdEBSwEMAf8B
+        ygFIAQsB/wHKAUgBCwH/AV4CXAHZBAEEAAMwAUsBEQEKAcQB/wESAQsBwQH/AQ4BBgHMAf8BDwEHAcIB
+        /wEPAQcB1QH/ARYBDgHdAf8BFwEOAdwB/wEQAQcB3QH/ARUBDQHNAf8BDAEFAcIB/wESAQoBzQH/ARMB
+        CwHJAf8CXAFeAdkEAQQAAzABSwEAAaYB+wH/AQABowH3Af8BAAGnAf0B/wEAAaoC/wEAAa0C/wESAZ4B
+        4AH/AQABqAH6Af8BBAGvAv8BAAGsAv8BAAGrAv8BAAGoAf4B/wEAAakC/wFcAl4B2QQBBAADMAFLAQ8B
+        xAEKAf8BDwHBAQoB/wEQAckBDAH/AQ4B0QEJAf8BEQHXAQwB/wEeAcMBGgH/AQsB1wEGAf8BEwHdAQ4B
+        /wESAdcBDQH/AREB0QEMAf8BEAHKAQsB/wEQAcoBCwH/AVwBXgFcAdkEAQQAAzABSwHAAUMBCgH/Ab0B
+        QgEKAf8BwwFFAQsB/wHLAUMBAwH/AcIBZgE9Af8BuwG1AbIB/wHUAacBkAH/Ac0BRwEIAf8BzwFKAQsB
+        /wHKAUgBCwH/AcQBRQELAf8BxQFFAQsB/wFeAlwB2QQBBAADMAFLAREBCgHAAf8BCgEDAb4B/wE0AS8B
+        ugH/Ao0BlAH/ASUBIQGWAf8BCgEBAdUB/wEMAQQB1wH/AR4BFgHOAf8BuwG6AdAB/wGJAYcBrQH/AQoB
+        BAG3Af8BEQEKAccB/wJcAV4B2QQBBAADMAFLAQABowH4Af8BAAGfAfEB/wEAAaMB+QH/AQABpAL/AWsB
+        uQHbAf8B1wHGAb0B/wEgAZUBywH/AQABqwL/AQABqgL/AQABqAH+Af8BAAGkAfkB/wEAAaYB/AH/AVwC
+        XgHZBAEEAAMwAUsBDwHAAQoB/wEOAb0BCgH/AQsBwwEHAf8BAwHJAQAB/wGCAccBgQH/AdUBwgHWAf8B
+        LgGvASsB/wEHAdUBAgH/AREBzwEMAf8BEAHKAQsB/wEPAcQBCwH/AQ8BxQELAf8BXAFeAVwB2QQBBAAD
+        MAFLAbwBQgEKAf8BtwFAAQkB/wG8AUIBCgH/AcIBRAEJAf8BwwFGAQwB/wGrAVMBLAH/AbUBQwEOAf8B
+        zAFGAQgB/wHFAUYBCwH/AcIBRAEKAf8BvQFCAQoB/wG/AUMBCgH/AV4CXAHZBAEEAAMwAUsBEAEKAbwB
+        /wEGAQABuQH/AVABTAGuAf8BvQG+AaMB/wKcAZIB/wEdARgBlQH/AREBCgHAAf8BlwGWAa4B/wHjAeQB
+        xwH/AbQBswHTAf8BDgEIAbYB/wEOAQgBwAH/AlwBXgHZBAEEAAMwAUsBAAGhAfQB/wEAAZwB7QH/AQAB
+        nAHyAf8BVgGpAc0B/wHDAa0BogH/AdkBygHBAf8BnAGvAbkB/wEAAZUB6gH/AQABqQL/AQABogH3Af8B
+        AAGfAfIB/wEAAaIB9gH/AVwCXgHZBAEEAAMwAUsBDgG8AQoB/wEMAbcBBwH/AQQBugEAAf8BYgG2AWAB
+        /wHAAakBwQH/AdYBxgHXAf8BoAGzAZ8B/wEBAbYBAAH/AQ8BygEKAf8BDwHCAQoB/wEOAb0BCgH/AQ4B
+        vwEKAf8BXAFeAVwB2QQBBAADMAFLAbkBQAEJAf8BsgE+AQgB/wG2AT8BCQH/AboBOgEAAf8BvQFfATYB
+        /wGhAbEBuQH/AZABYwFSAf8BuwE2AQAB/wHAAUQBCgH/AboBQQEJAf8BtgE/AQkB/wG6AUEBCQH/AV4C
+        XAHZBAEEAAMwAUsBEAEJAbkB/wEOAQgBsgH/AQcBAQG4Af8BVgFTAa0B/wK1AaUB/wKTAZUB/wKIAZgB
+        /wG4AbkBpQH/AZYBlQG6Af8BEwENAbwB/wEKAQMBtwH/ARABCgG5Af8CXAFeAdkEAQQAAzABSwEAAZ8B
+        8AH/AQABlgHqAf8BcQG/AeAB/wHoAcUBsgH/AVwBpgHGAf8BUQGsAdQB/wHXAb8BsgH/ASkBjQG6Af8B
+        AAGeAfcB/wEAAZ4B7wH/AQABmwHrAf8BAAGfAfEB/wFcAl4B2QQBBAADMAFLAQ0BuQEJAf8BAQGxAQAB
+        /wGJAcoBiAH/AeIBvgHjAf8BZwGyAWUB/wFfAboBXAH/AdMBugHUAf8BOQGdATYB/wEBAb4BAAH/AQ4B
+        uwEKAf8BDQG2AQkB/wEOAboBCQH/AVwBXgFcAdkEAQQAAzABSwG3AT0BBQH/Aa8BPAEHAf8BsAE9AQgB
+        /wGzATsBBAH/AbcBSAEWAf8BqgGlAaMB/wGYAaEBpgH/AYcBQQEkAf8BsgE3AQAB/wG1AT8BCQH/AbEB
+        PQEIAf8BtgE/AQkB/wFeAlwB2QQBBAADMAFLAQwBBQG3Af8BDgEIAa8B/wENAQcBsQH/AgABtQH/AVcB
+        VAGpAf8BsAGxAaQB/wGvAbABpAH/AYwBiwGhAf8BDAEFAbQB/wEIAQEBtQH/AQ8BCQGxAf8BDwEJAbYB
+        /wJcAV4B2QQBBAADMAFLAQABnQHvAf8BAAGTAeQB/wFlAb8B5gH/AYIBvwHeAf8BAAGYAesB/wEAAZwB
+        7AH/Aa0BsgG1Af8BqQGmAaQB/wEAAYUBygH/AQABnQHwAf8BAAGXAeUB/wEAAZwB7QH/AVwCXgHZBAEE
+        AAMwAUsBCQG3AQUB/wECAa0BAAH/AYABywFwAf8BjAHJAYoB/wEFAbQBAAH/AQ8BtwELAf8BrgG0Aa4B
+        /wGoAaUBqAH/AQoBnAEGAf8BCQG4AQUB/wENAbABCAH/AQ0BtgEJAf8BXAFeAVwB2QQBBAADMAFMAb8B
+        TgEcAf8BrgE5AQQB/wGtATcBAgH/Aa8BOwEHAf8BsAE3AQAB/wGtAVEBKQH/AaYBpAGjAf8BlgGhAacB
+        /wGLAUIBIwH/AbABNwEAAf8BrwE8AQgB/wG2AT8BCQH/AV4CXAHZBAEEAAMwAUwBIQEcAb8B/wELAQUB
+        rgH/AQEBAAGtAf8BEQELAaoB/wKBAaIB/wGvAbABogH/ArIBpgH/ApIBlQH/ARoBFgGEAf8BBAEAAbAB
+        /wEPAQkBsAH/AQ8BCQG1Af8CXAFeAdkEAQQAAzABTAEHAacB8gH/AQABlAHjAf8BAAGPAeIB/wEAAZIB
+        5QH/AQABlgHlAf8BAAGWAeoB/wEyAZ0BzQH/AcoBswGmAf8BXAGOAaAB/wEAAYoB2QH/AQABmQHnAf8B
+        AAGbAewB/wFcAl4B2QQBBAADMAFMASABvwEcAf8BCQGuAQUB/wEAAaoBAAH/AQABrQEAAf8BCgGwAQYB
+        /wEBAbEBAAH/AUIBrQFAAf8BxgGvAccB/wFjAZQBYgH/AQABowEAAf8BDAGyAQgB/wENAbUBCQH/AVwB
+        XgFcAdkEAQQAAzABTAHSAYUBUQH/AcABYwE6Af8BtwFOAR8B/wGrATgBAwH/AaoBMAEAAf8BsQEsAQAB
+        /wGwAV8BPAH/AakBtQG7Af8BlQGLAYYB/wGiATMBAQH/AbEBPAEHAf8BtgE/AQkB/wFeAlwB2QQBBAAD
+        MAFMAVYBUQHSAf8BOwE2AcAB/wEvASoBtgH/AZ8BngG2Af8BwAHBAaoB/wFwAW4BrgH/AVQBUQGoAf8C
+        tAGlAf8CmwGTAf8BIAEdAYMB/wEIAQIBrQH/AQ8BCQG3Af8CXAFeAdkEAQQAAzABTAFBAb8B+QH/ASoB
+        rQHqAf8BDAGfAeUB/wEAAZYB4wH/AQABkwHiAf8BAAGTAeIB/wEAAZQB5wH/AWsBowG5Af8BxQGsAZ8B
+        /wErAYEBpQH/AQABkQHiAf8BAAGdAe4B/wFcAl4B2QQBBAADMAFMAVQB0gFRAf8BPQHAAToB/wEhAbYB
+        HgH/AQ4BrwEKAf8BBgGtAQIB/wEFAawBAQH/AQABrwEAAf8BgQGqAYAB/wHBAagBwgH/ATgBjAE2Af8B
+        AAGrAQAB/wENAbcBCQH/AVwBXgFcAdkEAQQAAzABTAHVAY4BXAH/AcsBiAFZAf8BygGDAVIB/wHIAZgB
+        gAH/AaQBbQFXAf8BoAFBARcB/wGvAXABVgH/AaUBrQGxAf8BnQGYAZYB/wGkATkBCAH/AbEBOgEFAf8B
+        tgE/AQkB/wFeAlwB2QQBBAADMAFMAWABXAHVAf8BUwFPAckB/wGxAbAB2AH/AfMB9AHZAf8BqwGqAcUB
+        /wEpASMBuAH/AQkBAwGzAf8BWgFXAakB/wG6AbsBpAH/AZEBkAGbAf8BCQEEAaQB/wENAQcBuAH/AlwB
+        XgHZBAEEAAMwAUwBTQHEAfoB/wFLAbsB7gH/AUkBugHtAf8BOwG0AesB/wElAaoB6AH/ARABoQHmAf8B
+        AAGaAeYB/wEFAZkB4AH/AZwBqQGvAf8BsgGeAZMB/wEJAYQBvgH/AQABngHzAf8BXAJeAdkEAQQAAzAB
+        TAFfAdUBXAH/AVwBywFZAf8BWgHKAVgB/wFNAcUBSgH/ATkBvgE1Af8BJQG3ASIB/wERAbMBDQH/ARkB
+        sAEWAf8BnwGrAZ4B/wGvAZoBrwH/ARkBlwEWAf8BCAG6AQQB/wFcAV4BXAHZBAEEAAMwAUwB2gGYAWkB
+        /wHOAY8BYgH/AckBhAFTAf8B4gHEAbUB/wHyA/8B3AHkAegB/wHLAdMB1wH/Aa4BuAG9Af8BrAGOAXEB
+        /wG7AVUBKAH/AboBVQEoAf8BvwFVASUB/wFeAlwB2QQBBAADMAFMAW0BaQHaAf8BYwFfAc0B/wFwAW0B
+        0QH/Aa8BrQHaAf8BYQFdAcsB/wFVAVEByQH/AVABTAHHAf8BPwE6AcIB/wGAAW8BuAH/AVYBUgG/Af8B
+        KQEkAbsB/wErASUBvwH/AlwBXgHZBAEEAAMwAUwBWwHKAfwB/wFVAb8B7wH/AVIBvQHuAf8BUQG9Ae0B
+        /wFPAbwB7QH/AUkBugHtAf8BPwG1AesB/wEpAa8B7gH/AT4BrAHeAf8BjAGwAcIB/wEmAaQB3QH/AQ8B
+        qQHyAf8BXAJeAdkEAQQAAzABTAFsAdoBaQH/AWUBzgFiAf8BYgHNAWAB/wFhAcwBXgH/AWABzAFdAf8B
+        WgHKAVcB/wFRAcYBTgH/ATwBwwE5Af8BTgG8AUwB/wGSAbYBkQH/AToBtgE2Af8BJQHAASEB/wFcAV4B
+        XAHZBAEEAAMwAUwB3wGjAYQB/wHTAZoBbwH/AdEBlQFpAf8B1AGgAYUB/wHiAcoBvQH/AesB3QHWAf8B
+        4QHRAcgB/wHMAacBkwH/AcQBbgFIAf8BwwFoAUAB/wHAAWIBOQH/AcQBYAEyAf8BYQJfAdoEAQQAAzAB
+        TAGIAYQB3wH/AYEBcAHTAf8BbQFqAdEB/wFjAV8BzgH/AWYBYgHPAf8BYgFfAc0B/wFcAVgBygH/AVUB
+        UAHIAf8BRgFBAccB/wFAATsBwwH/AT4BOgHAAf8BOAEyAcQB/wJfAWEB2gQBBAADMAFMAWoB0QH+Af8B
+        YwHFAfEB/wFgAcMB8AH/AVwBwgHvAf8BVwHAAe8B/wFRAb0B7gH/AUoBugHtAf8BQwG3AewB/wE1AbMB
+        7gH/ASYBsAHwAf8BJgGtAesB/wEgAa8B8gH/AV8CYQHaBAEEAAMwAUwBhwHfAYQB/wGAAdMBbwH/AW8B
+        0gFtAf8BawHQAWkB/wFnAc8BZAH/AWEBzQFeAf8BWwHKAVgB/wFVAcgBUgH/AUgBxgFFAf8BOwHEATgB
+        /wE6AcEBNwH/ATcBxAEzAf8BXwFhAV8B2gQBBAADMgFPAfEBuAGbAf8B5AGuAZIB/wHjAawBjwH/AeAB
+        pQGGAf8B3AGbAW0B/wHbAZkBawH/AdkBkwFjAf8B1wGLAVgB/wHUAYkBVQH/AdABggFNAf8BzQFuAUMB
+        /wHSAWsBPQH/AmABWgHjBAEEAAMyAU8BngGbAfEB/wGVAZIB5AH/AZIBjgHiAf8BjgGKAeEB/wGIAYQB
+        3wH/AYEBcQHcAf8BbQFpAdoB/wFkAWAB1wH/AVsBVwHTAf8BUgFNAdAB/wFIAUMBzQH/AUIBPQHSAf8C
+        WgFgAeMEAQQAAzIBTwGPAeMC/wGGAdcC/wGDAdUC/wFxAdMC/wFrAdAB/gH/AWMBzQH9Af8BWwHKAfwB
+        /wFRAcYB+wH/AUcBwgH6Af8BPQG9AfkB/wEyAbkB9wH/ASoBvAL/AVoCYAHjBAEEAAMyAU8BnQHxAZsB
+        /wGUAeQBkgH/AZEB4gGPAf8BjQHhAYoB/wGHAd8BhAH/AYEB3AFwAf8BawHaAWkB/wFjAdcBYAH/AVoB
+        0wFXAf8BUAHQAU0B/wFHAc0BQwH/AUAB0gE9Af8BWgFgAVoB4wQBBAADDwETAzABTAMxAU0DMAFMAzAB
+        TAMwAUwDMAFMAzABTAMwAUwDMAFMAzABTAMwAUwDMAFMAygBOwgAAw8BEwMwAUwDMQFNAzABTAMwAUwD
+        MAFMAzABTAMwAUwDMAFMAzABTAMwAUwDMAFMAzABTAMoATsIAAMPARMDMAFMAzEBTQMwAUwDMAFMAzAB
+        TAMwAUwDMAFMAzABTAMwAUwDMAFMAzABTAMwAUwDKAE7CAADDwETAzABTAMxAU0DMAFMAzABTAMwAUwD
+        MAFMAzABTAMwAUwDMAFMAzABTAMwAUwDMAFMAygBO/8ABQABQgFNAT4HAAE+AwABKAMAAUADAAEgAwAB
+        AQEAAQEGAAEBFgAD/4EACP8BgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYAB
+        AAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYAB
+        AAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYAB
+        AAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAAGAAQABgAEAAYABAQGAAQEBgAEBAYAB
+        AQj/Cw==
 </value>
   </data>
   <data name="ListView.TabIndex" type="System.Int32, mscorlib">
@@ -277,7 +217,7 @@
     <value>ListView</value>
   </data>
   <data name="&gt;&gt;ListView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ListView.Parent" xml:space="preserve">
     <value>$this</value>
@@ -307,7 +247,7 @@
     <value>BtnContinue</value>
   </data>
   <data name="&gt;&gt;BtnContinue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnContinue.Parent" xml:space="preserve">
     <value>$this</value>
@@ -337,7 +277,7 @@
     <value>label1</value>
   </data>
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -367,7 +307,7 @@
     <value>label4</value>
   </data>
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -397,7 +337,7 @@
     <value>label3</value>
   </data>
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label3.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -427,7 +367,7 @@
     <value>label2</value>
   </data>
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -460,7 +400,7 @@
     <value>CbDoNotShowAgain</value>
   </data>
   <data name="&gt;&gt;CbDoNotShowAgain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CbDoNotShowAgain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -487,7 +427,7 @@
     <value>TbCorrectCount</value>
   </data>
   <data name="&gt;&gt;TbCorrectCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbCorrectCount.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -511,7 +451,7 @@
     <value>TbPartlyCorrectCount</value>
   </data>
   <data name="&gt;&gt;TbPartlyCorrectCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbPartlyCorrectCount.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -535,7 +475,7 @@
     <value>TbNotPracticedCount</value>
   </data>
   <data name="&gt;&gt;TbNotPracticedCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbNotPracticedCount.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -559,7 +499,7 @@
     <value>TbWrongCount</value>
   </data>
   <data name="&gt;&gt;TbWrongCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbWrongCount.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -586,7 +526,7 @@
     <value>pictureBox1</value>
   </data>
   <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -613,7 +553,7 @@
     <value>pictureBox4</value>
   </data>
   <data name="&gt;&gt;pictureBox4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox4.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -640,7 +580,7 @@
     <value>pictureBox2</value>
   </data>
   <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -667,7 +607,7 @@
     <value>pictureBox3</value>
   </data>
   <data name="&gt;&gt;pictureBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox3.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -688,7 +628,7 @@
     <value>GroupStatistics</value>
   </data>
   <data name="&gt;&gt;GroupStatistics.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupStatistics.Parent" xml:space="preserve">
     <value>$this</value>
@@ -698,36 +638,6 @@
   </data>
   <data name="GroupGrades.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
-  </data>
-  <data name="LbGrade.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LbGrade.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LbGrade.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 39</value>
-  </data>
-  <data name="LbGrade.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 13</value>
-  </data>
-  <data name="LbGrade.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="LbGrade.Text" xml:space="preserve">
-    <value>Grade:</value>
-  </data>
-  <data name="&gt;&gt;LbGrade.Name" xml:space="preserve">
-    <value>LbGrade</value>
-  </data>
-  <data name="&gt;&gt;LbGrade.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LbGrade.Parent" xml:space="preserve">
-    <value>GroupGrades</value>
-  </data>
-  <data name="&gt;&gt;LbGrade.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="LbPercentage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -751,13 +661,13 @@
     <value>LbPercentage</value>
   </data>
   <data name="&gt;&gt;LbPercentage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbPercentage.Parent" xml:space="preserve">
     <value>GroupGrades</value>
   </data>
   <data name="&gt;&gt;LbPercentage.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="TbPercentage.Location" type="System.Drawing.Point, System.Drawing">
     <value>80, 14</value>
@@ -775,37 +685,13 @@
     <value>TbPercentage</value>
   </data>
   <data name="&gt;&gt;TbPercentage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbPercentage.Parent" xml:space="preserve">
     <value>GroupGrades</value>
   </data>
   <data name="&gt;&gt;TbPercentage.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="TbGrade.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 36</value>
-  </data>
-  <data name="TbGrade.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 20</value>
-  </data>
-  <data name="TbGrade.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="TbGrade.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;TbGrade.Name" xml:space="preserve">
-    <value>TbGrade</value>
-  </data>
-  <data name="&gt;&gt;TbGrade.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TbGrade.Parent" xml:space="preserve">
-    <value>GroupGrades</value>
-  </data>
-  <data name="&gt;&gt;TbGrade.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="GroupGrades.Location" type="System.Drawing.Point, System.Drawing">
     <value>396, 363</value>
@@ -820,7 +706,7 @@
     <value>GroupGrades</value>
   </data>
   <data name="&gt;&gt;GroupGrades.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupGrades.Parent" xml:space="preserve">
     <value>$this</value>
@@ -850,36 +736,36 @@
     <value>imageColumn</value>
   </data>
   <data name="&gt;&gt;imageColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;motherTongueColumn.Name" xml:space="preserve">
     <value>motherTongueColumn</value>
   </data>
   <data name="&gt;&gt;motherTongueColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;foreignLangColumn.Name" xml:space="preserve">
     <value>foreignLangColumn</value>
   </data>
   <data name="&gt;&gt;foreignLangColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;wrongInputColumn.Name" xml:space="preserve">
     <value>wrongInputColumn</value>
   </data>
   <data name="&gt;&gt;wrongInputColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;listview_imagelist.Name" xml:space="preserve">
     <value>listview_imagelist</value>
   </data>
   <data name="&gt;&gt;listview_imagelist.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>PracticeResultList</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

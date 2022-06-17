@@ -4,9 +4,6 @@ using System.Diagnostics;
 using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
-using Vocup.Properties;
-
-#nullable enable
 
 namespace Vocup.Util;
 
@@ -25,21 +22,21 @@ public static class TrackingService
             _ => "Unknown Runtime"
         };
         if (AppInfo.IsWine)
-            userAgent = $"Vocup/{AppInfo.GetVersion(3)} (Wine; Linux; {processArch}; {osArch}; {AppInfo.GetDeployment()})";
+            userAgent = $"Vocup/{AppInfo.Version} (Wine; Linux; {processArch}; {osArch}; {AppInfo.GetDeployment()})";
         else
-            userAgent = $"Vocup/{AppInfo.GetVersion(3)} (Windows NT {Environment.OSVersion.Version}; {processArch}; {osArch}; {AppInfo.GetDeployment()})";
+            userAgent = $"Vocup/{AppInfo.Version} (Windows NT {Environment.OSVersion.Version}; {processArch}; {osArch}; {AppInfo.GetDeployment()})";
     }
 
     public static void Action(string actionName)
     {
-        if (Settings.Default.DisableInternetServices) return;
+        if (Program.Settings.DisableInternetServices) return;
 
         _ = SendAction(actionName);
     }
 
     public static Task ActionAsync(string actionName)
     {
-        if (Settings.Default.DisableInternetServices) return Task.CompletedTask;
+        if (Program.Settings.DisableInternetServices) return Task.CompletedTask;
 
         return SendAction(actionName);
     }

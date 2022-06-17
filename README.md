@@ -10,22 +10,24 @@ Today it is an open source project and everyone can contribute to its developmen
 
 ## Download
 
-### Windows 10
+### Windows 10+
+
+Install Vocup for Windows 10 and Windows 11 directly from the Microsoft Store. Easy. Secure. With automatic updates.
 
 [<img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Get_it_from_Microsoft_Badge.svg" alt="Microsoft Store Badge" height="50px">](https://www.microsoft.com/store/apps/9N6W2H3QJQMM)
 
-### Windows 7+
+### ~~Windows 7~~
 
-A classic installer and a portable version of Vocup can be downloaded from the [releases page](https://github.com/daniel-lerch/vocup/releases).
+Windows 7 is not supported anymore. Neither by Microsoft nor by Vocup. There are no plans to reintroduce support, however you can still download and use [Vocup 1.8.6](https://github.com/daniel-lerch/vocup/releases/tag/v1.8.6).
 
-### Linux
+### ~~Linux~~
 
-Set the [Linux installation guide](docs/install-on-linux.md).
+Linux is not supported anymore. However, you can still download Vocup 1.8.6 or build more recent versions on your own. See the [Linux installation guide](docs/install-on-linux.md) for more details.
 
 ### macOS
 
-Vocup is going to support macOS in the future (#18). 
+Vocup is going to support macOS in the future [#18](https://github.com/daniel-lerch/vocup/issues/18). 
 
-## Development
+## Contribute
 
-See the [Documentation](docs/README.md).
+I am more than happy to accept pull requests for Vocup. Please open an issue before to discuss your intended changes.

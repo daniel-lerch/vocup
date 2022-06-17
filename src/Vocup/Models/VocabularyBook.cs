@@ -9,8 +9,8 @@ namespace Vocup.Models
 {
     public class VocabularyBook : INotifyPropertyChanged
     {
-        private string _filePath;
-        private string _vhrCode;
+        private string? _filePath;
+        private string? _vhrCode;
         private string _motherTongue;
         private string _foreignLang;
         private PracticeMode _practiceMode = PracticeMode.AskForForeignLang;
@@ -23,14 +23,16 @@ namespace Vocup.Models
             Words.OnRemove(x => x.Owner = null);
             Words.CollectionChanged += OnCollectionChanged;
             Statistics = new VocabularyBookStatistics(this);
+            _motherTongue = string.Empty;
+            _foreignLang = string.Empty;
         }
 
-        public string FilePath
+        public string? FilePath
         {
             get => _filePath;
             set { if (_filePath != value) { _filePath = value; OnPropertyChanged(); } }
         }
-        public string VhrCode
+        public string? VhrCode
         {
             get => _vhrCode;
             set { if (_vhrCode != value) { _vhrCode = value; OnPropertyChanged(); } }
@@ -55,12 +57,12 @@ namespace Vocup.Models
             get => _unsafedChanges;
             set { if (_unsafedChanges != value) { _unsafedChanges = value; OnPropertyChanged(); } }
         }
-        public string Name => string.IsNullOrWhiteSpace(_filePath) ? null : Path.GetFileNameWithoutExtension(_filePath);
+        public string? Name => string.IsNullOrWhiteSpace(_filePath) ? null : Path.GetFileNameWithoutExtension(_filePath);
         public ReactiveCollection<VocabularyWord> Words { get; }
         public VocabularyBookStatistics Statistics { get; }
         public bool Notifies { get; private set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         private void OnPropertyChanged([CallerMemberName] string name = "")
         {
@@ -72,9 +74,9 @@ namespace Vocup.Models
             }
         }
 
-        public event NotifyCollectionChangedEventHandler CollectionChanged;
+        public event NotifyCollectionChangedEventHandler? CollectionChanged;
 
-        private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        private void OnCollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
         {
             if (Notifies)
             {
@@ -98,7 +100,6 @@ namespace Vocup.Models
             int bigLetter1 = 'A', bigLetter2 = 'Z';
             int smallLetter1 = 'a', smallLetter2 = 'z';
 
-            Random random = new Random(); // No need for RNGCryptoServiceProvider here because this is not security critical.
             char[] code = new char[24];
 
             do
@@ -106,7 +107,8 @@ namespace Vocup.Models
                 int i = 0;
                 while (i < code.Length)
                 {
-                    int character = random.Next(number1, smallLetter2);
+                    // No need for RNGCryptoServiceProvider here because this is not security critical.
+                    int character = Random.Shared.Next(number1, smallLetter2);
                     if ((character >= number1 && character <= number2) ||
                         (character >= bigLetter1 && character <= bigLetter2) ||
                         (character >= smallLetter1 && character <= smallLetter2))

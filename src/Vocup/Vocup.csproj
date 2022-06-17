@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <Nullable>enable</Nullable>
     <TargetPlatformMinVersion>7.0</TargetPlatformMinVersion>
     <Platforms>AnyCPU;x86;x64</Platforms>
     <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
@@ -21,6 +22,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CsvHelper" Version="27.2.1" />
+    <PackageReference Include="LostTech.App.XmlSettings" Version="0.3.0" />
     <PackageReference Include="Octokit" Version="0.50.0" />
     <PackageReference Include="PInvoke.User32" Version="0.7.104" />
   </ItemGroup>

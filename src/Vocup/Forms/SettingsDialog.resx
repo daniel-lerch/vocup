@@ -1,64 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -117,7 +57,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="BtnOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -139,7 +79,7 @@
     <value>BtnOk</value>
   </data>
   <data name="&gt;&gt;BtnOk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnOk.Parent" xml:space="preserve">
     <value>$this</value>
@@ -166,7 +106,7 @@
     <value>BtnCancel</value>
   </data>
   <data name="&gt;&gt;BtnCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnCancel.Parent" xml:space="preserve">
     <value>$this</value>
@@ -190,7 +130,7 @@
     <value>BtnResetStartScreen</value>
   </data>
   <data name="&gt;&gt;BtnResetStartScreen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnResetStartScreen.Parent" xml:space="preserve">
     <value>GroupStartScreen</value>
@@ -217,7 +157,7 @@
     <value>RbEmptyStart</value>
   </data>
   <data name="&gt;&gt;RbEmptyStart.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RbEmptyStart.Parent" xml:space="preserve">
     <value>GroupStartScreen</value>
@@ -244,7 +184,7 @@
     <value>RbRecentFile</value>
   </data>
   <data name="&gt;&gt;RbRecentFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RbRecentFile.Parent" xml:space="preserve">
     <value>GroupStartScreen</value>
@@ -268,7 +208,7 @@
     <value>GroupStartScreen</value>
   </data>
   <data name="&gt;&gt;GroupStartScreen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupStartScreen.Parent" xml:space="preserve">
     <value>TabGeneral</value>
@@ -289,7 +229,7 @@
     <value>TrbWrongRight</value>
   </data>
   <data name="&gt;&gt;TrbWrongRight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TrbWrongRight.Parent" xml:space="preserve">
     <value>GroupSelectionMix</value>
@@ -310,7 +250,7 @@
     <value>TrbUnknown</value>
   </data>
   <data name="&gt;&gt;TrbUnknown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TrbUnknown.Parent" xml:space="preserve">
     <value>GroupSelectionMix</value>
@@ -337,7 +277,7 @@
     <value>LbLanguage</value>
   </data>
   <data name="&gt;&gt;LbLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbLanguage.Parent" xml:space="preserve">
     <value>GroupLanguage</value>
@@ -367,7 +307,7 @@
     <value>CbLanguage</value>
   </data>
   <data name="&gt;&gt;CbLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CbLanguage.Parent" xml:space="preserve">
     <value>GroupLanguage</value>
@@ -391,7 +331,7 @@
     <value>GroupLanguage</value>
   </data>
   <data name="&gt;&gt;GroupLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupLanguage.Parent" xml:space="preserve">
     <value>TabGeneral</value>
@@ -421,7 +361,7 @@
     <value>CbColumnResize</value>
   </data>
   <data name="&gt;&gt;CbColumnResize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CbColumnResize.Parent" xml:space="preserve">
     <value>GroupVocabularyList</value>
@@ -451,7 +391,7 @@
     <value>CbGridLines</value>
   </data>
   <data name="&gt;&gt;CbGridLines.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CbGridLines.Parent" xml:space="preserve">
     <value>GroupVocabularyList</value>
@@ -475,7 +415,7 @@
     <value>GroupVocabularyList</value>
   </data>
   <data name="&gt;&gt;GroupVocabularyList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupVocabularyList.Parent" xml:space="preserve">
     <value>TabGeneral</value>
@@ -502,7 +442,7 @@
     <value>BtnVhrPath</value>
   </data>
   <data name="&gt;&gt;BtnVhrPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnVhrPath.Parent" xml:space="preserve">
     <value>GroupVhrPath</value>
@@ -523,7 +463,7 @@
     <value>TbVhrPath</value>
   </data>
   <data name="&gt;&gt;TbVhrPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbVhrPath.Parent" xml:space="preserve">
     <value>GroupVhrPath</value>
@@ -547,7 +487,7 @@
     <value>GroupVhrPath</value>
   </data>
   <data name="&gt;&gt;GroupVhrPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupVhrPath.Parent" xml:space="preserve">
     <value>TabGeneral</value>
@@ -571,7 +511,7 @@
     <value>BtnVhfPath</value>
   </data>
   <data name="&gt;&gt;BtnVhfPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnVhfPath.Parent" xml:space="preserve">
     <value>GroupVhfPath</value>
@@ -592,7 +532,7 @@
     <value>TbVhfPath</value>
   </data>
   <data name="&gt;&gt;TbVhfPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbVhfPath.Parent" xml:space="preserve">
     <value>GroupVhfPath</value>
@@ -616,7 +556,7 @@
     <value>GroupVhfPath</value>
   </data>
   <data name="&gt;&gt;GroupVhfPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupVhfPath.Parent" xml:space="preserve">
     <value>TabGeneral</value>
@@ -643,7 +583,7 @@
     <value>CbDisableInternetServices</value>
   </data>
   <data name="&gt;&gt;CbDisableInternetServices.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CbDisableInternetServices.Parent" xml:space="preserve">
     <value>GroupUpdate</value>
@@ -667,7 +607,7 @@
     <value>GroupUpdate</value>
   </data>
   <data name="&gt;&gt;GroupUpdate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupUpdate.Parent" xml:space="preserve">
     <value>TabGeneral</value>
@@ -694,7 +634,7 @@
     <value>CbAutoSave</value>
   </data>
   <data name="&gt;&gt;CbAutoSave.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CbAutoSave.Parent" xml:space="preserve">
     <value>GroupSave</value>
@@ -718,7 +658,7 @@
     <value>GroupSave</value>
   </data>
   <data name="&gt;&gt;GroupSave.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupSave.Parent" xml:space="preserve">
     <value>TabGeneral</value>
@@ -729,6 +669,7 @@
   <data name="TabGeneral.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TabGeneral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
@@ -745,7 +686,7 @@
     <value>TabGeneral</value>
   </data>
   <data name="&gt;&gt;TabGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TabGeneral.Parent" xml:space="preserve">
     <value>TabControlMain</value>
@@ -775,7 +716,7 @@
     <value>CbOptionalExpressions</value>
   </data>
   <data name="&gt;&gt;CbOptionalExpressions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CbOptionalExpressions.Parent" xml:space="preserve">
     <value>GroupEvaluation</value>
@@ -805,7 +746,7 @@
     <value>CbManualCheck</value>
   </data>
   <data name="&gt;&gt;CbManualCheck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CbManualCheck.Parent" xml:space="preserve">
     <value>GroupEvaluation</value>
@@ -813,98 +754,41 @@
   <data name="&gt;&gt;CbManualCheck.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="CbEvaluationSystem.Items" xml:space="preserve">
-    <value>Germany</value>
-  </data>
-  <data name="CbEvaluationSystem.Items1" xml:space="preserve">
-    <value>Switzerland</value>
-  </data>
-  <data name="CbEvaluationSystem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 88</value>
-  </data>
-  <data name="CbEvaluationSystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 21</value>
-  </data>
-  <data name="CbEvaluationSystem.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;CbEvaluationSystem.Name" xml:space="preserve">
-    <value>CbEvaluationSystem</value>
-  </data>
-  <data name="&gt;&gt;CbEvaluationSystem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CbEvaluationSystem.Parent" xml:space="preserve">
-    <value>GroupEvaluation</value>
-  </data>
-  <data name="&gt;&gt;CbEvaluationSystem.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="LbGradeSystem.AutoSize" type="System.Boolean, mscorlib">
+  <data name="CbShowPracticeResult.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LbGradeSystem.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="CbShowPracticeResult.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LbGradeSystem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 91</value>
-  </data>
-  <data name="LbGradeSystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 13</value>
-  </data>
-  <data name="LbGradeSystem.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="LbGradeSystem.Text" xml:space="preserve">
-    <value>Grade system</value>
-  </data>
-  <data name="&gt;&gt;LbGradeSystem.Name" xml:space="preserve">
-    <value>LbGradeSystem</value>
-  </data>
-  <data name="&gt;&gt;LbGradeSystem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LbGradeSystem.Parent" xml:space="preserve">
-    <value>GroupEvaluation</value>
-  </data>
-  <data name="&gt;&gt;LbGradeSystem.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="CbPracticeResult.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="CbPracticeResult.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CbPracticeResult.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="CbShowPracticeResult.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 42</value>
   </data>
-  <data name="CbPracticeResult.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="CbShowPracticeResult.Size" type="System.Drawing.Size, System.Drawing">
     <value>159, 17</value>
   </data>
-  <data name="CbPracticeResult.TabIndex" type="System.Int32, mscorlib">
+  <data name="CbShowPracticeResult.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="CbPracticeResult.Text" xml:space="preserve">
+  <data name="CbShowPracticeResult.Text" xml:space="preserve">
     <value>Show results after practicing</value>
   </data>
-  <data name="&gt;&gt;CbPracticeResult.Name" xml:space="preserve">
-    <value>CbPracticeResult</value>
+  <data name="&gt;&gt;CbShowPracticeResult.Name" xml:space="preserve">
+    <value>CbShowPracticeResult</value>
   </data>
-  <data name="&gt;&gt;CbPracticeResult.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;CbShowPracticeResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;CbPracticeResult.Parent" xml:space="preserve">
+  <data name="&gt;&gt;CbShowPracticeResult.Parent" xml:space="preserve">
     <value>GroupEvaluation</value>
   </data>
-  <data name="&gt;&gt;CbPracticeResult.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;CbShowPracticeResult.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="GroupEvaluation.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
   </data>
   <data name="GroupEvaluation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 116</value>
+    <value>277, 88</value>
   </data>
   <data name="GroupEvaluation.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -916,7 +800,7 @@
     <value>GroupEvaluation</value>
   </data>
   <data name="&gt;&gt;GroupEvaluation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupEvaluation.Parent" xml:space="preserve">
     <value>TabPractice</value>
@@ -943,7 +827,7 @@
     <value>CbColoredTextfield</value>
   </data>
   <data name="&gt;&gt;CbColoredTextfield.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CbColoredTextfield.Parent" xml:space="preserve">
     <value>GroupUserInterface</value>
@@ -970,7 +854,7 @@
     <value>CbAcousticFeedback</value>
   </data>
   <data name="&gt;&gt;CbAcousticFeedback.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CbAcousticFeedback.Parent" xml:space="preserve">
     <value>GroupUserInterface</value>
@@ -997,7 +881,7 @@
     <value>CbSingleContinueButton</value>
   </data>
   <data name="&gt;&gt;CbSingleContinueButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CbSingleContinueButton.Parent" xml:space="preserve">
     <value>GroupUserInterface</value>
@@ -1006,7 +890,7 @@
     <value>2</value>
   </data>
   <data name="GroupUserInterface.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 267</value>
+    <value>6, 239</value>
   </data>
   <data name="GroupUserInterface.Size" type="System.Drawing.Size, System.Drawing">
     <value>277, 88</value>
@@ -1021,7 +905,7 @@
     <value>GroupUserInterface</value>
   </data>
   <data name="&gt;&gt;GroupUserInterface.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupUserInterface.Parent" xml:space="preserve">
     <value>TabPractice</value>
@@ -1051,7 +935,7 @@
     <value>CbTolerateWhiteSpace</value>
   </data>
   <data name="&gt;&gt;CbTolerateWhiteSpace.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CbTolerateWhiteSpace.Parent" xml:space="preserve">
     <value>GroupNearlyCorrect</value>
@@ -1081,7 +965,7 @@
     <value>CbTolerateNoSynonym</value>
   </data>
   <data name="&gt;&gt;CbTolerateNoSynonym.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CbTolerateNoSynonym.Parent" xml:space="preserve">
     <value>GroupNearlyCorrect</value>
@@ -1111,7 +995,7 @@
     <value>CbTolerateArticle</value>
   </data>
   <data name="&gt;&gt;CbTolerateArticle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CbTolerateArticle.Parent" xml:space="preserve">
     <value>GroupNearlyCorrect</value>
@@ -1141,7 +1025,7 @@
     <value>CbToleratePunctuationMark</value>
   </data>
   <data name="&gt;&gt;CbToleratePunctuationMark.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CbToleratePunctuationMark.Parent" xml:space="preserve">
     <value>GroupNearlyCorrect</value>
@@ -1171,7 +1055,7 @@
     <value>CbTolerateSpecialChar</value>
   </data>
   <data name="&gt;&gt;CbTolerateSpecialChar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CbTolerateSpecialChar.Parent" xml:space="preserve">
     <value>GroupNearlyCorrect</value>
@@ -1180,7 +1064,7 @@
     <value>4</value>
   </data>
   <data name="GroupNearlyCorrect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 128</value>
+    <value>6, 100</value>
   </data>
   <data name="GroupNearlyCorrect.Size" type="System.Drawing.Size, System.Drawing">
     <value>277, 133</value>
@@ -1195,7 +1079,7 @@
     <value>GroupNearlyCorrect</value>
   </data>
   <data name="&gt;&gt;GroupNearlyCorrect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupNearlyCorrect.Parent" xml:space="preserve">
     <value>TabPractice</value>
@@ -1222,7 +1106,7 @@
     <value>TabPractice</value>
   </data>
   <data name="&gt;&gt;TabPractice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TabPractice.Parent" xml:space="preserve">
     <value>TabControlMain</value>
@@ -1246,7 +1130,7 @@
     <value>BtnResetPracticeSelect</value>
   </data>
   <data name="&gt;&gt;BtnResetPracticeSelect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnResetPracticeSelect.Parent" xml:space="preserve">
     <value>TabPracticeSelect</value>
@@ -1276,7 +1160,7 @@
     <value>LbWronglyPracticed</value>
   </data>
   <data name="&gt;&gt;LbWronglyPracticed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbWronglyPracticed.Parent" xml:space="preserve">
     <value>GroupSelectionMix</value>
@@ -1303,7 +1187,7 @@
     <value>LbCorrectlyPracticed</value>
   </data>
   <data name="&gt;&gt;LbCorrectlyPracticed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbCorrectlyPracticed.Parent" xml:space="preserve">
     <value>GroupSelectionMix</value>
@@ -1330,7 +1214,7 @@
     <value>LbUnpracticed</value>
   </data>
   <data name="&gt;&gt;LbUnpracticed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbUnpracticed.Parent" xml:space="preserve">
     <value>GroupSelectionMix</value>
@@ -1358,7 +1242,7 @@
     <value>LbPercentageUnpracticed</value>
   </data>
   <data name="&gt;&gt;LbPercentageUnpracticed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbPercentageUnpracticed.Parent" xml:space="preserve">
     <value>GroupSelectionMix</value>
@@ -1382,7 +1266,7 @@
     <value>pictureBox2</value>
   </data>
   <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
     <value>GroupSelectionMix</value>
@@ -1406,7 +1290,7 @@
     <value>pictureBox1</value>
   </data>
   <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
     <value>GroupSelectionMix</value>
@@ -1430,7 +1314,7 @@
     <value>pictureBox3</value>
   </data>
   <data name="&gt;&gt;pictureBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox3.Parent" xml:space="preserve">
     <value>GroupSelectionMix</value>
@@ -1458,7 +1342,7 @@
     <value>LbPercentageWrongCorrect</value>
   </data>
   <data name="&gt;&gt;LbPercentageWrongCorrect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbPercentageWrongCorrect.Parent" xml:space="preserve">
     <value>GroupSelectionMix</value>
@@ -1479,7 +1363,7 @@
     <value>GroupSelectionMix</value>
   </data>
   <data name="&gt;&gt;GroupSelectionMix.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupSelectionMix.Parent" xml:space="preserve">
     <value>TabPracticeSelect</value>
@@ -1507,7 +1391,7 @@
     <value>LbPracticeCount</value>
   </data>
   <data name="&gt;&gt;LbPracticeCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbPracticeCount.Parent" xml:space="preserve">
     <value>GroupRepetitions</value>
@@ -1534,7 +1418,7 @@
     <value>LbTrb6</value>
   </data>
   <data name="&gt;&gt;LbTrb6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbTrb6.Parent" xml:space="preserve">
     <value>PnlPracticeCount</value>
@@ -1561,7 +1445,7 @@
     <value>LbTrb2</value>
   </data>
   <data name="&gt;&gt;LbTrb2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbTrb2.Parent" xml:space="preserve">
     <value>PnlPracticeCount</value>
@@ -1588,7 +1472,7 @@
     <value>LbTrb5</value>
   </data>
   <data name="&gt;&gt;LbTrb5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbTrb5.Parent" xml:space="preserve">
     <value>PnlPracticeCount</value>
@@ -1615,7 +1499,7 @@
     <value>LbTrb3</value>
   </data>
   <data name="&gt;&gt;LbTrb3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbTrb3.Parent" xml:space="preserve">
     <value>PnlPracticeCount</value>
@@ -1642,7 +1526,7 @@
     <value>LbTrb4</value>
   </data>
   <data name="&gt;&gt;LbTrb4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbTrb4.Parent" xml:space="preserve">
     <value>PnlPracticeCount</value>
@@ -1663,7 +1547,7 @@
     <value>TrbRepetitions</value>
   </data>
   <data name="&gt;&gt;TrbRepetitions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TrbRepetitions.Parent" xml:space="preserve">
     <value>PnlPracticeCount</value>
@@ -1684,7 +1568,7 @@
     <value>PnlPracticeCount</value>
   </data>
   <data name="&gt;&gt;PnlPracticeCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PnlPracticeCount.Parent" xml:space="preserve">
     <value>GroupRepetitions</value>
@@ -1705,7 +1589,7 @@
     <value>GroupRepetitions</value>
   </data>
   <data name="&gt;&gt;GroupRepetitions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupRepetitions.Parent" xml:space="preserve">
     <value>TabPracticeSelect</value>
@@ -1732,7 +1616,7 @@
     <value>TabPracticeSelect</value>
   </data>
   <data name="&gt;&gt;TabPracticeSelect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TabPracticeSelect.Parent" xml:space="preserve">
     <value>TabControlMain</value>
@@ -1741,7 +1625,7 @@
     <value>2</value>
   </data>
   <data name="TabControlMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 2</value>
+    <value>10, 5</value>
   </data>
   <data name="TabControlMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>297, 423</value>
@@ -1753,7 +1637,7 @@
     <value>TabControlMain</value>
   </data>
   <data name="&gt;&gt;TabControlMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TabControlMain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1780,6 +1664,6 @@
     <value>SettingsDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
