@@ -68,6 +68,8 @@ public partial class SettingsDialog : Form
         LbCorrectlyPracticed.Text = settings.PracticePercentageCorrect + "%";
         TrbWrongRight.Maximum = 10 - TrbUnknown.Value - 1;
         TrbWrongRight.Value = settings.PracticePercentageCorrect / 10;
+
+        Program.TrackingService.Page("/settings/general");
     }
 
     private void BtnOk_Click(object sender, EventArgs e)
@@ -205,5 +207,18 @@ public partial class SettingsDialog : Form
                 }
             }
         }
+    }
+
+    private void TabControlMain_Selected(object sender, TabControlEventArgs e)
+    {
+        string pageName = e.TabPageIndex switch
+        {
+            0 => "/general",
+            1 => "/practice",
+            2 => "/practice/composition",
+            _ => string.Empty
+        };
+
+        Program.TrackingService.Page("/settings" + pageName);
     }
 }

@@ -190,6 +190,7 @@
             resources.ApplyResources(this.TabControlMain, "TabControlMain");
             this.TabControlMain.Name = "TabControlMain";
             this.TabControlMain.SelectedIndex = 0;
+            this.TabControlMain.Selected += new System.Windows.Forms.TabControlEventHandler(this.TabControlMain_Selected);
             // 
             // TabGeneral
             // 

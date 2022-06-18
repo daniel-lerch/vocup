@@ -55,7 +55,7 @@ public partial class PrintWordSelection : Form
             }
         }
 
-        PrintDialog dialog = new PrintDialog()
+        using PrintDialog dialog = new PrintDialog()
         {
             AllowCurrentPage = false,
             AllowSomePages = false,
@@ -64,7 +64,7 @@ public partial class PrintWordSelection : Form
 
         if (dialog.ShowDialog() == DialogResult.OK)
         {
-            TrackingService.Action("Book/Print");
+            Program.TrackingService.Action("/book/print", "Book/Print");
 
             invertSides = RbAskForMotherTongue.Checked;
 
@@ -72,8 +72,6 @@ public partial class PrintWordSelection : Form
             PrintList.DocumentName = book.Name ?? Words.Vocup;
             PrintList.Print();
         }
-
-        dialog.Dispose();
     }
 
     private void ListBox_SelectedValueChanged(object sender, EventArgs e)

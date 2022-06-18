@@ -19,6 +19,7 @@ public static class Program
     private static Mutex? mutex;
 
     public static VocupSettings Settings { get; private set; } = null!;
+    public static TrackingService TrackingService { get; private set; } = null!;
 
     /// <summary>
     /// The main entry-point for the application.
@@ -49,6 +50,8 @@ public static class Program
         var loader = new VocupSettingsLoader();
         var settings = loader.LoadAsync().AsTask().GetAwaiter().GetResult();
         Settings = settings.Value;
+
+        TrackingService = new TrackingService();
 
         SetCulture();
         if (!CreateVhfFolder() || !CreateVhrFolder())
@@ -88,7 +91,7 @@ public static class Program
 
         // Calling .GetAwaiter().GetResult() does not work for ValueTasks
         settings.DisposeAsync().AsTask().GetAwaiter().GetResult();
-        TrackingService.ActionAsync("App/Close").GetAwaiter().GetResult();
+        TrackingService.DisposeAsync().AsTask().GetAwaiter().GetResult();
     }
 
     public static void ReleaseMutex()

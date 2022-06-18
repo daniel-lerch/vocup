@@ -65,6 +65,8 @@ public partial class PracticeResultList : Form
         TbCorrectCount.Text = correct.ToString();
 
         CalculateGrade();
+
+        Program.TrackingService.Page("/practice/result");
     }
 
     private void Form_Shown(object sender, EventArgs e)

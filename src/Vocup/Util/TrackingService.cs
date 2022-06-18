@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace Vocup.Util;
 
-public static class TrackingService
+public class TrackingService : IAsyncDisposable
 {
-    private static readonly string userAgent;
+    private readonly HttpClient httpClient;
+    private Func<Task>? defer;
 
-    static TrackingService()
+    public TrackingService()
     {
         string osArch = RuntimeInformation.OSArchitecture.ToString().ToLowerInvariant();
         string processArch = RuntimeInformation.ProcessArchitecture switch
@@ -21,33 +22,44 @@ public static class TrackingService
             Architecture.Arm64 => "WoA64",
             _ => "Unknown Runtime"
         };
-        if (AppInfo.IsWine)
-            userAgent = $"Vocup/{AppInfo.Version} (Wine; Linux; {processArch}; {osArch}; {AppInfo.GetDeployment()})";
-        else
-            userAgent = $"Vocup/{AppInfo.Version} (Windows NT {Environment.OSVersion.Version}; {processArch}; {osArch}; {AppInfo.GetDeployment()})";
+        string userAgent = AppInfo.IsWine ?
+            $"Vocup/{AppInfo.Version} (Wine; Linux; {processArch}; {osArch}; {AppInfo.GetDeployment()})" :
+            $"Vocup/{AppInfo.Version} (Windows NT {Environment.OSVersion.Version}; {processArch}; {osArch}; {AppInfo.GetDeployment()})";
+
+        httpClient = new HttpClient();
+        httpClient.DefaultRequestHeaders.UserAgent.ParseAdd(userAgent);
+        httpClient.Timeout = TimeSpan.FromSeconds(10);
     }
 
-    public static void Action(string actionName)
+    public void Page(string url)
     {
         if (Program.Settings.DisableInternetServices) return;
 
-        _ = SendAction(actionName);
+        _ = SendAction(url, string.Empty);
     }
 
-    public static Task ActionAsync(string actionName)
+    public void Action(string url, string actionName)
     {
-        if (Program.Settings.DisableInternetServices) return Task.CompletedTask;
+        if (Program.Settings.DisableInternetServices) return;
 
-        return SendAction(actionName);
+        _ = SendAction(url, actionName);
     }
 
-    private static async Task SendAction(string actionName)
+    /// <summary>
+    /// Registers a single tracking request to be performed on <see cref="DisposeAsync"/>.
+    /// This is required because all Tasks scheduled before <see cref="System.Windows.Forms.Application.Run"/> exits will be aborted.
+    /// </summary>
+    public void DeferAction(string url, string actionName)
+    {
+        if (Program.Settings.DisableInternetServices) return;
+
+        defer = () => SendAction(url, actionName);
+    }
+
+    private async Task SendAction(string url, string actionName)
     {
         try
         {
-            using var httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.UserAgent.ParseAdd(userAgent);
-            httpClient.Timeout = TimeSpan.FromSeconds(10);
             var query = new Dictionary<string, string>()
             {
                 ["idsite"] = "1",
@@ -56,6 +68,7 @@ public static class TrackingService
 #else
                 ["rec"] = "1",
 #endif
+                ["url"] = "https://app.vocup.org" + url,
                 ["action_name"] = actionName,
                 ["apiv"] = "1"
             };
@@ -71,5 +84,13 @@ public static class TrackingService
         {
             Debug.WriteLine(e);
         }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (defer != null)
+            await defer().ConfigureAwait(false);
+
+        httpClient.Dispose();
     }
 }

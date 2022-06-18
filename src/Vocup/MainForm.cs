@@ -211,7 +211,7 @@ public partial class MainForm : Form, IMainForm
         Update();
         Activate();
 
-        TrackingService.Action("App/Start");
+        Program.TrackingService.Action("/", "App/Start");
 
         // Check online for updates
         if (!Program.Settings.DisableInternetServices && !AppInfo.IsUwp)
@@ -240,7 +240,11 @@ public partial class MainForm : Form, IMainForm
 
         if (!e.Cancel)
         {
-            // Tracking is done in Program.cs because starting tasks while the scheduler is shutting down does not work
+            if (CurrentBook is null)
+                Program.TrackingService.DeferAction("/", "App/Close");
+            else
+                Program.TrackingService.DeferAction("/book", "App/Close");
+
             StoreSettings();
         }
     }
@@ -332,6 +336,8 @@ public partial class MainForm : Form, IMainForm
                 }
             }
         }
+
+        Program.TrackingService.Page(CurrentBook is null ? "/" : "/book");
     }
 
     private void TsmiSpecialChar_Click(object sender, EventArgs e)
@@ -688,7 +694,7 @@ public partial class MainForm : Form, IMainForm
                     UnloadBook(false);
                 }
 
-                TrackingService.Action("Book/Create");
+                Program.TrackingService.Action("/book/new", "Book/Create");
 
                 // VocabularyBookSettings enables notification on creation
                 LoadBook(book);
@@ -708,14 +714,16 @@ public partial class MainForm : Form, IMainForm
         {
             if (openDialog.ShowDialog() == DialogResult.OK)
             {
-                TrackingService.Action("Book/Import");
-
                 if (CurrentBook != null)
                 {
+                    Program.TrackingService.Action("/book", "Book/Import");
+
                     VocabularyFile.ImportCsvFile(openDialog.FileName, CurrentBook, false, ansiEncoding);
                 }
                 else
                 {
+                    Program.TrackingService.Action("/book/new", "Book/Import");
+
                     VocabularyBook book = new VocabularyBook();
                     if (VocabularyFile.ImportCsvFile(openDialog.FileName, book, true, ansiEncoding))
                     {
@@ -769,22 +777,24 @@ public partial class MainForm : Form, IMainForm
     {
         using (PracticeCountDialog countDialog = new PracticeCountDialog(CurrentBook))
         {
-            if (countDialog.ShowDialog() != DialogResult.OK)
-                return;
-
-            List<VocabularyWordPractice> practiceList = countDialog.PracticeList;
-
-            CurrentController.ListView.Visible = false;
-
-            using (var dialog = new PracticeDialog(CurrentBook, practiceList) { Owner = this }) dialog.ShowDialog();
-
-            if (Program.Settings.PracticeShowResultList)
+            if (countDialog.ShowDialog() == DialogResult.OK)
             {
-                using (var dialog = new PracticeResultList(CurrentBook, practiceList)) dialog.ShowDialog();
+                List<VocabularyWordPractice> practiceList = countDialog.PracticeList;
+
+                CurrentController.ListView.Visible = false;
+
+                using (var dialog = new PracticeDialog(CurrentBook, practiceList) { Owner = this }) dialog.ShowDialog();
+
+                if (Program.Settings.PracticeShowResultList)
+                {
+                    using (var dialog = new PracticeResultList(CurrentBook, practiceList)) dialog.ShowDialog();
+                }
+
+                CurrentController.ListView.Visible = true;
+                BtnAddWord.Focus();
             }
 
-            CurrentController.ListView.Visible = true;
-            BtnAddWord.Focus();
+            Program.TrackingService.Page("/book");
         }
     }
 
