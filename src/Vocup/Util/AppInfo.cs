@@ -25,7 +25,7 @@ public static class AppInfo
     /// <summary>
     /// Gets the directory where custom special char files are stored.
     /// </summary>
-    public static string SpecialCharDirectory { get; } = Path.Combine(Properties.Settings.Default.VhrPath, "specialchar");
+    public static string SpecialCharDirectory => Path.Combine(Program.Settings.VhrPath, "specialchar");
 
     public static Version Version { get; } = Version.Parse(
         Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion 
