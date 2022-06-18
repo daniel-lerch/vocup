@@ -50,7 +50,7 @@
             // PbLogo
             // 
             this.PbLogo.BackColor = System.Drawing.Color.Transparent;
-            this.PbLogo.Image = global::Vocup.Properties.Icons.Icon;
+            this.PbLogo.Image = global::Vocup.Properties.Icons.IconImage;
             this.PbLogo.Location = new System.Drawing.Point(57, 63);
             this.PbLogo.Name = "PbLogo";
             this.PbLogo.Size = new System.Drawing.Size(75, 75);

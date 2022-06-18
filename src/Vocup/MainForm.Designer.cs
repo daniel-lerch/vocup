@@ -654,6 +654,7 @@
             this.Controls.Add(this.StatusStrip);
             this.Controls.Add(this.ToolStrip);
             this.Controls.Add(this.MenuStrip);
+            this.Icon = global::Vocup.Properties.Icons.Icon;
             this.MainMenuStrip = this.MenuStrip;
             this.Name = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
