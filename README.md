@@ -18,11 +18,11 @@ Install Vocup for Windows 10 and Windows 11 directly from the Microsoft Store. E
 
 ### ~~Windows 7~~
 
-Windows 7 is not supported anymore. Neither by Microsoft nor by Vocup. There are no plans to reintroduce support, however you can still download and use [Vocup 1.8.6](https://github.com/daniel-lerch/vocup/releases/tag/v1.8.6).
+Windows 7 is not supported anymore. Neither by Microsoft nor by Vocup. There are no plans to reintroduce support, however you can still download and use [Vocup 1.8.7](https://github.com/daniel-lerch/vocup/releases/tag/v1.8.7).
 
 ### ~~Linux~~
 
-Linux is not supported anymore. However, you can still download Vocup 1.8.6 or build more recent versions on your own. See the [Linux installation guide](docs/install-on-linux.md) for more details.
+Linux is not supported anymore. However, you can still download Vocup 1.8.7 or build more recent versions on your own. See the [Linux installation guide](docs/install-on-linux.md) for more details.
 
 ### macOS
 
