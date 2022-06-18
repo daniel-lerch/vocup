@@ -1,22 +1,51 @@
 ﻿<UserControl x:Class="Vocup.Forms.PracticeControl"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Vocup.Forms"
-      mc:Ignorable="d" 
-      d:DesignHeight="400" d:DesignWidth="600">
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:wpfui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:local="clr-namespace:Vocup.Forms"
+    xmlns:vm="clr-namespace:Vocup.ViewModels"
+    mc:Ignorable="d" 
+    d:DesignHeight="400" d:DesignWidth="600"
+    Padding="5">
+
+    <UserControl.DataContext>
+        <vm:PracticeViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <wpfui:Resources Theme="Light" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20" />
-            <RowDefinition Height="20" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="40" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Column="0" Grid.Row="0">Hallo Welt</TextBlock>
-        <Button Grid.Column="0" Grid.Row="1">Test</Button>
+        <ItemsControl ItemsSource="{Binding MotherTongue}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBox Grid.Column="0" Text="{Binding Value}" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <ItemsControl ItemsSource="{Binding ForeignLanguage}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBox Grid.Column="1" Text="{Binding Value}" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </Grid>
 </UserControl>

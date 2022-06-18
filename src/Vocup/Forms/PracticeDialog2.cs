@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
-namespace Vocup.Forms
+namespace Vocup.Forms;
+
+public partial class PracticeDialog2 : Form
 {
-    public partial class PracticeDialog2 : Form
+    public PracticeDialog2()
     {
-        public PracticeDialog2()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+        elementHost.Child = new PracticeControl();
     }
 }
