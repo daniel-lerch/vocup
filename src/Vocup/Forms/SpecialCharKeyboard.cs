@@ -140,8 +140,16 @@ public partial class SpecialCharKeyboard : Form
         {
             Button button = (Button)sender;
             if (textBox.Enabled && !textBox.ReadOnly)
-                textBox.Text += button.Text;
-            textBox.SelectionStart = textBox.TextLength;
+            {
+                int selectionStart = textBox.SelectionStart;
+                int selectionLength = textBox.SelectionLength;
+                textBox.Text = textBox.Text
+                    .Remove(selectionStart, selectionLength)
+                    .Insert(selectionStart, button.Text);
+                textBox.SelectionStart = selectionStart + button.Text.Length;
+                textBox.SelectionLength = 0;
+            }
+                
             textBox.Focus();
         }
     }
