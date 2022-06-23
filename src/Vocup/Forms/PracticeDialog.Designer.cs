@@ -52,7 +52,7 @@
             this.PbPracticeProgress = new System.Windows.Forms.ProgressBar();
             this.BtnCancel = new System.Windows.Forms.Button();
             this.BtnContinue = new System.Windows.Forms.Button();
-            this.LbCorrectAnswer = new System.Windows.Forms.Label();
+            this.TbCorrectAnswer = new System.Windows.Forms.TextBox();
             this.BtnSpecialChar = new System.Windows.Forms.Button();
             this.RbPartlyCorrect = new System.Windows.Forms.RadioButton();
             this.RbWrong = new System.Windows.Forms.RadioButton();
@@ -215,11 +215,13 @@
             this.BtnContinue.UseVisualStyleBackColor = true;
             this.BtnContinue.Click += new System.EventHandler(this.BtnContinue_Click);
             // 
-            // LbCorrectAnswer
+            // TbCorrectAnswer
             // 
-            this.TableLayout.SetColumnSpan(this.LbCorrectAnswer, 2);
-            resources.ApplyResources(this.LbCorrectAnswer, "LbCorrectAnswer");
-            this.LbCorrectAnswer.Name = "LbCorrectAnswer";
+            this.TbCorrectAnswer.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TableLayout.SetColumnSpan(this.TbCorrectAnswer, 2);
+            resources.ApplyResources(this.TbCorrectAnswer, "TbCorrectAnswer");
+            this.TbCorrectAnswer.Name = "TbCorrectAnswer";
+            this.TbCorrectAnswer.ReadOnly = true;
             // 
             // BtnSpecialChar
             // 
@@ -266,7 +268,7 @@
             resources.ApplyResources(this.TableLayout, "TableLayout");
             this.TableLayout.Controls.Add(this.PanelMotherTongue, 0, 0);
             this.TableLayout.Controls.Add(this.PanelForeignLang, 1, 0);
-            this.TableLayout.Controls.Add(this.LbCorrectAnswer, 0, 2);
+            this.TableLayout.Controls.Add(this.TbCorrectAnswer, 0, 2);
             this.TableLayout.Controls.Add(this.PanelForeignLangSynonym, 1, 1);
             this.TableLayout.Name = "TableLayout";
             // 
@@ -313,6 +315,7 @@
             this.GroupUserEvaluation.ResumeLayout(false);
             this.GroupUserEvaluation.PerformLayout();
             this.TableLayout.ResumeLayout(false);
+            this.TableLayout.PerformLayout();
             this.PanelMotherTongue.ResumeLayout(false);
             this.PanelMotherTongue.PerformLayout();
             this.PanelForeignLang.ResumeLayout(false);
@@ -351,7 +354,7 @@
         private System.Windows.Forms.TextBox TbPartlyCorrectCount;
         private System.Windows.Forms.TextBox TbCorrectCount;
         private System.Windows.Forms.TextBox TbWrongCount;
-        private System.Windows.Forms.Label LbCorrectAnswer;
+        private System.Windows.Forms.TextBox TbCorrectAnswer;
         private System.Windows.Forms.TableLayoutPanel TableLayout;
         private System.Windows.Forms.Panel PanelMotherTongue;
         private System.Windows.Forms.Panel PanelForeignLang;

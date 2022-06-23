@@ -73,7 +73,7 @@
     <value>True</value>
   </data>
   <data name="TbForeignLangSynonym.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 38</value>
+    <value>226, 35</value>
   </data>
   <data name="TbForeignLangSynonym.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -103,7 +103,7 @@
     <value>True</value>
   </data>
   <data name="TbForeignLang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 38</value>
+    <value>226, 35</value>
   </data>
   <data name="TbForeignLang.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -133,7 +133,7 @@
     <value>True</value>
   </data>
   <data name="TbMotherTongue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 98</value>
+    <value>226, 96</value>
   </data>
   <data name="TbMotherTongue.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -562,7 +562,7 @@
     <value>12</value>
   </data>
   <data name="GroupStatistics.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 205</value>
+    <value>12, 215</value>
   </data>
   <data name="GroupStatistics.Size" type="System.Drawing.Size, System.Drawing">
     <value>470, 97</value>
@@ -589,7 +589,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="BtnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>382, 169</value>
+    <value>382, 179</value>
   </data>
   <data name="BtnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 30</value>
@@ -616,7 +616,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="BtnContinue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>276, 169</value>
+    <value>276, 179</value>
   </data>
   <data name="BtnContinue.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 30</value>
@@ -652,7 +652,7 @@
     <value>3, 3</value>
   </data>
   <data name="PanelMotherTongue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 114</value>
+    <value>229, 116</value>
   </data>
   <data name="PanelMotherTongue.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -676,7 +676,7 @@
     <value>238, 3</value>
   </data>
   <data name="PanelForeignLang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 54</value>
+    <value>229, 55</value>
   </data>
   <data name="PanelForeignLang.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -697,10 +697,10 @@
     <value>Fill</value>
   </data>
   <data name="PanelForeignLangSynonym.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 63</value>
+    <value>238, 64</value>
   </data>
   <data name="PanelForeignLangSynonym.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 54</value>
+    <value>229, 55</value>
   </data>
   <data name="PanelForeignLangSynonym.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -724,7 +724,7 @@
     <value>3</value>
   </data>
   <data name="TableLayout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>470, 151</value>
+    <value>470, 161</value>
   </data>
   <data name="TableLayout.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -742,46 +742,50 @@
     <value>0</value>
   </data>
   <data name="TableLayout.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="PanelMotherTongue" Row="0" RowSpan="2" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="PanelForeignLang" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="LbCorrectAnswer" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="PanelForeignLangSynonym" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Percent,40,Percent,40,Percent,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="PanelMotherTongue" Row="0" RowSpan="2" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="PanelForeignLang" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="TbCorrectAnswer" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="PanelForeignLangSynonym" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Percent,38,Percent,38,Percent,24" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <data name="LbCorrectAnswer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="TbCorrectAnswer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="LbCorrectAnswer.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="TbCorrectAnswer.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
-  <data name="LbCorrectAnswer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 120</value>
+  <data name="TbCorrectAnswer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 125</value>
   </data>
-  <data name="LbCorrectAnswer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>464, 31</value>
+  <data name="TbCorrectAnswer.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="LbCorrectAnswer.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="TbCorrectAnswer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>464, 33</value>
   </data>
-  <data name="LbCorrectAnswer.Text" xml:space="preserve">
-    <value>%CorrectAnswer%</value>
+  <data name="TbCorrectAnswer.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="LbCorrectAnswer.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
+  <data name="TbCorrectAnswer.Text" xml:space="preserve">
+    <value>%Correct
+Answer%</value>
   </data>
-  <data name="&gt;&gt;LbCorrectAnswer.Name" xml:space="preserve">
-    <value>LbCorrectAnswer</value>
+  <data name="TbCorrectAnswer.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
-  <data name="&gt;&gt;LbCorrectAnswer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;TbCorrectAnswer.Name" xml:space="preserve">
+    <value>TbCorrectAnswer</value>
   </data>
-  <data name="&gt;&gt;LbCorrectAnswer.Parent" xml:space="preserve">
+  <data name="&gt;&gt;TbCorrectAnswer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TbCorrectAnswer.Parent" xml:space="preserve">
     <value>TableLayout</value>
   </data>
-  <data name="&gt;&gt;LbCorrectAnswer.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TbCorrectAnswer.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="BtnSpecialChar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
   <data name="BtnSpecialChar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 169</value>
+    <value>12, 179</value>
   </data>
   <data name="BtnSpecialChar.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 30</value>
@@ -898,7 +902,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="GroupUserEvaluation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 165</value>
+    <value>12, 175</value>
   </data>
   <data name="GroupUserEvaluation.Size" type="System.Drawing.Size, System.Drawing">
     <value>470, 34</value>
@@ -928,10 +932,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>494, 313</value>
+    <value>494, 323</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>510, 352</value>
+    <value>510, 362</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
