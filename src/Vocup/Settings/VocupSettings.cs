@@ -288,6 +288,14 @@ public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
         get => _specialCharTab;
         set => RaiseAndSetIfChanged(ref _specialCharTab, value);
     }
+
+
+    Size _practiceDialogSize;
+    public Size PracticeDialogSize
+    {
+        get => _practiceDialogSize;
+        set => RaiseAndSetIfChanged(ref _practiceDialogSize, value);
+    }
     #endregion
 
     private Version _version = new(1, 8, 3);
