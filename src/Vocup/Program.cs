@@ -35,6 +35,7 @@ public static class Program
         Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
         Application.SetDefaultFont(new Font("Microsoft Sans Serif", 8.25f));
         Application.Run(new PracticeDialog2());
+        return;
 
         if (!createdNew)
         {
