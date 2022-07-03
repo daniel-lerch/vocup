@@ -16,21 +16,19 @@
         </ResourceDictionary>
     </UserControl.Resources>
     
-    <wpfui:Card Margin="4" Padding="8">
+    <wpfui:Card x:Name="layoutRoot" Padding="8">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <wpfui:ToggleSwitch Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="4" />
-            <TextBlock Grid.Row="0" Grid.Column="1" Margin="2" FontWeight="SemiBold" Text="{Binding Path=Title}" />
-            <TextBlock Grid.Row="1" Grid.Column="1" Margin="2" FontSize="11">
-                    Starts Vocup with the last opened file instead of an empty window.
-            </TextBlock>
+            <wpfui:ToggleSwitch Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="4" IsChecked="{Binding Path=IsChecked}" />
+            <TextBlock Grid.Row="0" Grid.Column="1" Margin="2" FontWeight="SemiBold" TextWrapping="Wrap" Text="{Binding Path=Title}" />
+            <TextBlock Grid.Row="1" Grid.Column="1" Margin="2" FontSize="11" TextWrapping="Wrap" Text="{Binding Path=Description}" />
         </Grid>
     </wpfui:Card>
 </UserControl>
