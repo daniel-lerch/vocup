@@ -42,6 +42,7 @@ public partial class SpecialCharKeyboard : Form
         Owner = owner;
         Owner.Move += Owner_MoveResize;
         Owner.Resize += Owner_MoveResize;
+        Owner.FormClosing += Owner_FormClosing;
         Owner_MoveResize(Owner, null);
 
         trigger.Click += (a0, a1) => DialogEnabled = true;
@@ -163,6 +164,11 @@ public partial class SpecialCharKeyboard : Form
     {
         Left = Owner.Left + (Owner.Width - Width) / 2;
         Top = Owner.Top + Owner.Height;
+    }
+
+    private void Owner_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        Program.Settings.SpecialCharTab = TcMain.SelectedTab.Tag.ToString();
     }
 
     private void Form_FormClosing(object sender, FormClosingEventArgs e)

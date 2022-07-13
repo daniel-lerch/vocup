@@ -144,7 +144,7 @@
             this.TcMain.Controls.Add(this.TpSpanish);
             this.TcMain.Controls.Add(this.TpRomanian);
             this.TcMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TcMain.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.TcMain.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TcMain.Location = new System.Drawing.Point(0, 0);
             this.TcMain.Name = "TcMain";
             this.TcMain.SelectedIndex = 0;
@@ -162,7 +162,7 @@
             this.TpGerman.Controls.Add(this.oe_big);
             this.TpGerman.Controls.Add(this.ue);
             this.TpGerman.Controls.Add(this.ae);
-            this.TpGerman.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.TpGerman.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TpGerman.Location = new System.Drawing.Point(4, 23);
             this.TpGerman.Name = "TpGerman";
             this.TpGerman.Padding = new System.Windows.Forms.Padding(3);
@@ -276,7 +276,7 @@
             this.TpFrench.Controls.Add(this.Â_big);
             this.TpFrench.Controls.Add(this.æ);
             this.TpFrench.Controls.Add(this.à);
-            this.TpFrench.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.TpFrench.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TpFrench.Location = new System.Drawing.Point(4, 23);
             this.TpFrench.Name = "TpFrench";
             this.TpFrench.Padding = new System.Windows.Forms.Padding(3);
@@ -609,7 +609,7 @@
             this.TpItalian.Controls.Add(this.é_it);
             this.TpItalian.Controls.Add(this.à_it_big);
             this.TpItalian.Controls.Add(this.à_it);
-            this.TpItalian.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.TpItalian.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TpItalian.Location = new System.Drawing.Point(4, 23);
             this.TpItalian.Name = "TpItalian";
             this.TpItalian.Padding = new System.Windows.Forms.Padding(3);
@@ -841,7 +841,7 @@
             this.TpSpanish.Controls.Add(this.é_sp);
             this.TpSpanish.Controls.Add(this.é_sp_big);
             this.TpSpanish.Controls.Add(this.á);
-            this.TpSpanish.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.TpSpanish.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TpSpanish.Location = new System.Drawing.Point(4, 23);
             this.TpSpanish.Name = "TpSpanish";
             this.TpSpanish.Padding = new System.Windows.Forms.Padding(3);
@@ -1047,7 +1047,7 @@
             this.TpRomanian.Controls.Add(this.ă_ro);
             this.TpRomanian.Controls.Add(this.â_ro_big);
             this.TpRomanian.Controls.Add(this.â_ro);
-            this.TpRomanian.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.TpRomanian.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TpRomanian.Location = new System.Drawing.Point(4, 23);
             this.TpRomanian.Name = "TpRomanian";
             this.TpRomanian.Padding = new System.Windows.Forms.Padding(3);
