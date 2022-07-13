@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Vocup.Controls.SettingsToggleSwitch"
+﻿<UserControl x:Class="Vocup.Controls.SettingsFolderPicker"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:Vocup.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="80" d:DesignWidth="600">
-    
+
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -15,7 +15,7 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    
+
     <wpfui:Card x:Name="layoutRoot" Padding="8" Background="White">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -27,8 +27,10 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0" Margin="2" FontWeight="SemiBold" TextWrapping="Wrap" Text="{Binding Path=Title}" />
-            <TextBlock Grid.Row="1" Grid.Column="0" Margin="2" FontSize="11" TextWrapping="Wrap" Text="{Binding Path=Description}" />
-            <wpfui:ToggleSwitch Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Margin="4" IsChecked="{Binding Path=IsChecked}" />
+            <TextBlock Grid.Row="1" Grid.Column="0" Margin="2" FontSize="11" TextWrapping="Wrap" Text="{Binding Path=FolderPath}" />
+            <wpfui:Button Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Margin="4">
+                Browse
+            </wpfui:Button>
         </Grid>
     </wpfui:Card>
 </UserControl>

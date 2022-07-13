@@ -18,26 +18,36 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <StackPanel>
-        <controls:SettingsToggleSwitch
-            Title="Automatically save changes"
-            Description="Saves changes in your vocabulary books immediately."
-            IsChecked="False"
-            Margin="4" />
-        <controls:SettingsToggleSwitch
-            Title="Internet services"
-            Description="Necessary for advanced features. No personal information is ever saved for analytics. Your IP address is truncated."
-            IsChecked="True"
-            Margin="4" />
-        <controls:SettingsToggleSwitch
-            Title="Open last file on start"
-            Description="Starts Vocup with the last opened file instead of an empty window."
-            IsChecked="True"
-            Margin="4" />
-        <controls:SettingsToggleSwitch
-            Title="Automatically resize columns"
-            Description="Resizes columns of the main vocabulary list automatically when the window is resized."
-            IsChecked="True"
-            Margin="4" />
-    </StackPanel>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <controls:SettingsToggleSwitch
+                Title="Automatically save changes"
+                Description="Saves changes in your vocabulary books immediately."
+                IsChecked="False"
+                Margin="4" />
+            <controls:SettingsToggleSwitch
+                Title="Internet services"
+                Description="Necessary for advanced features. No personal information is ever saved for analytics. Your IP address is truncated."
+                IsChecked="True"
+                Margin="4" />
+            <controls:SettingsToggleSwitch
+                Title="Open last file on start"
+                Description="Starts Vocup with the last opened file instead of an empty window."
+                IsChecked="True"
+                Margin="4" />
+            <controls:SettingsToggleSwitch
+                Title="Automatically resize columns"
+                Description="Resizes columns of the main vocabulary list automatically when the window is resized."
+                IsChecked="True"
+                Margin="4" />
+            <controls:SettingsFolderPicker
+                Title="Folder for vocabulary books"
+                FolderPath="C:\Users\Daniel\ownCloud\Privat\Vokabelhefte"
+                Margin="4" />
+            <controls:SettingsFolderPicker
+                Title="Folder for practice results"
+                FolderPath="C:\Users\Daniel\ownCloud\Privat\Vokabelhefte\Ergebnisse"
+                Margin="4" />
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>
