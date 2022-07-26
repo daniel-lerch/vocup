@@ -27,8 +27,8 @@ namespace Vocup.UnitTests
         [Fact]
         public void TestArgumentNull()
         {
-            Assert.Throws<ArgumentNullException>(() => SaintLague.Calculate(null, 0));
-            Assert.Throws<ArgumentNullException>(() => SaintLague.Calculate(new SaintLague.IParty[] { new Party(0.3), null }, 0));
+            Assert.Throws<ArgumentNullException>(() => SaintLague.Calculate(null!, 0));
+            Assert.Throws<ArgumentNullException>(() => SaintLague.Calculate(new SaintLague.IParty[] { new Party(0.3), null! }, 0));
         }
 
         [Theory]

@@ -3,58 +3,94 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Runtime.InteropServices;
-using Vocup.Properties;
+using System.Threading.Tasks;
 
-namespace Vocup.Util
+namespace Vocup.Util;
+
+public class TrackingService : IAsyncDisposable
 {
-    public static class TrackingService
+    private readonly HttpClient httpClient;
+    private Func<Task>? defer;
+
+    public TrackingService()
     {
-        private static string userAgent;
-
-        static TrackingService()
+        string osArch = RuntimeInformation.OSArchitecture.ToString().ToLowerInvariant();
+        string processArch = RuntimeInformation.ProcessArchitecture switch
         {
-            string osArch = RuntimeInformation.OSArchitecture.ToString().ToLowerInvariant();
-            string processArch = RuntimeInformation.ProcessArchitecture switch
-            {
-                Architecture.X86 => "Win32",
-                Architecture.X64 => "Win64",
-                Architecture.Arm64 => "WoA64",
-                _ => "Unknown Runtime"
-            };
-            userAgent = $"Vocup/{AppInfo.GetVersion(3)} (Windows NT {Environment.OSVersion.Version}; {processArch}; {osArch}; {AppInfo.GetDeployment()})";
-        }
+            Architecture.X86 => "Win32",
+            Architecture.X64 => "Win64",
+            Architecture.Arm64 => "WoA64",
+            _ => "Unknown Runtime"
+        };
+        string userAgent = AppInfo.IsWine ?
+            $"Vocup/{AppInfo.Version} (Wine; Linux; {processArch}; {osArch}; {AppInfo.GetDeployment()})" :
+            $"Vocup/{AppInfo.Version} (Windows NT {Environment.OSVersion.Version}; {processArch}; {osArch}; {AppInfo.GetDeployment()})";
 
-        public static async void Action(string actionName)
+        httpClient = new HttpClient();
+        httpClient.DefaultRequestHeaders.UserAgent.ParseAdd(userAgent);
+        httpClient.Timeout = TimeSpan.FromSeconds(10);
+    }
+
+    public void Page(string url)
+    {
+        if (Program.Settings.DisableInternetServices) return;
+
+        _ = SendAction(url, string.Empty);
+    }
+
+    public void Action(string url, string actionName)
+    {
+        if (Program.Settings.DisableInternetServices) return;
+
+        _ = SendAction(url, actionName);
+    }
+
+    /// <summary>
+    /// Registers a single tracking request to be performed on <see cref="DisposeAsync"/>.
+    /// This is required because all Tasks scheduled before <see cref="System.Windows.Forms.Application.Run"/> exits will be aborted.
+    /// </summary>
+    public void DeferAction(string url, string actionName)
+    {
+        if (Program.Settings.DisableInternetServices) return;
+
+        defer = () => SendAction(url, actionName);
+    }
+
+    private async Task SendAction(string url, string actionName)
+    {
+        try
         {
-            if (Settings.Default.DisableInternetServices) return;
-
-            try
+            var query = new Dictionary<string, string>()
             {
-                using var httpClient = new HttpClient();
-                httpClient.DefaultRequestHeaders.UserAgent.ParseAdd(userAgent);
-                var query = new Dictionary<string, string>()
-                {
-                    ["idsite"] = "1",
+                ["idsite"] = "1",
 #if DEBUG
-                    ["rec"] = "0",
+                ["rec"] = "0",
 #else
-                    ["rec"] = "1",
+                ["rec"] = "1",
 #endif
-                    ["action_name"] = actionName,
-                    ["apiv"] = "1"
-                };
-                var uriBuilder = new UriBuilder("https://vocup.org/api/analytics/record");
-                uriBuilder.Query = await new FormUrlEncodedContent(query).ReadAsStringAsync();
-                HttpResponseMessage response = await httpClient.PostAsync(uriBuilder.Uri, new ByteArrayContent(Array.Empty<byte>()));
-                if (!response.IsSuccessStatusCode)
-                {
-                    Debug.WriteLine("Server replied with {0} {1}", response.StatusCode, response.ReasonPhrase);
-                }
-            }
-            catch (Exception e)
+                ["url"] = "https://app.vocup.org" + url,
+                ["action_name"] = actionName,
+                ["apiv"] = "1"
+            };
+            var uriBuilder = new UriBuilder("https://vocup.org/api/analytics/record");
+            uriBuilder.Query = await new FormUrlEncodedContent(query).ReadAsStringAsync();
+            HttpResponseMessage response = await httpClient.PostAsync(uriBuilder.Uri, new ByteArrayContent(Array.Empty<byte>()));
+            if (!response.IsSuccessStatusCode)
             {
-                Debug.WriteLine(e.Message);
+                Debug.WriteLine("Server replied with {0} {1}", response.StatusCode, response.ReasonPhrase);
             }
         }
+        catch (Exception e)
+        {
+            Debug.WriteLine(e);
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (defer != null)
+            await defer().ConfigureAwait(false);
+
+        httpClient.Dispose();
     }
 }

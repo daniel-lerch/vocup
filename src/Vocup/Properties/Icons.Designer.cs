@@ -231,11 +231,21 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Bitmap Icon {
+        internal static System.Drawing.Icon Icon {
             get {
                 object obj = ResourceManager.GetObject("Icon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconImage {
+            get {
+                object obj = ResourceManager.GetObject("IconImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

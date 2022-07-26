@@ -30,7 +30,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PracticeDialog));
-            this.GroupPractice = new System.Windows.Forms.GroupBox();
             this.TbForeignLangSynonym = new System.Windows.Forms.TextBox();
             this.TbForeignLang = new System.Windows.Forms.TextBox();
             this.TbMotherTongue = new System.Windows.Forms.TextBox();
@@ -59,22 +58,17 @@
             this.RbWrong = new System.Windows.Forms.RadioButton();
             this.RbCorrect = new System.Windows.Forms.RadioButton();
             this.GroupUserEvaluation = new System.Windows.Forms.GroupBox();
-            this.GroupPractice.SuspendLayout();
+            this.TableLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.PanelMotherTongue = new System.Windows.Forms.Panel();
+            this.PanelForeignLang = new System.Windows.Forms.Panel();
+            this.PanelForeignLangSynonym = new System.Windows.Forms.Panel();
             this.GroupStatistics.SuspendLayout();
             this.GroupUserEvaluation.SuspendLayout();
+            this.TableLayout.SuspendLayout();
+            this.PanelMotherTongue.SuspendLayout();
+            this.PanelForeignLang.SuspendLayout();
+            this.PanelForeignLangSynonym.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // GroupPractice
-            // 
-            resources.ApplyResources(this.GroupPractice, "GroupPractice");
-            this.GroupPractice.Controls.Add(this.TbForeignLangSynonym);
-            this.GroupPractice.Controls.Add(this.TbForeignLang);
-            this.GroupPractice.Controls.Add(this.TbMotherTongue);
-            this.GroupPractice.Controls.Add(this.LbForeignLangSynonym);
-            this.GroupPractice.Controls.Add(this.LbForeignLang);
-            this.GroupPractice.Controls.Add(this.LbMotherTongue);
-            this.GroupPractice.Name = "GroupPractice";
-            this.GroupPractice.TabStop = false;
             // 
             // TbForeignLangSynonym
             // 
@@ -135,6 +129,7 @@
             resources.ApplyResources(this.TbWrongCount, "TbWrongCount");
             this.TbWrongCount.Name = "TbWrongCount";
             this.TbWrongCount.ReadOnly = true;
+            this.TbWrongCount.TabStop = false;
             // 
             // label6
             // 
@@ -148,6 +143,7 @@
             resources.ApplyResources(this.TbPartlyCorrectCount, "TbPartlyCorrectCount");
             this.TbPartlyCorrectCount.Name = "TbPartlyCorrectCount";
             this.TbPartlyCorrectCount.ReadOnly = true;
+            this.TbPartlyCorrectCount.TabStop = false;
             // 
             // label5
             // 
@@ -166,6 +162,7 @@
             resources.ApplyResources(this.TbCorrectCount, "TbCorrectCount");
             this.TbCorrectCount.Name = "TbCorrectCount";
             this.TbCorrectCount.ReadOnly = true;
+            this.TbCorrectCount.TabStop = false;
             // 
             // label3
             // 
@@ -187,18 +184,21 @@
             resources.ApplyResources(this.TbPracticedCount, "TbPracticedCount");
             this.TbPracticedCount.Name = "TbPracticedCount";
             this.TbPracticedCount.ReadOnly = true;
+            this.TbPracticedCount.TabStop = false;
             // 
             // TbUnpracticedCount
             // 
             resources.ApplyResources(this.TbUnpracticedCount, "TbUnpracticedCount");
             this.TbUnpracticedCount.Name = "TbUnpracticedCount";
             this.TbUnpracticedCount.ReadOnly = true;
+            this.TbUnpracticedCount.TabStop = false;
             // 
             // TbPracticeCount
             // 
             resources.ApplyResources(this.TbPracticeCount, "TbPracticeCount");
             this.TbPracticeCount.Name = "TbPracticeCount";
             this.TbPracticeCount.ReadOnly = true;
+            this.TbPracticeCount.TabStop = false;
             // 
             // PbPracticeProgress
             // 
@@ -223,10 +223,12 @@
             // 
             // TbCorrectAnswer
             // 
+            this.TbCorrectAnswer.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TableLayout.SetColumnSpan(this.TbCorrectAnswer, 2);
             resources.ApplyResources(this.TbCorrectAnswer, "TbCorrectAnswer");
-            this.TbCorrectAnswer.BackColor = System.Drawing.SystemColors.Control;
             this.TbCorrectAnswer.Name = "TbCorrectAnswer";
             this.TbCorrectAnswer.ReadOnly = true;
+            this.TbCorrectAnswer.TabStop = false;
             // 
             // BtnSpecialChar
             // 
@@ -261,12 +263,43 @@
             // 
             // GroupUserEvaluation
             // 
+            resources.ApplyResources(this.GroupUserEvaluation, "GroupUserEvaluation");
             this.GroupUserEvaluation.Controls.Add(this.RbCorrect);
             this.GroupUserEvaluation.Controls.Add(this.RbWrong);
             this.GroupUserEvaluation.Controls.Add(this.RbPartlyCorrect);
-            resources.ApplyResources(this.GroupUserEvaluation, "GroupUserEvaluation");
             this.GroupUserEvaluation.Name = "GroupUserEvaluation";
             this.GroupUserEvaluation.TabStop = false;
+            // 
+            // TableLayout
+            // 
+            resources.ApplyResources(this.TableLayout, "TableLayout");
+            this.TableLayout.Controls.Add(this.PanelMotherTongue, 0, 0);
+            this.TableLayout.Controls.Add(this.PanelForeignLang, 1, 0);
+            this.TableLayout.Controls.Add(this.TbCorrectAnswer, 0, 2);
+            this.TableLayout.Controls.Add(this.PanelForeignLangSynonym, 1, 1);
+            this.TableLayout.Name = "TableLayout";
+            // 
+            // PanelMotherTongue
+            // 
+            this.PanelMotherTongue.Controls.Add(this.LbMotherTongue);
+            this.PanelMotherTongue.Controls.Add(this.TbMotherTongue);
+            resources.ApplyResources(this.PanelMotherTongue, "PanelMotherTongue");
+            this.PanelMotherTongue.Name = "PanelMotherTongue";
+            this.TableLayout.SetRowSpan(this.PanelMotherTongue, 2);
+            // 
+            // PanelForeignLang
+            // 
+            this.PanelForeignLang.Controls.Add(this.LbForeignLang);
+            this.PanelForeignLang.Controls.Add(this.TbForeignLang);
+            resources.ApplyResources(this.PanelForeignLang, "PanelForeignLang");
+            this.PanelForeignLang.Name = "PanelForeignLang";
+            // 
+            // PanelForeignLangSynonym
+            // 
+            this.PanelForeignLangSynonym.Controls.Add(this.TbForeignLangSynonym);
+            this.PanelForeignLangSynonym.Controls.Add(this.LbForeignLangSynonym);
+            resources.ApplyResources(this.PanelForeignLangSynonym, "PanelForeignLangSynonym");
+            this.PanelForeignLangSynonym.Name = "PanelForeignLangSynonym";
             // 
             // PracticeDialog
             // 
@@ -274,25 +307,30 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnCancel;
+            this.Controls.Add(this.TableLayout);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnSpecialChar);
             this.Controls.Add(this.BtnContinue);
             this.Controls.Add(this.GroupUserEvaluation);
-            this.Controls.Add(this.TbCorrectAnswer);
             this.Controls.Add(this.GroupStatistics);
-            this.Controls.Add(this.GroupPractice);
             this.Name = "PracticeDialog";
             this.ShowInTaskbar = false;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_FormClosed);
             this.Load += new System.EventHandler(this.Form_Load);
-            this.GroupPractice.ResumeLayout(false);
-            this.GroupPractice.PerformLayout();
             this.GroupStatistics.ResumeLayout(false);
             this.GroupStatistics.PerformLayout();
             this.GroupUserEvaluation.ResumeLayout(false);
             this.GroupUserEvaluation.PerformLayout();
+            this.TableLayout.ResumeLayout(false);
+            this.TableLayout.PerformLayout();
+            this.PanelMotherTongue.ResumeLayout(false);
+            this.PanelMotherTongue.PerformLayout();
+            this.PanelForeignLang.ResumeLayout(false);
+            this.PanelForeignLang.PerformLayout();
+            this.PanelForeignLangSynonym.ResumeLayout(false);
+            this.PanelForeignLangSynonym.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -307,12 +345,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox TbCorrectAnswer;
         private System.Windows.Forms.RadioButton RbPartlyCorrect;
         private System.Windows.Forms.RadioButton RbWrong;
         private System.Windows.Forms.RadioButton RbCorrect;
         private System.Windows.Forms.GroupBox GroupUserEvaluation;
-        private System.Windows.Forms.GroupBox GroupPractice;
         private System.Windows.Forms.Label LbForeignLang;
         private System.Windows.Forms.Label LbMotherTongue;
         private System.Windows.Forms.GroupBox GroupStatistics;
@@ -326,5 +362,10 @@
         private System.Windows.Forms.TextBox TbPartlyCorrectCount;
         private System.Windows.Forms.TextBox TbCorrectCount;
         private System.Windows.Forms.TextBox TbWrongCount;
+        private System.Windows.Forms.TextBox TbCorrectAnswer;
+        private System.Windows.Forms.TableLayoutPanel TableLayout;
+        private System.Windows.Forms.Panel PanelMotherTongue;
+        private System.Windows.Forms.Panel PanelForeignLang;
+        private System.Windows.Forms.Panel PanelForeignLangSynonym;
     }
 }

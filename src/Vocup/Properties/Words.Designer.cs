@@ -277,15 +277,6 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please translate from {0} to {1}.
-        /// </summary>
-        internal static string TranslateFromTo {
-            get {
-                return ResourceManager.GetString("TranslateFromTo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Vocup.
         /// </summary>
         internal static string Vocup {

@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PracticeResultList));
             this.ListView = new System.Windows.Forms.ListView();
-            this.imageColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.motherTongueColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.foreignLangColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.wrongInputColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.imageColumn = new System.Windows.Forms.ColumnHeader();
+            this.motherTongueColumn = new System.Windows.Forms.ColumnHeader();
+            this.foreignLangColumn = new System.Windows.Forms.ColumnHeader();
+            this.wrongInputColumn = new System.Windows.Forms.ColumnHeader();
             this.listview_imagelist = new System.Windows.Forms.ImageList(this.components);
             this.BtnContinue = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,10 +52,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.GroupGrades = new System.Windows.Forms.GroupBox();
-            this.LbGrade = new System.Windows.Forms.Label();
             this.LbPercentage = new System.Windows.Forms.Label();
             this.TbPercentage = new System.Windows.Forms.TextBox();
-            this.TbGrade = new System.Windows.Forms.TextBox();
             this.GroupStatistics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -74,7 +72,6 @@
             this.wrongInputColumn});
             this.ListView.FullRowSelect = true;
             this.ListView.GridLines = true;
-            this.ListView.HideSelection = false;
             this.ListView.MultiSelect = false;
             this.ListView.Name = "ListView";
             this.ListView.SmallImageList = this.listview_imagelist;
@@ -101,6 +98,7 @@
             // 
             // listview_imagelist
             // 
+            this.listview_imagelist.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
             this.listview_imagelist.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("listview_imagelist.ImageStream")));
             this.listview_imagelist.TransparentColor = System.Drawing.Color.Transparent;
             this.listview_imagelist.Images.SetKeyName(0, "0.png");
@@ -214,17 +212,10 @@
             // GroupGrades
             // 
             resources.ApplyResources(this.GroupGrades, "GroupGrades");
-            this.GroupGrades.Controls.Add(this.LbGrade);
             this.GroupGrades.Controls.Add(this.LbPercentage);
             this.GroupGrades.Controls.Add(this.TbPercentage);
-            this.GroupGrades.Controls.Add(this.TbGrade);
             this.GroupGrades.Name = "GroupGrades";
             this.GroupGrades.TabStop = false;
-            // 
-            // LbGrade
-            // 
-            resources.ApplyResources(this.LbGrade, "LbGrade");
-            this.LbGrade.Name = "LbGrade";
             // 
             // LbPercentage
             // 
@@ -236,12 +227,6 @@
             resources.ApplyResources(this.TbPercentage, "TbPercentage");
             this.TbPercentage.Name = "TbPercentage";
             this.TbPercentage.ReadOnly = true;
-            // 
-            // TbGrade
-            // 
-            resources.ApplyResources(this.TbGrade, "TbGrade");
-            this.TbGrade.Name = "TbGrade";
-            this.TbGrade.ReadOnly = true;
             // 
             // PracticeResultList
             // 
@@ -285,7 +270,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox GroupGrades;
         public System.Windows.Forms.Label LbPercentage;
-        public System.Windows.Forms.Label LbGrade;
         private System.Windows.Forms.ColumnHeader imageColumn;
         private System.Windows.Forms.ColumnHeader motherTongueColumn;
         private System.Windows.Forms.ColumnHeader foreignLangColumn;
@@ -296,7 +280,6 @@
         private System.Windows.Forms.TextBox TbPartlyCorrectCount;
         private System.Windows.Forms.TextBox TbNotPracticedCount;
         private System.Windows.Forms.TextBox TbWrongCount;
-        private System.Windows.Forms.TextBox TbGrade;
         private System.Windows.Forms.TextBox TbPercentage;
     }
 }

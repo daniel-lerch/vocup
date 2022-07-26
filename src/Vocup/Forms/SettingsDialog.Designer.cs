@@ -44,7 +44,6 @@
             this.CbLanguage = new System.Windows.Forms.ComboBox();
             this.GroupVocabularyList = new System.Windows.Forms.GroupBox();
             this.CbColumnResize = new System.Windows.Forms.CheckBox();
-            this.CbGridLines = new System.Windows.Forms.CheckBox();
             this.GroupVhrPath = new System.Windows.Forms.GroupBox();
             this.BtnVhrPath = new System.Windows.Forms.Button();
             this.TbVhrPath = new System.Windows.Forms.TextBox();
@@ -59,11 +58,8 @@
             this.GroupEvaluation = new System.Windows.Forms.GroupBox();
             this.CbOptionalExpressions = new System.Windows.Forms.CheckBox();
             this.CbManualCheck = new System.Windows.Forms.CheckBox();
-            this.CbEvaluationSystem = new System.Windows.Forms.ComboBox();
-            this.LbGradeSystem = new System.Windows.Forms.Label();
-            this.CbPracticeResult = new System.Windows.Forms.CheckBox();
+            this.CbShowPracticeResult = new System.Windows.Forms.CheckBox();
             this.GroupUserInterface = new System.Windows.Forms.GroupBox();
-            this.CbColoredTextfield = new System.Windows.Forms.CheckBox();
             this.CbAcousticFeedback = new System.Windows.Forms.CheckBox();
             this.CbSingleContinueButton = new System.Windows.Forms.CheckBox();
             this.GroupNearlyCorrect = new System.Windows.Forms.GroupBox();
@@ -192,6 +188,7 @@
             resources.ApplyResources(this.TabControlMain, "TabControlMain");
             this.TabControlMain.Name = "TabControlMain";
             this.TabControlMain.SelectedIndex = 0;
+            this.TabControlMain.Selected += new System.Windows.Forms.TabControlEventHandler(this.TabControlMain_Selected);
             // 
             // TabGeneral
             // 
@@ -234,7 +231,6 @@
             // 
             this.GroupVocabularyList.BackColor = System.Drawing.Color.Transparent;
             this.GroupVocabularyList.Controls.Add(this.CbColumnResize);
-            this.GroupVocabularyList.Controls.Add(this.CbGridLines);
             resources.ApplyResources(this.GroupVocabularyList, "GroupVocabularyList");
             this.GroupVocabularyList.Name = "GroupVocabularyList";
             this.GroupVocabularyList.TabStop = false;
@@ -244,12 +240,6 @@
             resources.ApplyResources(this.CbColumnResize, "CbColumnResize");
             this.CbColumnResize.Name = "CbColumnResize";
             this.CbColumnResize.UseVisualStyleBackColor = true;
-            // 
-            // CbGridLines
-            // 
-            resources.ApplyResources(this.CbGridLines, "CbGridLines");
-            this.CbGridLines.Name = "CbGridLines";
-            this.CbGridLines.UseVisualStyleBackColor = true;
             // 
             // GroupVhrPath
             // 
@@ -334,9 +324,7 @@
             // 
             this.GroupEvaluation.Controls.Add(this.CbOptionalExpressions);
             this.GroupEvaluation.Controls.Add(this.CbManualCheck);
-            this.GroupEvaluation.Controls.Add(this.CbEvaluationSystem);
-            this.GroupEvaluation.Controls.Add(this.LbGradeSystem);
-            this.GroupEvaluation.Controls.Add(this.CbPracticeResult);
+            this.GroupEvaluation.Controls.Add(this.CbShowPracticeResult);
             resources.ApplyResources(this.GroupEvaluation, "GroupEvaluation");
             this.GroupEvaluation.Name = "GroupEvaluation";
             this.GroupEvaluation.TabStop = false;
@@ -355,45 +343,21 @@
             this.CbManualCheck.Name = "CbManualCheck";
             this.CbManualCheck.UseVisualStyleBackColor = true;
             // 
-            // CbEvaluationSystem
+            // CbShowPracticeResult
             // 
-            this.CbEvaluationSystem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CbEvaluationSystem.Items.AddRange(new object[] {
-            resources.GetString("CbEvaluationSystem.Items"),
-            resources.GetString("CbEvaluationSystem.Items1")});
-            resources.ApplyResources(this.CbEvaluationSystem, "CbEvaluationSystem");
-            this.CbEvaluationSystem.Name = "CbEvaluationSystem";
-            // 
-            // LbGradeSystem
-            // 
-            resources.ApplyResources(this.LbGradeSystem, "LbGradeSystem");
-            this.LbGradeSystem.Name = "LbGradeSystem";
-            // 
-            // CbPracticeResult
-            // 
-            resources.ApplyResources(this.CbPracticeResult, "CbPracticeResult");
-            this.CbPracticeResult.Checked = true;
-            this.CbPracticeResult.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CbPracticeResult.Name = "CbPracticeResult";
-            this.CbPracticeResult.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.CbShowPracticeResult, "CbShowPracticeResult");
+            this.CbShowPracticeResult.Checked = true;
+            this.CbShowPracticeResult.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CbShowPracticeResult.Name = "CbShowPracticeResult";
+            this.CbShowPracticeResult.UseVisualStyleBackColor = true;
             // 
             // GroupUserInterface
             // 
-            this.GroupUserInterface.Controls.Add(this.CbColoredTextfield);
             this.GroupUserInterface.Controls.Add(this.CbAcousticFeedback);
             this.GroupUserInterface.Controls.Add(this.CbSingleContinueButton);
             resources.ApplyResources(this.GroupUserInterface, "GroupUserInterface");
             this.GroupUserInterface.Name = "GroupUserInterface";
             this.GroupUserInterface.TabStop = false;
-            // 
-            // CbColoredTextfield
-            // 
-            resources.ApplyResources(this.CbColoredTextfield, "CbColoredTextfield");
-            this.CbColoredTextfield.BackColor = System.Drawing.Color.Transparent;
-            this.CbColoredTextfield.Checked = true;
-            this.CbColoredTextfield.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CbColoredTextfield.Name = "CbColoredTextfield";
-            this.CbColoredTextfield.UseVisualStyleBackColor = false;
             // 
             // CbAcousticFeedback
             // 
@@ -690,7 +654,6 @@
         private System.Windows.Forms.CheckBox CbDisableInternetServices;
         private System.Windows.Forms.GroupBox GroupUpdate;
         private System.Windows.Forms.TabPage TabPractice;
-        private System.Windows.Forms.CheckBox CbColoredTextfield;
         private System.Windows.Forms.GroupBox GroupNearlyCorrect;
         private System.Windows.Forms.CheckBox CbTolerateArticle;
         private System.Windows.Forms.CheckBox CbTolerateSpecialChar;
@@ -707,12 +670,9 @@
         private System.Windows.Forms.Button BtnVhrPath;
         private System.Windows.Forms.TextBox TbVhrPath;
         private System.Windows.Forms.GroupBox GroupEvaluation;
-        private System.Windows.Forms.ComboBox CbEvaluationSystem;
-        private System.Windows.Forms.Label LbGradeSystem;
-        private System.Windows.Forms.CheckBox CbPracticeResult;
+        private System.Windows.Forms.CheckBox CbShowPracticeResult;
         private System.Windows.Forms.Button BtnResetStartScreen;
         private System.Windows.Forms.GroupBox GroupVocabularyList;
-        private System.Windows.Forms.CheckBox CbGridLines;
         private System.Windows.Forms.CheckBox CbColumnResize;
         private System.Windows.Forms.CheckBox CbTolerateWhiteSpace;
         private System.Windows.Forms.GroupBox GroupLanguage;

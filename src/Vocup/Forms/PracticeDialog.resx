@@ -1,64 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
@@ -117,77 +57,83 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="GroupPractice.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TbForeignLangSynonym.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="TbForeignLangSynonym.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="TbForeignLangSynonym.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 78</value>
-  </data>
-  <data name="TbForeignLangSynonym.Size" type="System.Drawing.Size, System.Drawing">
-    <value>325, 22</value>
+    <value>3, 16</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TbForeignLangSynonym.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TbForeignLangSynonym.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 35</value>
+  </data>
   <data name="TbForeignLangSynonym.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;TbForeignLangSynonym.Name" xml:space="preserve">
     <value>TbForeignLangSynonym</value>
   </data>
   <data name="&gt;&gt;TbForeignLangSynonym.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbForeignLangSynonym.Parent" xml:space="preserve">
-    <value>GroupPractice</value>
+    <value>PanelForeignLangSynonym</value>
   </data>
   <data name="&gt;&gt;TbForeignLangSynonym.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="TbForeignLang.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="TbForeignLang.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="TbForeignLang.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 48</value>
+    <value>3, 16</value>
+  </data>
+  <data name="TbForeignLang.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="TbForeignLang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>325, 22</value>
+    <value>226, 35</value>
   </data>
   <data name="TbForeignLang.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;TbForeignLang.Name" xml:space="preserve">
     <value>TbForeignLang</value>
   </data>
   <data name="&gt;&gt;TbForeignLang.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbForeignLang.Parent" xml:space="preserve">
-    <value>GroupPractice</value>
+    <value>PanelForeignLang</value>
   </data>
   <data name="&gt;&gt;TbForeignLang.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="TbMotherTongue.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="TbMotherTongue.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="TbMotherTongue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 22</value>
+    <value>0, 16</value>
+  </data>
+  <data name="TbMotherTongue.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="TbMotherTongue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>325, 22</value>
+    <value>226, 96</value>
   </data>
   <data name="TbMotherTongue.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -196,19 +142,19 @@
     <value>TbMotherTongue</value>
   </data>
   <data name="&gt;&gt;TbMotherTongue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbMotherTongue.Parent" xml:space="preserve">
-    <value>GroupPractice</value>
+    <value>PanelMotherTongue</value>
   </data>
   <data name="&gt;&gt;TbMotherTongue.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="LbForeignLangSynonym.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="LbForeignLangSynonym.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 85</value>
+    <value>3, 0</value>
   </data>
   <data name="LbForeignLangSynonym.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 13</value>
@@ -223,19 +169,19 @@
     <value>LbForeignLangSynonym</value>
   </data>
   <data name="&gt;&gt;LbForeignLangSynonym.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbForeignLangSynonym.Parent" xml:space="preserve">
-    <value>GroupPractice</value>
+    <value>PanelForeignLangSynonym</value>
   </data>
   <data name="&gt;&gt;LbForeignLangSynonym.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="LbForeignLang.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="LbForeignLang.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 55</value>
+    <value>3, 0</value>
   </data>
   <data name="LbForeignLang.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 13</value>
@@ -250,19 +196,19 @@
     <value>LbForeignLang</value>
   </data>
   <data name="&gt;&gt;LbForeignLang.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbForeignLang.Parent" xml:space="preserve">
-    <value>GroupPractice</value>
+    <value>PanelForeignLang</value>
   </data>
   <data name="&gt;&gt;LbForeignLang.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>0</value>
   </data>
   <data name="LbMotherTongue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="LbMotherTongue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 25</value>
+    <value>0, 0</value>
   </data>
   <data name="LbMotherTongue.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 13</value>
@@ -277,37 +223,13 @@
     <value>LbMotherTongue</value>
   </data>
   <data name="&gt;&gt;LbMotherTongue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbMotherTongue.Parent" xml:space="preserve">
-    <value>GroupPractice</value>
+    <value>PanelMotherTongue</value>
   </data>
   <data name="&gt;&gt;LbMotherTongue.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="GroupPractice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="GroupPractice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>470, 118</value>
-  </data>
-  <data name="GroupPractice.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="GroupPractice.Text" xml:space="preserve">
-    <value>Please translate from %MotherTongue% to %ForeignLang%</value>
-  </data>
-  <data name="&gt;&gt;GroupPractice.Name" xml:space="preserve">
-    <value>GroupPractice</value>
-  </data>
-  <data name="&gt;&gt;GroupPractice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupPractice.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GroupPractice.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="GroupStatistics.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -319,7 +241,7 @@
     <value>40, 20</value>
   </data>
   <data name="TbWrongCount.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>0</value>
   </data>
   <data name="TbWrongCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -328,7 +250,7 @@
     <value>TbWrongCount</value>
   </data>
   <data name="&gt;&gt;TbWrongCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbWrongCount.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -355,7 +277,7 @@
     <value>label6</value>
   </data>
   <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label6.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -370,7 +292,7 @@
     <value>40, 20</value>
   </data>
   <data name="TbPartlyCorrectCount.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>0</value>
   </data>
   <data name="TbPartlyCorrectCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -379,7 +301,7 @@
     <value>TbPartlyCorrectCount</value>
   </data>
   <data name="&gt;&gt;TbPartlyCorrectCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbPartlyCorrectCount.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -406,7 +328,7 @@
     <value>label5</value>
   </data>
   <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label5.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -433,7 +355,7 @@
     <value>label4</value>
   </data>
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -448,7 +370,7 @@
     <value>40, 20</value>
   </data>
   <data name="TbCorrectCount.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>0</value>
   </data>
   <data name="TbCorrectCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -457,7 +379,7 @@
     <value>TbCorrectCount</value>
   </data>
   <data name="&gt;&gt;TbCorrectCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbCorrectCount.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -484,7 +406,7 @@
     <value>label3</value>
   </data>
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label3.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -511,7 +433,7 @@
     <value>label2</value>
   </data>
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -538,7 +460,7 @@
     <value>label1</value>
   </data>
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -553,7 +475,7 @@
     <value>40, 20</value>
   </data>
   <data name="TbPracticedCount.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>0</value>
   </data>
   <data name="TbPracticedCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -562,7 +484,7 @@
     <value>TbPracticedCount</value>
   </data>
   <data name="&gt;&gt;TbPracticedCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbPracticedCount.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -577,7 +499,7 @@
     <value>40, 20</value>
   </data>
   <data name="TbUnpracticedCount.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>0</value>
   </data>
   <data name="TbUnpracticedCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -586,7 +508,7 @@
     <value>TbUnpracticedCount</value>
   </data>
   <data name="&gt;&gt;TbUnpracticedCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbUnpracticedCount.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -601,7 +523,7 @@
     <value>40, 20</value>
   </data>
   <data name="TbPracticeCount.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="TbPracticeCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -610,7 +532,7 @@
     <value>TbPracticeCount</value>
   </data>
   <data name="&gt;&gt;TbPracticeCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbPracticeCount.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -631,7 +553,7 @@
     <value>PbPracticeProgress</value>
   </data>
   <data name="&gt;&gt;PbPracticeProgress.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;PbPracticeProgress.Parent" xml:space="preserve">
     <value>GroupStatistics</value>
@@ -640,7 +562,7 @@
     <value>12</value>
   </data>
   <data name="GroupStatistics.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 200</value>
+    <value>12, 215</value>
   </data>
   <data name="GroupStatistics.Size" type="System.Drawing.Size, System.Drawing">
     <value>470, 97</value>
@@ -655,7 +577,7 @@
     <value>GroupStatistics</value>
   </data>
   <data name="&gt;&gt;GroupStatistics.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupStatistics.Parent" xml:space="preserve">
     <value>$this</value>
@@ -667,7 +589,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="BtnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>382, 164</value>
+    <value>382, 179</value>
   </data>
   <data name="BtnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 30</value>
@@ -682,19 +604,19 @@
     <value>BtnCancel</value>
   </data>
   <data name="&gt;&gt;BtnCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnCancel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BtnCancel.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="BtnContinue.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="BtnContinue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>276, 164</value>
+    <value>276, 179</value>
   </data>
   <data name="BtnContinue.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 30</value>
@@ -709,28 +631,140 @@
     <value>BtnContinue</value>
   </data>
   <data name="&gt;&gt;BtnContinue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnContinue.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BtnContinue.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="TableLayout.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="TableLayout.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="TbCorrectAnswer.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="PanelMotherTongue.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="PanelMotherTongue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="PanelMotherTongue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 116</value>
+  </data>
+  <data name="PanelMotherTongue.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PanelMotherTongue.Name" xml:space="preserve">
+    <value>PanelMotherTongue</value>
+  </data>
+  <data name="&gt;&gt;PanelMotherTongue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelMotherTongue.Parent" xml:space="preserve">
+    <value>TableLayout</value>
+  </data>
+  <data name="&gt;&gt;PanelMotherTongue.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="PanelForeignLang.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="PanelForeignLang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>238, 3</value>
+  </data>
+  <data name="PanelForeignLang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 55</value>
+  </data>
+  <data name="PanelForeignLang.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PanelForeignLang.Name" xml:space="preserve">
+    <value>PanelForeignLang</value>
+  </data>
+  <data name="&gt;&gt;PanelForeignLang.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelForeignLang.Parent" xml:space="preserve">
+    <value>TableLayout</value>
+  </data>
+  <data name="&gt;&gt;PanelForeignLang.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="PanelForeignLangSynonym.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="PanelForeignLangSynonym.Location" type="System.Drawing.Point, System.Drawing">
+    <value>238, 64</value>
+  </data>
+  <data name="PanelForeignLangSynonym.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 55</value>
+  </data>
+  <data name="PanelForeignLangSynonym.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PanelForeignLangSynonym.Name" xml:space="preserve">
+    <value>PanelForeignLangSynonym</value>
+  </data>
+  <data name="&gt;&gt;PanelForeignLangSynonym.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PanelForeignLangSynonym.Parent" xml:space="preserve">
+    <value>TableLayout</value>
+  </data>
+  <data name="&gt;&gt;PanelForeignLangSynonym.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="TableLayout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="TableLayout.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="TableLayout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 161</value>
+  </data>
+  <data name="TableLayout.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;TableLayout.Name" xml:space="preserve">
+    <value>TableLayout</value>
+  </data>
+  <data name="&gt;&gt;TableLayout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TableLayout.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TableLayout.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TableLayout.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="PanelMotherTongue" Row="0" RowSpan="2" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="PanelForeignLang" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="TbCorrectAnswer" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="PanelForeignLangSynonym" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Percent,38,Percent,38,Percent,24" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="TbCorrectAnswer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="TbCorrectAnswer.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt</value>
   </data>
   <data name="TbCorrectAnswer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 136</value>
+    <value>3, 125</value>
+  </data>
+  <data name="TbCorrectAnswer.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="TbCorrectAnswer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>470, 22</value>
+    <value>464, 33</value>
   </data>
   <data name="TbCorrectAnswer.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
+  </data>
+  <data name="TbCorrectAnswer.Text" xml:space="preserve">
+    <value>%Correct
+Answer%</value>
   </data>
   <data name="TbCorrectAnswer.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -739,25 +773,25 @@
     <value>TbCorrectAnswer</value>
   </data>
   <data name="&gt;&gt;TbCorrectAnswer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbCorrectAnswer.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>TableLayout</value>
   </data>
   <data name="&gt;&gt;TbCorrectAnswer.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="BtnSpecialChar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
   <data name="BtnSpecialChar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 164</value>
+    <value>12, 179</value>
   </data>
   <data name="BtnSpecialChar.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 30</value>
   </data>
   <data name="BtnSpecialChar.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="BtnSpecialChar.Text" xml:space="preserve">
     <value>Special chars</value>
@@ -766,13 +800,13 @@
     <value>BtnSpecialChar</value>
   </data>
   <data name="&gt;&gt;BtnSpecialChar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnSpecialChar.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;BtnSpecialChar.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="RbPartlyCorrect.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -781,7 +815,7 @@
     <value>NoControl</value>
   </data>
   <data name="RbPartlyCorrect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 6</value>
+    <value>187, 11</value>
   </data>
   <data name="RbPartlyCorrect.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 17</value>
@@ -796,7 +830,7 @@
     <value>RbPartlyCorrect</value>
   </data>
   <data name="&gt;&gt;RbPartlyCorrect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RbPartlyCorrect.Parent" xml:space="preserve">
     <value>GroupUserEvaluation</value>
@@ -811,7 +845,7 @@
     <value>NoControl</value>
   </data>
   <data name="RbWrong.Location" type="System.Drawing.Point, System.Drawing">
-    <value>406, 6</value>
+    <value>406, 11</value>
   </data>
   <data name="RbWrong.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 17</value>
@@ -826,7 +860,7 @@
     <value>RbWrong</value>
   </data>
   <data name="&gt;&gt;RbWrong.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RbWrong.Parent" xml:space="preserve">
     <value>GroupUserEvaluation</value>
@@ -841,7 +875,7 @@
     <value>NoControl</value>
   </data>
   <data name="RbCorrect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 6</value>
+    <value>14, 11</value>
   </data>
   <data name="RbCorrect.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 17</value>
@@ -856,7 +890,7 @@
     <value>RbCorrect</value>
   </data>
   <data name="&gt;&gt;RbCorrect.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RbCorrect.Parent" xml:space="preserve">
     <value>GroupUserEvaluation</value>
@@ -864,11 +898,14 @@
   <data name="&gt;&gt;RbCorrect.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="GroupUserEvaluation.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
   <data name="GroupUserEvaluation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 164</value>
+    <value>12, 175</value>
   </data>
   <data name="GroupUserEvaluation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>470, 23</value>
+    <value>470, 34</value>
   </data>
   <data name="GroupUserEvaluation.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -880,13 +917,13 @@
     <value>GroupUserEvaluation</value>
   </data>
   <data name="&gt;&gt;GroupUserEvaluation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupUserEvaluation.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GroupUserEvaluation.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -895,10 +932,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>494, 308</value>
+    <value>494, 323</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>510, 347</value>
+    <value>510, 362</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
@@ -910,6 +947,6 @@
     <value>PracticeDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

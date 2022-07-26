@@ -192,10 +192,6 @@
   <data name="Synonym" xml:space="preserve">
     <value>Synonym</value>
   </data>
-  <data name="TranslateFromTo" xml:space="preserve">
-    <value>Please translate from {0} to {1}</value>
-    <comment>{0}: Source, {1}: Target</comment>
-  </data>
   <data name="Vocup" xml:space="preserve">
     <value>Vocup</value>
     <comment>Localizable program name</comment>

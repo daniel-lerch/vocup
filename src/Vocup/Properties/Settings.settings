@@ -32,9 +32,6 @@
     <Setting Name="AutoSave" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="PracticeGradeCulture" Type="System.String" Scope="User">
-      <Value Profile="(Default)">de-DE</Value>
-    </Setting>
     <Setting Name="DisableInternetServices" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
