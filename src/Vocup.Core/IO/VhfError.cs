@@ -1,15 +1,14 @@
-﻿namespace Vocup.IO
+﻿namespace Vocup.IO;
+
+public enum VhfError
 {
-    public enum VhfError
-    {
-        InvalidCiphertext,
-        InvalidVersion,
-        InvalidVhrCode,
-        InvalidLanguages,
-        InvalidRow,
-        CorruptedArchive,
-        UpdateRequired,
-        EmptyArchive,
-        InvalidJsonBook
-    }
+    InvalidCiphertext,
+    InvalidVersion,
+    InvalidVhrCode,
+    InvalidLanguages,
+    InvalidRow,
+    CorruptedArchive,
+    UpdateRequired,
+    EmptyArchive,
+    InvalidJsonBook
 }

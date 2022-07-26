@@ -1,9 +1,8 @@
-﻿namespace Vocup.Models
+﻿namespace Vocup.Models;
+
+public enum PracticeResult
 {
-    public enum PracticeResult
-    {
-        Wrong,
-        PartlyCorrect,
-        Correct
-    }
+    Wrong,
+    PartlyCorrect,
+    Correct
 }

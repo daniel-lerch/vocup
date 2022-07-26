@@ -1,19 +1,18 @@
 ﻿using System;
 
-namespace Vocup.IO
+namespace Vocup.IO;
+
+public class VhfFormatException : FormatException
 {
-    public class VhfFormatException : FormatException
+    public VhfFormatException(VhfError errorCode)
     {
-        public VhfFormatException(VhfError errorCode)
-        {
-            ErrorCode = errorCode;
-        }
-
-        public VhfFormatException(VhfError errorCode, Exception innerException) : base(null, innerException)
-        {
-            ErrorCode = errorCode;
-        }
-
-        public VhfError ErrorCode { get; }
+        ErrorCode = errorCode;
     }
+
+    public VhfFormatException(VhfError errorCode, Exception innerException) : base(null, innerException)
+    {
+        ErrorCode = errorCode;
+    }
+
+    public VhfError ErrorCode { get; }
 }

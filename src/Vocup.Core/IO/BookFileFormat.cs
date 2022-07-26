@@ -1,8 +1,10 @@
-﻿namespace Vocup.IO
+﻿using System.IO;
+using System.Threading.Tasks;
+
+namespace Vocup.IO;
+
+public abstract class BookFileFormat
 {
-    public enum BookFileFormat
-    {
-        Vhf_1_0,
-        Vhf_2_0
-    }
+    internal abstract ValueTask<BookContext> ReadBookAsync(FileStream stream, string? vhrPath);
+    internal abstract ValueTask WriteBookAsync(BookContext bookContext, string? vhrPath);
 }
