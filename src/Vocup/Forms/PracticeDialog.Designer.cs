@@ -129,6 +129,7 @@
             resources.ApplyResources(this.TbWrongCount, "TbWrongCount");
             this.TbWrongCount.Name = "TbWrongCount";
             this.TbWrongCount.ReadOnly = true;
+            this.TbWrongCount.TabStop = false;
             // 
             // label6
             // 
@@ -142,6 +143,7 @@
             resources.ApplyResources(this.TbPartlyCorrectCount, "TbPartlyCorrectCount");
             this.TbPartlyCorrectCount.Name = "TbPartlyCorrectCount";
             this.TbPartlyCorrectCount.ReadOnly = true;
+            this.TbPartlyCorrectCount.TabStop = false;
             // 
             // label5
             // 
@@ -160,6 +162,7 @@
             resources.ApplyResources(this.TbCorrectCount, "TbCorrectCount");
             this.TbCorrectCount.Name = "TbCorrectCount";
             this.TbCorrectCount.ReadOnly = true;
+            this.TbCorrectCount.TabStop = false;
             // 
             // label3
             // 
@@ -181,18 +184,21 @@
             resources.ApplyResources(this.TbPracticedCount, "TbPracticedCount");
             this.TbPracticedCount.Name = "TbPracticedCount";
             this.TbPracticedCount.ReadOnly = true;
+            this.TbPracticedCount.TabStop = false;
             // 
             // TbUnpracticedCount
             // 
             resources.ApplyResources(this.TbUnpracticedCount, "TbUnpracticedCount");
             this.TbUnpracticedCount.Name = "TbUnpracticedCount";
             this.TbUnpracticedCount.ReadOnly = true;
+            this.TbUnpracticedCount.TabStop = false;
             // 
             // TbPracticeCount
             // 
             resources.ApplyResources(this.TbPracticeCount, "TbPracticeCount");
             this.TbPracticeCount.Name = "TbPracticeCount";
             this.TbPracticeCount.ReadOnly = true;
+            this.TbPracticeCount.TabStop = false;
             // 
             // PbPracticeProgress
             // 
@@ -222,6 +228,7 @@
             resources.ApplyResources(this.TbCorrectAnswer, "TbCorrectAnswer");
             this.TbCorrectAnswer.Name = "TbCorrectAnswer";
             this.TbCorrectAnswer.ReadOnly = true;
+            this.TbCorrectAnswer.TabStop = false;
             // 
             // BtnSpecialChar
             // 

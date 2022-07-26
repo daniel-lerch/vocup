@@ -76,7 +76,7 @@
     <value>226, 35</value>
   </data>
   <data name="TbForeignLangSynonym.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;TbForeignLangSynonym.Name" xml:space="preserve">
     <value>TbForeignLangSynonym</value>
@@ -106,7 +106,7 @@
     <value>226, 35</value>
   </data>
   <data name="TbForeignLang.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;TbForeignLang.Name" xml:space="preserve">
     <value>TbForeignLang</value>
@@ -241,7 +241,7 @@
     <value>40, 20</value>
   </data>
   <data name="TbWrongCount.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>0</value>
   </data>
   <data name="TbWrongCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -292,7 +292,7 @@
     <value>40, 20</value>
   </data>
   <data name="TbPartlyCorrectCount.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>0</value>
   </data>
   <data name="TbPartlyCorrectCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -370,7 +370,7 @@
     <value>40, 20</value>
   </data>
   <data name="TbCorrectCount.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>0</value>
   </data>
   <data name="TbCorrectCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -475,7 +475,7 @@
     <value>40, 20</value>
   </data>
   <data name="TbPracticedCount.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>0</value>
   </data>
   <data name="TbPracticedCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -499,7 +499,7 @@
     <value>40, 20</value>
   </data>
   <data name="TbUnpracticedCount.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>0</value>
   </data>
   <data name="TbUnpracticedCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -523,7 +523,7 @@
     <value>40, 20</value>
   </data>
   <data name="TbPracticeCount.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="TbPracticeCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -679,7 +679,7 @@
     <value>229, 55</value>
   </data>
   <data name="PanelForeignLang.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;PanelForeignLang.Name" xml:space="preserve">
     <value>PanelForeignLang</value>
@@ -703,7 +703,7 @@
     <value>229, 55</value>
   </data>
   <data name="PanelForeignLangSynonym.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;PanelForeignLangSynonym.Name" xml:space="preserve">
     <value>PanelForeignLangSynonym</value>
@@ -760,7 +760,7 @@
     <value>464, 33</value>
   </data>
   <data name="TbCorrectAnswer.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="TbCorrectAnswer.Text" xml:space="preserve">
     <value>%Correct
@@ -791,7 +791,7 @@ Answer%</value>
     <value>89, 30</value>
   </data>
   <data name="BtnSpecialChar.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="BtnSpecialChar.Text" xml:space="preserve">
     <value>Special chars</value>
