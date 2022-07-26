@@ -39,7 +39,6 @@ public partial class PracticeResultList : Form
 
 
         ListView.BeginUpdate();
-        ListView.GridLines = Program.Settings.GridLines;
 
         foreach (VocabularyWordPractice practice in practiceList)
         {

@@ -14,41 +14,42 @@ public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
     {
         return new VocupSettings
         {
-            GridLines = GridLines,
-            LastFile = LastFile,
-            StartScreen = StartScreen,
-            AutoSave = AutoSave,
-            DisableInternetServices = DisableInternetServices,
-            LastInternetConnection = LastInternetConnection,
-            VhfPath = VhfPath,
-            VhrPath = VhrPath,
-            StartupCounter = StartupCounter,
-            ColumnResize = ColumnResize,
-            OverrideCulture = OverrideCulture,
-            PracticePercentageUnpracticed = PracticePercentageUnpracticed,
-            PracticePercentageCorrect = PracticePercentageCorrect,
-            PracticePercentageWrong = PracticePercentageWrong,
-            MaxPracticeCount = MaxPracticeCount,
-            PracticeHighlightInput = PracticeHighlightInput,
-            UserEvaluates = UserEvaluates,
-            PracticeFastContinue = PracticeFastContinue,
-            PracticeSoundFeedback = PracticeSoundFeedback,
-            PracticeShowResultList = PracticeShowResultList,
-            EvaluateOptionalExpressions = EvaluateOptionalExpressions,
-            EvaluateTolerateNoSynonym = EvaluateTolerateNoSynonym,
-            EvaluateTolerateWhiteSpace = EvaluateTolerateWhiteSpace,
-            EvaluateToleratePunctuationMark = EvaluateToleratePunctuationMark,
-            EvaluateTolerateSpecialChar = EvaluateTolerateSpecialChar,
-            EvaluateTolerateArticle = EvaluateTolerateArticle,
-            MainFormBounds = MainFormBounds,
-            MainFormWindowState = MainFormWindowState,
-            MainFormSplitterDistance = MainFormSplitterDistance,
-            SpecialCharTab = SpecialCharTab,
-            Version = Version
+            _gridLines = _gridLines,
+            _lastFile = _lastFile,
+            _startScreen = _startScreen,
+            _autoSave = _autoSave,
+            _disableInternetServices = _disableInternetServices,
+            _lastInternetConnection = _lastInternetConnection,
+            _vhfPath = _vhfPath,
+            _vhrPath = _vhrPath,
+            _startupCounter = _startupCounter,
+            _columnResize = _columnResize,
+            _overrideCulture = _overrideCulture,
+            _practicePercentageUnpracticed = _practicePercentageUnpracticed,
+            _practicePercentageCorrect = _practicePercentageCorrect,
+            _practicePercentageWrong = _practicePercentageWrong,
+            _maxPracticeCount = _maxPracticeCount,
+            _practiceHighlightInput = _practiceHighlightInput,
+            _userEvaluates = _userEvaluates,
+            _practiceFastContinue = _practiceFastContinue,
+            _practiceSoundFeedback = _practiceSoundFeedback,
+            _practiceShowResultList = _practiceShowResultList,
+            _evaluateOptionalExpressions = _evaluateOptionalExpressions,
+            _evaluateTolerateNoSynonym = _evaluateTolerateNoSynonym,
+            _evaluateTolerateWhiteSpace = _evaluateTolerateWhiteSpace,
+            _evaluateToleratePunctuationMark = _evaluateToleratePunctuationMark,
+            _evaluateTolerateSpecialChar = _evaluateTolerateSpecialChar,
+            _evaluateTolerateArticle = _evaluateTolerateArticle,
+            _mainFormBounds = _mainFormBounds,
+            _mainFormWindowState = _mainFormWindowState,
+            _mainFormSplitterDistance = _mainFormSplitterDistance,
+            _specialCharTab = _specialCharTab,
+            _version = _version
         };
     }
 
     private bool _gridLines = true;
+    [Obsolete("Grid lines cannot be switched off anymore.")]
     public bool GridLines
     {
         get => _gridLines;
@@ -169,6 +170,7 @@ public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
 
 
     private bool _practiceHighlightInput = true;
+    [Obsolete("Highlighting of input fields cannot be switched off anymore.")]
     public bool PracticeHighlightInput
     {
         get => _practiceHighlightInput;

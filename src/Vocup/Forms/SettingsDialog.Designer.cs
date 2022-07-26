@@ -44,7 +44,6 @@
             this.CbLanguage = new System.Windows.Forms.ComboBox();
             this.GroupVocabularyList = new System.Windows.Forms.GroupBox();
             this.CbColumnResize = new System.Windows.Forms.CheckBox();
-            this.CbGridLines = new System.Windows.Forms.CheckBox();
             this.GroupVhrPath = new System.Windows.Forms.GroupBox();
             this.BtnVhrPath = new System.Windows.Forms.Button();
             this.TbVhrPath = new System.Windows.Forms.TextBox();
@@ -61,7 +60,6 @@
             this.CbManualCheck = new System.Windows.Forms.CheckBox();
             this.CbShowPracticeResult = new System.Windows.Forms.CheckBox();
             this.GroupUserInterface = new System.Windows.Forms.GroupBox();
-            this.CbColoredTextfield = new System.Windows.Forms.CheckBox();
             this.CbAcousticFeedback = new System.Windows.Forms.CheckBox();
             this.CbSingleContinueButton = new System.Windows.Forms.CheckBox();
             this.GroupNearlyCorrect = new System.Windows.Forms.GroupBox();
@@ -233,7 +231,6 @@
             // 
             this.GroupVocabularyList.BackColor = System.Drawing.Color.Transparent;
             this.GroupVocabularyList.Controls.Add(this.CbColumnResize);
-            this.GroupVocabularyList.Controls.Add(this.CbGridLines);
             resources.ApplyResources(this.GroupVocabularyList, "GroupVocabularyList");
             this.GroupVocabularyList.Name = "GroupVocabularyList";
             this.GroupVocabularyList.TabStop = false;
@@ -243,12 +240,6 @@
             resources.ApplyResources(this.CbColumnResize, "CbColumnResize");
             this.CbColumnResize.Name = "CbColumnResize";
             this.CbColumnResize.UseVisualStyleBackColor = true;
-            // 
-            // CbGridLines
-            // 
-            resources.ApplyResources(this.CbGridLines, "CbGridLines");
-            this.CbGridLines.Name = "CbGridLines";
-            this.CbGridLines.UseVisualStyleBackColor = true;
             // 
             // GroupVhrPath
             // 
@@ -362,21 +353,11 @@
             // 
             // GroupUserInterface
             // 
-            this.GroupUserInterface.Controls.Add(this.CbColoredTextfield);
             this.GroupUserInterface.Controls.Add(this.CbAcousticFeedback);
             this.GroupUserInterface.Controls.Add(this.CbSingleContinueButton);
             resources.ApplyResources(this.GroupUserInterface, "GroupUserInterface");
             this.GroupUserInterface.Name = "GroupUserInterface";
             this.GroupUserInterface.TabStop = false;
-            // 
-            // CbColoredTextfield
-            // 
-            resources.ApplyResources(this.CbColoredTextfield, "CbColoredTextfield");
-            this.CbColoredTextfield.BackColor = System.Drawing.Color.Transparent;
-            this.CbColoredTextfield.Checked = true;
-            this.CbColoredTextfield.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CbColoredTextfield.Name = "CbColoredTextfield";
-            this.CbColoredTextfield.UseVisualStyleBackColor = false;
             // 
             // CbAcousticFeedback
             // 
@@ -673,7 +654,6 @@
         private System.Windows.Forms.CheckBox CbDisableInternetServices;
         private System.Windows.Forms.GroupBox GroupUpdate;
         private System.Windows.Forms.TabPage TabPractice;
-        private System.Windows.Forms.CheckBox CbColoredTextfield;
         private System.Windows.Forms.GroupBox GroupNearlyCorrect;
         private System.Windows.Forms.CheckBox CbTolerateArticle;
         private System.Windows.Forms.CheckBox CbTolerateSpecialChar;
@@ -693,7 +673,6 @@
         private System.Windows.Forms.CheckBox CbShowPracticeResult;
         private System.Windows.Forms.Button BtnResetStartScreen;
         private System.Windows.Forms.GroupBox GroupVocabularyList;
-        private System.Windows.Forms.CheckBox CbGridLines;
         private System.Windows.Forms.CheckBox CbColumnResize;
         private System.Windows.Forms.CheckBox CbTolerateWhiteSpace;
         private System.Windows.Forms.GroupBox GroupLanguage;

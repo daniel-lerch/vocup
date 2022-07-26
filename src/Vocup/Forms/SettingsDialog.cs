@@ -27,7 +27,6 @@ public partial class SettingsDialog : Form
         CbDisableInternetServices.Checked = settings.DisableInternetServices;
 
         // ListView
-        CbGridLines.Checked = settings.GridLines;
         CbColumnResize.Checked = settings.ColumnResize;
 
         // Paths
@@ -54,7 +53,6 @@ public partial class SettingsDialog : Form
         CbTolerateNoSynonym.Checked = settings.EvaluateTolerateNoSynonym;
 
         // User interface
-        CbColoredTextfield.Checked = settings.PracticeHighlightInput;
         CbAcousticFeedback.Checked = settings.PracticeSoundFeedback;
         CbSingleContinueButton.Checked = settings.PracticeFastContinue;
 
@@ -79,7 +77,6 @@ public partial class SettingsDialog : Form
         settings.DisableInternetServices = CbDisableInternetServices.Checked;
 
         // ListView
-        settings.GridLines = CbGridLines.Checked;
         settings.ColumnResize = CbColumnResize.Checked;
 
         // Paths
@@ -109,7 +106,6 @@ public partial class SettingsDialog : Form
         settings.EvaluateTolerateNoSynonym = CbTolerateNoSynonym.Checked;
 
         // User interface
-        settings.PracticeHighlightInput = CbColoredTextfield.Checked;
         settings.PracticeSoundFeedback = CbAcousticFeedback.Checked;
         settings.PracticeFastContinue = CbSingleContinueButton.Checked;
 

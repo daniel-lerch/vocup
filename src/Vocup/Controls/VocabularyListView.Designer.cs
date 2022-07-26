@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VocabularyListView));
             this.MainListView = new System.Windows.Forms.ListView();
-            this.imageColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.motherTongueColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.foreignLangColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lastPracticedColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.imageColumn = new System.Windows.Forms.ColumnHeader();
+            this.motherTongueColumn = new System.Windows.Forms.ColumnHeader();
+            this.foreignLangColumn = new System.Windows.Forms.ColumnHeader();
+            this.lastPracticedColumn = new System.Windows.Forms.ColumnHeader();
             this.IconImageList = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
@@ -47,6 +47,7 @@
             this.lastPracticedColumn});
             resources.ApplyResources(this.MainListView, "MainListView");
             this.MainListView.FullRowSelect = true;
+            this.MainListView.GridLines = true;
             this.MainListView.MultiSelect = false;
             this.MainListView.Name = "MainListView";
             this.MainListView.UseCompatibleStateImageBehavior = false;
@@ -73,6 +74,7 @@
             // 
             // IconImageList
             // 
+            this.IconImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
             this.IconImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("IconImageList.ImageStream")));
             this.IconImageList.TransparentColor = System.Drawing.Color.Transparent;
             this.IconImageList.Images.SetKeyName(0, "0.png");

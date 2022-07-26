@@ -17,11 +17,7 @@ public class VocabularyBookController : IDisposable
 
     public VocabularyBookController(VocabularyBook book)
     {
-        ListView = new VocabularyListView()
-        {
-            Dock = DockStyle.Fill,
-            GridLines = Program.Settings.GridLines,
-        };
+        ListView = new VocabularyListView { Dock = DockStyle.Fill, };
         ListView.ItemSelectionChanged += OnSelectionChanged;
         ListView.Control.DoubleClick += OnDoubleClick;
         wordControllers = new List<VocabularyWordController>();

@@ -33,13 +33,6 @@ public partial class VocabularyListView : UserControl
 
     public ListView Control => MainListView;
 
-    [DefaultValue(false)]
-    public bool GridLines
-    {
-        get => MainListView.GridLines;
-        set => MainListView.GridLines = value;
-    }
-
     [DefaultValue(typeof(Size), "16,16")]
     public Size ImageBaseSize
     {

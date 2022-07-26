@@ -144,17 +144,11 @@
   <data name="CbAutoSave.Text" xml:space="preserve">
     <value>Vokabelheft bei Änderungen automatisch speichern</value>
   </data>
-  <data name="CbColoredTextfield.Text" xml:space="preserve">
-    <value>Eingabefelder mit Farbe hervorheben</value>
-  </data>
   <data name="CbColumnResize.Text" xml:space="preserve">
     <value>Spaltenbreite automatisch anpassen</value>
   </data>
   <data name="CbDisableInternetServices.Text" xml:space="preserve">
     <value>Internetdienste deaktivieren (nicht empfohlen)</value>
-  </data>
-  <data name="CbGridLines.Text" xml:space="preserve">
-    <value>Rasterlinien anzeigen</value>
   </data>
   <data name="CbLanguage.Items" xml:space="preserve">
     <value>Systemsprache</value>

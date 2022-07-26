@@ -322,10 +322,7 @@ public partial class MainForm : Form, IMainForm
                 // Renew practice state for Settings.MaxPracticeCount changes
                 CurrentBook?.Words.ForEach(x => x.RenewPracticeState());
 
-                if (CurrentController != null)
-                    CurrentController.ListView.GridLines = Program.Settings.GridLines;
-
-                // Eventually refresh tree view root path
+                // Refresh tree view root path
                 if (oldVhfPath != Program.Settings.VhfPath)
                     FileTreeView.RootPath = Program.Settings.VhfPath;
 

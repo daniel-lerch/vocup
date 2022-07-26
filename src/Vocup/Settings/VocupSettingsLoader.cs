@@ -23,6 +23,8 @@ public class VocupSettingsLoader : VersionedSettingsLoader<VocupSettings>
     {
         MigrateOtherAppConfigVersions();
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
         settings.Value.GridLines = OldSettings.Default.GridLines;
         settings.Value.LastFile = OldSettings.Default.LastFile;
         settings.Value.StartScreen = OldSettings.Default.StartScreen;
@@ -54,6 +56,8 @@ public class VocupSettingsLoader : VersionedSettingsLoader<VocupSettings>
         settings.Value.MainFormSplitterDistance = OldSettings.Default.MainFormSplitterDistance;
         settings.Value.SpecialCharTab = OldSettings.Default.SpecialCharTab;
         if (Version.TryParse(OldSettings.Default.Version, out Version? version)) settings.Value.Version = version;
+
+#pragma warning restore CS0618 // Type or member is obsolete
 
         return ValueTask.CompletedTask;
     }
