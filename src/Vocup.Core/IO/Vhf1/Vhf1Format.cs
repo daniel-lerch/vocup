@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -13,6 +12,10 @@ namespace Vocup.IO.Vhf1;
 
 internal class Vhf1Format : BookFileFormat
 {
+    public static Vhf1Format Instance { get; } = new Vhf1Format();
+
+    private Vhf1Format() { }
+
     internal override async ValueTask<BookContext> ReadBookAsync(FileStream stream, string? vhrPath)
     {
         using var reader = new StringReader(await ReadAndDecryptAsync(stream).ConfigureAwait(false));
@@ -39,7 +42,7 @@ internal class Vhf1Format : BookFileFormat
             throw new VhfFormatException(VhfError.InvalidLanguages);
         }
 
-        var words = new ObservableCollection<Word>();
+        var words = new List<Word>();
 
         while (true)
         {
@@ -51,10 +54,10 @@ internal class Vhf1Format : BookFileFormat
                 throw new VhfFormatException(VhfError.InvalidRow);
             }
             words.Add(new Word(
-                motherTongue: new ObservableCollection<Synonym> { new Synonym(value: columns[0]) },
+                motherTongue: new[] { new Synonym(value: columns[0]) },
                 foreignLanguage: string.IsNullOrWhiteSpace(columns[2])
-                    ? new ObservableCollection<Synonym> { new Synonym(value: columns[1]) }
-                    : new ObservableCollection<Synonym> { new Synonym(value: columns[1]), new Synonym(value: columns[2]) }));
+                    ? new[] { new Synonym(value: columns[1]) }
+                    : new[] { new Synonym(value: columns[1]), new Synonym(value: columns[2]) }));
         }
 
         BookContext bookContext = new(new Book(motherTongue, foreignLanguage, words))
@@ -126,7 +129,7 @@ internal class Vhf1Format : BookFileFormat
             string? mode = reader.ReadLine();
 
             if (string.IsNullOrWhiteSpace(path) ||
-                string.IsNullOrWhiteSpace(mode) || !int.TryParse(mode, out int imode) || !((PracticeMode)(imode - 1)).IsValid())
+                string.IsNullOrWhiteSpace(mode) || !int.TryParse(mode, out int imode) || !((PracticeMode2)(imode - 1)).IsValid())
             {
                 return false; // Ignore files with invalid header
             }
@@ -164,13 +167,13 @@ internal class Vhf1Format : BookFileFormat
                 bookContext.GenerateVhrCode(); // Save new results file if the old one is in use by another file
             }
 
-            bookContext.Book.PracticeMode = (PracticeMode)(imode - 1);
+            bookContext.Book.PracticeMode = (PracticeMode2)(imode - 1);
 
             for (int i = 0; i < bookContext.Book.Words.Count; i++)
             {
                 Word word = bookContext.Book.Words[i];
 
-                IList<Synonym> synonyms = bookContext.Book.PracticeMode == PracticeMode.AskForForeignLanguage ?
+                IList<Synonym> synonyms = bookContext.Book.PracticeMode == PracticeMode2.AskForForeignLanguage ?
                     word.ForeignLanguage :
                     word.MotherTongue;
 
@@ -201,7 +204,7 @@ internal class Vhf1Format : BookFileFormat
             {
                 writer.WriteLine();
 
-                IList<Synonym> synonyms = bookContext.Book.PracticeMode == PracticeMode.AskForForeignLanguage ?
+                IList<Synonym> synonyms = bookContext.Book.PracticeMode == PracticeMode2.AskForForeignLanguage ?
                     word.ForeignLanguage :
                     word.MotherTongue;
 

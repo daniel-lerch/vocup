@@ -35,14 +35,14 @@ internal static class Vhf1Extensions
 
         for (int i = synonym.Practices.Count - 1; i >= 0; i--)
         {
-            PracticeResult result = synonym.Practices[i].Result;
-            if (result == PracticeResult.Wrong && practiceStateNumber == 0)
+            PracticeResult2 result = synonym.Practices[i].Result;
+            if (result == PracticeResult2.Wrong && practiceStateNumber == 0)
                 practiceStateNumber = 1;
-            if (result == PracticeResult.Wrong)
+            if (result == PracticeResult2.Wrong)
                 return practiceStateNumber;
-            if (result == PracticeResult.Correct && practiceStateNumber == 0)
+            if (result == PracticeResult2.Correct && practiceStateNumber == 0)
                 practiceStateNumber = 2;
-            else if (result == PracticeResult.Correct)
+            else if (result == PracticeResult2.Correct)
                 practiceStateNumber++;
         }
 
@@ -68,7 +68,7 @@ internal static class Vhf1Extensions
         {
             synonym.Practices.Add(new Practice
             {
-                Result = PracticeResult.Wrong,
+                Result = PracticeResult2.Wrong,
                 Date = practiceDate
             });
         }
@@ -78,13 +78,13 @@ internal static class Vhf1Extensions
             {
                 synonym.Practices.Add(new Practice
                 {
-                    Result = PracticeResult.Correct
+                    Result = PracticeResult2.Correct
                 });
             }
 
             synonym.Practices.Add(new Practice
             {
-                Result = PracticeResult.Correct,
+                Result = PracticeResult2.Correct,
                 Date = practiceDate
             });
         }

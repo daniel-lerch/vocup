@@ -1,6 +1,8 @@
 ﻿using ReactiveUI;
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text.Json.Serialization;
+using System.Linq;
 
 namespace Vocup.Models;
 
@@ -15,12 +17,11 @@ public class Synonym : ReactiveObject
         Practices = new ObservableCollection<Practice>();
     }
 
-    [JsonConstructor]
-    public Synonym(string value, ObservableCollection<string> flags, ObservableCollection<Practice> practices)
+    public Synonym(string value, IEnumerable<string> flags, IEnumerable<Practice> practices)
     {
         this.value = value;
-        Flags = flags;
-        Practices = practices;
+        Flags = new ObservableCollection<string>(flags);
+        Practices = new ObservableCollection<Practice>(practices);
     }
 
     public string Value
@@ -30,4 +31,17 @@ public class Synonym : ReactiveObject
     }
     public ObservableCollection<string> Flags { get; }
     public ObservableCollection<Practice> Practices { get; }
+
+    public override bool Equals(object? obj)
+    {
+        return obj is Synonym synonym &&
+               value == synonym.value &&
+               Enumerable.SequenceEqual(Flags, synonym.Flags) &&
+               Enumerable.SequenceEqual(Practices, synonym.Practices);
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(value, Flags, Practices);
+    }
 }

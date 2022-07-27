@@ -3,17 +3,18 @@ using System.IO;
 using System.IO.Compression;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Vocup.Models;
 
 namespace Vocup.IO.Vhf2;
 
-internal class Vhf2Format : BookFileFormat
+internal partial class Vhf2Format : BookFileFormat
 {
     private const string versionQuote = "VOCUP VOCABULARY BOOK ";
     private readonly JsonSerializerOptions options;
     private readonly Version version;
 
-    public Vhf2Format()
+    public static Vhf2Format Instance { get; } = new Vhf2Format();
+
+    private Vhf2Format()
     {
         options = new JsonSerializerOptions
         {
@@ -52,11 +53,14 @@ internal class Vhf2Format : BookFileFormat
             if (bookFile == null)
                 throw new VhfFormatException(VhfError.EmptyArchive);
 
-            using Stream bookStream = bookFile.Open();
-            Book? book = await JsonSerializer.DeserializeAsync<Book>(bookStream, options).ConfigureAwait(false);
-            if (book == null) throw new VhfFormatException(VhfError.InvalidJsonBook);
+            JsonBook? jsonBook;
+            using (Stream bookStream = bookFile.Open())
+            {
+                jsonBook = await JsonSerializer.DeserializeAsync<JsonBook>(bookStream, options).ConfigureAwait(false);
+            }
+            if (jsonBook == null) throw new VhfFormatException(VhfError.InvalidJsonBook);
 
-            return new BookContext(book)
+            return new BookContext(jsonBook.ToBook())
             {
                 FileFormat = this,
                 FileStream = stream

@@ -1,6 +1,6 @@
 ﻿namespace Vocup.Models;
 
-public enum PracticeResult
+public enum PracticeResult2
 {
     Wrong,
     PartlyCorrect,

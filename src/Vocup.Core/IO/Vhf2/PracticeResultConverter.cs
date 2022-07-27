@@ -5,14 +5,14 @@ using Vocup.Models;
 
 namespace Vocup.IO.Vhf2;
 
-internal class PracticeResultConverter : JsonConverter<PracticeResult>
+internal class PracticeResultConverter : JsonConverter<PracticeResult2>
 {
-    public override PracticeResult Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    public override PracticeResult2 Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        return (PracticeResult)Enum.Parse(typeToConvert, reader.GetString());
+        return (PracticeResult2)Enum.Parse(typeToConvert, reader.GetString());
     }
 
-    public override void Write(Utf8JsonWriter writer, PracticeResult value, JsonSerializerOptions options)
+    public override void Write(Utf8JsonWriter writer, PracticeResult2 value, JsonSerializerOptions options)
     {
         writer.WriteStringValue(value.ToString());
     }

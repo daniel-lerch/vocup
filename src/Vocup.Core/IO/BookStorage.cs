@@ -1,28 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
 using System.Threading.Tasks;
-using Vocup.IO.Vhf1;
-using Vocup.IO.Vhf2;
 using Vocup.Util;
 
 namespace Vocup.IO;
 
 public class BookStorage
 {
-    private readonly Vhf1Format vhf1Format;
-    private readonly Vhf2Format vhf2Format;
-
-    public BookStorage()
-    {
-        vhf1Format = new Vhf1Format();
-        vhf2Format = new Vhf2Format();
-        FileFormats = new ReadOnlyCollection<BookFileFormat>(new BookFileFormat[] { vhf1Format, vhf2Format });
-    }
-
-    IReadOnlyList<BookFileFormat> FileFormats { get; }
-
     public async ValueTask<BookContext> OpenAsync(string path, string? vhrPath)
     {
         await default(HopToThreadPoolAwaitable);
@@ -38,7 +22,7 @@ public class BookStorage
             && buffer.Span[3] == 0x04;
         stream.Seek(0, SeekOrigin.Begin);
 
-        var serializer = zipHeader ? (BookFileFormat)vhf2Format : vhf1Format;
+        BookFileFormat serializer = zipHeader ? BookFileFormat.Vhf2 : BookFileFormat.Vhf1;
 
         return await serializer.ReadBookAsync(stream, vhrPath).ConfigureAwait(false);
     }
