@@ -11,12 +11,12 @@ internal static class Vhf1Extensions
         int bigLetter1 = 'A', bigLetter2 = 'Z';
         int smallLetter1 = 'a', smallLetter2 = 'z';
 
-        var random = new Random();
-        char[] code = new char[24];
+        Span<char> code = stackalloc char[24];
 
         for (int i = 0; i < code.Length;)
         {
-            int character = random.Next(number1, smallLetter2);
+            // No need for RNGCryptoServiceProvider here because this is not security critical.
+            int character = Random.Shared.Next(number1, smallLetter2 + 1);
             if (character >= number1 && character <= number2 ||
                 character >= bigLetter1 && character <= bigLetter2 ||
                 character >= smallLetter1 && character <= smallLetter2)

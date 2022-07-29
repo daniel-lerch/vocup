@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReactiveUI;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -11,12 +12,13 @@ using Vocup.IO;
 using Vocup.Models;
 using Vocup.Properties;
 using Vocup.Util;
+using Vocup.ViewModels;
 
 #nullable disable
 
 namespace Vocup;
 
-public partial class MainForm : Form, IMainForm
+public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
 {
     private string updateUrl;
     private int lastSearchResult;
@@ -24,6 +26,10 @@ public partial class MainForm : Form, IMainForm
     public MainForm()
     {
         InitializeComponent();
+        ViewModel = new MainFormViewModel();
+        this.Bind(ViewModel, vm => vm.SearchText, x => x.SearchText.Text);
+        this.BindCommand(ViewModel, vm => vm.SaveCommand, x => x.TsmiSave);
+        this.WhenActivated(d => d(ViewModel.SaveChanges.RegisterHandler(interaction => { interaction.SetOutput(MessageBox.Show("Test") == DialogResult.OK); })));
 
         FileTreeView.RootPath = Program.Settings.VhfPath;
         if (AppInfo.IsUwp)
@@ -41,6 +47,10 @@ public partial class MainForm : Form, IMainForm
         }
     }
 
+    public MainFormViewModel ViewModel { get; set; }
+    object IViewFor.ViewModel { get => ViewModel; set => ViewModel = (MainFormViewModel)value; }
+
+    public BookContext BookContext { get; set; }
     public VocabularyBook CurrentBook { get; private set; }
     public VocabularyBookController CurrentController { get; private set; }
     public StatisticsPanel StatisticsPanel => GroupStatistics;
@@ -90,10 +100,10 @@ public partial class MainForm : Form, IMainForm
     }
     public void VocabularyBookName(string value)
     {
-        if (string.IsNullOrWhiteSpace(value))
-            Text = Words.Vocup;
-        else
-            Text = $"{Words.Vocup} - {value}";
+        //if (string.IsNullOrWhiteSpace(value))
+        //    Text = Words.Vocup;
+        //else
+        //    Text = $"{Words.Vocup} - {value}";
     }
     public void LoadBook(VocabularyBook book)
     {

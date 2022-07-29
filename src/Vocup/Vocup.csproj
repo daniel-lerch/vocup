@@ -24,6 +24,7 @@
     <PackageReference Include="LostTech.App.Settings" Version="0.5.0" />
     <PackageReference Include="Octokit" Version="0.50.0" />
     <PackageReference Include="PInvoke.User32" Version="0.7.104" />
+    <PackageReference Include="ReactiveUI.WinForms" Version="18.3.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Vocup.Core\Vocup.Core.csproj" />

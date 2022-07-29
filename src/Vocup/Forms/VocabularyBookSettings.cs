@@ -1,15 +1,17 @@
+using ReactiveUI;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Vocup.Models;
 using Vocup.Properties;
 using Vocup.Util;
+using Vocup.ViewModels;
 
 #nullable disable
 
 namespace Vocup.Forms;
 
-public partial class VocabularyBookSettings : Form
+public partial class VocabularyBookSettings : Form, IViewFor<BookSettingsViewModel>
 {
     private const string InvalidChars = "#=:\\/|<>*?\"";
     private readonly Color redBgColor = Color.FromArgb(255, 192, 203);
@@ -19,6 +21,11 @@ public partial class VocabularyBookSettings : Form
     private VocabularyBookSettings()
     {
         InitializeComponent();
+        ViewModel = new BookSettingsViewModel();
+
+        this.Bind(ViewModel, bs => bs.Book.MotherTongue, x => x.TbMotherTongue.Text);
+        this.Bind(ViewModel, bs => bs.Book.ForeignLanguage, x => x.TbForeignLang.Text);
+
         specialCharDialog = new SpecialCharKeyboard();
         specialCharDialog.Initialize(this, BtnSpecialChar);
         specialCharDialog.RegisterTextBox(TbMotherTongue);
@@ -47,6 +54,9 @@ public partial class VocabularyBookSettings : Form
         RbModeAskMotherTongue.Checked = book.PracticeMode == PracticeMode.AskForMotherTongue;
         GroupOptions.Enabled = true;
     }
+
+    public BookSettingsViewModel ViewModel { get; set; }
+    object IViewFor.ViewModel { get => ViewModel; set => ViewModel = (BookSettingsViewModel)value; }
 
     private void TextBox_Enter(object sender, EventArgs e)
     {
