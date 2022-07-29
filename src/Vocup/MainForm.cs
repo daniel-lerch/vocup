@@ -18,7 +18,6 @@ namespace Vocup;
 
 public partial class MainForm : Form, IMainForm
 {
-    private string updateUrl;
     private int lastSearchResult;
 
     public MainForm()
@@ -26,19 +25,9 @@ public partial class MainForm : Form, IMainForm
         InitializeComponent();
 
         FileTreeView.RootPath = Program.Settings.VhfPath;
-        if (AppInfo.IsUwp)
-        {
-            TsmiUpdate.Enabled = false;
-            if (AppInfo.TryGetVocupInstallation(out Version version, out _, out _) && version < AppInfo.Version)
-                StatusLbOldVersion.Visible = true;
-        }
-        else if (OperatingSystem.IsWindowsVersionAtLeast(10, 0, 10240))
-        {
-            if (AppInfo.TryGetVocupUwpApp(out Version version))
-                StatusLbOpenUwpApp.Visible = version >= AppInfo.Version;
-            else
-                StatusLbInstallUwpApp.Visible = true;
-        }
+
+        if (AppInfo.TryGetVocupInstallation(out Version version, out _, out _) && version < AppInfo.Version)
+            StatusLbOldVersion.Visible = true;
     }
 
     public VocabularyBook CurrentBook { get; private set; }
@@ -204,7 +193,7 @@ public partial class MainForm : Form, IMainForm
     }
 
     #region Event handlers
-    private async void Form_Load(object sender, EventArgs e)
+    private void Form_Load(object sender, EventArgs e)
     {
         RestoreSettings();
 
@@ -212,13 +201,6 @@ public partial class MainForm : Form, IMainForm
         Activate();
 
         Program.TrackingService.Action("/", "App/Start");
-
-        // Check online for updates
-        if (!Program.Settings.DisableInternetServices && !AppInfo.IsUwp)
-        {
-            updateUrl = await UpdateService.GetUpdateUrl();
-            StatusLbUpdateAvailable.Visible = !string.IsNullOrWhiteSpace(updateUrl);
-        }
     }
 
     private void Form_Shown(object sender, EventArgs e)
@@ -344,9 +326,10 @@ public partial class MainForm : Form, IMainForm
 
     private async void TsmiUpdate_Click(object sender, EventArgs e)
     {
-        // Check online for updates
-        updateUrl = await UpdateService.GetUpdateUrl();
-        StatusLbUpdateAvailable.Visible = !string.IsNullOrWhiteSpace(updateUrl);
+        if (OperatingSystem.IsWindowsVersionAtLeast(10, 0, 10240))
+        {
+            await Launcher.LaunchUriAsync("ms-windows-store://downloadsandupdates");
+        }
     }
 
     private void TsbCreateBook_Click(object sender, EventArgs e) => CreateBook();
@@ -461,7 +444,7 @@ public partial class MainForm : Form, IMainForm
         }
     }
 
-    private void TsmiExitAppliaction_Click(object sender, EventArgs e) => Close();
+    private void TsmiExitApplication_Click(object sender, EventArgs e) => Close();
 
     private void StatusLbOldVersion_Click(object sender, EventArgs e)
     {
@@ -471,28 +454,6 @@ public partial class MainForm : Form, IMainForm
         {
             Process.Start(uninstallString);
         }
-    }
-
-    private async void StatusLbUpdateAvailable_Click(object sender, EventArgs e)
-    {
-        await Launcher.LaunchUriAsync(updateUrl);
-    }
-
-    private void StatusLbOpenUwpApp_Click(object sender, EventArgs e)
-    {
-        if (!UnsavedChanges || EnsureSaved())
-        {
-            Close();
-            Program.ReleaseMutex();
-            Process.Start("explorer.exe", @"shell:appsFolder\9961VectorData.Vocup_ffrs9s78t67f2!App");
-        }
-    }
-
-    private async void StatusLbInstallUwpApp_Click(object sender, EventArgs e)
-    {
-        Rectangle bounds = Screen.GetBounds(this);
-        await Launcher.LaunchUriAsync(
-            $"ms-windows-store://pdp/?ProductId=9N6W2H3QJQMM&mode=mini&pos={bounds.X},{bounds.Y},{bounds.Width},{bounds.Height}");
     }
 
     private async void BtnSearchWord_Click(object sender, EventArgs e)

@@ -225,9 +225,6 @@
   <data name="StatusLbOldVersion.Text" xml:space="preserve">
     <value>Inkompatible Version gefunden</value>
   </data>
-  <data name="StatusLbUpdateAvailable.Text" xml:space="preserve">
-    <value>Update für Vocup herunterladen</value>
-  </data>
   <data name="LbEmptyForm.Text" xml:space="preserve">
     <value>Ganz schön leer hier!
 Öffne doch ein Vokabelheft oder erstelle ein neues.</value>
@@ -255,11 +252,5 @@
   </data>
   <data name="TsmiImportAnsi.Text" xml:space="preserve">
     <value>Importieren (ANSI Kodierung)</value>
-  </data>
-  <data name="StatusLbInstallUwpApp.Text" xml:space="preserve">
-    <value>Vocup als Windows-App installieren</value>
-  </data>
-  <data name="StatusLbOpenUwpApp.Text" xml:space="preserve">
-    <value>Vocup Windows-App öffnen</value>
   </data>
 </root>
