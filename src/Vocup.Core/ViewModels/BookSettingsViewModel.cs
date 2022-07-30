@@ -12,9 +12,6 @@ public class BookSettingsViewModel : ReactiveObject
 {
     private const string invalidChars = "#=:\\/|<>*?\"";
 
-    public BookSettingsViewModel()
-        : this(new Book(string.Empty, string.Empty, PracticeMode2.AskForForeignLanguage, Enumerable.Empty<Word>())) { }
-
     public BookSettingsViewModel(Book book)
     {
         Book = book;
@@ -28,12 +25,7 @@ public class BookSettingsViewModel : ReactiveObject
             .Select(x => !x.ContainsAny(invalidChars))
             .ToPropertyEx(this, x => x.ForeignLanguageValid);
 
-        SaveCommand = ReactiveCommand.Create(
-            () =>
-            {
-                Book.MotherTongue = MotherTongue;
-                Book.ForeignLanguage = ForeignLanguage;
-            },
+        SaveCommand = ReactiveCommand.Create(Save,
             this.WhenAnyValue(x => x.MotherTongue, x => x.ForeignLanguage,
                 (motherTongue, foreignLanguage) =>
                     !string.IsNullOrWhiteSpace(motherTongue) && !string.IsNullOrWhiteSpace(foreignLanguage)));
@@ -48,4 +40,31 @@ public class BookSettingsViewModel : ReactiveObject
 
     [Reactive] public string ForeignLanguage { get; set; }
     [ObservableAsProperty] public bool ForeignLanguageValid { get; }
+
+    [Reactive] public bool ResetPracticeResults { get; set; }
+    [Reactive] public bool AskForForeignLanguage { get; set; } // Cheap workaround for radio button binding
+
+    private void Save()
+    {
+        Book.MotherTongue = MotherTongue;
+        Book.ForeignLanguage = ForeignLanguage;
+
+        if (ResetPracticeResults)
+        {
+            foreach (Word word in Book.Words)
+            {
+                foreach (Synonym synonym in word.MotherTongue)
+                {
+                    synonym.Practices.Clear();
+                }
+
+                foreach (Synonym synonym in word.ForeignLanguage)
+                {
+                    synonym.Practices.Clear();
+                }
+            }
+        }
+
+        Book.PracticeMode = AskForForeignLanguage ? PracticeMode2.AskForForeignLanguage : PracticeMode2.AskForMotherTongue;
+    }
 }

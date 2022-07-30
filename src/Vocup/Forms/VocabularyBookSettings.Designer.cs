@@ -77,7 +77,6 @@
             resources.ApplyResources(this.BtnOK, "BtnOK");
             this.BtnOK.Name = "BtnOK";
             this.BtnOK.UseVisualStyleBackColor = true;
-            this.BtnOK.Click += new System.EventHandler(this.BtnOK_Click);
             // 
             // TbMotherTongue
             // 

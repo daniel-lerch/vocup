@@ -6,76 +6,61 @@ using Vocup.Models;
 using Vocup.Properties;
 using Vocup.ViewModels;
 
-#nullable disable
-
 namespace Vocup.Forms;
 
 public partial class VocabularyBookSettings : Form, IViewFor<BookSettingsViewModel>
 {
     private readonly Color redBgColor = Color.FromArgb(255, 192, 203);
     private readonly SpecialCharKeyboard specialCharDialog;
-    private readonly VocabularyBook book;
 
-    private VocabularyBookSettings()
+    public VocabularyBookSettings(out Book book)
     {
-        InitializeComponent();
-        ViewModel = new BookSettingsViewModel();
+        ViewModel = new BookSettingsViewModel(new Book(string.Empty, string.Empty));
 
-        this.Bind(ViewModel, x => x.MotherTongue, x => x.TbMotherTongue.Text);
-        this.OneWayBind(ViewModel, x => x.MotherTongueValid, x => x.TbMotherTongue.BackColor, x => x ? Color.White : redBgColor);
-        this.Bind(ViewModel, x => x.ForeignLanguage, x => x.TbForeignLang.Text);
-        this.OneWayBind(ViewModel, x => x.ForeignLanguageValid, x => x.TbForeignLang.BackColor, x => x ? Color.White : redBgColor);
-        this.BindCommand(ViewModel, x => x.SaveCommand, x => x.BtnOK);
+        Text = Words.CreateVocabularyBook;
+        Icon = Icon.FromHandle(Icons.File.GetHicon());
+        GroupOptions.Enabled = false;
+
+        InitializeDataBindings();
+
+        specialCharDialog = new SpecialCharKeyboard();
+        specialCharDialog.Initialize(this, BtnSpecialChar);
+        specialCharDialog.RegisterTextBox(TbMotherTongue);
+
+        book = ViewModel.Book;
+    }
+
+    public VocabularyBookSettings(Book book)
+    {
+        ViewModel = new BookSettingsViewModel(book);
+
+        Text = Words.EditVocabularyBook;
+        Icon = Icon.FromHandle(Icons.FileSettings.GetHicon());
+        GroupOptions.Enabled = true;
+
+        InitializeDataBindings();
 
         specialCharDialog = new SpecialCharKeyboard();
         specialCharDialog.Initialize(this, BtnSpecialChar);
         specialCharDialog.RegisterTextBox(TbMotherTongue);
     }
 
-    public VocabularyBookSettings(out VocabularyBook book) : this()
+    public BookSettingsViewModel? ViewModel { get; set; }
+    object? IViewFor.ViewModel { get => ViewModel; set => ViewModel = value as BookSettingsViewModel; }
+
+    private void InitializeDataBindings()
     {
-        book = new VocabularyBook();
-        this.book = book;
-        book.Notify();
-
-        Text = Words.CreateVocabularyBook;
-        Icon = Icon.FromHandle(Icons.File.GetHicon());
-        GroupOptions.Enabled = false;
+        this.Bind(ViewModel, x => x.MotherTongue, x => x.TbMotherTongue.Text);
+        this.OneWayBind(ViewModel, x => x.MotherTongueValid, x => x.TbMotherTongue.BackColor, x => x ? Color.White : redBgColor);
+        this.Bind(ViewModel, x => x.ForeignLanguage, x => x.TbForeignLang.Text);
+        this.OneWayBind(ViewModel, x => x.ForeignLanguageValid, x => x.TbForeignLang.BackColor, x => x ? Color.White : redBgColor);
+        this.Bind(ViewModel, x => x.ResetPracticeResults, x => x.CbResetResults.Checked);
+        this.Bind(ViewModel, x => x.AskForForeignLanguage, x => x.RbModeAskForeignLang.Checked);
+        this.BindCommand(ViewModel, x => x.SaveCommand, x => x.BtnOK);
     }
-
-    public VocabularyBookSettings(VocabularyBook book) : this()
-    {
-        this.book = book;
-
-        Text = Words.EditVocabularyBook;
-        Icon = Icon.FromHandle(Icons.FileSettings.GetHicon());
-        TbMotherTongue.Text = book.MotherTongue;
-        TbForeignLang.Text = book.ForeignLang;
-        RbModeAskForeignLang.Checked = book.PracticeMode == PracticeMode.AskForForeignLang;
-        RbModeAskMotherTongue.Checked = book.PracticeMode == PracticeMode.AskForMotherTongue;
-        GroupOptions.Enabled = true;
-    }
-
-    public BookSettingsViewModel ViewModel { get; set; }
-    object IViewFor.ViewModel { get => ViewModel; set => ViewModel = (BookSettingsViewModel)value; }
 
     private void TextBox_Enter(object sender, EventArgs e)
     {
         specialCharDialog.RegisterTextBox((TextBox)sender);
-    }
-
-    private void BtnOK_Click(object sender, EventArgs e)
-    {
-        book.MotherTongue = TbMotherTongue.Text;
-        book.ForeignLang = TbForeignLang.Text;
-        book.PracticeMode = RbModeAskForeignLang.Checked ? PracticeMode.AskForForeignLang : PracticeMode.AskForMotherTongue;
-
-        if (CbResetResults.Checked)
-        {
-            foreach (VocabularyWord word in book.Words)
-            {
-                word.PracticeStateNumber = 0;
-            }
-        }
     }
 }

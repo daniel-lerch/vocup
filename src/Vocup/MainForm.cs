@@ -650,7 +650,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
 
     private void CreateBook()
     {
-        using (VocabularyBookSettings dialog = new VocabularyBookSettings(out VocabularyBook book))
+        using (VocabularyBookSettings dialog = new VocabularyBookSettings(out Book book))
         {
             if (dialog.ShowDialog() == DialogResult.OK)
             {
