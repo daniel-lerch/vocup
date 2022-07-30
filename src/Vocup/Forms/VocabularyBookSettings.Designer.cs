@@ -83,7 +83,6 @@
             // 
             resources.ApplyResources(this.TbMotherTongue, "TbMotherTongue");
             this.TbMotherTongue.Name = "TbMotherTongue";
-            this.TbMotherTongue.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             this.TbMotherTongue.Enter += new System.EventHandler(this.TextBox_Enter);
             // 
             // LbMotherTongue
@@ -100,7 +99,6 @@
             // 
             resources.ApplyResources(this.TbForeignLang, "TbForeignLang");
             this.TbForeignLang.Name = "TbForeignLang";
-            this.TbForeignLang.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             this.TbForeignLang.Enter += new System.EventHandler(this.TextBox_Enter);
             // 
             // GroupPracticeMode

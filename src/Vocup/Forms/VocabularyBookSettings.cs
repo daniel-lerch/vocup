@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using Vocup.Models;
 using Vocup.Properties;
-using Vocup.Util;
 using Vocup.ViewModels;
 
 #nullable disable
@@ -13,7 +12,6 @@ namespace Vocup.Forms;
 
 public partial class VocabularyBookSettings : Form, IViewFor<BookSettingsViewModel>
 {
-    private const string InvalidChars = "#=:\\/|<>*?\"";
     private readonly Color redBgColor = Color.FromArgb(255, 192, 203);
     private readonly SpecialCharKeyboard specialCharDialog;
     private readonly VocabularyBook book;
@@ -23,8 +21,11 @@ public partial class VocabularyBookSettings : Form, IViewFor<BookSettingsViewMod
         InitializeComponent();
         ViewModel = new BookSettingsViewModel();
 
-        this.Bind(ViewModel, bs => bs.Book.MotherTongue, x => x.TbMotherTongue.Text);
-        this.Bind(ViewModel, bs => bs.Book.ForeignLanguage, x => x.TbForeignLang.Text);
+        this.Bind(ViewModel, x => x.MotherTongue, x => x.TbMotherTongue.Text);
+        this.OneWayBind(ViewModel, x => x.MotherTongueValid, x => x.TbMotherTongue.BackColor, x => x ? Color.White : redBgColor);
+        this.Bind(ViewModel, x => x.ForeignLanguage, x => x.TbForeignLang.Text);
+        this.OneWayBind(ViewModel, x => x.ForeignLanguageValid, x => x.TbForeignLang.BackColor, x => x ? Color.White : redBgColor);
+        this.BindCommand(ViewModel, x => x.SaveCommand, x => x.BtnOK);
 
         specialCharDialog = new SpecialCharKeyboard();
         specialCharDialog.Initialize(this, BtnSpecialChar);
@@ -61,28 +62,6 @@ public partial class VocabularyBookSettings : Form, IViewFor<BookSettingsViewMod
     private void TextBox_Enter(object sender, EventArgs e)
     {
         specialCharDialog.RegisterTextBox((TextBox)sender);
-    }
-
-    private void TextBox_TextChanged(object sender, EventArgs e)
-    {
-        bool mValid = !TbMotherTongue.Text.ContainsAny(InvalidChars);
-        TbMotherTongue.BackColor = mValid ? Color.White : redBgColor;
-        bool fValid = !TbForeignLang.Text.ContainsAny(InvalidChars);
-        TbForeignLang.BackColor = fValid ? Color.White : redBgColor;
-
-        if (mValid && fValid &&
-            !string.IsNullOrWhiteSpace(TbMotherTongue.Text) &&
-            !string.IsNullOrWhiteSpace(TbForeignLang.Text) &&
-            TbMotherTongue.Text != TbForeignLang.Text)
-        {
-            BtnOK.Enabled = true;
-            AcceptButton = BtnOK;
-        }
-        else
-        {
-            BtnOK.Enabled = false;
-            AcceptButton = BtnCancel;
-        }
     }
 
     private void BtnOK_Click(object sender, EventArgs e)
