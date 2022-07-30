@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
 using Vocup.Models;
+using Vocup.Models.Legacy;
 using Vocup.Properties;
 
 namespace Vocup.IO.Internal;
@@ -53,7 +54,7 @@ internal class VhrFile : VocupFile
                 string? line = reader.ReadLine();
                 if (line == null) break;
                 string[] columns = line.Split('#');
-                if (columns.Length != 2 || !int.TryParse(columns[0], out int state) || !PracticeStateHelper.Parse(state).IsValid())
+                if (columns.Length != 2 || !int.TryParse(columns[0], out int state) || !PracticeStateHelper.Parse(state, Program.Settings.MaxPracticeCount).IsValid())
                 {
                     DeleteInvalidFile(vhrInfo);
                     return false;
@@ -99,7 +100,7 @@ internal class VhrFile : VocupFile
 
             for (int i = 0; i < book.Words.Count; i++)
             {
-                VocabularyWord word = book.Words[i];
+                IVocabularyWord word = book.Words[i];
                 (word.PracticeStateNumber, word.PracticeDate) = results[i];
             }
         }
@@ -116,7 +117,7 @@ internal class VhrFile : VocupFile
             writer.WriteLine(book.FilePath);
             writer.Write((int)book.PracticeMode);
 
-            foreach (VocabularyWord word in book.Words)
+            foreach (IVocabularyWord word in book.Words)
             {
                 writer.WriteLine();
 

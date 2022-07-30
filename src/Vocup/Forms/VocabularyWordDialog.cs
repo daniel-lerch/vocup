@@ -2,6 +2,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Vocup.Models;
+using Vocup.Models.Legacy;
 using Vocup.Properties;
 using Vocup.Util;
 
@@ -60,9 +61,9 @@ namespace Vocup.Forms
             return true;
         }
 
-        protected bool BookContainsInput(VocabularyWord exclude)
+        protected bool BookContainsInput(IVocabularyWord exclude)
         {
-            foreach (VocabularyWord word in book.Words)
+            foreach (IVocabularyWord word in book.Words)
             {
                 if (!ReferenceEquals(word, exclude) &&
                     word.MotherTongue == TbMotherTongue.Text &&

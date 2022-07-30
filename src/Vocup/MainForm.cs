@@ -10,6 +10,7 @@ using Vocup.Controls;
 using Vocup.Forms;
 using Vocup.IO;
 using Vocup.Models;
+using Vocup.Models.Legacy;
 using Vocup.Properties;
 using Vocup.Util;
 using Vocup.ViewModels;
@@ -712,7 +713,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
 
     public void EditWord()
     {
-        VocabularyWord selected = (VocabularyWord)CurrentController.ListView.SelectedItem.Tag;
+        IVocabularyWord selected = (IVocabularyWord)CurrentController.ListView.SelectedItem.Tag;
         using (var dialog = new EditWordDialog(CurrentBook, selected) { Owner = this }) dialog.ShowDialog();
         CurrentController.ListView.SelectedItem.EnsureVisible();
         BtnAddWord.Focus();
@@ -721,7 +722,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     private void DeleteWord()
     {
         int index = CurrentController.ListView.SelectedItem.Index;
-        VocabularyWord selected = (VocabularyWord)CurrentController.ListView.SelectedItem.Tag;
+        IVocabularyWord selected = (IVocabularyWord)CurrentController.ListView.SelectedItem.Tag;
         CurrentBook.Words.Remove(selected);
 
         // Limit index of the deleted word to the highest possible index

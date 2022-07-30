@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Vocup.Models;
+using Vocup.Models.Legacy;
 using Vocup.Properties;
 
 namespace Vocup.Forms;
@@ -42,7 +43,7 @@ public partial class PracticeResultList : Form
 
         foreach (VocabularyWordPractice practice in practiceList)
         {
-            VocabularyWord word = practice.VocabularyWord;
+            IVocabularyWord word = practice.VocabularyWord;
             ListView.Items.Add(new ListViewItem(new[] { "", word.MotherTongue, word.ForeignLangText, practice.WrongInput }, (int)practice.PracticeResult));
         }
 

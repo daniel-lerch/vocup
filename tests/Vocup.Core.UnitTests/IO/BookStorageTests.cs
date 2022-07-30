@@ -32,7 +32,7 @@ public class BookStorageTests
         Assert.NotNull(bookContext.FileFormat);
         Assert.Equal("Deutsch", book.MotherTongue);
         Assert.Equal("Englisch", book.ForeignLanguage);
-        Assert.Equal(PracticeMode2.AskForForeignLanguage, book.PracticeMode);
+        Assert.Equal(PracticeMode.AskForForeignLanguage, book.PracticeMode);
         Assert.Equal(113, book.Words.Count);
         Assert.Contains(book.Words, word => word.ForeignLanguage.Any(synonym => synonym.Practices.Count > 0));
     }
@@ -47,7 +47,7 @@ public class BookStorageTests
         Assert.NotNull(bookContext.FileFormat);
         Assert.Equal("Deutsch", book.MotherTongue);
         Assert.Equal("Englisch", book.ForeignLanguage);
-        Assert.Equal(PracticeMode2.AskForForeignLanguage, book.PracticeMode);
+        Assert.Equal(PracticeMode.AskForForeignLanguage, book.PracticeMode);
         Assert.Single(book.Words);
         Assert.Equal(2, book.Words[0].MotherTongue.Count);
         Assert.Equal(2, book.Words[0].ForeignLanguage.Count);
@@ -114,7 +114,7 @@ public class BookStorageTests
             }
         };
 
-        return new Book("Deutsch", "Englisch", PracticeMode2.AskForForeignLanguage, new[]
+        return new Book("Deutsch", "Englisch", PracticeMode.AskForForeignLanguage, new[]
         {
             new Word(new[] { new Synonym("Katze") }, new[] { new Synonym("cat") }),
             new Word(new[] { new Synonym("Farbe") }, new[]
@@ -136,7 +136,7 @@ public class BookStorageTests
             }
         };
 
-        return new Book("Deutsch", "Englisch", PracticeMode2.AskForForeignLanguage, new[]
+        return new Book("Deutsch", "Englisch", PracticeMode.AskForForeignLanguage, new[]
         {
             new Word(new[] { new Synonym("Katze") }, new[] { new Synonym("cat") }),
             new Word(new[] { new Synonym("Farbe") }, new[]

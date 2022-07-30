@@ -3,6 +3,7 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
+using Vocup.Models.Legacy;
 using Vocup.Util;
 
 namespace Vocup.Models;
@@ -13,14 +14,12 @@ public class VocabularyBook : INotifyPropertyChanged
     private string? _vhrCode;
     private string _motherTongue;
     private string _foreignLang;
-    private PracticeMode _practiceMode = PracticeMode.AskForForeignLang;
+    private PracticeMode _practiceMode = PracticeMode.AskForForeignLanguage;
     private bool _unsafedChanges;
 
     public VocabularyBook()
     {
-        Words = new ReactiveCollection<VocabularyWord>();
-        Words.OnAdd(x => x.Owner = this);
-        Words.OnRemove(x => x.Owner = null);
+        Words = new ReactiveCollection<IVocabularyWord>();
         Words.CollectionChanged += OnCollectionChanged;
         Statistics = new VocabularyBookStatistics(this);
         _motherTongue = string.Empty;
@@ -58,7 +57,7 @@ public class VocabularyBook : INotifyPropertyChanged
         set { if (_unsafedChanges != value) { _unsafedChanges = value; OnPropertyChanged(); } }
     }
     public string? Name => string.IsNullOrWhiteSpace(_filePath) ? null : Path.GetFileNameWithoutExtension(_filePath);
-    public ReactiveCollection<VocabularyWord> Words { get; }
+    public ReactiveCollection<IVocabularyWord> Words { get; }
     public VocabularyBookStatistics Statistics { get; }
     public bool Notifies { get; private set; }
 

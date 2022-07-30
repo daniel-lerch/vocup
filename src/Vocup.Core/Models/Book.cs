@@ -23,7 +23,7 @@ public class Book : ReactiveObject
         Words = new ObservableCollection<Word>(words);
     }
 
-    public Book(string motherTongue, string foreignLanguage, PracticeMode2 practiceMode, IEnumerable<Word> words)
+    public Book(string motherTongue, string foreignLanguage, PracticeMode practiceMode, IEnumerable<Word> words)
     {
         MotherTongue = motherTongue;
         ForeignLanguage = foreignLanguage;
@@ -33,7 +33,7 @@ public class Book : ReactiveObject
 
     [Reactive] public string MotherTongue { get; set; }
     [Reactive] public string ForeignLanguage { get; set; }
-    [Reactive] public PracticeMode2 PracticeMode { get; set; }
+    [Reactive] public PracticeMode PracticeMode { get; set; }
     public ObservableCollection<Word> Words { get; }
 
     public override bool Equals(object? obj)

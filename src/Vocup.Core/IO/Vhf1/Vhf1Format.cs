@@ -129,7 +129,7 @@ internal class Vhf1Format : BookFileFormat
             string? mode = reader.ReadLine();
 
             if (string.IsNullOrWhiteSpace(path) ||
-                string.IsNullOrWhiteSpace(mode) || !int.TryParse(mode, out int imode) || !((PracticeMode2)(imode - 1)).IsValid())
+                string.IsNullOrWhiteSpace(mode) || !int.TryParse(mode, out int imode) || imode < 1 || imode > 2)
             {
                 return false; // Ignore files with invalid header
             }
@@ -167,13 +167,13 @@ internal class Vhf1Format : BookFileFormat
                 bookContext.GenerateVhrCode(); // Save new results file if the old one is in use by another file
             }
 
-            bookContext.Book.PracticeMode = (PracticeMode2)(imode - 1);
+            bookContext.Book.PracticeMode = imode == 2 ? PracticeMode.AskForMotherTongue : PracticeMode.AskForForeignLanguage;
 
             for (int i = 0; i < bookContext.Book.Words.Count; i++)
             {
                 Word word = bookContext.Book.Words[i];
 
-                IList<Synonym> synonyms = bookContext.Book.PracticeMode == PracticeMode2.AskForForeignLanguage ?
+                IList<Synonym> synonyms = bookContext.Book.PracticeMode == PracticeMode.AskForForeignLanguage ?
                     word.ForeignLanguage :
                     word.MotherTongue;
 
@@ -204,7 +204,7 @@ internal class Vhf1Format : BookFileFormat
             {
                 writer.WriteLine();
 
-                IList<Synonym> synonyms = bookContext.Book.PracticeMode == PracticeMode2.AskForForeignLanguage ?
+                IList<Synonym> synonyms = bookContext.Book.PracticeMode == PracticeMode.AskForForeignLanguage ?
                     word.ForeignLanguage :
                     word.MotherTongue;
 

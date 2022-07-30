@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Vocup.Models;
+using Vocup.Models.Legacy;
 using Vocup.Properties;
 using Vocup.Util;
 
@@ -22,7 +23,7 @@ public partial class PrintWordSelection : Form
         this.book = book;
 
         ListBox.BeginUpdate();
-        foreach (VocabularyWord word in book.Words)
+        foreach (IVocabularyWord word in book.Words)
             ListBox.Items.Add($"{word.MotherTongue} - {word.ForeignLangText}", true);
         ListBox.EndUpdate();
 
@@ -99,7 +100,7 @@ public partial class PrintWordSelection : Form
         }
     }
 
-    private void SetItemsChecked(Func<VocabularyWord, bool> predicate, bool value)
+    private void SetItemsChecked(Func<IVocabularyWord, bool> predicate, bool value)
     {
         ListBox.BeginUpdate();
 
@@ -114,7 +115,7 @@ public partial class PrintWordSelection : Form
         ListBox.EndUpdate();
     }
 
-    private List<VocabularyWord> printList = new List<VocabularyWord>();
+    private List<IVocabularyWord> printList = new List<IVocabularyWord>();
     private int wordNumber = 0;
     private int pageNumber = 1;
     private bool invertSides;
@@ -165,7 +166,7 @@ public partial class PrintWordSelection : Form
                 if (wordNumber >= printList.Count) break;
 
                 rect = e.MarginBounds.MarginTop(hoffset);
-                VocabularyWord word = printList[wordNumber];
+                IVocabularyWord word = printList[wordNumber];
                 Rectangle left = new Rectangle(rect.X, rect.Y, rect.Width / 2, rect.Height).MarginSide(sideOffset);
                 Rectangle right = new Rectangle(left.Right, rect.Y, rect.Width / 2, rect.Height).MarginSide(sideOffset)
                     .MarginLeft(lineThickness); // right column is smaller than the left one because of the line

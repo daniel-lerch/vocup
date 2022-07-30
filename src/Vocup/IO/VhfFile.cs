@@ -2,6 +2,7 @@
 using System.IO;
 using System.Windows.Forms;
 using Vocup.Models;
+using Vocup.Models.Legacy;
 using Vocup.Properties;
 
 namespace Vocup.IO.Internal;
@@ -79,9 +80,8 @@ internal class VhfFile : VocupFile
                     MessageBox.Show(Messages.VhfInvalidRow, Messages.VhfCorruptFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                VocabularyWord word = new VocabularyWord(columns[0], columns[1])
+                IVocabularyWord word = new IVocabularyWord(columns[0], columns[1])
                 {
-                    Owner = book,
                     ForeignLangSynonym = columns[2]
                 };
                 book.Words.Add(word);
@@ -102,7 +102,7 @@ internal class VhfFile : VocupFile
             writer.WriteLine(book.MotherTongue);
             writer.WriteLine(book.ForeignLang);
 
-            foreach (VocabularyWord word in book.Words)
+            foreach (IVocabularyWord word in book.Words)
             {
                 writer.Write(word.MotherTongue);
                 writer.Write('#');

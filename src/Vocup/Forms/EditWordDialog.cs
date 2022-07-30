@@ -2,15 +2,16 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Vocup.Models;
+using Vocup.Models.Legacy;
 using Vocup.Properties;
 
 namespace Vocup.Forms
 {
     public class EditWordDialog : VocabularyWordDialog
     {
-        private readonly VocabularyWord word;
+        private readonly IVocabularyWord word;
 
-        public EditWordDialog(VocabularyBook book, VocabularyWord word) : base(book)
+        public EditWordDialog(VocabularyBook book, IVocabularyWord word) : base(book)
         {
             this.word = word;
 

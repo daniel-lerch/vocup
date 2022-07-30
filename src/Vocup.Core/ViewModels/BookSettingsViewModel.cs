@@ -65,6 +65,6 @@ public class BookSettingsViewModel : ReactiveObject
             }
         }
 
-        Book.PracticeMode = AskForForeignLanguage ? PracticeMode2.AskForForeignLanguage : PracticeMode2.AskForMotherTongue;
+        Book.PracticeMode = AskForForeignLanguage ? PracticeMode.AskForForeignLanguage : PracticeMode.AskForMotherTongue;
     }
 }

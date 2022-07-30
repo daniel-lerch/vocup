@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Vocup.IO;
 using Vocup.Models;
+using Vocup.Models.Legacy;
 using Vocup.Properties;
 using Vocup.Util;
 
@@ -156,7 +157,7 @@ public partial class MergeFiles : Form
 
         foreach (VocabularyBook book in books)
         {
-            foreach (VocabularyWord word in book.Words)
+            foreach (IVocabularyWord word in book.Words)
             {
                 CopyWord(word, result);
             }
@@ -178,13 +179,13 @@ public partial class MergeFiles : Form
         Cursor.Current = Cursors.Default;
     }
 
-    private void CopyWord(VocabularyWord word, VocabularyBook target)
+    private void CopyWord(IVocabularyWord word, VocabularyBook target)
     {
-        VocabularyWord cloned = word.Clone(CbKeepResults.Checked);
+        IVocabularyWord cloned = word.Clone(CbKeepResults.Checked);
 
         for (int i = 0; i < target.Words.Count; i++)
         {
-            VocabularyWord comp = target.Words[i];
+            IVocabularyWord comp = target.Words[i];
             if (cloned.MotherTongue == comp.MotherTongue &&
                 cloned.ForeignLang == comp.ForeignLang &&
                 cloned.ForeignLangSynonym == comp.ForeignLangSynonym)

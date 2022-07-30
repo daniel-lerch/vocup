@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Vocup.Models.Legacy;
 
 namespace Vocup.Models;
 
@@ -38,7 +39,7 @@ public class VocabularyBookStatistics : INotifyPropertyChanged
 
     private void VocabularyWord_PropertyChanged(object? sender, PropertyChangedEventArgs e)
     {
-        if (e.PropertyName == nameof(VocabularyWord.PracticeState))
+        if (e.PropertyName == nameof(IVocabularyWord.PracticeState))
         {
             Refresh();
         }
@@ -48,7 +49,7 @@ public class VocabularyBookStatistics : INotifyPropertyChanged
     {
         int un = 0, wrongly = 0, correctly = 0, fully = 0;
 
-        foreach (VocabularyWord word in book.Words)
+        foreach (IVocabularyWord word in book.Words)
         {
             switch (word.PracticeState)
             {

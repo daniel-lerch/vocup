@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 using Vocup.Models;
+using Vocup.Models.Legacy;
 using Vocup.Properties;
 
 #nullable disable
@@ -63,7 +64,7 @@ public class AddWordDialog : VocabularyWordDialog
         }
         else // No duplicates to handle
         {
-            book.Words.Add(new VocabularyWord(TbMotherTongue.Text, TbForeignLang.Text)
+            book.Words.Add(new IVocabularyWord(TbMotherTongue.Text, TbForeignLang.Text)
             {
                 ForeignLangSynonym = string.IsNullOrWhiteSpace(TbForeignLangSynonym.Text) ? null : TbForeignLangSynonym.Text
             });

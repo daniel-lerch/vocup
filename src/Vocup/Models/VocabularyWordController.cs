@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using Vocup.Models.Legacy;
 
 namespace Vocup.Models
 {
@@ -9,7 +10,7 @@ namespace Vocup.Models
         private readonly ListViewItem.ListViewSubItem foreignLangColumn;
         private readonly ListViewItem.ListViewSubItem praticeDateColumn;
 
-        public VocabularyWordController(VocabularyWord vocabularyWord)
+        public VocabularyWordController(IVocabularyWord vocabularyWord)
         {
             ListViewItem = new ListViewItem { Tag = vocabularyWord, UseItemStyleForSubItems = false };
             motherTongueColumn = ListViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(ListViewItem, ""));
@@ -22,7 +23,7 @@ namespace Vocup.Models
         }
 
         public ListViewItem ListViewItem { get; }
-        public VocabularyWord VocabularyWord { get; }
+        public IVocabularyWord VocabularyWord { get; }
 
         public void Highlight(string upperCaseQuery)
         {

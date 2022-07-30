@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Vocup.Models;
+using Vocup.Models.Legacy;
 using Vocup.Properties;
 using Vocup.Util;
 
@@ -81,13 +82,13 @@ public partial class PracticeCountDialog : Form
 
     private void Finish(int count)
     {
-        ListCompositor<VocabularyWord> compositor = new ListCompositor<VocabularyWord>();
+        ListCompositor<IVocabularyWord> compositor = new ListCompositor<IVocabularyWord>();
 
-        IEnumerable<VocabularyWord> unpracticedItems = book.Words
+        IEnumerable<IVocabularyWord> unpracticedItems = book.Words
             .Where(x => x.PracticeState == PracticeState.Unpracticed);
-        IEnumerable<VocabularyWord> wronglyPracticedItems = book.Words
+        IEnumerable<IVocabularyWord> wronglyPracticedItems = book.Words
             .Where(x => x.PracticeState == PracticeState.WronglyPracticed);
-        IEnumerable<VocabularyWord> correctlyPracticedItems = book.Words
+        IEnumerable<IVocabularyWord> correctlyPracticedItems = book.Words
             .Where(x => x.PracticeState == PracticeState.CorrectlyPracticed);
 
         if (RbAllDates.Checked)
@@ -134,9 +135,9 @@ public partial class PracticeCountDialog : Form
             compositor.AddSource(correctlyPracticedItems.ToList(), 1d);
         }
 
-        List<VocabularyWord> resultList = compositor.ToList(count);
+        List<IVocabularyWord> resultList = compositor.ToList(count);
 
-        foreach (VocabularyWord item in resultList)
+        foreach (IVocabularyWord item in resultList)
         {
             PracticeList.Add(new VocabularyWordPractice(item));
         }

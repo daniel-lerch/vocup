@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Vocup.Models;
+namespace Vocup.Models.Legacy;
 
 public enum PracticeState
 {
@@ -17,7 +17,7 @@ public static class PracticeStateHelper
         return state >= 0;
     }
 
-    public static PracticeState Parse(int practiceStateNumber)
+    public static PracticeState Parse(int practiceStateNumber, int maxPracticeCount)
     {
         if (practiceStateNumber < 0)
             throw new ArgumentOutOfRangeException(nameof(practiceStateNumber), practiceStateNumber, $"{nameof(practiceStateNumber)} must be greater than or equal to 0");
@@ -25,7 +25,7 @@ public static class PracticeStateHelper
             return PracticeState.Unpracticed;
         if (practiceStateNumber == 1)
             return PracticeState.WronglyPracticed;
-        if (practiceStateNumber < Program.Settings.MaxPracticeCount)
+        if (practiceStateNumber < maxPracticeCount)
             return PracticeState.CorrectlyPracticed;
         else // if (practiceStateNumber >= Program.Settings.MaxPracticeCount)
             return PracticeState.FullyPracticed;

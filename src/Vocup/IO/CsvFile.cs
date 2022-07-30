@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Vocup.Models;
+using Vocup.Models.Legacy;
 using Vocup.Properties;
 
 namespace Vocup.IO.Internal;
@@ -77,17 +78,13 @@ internal class CsvFile
                             int idx = entry.ForeignLang.LastIndexOf('=');
                             if (idx == -1)
                             {
-                                book.Words.Add(new VocabularyWord(entry.MotherTongue, entry.ForeignLang)
-                                {
-                                    Owner = book,
-                                });
+                                book.Words.Add(new IVocabularyWord(entry.MotherTongue, entry.ForeignLang));
                             }
                             else
                             {
-                                book.Words.Add(new VocabularyWord(entry.MotherTongue, entry.ForeignLang.Remove(idx))
+                                book.Words.Add(new IVocabularyWord(entry.MotherTongue, entry.ForeignLang.Remove(idx))
                                 {
                                     ForeignLangSynonym = entry.ForeignLang.Substring(idx + 1),
-                                    Owner = book,
                                 });
                             }
                         }

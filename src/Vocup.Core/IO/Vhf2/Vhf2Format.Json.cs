@@ -7,7 +7,7 @@ namespace Vocup.IO.Vhf2;
 
 partial class Vhf2Format
 {
-    private record JsonBook(string MotherTongue, string ForeignLanguage, PracticeMode2 PracticeMode, List<JsonWord> Words)
+    private record JsonBook(string MotherTongue, string ForeignLanguage, PracticeMode PracticeMode, List<JsonWord> Words)
     {
         public Book ToBook()
         {

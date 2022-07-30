@@ -1,10 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Vocup.Models.Legacy;
 
 namespace Vocup.Models
 {
-    public class VocabularyWord : INotifyPropertyChanged
+    public class VocabularyWord : IVocabularyWord
     {
         private string _motherTongue;
         private string _foreignLang;
@@ -59,7 +60,7 @@ namespace Vocup.Models
                 if (_practiceStateNumber != value)
                 {
                     _practiceStateNumber = value; OnPropertyChanged();
-                    PracticeState = PracticeStateHelper.Parse(_practiceStateNumber);
+                    PracticeState = PracticeStateHelper.Parse(_practiceStateNumber, Program.Settings.MaxPracticeCount);
                 }
             }
         }
@@ -69,25 +70,19 @@ namespace Vocup.Models
             set { if (_practiceDate != value) { _practiceDate = value; OnPropertyChanged(); } }
         }
 
-        public VocabularyBook? Owner { get; set; }
-
         public event PropertyChangedEventHandler? PropertyChanged;
 
         private void OnPropertyChanged([CallerMemberName] string name = "")
         {
-            if (Owner != null && Owner.Notifies)
-            {
-                Owner.UnsavedChanges = true;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
         public void RenewPracticeState()
         {
-            PracticeState = PracticeStateHelper.Parse(_practiceStateNumber);
+            PracticeState = PracticeStateHelper.Parse(_practiceStateNumber, Program.Settings.MaxPracticeCount);
         }
 
-        public VocabularyWord Clone(bool copyResults)
+        public IVocabularyWord Clone(bool copyResults)
         {
             if (copyResults)
                 return new VocabularyWord(_motherTongue, _foreignLang)
