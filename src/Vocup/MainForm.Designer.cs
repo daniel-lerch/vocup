@@ -79,9 +79,6 @@
             this.BtnEditWord = new Vocup.Controls.ResponsiveButton();
             this.StatusStrip = new System.Windows.Forms.StatusStrip();
             this.StatusLbOldVersion = new System.Windows.Forms.ToolStripStatusLabel();
-            this.StatusLbUpdateAvailable = new System.Windows.Forms.ToolStripStatusLabel();
-            this.StatusLbOpenUwpApp = new System.Windows.Forms.ToolStripStatusLabel();
-            this.StatusLbInstallUwpApp = new System.Windows.Forms.ToolStripStatusLabel();
             this.SideBar = new System.Windows.Forms.Panel();
             this.GroupStatistics = new Vocup.Controls.StatisticsPanel();
             this.SplitContainer = new Vocup.Controls.ResponsiveSplitContainer();
@@ -275,7 +272,7 @@
             this.TsmiExitApplication.Image = global::Vocup.Properties.Icons.DoorOpened;
             this.TsmiExitApplication.Name = "TsmiExitApplication";
             resources.ApplyResources(this.TsmiExitApplication, "TsmiExitApplication");
-            this.TsmiExitApplication.Click += new System.EventHandler(this.TsmiExitAppliaction_Click);
+            this.TsmiExitApplication.Click += new System.EventHandler(this.TsmiExitApplication_Click);
             // 
             // TsmiRootEdit
             // 
@@ -478,10 +475,7 @@
             // StatusStrip
             // 
             this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StatusLbOldVersion,
-            this.StatusLbUpdateAvailable,
-            this.StatusLbOpenUwpApp,
-            this.StatusLbInstallUwpApp});
+            this.StatusLbOldVersion});
             resources.ApplyResources(this.StatusStrip, "StatusStrip");
             this.StatusStrip.Name = "StatusStrip";
             // 
@@ -492,30 +486,6 @@
             this.StatusLbOldVersion.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             resources.ApplyResources(this.StatusLbOldVersion, "StatusLbOldVersion");
             this.StatusLbOldVersion.Click += new System.EventHandler(this.StatusLbOldVersion_Click);
-            // 
-            // StatusLbUpdateAvailable
-            // 
-            this.StatusLbUpdateAvailable.Image = global::Vocup.Properties.Icons.DownloadingUpdates;
-            this.StatusLbUpdateAvailable.Name = "StatusLbUpdateAvailable";
-            this.StatusLbUpdateAvailable.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            resources.ApplyResources(this.StatusLbUpdateAvailable, "StatusLbUpdateAvailable");
-            this.StatusLbUpdateAvailable.Click += new System.EventHandler(this.StatusLbUpdateAvailable_Click);
-            // 
-            // StatusLbOpenUwpApp
-            // 
-            this.StatusLbOpenUwpApp.Image = global::Vocup.Properties.Icons.BuyUpgrade;
-            this.StatusLbOpenUwpApp.Name = "StatusLbOpenUwpApp";
-            this.StatusLbOpenUwpApp.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            resources.ApplyResources(this.StatusLbOpenUwpApp, "StatusLbOpenUwpApp");
-            this.StatusLbOpenUwpApp.Click += new System.EventHandler(this.StatusLbOpenUwpApp_Click);
-            // 
-            // StatusLbInstallUwpApp
-            // 
-            this.StatusLbInstallUwpApp.Image = global::Vocup.Properties.Icons.BuyUpgrade;
-            this.StatusLbInstallUwpApp.Name = "StatusLbInstallUwpApp";
-            this.StatusLbInstallUwpApp.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            resources.ApplyResources(this.StatusLbInstallUwpApp, "StatusLbInstallUwpApp");
-            this.StatusLbInstallUwpApp.Click += new System.EventHandler(this.StatusLbInstallUwpApp_Click);
             // 
             // SideBar
             // 
@@ -738,10 +708,7 @@
         private Controls.FileTreeView FileTreeView;
         private System.Windows.Forms.Label LbEmptyForm;
         private System.Windows.Forms.ToolStripStatusLabel StatusLbOldVersion;
-        private System.Windows.Forms.ToolStripStatusLabel StatusLbUpdateAvailable;
         private System.Windows.Forms.ToolStripMenuItem TsmiImportAnsi;
-        private System.Windows.Forms.ToolStripStatusLabel StatusLbOpenUwpApp;
-        private System.Windows.Forms.ToolStripStatusLabel StatusLbInstallUwpApp;
     }
 }
 
