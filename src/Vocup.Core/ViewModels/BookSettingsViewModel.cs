@@ -1,4 +1,5 @@
 ﻿using ReactiveUI;
+using ReactiveUI.Fody.Helpers;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
@@ -17,17 +18,15 @@ public class BookSettingsViewModel : ReactiveObject
     public BookSettingsViewModel(Book book)
     {
         Book = book;
-        motherTongue = book.MotherTongue;
-        foreignLanguage = book.ForeignLanguage;
+        MotherTongue = book.MotherTongue;
+        ForeignLanguage = book.ForeignLanguage;
 
-        motherTongueValid = this
-            .WhenAnyValue(x => x.MotherTongue)
+        this.WhenAnyValue(x => x.MotherTongue)
             .Select(x => !x.ContainsAny(invalidChars))
-            .ToProperty(this, x => x.MotherTongueValid);
-        foreignLanguageValid = this
-            .WhenAnyValue(x => x.ForeignLanguage)
+            .ToPropertyEx(this, x => x.MotherTongueValid);
+        this.WhenAnyValue(x => x.ForeignLanguage)
             .Select(x => !x.ContainsAny(invalidChars))
-            .ToProperty(this, x => x.ForeignLanguageValid);
+            .ToPropertyEx(this, x => x.ForeignLanguageValid);
 
         SaveCommand = ReactiveCommand.Create(
             () =>
@@ -44,23 +43,9 @@ public class BookSettingsViewModel : ReactiveObject
 
     public Book Book { get; }
 
-    private string motherTongue = string.Empty;
-    public string MotherTongue
-    {
-        get => motherTongue;
-        set => this.RaiseAndSetIfChanged(ref motherTongue, value);
-    }
+    [Reactive] public string MotherTongue { get; set; }
+    [ObservableAsProperty] public bool MotherTongueValid { get; }
 
-    private ObservableAsPropertyHelper<bool> motherTongueValid;
-    public bool MotherTongueValid => motherTongueValid.Value;
-
-    private string foreignLanguage = string.Empty;
-    public string ForeignLanguage
-    {
-        get => foreignLanguage;
-        set => this.RaiseAndSetIfChanged(ref foreignLanguage, value);
-    }
-
-    private ObservableAsPropertyHelper<bool> foreignLanguageValid;
-    public bool ForeignLanguageValid => foreignLanguageValid.Value;
+    [Reactive] public string ForeignLanguage { get; set; }
+    [ObservableAsProperty] public bool ForeignLanguageValid { get; }
 }

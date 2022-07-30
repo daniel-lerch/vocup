@@ -1,4 +1,5 @@
 ﻿using ReactiveUI;
+using ReactiveUI.Fody.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,8 +9,6 @@ namespace Vocup.Models;
 
 public class Word : ReactiveObject
 {
-    private DateTimeOffset creationDate;
-
     public Word(IEnumerable<Synonym> motherTongue, IEnumerable<Synonym> foreignLanguage)
     {
         MotherTongue = new ObservableCollection<Synonym>(motherTongue);
@@ -18,22 +17,18 @@ public class Word : ReactiveObject
 
     public ObservableCollection<Synonym> MotherTongue { get; }
     public ObservableCollection<Synonym> ForeignLanguage { get; }
-    public DateTimeOffset CreationDate
-    {
-        get => creationDate;
-        set => this.RaiseAndSetIfChanged(ref creationDate, value);
-    }
+    [Reactive] public DateTimeOffset CreationDate { get; set; }
 
     public override bool Equals(object? obj)
     {
         return obj is Word word &&
-               creationDate.Equals(word.creationDate) &&
+               CreationDate.Equals(word.CreationDate) &&
                Enumerable.SequenceEqual(MotherTongue, word.MotherTongue) &&
                Enumerable.SequenceEqual(ForeignLanguage, word.ForeignLanguage);
     }
 
     public override int GetHashCode()
     {
-        return HashCode.Combine(creationDate, MotherTongue, ForeignLanguage);
+        return HashCode.Combine(CreationDate, MotherTongue, ForeignLanguage);
     }
 }
