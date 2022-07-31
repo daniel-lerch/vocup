@@ -41,7 +41,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     object IViewFor.ViewModel { get => ViewModel; set => ViewModel = (MainFormViewModel)value; }
 
     public BookContext BookContext { get; set; }
-    public VocabularyBook CurrentBook { get; private set; }
+    public IVocabularyBook CurrentBook { get; private set; }
     public VocabularyBookController CurrentController { get; private set; }
     public StatisticsPanel StatisticsPanel => GroupStatistics;
     public TextBox SearchText => TbSearchWord;
@@ -95,7 +95,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         //else
         //    Text = $"{Words.Vocup} - {value}";
     }
-    public void LoadBook(VocabularyBook book)
+    public void LoadBook(IVocabularyBook book)
     {
         VocabularyBookController controller = new VocabularyBookController(book) { Parent = this };
         SplitContainer.Panel2.Controls.Add(controller.ListView);
@@ -313,7 +313,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
             if (optionen.ShowDialog() == DialogResult.OK)
             {
                 // Renew practice state for Settings.MaxPracticeCount changes
-                CurrentBook?.Words.ForEach(x => x.RenewPracticeState());
+                //CurrentBook?.Words.ForEach(x => x.RenewPracticeState());
 
                 // Refresh tree view root path
                 if (oldVhfPath != Program.Settings.VhfPath)
@@ -450,7 +450,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         {
             if (saveDialog.ShowDialog() == DialogResult.OK)
             {
-                VocabularyFile.ExportCsvFile(saveDialog.FileName, CurrentBook);
+                CsvFile.Instance.Export(saveDialog.FileName, CurrentBook);
             }
         }
     }
@@ -551,12 +551,11 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     #region Utility methods
     public void ReadFile(string path)
     {
-        VocabularyBook book = new VocabularyBook();
+        IVocabularyBook book = new IVocabularyBook();
 
         if (VocabularyFile.ReadVhfFile(path, book))
         {
             VocabularyFile.ReadVhrFile(book);
-            book.Notify();
             LoadBook(book);
         }
     }
@@ -589,7 +588,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
             using (SaveFileDialog save = new SaveFileDialog
             {
                 Title = Words.SaveVocabularyBook,
-                FileName = CurrentBook.MotherTongue + " - " + CurrentBook.ForeignLang,
+                FileName = CurrentBook.MotherTongue + " - " + CurrentBook.ForeignLanguage,
                 InitialDirectory = Program.Settings.VhfPath,
                 Filter = Words.VocupVocabularyBookFile + " (*.vhf)|*.vhf"
             })
@@ -693,10 +692,9 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
                 {
                     Program.TrackingService.Action("/book/new", "Book/Import");
 
-                    VocabularyBook book = new VocabularyBook();
+                    IVocabularyBook book = new IVocabularyBook();
                     if (VocabularyFile.ImportCsvFile(openDialog.FileName, book, true, ansiEncoding))
                     {
-                        book.Notify();
                         book.UnsavedChanges = true;
                         LoadBook(book);
                     }
@@ -722,7 +720,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     private void DeleteWord()
     {
         int index = CurrentController.ListView.SelectedItem.Index;
-        IVocabularyWord selected = (IVocabularyWord)CurrentController.ListView.SelectedItem.Tag;
+        Word selected = (Word)CurrentController.ListView.SelectedItem.Tag;
         CurrentBook.Words.Remove(selected);
 
         // Limit index of the deleted word to the highest possible index

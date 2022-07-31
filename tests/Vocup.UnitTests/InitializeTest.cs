@@ -19,7 +19,7 @@ public class InitializeTest
     {
         Program.CreateVhfFolder();
         Program.CreateVhrFolder();
-        VocabularyBook book = new VocabularyBook() { MotherTongue = "Deutsch", ForeignLang = "Englisch" };
+        Book book = new("Deutsch", "Englisch");
 
         new MainForm().Dispose();
         new AboutBox().Dispose();

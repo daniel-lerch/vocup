@@ -16,7 +16,7 @@ public class VocabularyBookController : IDisposable
     private readonly List<VocabularyWordController> wordControllers;
     private IMainForm _parent;
 
-    public VocabularyBookController(VocabularyBook book)
+    public VocabularyBookController(IVocabularyBook book)
     {
         ListView = new VocabularyListView { Dock = DockStyle.Fill, };
         ListView.ItemSelectionChanged += OnSelectionChanged;
@@ -26,7 +26,6 @@ public class VocabularyBookController : IDisposable
         book.Words.OnAdd(AddItem);
         book.Words.OnRemove(RemoveItem);
         book.PropertyChanged += OnPropertyChanged;
-        book.Statistics.PropertyChanged += OnStatisticsChanged;
         VocabularyBook = book;
         OnPropertyChanged(this, new PropertyChangedEventArgs(null));
     }
@@ -45,7 +44,7 @@ public class VocabularyBookController : IDisposable
             OnSelectionChanged(this, new EventArgs());
         }
     }
-    public VocabularyBook VocabularyBook { get; }
+    public IVocabularyBook VocabularyBook { get; }
     IReadOnlyCollection<VocabularyWordController> WordControllers { get; }
 
     public VocabularyWordController GetController(IVocabularyWord word)
@@ -62,7 +61,7 @@ public class VocabularyBookController : IDisposable
     private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
     {
         ListView.MotherTongue = VocabularyBook.MotherTongue;
-        ListView.ForeignLang = VocabularyBook.ForeignLang;
+        ListView.ForeignLang = VocabularyBook.ForeignLanguage;
         Parent?.VocabularyBookHasFilePath(!string.IsNullOrWhiteSpace(VocabularyBook.FilePath));
         Parent?.VocabularyBookUnsavedChanges(VocabularyBook.UnsavedChanges);
         Parent?.VocabularyBookName(VocabularyBook.Name);
@@ -75,6 +74,8 @@ public class VocabularyBookController : IDisposable
                 VocabularyBook.UnsavedChanges = false;
             }
         }
+
+        OnStatisticsChanged(sender, EventArgs.Empty);
     }
 
     private void OnStatisticsChanged(object sender, EventArgs e)
@@ -82,13 +83,13 @@ public class VocabularyBookController : IDisposable
         if (Parent == null)
             return;
 
-        Parent.StatisticsPanel.Unpracticed = VocabularyBook.Statistics.Unpracticed;
-        Parent.StatisticsPanel.WronglyPracticed = VocabularyBook.Statistics.WronglyPracticed;
-        Parent.StatisticsPanel.CorrectlyPracticed = VocabularyBook.Statistics.CorrectlyPracticed;
-        Parent.StatisticsPanel.FullyPracticed = VocabularyBook.Statistics.FullyPracticed;
+        Parent.StatisticsPanel.Unpracticed = VocabularyBook.Unpracticed;
+        Parent.StatisticsPanel.WronglyPracticed = VocabularyBook.WronglyPracticed;
+        Parent.StatisticsPanel.CorrectlyPracticed = VocabularyBook.CorrectlyPracticed;
+        Parent.StatisticsPanel.FullyPracticed = VocabularyBook.FullyPracticed;
 
         Parent.VocabularyBookHasContent(VocabularyBook.Words.Count > 0);
-        Parent.VocabularyBookPracticable(VocabularyBook.Statistics.NotFullyPracticed > 0);
+        Parent.VocabularyBookPracticable(VocabularyBook.NotFullyPracticed > 0);
     }
 
     private void OnSelectionChanged(object sender, EventArgs e)

@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using Vocup.Models;
 using Vocup.Models.Legacy;
 using Vocup.Properties;
 using Vocup.Util;
@@ -13,9 +12,9 @@ namespace Vocup.Forms;
 
 public partial class PrintWordSelection : Form
 {
-    VocabularyBook book;
+    IVocabularyBook book;
 
-    public PrintWordSelection(VocabularyBook book)
+    public PrintWordSelection(IVocabularyBook book)
     {
         InitializeComponent();
         Icon = Icon.FromHandle(Icons.Print.GetHicon());
@@ -24,13 +23,13 @@ public partial class PrintWordSelection : Form
 
         ListBox.BeginUpdate();
         foreach (IVocabularyWord word in book.Words)
-            ListBox.Items.Add($"{word.MotherTongue} - {word.ForeignLangText}", true);
+            ListBox.Items.Add($"{word.MotherTongueText} - {word.ForeignLangCombined}", true);
         ListBox.EndUpdate();
 
-        CbUnpracticed.Enabled = book.Statistics.Unpracticed > 0;
-        CbWronglyPracticed.Enabled = book.Statistics.WronglyPracticed > 0;
-        CbCorrectlyPracticed.Enabled = book.Statistics.CorrectlyPracticed > 0;
-        CbFullyPracticed.Enabled = book.Statistics.FullyPracticed > 0;
+        CbUnpracticed.Enabled = book.Unpracticed > 0;
+        CbWronglyPracticed.Enabled = book.WronglyPracticed > 0;
+        CbCorrectlyPracticed.Enabled = book.CorrectlyPracticed > 0;
+        CbFullyPracticed.Enabled = book.FullyPracticed > 0;
     }
 
     private void BtnCheckAll_Click(object sender, EventArgs e)
@@ -144,8 +143,8 @@ public partial class PrintWordSelection : Form
         using (StringFormat centerFormat = new StringFormat() { Alignment = StringAlignment.Center })
         {
             string name = string.IsNullOrWhiteSpace(book.Name) ? "" : book.Name + ": ";
-            string left = invertSides ? book.ForeignLang : book.MotherTongue;
-            string right = invertSides ? book.MotherTongue : book.ForeignLang;
+            string left = invertSides ? book.ForeignLanguage : book.MotherTongue;
+            string right = invertSides ? book.MotherTongue : book.ForeignLanguage;
             string title = $"{name}{left} - {right}";
 
             g.DrawString(title, titleFont, Brushes.Black, e.MarginBounds.MarginTop(hoffset).SetHeight(25), centerFormat);
@@ -170,8 +169,8 @@ public partial class PrintWordSelection : Form
                 Rectangle left = new Rectangle(rect.X, rect.Y, rect.Width / 2, rect.Height).MarginSide(sideOffset);
                 Rectangle right = new Rectangle(left.Right, rect.Y, rect.Width / 2, rect.Height).MarginSide(sideOffset)
                     .MarginLeft(lineThickness); // right column is smaller than the left one because of the line
-                string leftText = invertSides ? word.ForeignLangText : word.MotherTongue;
-                string rightText = invertSides ? word.MotherTongue : word.ForeignLangText;
+                string leftText = invertSides ? word.ForeignLangCombined : word.MotherTongueText;
+                string rightText = invertSides ? word.MotherTongueText : word.ForeignLangCombined;
 
                 SizeF leftSize = g.MeasureString(leftText, font, left.Size, nearFormat, out int leftChars, out int leftLines);
                 SizeF rightSize = g.MeasureString(rightText, font, right.Size, nearFormat, out int rightChars, out int rightLines);

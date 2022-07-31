@@ -1,7 +1,6 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Vocup.Models;
 using Vocup.Models.Legacy;
 using Vocup.Properties;
 using Vocup.Util;
@@ -13,9 +12,9 @@ namespace Vocup.Forms
         private const string InvalidChars = "#=";
         private readonly Color redBgColor = Color.FromArgb(255, 192, 203);
         private readonly SpecialCharKeyboard specialCharDialog;
-        protected readonly VocabularyBook book;
+        protected readonly IVocabularyBook book;
 
-        public VocabularyWordDialog(VocabularyBook book)
+        public VocabularyWordDialog(IVocabularyBook book)
         {
             InitializeComponent();
 
@@ -24,8 +23,8 @@ namespace Vocup.Forms
 
             this.book = book;
             LbMotherTongue.Text = book.MotherTongue;
-            LbForeignLang.Text = book.ForeignLang;
-            LbSynonym.Text = $"{book.ForeignLang} ({Words.Synonym})";
+            LbForeignLang.Text = book.ForeignLanguage;
+            LbSynonym.Text = $"{book.ForeignLanguage} ({Words.Synonym})";
         }
 
         private void TextBox_TextChanged(object sender, EventArgs e)
@@ -66,8 +65,8 @@ namespace Vocup.Forms
             foreach (IVocabularyWord word in book.Words)
             {
                 if (!ReferenceEquals(word, exclude) &&
-                    word.MotherTongue == TbMotherTongue.Text &&
-                    word.ForeignLang == TbForeignLang.Text &&
+                    word.MotherTongueText == TbMotherTongue.Text &&
+                    word.ForeignLangText == TbForeignLang.Text &&
                     (word.ForeignLangSynonym == TbForeignLangSynonym.Text ||
                     word.ForeignLangSynonym == null && TbForeignLangSynonym.Text == ""))
                 {

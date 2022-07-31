@@ -19,7 +19,7 @@ public partial class MergeFiles : Form
     private readonly SpecialCharKeyboard specialCharDialog;
     private bool textsValid;
 
-    private readonly List<VocabularyBook> books;
+    private readonly List<IVocabularyBook> books;
 
     public MergeFiles()
     {
@@ -29,7 +29,7 @@ public partial class MergeFiles : Form
         specialCharDialog.Initialize(this, BtnSpecialChar);
         specialCharDialog.RegisterTextBox(TbMotherTongue);
 
-        books = new List<VocabularyBook>();
+        books = new List<IVocabularyBook>();
     }
 
     private void BtnAdd_Click(object sender, EventArgs e)
@@ -46,11 +46,11 @@ public partial class MergeFiles : Form
         {
             foreach (string file in addFile.FileNames)
             {
-                VocabularyBook book = new VocabularyBook();
+                IVocabularyBook book = new IVocabularyBook();
                 if (!VocabularyFile.ReadVhfFile(file, book))
                     continue;
                 VocabularyFile.ReadVhrFile(book);
-                VocabularyBook conflict = books.Where(x => x.FilePath.Equals(book.FilePath, StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+                IVocabularyBook conflict = books.Where(x => x.FilePath.Equals(book.FilePath, StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
                 if (conflict != null)
                 {
                     if (MessageBox.Show(Messages.MergeOverride, Messages.MergeOverrideT, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
@@ -148,14 +148,14 @@ public partial class MergeFiles : Form
 
         Cursor.Current = Cursors.WaitCursor;
 
-        VocabularyBook result = new VocabularyBook
+        IVocabularyBook result = new IVocabularyBook
         {
             MotherTongue = TbMotherTongue.Text,
-            ForeignLang = TbForeignLang.Text,
+            ForeignLanguage = TbForeignLang.Text,
             FilePath = path
         };
 
-        foreach (VocabularyBook book in books)
+        foreach (IVocabularyBook book in books)
         {
             foreach (IVocabularyWord word in book.Words)
             {
@@ -179,24 +179,25 @@ public partial class MergeFiles : Form
         Cursor.Current = Cursors.Default;
     }
 
-    private void CopyWord(IVocabularyWord word, VocabularyBook target)
+    private void CopyWord(IVocabularyWord word, IVocabularyBook target)
     {
-        IVocabularyWord cloned = word.Clone(CbKeepResults.Checked);
+        Word clonedWord = word.Clone(CbKeepResults.Checked);
+        IVocabularyWord cloned = clonedWord;
 
         for (int i = 0; i < target.Words.Count; i++)
         {
             IVocabularyWord comp = target.Words[i];
-            if (cloned.MotherTongue == comp.MotherTongue &&
-                cloned.ForeignLang == comp.ForeignLang &&
+            if (cloned.MotherTongueText == comp.MotherTongueText &&
+                cloned.ForeignLangText == comp.ForeignLangText &&
                 cloned.ForeignLangSynonym == comp.ForeignLangSynonym)
             {
                 if (cloned.PracticeDate > comp.PracticeDate)
-                    target.Words[i] = cloned;
+                    target.Words[i] = clonedWord;
 
                 return;
             }
         }
 
-        target.Words.Add(cloned);
+        target.Words.Add(clonedWord);
     }
 }

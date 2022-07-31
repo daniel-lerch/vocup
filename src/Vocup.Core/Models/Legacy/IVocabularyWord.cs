@@ -6,13 +6,12 @@ namespace Vocup.Models.Legacy;
 // This interface wraps a legacy data model for easier migration
 public interface IVocabularyWord : INotifyPropertyChanged
 {
-    string MotherTongue { get; set; }
-    string ForeignLang { get; set; }
+    string MotherTongueText { get; set; }
+    string ForeignLangText { get; set; }
     string? ForeignLangSynonym { get; set; }
-    string ForeignLangText { get; }
+    string ForeignLangCombined { get; }
     int PracticeStateNumber { get; set; }
     PracticeState PracticeState { get; }
     DateTime PracticeDate { get; set; }
-    void RenewPracticeState();
-    IVocabularyWord Clone(bool copyResults);
+    Word Clone(bool copyResults);
 }

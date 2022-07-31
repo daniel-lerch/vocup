@@ -28,12 +28,12 @@ namespace Vocup.Models
         public void Highlight(string upperCaseQuery)
         {
             motherTongueColumn.BackColor = !string.IsNullOrEmpty(upperCaseQuery)
-                && VocabularyWord.MotherTongue.ToUpper().Contains(upperCaseQuery)
+                && VocabularyWord.MotherTongueText.ToUpper().Contains(upperCaseQuery)
                 ? Color.LightGreen
                 : default;
 
             foreignLangColumn.BackColor = !string.IsNullOrEmpty(upperCaseQuery)
-                && (VocabularyWord.ForeignLang.ToUpper().Contains(upperCaseQuery) || (VocabularyWord.ForeignLangSynonym?.ToUpper().Contains(upperCaseQuery) ?? false))
+                && (VocabularyWord.ForeignLangText.ToUpper().Contains(upperCaseQuery) || (VocabularyWord.ForeignLangSynonym?.ToUpper().Contains(upperCaseQuery) ?? false))
                 ? Color.LightGreen
                 : default;
         }
@@ -42,8 +42,8 @@ namespace Vocup.Models
         {
             ListViewItem.ImageIndex = (int)VocabularyWord.PracticeState;
 
-            motherTongueColumn.Text = VocabularyWord.MotherTongue;
-            foreignLangColumn.Text = VocabularyWord.ForeignLangText;
+            motherTongueColumn.Text = VocabularyWord.MotherTongueText;
+            foreignLangColumn.Text = VocabularyWord.ForeignLangCombined;
             if (VocabularyWord.PracticeDate == default)
                 praticeDateColumn.Text = "";
             else

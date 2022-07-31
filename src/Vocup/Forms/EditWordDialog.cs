@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Vocup.Models;
 using Vocup.Models.Legacy;
 using Vocup.Properties;
 
@@ -11,7 +10,7 @@ namespace Vocup.Forms
     {
         private readonly IVocabularyWord word;
 
-        public EditWordDialog(VocabularyBook book, IVocabularyWord word) : base(book)
+        public EditWordDialog(IVocabularyBook book, IVocabularyWord word) : base(book)
         {
             this.word = word;
 
@@ -20,8 +19,8 @@ namespace Vocup.Forms
             GroupOptions.Enabled = true;
             BtnContinue.Text = Words.Ok;
 
-            TbMotherTongue.Text = word.MotherTongue;
-            TbForeignLang.Text = word.ForeignLang;
+            TbMotherTongue.Text = word.MotherTongueText;
+            TbForeignLang.Text = word.ForeignLangText;
             TbForeignLangSynonym.Text = word.ForeignLangSynonym ?? "";
         }
 
@@ -63,8 +62,8 @@ namespace Vocup.Forms
             }
             else // No duplicates to handle
             {
-                word.MotherTongue = TbMotherTongue.Text;
-                word.ForeignLang = TbForeignLang.Text;
+                word.MotherTongueText = TbMotherTongue.Text;
+                word.ForeignLangText = TbForeignLang.Text;
                 word.ForeignLangSynonym = string.IsNullOrWhiteSpace(TbForeignLangSynonym.Text) ? null : TbForeignLangSynonym.Text;
 
                 if (CbResetResults.Checked)

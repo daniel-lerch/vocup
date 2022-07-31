@@ -1,6 +1,5 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
-using Vocup.Models;
 using Vocup.Models.Legacy;
 using Vocup.Properties;
 
@@ -12,7 +11,7 @@ public class AddWordDialog : VocabularyWordDialog
 {
     private bool firstInput = true;
 
-    public AddWordDialog(VocabularyBook book) : base(book)
+    public AddWordDialog(IVocabularyBook book) : base(book)
     {
         Icon = Icon.FromHandle(Icons.Plus.GetHicon());
         Text = Words.AddWord;

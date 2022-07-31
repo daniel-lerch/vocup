@@ -11,7 +11,7 @@ namespace Vocup.Forms;
 
 public partial class PracticeResultList : Form
 {
-    private VocabularyBook book;
+    private IVocabularyBook book;
     private List<VocabularyWordPractice> practiceList;
 
     private int notPracticed;
@@ -19,7 +19,7 @@ public partial class PracticeResultList : Form
     private int partlyCorrect;
     private int correct;
 
-    public PracticeResultList(VocabularyBook book, List<VocabularyWordPractice> practiceList)
+    public PracticeResultList(IVocabularyBook book, List<VocabularyWordPractice> practiceList)
     {
         InitializeComponent();
         Icon = Icon.FromHandle(Icons.BarChart.GetHicon());
@@ -31,7 +31,7 @@ public partial class PracticeResultList : Form
     private void Form_Load(object sender, EventArgs e)
     {
         motherTongueColumn.Text = book.MotherTongue;
-        foreignLangColumn.Text = book.ForeignLang;
+        foreignLangColumn.Text = book.ForeignLanguage;
 
         if (practiceList.Count == 1)
             GroupStatistics.Text = Words.OverallOneWord + ":";
@@ -44,7 +44,7 @@ public partial class PracticeResultList : Form
         foreach (VocabularyWordPractice practice in practiceList)
         {
             IVocabularyWord word = practice.VocabularyWord;
-            ListView.Items.Add(new ListViewItem(new[] { "", word.MotherTongue, word.ForeignLangText, practice.WrongInput }, (int)practice.PracticeResult));
+            ListView.Items.Add(new ListViewItem(new[] { "", word.MotherTongueText, word.ForeignLangCombined, practice.WrongInput }, (int)practice.PracticeResult));
         }
 
         ListView.EndUpdate();
@@ -71,7 +71,7 @@ public partial class PracticeResultList : Form
 
     private void Form_Shown(object sender, EventArgs e)
     {
-        if (book.Statistics.NotFullyPracticed == 0)
+        if (book.NotFullyPracticed == 0)
         {
             MessageBox.Show(Messages.BookPracticeFinished, Messages.BookPracticeFinishedT, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

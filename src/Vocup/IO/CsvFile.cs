@@ -11,11 +11,15 @@ using Vocup.Models;
 using Vocup.Models.Legacy;
 using Vocup.Properties;
 
-namespace Vocup.IO.Internal;
+namespace Vocup.IO;
 
 internal class CsvFile
 {
-    public bool Import(string path, VocabularyBook book, bool importSettings, bool ansiEncoding)
+    public static CsvFile Instance { get; } = new CsvFile();
+
+    private CsvFile() { }
+
+    public bool Import(string path, IVocabularyBook book, bool importSettings, bool ansiEncoding)
     {
         try
         {
@@ -55,12 +59,12 @@ internal class CsvFile
                     if (importSettings)
                     {
                         book.MotherTongue = reader.HeaderRecord[0];
-                        book.ForeignLang = reader.HeaderRecord[1];
+                        book.ForeignLanguage = reader.HeaderRecord[1];
                     }
                     else
                     {
                         if (!book.MotherTongue.Equals(reader.HeaderRecord[0], StringComparison.OrdinalIgnoreCase) 
-                            || !book.ForeignLang.Equals(reader.HeaderRecord[1], StringComparison.OrdinalIgnoreCase))
+                            || !book.ForeignLanguage.Equals(reader.HeaderRecord[1], StringComparison.OrdinalIgnoreCase))
                         {
                             DialogResult dialogResult = MessageBox.Show(
                                 string.Format(Messages.CsvInvalidLanguages, reader.HeaderRecord[0], reader.HeaderRecord[1]),
@@ -73,20 +77,21 @@ internal class CsvFile
 
                     foreach (Entry entry in reader.GetRecords<Entry>())
                     {
-                        if (!book.Words.Any(x => x.MotherTongue == entry.MotherTongue && x.ForeignLangText == entry.ForeignLang))
+                        if (!book.Words.Any((IVocabularyWord x) => x.MotherTongueText == entry.MotherTongue && x.ForeignLangCombined == entry.ForeignLang))
                         {
+                            Word word = new();
+                            ((IVocabularyWord)word).MotherTongueText = entry.MotherTongue;
                             int idx = entry.ForeignLang.LastIndexOf('=');
                             if (idx == -1)
                             {
-                                book.Words.Add(new IVocabularyWord(entry.MotherTongue, entry.ForeignLang));
+                                ((IVocabularyWord)word).ForeignLangText = entry.ForeignLang;
                             }
                             else
                             {
-                                book.Words.Add(new IVocabularyWord(entry.MotherTongue, entry.ForeignLang.Remove(idx))
-                                {
-                                    ForeignLangSynonym = entry.ForeignLang.Substring(idx + 1),
-                                });
+                                ((IVocabularyWord)word).ForeignLangText = entry.ForeignLang.Remove(idx);
+                                ((IVocabularyWord)word).ForeignLangSynonym = entry.ForeignLang.Substring(idx + 1);
                             }
+                            book.Words.Add(word);
                         }
                     }
                 }
@@ -101,15 +106,15 @@ internal class CsvFile
         return false;
     }
 
-    public bool Export(string path, VocabularyBook book)
+    public bool Export(string path, IVocabularyBook book)
     {
         try
         {
             using (TextWriter file = new StreamWriter(path, false, Encoding.UTF8))
             using (CsvWriter writer = new CsvWriter(file, CultureInfo.CurrentCulture))
             {
-                writer.Context.RegisterClassMap(new EntryMap(book.MotherTongue, book.ForeignLang));
-                writer.WriteRecords(book.Words.Select(x => new Entry(x.MotherTongue, x.ForeignLangText)));
+                writer.Context.RegisterClassMap(new EntryMap(book.MotherTongue, book.ForeignLanguage));
+                writer.WriteRecords(book.Words.Select((IVocabularyWord x) => new Entry(x.MotherTongueText, x.ForeignLangCombined)));
             }
 
             return true;
