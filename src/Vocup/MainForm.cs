@@ -10,7 +10,6 @@ using Vocup.Controls;
 using Vocup.Forms;
 using Vocup.IO;
 using Vocup.Models;
-using Vocup.Models.Legacy;
 using Vocup.Properties;
 using Vocup.Util;
 using Vocup.ViewModels;
@@ -41,7 +40,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     object IViewFor.ViewModel { get => ViewModel; set => ViewModel = (MainFormViewModel)value; }
 
     public BookContext BookContext { get; set; }
-    public IVocabularyBook CurrentBook { get; private set; }
+    public Book CurrentBook { get; private set; }
     public VocabularyBookController CurrentController { get; private set; }
     public StatisticsPanel StatisticsPanel => GroupStatistics;
     public TextBox SearchText => TbSearchWord;
@@ -95,7 +94,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         //else
         //    Text = $"{Words.Vocup} - {value}";
     }
-    public void LoadBook(IVocabularyBook book)
+    public void LoadBook(Book book)
     {
         VocabularyBookController controller = new VocabularyBookController(book) { Parent = this };
         SplitContainer.Panel2.Controls.Add(controller.ListView);
@@ -507,8 +506,8 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         {
             int index = CurrentBook.Words.NextIndexOf(word =>
             {
-                return word.MotherTongue.ToUpper().Contains(search_text)
-                       || word.ForeignLang.ToUpper().Contains(search_text)
+                return word.MotherTongueText.ToUpper().Contains(search_text)
+                       || word.ForeignLangText.ToUpper().Contains(search_text)
                        || (word.ForeignLangSynonym?.ToUpper().Contains(search_text) ?? false);
             }, lastSearchResult);
 
@@ -551,7 +550,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     #region Utility methods
     public void ReadFile(string path)
     {
-        IVocabularyBook book = new IVocabularyBook();
+        Book book = new Book();
 
         if (VocabularyFile.ReadVhfFile(path, book))
         {
@@ -692,7 +691,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
                 {
                     Program.TrackingService.Action("/book/new", "Book/Import");
 
-                    IVocabularyBook book = new IVocabularyBook();
+                    Book book = new Book();
                     if (VocabularyFile.ImportCsvFile(openDialog.FileName, book, true, ansiEncoding))
                     {
                         book.UnsavedChanges = true;
@@ -711,7 +710,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
 
     public void EditWord()
     {
-        IVocabularyWord selected = (IVocabularyWord)CurrentController.ListView.SelectedItem.Tag;
+        Word selected = (Word)CurrentController.ListView.SelectedItem.Tag;
         using (var dialog = new EditWordDialog(CurrentBook, selected) { Owner = this }) dialog.ShowDialog();
         CurrentController.ListView.SelectedItem.EnsureVisible();
         BtnAddWord.Focus();

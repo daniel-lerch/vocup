@@ -11,7 +11,7 @@ namespace Vocup.Forms;
 
 public partial class PracticeResultList : Form
 {
-    private IVocabularyBook book;
+    private Book book;
     private List<VocabularyWordPractice> practiceList;
 
     private int notPracticed;
@@ -19,7 +19,7 @@ public partial class PracticeResultList : Form
     private int partlyCorrect;
     private int correct;
 
-    public PracticeResultList(IVocabularyBook book, List<VocabularyWordPractice> practiceList)
+    public PracticeResultList(Book book, List<VocabularyWordPractice> practiceList)
     {
         InitializeComponent();
         Icon = Icon.FromHandle(Icons.BarChart.GetHicon());
@@ -43,7 +43,7 @@ public partial class PracticeResultList : Form
 
         foreach (VocabularyWordPractice practice in practiceList)
         {
-            IVocabularyWord word = practice.VocabularyWord;
+            Word word = practice.VocabularyWord;
             ListView.Items.Add(new ListViewItem(new[] { "", word.MotherTongueText, word.ForeignLangCombined, practice.WrongInput }, (int)practice.PracticeResult));
         }
 

@@ -4,11 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using Vocup.Models.Legacy;
 
 namespace Vocup.Models;
 
-public class Word : ReactiveObject, IVocabularyWord
+public class Word : ReactiveObject
 {
     public Word()
     {
@@ -39,15 +38,16 @@ public class Word : ReactiveObject, IVocabularyWord
         return HashCode.Combine(CreationDate, MotherTongue, ForeignLanguage);
     }
 
-    string IVocabularyWord.MotherTongueText { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    string IVocabularyWord.ForeignLangText { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    string? IVocabularyWord.ForeignLangSynonym { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    string IVocabularyWord.ForeignLangCombined => throw new NotImplementedException();
-    int IVocabularyWord.PracticeStateNumber { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    PracticeState IVocabularyWord.PracticeState => throw new NotImplementedException();
-    DateTime IVocabularyWord.PracticeDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    [Obsolete] public string MotherTongueText { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    [Obsolete] public string ForeignLangText { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    [Obsolete] public string? ForeignLangSynonym { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    [Obsolete] public string ForeignLangCombined => throw new NotImplementedException();
+    [Obsolete] public int PracticeStateNumber { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    [Obsolete] public PracticeState PracticeState => throw new NotImplementedException();
+    [Obsolete] public DateTime PracticeDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-    Word IVocabularyWord.Clone(bool copyResults)
+    [Obsolete]
+    public Word Clone(bool copyResults)
     {
         Synonym cloneSynonym(Synonym synonym)
         {

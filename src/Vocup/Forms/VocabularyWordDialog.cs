@@ -1,7 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Vocup.Models.Legacy;
+using Vocup.Models;
 using Vocup.Properties;
 using Vocup.Util;
 
@@ -12,9 +12,9 @@ namespace Vocup.Forms
         private const string InvalidChars = "#=";
         private readonly Color redBgColor = Color.FromArgb(255, 192, 203);
         private readonly SpecialCharKeyboard specialCharDialog;
-        protected readonly IVocabularyBook book;
+        protected readonly Book book;
 
-        public VocabularyWordDialog(IVocabularyBook book)
+        public VocabularyWordDialog(Book book)
         {
             InitializeComponent();
 
@@ -60,9 +60,9 @@ namespace Vocup.Forms
             return true;
         }
 
-        protected bool BookContainsInput(IVocabularyWord exclude)
+        protected bool BookContainsInput(Word exclude)
         {
-            foreach (IVocabularyWord word in book.Words)
+            foreach (Word word in book.Words)
             {
                 if (!ReferenceEquals(word, exclude) &&
                     word.MotherTongueText == TbMotherTongue.Text &&

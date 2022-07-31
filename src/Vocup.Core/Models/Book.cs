@@ -4,11 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using Vocup.Models.Legacy;
 
 namespace Vocup.Models;
 
-public class Book : ReactiveObject, IVocabularyBook
+public class Book : ReactiveObject
 {
     public Book(string motherTongue, string foreignLanguage)
     {
@@ -51,18 +50,12 @@ public class Book : ReactiveObject, IVocabularyBook
         return HashCode.Combine(MotherTongue, ForeignLanguage, PracticeMode, Words);
     }
 
-    string? IVocabularyBook.FilePath { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    string? IVocabularyBook.Name => throw new NotImplementedException();
-    string? IVocabularyBook.VhrCode { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    bool IVocabularyBook.UnsavedChanges { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    int IVocabularyBook.Unpracticed => throw new NotImplementedException();
-    int IVocabularyBook.WronglyPracticed => throw new NotImplementedException();
-    int IVocabularyBook.CorrectlyPracticed => throw new NotImplementedException();
-    int IVocabularyBook.FullyPracticed => throw new NotImplementedException();
-    int IVocabularyBook.NotFullyPracticed => throw new NotImplementedException();
-
-    void IVocabularyBook.GenerateVhrCode()
-    {
-        throw new NotImplementedException();
-    }
+    [Obsolete] public string? FilePath { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    [Obsolete] public string? Name => throw new NotImplementedException();
+    [Obsolete] public bool UnsavedChanges { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    [Obsolete] public int Unpracticed => throw new NotImplementedException();
+    [Obsolete] public int WronglyPracticed => throw new NotImplementedException();
+    [Obsolete] public int CorrectlyPracticed => throw new NotImplementedException();
+    [Obsolete] public int FullyPracticed => throw new NotImplementedException();
+    [Obsolete] public int NotFullyPracticed => throw new NotImplementedException();
 }

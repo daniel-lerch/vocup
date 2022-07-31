@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using Vocup.Controls;
 using Vocup.IO;
-using Vocup.Models.Legacy;
 
 #nullable disable
 
@@ -16,7 +15,7 @@ public class VocabularyBookController : IDisposable
     private readonly List<VocabularyWordController> wordControllers;
     private IMainForm _parent;
 
-    public VocabularyBookController(IVocabularyBook book)
+    public VocabularyBookController(Book book)
     {
         ListView = new VocabularyListView { Dock = DockStyle.Fill, };
         ListView.ItemSelectionChanged += OnSelectionChanged;
@@ -44,10 +43,10 @@ public class VocabularyBookController : IDisposable
             OnSelectionChanged(this, new EventArgs());
         }
     }
-    public IVocabularyBook VocabularyBook { get; }
+    public Book VocabularyBook { get; }
     IReadOnlyCollection<VocabularyWordController> WordControllers { get; }
 
-    public VocabularyWordController GetController(IVocabularyWord word)
+    public VocabularyWordController GetController(Word word)
     {
         foreach (VocabularyWordController controler in WordControllers)
         {
@@ -111,14 +110,14 @@ public class VocabularyBookController : IDisposable
         }
     }
 
-    private void AddItem(IVocabularyWord item)
+    private void AddItem(Word item)
     {
         VocabularyWordController controller = new VocabularyWordController(item);
         wordControllers.Add(controller);
         ListView.Items.Add(controller.ListViewItem);
     }
 
-    private void RemoveItem(IVocabularyWord item)
+    private void RemoveItem(Word item)
     {
         VocabularyWordController controller = GetController(item);
         wordControllers.Remove(controller);

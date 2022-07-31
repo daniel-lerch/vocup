@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Vocup.Models;
-using Vocup.Models.Legacy;
 using Vocup.Properties;
 using Vocup.Util;
 
@@ -11,10 +10,10 @@ namespace Vocup.Forms;
 
 public partial class PracticeCountDialog : Form
 {
-    private readonly IVocabularyBook book;
+    private readonly Book book;
     private int _count;
 
-    public PracticeCountDialog(IVocabularyBook book)
+    public PracticeCountDialog(Book book)
     {
         InitializeComponent();
         this.book = book;
@@ -82,14 +81,14 @@ public partial class PracticeCountDialog : Form
 
     private void Finish(int count)
     {
-        ListCompositor<IVocabularyWord> compositor = new ListCompositor<IVocabularyWord>();
+        ListCompositor<Word> compositor = new ListCompositor<Word>();
 
-        IEnumerable<IVocabularyWord> unpracticedItems = book.Words
-            .Where((IVocabularyWord x) => x.PracticeState == PracticeState.Unpracticed);
-        IEnumerable<IVocabularyWord> wronglyPracticedItems = book.Words
-            .Where((IVocabularyWord x) => x.PracticeState == PracticeState.WronglyPracticed);
-        IEnumerable<IVocabularyWord> correctlyPracticedItems = book.Words
-            .Where((IVocabularyWord x) => x.PracticeState == PracticeState.CorrectlyPracticed);
+        IEnumerable<Word> unpracticedItems = book.Words
+            .Where((Word x) => x.PracticeState == PracticeState.Unpracticed);
+        IEnumerable<Word> wronglyPracticedItems = book.Words
+            .Where((Word x) => x.PracticeState == PracticeState.WronglyPracticed);
+        IEnumerable<Word> correctlyPracticedItems = book.Words
+            .Where((Word x) => x.PracticeState == PracticeState.CorrectlyPracticed);
 
         if (RbAllDates.Checked)
         {
@@ -135,9 +134,9 @@ public partial class PracticeCountDialog : Form
             compositor.AddSource(correctlyPracticedItems.ToList(), 1d);
         }
 
-        List<IVocabularyWord> resultList = compositor.ToList(count);
+        List<Word> resultList = compositor.ToList(count);
 
-        foreach (IVocabularyWord item in resultList)
+        foreach (Word item in resultList)
         {
             PracticeList.Add(new VocabularyWordPractice(item));
         }

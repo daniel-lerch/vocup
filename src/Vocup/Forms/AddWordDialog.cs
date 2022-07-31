@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
-using Vocup.Models.Legacy;
+using Vocup.Models;
 using Vocup.Properties;
 
 #nullable disable
@@ -11,7 +11,7 @@ public class AddWordDialog : VocabularyWordDialog
 {
     private bool firstInput = true;
 
-    public AddWordDialog(IVocabularyBook book) : base(book)
+    public AddWordDialog(Book book) : base(book)
     {
         Icon = Icon.FromHandle(Icons.Plus.GetHicon());
         Text = Words.AddWord;
@@ -63,10 +63,12 @@ public class AddWordDialog : VocabularyWordDialog
         }
         else // No duplicates to handle
         {
-            book.Words.Add(new IVocabularyWord(TbMotherTongue.Text, TbForeignLang.Text)
-            {
-                ForeignLangSynonym = string.IsNullOrWhiteSpace(TbForeignLangSynonym.Text) ? null : TbForeignLangSynonym.Text
-            });
+            Word word = new();
+            Word vocabularyWord = word;
+            vocabularyWord.MotherTongueText = TbMotherTongue.Text;
+            vocabularyWord.ForeignLangText = TbForeignLang.Text;
+            vocabularyWord.ForeignLangSynonym = string.IsNullOrWhiteSpace(TbForeignLangSynonym.Text) ? null : TbForeignLangSynonym.Text;
+            book.Words.Add(word);
 
             firstInput = false;
             ResetUI();

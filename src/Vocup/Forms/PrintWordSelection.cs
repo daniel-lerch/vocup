@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using Vocup.Models.Legacy;
+using Vocup.Models;
 using Vocup.Properties;
 using Vocup.Util;
 
@@ -12,9 +12,9 @@ namespace Vocup.Forms;
 
 public partial class PrintWordSelection : Form
 {
-    IVocabularyBook book;
+    Book book;
 
-    public PrintWordSelection(IVocabularyBook book)
+    public PrintWordSelection(Book book)
     {
         InitializeComponent();
         Icon = Icon.FromHandle(Icons.Print.GetHicon());
@@ -22,7 +22,7 @@ public partial class PrintWordSelection : Form
         this.book = book;
 
         ListBox.BeginUpdate();
-        foreach (IVocabularyWord word in book.Words)
+        foreach (Word word in book.Words)
             ListBox.Items.Add($"{word.MotherTongueText} - {word.ForeignLangCombined}", true);
         ListBox.EndUpdate();
 
@@ -99,7 +99,7 @@ public partial class PrintWordSelection : Form
         }
     }
 
-    private void SetItemsChecked(Func<IVocabularyWord, bool> predicate, bool value)
+    private void SetItemsChecked(Func<Word, bool> predicate, bool value)
     {
         ListBox.BeginUpdate();
 
@@ -114,7 +114,7 @@ public partial class PrintWordSelection : Form
         ListBox.EndUpdate();
     }
 
-    private List<IVocabularyWord> printList = new List<IVocabularyWord>();
+    private List<Word> printList = new List<Word>();
     private int wordNumber = 0;
     private int pageNumber = 1;
     private bool invertSides;
@@ -165,7 +165,7 @@ public partial class PrintWordSelection : Form
                 if (wordNumber >= printList.Count) break;
 
                 rect = e.MarginBounds.MarginTop(hoffset);
-                IVocabularyWord word = printList[wordNumber];
+                Word word = printList[wordNumber];
                 Rectangle left = new Rectangle(rect.X, rect.Y, rect.Width / 2, rect.Height).MarginSide(sideOffset);
                 Rectangle right = new Rectangle(left.Right, rect.Y, rect.Width / 2, rect.Height).MarginSide(sideOffset)
                     .MarginLeft(lineThickness); // right column is smaller than the left one because of the line

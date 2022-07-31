@@ -5,7 +5,6 @@ using System.Linq;
 using System.Windows.Forms;
 using Vocup.IO;
 using Vocup.Models;
-using Vocup.Models.Legacy;
 using Vocup.Properties;
 using Vocup.Util;
 
@@ -19,7 +18,7 @@ public partial class MergeFiles : Form
     private readonly SpecialCharKeyboard specialCharDialog;
     private bool textsValid;
 
-    private readonly List<IVocabularyBook> books;
+    private readonly List<BookContext> books;
 
     public MergeFiles()
     {
@@ -29,7 +28,7 @@ public partial class MergeFiles : Form
         specialCharDialog.Initialize(this, BtnSpecialChar);
         specialCharDialog.RegisterTextBox(TbMotherTongue);
 
-        books = new List<IVocabularyBook>();
+        books = new List<BookContext>();
     }
 
     private void BtnAdd_Click(object sender, EventArgs e)
@@ -46,20 +45,17 @@ public partial class MergeFiles : Form
         {
             foreach (string file in addFile.FileNames)
             {
-                IVocabularyBook book = new IVocabularyBook();
-                if (!VocabularyFile.ReadVhfFile(file, book))
-                    continue;
-                VocabularyFile.ReadVhrFile(book);
-                IVocabularyBook conflict = books.Where(x => x.FilePath.Equals(book.FilePath, StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+                BookContext bookContext = new BookStorage().LoadAsync(file, Program.Settings.VhrPath).AsTask().GetAwaiter().GetResult();
+                BookContext conflict = books.Where(x => x.FileStream.Name.Equals(bookContext.FileStream.Name, StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
                 if (conflict != null)
                 {
                     if (MessageBox.Show(Messages.MergeOverride, Messages.MergeOverrideT, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                         continue;
                     books.Remove(conflict);
-                    LbFiles.Items.Remove(conflict.FilePath);
+                    LbFiles.Items.Remove(conflict.FileStream.Name);
                 }
-                books.Add(book);
-                LbFiles.Items.Add(book.FilePath);
+                books.Add(bookContext);
+                LbFiles.Items.Add(bookContext.FileStream.Name);
             }
             ValidateInput();
         }
@@ -71,7 +67,7 @@ public partial class MergeFiles : Form
         while (LbFiles.SelectedItems.Count > 0)
         {
             string file = LbFiles.SelectedItems[0].ToString();
-            books.RemoveAll(x => x.FilePath == file);
+            books.RemoveAll(x => x.FileStream.Name == file);
             LbFiles.Items.Remove(file);
         }
 
@@ -148,45 +144,38 @@ public partial class MergeFiles : Form
 
         Cursor.Current = Cursors.WaitCursor;
 
-        IVocabularyBook result = new IVocabularyBook
-        {
-            MotherTongue = TbMotherTongue.Text,
-            ForeignLanguage = TbForeignLang.Text,
-            FilePath = path
-        };
+        BookContext result = new(new Book(TbMotherTongue.Text, TbForeignLang.Text));
 
-        foreach (IVocabularyBook book in books)
+        foreach (BookContext context in books)
         {
-            foreach (IVocabularyWord word in book.Words)
+            foreach (Word word in context.Book.Words)
             {
-                CopyWord(word, result);
+                CopyWord(word, result.Book);
             }
         }
 
-        result.GenerateVhrCode();
-
-        if (!VocabularyFile.WriteVhfFile(path, result) ||
-            !VocabularyFile.WriteVhrFile(result))
+        try
+        {
+            new BookStorage().SaveAsync(result, path, BookFileFormat.Vhf1, Program.Settings.VhrPath);
+            DialogResult = DialogResult.OK;
+        }
+        catch (Exception)
         {
             MessageBox.Show(Messages.VocupFileWriteError, Messages.VocupFileWriteErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
             DialogResult = DialogResult.Abort;
-        }
-        else
-        {
-            DialogResult = DialogResult.OK;
         }
 
         Cursor.Current = Cursors.Default;
     }
 
-    private void CopyWord(IVocabularyWord word, IVocabularyBook target)
+    private void CopyWord(Word word, Book target)
     {
         Word clonedWord = word.Clone(CbKeepResults.Checked);
-        IVocabularyWord cloned = clonedWord;
+        Word cloned = clonedWord;
 
         for (int i = 0; i < target.Words.Count; i++)
         {
-            IVocabularyWord comp = target.Words[i];
+            Word comp = target.Words[i];
             if (cloned.MotherTongueText == comp.MotherTongueText &&
                 cloned.ForeignLangText == comp.ForeignLangText &&
                 cloned.ForeignLangSynonym == comp.ForeignLangSynonym)

@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Vocup.Models;
-using Vocup.Models.Legacy;
 using Vocup.Properties;
 
 namespace Vocup.IO;
@@ -19,7 +18,7 @@ internal class CsvFile
 
     private CsvFile() { }
 
-    public bool Import(string path, IVocabularyBook book, bool importSettings, bool ansiEncoding)
+    public bool Import(string path, Book book, bool importSettings, bool ansiEncoding)
     {
         try
         {
@@ -77,19 +76,19 @@ internal class CsvFile
 
                     foreach (Entry entry in reader.GetRecords<Entry>())
                     {
-                        if (!book.Words.Any((IVocabularyWord x) => x.MotherTongueText == entry.MotherTongue && x.ForeignLangCombined == entry.ForeignLang))
+                        if (!book.Words.Any(x => x.MotherTongueText == entry.MotherTongue && x.ForeignLangCombined == entry.ForeignLang))
                         {
                             Word word = new();
-                            ((IVocabularyWord)word).MotherTongueText = entry.MotherTongue;
+                            word.MotherTongueText = entry.MotherTongue;
                             int idx = entry.ForeignLang.LastIndexOf('=');
                             if (idx == -1)
                             {
-                                ((IVocabularyWord)word).ForeignLangText = entry.ForeignLang;
+                                word.ForeignLangText = entry.ForeignLang;
                             }
                             else
                             {
-                                ((IVocabularyWord)word).ForeignLangText = entry.ForeignLang.Remove(idx);
-                                ((IVocabularyWord)word).ForeignLangSynonym = entry.ForeignLang.Substring(idx + 1);
+                                word.ForeignLangText = entry.ForeignLang.Remove(idx);
+                                word.ForeignLangSynonym = entry.ForeignLang.Substring(idx + 1);
                             }
                             book.Words.Add(word);
                         }
@@ -106,7 +105,7 @@ internal class CsvFile
         return false;
     }
 
-    public bool Export(string path, IVocabularyBook book)
+    public bool Export(string path, Book book)
     {
         try
         {
@@ -114,7 +113,7 @@ internal class CsvFile
             using (CsvWriter writer = new CsvWriter(file, CultureInfo.CurrentCulture))
             {
                 writer.Context.RegisterClassMap(new EntryMap(book.MotherTongue, book.ForeignLanguage));
-                writer.WriteRecords(book.Words.Select((IVocabularyWord x) => new Entry(x.MotherTongueText, x.ForeignLangCombined)));
+                writer.WriteRecords(book.Words.Select(x => new Entry(x.MotherTongueText, x.ForeignLangCombined)));
             }
 
             return true;

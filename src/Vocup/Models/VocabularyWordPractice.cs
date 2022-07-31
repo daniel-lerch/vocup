@@ -1,16 +1,14 @@
-﻿using Vocup.Models.Legacy;
-
-namespace Vocup.Models;
+﻿namespace Vocup.Models;
 
 public class VocabularyWordPractice
 {
-    public VocabularyWordPractice(IVocabularyWord word)
+    public VocabularyWordPractice(Word word)
     {
         VocabularyWord = word;
         WrongInput = string.Empty;
     }
 
-    public IVocabularyWord VocabularyWord { get; }
+    public Word VocabularyWord { get; }
     public PracticeResult PracticeResult { get; set; }
     public string WrongInput { get; set; }
 }

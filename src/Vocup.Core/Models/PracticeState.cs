@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Vocup.Models.Legacy;
+namespace Vocup.Models;
 
 public enum PracticeState
 {
