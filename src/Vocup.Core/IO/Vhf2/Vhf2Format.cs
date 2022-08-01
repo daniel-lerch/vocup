@@ -3,6 +3,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Vocup.Models;
 
 namespace Vocup.IO.Vhf2;
 
@@ -26,7 +27,7 @@ internal partial class Vhf2Format : BookFileFormat
         version = new Version(2, 0);
     }
 
-    internal override async ValueTask<BookContext> ReadBookAsync(FileStream stream, string? vhrPath)
+    internal override async ValueTask<(Book book, string? vhrCode)> ReadBookAsync(Stream stream, string? fileName, string? vhrPath)
     {
         try
         {
@@ -60,11 +61,7 @@ internal partial class Vhf2Format : BookFileFormat
             }
             if (jsonBook == null) throw new VhfFormatException(VhfError.InvalidJsonBook);
 
-            return new BookContext(jsonBook.ToBook())
-            {
-                FileFormat = this,
-                FileStream = stream
-            };
+            return (jsonBook.ToBook(), null);
         }
         catch (InvalidDataException ex)
         {
@@ -76,12 +73,9 @@ internal partial class Vhf2Format : BookFileFormat
         }
     }
 
-    internal override async ValueTask WriteBookAsync(BookContext bookContext, string? vhrPath)
+    internal override async ValueTask WriteBookAsync(Book book, Stream stream, string? fileName, string? vhrCode, string? vhrPath)
     {
-        if (bookContext.FileStream == null)
-            throw new ArgumentNullException(nameof(bookContext) + "." + nameof(bookContext.FileStream), "You have to select a file before saving");
-
-        using var archive = new ZipArchive(bookContext.FileStream, ZipArchiveMode.Create);
+        using var archive = new ZipArchive(stream, ZipArchiveMode.Create);
 
         ZipArchiveEntry versionFile = archive.CreateEntry("VERSION");
         using (var writer = new StreamWriter(versionFile.Open()))
@@ -92,6 +86,6 @@ internal partial class Vhf2Format : BookFileFormat
 
         ZipArchiveEntry bookFile = archive.CreateEntry("book.json");
         using Stream bookStream = bookFile.Open();
-        await JsonSerializer.SerializeAsync(bookStream, bookContext.Book, options).ConfigureAwait(false);
+        await JsonSerializer.SerializeAsync(bookStream, book, options).ConfigureAwait(false);
     }
 }

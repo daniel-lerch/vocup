@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Vocup.Models;
-using Vocup.Models.Legacy;
 using Vocup.Properties;
 
 namespace Vocup.Forms;

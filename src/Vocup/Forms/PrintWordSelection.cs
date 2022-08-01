@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using Vocup.IO;
 using Vocup.Models;
 using Vocup.Properties;
 using Vocup.Util;
@@ -12,14 +13,16 @@ namespace Vocup.Forms;
 
 public partial class PrintWordSelection : Form
 {
+    BookContext bookContext;
     Book book;
 
-    public PrintWordSelection(Book book)
+    public PrintWordSelection(BookContext bookContext)
     {
         InitializeComponent();
         Icon = Icon.FromHandle(Icons.Print.GetHicon());
 
-        this.book = book;
+        this.bookContext = bookContext;
+        book = bookContext.Book;
 
         ListBox.BeginUpdate();
         foreach (Word word in book.Words)
@@ -69,7 +72,7 @@ public partial class PrintWordSelection : Form
             invertSides = RbAskForMotherTongue.Checked;
 
             PrintList.PrinterSettings = dialog.PrinterSettings;
-            PrintList.DocumentName = book.Name ?? Words.Vocup;
+            PrintList.DocumentName = bookContext.Name ?? Words.Vocup;
             PrintList.Print();
         }
     }
@@ -142,7 +145,7 @@ public partial class PrintWordSelection : Form
         using (Font titleFont = new Font("Arial", 12, FontStyle.Bold))
         using (StringFormat centerFormat = new StringFormat() { Alignment = StringAlignment.Center })
         {
-            string name = string.IsNullOrWhiteSpace(book.Name) ? "" : book.Name + ": ";
+            string name = string.IsNullOrWhiteSpace(bookContext.Name) ? "" : bookContext.Name + ": ";
             string left = invertSides ? book.ForeignLanguage : book.MotherTongue;
             string right = invertSides ? book.MotherTongue : book.ForeignLanguage;
             string title = $"{name}{left} - {right}";

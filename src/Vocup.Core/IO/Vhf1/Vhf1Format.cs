@@ -16,7 +16,7 @@ internal class Vhf1Format : BookFileFormat
 
     private Vhf1Format() { }
 
-    internal override async ValueTask<BookContext> ReadBookAsync(FileStream stream, string? vhrPath)
+    internal override async ValueTask<(Book book, string? vhrCode)> ReadBookAsync(Stream stream, string? fileName, string? vhrPath)
     {
         using var reader = new StringReader(await ReadAndDecryptAsync(stream).ConfigureAwait(false));
 
@@ -60,39 +60,30 @@ internal class Vhf1Format : BookFileFormat
                     : new[] { new Synonym(value: columns[1]), new Synonym(value: columns[2]) }));
         }
 
-        BookContext bookContext = new(new Book(motherTongue, foreignLanguage, words))
-        {
-            FileFormat = this,
-            FileStream = stream,
-            VhrCode = vhrCode,
-        };
+        Book book = new(motherTongue, foreignLanguage, words);
 
         // Read results from .vhr file
 
-        if (!string.IsNullOrWhiteSpace(bookContext.VhrCode) && !string.IsNullOrWhiteSpace(vhrPath)
-            && !await ReadResults(bookContext, stream.Name, vhrPath).ConfigureAwait(false))
+        if (!string.IsNullOrWhiteSpace(fileName) && !string.IsNullOrWhiteSpace(vhrCode) && !string.IsNullOrWhiteSpace(vhrPath))
         {
-            bookContext.VhrCode = null;
+            vhrCode = await ReadResults(book, fileName, vhrCode, vhrPath).ConfigureAwait(false);
         }
 
-        return bookContext;
+        return (book, vhrCode);
     }
 
-    internal override async ValueTask WriteBookAsync(BookContext bookContext, string? vhrPath)
+    internal override async ValueTask WriteBookAsync(Book book, Stream stream, string? fileName, string? vhrCode, string? vhrPath)
     {
-        if (bookContext.FileStream == null)
-            throw new ArgumentNullException(nameof(bookContext) + "." + nameof(bookContext.FileStream), "You have to select a file before saving");
-
         string content;
 
         using (var writer = new StringWriter())
         {
             writer.WriteLine("1.0");
-            writer.WriteLine(bookContext.VhrCode);
-            writer.WriteLine(bookContext.Book.MotherTongue);
-            writer.WriteLine(bookContext.Book.ForeignLanguage);
+            writer.WriteLine(vhrCode);
+            writer.WriteLine(book.MotherTongue);
+            writer.WriteLine(book.ForeignLanguage);
 
-            foreach (Word word in bookContext.Book.Words)
+            foreach (Word word in book.Words)
             {
                 writer.Write(word.MotherTongue[0].Value);
                 writer.Write('#');
@@ -108,21 +99,45 @@ internal class Vhf1Format : BookFileFormat
             content = writer.ToString();
         }
 
-        await EncryptAndWriteAsync(bookContext.FileStream, content).ConfigureAwait(false);
+        await EncryptAndWriteAsync(stream, content).ConfigureAwait(false);
 
         // Write results to a .vhr file
 
-        if (!string.IsNullOrWhiteSpace(bookContext.VhrCode) && !string.IsNullOrWhiteSpace(vhrPath))
+        if (!string.IsNullOrWhiteSpace(fileName) && !string.IsNullOrWhiteSpace(vhrCode) && !string.IsNullOrWhiteSpace(vhrPath))
         {
-            await WriteResults(bookContext, bookContext.FileStream.Name, vhrPath).ConfigureAwait(false);
+            await WriteResults(book, fileName, vhrCode, vhrPath).ConfigureAwait(false);
         }
     }
 
-    private static async Task<bool> ReadResults(BookContext bookContext, string fileName, string vhrPath)
+    public string GenerateVhrCode()
+    {
+        int number1 = '0', number2 = '9';
+        int bigLetter1 = 'A', bigLetter2 = 'Z';
+        int smallLetter1 = 'a', smallLetter2 = 'z';
+
+        Span<char> code = stackalloc char[24];
+
+        for (int i = 0; i < code.Length;)
+        {
+            // No need for RNGCryptoServiceProvider here because this is not security critical.
+            int character = Random.Shared.Next(number1, smallLetter2 + 1);
+            if (character >= number1 && character <= number2 ||
+                character >= bigLetter1 && character <= bigLetter2 ||
+                character >= smallLetter1 && character <= smallLetter2)
+            {
+                code[i] = (char)character;
+                i++;
+            }
+        }
+
+        return new string(code);
+    }
+
+    private async Task<string?> ReadResults(Book book, string fileName, string vhrCode, string vhrPath)
     {
         try
         {
-            using var file = new FileStream(Path.Combine(vhrPath, bookContext.VhrCode + ".vhr"), FileMode.Open, FileAccess.Read, FileShare.Read);
+            using var file = new FileStream(Path.Combine(vhrPath, vhrCode + ".vhr"), FileMode.Open, FileAccess.Read, FileShare.Read);
             using var reader = new StringReader(await ReadAndDecryptAsync(file).ConfigureAwait(false));
 
             string? path = reader.ReadLine();
@@ -131,7 +146,7 @@ internal class Vhf1Format : BookFileFormat
             if (string.IsNullOrWhiteSpace(path) ||
                 string.IsNullOrWhiteSpace(mode) || !int.TryParse(mode, out int imode) || imode < 1 || imode > 2)
             {
-                return false; // Ignore files with invalid header
+                return null; // Ignore files with invalid header
             }
 
             var results = new List<(int stateNumber, DateTime date)>();
@@ -143,20 +158,20 @@ internal class Vhf1Format : BookFileFormat
                 string[] columns = line.Split('#');
                 if (columns.Length != 2 || !int.TryParse(columns[0], out int state) || state < 0)
                 {
-                    return false;
+                    return null;
                 }
                 DateTime time = default;
                 if (!string.IsNullOrWhiteSpace(columns[1])
                     && !DateTime.TryParseExact(columns[1], "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out time))
                 {
-                    return false;
+                    return null;
                 }
                 results.Add((state, time));
             }
 
-            if (bookContext.Book.Words.Count != results.Count)
+            if (book.Words.Count != results.Count)
             {
-                return false;
+                return null;
             }
 
             FileInfo vhfInfo = new FileInfo(fileName);
@@ -164,16 +179,16 @@ internal class Vhf1Format : BookFileFormat
 
             if (!vhfInfo.FullName.Equals(pathInfo.FullName, StringComparison.OrdinalIgnoreCase) && pathInfo.Exists)
             {
-                bookContext.GenerateVhrCode(); // Save new results file if the old one is in use by another file
+                vhrCode = GenerateVhrCode(); // Save new results file if the old one is in use by another file
             }
 
-            bookContext.Book.PracticeMode = imode == 2 ? PracticeMode.AskForMotherTongue : PracticeMode.AskForForeignLanguage;
+            book.PracticeMode = imode == 2 ? PracticeMode.AskForMotherTongue : PracticeMode.AskForForeignLanguage;
 
-            for (int i = 0; i < bookContext.Book.Words.Count; i++)
+            for (int i = 0; i < book.Words.Count; i++)
             {
-                Word word = bookContext.Book.Words[i];
+                Word word = book.Words[i];
 
-                IList<Synonym> synonyms = bookContext.Book.PracticeMode == PracticeMode.AskForForeignLanguage ?
+                IList<Synonym> synonyms = book.PracticeMode == PracticeMode.AskForForeignLanguage ?
                     word.ForeignLanguage :
                     word.MotherTongue;
 
@@ -183,28 +198,28 @@ internal class Vhf1Format : BookFileFormat
                 }
             }
 
-            return true;
+            return vhrCode;
         }
         catch (Exception ex) when (ex is IOException || ex is VhfFormatException)
         {
-            return false; // Practice results are useful but not necessary so we ignore file not found and all other exceptions
+            return null; // Practice results are useful but not necessary so we ignore file not found and all other exceptions
         }
     }
 
-    private static async ValueTask WriteResults(BookContext bookContext, string fileName, string vhrPath)
+    private async ValueTask WriteResults(Book book, string fileName, string vhrCode, string vhrPath)
     {
         string results;
 
         using (var writer = new StringWriter())
         {
             writer.WriteLine(fileName);
-            writer.Write((int)bookContext.Book.PracticeMode + 1);
-
-            foreach (Word word in bookContext.Book.Words)
+            writer.Write(book.PracticeMode == PracticeMode.AskForMotherTongue ? 2 : 1);
+            
+            foreach (Word word in book.Words)
             {
                 writer.WriteLine();
 
-                IList<Synonym> synonyms = bookContext.Book.PracticeMode == PracticeMode.AskForForeignLanguage ?
+                IList<Synonym> synonyms = book.PracticeMode == PracticeMode.AskForForeignLanguage ?
                     word.ForeignLanguage :
                     word.MotherTongue;
 
@@ -220,7 +235,7 @@ internal class Vhf1Format : BookFileFormat
             results = writer.ToString();
         }
 
-        string absoluteFileName = Path.Combine(vhrPath, bookContext.VhrCode + ".vhr");
+        string absoluteFileName = Path.Combine(vhrPath, vhrCode + ".vhr");
         using FileStream file = new(absoluteFileName, FileMode.Create, FileAccess.Write, FileShare.None);
         await EncryptAndWriteAsync(file, results).ConfigureAwait(false);
     }

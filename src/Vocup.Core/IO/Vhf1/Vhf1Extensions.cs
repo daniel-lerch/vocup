@@ -5,30 +5,6 @@ namespace Vocup.IO.Vhf1;
 
 internal static class Vhf1Extensions
 {
-    public static void GenerateVhrCode(this BookContext bookContext)
-    {
-        int number1 = '0', number2 = '9';
-        int bigLetter1 = 'A', bigLetter2 = 'Z';
-        int smallLetter1 = 'a', smallLetter2 = 'z';
-
-        Span<char> code = stackalloc char[24];
-
-        for (int i = 0; i < code.Length;)
-        {
-            // No need for RNGCryptoServiceProvider here because this is not security critical.
-            int character = Random.Shared.Next(number1, smallLetter2 + 1);
-            if (character >= number1 && character <= number2 ||
-                character >= bigLetter1 && character <= bigLetter2 ||
-                character >= smallLetter1 && character <= smallLetter2)
-            {
-                code[i] = (char)character;
-                i++;
-            }
-        }
-
-        bookContext.VhrCode = new string(code);
-    }
-
     public static int GetPracticeStateNumber(this Synonym synonym)
     {
         int practiceStateNumber = 0;

@@ -50,9 +50,6 @@ public class Book : ReactiveObject
         return HashCode.Combine(MotherTongue, ForeignLanguage, PracticeMode, Words);
     }
 
-    [Obsolete] public string? FilePath { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    [Obsolete] public string? Name => throw new NotImplementedException();
-    [Obsolete] public bool UnsavedChanges { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     [Obsolete] public int Unpracticed => throw new NotImplementedException();
     [Obsolete] public int WronglyPracticed => throw new NotImplementedException();
     [Obsolete] public int CorrectlyPracticed => throw new NotImplementedException();

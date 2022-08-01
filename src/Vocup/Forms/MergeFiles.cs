@@ -8,8 +8,6 @@ using Vocup.Models;
 using Vocup.Properties;
 using Vocup.Util;
 
-#nullable disable
-
 namespace Vocup.Forms;
 
 public partial class MergeFiles : Form
@@ -144,7 +142,7 @@ public partial class MergeFiles : Form
 
         Cursor.Current = Cursors.WaitCursor;
 
-        BookContext result = new(new Book(TbMotherTongue.Text, TbForeignLang.Text));
+        BookContext result = new(new Book(TbMotherTongue.Text, TbForeignLang.Text), BookFileFormat.Vhf1);
 
         foreach (BookContext context in books)
         {
@@ -156,13 +154,17 @@ public partial class MergeFiles : Form
 
         try
         {
-            new BookStorage().SaveAsync(result, path, BookFileFormat.Vhf1, Program.Settings.VhrPath);
+            new BookStorage().SaveAsync(result, path, Program.Settings.VhrPath).AsTask().GetAwaiter().GetResult();
             DialogResult = DialogResult.OK;
         }
         catch (Exception)
         {
             MessageBox.Show(Messages.VocupFileWriteError, Messages.VocupFileWriteErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
             DialogResult = DialogResult.Abort;
+        }
+        finally
+        {
+            result.DisposeAsync().AsTask().GetAwaiter().GetResult();
         }
 
         Cursor.Current = Cursors.Default;

@@ -39,8 +39,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     public MainFormViewModel ViewModel { get; set; }
     object IViewFor.ViewModel { get => ViewModel; set => ViewModel = (MainFormViewModel)value; }
 
-    public BookContext BookContext { get; set; }
-    public Book CurrentBook { get; private set; }
+    public BookContext CurrentBook { get; private set; }
     public VocabularyBookController CurrentController { get; private set; }
     public StatisticsPanel StatisticsPanel => GroupStatistics;
     public TextBox SearchText => TbSearchWord;
@@ -94,21 +93,21 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         //else
         //    Text = $"{Words.Vocup} - {value}";
     }
-    public void LoadBook(Book book)
+    public void LoadBook(BookContext bookContext)
     {
-        VocabularyBookController controller = new VocabularyBookController(book) { Parent = this };
+        VocabularyBookController controller = new VocabularyBookController(bookContext) { Parent = this };
         SplitContainer.Panel2.Controls.Add(controller.ListView);
         controller.ListView.PerformLayout();
         controller.ListView.BringToFront();
 
-        CurrentBook = book;
+        CurrentBook = bookContext;
         CurrentController = controller;
 
         VocabularyBookLoaded(true);
 
-        FileTreeView.SelectedPath = book.FilePath;
+        FileTreeView.SelectedPath = bookContext.FilePath;
 
-        Program.Settings.LastFile = book.FilePath;
+        Program.Settings.LastFile = bookContext.FilePath;
     }
     public void UnloadBook(bool fullUnload)
     {
@@ -449,7 +448,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         {
             if (saveDialog.ShowDialog() == DialogResult.OK)
             {
-                CsvFile.Instance.Export(saveDialog.FileName, CurrentBook);
+                CsvFile.Instance.Export(saveDialog.FileName, CurrentBook.Book);
             }
         }
     }
@@ -504,7 +503,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         }
         else // ListView durchsuchen
         {
-            int index = CurrentBook.Words.NextIndexOf(word =>
+            int index = CurrentBook.Book.Words.NextIndexOf(word =>
             {
                 return word.MotherTongueText.ToUpper().Contains(search_text)
                        || word.ForeignLangText.ToUpper().Contains(search_text)
@@ -513,7 +512,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
 
             if (index != -1)
             {
-                ListViewItem item = CurrentController.GetController(CurrentBook.Words[index]).ListViewItem;
+                ListViewItem item = CurrentController.GetController(CurrentBook.Book.Words[index]).ListViewItem;
                 item.Selected = true;
                 item.Focused = true;
                 item.EnsureVisible();
@@ -550,13 +549,10 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     #region Utility methods
     public void ReadFile(string path)
     {
-        Book book = new Book();
+        BookContext bookContext =
+            new BookStorage().LoadAsync(path, Program.Settings.VhrPath).AsTask().GetAwaiter().GetResult();
 
-        if (VocabularyFile.ReadVhfFile(path, book))
-        {
-            VocabularyFile.ReadVhrFile(book);
-            LoadBook(book);
-        }
+        LoadBook(bookContext);
     }
 
     private bool EnsureSaved()
@@ -587,15 +583,19 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
             using (SaveFileDialog save = new SaveFileDialog
             {
                 Title = Words.SaveVocabularyBook,
-                FileName = CurrentBook.MotherTongue + " - " + CurrentBook.ForeignLanguage,
+                FileName = CurrentBook.Book.MotherTongue + " - " + CurrentBook.Book.ForeignLanguage,
                 InitialDirectory = Program.Settings.VhfPath,
                 Filter = Words.VocupVocabularyBookFile + " (*.vhf)|*.vhf"
             })
             {
                 if (save.ShowDialog() == DialogResult.OK)
                 {
-                    CurrentBook.FilePath = save.FileName;
-                    CurrentBook.GenerateVhrCode();
+                    Cursor.Current = Cursors.WaitCursor;
+                    new BookStorage().SaveAsync(CurrentBook, save.FileName, Program.Settings.VhrPath).AsTask().GetAwaiter().GetResult();
+                    Cursor.Current = Cursors.Default;
+                    CurrentBook.UnsavedChanges = false;
+                    Program.Settings.LastFile = CurrentBook.FilePath;
+                    return true;
                 }
                 else
                 {
@@ -603,23 +603,14 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
                 }
             }
         }
-
-        Cursor.Current = Cursors.WaitCursor;
-
-        if (VocabularyFile.WriteVhfFile(CurrentBook.FilePath, CurrentBook) &&
-            VocabularyFile.WriteVhrFile(CurrentBook))
-        {
-            CurrentBook.UnsavedChanges = false;
-
-            Program.Settings.LastFile = CurrentBook.FilePath;
-
-            Cursor.Current = Cursors.Default;
-            return true;
-        }
         else
         {
+            Cursor.Current = Cursors.WaitCursor;
+            new BookStorage().SaveAsync(CurrentBook, Program.Settings.VhrPath).AsTask().GetAwaiter().GetResult();
             Cursor.Current = Cursors.Default;
-            return false;
+            CurrentBook.UnsavedChanges = false;
+            Program.Settings.LastFile = CurrentBook.FilePath;
+            return true;
         }
     }
 
@@ -664,7 +655,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
                 Program.TrackingService.Action("/book/new", "Book/Create");
 
                 // VocabularyBookSettings enables notification on creation
-                LoadBook(book);
+                LoadBook(new BookContext(book, BookFileFormat.Vhf1));
 
                 BtnAddWord.Focus();
             }
@@ -685,17 +676,17 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
                 {
                     Program.TrackingService.Action("/book", "Book/Import");
 
-                    VocabularyFile.ImportCsvFile(openDialog.FileName, CurrentBook, false, ansiEncoding);
+                    CsvFile.Instance.Import(openDialog.FileName, CurrentBook.Book, false, ansiEncoding);
                 }
                 else
                 {
                     Program.TrackingService.Action("/book/new", "Book/Import");
 
-                    Book book = new Book();
-                    if (VocabularyFile.ImportCsvFile(openDialog.FileName, book, true, ansiEncoding))
+                    BookContext bookContext = new(new Book(string.Empty, string.Empty), BookFileFormat.Vhf1);
+                    if (CsvFile.Instance.Import(openDialog.FileName, bookContext.Book, true, ansiEncoding))
                     {
-                        book.UnsavedChanges = true;
-                        LoadBook(book);
+                        bookContext.UnsavedChanges = true;
+                        LoadBook(bookContext);
                     }
                 }
             }
@@ -704,14 +695,14 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
 
     private void AddWord()
     {
-        using (var dialog = new AddWordDialog(CurrentBook) { Owner = this }) dialog.ShowDialog();
+        using (var dialog = new AddWordDialog(CurrentBook.Book) { Owner = this }) dialog.ShowDialog();
         BtnAddWord.Focus();
     }
 
     public void EditWord()
     {
         Word selected = (Word)CurrentController.ListView.SelectedItem.Tag;
-        using (var dialog = new EditWordDialog(CurrentBook, selected) { Owner = this }) dialog.ShowDialog();
+        using (var dialog = new EditWordDialog(CurrentBook.Book, selected) { Owner = this }) dialog.ShowDialog();
         CurrentController.ListView.SelectedItem.EnsureVisible();
         BtnAddWord.Focus();
     }
@@ -720,10 +711,10 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     {
         int index = CurrentController.ListView.SelectedItem.Index;
         Word selected = (Word)CurrentController.ListView.SelectedItem.Tag;
-        CurrentBook.Words.Remove(selected);
+        CurrentBook.Book.Words.Remove(selected);
 
         // Limit index of the deleted word to the highest possible index
-        index = Math.Min(index, CurrentBook.Words.Count - 1);
+        index = Math.Min(index, CurrentBook.Book.Words.Count - 1);
 
         foreach (ListViewItem item in CurrentController.ListView.Items)
         {
@@ -735,13 +726,13 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
 
     private void EditBook()
     {
-        using (var dialog = new VocabularyBookSettings(CurrentBook) { Owner = this }) dialog.ShowDialog();
+        using (var dialog = new VocabularyBookSettings(CurrentBook.Book) { Owner = this }) dialog.ShowDialog();
         BtnAddWord.Focus();
     }
 
     private void PracticeWords()
     {
-        using (PracticeCountDialog countDialog = new PracticeCountDialog(CurrentBook))
+        using (PracticeCountDialog countDialog = new PracticeCountDialog(CurrentBook.Book))
         {
             if (countDialog.ShowDialog() == DialogResult.OK)
             {
@@ -749,11 +740,11 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
 
                 CurrentController.ListView.Visible = false;
 
-                using (var dialog = new PracticeDialog(CurrentBook, practiceList) { Owner = this }) dialog.ShowDialog();
+                using (var dialog = new PracticeDialog(CurrentBook.Book, practiceList) { Owner = this }) dialog.ShowDialog();
 
                 if (Program.Settings.PracticeShowResultList)
                 {
-                    using (var dialog = new PracticeResultList(CurrentBook, practiceList)) dialog.ShowDialog();
+                    using (var dialog = new PracticeResultList(CurrentBook.Book, practiceList)) dialog.ShowDialog();
                 }
 
                 CurrentController.ListView.Visible = true;
