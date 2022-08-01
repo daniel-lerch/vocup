@@ -14,8 +14,6 @@ using Vocup.Properties;
 using Vocup.Util;
 using Vocup.ViewModels;
 
-#nullable disable
-
 namespace Vocup;
 
 public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
@@ -26,18 +24,59 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     {
         InitializeComponent();
         ViewModel = new MainFormViewModel();
-        this.Bind(ViewModel, vm => vm.SearchText, x => x.SearchText.Text);
+
+#pragma warning disable CA1416 // Validate platform compatibility
+        this.OneWayBind(ViewModel, vm => vm.Title, x => x.Text);
+
+        this.BindCommand(ViewModel, vm => vm.OpenCommand, x => x.TsmiOpenBook);
+        this.BindCommand(ViewModel, vm => vm.OpenCommand, x => x.TsbOpenBook);
         this.BindCommand(ViewModel, vm => vm.SaveCommand, x => x.TsmiSave);
-        this.WhenActivated(d => d(ViewModel.SaveChanges.RegisterHandler(interaction => { interaction.SetOutput(MessageBox.Show("Test") == DialogResult.OK); })));
+        this.BindCommand(ViewModel, vm => vm.SaveCommand, x => x.TsbSave);
+
+        this.WhenActivated(d => d(ViewModel.OpenFile.RegisterHandler(interaction =>
+        {
+            using OpenFileDialog open = new()
+            {
+                Title = Words.OpenVocabularyBook,
+                InitialDirectory = Program.Settings.VhfPath,
+                Filter = Words.VocupVocabularyBookFile + " (*.vhf)|*.vhf"
+            };
+
+            if (open.ShowDialog() == DialogResult.OK)
+                interaction.SetOutput(open.FileName);
+            else
+                interaction.SetOutput(null);
+        })));
+
+        this.WhenActivated(d => d(ViewModel.SaveAndContinue.RegisterHandler(interaction =>
+        {
+            DialogResult result = MessageBox.Show(Messages.GeneralSaveChanges, Messages.GeneralSaveChangesT, MessageBoxButtons.YesNoCancel);
+
+            if (result == DialogResult.Yes)
+            {
+                interaction.SetOutput(SaveFile(false)); // Save file and return true which means to continue with the next action.
+            }
+            else if (result == DialogResult.No)
+            {
+                interaction.SetOutput(true); // Do not save file and return true.
+            }
+            else
+            {
+                interaction.SetOutput(false); // Return false to indicate the users choice to stay at the current screen.
+            }
+        })));
+#pragma warning restore CA1416 // Validate platform compatibility
 
         FileTreeView.RootPath = Program.Settings.VhfPath;
 
-        if (AppInfo.TryGetVocupInstallation(out Version version, out _, out _) && version < AppInfo.Version)
+        if (AppInfo.TryGetVocupInstallation(out Version? version, out _, out _) && version < AppInfo.Version)
             StatusLbOldVersion.Visible = true;
     }
 
-    public MainFormViewModel ViewModel { get; set; }
-    object IViewFor.ViewModel { get => ViewModel; set => ViewModel = (MainFormViewModel)value; }
+    public MainFormViewModel? ViewModel { get; set; }
+    object? IViewFor.ViewModel { get => ViewModel; set => ViewModel = value as MainFormViewModel; }
+
+#nullable disable
 
     public BookContext CurrentBook { get; private set; }
     public VocabularyBookController CurrentController { get; private set; }
@@ -347,9 +386,6 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     private void BtnBookSettings_Click(object sender, EventArgs e) => EditBook();
     private void TsmiBookOptions_Click(object sender, EventArgs e) => EditBook();
 
-    private void TsbOpenBook_Click(object sender, EventArgs e) => OpenFile();
-    private void TsmiOpenBook_Click(object sender, EventArgs e) => OpenFile();
-
     private void BtnAddWord_Click(object sender, EventArgs e) => AddWord();
     private void TsmiAddWord_Click(object sender, EventArgs e) => AddWord();
 
@@ -359,9 +395,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     private void BtnDeleteWord_Click(object sender, EventArgs e) => DeleteWord();
     private void TsmiDeleteWord_Click(object sender, EventArgs e) => DeleteWord();
 
-    private void TsmiSave_Click(object sender, EventArgs e) => SaveFile(false);
     private void TsmiSaveAs_Click(object sender, EventArgs e) => SaveFile(true);
-    private void TsbSave_Click(object sender, EventArgs e) => SaveFile(false);
 
     private void BtnPractice_Click(object sender, EventArgs e) => PracticeWords();
     private void TsmiPractice_Click(object sender, EventArgs e) => PracticeWords();
@@ -478,7 +512,6 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
             }
 
             ReadFile(Path.Combine(Application.StartupPath, "Resources", "easter_egg.vhf"));
-            CurrentBook.FilePath = null;
             VocabularyBookName(Words.EasterEgg);
 
             TbSearchWord.Text = "";

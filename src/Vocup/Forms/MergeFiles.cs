@@ -44,16 +44,16 @@ public partial class MergeFiles : Form
             foreach (string file in addFile.FileNames)
             {
                 BookContext bookContext = new BookStorage().LoadAsync(file, Program.Settings.VhrPath).AsTask().GetAwaiter().GetResult();
-                BookContext conflict = books.Where(x => x.FileStream.Name.Equals(bookContext.FileStream.Name, StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+                BookContext conflict = books.Where(x => x.FilePath.Equals(bookContext.FilePath, StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
                 if (conflict != null)
                 {
                     if (MessageBox.Show(Messages.MergeOverride, Messages.MergeOverrideT, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                         continue;
                     books.Remove(conflict);
-                    LbFiles.Items.Remove(conflict.FileStream.Name);
+                    LbFiles.Items.Remove(conflict.FilePath);
                 }
                 books.Add(bookContext);
-                LbFiles.Items.Add(bookContext.FileStream.Name);
+                LbFiles.Items.Add(bookContext.FilePath);
             }
             ValidateInput();
         }
@@ -65,7 +65,7 @@ public partial class MergeFiles : Form
         while (LbFiles.SelectedItems.Count > 0)
         {
             string file = LbFiles.SelectedItems[0].ToString();
-            books.RemoveAll(x => x.FileStream.Name == file);
+            books.RemoveAll(x => x.FilePath == file);
             LbFiles.Items.Remove(file);
         }
 

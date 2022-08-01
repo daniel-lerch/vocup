@@ -199,7 +199,6 @@
             this.TsmiOpenBook.Image = global::Vocup.Properties.Icons.Open;
             this.TsmiOpenBook.Name = "TsmiOpenBook";
             resources.ApplyResources(this.TsmiOpenBook, "TsmiOpenBook");
-            this.TsmiOpenBook.Click += new System.EventHandler(this.TsmiOpenBook_Click);
             // 
             // TsmiCloseBook
             // 
@@ -213,7 +212,6 @@
             resources.ApplyResources(this.TsmiSave, "TsmiSave");
             this.TsmiSave.Image = global::Vocup.Properties.Icons.Save;
             this.TsmiSave.Name = "TsmiSave";
-            this.TsmiSave.Click += new System.EventHandler(this.TsmiSave_Click);
             // 
             // TsmiSaveAs
             // 
@@ -566,7 +564,6 @@
             resources.ApplyResources(this.TsbOpenBook, "TsbOpenBook");
             this.TsbOpenBook.Margin = new System.Windows.Forms.Padding(1);
             this.TsbOpenBook.Name = "TsbOpenBook";
-            this.TsbOpenBook.Click += new System.EventHandler(this.TsbOpenBook_Click);
             // 
             // TsbSave
             // 
@@ -575,7 +572,6 @@
             this.TsbSave.Image = global::Vocup.Properties.Icons.Save;
             this.TsbSave.Margin = new System.Windows.Forms.Padding(1);
             this.TsbSave.Name = "TsbSave";
-            this.TsbSave.Click += new System.EventHandler(this.TsbSave_Click);
             // 
             // toolStripSeparator1
             // 

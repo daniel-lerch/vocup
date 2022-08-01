@@ -50,9 +50,10 @@ public class Book : ReactiveObject
         return HashCode.Combine(MotherTongue, ForeignLanguage, PracticeMode, Words);
     }
 
-    [Obsolete] public int Unpracticed => throw new NotImplementedException();
-    [Obsolete] public int WronglyPracticed => throw new NotImplementedException();
-    [Obsolete] public int CorrectlyPracticed => throw new NotImplementedException();
-    [Obsolete] public int FullyPracticed => throw new NotImplementedException();
-    [Obsolete] public int NotFullyPracticed => throw new NotImplementedException();
+    // TODO implement change listeners
+    [Obsolete] public int Unpracticed => 0;
+    [Obsolete] public int WronglyPracticed => 0;
+    [Obsolete] public int CorrectlyPracticed => 0;
+    [Obsolete] public int FullyPracticed => 0;
+    [Obsolete] public int NotFullyPracticed => 0;
 }

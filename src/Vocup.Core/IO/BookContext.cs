@@ -1,30 +1,34 @@
-﻿using System;
+﻿using ReactiveUI;
+using ReactiveUI.Fody.Helpers;
+using System;
 using System.IO;
+using System.Reactive.Linq;
 using System.Threading.Tasks;
 using Vocup.Models;
 
 namespace Vocup.IO;
 
-public class BookContext : IAsyncDisposable
+public class BookContext : ReactiveObject, IAsyncDisposable
 {
-    public BookContext(Book book, BookFileFormat fileFormat)
-    {
-        Book = book;
-        FileFormat = fileFormat;
-    }
+    public BookContext(Book book, BookFileFormat fileFormat) : this(book, fileFormat, null, null) { }
 
-    public BookContext(Book book, BookFileFormat fileFormat, FileStream? fileStream, string? vhrCode)
+    internal BookContext(Book book, BookFileFormat fileFormat, FileStream? fileStream, string? vhrCode)
     {
         Book = book;
         FileFormat = fileFormat;
         FileStream = fileStream;
         VhrCode = vhrCode;
+
+        this.WhenAnyValue(x => x.FileStream).Select(x => x?.Name).ToPropertyEx(this, x => x.FilePath);
+        this.WhenAnyValue(x => x.FileStream).Select(x => Path.GetFileNameWithoutExtension(x?.Name)).ToPropertyEx(this, x => x.Name);
     }
 
     public Book Book { get; }
-    public BookFileFormat FileFormat { get; internal set; }
-    public FileStream? FileStream { get; internal set; }
-    public string? VhrCode { get; internal set; }
+    [Reactive] public BookFileFormat FileFormat { get; internal set; }
+    internal FileStream? FileStream { get; set; }
+    [Reactive] public string? VhrCode { get; internal set; }
+    [Reactive] public bool UnsavedChanges { get; set; } // TODO add change listener
+    [ObservableAsProperty] public string? FilePath { get; }
 
     public ValueTask DisposeAsync()
     {
@@ -34,7 +38,5 @@ public class BookContext : IAsyncDisposable
             return ValueTask.CompletedTask;
     }
 
-    [Obsolete] public string? FilePath { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    [Obsolete] public string? Name => throw new NotImplementedException();
-    [Obsolete] public bool UnsavedChanges { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    [Obsolete, ObservableAsProperty] public string? Name { get; }
 }
