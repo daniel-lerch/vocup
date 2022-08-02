@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Reactive;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vocup.Controls;
@@ -28,10 +29,31 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
 #pragma warning disable CA1416 // Validate platform compatibility
         this.OneWayBind(ViewModel, vm => vm.Title, x => x.Text);
 
+        this.OneWayBind(ViewModel, vm => vm.BookContext, x => x.GroupBook.Enabled, context => context != null);
+        this.OneWayBind(ViewModel, vm => vm.BookContext, x => x.GroupWord.Enabled, context => context != null);
+        this.OneWayBind(ViewModel, vm => vm.BookContext, x => x.TsmiAddWord.Enabled, context => context != null);
+        this.OneWayBind(ViewModel, vm => vm.BookContext, x => x.TsmiBookOptions.Enabled, context => context != null);
+        this.OneWayBind(ViewModel, vm => vm.BookContext, x => x.GroupBook.Enabled, context => context != null);
+        this.OneWayBind(ViewModel, vm => vm.BookContext, x => x.TsmiSaveAs.Enabled, context => context != null);
+
+        this.OneWayBind(ViewModel, vm => vm.BookContext.Book.Words.Count, x => x.GroupSearch.Enabled, count => count > 0);
+        this.OneWayBind(ViewModel, vm => vm.BookContext.Book.Words.Count, x => x.TsmiPrint.Enabled, count => count > 0);
+        this.OneWayBind(ViewModel, vm => vm.BookContext.Book.Words.Count, x => x.TsbPrint.Enabled, count => count > 0);
+        this.OneWayBind(ViewModel, vm => vm.BookContext.Book.Words.Count, x => x.TsmiExport.Enabled, count => count > 0);
+
+        this.OneWayBind(ViewModel, vm => vm.BookContext.Book.Unpracticed, x => x.StatisticsPanel.Unpracticed);
+        this.OneWayBind(ViewModel, vm => vm.BookContext.Book.WronglyPracticed, x => x.StatisticsPanel.WronglyPracticed);
+        this.OneWayBind(ViewModel, vm => vm.BookContext.Book.CorrectlyPracticed, x => x.StatisticsPanel.CorrectlyPracticed);
+        this.OneWayBind(ViewModel, vm => vm.BookContext.Book.FullyPracticed, x => x.StatisticsPanel.FullyPracticed);
+
         this.BindCommand(ViewModel, vm => vm.OpenCommand, x => x.TsmiOpenBook);
         this.BindCommand(ViewModel, vm => vm.OpenCommand, x => x.TsbOpenBook);
         this.BindCommand(ViewModel, vm => vm.SaveCommand, x => x.TsmiSave);
         this.BindCommand(ViewModel, vm => vm.SaveCommand, x => x.TsbSave);
+        this.BindCommand(ViewModel, vm => vm.CloseCommand, x => x.TsmiCloseBook);
+        this.BindCommand(ViewModel, vm => vm.PracticeCommand, x => x.TsmiPractice);
+        this.BindCommand(ViewModel, vm => vm.PracticeCommand, x => x.BtnPractice);
+        this.BindCommand(ViewModel, vm => vm.BookSettingsCommand, x => x.BtnBookSettings);
 
         this.WhenActivated(d => d(ViewModel.OpenFile.RegisterHandler(interaction =>
         {
@@ -65,6 +87,40 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
                 interaction.SetOutput(false); // Return false to indicate the users choice to stay at the current screen.
             }
         })));
+
+        this.WhenActivated(d => d(ViewModel.Practice.RegisterHandler(interaction =>
+        {
+            using (PracticeCountDialog countDialog = new(interaction.Input))
+            {
+                if (countDialog.ShowDialog() == DialogResult.OK)
+                {
+                    List<VocabularyWordPractice> practiceList = countDialog.PracticeList;
+
+                    CurrentController.ListView.Visible = false;
+
+                    using (PracticeDialog dialog = new(interaction.Input, practiceList) { Owner = this }) dialog.ShowDialog();
+
+                    if (Program.Settings.PracticeShowResultList)
+                    {
+                        using (PracticeResultList dialog = new(interaction.Input, practiceList)) dialog.ShowDialog();
+                    }
+
+                    CurrentController.ListView.Visible = true;
+                    BtnAddWord.Focus();
+                }
+
+                Program.TrackingService.Page("/book");
+            }
+
+            interaction.SetOutput(Unit.Default);
+        })));
+
+        this.WhenActivated(d => d(ViewModel.BookSettings.RegisterHandler(interaction =>
+        {
+            using (var dialog = new VocabularyBookSettings(interaction.Input) { Owner = this }) dialog.ShowDialog();
+            BtnAddWord.Focus();
+            interaction.SetOutput(Unit.Default);
+        })));
 #pragma warning restore CA1416 // Validate platform compatibility
 
         FileTreeView.RootPath = Program.Settings.VhfPath;
@@ -82,7 +138,6 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     public VocabularyBookController CurrentController { get; private set; }
     public StatisticsPanel StatisticsPanel => GroupStatistics;
     public TextBox SearchText => TbSearchWord;
-    public bool UnsavedChanges => CurrentBook?.UnsavedChanges ?? false;
 
     public void VocabularyWordSelected(bool value)
     {
@@ -90,31 +145,6 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         TsmiEditWord.Enabled = value;
         BtnDeleteWord.Enabled = value;
         TsmiDeleteWord.Enabled = value;
-    }
-    public void VocabularyBookLoaded(bool value)
-    {
-        GroupBook.Enabled = value;
-        GroupWord.Enabled = value;
-        TsmiAddWord.Enabled = value;
-        BtnBookSettings.Enabled = value;
-        TsmiBookOptions.Enabled = value;
-        TsmiCloseBook.Enabled = value;
-        TsmiSaveAs.Enabled = value;
-    }
-    public void VocabularyBookHasContent(bool value)
-    {
-        GroupSearch.Enabled = value;
-        if (!value) TbSearchWord.Text = "";
-
-        TsmiPrint.Enabled = value;
-        TsbPrint.Enabled = value;
-
-        TsmiExport.Enabled = value;
-    }
-    public void VocabularyBookPracticable(bool value)
-    {
-        BtnPractice.Enabled = value;
-        TsmiPractice.Enabled = value;
     }
     public void VocabularyBookHasFilePath(bool value)
     {
@@ -125,13 +155,6 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         TsmiSave.Enabled = value;
         TsbSave.Enabled = value;
     }
-    public void VocabularyBookName(string value)
-    {
-        //if (string.IsNullOrWhiteSpace(value))
-        //    Text = Words.Vocup;
-        //else
-        //    Text = $"{Words.Vocup} - {value}";
-    }
     public void LoadBook(BookContext bookContext)
     {
         VocabularyBookController controller = new VocabularyBookController(bookContext) { Parent = this };
@@ -141,8 +164,6 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
 
         CurrentBook = bookContext;
         CurrentController = controller;
-
-        VocabularyBookLoaded(true);
 
         FileTreeView.SelectedPath = bookContext.FilePath;
 
@@ -162,13 +183,9 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
 
         if (fullUnload)
         {
-            VocabularyBookLoaded(false);
             VocabularyWordSelected(false);
-            VocabularyBookHasContent(false);
-            VocabularyBookPracticable(false);
             VocabularyBookHasFilePath(false);
             VocabularyBookUnsavedChanges(false);
-            VocabularyBookName(null);
 
             // Accidentially overriding this value when the user already has chosen another file results in a stack overflow
             FileTreeView.SelectedPath = "";
@@ -263,7 +280,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
 
     private void Form_FormClosing(object sender, FormClosingEventArgs e)
     {
-        if (UnsavedChanges)
+        if (ViewModel.BookContext.UnsavedChanges)
         {
             e.Cancel = !EnsureSaved();
         }
@@ -287,7 +304,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
             // if FileTreeView.SelectedPath was assigned in IMainForm.LoadBook(VocabularyBook)
             if (CurrentBook.FilePath == e.FullName)
                 return;
-            if (UnsavedChanges && !EnsureSaved())
+            if (ViewModel.BookContext.UnsavedChanges && !EnsureSaved())
                 return;
 
             UnloadBook(false);
@@ -357,7 +374,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
                     FileTreeView.RootPath = Program.Settings.VhfPath;
 
                 //Autosave
-                if (Program.Settings.AutoSave && UnsavedChanges)
+                if (Program.Settings.AutoSave && ViewModel.BookContext.UnsavedChanges)
                 {
                     SaveFile(false);
                 }
@@ -383,9 +400,6 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     private void TsbCreateBook_Click(object sender, EventArgs e) => CreateBook();
     private void TsmiCreateBook_Click(object sender, EventArgs e) => CreateBook();
 
-    private void BtnBookSettings_Click(object sender, EventArgs e) => EditBook();
-    private void TsmiBookOptions_Click(object sender, EventArgs e) => EditBook();
-
     private void BtnAddWord_Click(object sender, EventArgs e) => AddWord();
     private void TsmiAddWord_Click(object sender, EventArgs e) => AddWord();
 
@@ -397,20 +411,8 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
 
     private void TsmiSaveAs_Click(object sender, EventArgs e) => SaveFile(true);
 
-    private void BtnPractice_Click(object sender, EventArgs e) => PracticeWords();
-    private void TsmiPractice_Click(object sender, EventArgs e) => PracticeWords();
-
     private void TsbPrint_Click(object sender, EventArgs e) => PrintFile();
     private void TsmiPrint_Click(object sender, EventArgs e) => PrintFile();
-
-    private void TsmiCloseBook_Click(object sender, EventArgs e)
-    {
-        if (UnsavedChanges && !EnsureSaved())
-            return;
-
-        UnloadBook(true);
-        Program.Settings.LastFile = string.Empty;
-    }
 
     private void TsmiMerge_Click(object sender, EventArgs e)
     {
@@ -458,7 +460,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
 
     private void TsmiExport_Click(object sender, EventArgs e)
     {
-        if (UnsavedChanges)
+        if (ViewModel.BookContext.UnsavedChanges)
         {
             DialogResult dialogResult = MessageBox.Show(Messages.CsvExportSave,
                 Messages.CsvExportSaveT, MessageBoxButtons.YesNoCancel);
@@ -503,20 +505,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     {
         string search_text = TbSearchWord.Text.ToUpper();
 
-        if (search_text == "EASTER EGG")
-        {
-            if (CurrentBook != null) // Save and close current book
-            {
-                SaveFile(false);
-                UnloadBook(true);
-            }
-
-            ReadFile(Path.Combine(Application.StartupPath, "Resources", "easter_egg.vhf"));
-            VocabularyBookName(Words.EasterEgg);
-
-            TbSearchWord.Text = "";
-        }
-        else if (search_text == "TRANSPARENT") // EasterEgg 2
+        if (search_text == "TRANSPARENT") // EasterEgg 2
         {
             while (Opacity > 0d)
             {
@@ -580,32 +569,6 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     #endregion
 
     #region Utility methods
-    public void ReadFile(string path)
-    {
-        BookContext bookContext =
-            new BookStorage().LoadAsync(path, Program.Settings.VhrPath).AsTask().GetAwaiter().GetResult();
-
-        LoadBook(bookContext);
-    }
-
-    private bool EnsureSaved()
-    {
-        DialogResult result = MessageBox.Show(Messages.GeneralSaveChanges, Messages.GeneralSaveChangesT, MessageBoxButtons.YesNoCancel);
-
-        if (result == DialogResult.Yes)
-        {
-            return SaveFile(false); // Save file and return true which means to continue with the next action.
-        }
-        else if (result == DialogResult.No)
-        {
-            return true; // Do not save file and return true.
-        }
-        else
-        {
-            return false; // Return false to indicate the users choice to stay at the current screen.
-        }
-    }
-
     private bool SaveFile(bool saveAsNewFile)
     {
         //Datei-Speichern-unter Dialogfeld öffnen
@@ -647,30 +610,6 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         }
     }
 
-    private void OpenFile()
-    {
-        using (OpenFileDialog open = new OpenFileDialog
-        {
-            Title = Words.OpenVocabularyBook,
-            InitialDirectory = Program.Settings.VhfPath,
-            Filter = Words.VocupVocabularyBookFile + " (*.vhf)|*.vhf"
-        })
-        {
-            if (open.ShowDialog() == DialogResult.OK)
-            {
-                if (CurrentBook != null)
-                {
-                    if (UnsavedChanges && !EnsureSaved())
-                        return;
-
-                    UnloadBook(false);
-                }
-
-                ReadFile(open.FileName);
-            }
-        }
-    }
-
     private void CreateBook()
     {
         using (VocabularyBookSettings dialog = new VocabularyBookSettings(out Book book))
@@ -679,8 +618,8 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
             {
                 if (CurrentBook != null)
                 {
-                    if (UnsavedChanges && !EnsureSaved())
-                        return;
+                    //if (UnsavedChanges && !EnsureSaved())
+                    //    return;
 
                     UnloadBook(false);
                 }
@@ -755,37 +694,6 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         }
 
         BtnAddWord.Focus();
-    }
-
-    private void EditBook()
-    {
-        using (var dialog = new VocabularyBookSettings(CurrentBook.Book) { Owner = this }) dialog.ShowDialog();
-        BtnAddWord.Focus();
-    }
-
-    private void PracticeWords()
-    {
-        using (PracticeCountDialog countDialog = new PracticeCountDialog(CurrentBook.Book))
-        {
-            if (countDialog.ShowDialog() == DialogResult.OK)
-            {
-                List<VocabularyWordPractice> practiceList = countDialog.PracticeList;
-
-                CurrentController.ListView.Visible = false;
-
-                using (var dialog = new PracticeDialog(CurrentBook.Book, practiceList) { Owner = this }) dialog.ShowDialog();
-
-                if (Program.Settings.PracticeShowResultList)
-                {
-                    using (var dialog = new PracticeResultList(CurrentBook.Book, practiceList)) dialog.ShowDialog();
-                }
-
-                CurrentController.ListView.Visible = true;
-                BtnAddWord.Focus();
-            }
-
-            Program.TrackingService.Page("/book");
-        }
     }
 
     private void EvaluationInfo()

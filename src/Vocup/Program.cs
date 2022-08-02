@@ -71,7 +71,7 @@ public static class Program
             FileInfo info = new FileInfo(args[0]);
             if (info.Extension == ".vhf")
             {
-                form.ReadFile(info.FullName);
+                form.ViewModel.OpenAsync(info.FullName).AsTask().GetAwaiter().GetResult();
             }
             else
             {
@@ -81,7 +81,7 @@ public static class Program
         }
         else if (Settings.StartScreen == (int)StartScreen.LastFile && File.Exists(Settings.LastFile))
         {
-            form.ReadFile(Settings.LastFile);
+            form.ViewModel.OpenAsync(Settings.LastFile).AsTask().GetAwaiter().GetResult();
         }
 
         Application.DoEvents();

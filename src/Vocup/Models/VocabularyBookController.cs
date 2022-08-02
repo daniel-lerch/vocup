@@ -39,7 +39,6 @@ public class VocabularyBookController : IDisposable
             _parent = value;
             _parent.SearchText.TextChanged += OnSearchTextChanged;
             OnPropertyChanged(this, new PropertyChangedEventArgs(null));
-            OnStatisticsChanged(this, new EventArgs());
             OnSelectionChanged(this, new EventArgs());
         }
     }
@@ -63,7 +62,6 @@ public class VocabularyBookController : IDisposable
         ListView.ForeignLang = BookContext.Book.ForeignLanguage;
         Parent?.VocabularyBookHasFilePath(!string.IsNullOrWhiteSpace(BookContext.FilePath));
         Parent?.VocabularyBookUnsavedChanges(BookContext.UnsavedChanges);
-        Parent?.VocabularyBookName(BookContext.Name);
 
         //if (VocabularyBook.UnsavedChanges && Program.Settings.AutoSave && !string.IsNullOrWhiteSpace(VocabularyBook.FilePath))
         //{
@@ -73,22 +71,6 @@ public class VocabularyBookController : IDisposable
         //        VocabularyBook.UnsavedChanges = false;
         //    }
         //}
-
-        OnStatisticsChanged(sender, EventArgs.Empty);
-    }
-
-    private void OnStatisticsChanged(object sender, EventArgs e)
-    {
-        if (Parent == null)
-            return;
-
-        Parent.StatisticsPanel.Unpracticed = BookContext.Book.Unpracticed;
-        Parent.StatisticsPanel.WronglyPracticed = BookContext.Book.WronglyPracticed;
-        Parent.StatisticsPanel.CorrectlyPracticed = BookContext.Book.CorrectlyPracticed;
-        Parent.StatisticsPanel.FullyPracticed = BookContext.Book.FullyPracticed;
-
-        Parent.VocabularyBookHasContent(BookContext.Book.Words.Count > 0);
-        Parent.VocabularyBookPracticable(BookContext.Book.NotFullyPracticed > 0);
     }
 
     private void OnSelectionChanged(object sender, EventArgs e)

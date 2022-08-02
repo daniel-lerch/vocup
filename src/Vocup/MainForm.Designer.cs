@@ -205,7 +205,6 @@
             resources.ApplyResources(this.TsmiCloseBook, "TsmiCloseBook");
             this.TsmiCloseBook.Image = global::Vocup.Properties.Icons.Cancel;
             this.TsmiCloseBook.Name = "TsmiCloseBook";
-            this.TsmiCloseBook.Click += new System.EventHandler(this.TsmiCloseBook_Click);
             // 
             // TsmiSave
             // 
@@ -321,14 +320,12 @@
             resources.ApplyResources(this.TsmiPractice, "TsmiPractice");
             this.TsmiPractice.Image = global::Vocup.Properties.Icons.LightningBolt;
             this.TsmiPractice.Name = "TsmiPractice";
-            this.TsmiPractice.Click += new System.EventHandler(this.TsmiPractice_Click);
             // 
             // TsmiBookOptions
             // 
             resources.ApplyResources(this.TsmiBookOptions, "TsmiBookOptions");
             this.TsmiBookOptions.Image = global::Vocup.Properties.Icons.FileSettings;
             this.TsmiBookOptions.Name = "TsmiBookOptions";
-            this.TsmiBookOptions.Click += new System.EventHandler(this.TsmiBookOptions_Click);
             // 
             // TsmiMerge
             // 
@@ -411,7 +408,6 @@
             resources.ApplyResources(this.BtnBookSettings, "BtnBookSettings");
             this.BtnBookSettings.Name = "BtnBookSettings";
             this.BtnBookSettings.UseVisualStyleBackColor = true;
-            this.BtnBookSettings.Click += new System.EventHandler(this.BtnBookSettings_Click);
             // 
             // BtnPractice
             // 
@@ -419,7 +415,6 @@
             resources.ApplyResources(this.BtnPractice, "BtnPractice");
             this.BtnPractice.Name = "BtnPractice";
             this.BtnPractice.UseVisualStyleBackColor = true;
-            this.BtnPractice.Click += new System.EventHandler(this.BtnPractice_Click);
             // 
             // GroupSearch
             // 
