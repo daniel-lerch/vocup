@@ -15,6 +15,8 @@ public partial class VocabularyBookSettings : Form, IViewFor<BookSettingsViewMod
 
     public VocabularyBookSettings(out Book book)
     {
+        InitializeComponent();
+
         ViewModel = new BookSettingsViewModel(new Book(string.Empty, string.Empty));
 
         Text = Words.CreateVocabularyBook;
@@ -32,6 +34,8 @@ public partial class VocabularyBookSettings : Form, IViewFor<BookSettingsViewMod
 
     public VocabularyBookSettings(Book book)
     {
+        InitializeComponent();
+
         ViewModel = new BookSettingsViewModel(book);
 
         Text = Words.EditVocabularyBook;

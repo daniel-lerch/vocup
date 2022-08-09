@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Nito.AsyncEx;
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
@@ -10,6 +11,7 @@ using Vocup.Forms;
 using Vocup.Models;
 using Vocup.Properties;
 using Vocup.Settings;
+using Vocup.Settings.Core;
 using Vocup.Util;
 
 namespace Vocup;
@@ -43,12 +45,12 @@ public static class Program
             return;
         }
 
-        SplashScreen splash = new SplashScreen();
+        SplashScreen splash = new();
         splash.Show();
         Application.DoEvents();
 
         var loader = new VocupSettingsLoader();
-        var settings = loader.LoadAsync().AsTask().GetAwaiter().GetResult();
+        VersionedSettings<VocupSettings> settings = AsyncContext.Run(() => loader.LoadAsync().AsTask());
         Settings = settings.Value;
 
         TrackingService = new TrackingService();
@@ -71,7 +73,7 @@ public static class Program
             FileInfo info = new FileInfo(args[0]);
             if (info.Extension == ".vhf")
             {
-                form.ViewModel.OpenAsync(info.FullName).AsTask().GetAwaiter().GetResult();
+                AsyncContext.Run(() => form.ViewModel.OpenAsync(info.FullName).AsTask());
             }
             else
             {
@@ -81,7 +83,7 @@ public static class Program
         }
         else if (Settings.StartScreen == (int)StartScreen.LastFile && File.Exists(Settings.LastFile))
         {
-            form.ViewModel.OpenAsync(Settings.LastFile).AsTask().GetAwaiter().GetResult();
+            AsyncContext.Run(() => form.ViewModel.OpenAsync(Settings.LastFile).AsTask());
         }
 
         Application.DoEvents();
@@ -89,9 +91,8 @@ public static class Program
         splash.Close();
         Application.Run(form);
 
-        // Calling .GetAwaiter().GetResult() does not work for ValueTasks
-        settings.DisposeAsync().AsTask().GetAwaiter().GetResult();
-        TrackingService.DisposeAsync().AsTask().GetAwaiter().GetResult();
+        AsyncContext.Run(() => settings.DisposeAsync().AsTask());
+        AsyncContext.Run(() => TrackingService.DisposeAsync().AsTask());
     }
 
     public static void ReleaseMutex()

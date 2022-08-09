@@ -59,10 +59,9 @@ public class BookStorageTests
         Book expected = GenerateSampleVhf1Book();
         string path = Path.Combine(Path.GetTempPath(), "Vocup_751e0198-5ed8-439d-9041-efb3d594c400.vhf");
 
-        await using (BookContext sampleContext = new(expected)
+        await using (BookContext sampleContext = new(expected, BookFileFormat.Vhf1)
         {
             VhrCode = "o5xqm7rdg6y9fecs9ykuuckv",
-            FileFormat = BookFileFormat.Vhf1,
             FileStream = new FileStream(path, FileMode.Create, FileAccess.ReadWrite, FileShare.Read)
         })
             await bookStorage.SaveAsync(sampleContext, tempPath).ConfigureAwait(false);
@@ -85,9 +84,8 @@ public class BookStorageTests
         Book expected = GenerateSampleVhf2Book();
         string path = Path.Combine(Path.GetTempPath(), "Vocup_d3afa6cf-a041-489f-8f39-aea5ed1c0ec5.vhf");
 
-        await using (BookContext sampleContext = new(expected)
+        await using (BookContext sampleContext = new(expected, BookFileFormat.Vhf2)
         {
-            FileFormat = BookFileFormat.Vhf2,
             FileStream = new FileStream(path, FileMode.Create, FileAccess.ReadWrite, FileShare.Read)
         })
             await bookStorage.SaveAsync(sampleContext, tempPath).ConfigureAwait(false);

@@ -32,7 +32,6 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         this.OneWayBind(ViewModel, vm => vm.BookContext, x => x.GroupBook.Enabled, context => context != null);
         this.OneWayBind(ViewModel, vm => vm.BookContext, x => x.GroupWord.Enabled, context => context != null);
         this.OneWayBind(ViewModel, vm => vm.BookContext, x => x.TsmiAddWord.Enabled, context => context != null);
-        this.OneWayBind(ViewModel, vm => vm.BookContext, x => x.TsmiBookOptions.Enabled, context => context != null);
         this.OneWayBind(ViewModel, vm => vm.BookContext, x => x.GroupBook.Enabled, context => context != null);
         this.OneWayBind(ViewModel, vm => vm.BookContext, x => x.TsmiSaveAs.Enabled, context => context != null);
 
@@ -53,6 +52,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         this.BindCommand(ViewModel, vm => vm.CloseCommand, x => x.TsmiCloseBook);
         this.BindCommand(ViewModel, vm => vm.PracticeCommand, x => x.TsmiPractice);
         this.BindCommand(ViewModel, vm => vm.PracticeCommand, x => x.BtnPractice);
+        this.BindCommand(ViewModel, vm => vm.BookSettingsCommand, x => x.TsmiBookOptions);
         this.BindCommand(ViewModel, vm => vm.BookSettingsCommand, x => x.BtnBookSettings);
 
         this.WhenActivated(d => d(ViewModel.OpenFile.RegisterHandler(interaction =>
@@ -66,6 +66,22 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
 
             if (open.ShowDialog() == DialogResult.OK)
                 interaction.SetOutput(open.FileName);
+            else
+                interaction.SetOutput(null);
+        })));
+
+        this.WhenActivated(d => d(ViewModel.SaveFile.RegisterHandler(interaction =>
+        {
+            using SaveFileDialog save = new()
+            {
+                Title = Words.SaveVocabularyBook,
+                FileName = interaction.Input.MotherTongue + " - " + interaction.Input.ForeignLanguage,
+                InitialDirectory = Program.Settings.VhfPath,
+                Filter = Words.VocupVocabularyBookFile + " (*.vhf)|*.vhf"
+            };
+
+            if (save.ShowDialog() == DialogResult.OK)
+                interaction.SetOutput(save.FileName);
             else
                 interaction.SetOutput(null);
         })));
@@ -282,7 +298,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     {
         if (ViewModel.BookContext.UnsavedChanges)
         {
-            e.Cancel = !EnsureSaved();
+            //e.Cancel = !EnsureSaved();
         }
 
         if (!e.Cancel)
@@ -304,13 +320,13 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
             // if FileTreeView.SelectedPath was assigned in IMainForm.LoadBook(VocabularyBook)
             if (CurrentBook.FilePath == e.FullName)
                 return;
-            if (ViewModel.BookContext.UnsavedChanges && !EnsureSaved())
-                return;
+            //if (ViewModel.BookContext.UnsavedChanges && !EnsureSaved())
+            //    return;
 
             UnloadBook(false);
         }
 
-        ReadFile(e.FullName);
+        //ReadFile(e.FullName);
     }
 
     private void FileTreeView_BrowseClick(object sender, EventArgs e)

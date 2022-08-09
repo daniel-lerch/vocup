@@ -17,6 +17,7 @@ public class BookSettingsViewModel : ReactiveObject
         Book = book;
         MotherTongue = book.MotherTongue;
         ForeignLanguage = book.ForeignLanguage;
+        AskForForeignLanguage = book.PracticeMode != PracticeMode.AskForMotherTongue;
 
         this.WhenAnyValue(x => x.MotherTongue)
             .Select(x => !x.ContainsAny(invalidChars))
