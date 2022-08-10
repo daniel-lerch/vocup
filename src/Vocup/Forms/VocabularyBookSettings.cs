@@ -54,13 +54,13 @@ public partial class VocabularyBookSettings : Form, IViewFor<BookSettingsViewMod
 
     private void InitializeDataBindings()
     {
-        this.Bind(ViewModel, x => x.MotherTongue, x => x.TbMotherTongue.Text);
-        this.OneWayBind(ViewModel, x => x.MotherTongueValid, x => x.TbMotherTongue.BackColor, x => x ? Color.White : redBgColor);
-        this.Bind(ViewModel, x => x.ForeignLanguage, x => x.TbForeignLang.Text);
-        this.OneWayBind(ViewModel, x => x.ForeignLanguageValid, x => x.TbForeignLang.BackColor, x => x ? Color.White : redBgColor);
-        this.Bind(ViewModel, x => x.ResetPracticeResults, x => x.CbResetResults.Checked);
-        this.Bind(ViewModel, x => x.AskForForeignLanguage, x => x.RbModeAskForeignLang.Checked);
-        this.BindCommand(ViewModel, x => x.SaveCommand, x => x.BtnOK);
+        this.Bind(ViewModel, vm => vm.MotherTongue, x => x.TbMotherTongue.Text);
+        this.OneWayBind(ViewModel, vm => vm.MotherTongueValid, x => x.TbMotherTongue.BackColor, x => x ? Color.White : redBgColor);
+        this.Bind(ViewModel, vm => vm.ForeignLanguage, x => x.TbForeignLang.Text);
+        this.OneWayBind(ViewModel, vm => vm.ForeignLanguageValid, x => x.TbForeignLang.BackColor, x => x ? Color.White : redBgColor);
+        this.Bind(ViewModel, vm => vm.ResetPracticeResults, x => x.CbResetResults.Checked);
+        this.Bind(ViewModel, vm => vm.AskForForeignLanguage, x => x.RbModeAskForeignLang.Checked);
+        this.BindCommand(ViewModel, vm => vm.SaveCommand, x => x.BtnOK);
     }
 
     private void TextBox_Enter(object sender, EventArgs e)
