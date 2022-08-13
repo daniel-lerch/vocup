@@ -21,7 +21,41 @@ public class VocupSettingsLoader : VersionedSettingsLoader<VocupSettings>
 
     protected override ValueTask OnSettingsCreated(VersionedSettings<VocupSettings> settings)
     {
-        MigrateOtherAppConfigVersions();
+        try
+        {
+            // The legacy settings are stored in a path like this:
+            // %LocalAppData%\VectorData\Vocup_Path_d34vxcazn0c55ls04bd5mjhnte2ypcjl\1.8.6.0\user.config
+
+            string? thisVersionDirectory = GetAppConfigDirectory();
+            string? thisUrlDirectory = Path.GetDirectoryName(thisVersionDirectory);
+            string? rootSettingsDirectory = Path.GetDirectoryName(thisUrlDirectory);
+
+            if (thisUrlDirectory == null)
+            {
+                Debug.WriteLine("Could not determine current user settings hash directory");
+            }
+            else if (Directory.Exists(rootSettingsDirectory))
+            {
+                if (!Directory.Exists(thisUrlDirectory))
+                    MigrateOtherAppConfigVersions(thisUrlDirectory, rootSettingsDirectory);
+
+                MigrateFromAppConfig(settings);
+            }
+
+            // If the root settings directory does not exist there are no settings to restore
+        }
+        catch (Exception ex)
+        {
+            // Loosing settings of Vocup is not a serious porblem but having Vocup repeatedly crashing at startup is a serious problem xD
+            Debug.WriteLine(ex);
+        }
+
+        return ValueTask.CompletedTask;
+    }
+
+    private static void MigrateFromAppConfig(VersionedSettings<VocupSettings> settings)
+    {
+        OldSettings.Default.Upgrade();
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -58,60 +92,41 @@ public class VocupSettingsLoader : VersionedSettingsLoader<VocupSettings>
         if (Version.TryParse(OldSettings.Default.Version, out Version? version)) settings.Value.Version = version;
 
 #pragma warning restore CS0618 // Type or member is obsolete
-
-        return ValueTask.CompletedTask;
     }
 
-    private static void MigrateOtherAppConfigVersions()
+    private static void MigrateOtherAppConfigVersions(string urlDirectory, string rootDirectory)
     {
-        string? currentDirectory = GetAppConfigDirectory();
-        string? baseDirectory = Path.GetDirectoryName(currentDirectory);
-        string? rootDirectory = Path.GetDirectoryName(baseDirectory);
-
-        if (baseDirectory is null)
+        if (!Directory.Exists(urlDirectory) && Directory.Exists(rootDirectory))
         {
-            Debug.WriteLine("Could not determine current user settings hash directory");
-            return;
-        }
+            Version? version = null;
+            FileInfo? settingsFile = null;
 
-        try
-        {
-            if (!Directory.Exists(baseDirectory) && Directory.Exists(rootDirectory))
+            foreach (string hashDirectory in Directory.EnumerateDirectories(rootDirectory))
             {
-                Version? version = null;
-                FileInfo? settingsFile = null;
-
-                foreach (string hashDirectory in Directory.EnumerateDirectories(rootDirectory))
+                foreach (string versionDirectory in Directory.EnumerateDirectories(hashDirectory))
                 {
-                    foreach (string versionDirectory in Directory.EnumerateDirectories(hashDirectory))
+                    if (Version.TryParse(Path.GetFileName(versionDirectory.AsSpan()), out Version? newVersion))
                     {
-                        if (Version.TryParse(Path.GetFileName(versionDirectory.AsSpan()), out Version? newVersion))
+                        FileInfo fileInfo = new(Path.Combine(versionDirectory, "user.config"));
+                        if (fileInfo.Exists)
                         {
-                            FileInfo fileInfo = new(Path.Combine(versionDirectory, "user.config"));
-                            if (fileInfo.Exists)
+                            int cmp = newVersion.CompareTo(version);
+                            if (cmp == 1 || (cmp == 0 && fileInfo.LastWriteTime > settingsFile!.LastWriteTime))
                             {
-                                int cmp = newVersion.CompareTo(version);
-                                if (cmp == 1 || (cmp == 0 && fileInfo.LastWriteTime > settingsFile!.LastWriteTime))
-                                {
-                                    version = newVersion;
-                                    settingsFile = fileInfo;
-                                }
+                                version = newVersion;
+                                settingsFile = fileInfo;
                             }
                         }
                     }
                 }
-
-                if (settingsFile is not null)
-                {
-                    string restoreDirectory = Path.Combine(baseDirectory, version!.ToString());
-                    Directory.CreateDirectory(restoreDirectory);
-                    settingsFile.CopyTo(Path.Combine(restoreDirectory, "user.config"));
-                }
             }
-        }
-        catch (Exception ex)
-        {
-            Debug.WriteLine(ex);
+
+            if (settingsFile is not null)
+            {
+                string restoreDirectory = Path.Combine(urlDirectory, version!.ToString());
+                Directory.CreateDirectory(restoreDirectory);
+                settingsFile.CopyTo(Path.Combine(restoreDirectory, "user.config"));
+            }
         }
     }
 

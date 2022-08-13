@@ -52,15 +52,6 @@ public class EvaluatorTest
     }
 
     [Theory]
-    [InlineData("hyper(-)vigilant", "hyper vigilant")]
-    [InlineData("hyper(-)vigilant", "hyper-vigilant")]
-    public void TestOptionalExpressionInWord(string result, string input)
-    {
-        Assert.Equal(PracticeResult.Correct, evaluator.GetResult(new[] { result }, new[] { input }));
-    }
-
-
-    [Theory]
     [InlineData(PracticeResult.Correct, "upset (about sth)/(that)", "upset (about sth)/(that)")]
     [InlineData(PracticeResult.Wrong, "upset (about sth)/(that)", "upset about sth/that")]
     [InlineData(PracticeResult.Wrong, "upset (about sth)/(that)", "upset about sth/")]
