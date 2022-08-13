@@ -56,7 +56,7 @@ jobs:
       Solution_Name: Vocup.sln                                          # Replace with your solution name, i.e. MyWpfApp.sln.
       Test_Project_Path: tests\Vocup.UnitTests\Vocup.UnitTests.csproj   # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
       Wap_Project_Directory: src\Vocup.Packaging                        # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
-      Wap_Project_Path: src\Vocup.Packaging\Vocup.Packaging.csproj      # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
+      Wap_Project_Path: src\Vocup.Packaging\Vocup.Packaging.wapproj     # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
 
     steps:
     - name: Checkout
