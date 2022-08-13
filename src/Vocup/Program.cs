@@ -47,11 +47,7 @@ public static class Program
         splash.Show();
         Application.DoEvents();
 
-        var loader = new VocupSettingsLoader();
-        var settings = loader.LoadAsync().AsTask().GetAwaiter().GetResult();
-        Settings = settings.Value;
-
-        TrackingService = new TrackingService();
+        var serviceScope = InitializeServices();
 
         SetCulture();
         if (!CreateVhfFolder() || !CreateVhrFolder())
@@ -90,7 +86,7 @@ public static class Program
         Application.Run(form);
 
         // Calling .GetAwaiter().GetResult() does not work for ValueTasks
-        settings.DisposeAsync().AsTask().GetAwaiter().GetResult();
+        serviceScope.DisposeAsync().AsTask().GetAwaiter().GetResult();
         TrackingService.DisposeAsync().AsTask().GetAwaiter().GetResult();
     }
 
@@ -111,6 +107,17 @@ public static class Program
         {
             MessageBox.Show(Messages.MutexLockedButNoOtherProcess, Messages.MutexLockedButNoOtherProcessT, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+    }
+
+    public static IAsyncDisposable InitializeServices()
+    {
+        var loader = new VocupSettingsLoader();
+        var settings = loader.LoadAsync().AsTask().GetAwaiter().GetResult();
+        Settings = settings.Value;
+
+        TrackingService = new TrackingService();
+
+        return settings;
     }
 
     /// <summary>
