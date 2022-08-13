@@ -45,10 +45,7 @@
             this.TpInfo = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TpComponents = new System.Windows.Forms.TabPage();
-            this.LwComponents = new System.Windows.Forms.ListView();
-            this.ColHeaderName = new System.Windows.Forms.ColumnHeader();
-            this.ColHeaderLicense = new System.Windows.Forms.ColumnHeader();
-            this.ColHeaderUrl = new System.Windows.Forms.ColumnHeader();
+            this.ElementHost = new System.Windows.Forms.Integration.ElementHost();
             this.tableLayoutPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.TpInfo.SuspendLayout();
@@ -179,39 +176,14 @@
             // TpComponents
             // 
             this.TpComponents.BackColor = System.Drawing.Color.White;
-            this.TpComponents.Controls.Add(this.LwComponents);
+            this.TpComponents.Controls.Add(this.ElementHost);
             resources.ApplyResources(this.TpComponents, "TpComponents");
             this.TpComponents.Name = "TpComponents";
             // 
-            // LwComponents
+            // ElementHost
             // 
-            this.LwComponents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ColHeaderName,
-            this.ColHeaderLicense,
-            this.ColHeaderUrl});
-            resources.ApplyResources(this.LwComponents, "LwComponents");
-            this.LwComponents.FullRowSelect = true;
-            this.LwComponents.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items"))),
-            ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items1"))),
-            ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items2"))),
-            ((System.Windows.Forms.ListViewItem)(resources.GetObject("LwComponents.Items3")))});
-            this.LwComponents.Name = "LwComponents";
-            this.LwComponents.UseCompatibleStateImageBehavior = false;
-            this.LwComponents.View = System.Windows.Forms.View.Details;
-            this.LwComponents.DoubleClick += new System.EventHandler(this.LwComponents_DoubleClick);
-            // 
-            // ColHeaderName
-            // 
-            resources.ApplyResources(this.ColHeaderName, "ColHeaderName");
-            // 
-            // ColHeaderLicense
-            // 
-            resources.ApplyResources(this.ColHeaderLicense, "ColHeaderLicense");
-            // 
-            // ColHeaderUrl
-            // 
-            resources.ApplyResources(this.ColHeaderUrl, "ColHeaderUrl");
+            resources.ApplyResources(this.ElementHost, "ElementHost");
+            this.ElementHost.Name = "ElementHost";
             // 
             // AboutBox
             // 
@@ -250,12 +222,9 @@
         private System.Windows.Forms.TabPage TpInfo;
         private System.Windows.Forms.PictureBox pictureBox1;
         public  System.Windows.Forms.TabPage TpComponents;
-        public  System.Windows.Forms.ListView LwComponents;
-        private System.Windows.Forms.ColumnHeader ColHeaderName;
-        private System.Windows.Forms.ColumnHeader ColHeaderLicense;
-        private System.Windows.Forms.ColumnHeader ColHeaderUrl;
         private System.Windows.Forms.LinkLabel LlbProjectLicense;
         private System.Windows.Forms.Label LbDownload;
         private System.Windows.Forms.LinkLabel LlbDownload;
+        private System.Windows.Forms.Integration.ElementHost ElementHost;
     }
 }

@@ -947,138 +947,19 @@
   <data name="&gt;&gt;TpInfo.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="ColHeaderName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="ColHeaderName.Width" type="System.Int32, mscorlib">
-    <value>70</value>
-  </data>
-  <data name="ColHeaderLicense.Text" xml:space="preserve">
-    <value>License</value>
-  </data>
-  <data name="ColHeaderLicense.Width" type="System.Int32, mscorlib">
-    <value>105</value>
-  </data>
-  <data name="ColHeaderUrl.Text" xml:space="preserve">
-    <value>URL</value>
-  </data>
-  <data name="ColHeaderUrl.Width" type="System.Int32, mscorlib">
-    <value>142</value>
-  </data>
-  <data name="LwComponents.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <metadata name="ElementHost.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="ElementHost.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="LwComponents.Items" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
-        LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5DAMAAABRU3lzdGVtLkRyYXdpbmcsIFZlcnNp
-        b249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNh
-        BQEAAAAhU3lzdGVtLldpbmRvd3MuRm9ybXMuTGlzdFZpZXdJdGVtCgAAAARUZXh0CkltYWdlSW5kZXgM
-        U3ViSXRlbUNvdW50CFN1Ykl0ZW0xCFN1Ykl0ZW0yCUJhY2tDb2xvcgdDaGVja2VkBEZvbnQJRm9yZUNv
-        bG9yF1VzZUl0ZW1TdHlsZUZvclN1Ykl0ZW1zAQAABAQEAAQEAAgIJFN5c3RlbS5XaW5kb3dzLkZvcm1z
-        Lkxpc3RWaWV3U3ViSXRlbQIAAAAkU3lzdGVtLldpbmRvd3MuRm9ybXMuTGlzdFZpZXdTdWJJdGVtAgAA
-        ABRTeXN0ZW0uRHJhd2luZy5Db2xvcgMAAAABE1N5c3RlbS5EcmF3aW5nLkZvbnQDAAAAFFN5c3RlbS5E
-        cmF3aW5nLkNvbG9yAwAAAAECAAAABgQAAAAJQ3N2SGVscGVy/////wMAAAAJBQAAAAkGAAAABfn///8U
-        U3lzdGVtLkRyYXdpbmcuQ29sb3IEAAAABG5hbWUFdmFsdWUKa25vd25Db2xvcgVzdGF0ZQEAAAAJBwcD
-        AAAACgAAAAAAAAAAGAABAAAJCAAAAAH3////+f///woAAAAAAAAAABoAAQABBQUAAAAkU3lzdGVtLldp
-        bmRvd3MuRm9ybXMuTGlzdFZpZXdTdWJJdGVtBAAAAAR0ZXh0BG5hbWUFc3R5bGUIdXNlckRhdGEBAQQC
-        IVN5c3RlbS5XaW5kb3dzLkZvcm1zLlN1Ykl0ZW1TdHlsZQIAAAACAAAABgoAAAARTVMtUEw7IEFwYWNo
-        ZS0yLjAKCgoBBgAAAAUAAAAGCwAAACZodHRwczovL2pvc2hjbG9zZS5naXRodWIuaW8vQ3N2SGVscGVy
-        LwoKCgUIAAAAE1N5c3RlbS5EcmF3aW5nLkZvbnQEAAAABE5hbWUEU2l6ZQVTdHlsZQRVbml0AQAEBAsY
-        U3lzdGVtLkRyYXdpbmcuRm9udFN0eWxlAwAAABtTeXN0ZW0uRHJhd2luZy5HcmFwaGljc1VuaXQDAAAA
-        AwAAAAYMAAAAFE1pY3Jvc29mdCBTYW5zIFNlcmlmAAAEQQXz////GFN5c3RlbS5EcmF3aW5nLkZvbnRT
-        dHlsZQEAAAAHdmFsdWVfXwAIAwAAAAAAAAAF8v///xtTeXN0ZW0uRHJhd2luZy5HcmFwaGljc1VuaXQB
-        AAAAB3ZhbHVlX18ACAMAAAADAAAACw==
-</value>
-  </data>
-  <data name="LwComponents.Items1" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
-        LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5DAMAAABRU3lzdGVtLkRyYXdpbmcsIFZlcnNp
-        b249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNh
-        BQEAAAAhU3lzdGVtLldpbmRvd3MuRm9ybXMuTGlzdFZpZXdJdGVtCgAAAARUZXh0CkltYWdlSW5kZXgM
-        U3ViSXRlbUNvdW50CFN1Ykl0ZW0xCFN1Ykl0ZW0yCUJhY2tDb2xvcgdDaGVja2VkBEZvbnQJRm9yZUNv
-        bG9yF1VzZUl0ZW1TdHlsZUZvclN1Ykl0ZW1zAQAABAQEAAQEAAgIJFN5c3RlbS5XaW5kb3dzLkZvcm1z
-        Lkxpc3RWaWV3U3ViSXRlbQIAAAAkU3lzdGVtLldpbmRvd3MuRm9ybXMuTGlzdFZpZXdTdWJJdGVtAgAA
-        ABRTeXN0ZW0uRHJhd2luZy5Db2xvcgMAAAABE1N5c3RlbS5EcmF3aW5nLkZvbnQDAAAAFFN5c3RlbS5E
-        cmF3aW5nLkNvbG9yAwAAAAECAAAABgQAAAARTG9zdHRlY2ggU2V0dGluZ3P/////AwAAAAkFAAAACQYA
-        AAAF+f///xRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAAEbmFtZQV2YWx1ZQprbm93bkNvbG9yBXN0YXRl
-        AQAAAAkHBwMAAAAKAAAAAAAAAAAYAAEAAAkIAAAAAff////5////CgAAAAAAAAAAGgABAAEFBQAAACRT
-        eXN0ZW0uV2luZG93cy5Gb3Jtcy5MaXN0Vmlld1N1Ykl0ZW0EAAAABHRleHQEbmFtZQVzdHlsZQh1c2Vy
-        RGF0YQEBBAIhU3lzdGVtLldpbmRvd3MuRm9ybXMuU3ViSXRlbVN0eWxlAgAAAAIAAAAGCgAAAApBcGFj
-        aGUtMi4wCgoKAQYAAAAFAAAABgsAAAAkaHR0cHM6Ly9naXRodWIuY29tL2xvc3R0ZWNoL1NldHRpbmdz
-        CgoKBQgAAAATU3lzdGVtLkRyYXdpbmcuRm9udAQAAAAETmFtZQRTaXplBVN0eWxlBFVuaXQBAAQECxhT
-        eXN0ZW0uRHJhd2luZy5Gb250U3R5bGUDAAAAG1N5c3RlbS5EcmF3aW5nLkdyYXBoaWNzVW5pdAMAAAAD
-        AAAABgwAAAAUTWljcm9zb2Z0IFNhbnMgU2VyaWYAAARBBfP///8YU3lzdGVtLkRyYXdpbmcuRm9udFN0
-        eWxlAQAAAAd2YWx1ZV9fAAgDAAAAAAAAAAXy////G1N5c3RlbS5EcmF3aW5nLkdyYXBoaWNzVW5pdAEA
-        AAAHdmFsdWVfXwAIAwAAAAMAAAAL
-</value>
-  </data>
-  <data name="LwComponents.Items2" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
-        LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5DAMAAABRU3lzdGVtLkRyYXdpbmcsIFZlcnNp
-        b249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNh
-        BQEAAAAhU3lzdGVtLldpbmRvd3MuRm9ybXMuTGlzdFZpZXdJdGVtCgAAAARUZXh0CkltYWdlSW5kZXgM
-        U3ViSXRlbUNvdW50CFN1Ykl0ZW0xCFN1Ykl0ZW0yCUJhY2tDb2xvcgdDaGVja2VkBEZvbnQJRm9yZUNv
-        bG9yF1VzZUl0ZW1TdHlsZUZvclN1Ykl0ZW1zAQAABAQEAAQEAAgIJFN5c3RlbS5XaW5kb3dzLkZvcm1z
-        Lkxpc3RWaWV3U3ViSXRlbQIAAAAkU3lzdGVtLldpbmRvd3MuRm9ybXMuTGlzdFZpZXdTdWJJdGVtAgAA
-        ABRTeXN0ZW0uRHJhd2luZy5Db2xvcgMAAAABE1N5c3RlbS5EcmF3aW5nLkZvbnQDAAAAFFN5c3RlbS5E
-        cmF3aW5nLkNvbG9yAwAAAAECAAAABgQAAAAMT2ZmaWNlIEljb25z/////wMAAAAJBQAAAAkGAAAABfn/
-        //8UU3lzdGVtLkRyYXdpbmcuQ29sb3IEAAAABG5hbWUFdmFsdWUKa25vd25Db2xvcgVzdGF0ZQEAAAAJ
-        BwcDAAAACgAAAAAAAAAAGAABAAAJCAAAAAH3////+f///woAAAAAAAAAABoAAQABBQUAAAAkU3lzdGVt
-        LldpbmRvd3MuRm9ybXMuTGlzdFZpZXdTdWJJdGVtBAAAAAR0ZXh0BG5hbWUFc3R5bGUIdXNlckRhdGEB
-        AQQCIVN5c3RlbS5XaW5kb3dzLkZvcm1zLlN1Ykl0ZW1TdHlsZQIAAAACAAAABgoAAAAMQ0MgQlktTkQg
-        My4wCgoKAQYAAAAFAAAABgsAAAAgaHR0cHM6Ly9pY29uczguY29tL29mZmljZS1pY29ucy8KCgoFCAAA
-        ABNTeXN0ZW0uRHJhd2luZy5Gb250BAAAAAROYW1lBFNpemUFU3R5bGUEVW5pdAEABAQLGFN5c3RlbS5E
-        cmF3aW5nLkZvbnRTdHlsZQMAAAAbU3lzdGVtLkRyYXdpbmcuR3JhcGhpY3NVbml0AwAAAAMAAAAGDAAA
-        ABRNaWNyb3NvZnQgU2FucyBTZXJpZgAABEEF8////xhTeXN0ZW0uRHJhd2luZy5Gb250U3R5bGUBAAAA
-        B3ZhbHVlX18ACAMAAAAAAAAABfL///8bU3lzdGVtLkRyYXdpbmcuR3JhcGhpY3NVbml0AQAAAAd2YWx1
-        ZV9fAAgDAAAAAwAAAAs=
-</value>
-  </data>
-  <data name="LwComponents.Items3" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
-        LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5DAMAAABRU3lzdGVtLkRyYXdpbmcsIFZlcnNp
-        b249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNh
-        BQEAAAAhU3lzdGVtLldpbmRvd3MuRm9ybXMuTGlzdFZpZXdJdGVtCgAAAARUZXh0CkltYWdlSW5kZXgM
-        U3ViSXRlbUNvdW50CFN1Ykl0ZW0xCFN1Ykl0ZW0yCUJhY2tDb2xvcgdDaGVja2VkBEZvbnQJRm9yZUNv
-        bG9yF1VzZUl0ZW1TdHlsZUZvclN1Ykl0ZW1zAQAABAQEAAQEAAgIJFN5c3RlbS5XaW5kb3dzLkZvcm1z
-        Lkxpc3RWaWV3U3ViSXRlbQIAAAAkU3lzdGVtLldpbmRvd3MuRm9ybXMuTGlzdFZpZXdTdWJJdGVtAgAA
-        ABRTeXN0ZW0uRHJhd2luZy5Db2xvcgMAAAABE1N5c3RlbS5EcmF3aW5nLkZvbnQDAAAAFFN5c3RlbS5E
-        cmF3aW5nLkNvbG9yAwAAAAECAAAABgQAAAAHUEludm9rZf////8DAAAACQUAAAAJBgAAAAX5////FFN5
-        c3RlbS5EcmF3aW5nLkNvbG9yBAAAAARuYW1lBXZhbHVlCmtub3duQ29sb3IFc3RhdGUBAAAACQcHAwAA
-        AAoAAAAAAAAAABgAAQAACQgAAAAB9/////n///8KAAAAAAAAAAAaAAEAAQUFAAAAJFN5c3RlbS5XaW5k
-        b3dzLkZvcm1zLkxpc3RWaWV3U3ViSXRlbQQAAAAEdGV4dARuYW1lBXN0eWxlCHVzZXJEYXRhAQEEAiFT
-        eXN0ZW0uV2luZG93cy5Gb3Jtcy5TdWJJdGVtU3R5bGUCAAAAAgAAAAYKAAAAA01JVAoKCgEGAAAABQAA
-        AAYLAAAAIWh0dHBzOi8vZ2l0aHViLmNvbS9kb3RuZXQvcGludm9rZQoKCgUIAAAAE1N5c3RlbS5EcmF3
-        aW5nLkZvbnQEAAAABE5hbWUEU2l6ZQVTdHlsZQRVbml0AQAEBAsYU3lzdGVtLkRyYXdpbmcuRm9udFN0
-        eWxlAwAAABtTeXN0ZW0uRHJhd2luZy5HcmFwaGljc1VuaXQDAAAAAwAAAAYMAAAAFE1pY3Jvc29mdCBT
-        YW5zIFNlcmlmAAAEQQXz////GFN5c3RlbS5EcmF3aW5nLkZvbnRTdHlsZQEAAAAHdmFsdWVfXwAIAwAA
-        AAAAAAAF8v///xtTeXN0ZW0uRHJhd2luZy5HcmFwaGljc1VuaXQBAAAAB3ZhbHVlX18ACAMAAAADAAAA
-        Cw==
-</value>
-  </data>
-  <data name="LwComponents.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ElementHost.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="LwComponents.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ElementHost.Size" type="System.Drawing.Size, System.Drawing">
     <value>321, 238</value>
   </data>
-  <data name="LwComponents.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;LwComponents.Name" xml:space="preserve">
-    <value>LwComponents</value>
-  </data>
-  <data name="&gt;&gt;LwComponents.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LwComponents.Parent" xml:space="preserve">
-    <value>TpComponents</value>
-  </data>
-  <data name="&gt;&gt;LwComponents.ZOrder" xml:space="preserve">
+  <data name="ElementHost.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="TpComponents.Location" type="System.Drawing.Point, System.Drawing">
@@ -1143,24 +1024,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>About Vocup</value>
-  </data>
-  <data name="&gt;&gt;ColHeaderName.Name" xml:space="preserve">
-    <value>ColHeaderName</value>
-  </data>
-  <data name="&gt;&gt;ColHeaderName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColHeaderLicense.Name" xml:space="preserve">
-    <value>ColHeaderLicense</value>
-  </data>
-  <data name="&gt;&gt;ColHeaderLicense.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColHeaderUrl.Name" xml:space="preserve">
-    <value>ColHeaderUrl</value>
-  </data>
-  <data name="&gt;&gt;ColHeaderUrl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>AboutBox</value>

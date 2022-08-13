@@ -1,8 +1,8 @@
 using System;
-using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using Vocup.Controls;
 using Vocup.Properties;
 using Vocup.Util;
 
@@ -14,6 +14,7 @@ public partial class AboutBox : Form
     {
         InitializeComponent();
         Icon = Icon.FromHandle(Icons.Info.GetHicon());
+        ElementHost.Child = new LicensesControl();
     }
 
     private void AboutBox_Load(object sender, EventArgs e)
@@ -47,13 +48,5 @@ public partial class AboutBox : Form
     private async void LlbProjectLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
         await Launcher.LaunchUriAsync("https://github.com/daniel-lerch/vocup/blob/master/LICENSE");
-    }
-
-    private async void LwComponents_DoubleClick(object sender, EventArgs e)
-    {
-        if (LwComponents.SelectedItems.Count > 0)
-        {
-            await Launcher.LaunchUriAsync(LwComponents.SelectedItems[0].SubItems[2].Text);
-        }
     }
 }
