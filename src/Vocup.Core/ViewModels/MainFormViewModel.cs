@@ -18,6 +18,7 @@ public class MainFormViewModel : ReactiveObject
         CloseCommand = ReactiveCommand.CreateFromTask(CloseCommandAction, this.WhenAnyValue(x => x.BookContext).Select(x => x != null));
         PracticeCommand = ReactiveCommand.CreateFromTask(PracticeCommandAction, this.WhenAnyValue(x => x.BookContext.Book.Unpracticed).Select(x => x > 0));
         BookSettingsCommand = ReactiveCommand.CreateFromTask(BookSettingsCommandAction, this.WhenAnyValue(x => x.BookContext).Select(x => x != null));
+        PrintCommand = ReactiveCommand.CreateFromTask(PrintCommandAction, this.WhenAnyValue(x => x.BookContext.Book.Words.Count).Select(x => x > 0));
 
         this.WhenAnyValue(x => x.BookContext.Name)
             .Select(x => x == null ? "Vocup" : $"Vocup - {x}")
@@ -32,12 +33,14 @@ public class MainFormViewModel : ReactiveObject
     public Interaction<Unit, bool> SaveAndContinue { get; } = new();
     public Interaction<Book, Unit> Practice { get; } = new();
     public Interaction<Book, Unit> BookSettings { get; } = new();
+    public Interaction<BookContext, Unit> Print { get; } = new();
 
     public ReactiveCommand<Unit, Unit> OpenCommand { get; }
     public ReactiveCommand<Unit, Unit> SaveCommand { get; }
     public ReactiveCommand<Unit, Unit> CloseCommand { get; }
     public ReactiveCommand<Unit, Unit> PracticeCommand { get; }
     public ReactiveCommand<Unit, Unit> BookSettingsCommand { get; }
+    public ReactiveCommand<Unit, Unit> PrintCommand { get; }
 
     public async ValueTask OpenAsync(string path)
     {
@@ -88,4 +91,5 @@ public class MainFormViewModel : ReactiveObject
 
     private async Task PracticeCommandAction() => await Practice.Handle(BookContext.Book);
     private async Task BookSettingsCommandAction() => await BookSettings.Handle(BookContext.Book);
+    private async Task PrintCommandAction() => await Print.Handle(BookContext);
 }

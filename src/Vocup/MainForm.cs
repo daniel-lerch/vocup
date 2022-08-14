@@ -36,8 +36,6 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         this.OneWayBind(ViewModel, vm => vm.BookContext, x => x.TsmiSaveAs.Enabled, context => context != null);
 
         this.OneWayBind(ViewModel, vm => vm.BookContext.Book.Words.Count, x => x.GroupSearch.Enabled, count => count > 0);
-        this.OneWayBind(ViewModel, vm => vm.BookContext.Book.Words.Count, x => x.TsmiPrint.Enabled, count => count > 0);
-        this.OneWayBind(ViewModel, vm => vm.BookContext.Book.Words.Count, x => x.TsbPrint.Enabled, count => count > 0);
         this.OneWayBind(ViewModel, vm => vm.BookContext.Book.Words.Count, x => x.TsmiExport.Enabled, count => count > 0);
 
         this.OneWayBind(ViewModel, vm => vm.BookContext.Book.Unpracticed, x => x.StatisticsPanel.Unpracticed);
@@ -54,6 +52,8 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         this.BindCommand(ViewModel, vm => vm.PracticeCommand, x => x.BtnPractice);
         this.BindCommand(ViewModel, vm => vm.BookSettingsCommand, x => x.TsmiBookOptions);
         this.BindCommand(ViewModel, vm => vm.BookSettingsCommand, x => x.BtnBookSettings);
+        this.BindCommand(ViewModel, vm => vm.PrintCommand, x => x.TsmiPrint);
+        this.BindCommand(ViewModel, vm => vm.PrintCommand, x => x.TsbPrint);
 
         this.WhenActivated(d => d(ViewModel.OpenFile.RegisterHandler(interaction =>
         {
@@ -135,6 +135,13 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         {
             using (var dialog = new VocabularyBookSettings(interaction.Input) { Owner = this }) dialog.ShowDialog();
             BtnAddWord.Focus();
+            interaction.SetOutput(Unit.Default);
+        })));
+
+        this.WhenActivated(d => d(ViewModel.Print.RegisterHandler(interaction =>
+        {
+            using var dialog = new PrintWordSelection(interaction.Input);
+            dialog.ShowDialog();
             interaction.SetOutput(Unit.Default);
         })));
 #pragma warning restore CA1416 // Validate platform compatibility
@@ -228,11 +235,6 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         Program.Settings.MainFormWindowState = WindowState;
 
         Program.Settings.MainFormSplitterDistance = SplitContainer.SplitterDistance;
-    }
-
-    protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
-    {
-        base.ScaleControl(factor, specified);
     }
 
     /// <summary>
@@ -426,9 +428,6 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     private void TsmiDeleteWord_Click(object sender, EventArgs e) => DeleteWord();
 
     private void TsmiSaveAs_Click(object sender, EventArgs e) => SaveFile(true);
-
-    private void TsbPrint_Click(object sender, EventArgs e) => PrintFile();
-    private void TsmiPrint_Click(object sender, EventArgs e) => PrintFile();
 
     private void TsmiMerge_Click(object sender, EventArgs e)
     {
@@ -715,11 +714,6 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     private void EvaluationInfo()
     {
         using (var dialog = new EvaluationInfoDialog()) dialog.ShowDialog();
-    }
-
-    private void PrintFile()
-    {
-        using (var dialog = new PrintWordSelection(CurrentBook)) dialog.ShowDialog();
     }
     #endregion
 }

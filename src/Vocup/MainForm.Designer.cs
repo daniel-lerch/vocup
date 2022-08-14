@@ -257,7 +257,6 @@
             resources.ApplyResources(this.TsmiPrint, "TsmiPrint");
             this.TsmiPrint.Image = global::Vocup.Properties.Icons.Print;
             this.TsmiPrint.Name = "TsmiPrint";
-            this.TsmiPrint.Click += new System.EventHandler(this.TsmiPrint_Click);
             // 
             // toolStripMenuItem3
             // 
@@ -580,7 +579,6 @@
             this.TsbPrint.Image = global::Vocup.Properties.Icons.Print;
             this.TsbPrint.Margin = new System.Windows.Forms.Padding(1);
             this.TsbPrint.Name = "TsbPrint";
-            this.TsbPrint.Click += new System.EventHandler(this.TsbPrint_Click);
             // 
             // TsbEvaluationInfo
             // 

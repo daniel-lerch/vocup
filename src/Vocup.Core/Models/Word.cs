@@ -1,24 +1,45 @@
-﻿using ReactiveUI;
+﻿using DynamicData;
+using DynamicData.Binding;
+using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reactive.Linq;
 
 namespace Vocup.Models;
 
 public class Word : ReactiveObject
 {
-    public Word()
-    {
-        MotherTongue = new ObservableCollection<Synonym>();
-        ForeignLanguage = new ObservableCollection<Synonym>();
-    }
+    private readonly ObservableAsPropertyHelper<string> motherTongueCombined;
+    private readonly ObservableAsPropertyHelper<string> foreignLanguageCombined;
+
+    public Word() : this(new(), new()) { }
 
     public Word(IEnumerable<Synonym> motherTongue, IEnumerable<Synonym> foreignLanguage)
+        : this(
+              new ObservableCollection<Synonym>(motherTongue),
+              new ObservableCollection<Synonym>(foreignLanguage)) { }
+
+    private Word(ObservableCollection<Synonym> motherTongue, ObservableCollection<Synonym> foreignLanguage)
     {
-        MotherTongue = new ObservableCollection<Synonym>(motherTongue);
-        ForeignLanguage = new ObservableCollection<Synonym>(foreignLanguage);
+        MotherTongue = motherTongue;
+        ForeignLanguage = foreignLanguage;
+
+        motherTongueCombined = MotherTongue
+            .ToObservableChangeSet()
+            .AutoRefresh(s => s.Value)
+            .ToCollection()
+            .Select(x => string.Join(", ", x.Select(s => s.Value)))
+            .ToProperty(this, x => x.MotherTongueCombined);
+
+        foreignLanguageCombined = ForeignLanguage
+            .ToObservableChangeSet()
+            .AutoRefresh(s => s.Value)
+            .ToCollection()
+            .Select(x => string.Join(", ", x.Select(s => s.Value)))
+            .ToProperty(this, x => x.ForeignLanguageCombined);
     }
 
     public ObservableCollection<Synonym> MotherTongue { get; }
@@ -37,6 +58,9 @@ public class Word : ReactiveObject
     {
         return HashCode.Combine(CreationDate, MotherTongue, ForeignLanguage);
     }
+
+    public string MotherTongueCombined => motherTongueCombined.Value;
+    public string ForeignLanguageCombined => foreignLanguageCombined.Value;
 
     [Obsolete] public string MotherTongueText { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     [Obsolete] public string ForeignLangText { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

@@ -26,7 +26,7 @@ public partial class PrintWordSelection : Form
 
         ListBox.BeginUpdate();
         foreach (Word word in book.Words)
-            ListBox.Items.Add($"{word.MotherTongueText} - {word.ForeignLangCombined}", true);
+            ListBox.Items.Add($"{word.MotherTongueCombined} - {word.ForeignLanguageCombined}", true);
         ListBox.EndUpdate();
 
         CbUnpracticed.Enabled = book.Unpracticed > 0;
@@ -172,8 +172,8 @@ public partial class PrintWordSelection : Form
                 Rectangle left = new Rectangle(rect.X, rect.Y, rect.Width / 2, rect.Height).MarginSide(sideOffset);
                 Rectangle right = new Rectangle(left.Right, rect.Y, rect.Width / 2, rect.Height).MarginSide(sideOffset)
                     .MarginLeft(lineThickness); // right column is smaller than the left one because of the line
-                string leftText = invertSides ? word.ForeignLangCombined : word.MotherTongueText;
-                string rightText = invertSides ? word.MotherTongueText : word.ForeignLangCombined;
+                string leftText = invertSides ? word.ForeignLanguageCombined : word.MotherTongueCombined;
+                string rightText = invertSides ? word.MotherTongueCombined : word.ForeignLanguageCombined;
 
                 SizeF leftSize = g.MeasureString(leftText, font, left.Size, nearFormat, out int leftChars, out int leftLines);
                 SizeF rightSize = g.MeasureString(rightText, font, right.Size, nearFormat, out int rightChars, out int rightLines);
