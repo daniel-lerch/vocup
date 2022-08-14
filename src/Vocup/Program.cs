@@ -49,11 +49,7 @@ public static class Program
         splash.Show();
         Application.DoEvents();
 
-        var loader = new VocupSettingsLoader();
-        VersionedSettings<VocupSettings> settings = AsyncContext.Run(() => loader.LoadAsync().AsTask());
-        Settings = settings.Value;
-
-        TrackingService = new TrackingService();
+        var serviceScope = InitializeServices();
 
         SetCulture();
         if (!CreateVhfFolder() || !CreateVhrFolder())
@@ -91,7 +87,7 @@ public static class Program
         splash.Close();
         Application.Run(form);
 
-        AsyncContext.Run(() => settings.DisposeAsync().AsTask());
+        AsyncContext.Run(() => serviceScope.DisposeAsync().AsTask());
         AsyncContext.Run(() => TrackingService.DisposeAsync().AsTask());
     }
 
@@ -112,6 +108,17 @@ public static class Program
         {
             MessageBox.Show(Messages.MutexLockedButNoOtherProcess, Messages.MutexLockedButNoOtherProcessT, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+    }
+
+    public static IAsyncDisposable InitializeServices()
+    {
+        var loader = new VocupSettingsLoader();
+        var settings = AsyncContext.Run(() => loader.LoadAsync().AsTask());
+        Settings = settings.Value;
+
+        TrackingService = new TrackingService();
+
+        return settings;
     }
 
     /// <summary>

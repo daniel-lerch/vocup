@@ -1,5 +1,7 @@
 ﻿using System.IO;
+using System.Threading.Tasks;
 using Vocup.Forms;
+using Vocup.IO;
 using Vocup.Models;
 using Xunit;
 
@@ -15,14 +17,16 @@ public class InitializeTest
     }
 
     [Fact]
-    public void TestFormConstructors()
+    public async Task TestFormConstructors()
     {
+        await using var serviceScope = Program.InitializeServices();
         Program.CreateVhfFolder();
         Program.CreateVhrFolder();
         Book book = new("Deutsch", "Englisch");
+        BookContext bookContext = new(book, BookFileFormat.Vhf1);
 
         new MainForm().Dispose();
-        new AboutBox().Dispose();
+        // new AboutBox().Dispose(); WPF does not work without [STAThread]
         new AddWordDialog(book).Dispose();
         // new EditWordDialog(book: null, word: null).Dispose();
         new EvaluationInfoDialog().Dispose();
@@ -30,7 +34,7 @@ public class InitializeTest
         new PracticeCountDialog(book).Dispose();
         // new PracticeDialog(book: null, practiceList: null).Dispose();
         // new PracticeResultList(book: null, practiceList: null).Dispose();
-        new PrintWordSelection(book).Dispose();
+        new PrintWordSelection(bookContext).Dispose();
         //new SettingsDialog(settings: null).Dispose();
         new SpecialCharKeyboard().Dispose();
         new SpecialCharManage().Dispose();
