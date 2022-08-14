@@ -86,6 +86,6 @@ internal partial class Vhf2Format : BookFileFormat
 
         ZipArchiveEntry bookFile = archive.CreateEntry("book.json");
         using Stream bookStream = bookFile.Open();
-        await JsonSerializer.SerializeAsync(bookStream, book, options).ConfigureAwait(false);
+        await JsonSerializer.SerializeAsync(bookStream, JsonBook.FromBook(book), options).ConfigureAwait(false);
     }
 }
