@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+    <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
     <RootNamespace>Vocup</RootNamespace>
     <Nullable>enable</Nullable>
   </PropertyGroup>

@@ -84,11 +84,11 @@ public partial class PracticeCountDialog : Form
         ListCompositor<Word> compositor = new ListCompositor<Word>();
 
         IEnumerable<Word> unpracticedItems = book.Words
-            .Where((Word x) => x.PracticeState == PracticeState.Unpracticed);
+            .Where(x => x.PracticeState == PracticeState.Unpracticed);
         IEnumerable<Word> wronglyPracticedItems = book.Words
-            .Where((Word x) => x.PracticeState == PracticeState.WronglyPracticed);
+            .Where(x => x.PracticeState == PracticeState.WronglyPracticed);
         IEnumerable<Word> correctlyPracticedItems = book.Words
-            .Where((Word x) => x.PracticeState == PracticeState.CorrectlyPracticed);
+            .Where(x => x.PracticeState == PracticeState.CorrectlyPracticed);
 
         if (RbAllDates.Checked)
         {

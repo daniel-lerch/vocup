@@ -14,6 +14,8 @@ public class Word : ReactiveObject
 {
     private readonly ObservableAsPropertyHelper<string> motherTongueCombined;
     private readonly ObservableAsPropertyHelper<string> foreignLanguageCombined;
+    private readonly ObservableAsPropertyHelper<int> motherTonguePracticeState;
+    private readonly ObservableAsPropertyHelper<int> foreignLanguagePracticeState;
 
     public Word() : this(new(), new()) { }
 
@@ -29,9 +31,9 @@ public class Word : ReactiveObject
 
         motherTongueCombined = MotherTongue
             .ToObservableChangeSet()
-            .AutoRefresh(s => s.Value)
+            .AutoRefresh(synonym => synonym.Value)
             .ToCollection()
-            .Select(x => string.Join(", ", x.Select(s => s.Value)))
+            .Select(x => string.Join(", ", x.Select(synonym => synonym.Value)))
             .ToProperty(this, x => x.MotherTongueCombined);
 
         foreignLanguageCombined = ForeignLanguage
@@ -40,6 +42,20 @@ public class Word : ReactiveObject
             .ToCollection()
             .Select(x => string.Join(", ", x.Select(s => s.Value)))
             .ToProperty(this, x => x.ForeignLanguageCombined);
+
+        motherTonguePracticeState = MotherTongue
+            .ToObservableChangeSet()
+            .AutoRefresh(synonym => synonym.PracticeState)
+            .ToCollection()
+            .Select(x => x.Min(synonym => synonym.PracticeState))
+            .ToProperty(this, x => x.MotherTonguePracticeState);
+
+        foreignLanguagePracticeState = ForeignLanguage
+            .ToObservableChangeSet()
+            .AutoRefresh(synonym => synonym.PracticeState)
+            .ToCollection()
+            .Select(x => x.Min(synonym => synonym.PracticeState))
+            .ToProperty(this, x => x.ForeignLanguagePracticeState);
     }
 
     public ObservableCollection<Synonym> MotherTongue { get; }
@@ -61,6 +77,8 @@ public class Word : ReactiveObject
 
     public string MotherTongueCombined => motherTongueCombined.Value;
     public string ForeignLanguageCombined => foreignLanguageCombined.Value;
+    public int MotherTonguePracticeState => motherTonguePracticeState.Value;
+    public int ForeignLanguagePracticeState => foreignLanguagePracticeState.Value;
 
     [Obsolete] public string MotherTongueText { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     [Obsolete] public string ForeignLangText { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
