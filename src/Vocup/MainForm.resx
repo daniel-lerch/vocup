@@ -174,12 +174,6 @@
   <data name="TsmiImport.Text" xml:space="preserve">
     <value>Import</value>
   </data>
-  <data name="TsmiImportAnsi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 22</value>
-  </data>
-  <data name="TsmiImportAnsi.Text" xml:space="preserve">
-    <value>Import (ANSI encoding)</value>
-  </data>
   <data name="TsmiExport.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -426,7 +420,7 @@
   <data name="BtnBookSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAi5JREFUOE+Nkt1PUmEcx7noX+m6izavvOjG8qJLvWiNzRO1tRVrAkWDjDkgZHPY
+        vgAADr4B6kKxwAAAAi5JREFUOE+Nkt1PUmEcx7noX+m6izavvOjG8qJLvWiNzRO1tRVrAkWDjDkgZHPY
         kpfly0kXkZ3yJdwMGaE4g2ODASfsQLDhMJsVRDPTWOG353gexyqpPtv34nfO8/mec57zKA7Q97PnDI5x
         9nLPAKs2NSLNBsc99qp96AZdejgai5ubjOXxXNxAQGhEmj1TEVjuPsEVs9tFl/+JusfBhsQPKNaB7NdG
         ij8A1+QCwtEEuCCP80bHIFV+RXpd6YmSlK40kt0GBnzzEMQ8JCYCUah7nbdNJtMRqso0K8iR+c5EEHb3
@@ -471,7 +465,7 @@
   <data name="BtnPractice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAfdJREFUOE+V0V1IU2Ecx/FDQTeFN915X1A35oUo3XSh1lCnq700LyIsKfAmQgRB
+        vgAADr4B6kKxwAAAAfdJREFUOE+V0V1IU2Ecx/FDQTeFN915X1A35oUo3XSh1lCnq700LyIsKfAmQgRB
         bDGtidl2toU1s+Vbu5i9UO34sjW3DnOyI+pKIqfuwuHUEJ3Hl7YF9ushni6izlofODf/832eh/McJhOv
         qawhaCm2e9plP58xc5U91K3p5x+qTtJEmlt/6tiM4zq+xXkkIyySUSN2p27BZ6laGTLLcmgmbeRuEbsd
         GQLwFdh7BqSfI+a5ieE7JRqaSHvZmHt0vKs6gbRIFnuAnQGkoizeGeVhnY45QDNpI/qC+vWpPnL6DrD5
@@ -545,7 +539,7 @@
   <data name="BtnSearchWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAhJJREFUOE9jwAdCQ0PZsqr6/PMaJnXn1k+cB8QNGZV9tlBp/CCrusemrGvOpenr
+        vgAADr4B6kKxwAAAAhJJREFUOE9jwAdCQ0PZsqr6/PMaJnXn1k+cB8QNGZV9tlBp/CCrusemrGvOpenr
         DvzfdObu/52Xn/5fd/zm/95FW/4XtU7bUlDVJwlVigkyq3usaict/rb72ov/1z///3/jKwTfBOIrH/7/
         X3/i9v+S9hnXcysnikK1IEB8fT1HUevUG3uuvfx/+/v//5fe/f9/8S0CXwYacAsovvrI9f+5dRPmQ7Uh
         QFpld9CM9QfBNqNrhuErH///P//qz/+6SUt+QbUhQE5174TNZx6AnYtNMwxf//L//5xNR/9DtSFATm3/
@@ -617,7 +611,7 @@
   <data name="BtnAddWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAqFJREFUOE99Uu1LU3EUviDUx4roU/QPVFCfCoJeCAJrNHV6jZaxosZevFuKL2Pl
+        vgAADr4B6kKxwAAAAqFJREFUOE99Uu1LU3EUviDUx4roU/QPVFCfCoJeCAJrNHV6jZaxosZevFuKL2Pl
         siKRcvfeubvmZnupZQlatnSGuuZ23XyLfak+hIahTR0U9BcYp9/53WsqVAcO9+Hec55znvNc5m+hFa0n
         dI9sTpLdlRLn13qtdo3HfFD9/O/QkcaLoaZcY/wBeN/HIPKxH0If+sA9FQFr7921C4G63jK3ZZ9avjXK
         PVyNsce19vTTK0gVMiCvZCFXnIRsMUfx2FIKfPkeqAk3L1fw3CG1TYmyTssx43PXr4H5Yciu5iC5NE4z
@@ -667,7 +661,7 @@
   <data name="BtnDeleteWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAa5JREFUOE9jGFygnoGB7bC1dRSUiwFWamkJAeXDoFxUsF5fX+Cav/+qPxkZ/894
+        vgAADr4B6kKxwAAAAa5JREFUOE9jGFygnoGB7bC1dRSUiwFWamkJAeXDoFxUsF5fX+Cav/+qPxkZ/894
         ePRCheGgmIGB+2ZAwP6faWn/z3l5VZwxNmaFSkHAATu7qP/p6f//V1T8/5uV9f+Uq2sPVAqs+Zqf357/
         hYVg+UdhYf93GBtrQKUhYCbQxNPu7t1/MjP//y8thRnS3sPDI3LJx2cvWDNQ/GVs7L9jjo44vclwAmjz
         X6gh71NS/l/283v8NzcXzH8VF/d/r41NJFQpbnDSxaXtU0rKr78gW4H4b0HB/9dxce/2WVmFQ5UQBCw3
@@ -713,7 +707,7 @@
   <data name="BtnEditWord.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAW5JREFUOE9joDu4ZGHi8jAyctYhJ6cIqBDxIK+hO3lrY9f//9Om/v9cXv7/gJmZ
+        vgAADr4B6kKxwAAAAW5JREFUOE9joDu4ZGHi8jAyctYhJ6cIqBDxIK+hO3lrY9f//9Om/v9cXv7/gJmZ
         LVSKMChv70/ac+bW/wM3X/3fP23e//+tLf+P29qGQ6Xxg9bK0Jhl24/9f/7t//8nX/7/P3Dt+f/5GYUH
         n4uLc0OV4AZrOs3Dn12q+3vq1Jr/O08/+H//PdAHyzac5K9oF4QqwQ3W9AA1X6j/9//P2v//vy75f/bs
         mv8d05cdUzJW4ocqwQ3gmn8BNX9e+f//9yX/L2yN322lzsALVYIbYGj+tuT/mfUxu30YGLigSnADbDaf
@@ -1199,12 +1193,6 @@ Just open a vocabulary book or create a new one.</value>
     <value>TsmiImport</value>
   </data>
   <data name="&gt;&gt;TsmiImport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TsmiImportAnsi.Name" xml:space="preserve">
-    <value>TsmiImportAnsi</value>
-  </data>
-  <data name="&gt;&gt;TsmiImportAnsi.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TsmiExport.Name" xml:space="preserve">

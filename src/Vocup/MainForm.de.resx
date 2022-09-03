@@ -187,7 +187,7 @@
     <value>Infos zum Bewertungssystem</value>
   </data>
   <data name="TsmiUpdate.Text" xml:space="preserve">
-    <value>Nach Updates  suchen...</value>
+    <value>Nach Updates suchen...</value>
   </data>
   <data name="TsmiAbout.Text" xml:space="preserve">
     <value>Über Vocup</value>
@@ -249,8 +249,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Vocup</value>
-  </data>
-  <data name="TsmiImportAnsi.Text" xml:space="preserve">
-    <value>Importieren (ANSI Kodierung)</value>
   </data>
 </root>

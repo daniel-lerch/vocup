@@ -14,17 +14,18 @@ namespace Vocup.IO.Internal;
 
 internal class CsvFile
 {
-    public bool Import(string path, VocabularyBook book, bool importSettings, bool ansiEncoding)
+    public bool Import(string path, VocabularyBook book, bool importSettings)
     {
         try
         {
             using (var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
-                CsvConfiguration config = new CsvConfiguration(CultureInfo.CurrentCulture);
+                CsvConfiguration config = new(CultureInfo.CurrentCulture);
 
-                var encoding = ansiEncoding ? Encoding.GetEncoding(1252) : Encoding.UTF8;
+                Encoding fallbackEncoding = DetectEncoding(fileStream, 16384);
+                fileStream.Seek(0, SeekOrigin.Begin);
 
-                using (var streamReader = new StreamReader(fileStream, encoding, detectEncodingFromByteOrderMarks: true, 1024, leaveOpen: true))
+                using (StreamReader streamReader = new(fileStream, fallbackEncoding, detectEncodingFromByteOrderMarks: true, 256, leaveOpen: true))
                 {
                     char delimiter = DetectDelimiter(streamReader, 10, new[] { ',', ';', '\t', '|' });
                     if (delimiter != 0) config.Delimiter = delimiter.ToString();
@@ -33,8 +34,8 @@ internal class CsvFile
                 // Reset to start of file and create a new StreamReader to detect byte order marks again
                 fileStream.Seek(0, SeekOrigin.Begin);
 
-                using (var streamReader = new StreamReader(fileStream, encoding, detectEncodingFromByteOrderMarks: true))
-                using (var reader = new CsvReader(streamReader, config))
+                using (StreamReader streamReader = new(fileStream, fallbackEncoding, detectEncodingFromByteOrderMarks: true))
+                using (CsvReader reader = new(streamReader, config))
                 {
                     reader.Context.RegisterClassMap(new EntryMap());
 
@@ -44,9 +45,9 @@ internal class CsvFile
                         return false;
                     }
 
-                    if (reader.HeaderRecord.Length != 2)
+                    if (reader.HeaderRecord?.Length != 2)
                     {
-                        MessageBox.Show(string.Format(Messages.CsvInvalidHeaderColumns, reader.HeaderRecord.Length),
+                        MessageBox.Show(string.Format(Messages.CsvInvalidHeaderColumns, reader.HeaderRecord?.Length),
                             Messages.CsvInvalidHeaderT, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
@@ -58,7 +59,7 @@ internal class CsvFile
                     }
                     else
                     {
-                        if (!book.MotherTongue.Equals(reader.HeaderRecord[0], StringComparison.OrdinalIgnoreCase) 
+                        if (!book.MotherTongue.Equals(reader.HeaderRecord[0], StringComparison.OrdinalIgnoreCase)
                             || !book.ForeignLang.Equals(reader.HeaderRecord[1], StringComparison.OrdinalIgnoreCase))
                         {
                             DialogResult dialogResult = MessageBox.Show(
@@ -108,8 +109,8 @@ internal class CsvFile
     {
         try
         {
-            using (TextWriter file = new StreamWriter(path, false, Encoding.UTF8))
-            using (CsvWriter writer = new CsvWriter(file, CultureInfo.CurrentCulture))
+            using (StreamWriter file = new(path, false, Encoding.UTF8))
+            using (CsvWriter writer = new(file, CultureInfo.CurrentCulture))
             {
                 writer.Context.RegisterClassMap(new EntryMap(book.MotherTongue, book.ForeignLang));
                 writer.WriteRecords(book.Words.Select(x => new Entry(x.MotherTongue, x.ForeignLangText)));
@@ -124,7 +125,32 @@ internal class CsvFile
         return false;
     }
 
-    public static char DetectDelimiter(TextReader reader, int rowCount, IList<char> separators)
+    private static Encoding DetectEncoding(Stream stream, int testByteCount)
+    {
+        Encoding strictUtf8 = Encoding.GetEncoding("utf-8", new EncoderExceptionFallback(), new DecoderExceptionFallback());
+        Span<byte> byteBuffer = stackalloc byte[4096];
+        Span<char> charBuffer = stackalloc char[4096];
+
+        int bytesRead = 0;
+        while (bytesRead < testByteCount)
+        {
+            int readFromStream = stream.Read(byteBuffer);
+            bytesRead += readFromStream;
+            try
+            {
+                strictUtf8.GetChars(byteBuffer[..readFromStream], charBuffer);
+            }
+            catch (DecoderFallbackException)
+            {
+                return Encoding.Latin1;
+            }
+            if (readFromStream < 4096) break;
+        }
+
+        return Encoding.UTF8;
+    }
+
+    private static char DetectDelimiter(TextReader reader, int rowCount, IList<char> separators)
     {
         // Taken from https://stackoverflow.com/questions/33341307/csvhelper-how-to-detect-the-delimiter-from-the-given-csv-file
 
@@ -190,7 +216,25 @@ internal class CsvFile
         return maxCount == 0 ? '\0' : separators[separatorsCount.IndexOf(maxCount)];
     }
 
-    private record Entry(string MotherTongue, string ForeignLang);
+    private class Entry
+    {
+        // Parameterless constructor is required for CsvHelper
+        public Entry()
+        {
+            // All mapped properties will be set or exception thrown
+            MotherTongue = null!;
+            ForeignLang = null!;
+        }
+
+        public Entry(string motherTongue, string foreignLang)
+        {
+            MotherTongue = motherTongue;
+            ForeignLang = foreignLang;
+        }
+
+        public string MotherTongue { get; set; }
+        public string ForeignLang { get; set; }
+    }
 
     private class EntryMap : ClassMap<Entry>
     {

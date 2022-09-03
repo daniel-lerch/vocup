@@ -411,8 +411,6 @@ public partial class MainForm : Form, IMainForm
 
     private void TsmiImport_Click(object sender, EventArgs e) => ImportCsv();
 
-    private void TsmiImportAnsi_Click(object sender, EventArgs e) => ImportCsv(ansiEncoding: true);
-
     private void TsmiExport_Click(object sender, EventArgs e)
     {
         if (UnsavedChanges)
@@ -662,7 +660,7 @@ public partial class MainForm : Form, IMainForm
         }
     }
 
-    private void ImportCsv(bool ansiEncoding = false)
+    private void ImportCsv()
     {
         using (OpenFileDialog openDialog = new OpenFileDialog
         {
@@ -676,14 +674,14 @@ public partial class MainForm : Form, IMainForm
                 {
                     Program.TrackingService.Action("/book", "Book/Import");
 
-                    VocabularyFile.ImportCsvFile(openDialog.FileName, CurrentBook, false, ansiEncoding);
+                    VocabularyFile.ImportCsvFile(openDialog.FileName, CurrentBook, false);
                 }
                 else
                 {
                     Program.TrackingService.Action("/book/new", "Book/Import");
 
                     VocabularyBook book = new VocabularyBook();
-                    if (VocabularyFile.ImportCsvFile(openDialog.FileName, book, true, ansiEncoding))
+                    if (VocabularyFile.ImportCsvFile(openDialog.FileName, book, true))
                     {
                         book.Notify();
                         book.UnsavedChanges = true;

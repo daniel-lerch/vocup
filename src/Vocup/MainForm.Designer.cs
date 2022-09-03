@@ -45,7 +45,6 @@
             this.TsmiSave = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiSaveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiImport = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiImportAnsi = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiExport = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmiOpenInExplorer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
@@ -176,7 +175,6 @@
             this.TsmiSaveAs,
             toolStripMenuItem10,
             this.TsmiImport,
-            this.TsmiImportAnsi,
             this.TsmiExport,
             toolStripMenuItem9,
             this.TsmiOpenInExplorer,
@@ -228,13 +226,6 @@
             this.TsmiImport.Name = "TsmiImport";
             resources.ApplyResources(this.TsmiImport, "TsmiImport");
             this.TsmiImport.Click += new System.EventHandler(this.TsmiImport_Click);
-            // 
-            // TsmiImportAnsi
-            // 
-            this.TsmiImportAnsi.Image = global::Vocup.Properties.Icons.Import;
-            this.TsmiImportAnsi.Name = "TsmiImportAnsi";
-            resources.ApplyResources(this.TsmiImportAnsi, "TsmiImportAnsi");
-            this.TsmiImportAnsi.Click += new System.EventHandler(this.TsmiImportAnsi_Click);
             // 
             // TsmiExport
             // 
@@ -708,7 +699,6 @@
         private Controls.FileTreeView FileTreeView;
         private System.Windows.Forms.Label LbEmptyForm;
         private System.Windows.Forms.ToolStripStatusLabel StatusLbOldVersion;
-        private System.Windows.Forms.ToolStripMenuItem TsmiImportAnsi;
     }
 }
 
