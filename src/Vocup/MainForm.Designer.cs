@@ -192,7 +192,6 @@
             this.TsmiCreateBook.Image = global::Vocup.Properties.Icons.File;
             this.TsmiCreateBook.Name = "TsmiCreateBook";
             resources.ApplyResources(this.TsmiCreateBook, "TsmiCreateBook");
-            this.TsmiCreateBook.Click += new System.EventHandler(this.TsmiCreateBook_Click);
             // 
             // TsmiOpenBook
             // 
@@ -549,7 +548,6 @@
             resources.ApplyResources(this.TsbCreateBook, "TsbCreateBook");
             this.TsbCreateBook.Margin = new System.Windows.Forms.Padding(2, 1, 1, 1);
             this.TsbCreateBook.Name = "TsbCreateBook";
-            this.TsbCreateBook.Click += new System.EventHandler(this.TsbCreateBook_Click);
             // 
             // TsbOpenBook
             // 

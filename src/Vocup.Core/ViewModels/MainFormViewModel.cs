@@ -17,6 +17,7 @@ public class MainFormViewModel : ReactiveObject
         SaveCommand = ReactiveCommand.CreateFromTask(SaveCommandAction, this.WhenAnyValue(x => x.BookContext).Select(x => x != null));
         CloseCommand = ReactiveCommand.CreateFromTask(CloseCommandAction, this.WhenAnyValue(x => x.BookContext).Select(x => x != null));
         PracticeCommand = ReactiveCommand.CreateFromTask(PracticeCommandAction, this.WhenAnyValue(x => x.BookContext.Book.Unpracticed).Select(x => x > 0));
+        CreateBookCommand = ReactiveCommand.CreateFromTask(CreateBookCommandAction);
         BookSettingsCommand = ReactiveCommand.CreateFromTask(BookSettingsCommandAction, this.WhenAnyValue(x => x.BookContext).Select(x => x != null));
         PrintCommand = ReactiveCommand.CreateFromTask(PrintCommandAction, this.WhenAnyValue(x => x.BookContext.Book.Words.Count).Select(x => x > 0));
 
@@ -32,6 +33,7 @@ public class MainFormViewModel : ReactiveObject
     public Interaction<Book, string?> SaveFile { get; } = new();
     public Interaction<Unit, bool> SaveAndContinue { get; } = new();
     public Interaction<Book, Unit> Practice { get; } = new();
+    public Interaction<Unit, Book?> CreateBook { get; set; } = new();
     public Interaction<Book, Unit> BookSettings { get; } = new();
     public Interaction<BookContext, Unit> Print { get; } = new();
 
@@ -39,6 +41,7 @@ public class MainFormViewModel : ReactiveObject
     public ReactiveCommand<Unit, Unit> SaveCommand { get; }
     public ReactiveCommand<Unit, Unit> CloseCommand { get; }
     public ReactiveCommand<Unit, Unit> PracticeCommand { get; }
+    public ReactiveCommand<Unit, Unit> CreateBookCommand { get; }
     public ReactiveCommand<Unit, Unit> BookSettingsCommand { get; }
     public ReactiveCommand<Unit, Unit> PrintCommand { get; }
 
@@ -90,6 +93,16 @@ public class MainFormViewModel : ReactiveObject
     }
 
     private async Task PracticeCommandAction() => await Practice.Handle(BookContext.Book);
+    private async Task CreateBookCommandAction()
+    {
+        Book? book = await CreateBook.Handle(Unit.Default);
+        if (book != null)
+        {
+            // TODO: Save changes
+            // TODO: Load new book
+        }
+    }
+
     private async Task BookSettingsCommandAction() => await BookSettings.Handle(BookContext.Book);
     private async Task PrintCommandAction() => await Print.Handle(BookContext);
 }

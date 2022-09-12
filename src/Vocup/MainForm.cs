@@ -50,6 +50,8 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         this.BindCommand(ViewModel, vm => vm.CloseCommand, x => x.TsmiCloseBook);
         this.BindCommand(ViewModel, vm => vm.PracticeCommand, x => x.TsmiPractice);
         this.BindCommand(ViewModel, vm => vm.PracticeCommand, x => x.BtnPractice);
+        this.BindCommand(ViewModel, vm => vm.CreateBookCommand, x => x.TsmiCreateBook);
+        this.BindCommand(ViewModel, vm => vm.CreateBookCommand, x => x.TsbCreateBook);
         this.BindCommand(ViewModel, vm => vm.BookSettingsCommand, x => x.TsmiBookOptions);
         this.BindCommand(ViewModel, vm => vm.BookSettingsCommand, x => x.BtnBookSettings);
         this.BindCommand(ViewModel, vm => vm.PrintCommand, x => x.TsmiPrint);
@@ -129,6 +131,15 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
             }
 
             interaction.SetOutput(Unit.Default);
+        })));
+
+        this.WhenActivated(d => d(ViewModel.CreateBook.RegisterHandler(interaction =>
+        {
+            using var dialog = new VocabularyBookSettings(out Book book);
+            if (dialog.ShowDialog() == DialogResult.OK)
+                interaction.SetOutput(book);
+            else
+                interaction.SetOutput(null);
         })));
 
         this.WhenActivated(d => d(ViewModel.BookSettings.RegisterHandler(interaction =>
@@ -415,9 +426,6 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         }
     }
 
-    private void TsbCreateBook_Click(object sender, EventArgs e) => CreateBook();
-    private void TsmiCreateBook_Click(object sender, EventArgs e) => CreateBook();
-
     private void BtnAddWord_Click(object sender, EventArgs e) => AddWord();
     private void TsmiAddWord_Click(object sender, EventArgs e) => AddWord();
 
@@ -622,30 +630,6 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
             CurrentBook.UnsavedChanges = false;
             Program.Settings.LastFile = CurrentBook.FilePath;
             return true;
-        }
-    }
-
-    private void CreateBook()
-    {
-        using (VocabularyBookSettings dialog = new VocabularyBookSettings(out Book book))
-        {
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                if (CurrentBook != null)
-                {
-                    //if (UnsavedChanges && !EnsureSaved())
-                    //    return;
-
-                    UnloadBook(false);
-                }
-
-                Program.TrackingService.Action("/book/new", "Book/Create");
-
-                // VocabularyBookSettings enables notification on creation
-                LoadBook(new BookContext(book, BookFileFormat.Vhf1));
-
-                BtnAddWord.Focus();
-            }
         }
     }
 
