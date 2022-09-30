@@ -8,7 +8,6 @@ namespace Vocup.Models
         StatisticsPanel StatisticsPanel { get; }
         TextBox SearchText { get; }
         void VocabularyWordSelected(bool value);
-        void VocabularyBookHasFilePath(bool value);
         void VocabularyBookUnsavedChanges(bool value);
 
         void EditWord();

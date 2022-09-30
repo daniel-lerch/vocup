@@ -1,6 +1,7 @@
 ﻿using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using System;
+using System.IO;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
@@ -20,14 +21,15 @@ public class MainFormViewModel : ReactiveObject
         CreateBookCommand = ReactiveCommand.CreateFromTask(CreateBookCommandAction);
         BookSettingsCommand = ReactiveCommand.CreateFromTask(BookSettingsCommandAction, this.WhenAnyValue(x => x.BookContext).Select(x => x != null));
         PrintCommand = ReactiveCommand.CreateFromTask(PrintCommandAction, this.WhenAnyValue(x => x.BookContext.Book.Words.Count).Select(x => x > 0));
+        OpenInExplorerCommand = ReactiveCommand.CreateFromTask(OpenInExplorerCommandAction, this.WhenAnyValue(x => x.BookContext, x => x.BookContext.FilePath, (_, _) => BookContext?.FilePath != null));
 
-        this.WhenAnyValue(x => x.BookContext.Name)
-            .Select(x => x == null ? "Vocup" : $"Vocup - {x}")
+        this.WhenAnyValue(x => x.BookContext, x => x.BookContext!.FilePath, (_, _) => BookContext?.FilePath)
+            .Select(x => x == null ? "Vocup" : $"Vocup - {Path.GetFileNameWithoutExtension(x)}")
             .ToPropertyEx(this, x => x.Title, "Vocup");
     }
 
     [Reactive] public BookContext? BookContext { get; set; }
-    [ObservableAsProperty] public string Title { get; }
+    [ObservableAsProperty] public string Title { get; } = "Vocup";
 
     public Interaction<Unit, string?> OpenFile { get; } = new();
     public Interaction<Book, string?> SaveFile { get; } = new();
@@ -36,6 +38,7 @@ public class MainFormViewModel : ReactiveObject
     public Interaction<Unit, Book?> CreateBook { get; set; } = new();
     public Interaction<Book, Unit> BookSettings { get; } = new();
     public Interaction<BookContext, Unit> Print { get; } = new();
+    public Interaction<string, Unit> OpenInExplorer { get; } = new();
 
     public ReactiveCommand<Unit, Unit> OpenCommand { get; }
     public ReactiveCommand<Unit, Unit> SaveCommand { get; }
@@ -44,6 +47,7 @@ public class MainFormViewModel : ReactiveObject
     public ReactiveCommand<Unit, Unit> CreateBookCommand { get; }
     public ReactiveCommand<Unit, Unit> BookSettingsCommand { get; }
     public ReactiveCommand<Unit, Unit> PrintCommand { get; }
+    public ReactiveCommand<Unit, Unit> OpenInExplorerCommand { get; }
 
     public async ValueTask OpenAsync(string path)
     {
@@ -78,7 +82,7 @@ public class MainFormViewModel : ReactiveObject
 
     private async Task CloseCommandAction()
     {
-        if (BookContext == null) 
+        if (BookContext == null)
             throw new InvalidOperationException("Cannot close book when no book is opened");
 
         if (BookContext.UnsavedChanges)
@@ -92,7 +96,11 @@ public class MainFormViewModel : ReactiveObject
         await bookContext.DisposeAsync();
     }
 
-    private async Task PracticeCommandAction() => await Practice.Handle(BookContext.Book);
+    private async Task PracticeCommandAction()
+    {
+        if (BookContext == null) throw new InvalidOperationException();
+        await Practice.Handle(BookContext.Book);
+    }
     private async Task CreateBookCommandAction()
     {
         Book? book = await CreateBook.Handle(Unit.Default);
@@ -102,7 +110,19 @@ public class MainFormViewModel : ReactiveObject
             // TODO: Load new book
         }
     }
-
-    private async Task BookSettingsCommandAction() => await BookSettings.Handle(BookContext.Book);
-    private async Task PrintCommandAction() => await Print.Handle(BookContext);
+    private async Task BookSettingsCommandAction()
+    {
+        if (BookContext == null) throw new InvalidOperationException();
+        await BookSettings.Handle(BookContext.Book);
+    }
+    private async Task PrintCommandAction()
+    {
+        if (BookContext == null) throw new InvalidOperationException();
+        await Print.Handle(BookContext);
+    }
+    private async Task OpenInExplorerCommandAction()
+    {
+        if (BookContext == null || BookContext.FilePath == null) throw new InvalidOperationException();
+        await OpenInExplorer.Handle(BookContext.FilePath);
+    }
 }

@@ -56,6 +56,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         this.BindCommand(ViewModel, vm => vm.BookSettingsCommand, x => x.BtnBookSettings);
         this.BindCommand(ViewModel, vm => vm.PrintCommand, x => x.TsmiPrint);
         this.BindCommand(ViewModel, vm => vm.PrintCommand, x => x.TsbPrint);
+        this.BindCommand(ViewModel, vm => vm.OpenInExplorerCommand, x => x.TsmiOpenInExplorer);
 
         this.WhenActivated(d => d(ViewModel.OpenFile.RegisterHandler(interaction =>
         {
@@ -155,6 +156,32 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
             dialog.ShowDialog();
             interaction.SetOutput(Unit.Default);
         })));
+
+        this.WhenActivated(d => d(ViewModel.OpenInExplorer.RegisterHandler(interaction =>
+        {
+            // TODO: Remove Messages.OpenInExplorerSave and Messages.OpenInExplorerSaveT
+            try
+            {
+                FileInfo info = new FileInfo(interaction.Input);
+                if (info.Exists)
+                {
+                    string explorer = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "explorer.exe");
+                    Process.Start(explorer, $"/select,\"{info.FullName}\"");
+                }
+                else
+                {
+                    MessageBox.Show(Messages.OpenInExplorerNotFound, Messages.OpenInExplorerNotFoundT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format(Messages.OpenInExplorerError, ex), Messages.OpenInExplorerErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                interaction.SetOutput(Unit.Default);
+            }
+        })));
 #pragma warning restore CA1416 // Validate platform compatibility
 
         FileTreeView.RootPath = Program.Settings.VhfPath;
@@ -179,10 +206,6 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         TsmiEditWord.Enabled = value;
         BtnDeleteWord.Enabled = value;
         TsmiDeleteWord.Enabled = value;
-    }
-    public void VocabularyBookHasFilePath(bool value)
-    {
-        TsmiOpenInExplorer.Enabled = value;
     }
     public void VocabularyBookUnsavedChanges(bool value)
     {
@@ -218,7 +241,6 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         if (fullUnload)
         {
             VocabularyWordSelected(false);
-            VocabularyBookHasFilePath(false);
             VocabularyBookUnsavedChanges(false);
 
             // Accidentially overriding this value when the user already has chosen another file results in a stack overflow
@@ -440,41 +462,6 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     private void TsmiMerge_Click(object sender, EventArgs e)
     {
         using (var dialog = new MergeFiles()) dialog.ShowDialog();
-    }
-
-    private void TsmiOpenInExplorer_Click(object sender, EventArgs e)
-    {
-        if (CurrentBook.UnsavedChanges)
-        {
-            DialogResult dialogResult = MessageBox.Show(Messages.OpenInExplorerSave,
-                Messages.OpenInExplorerSaveT, MessageBoxButtons.YesNoCancel);
-
-            if (dialogResult == DialogResult.Yes)
-            {
-                SaveFile(false);
-            }
-            else if (dialogResult == DialogResult.Cancel)
-            {
-                return;
-            }
-        }
-        FileInfo info = new FileInfo(CurrentBook.FilePath);
-        if (info.Exists)
-        {
-            try
-            {
-                string explorer = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "explorer.exe");
-                Process.Start(explorer, $"/select,\"{info.FullName}\"");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(string.Format(Messages.OpenInExplorerError, ex), Messages.OpenInExplorerErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        else
-        {
-            MessageBox.Show(Messages.OpenInExplorerNotFound, Messages.OpenInExplorerNotFoundT, MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
     }
 
     private void TsmiImport_Click(object sender, EventArgs e) => ImportCsv();

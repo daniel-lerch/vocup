@@ -244,7 +244,6 @@
             resources.ApplyResources(this.TsmiOpenInExplorer, "TsmiOpenInExplorer");
             this.TsmiOpenInExplorer.Image = global::Vocup.Properties.Icons.Open;
             this.TsmiOpenInExplorer.Name = "TsmiOpenInExplorer";
-            this.TsmiOpenInExplorer.Click += new System.EventHandler(this.TsmiOpenInExplorer_Click);
             // 
             // toolStripMenuItem7
             // 

@@ -60,7 +60,6 @@ public class VocabularyBookController : IDisposable
     {
         ListView.MotherTongue = BookContext.Book.MotherTongue;
         ListView.ForeignLang = BookContext.Book.ForeignLanguage;
-        Parent?.VocabularyBookHasFilePath(!string.IsNullOrWhiteSpace(BookContext.FilePath));
         Parent?.VocabularyBookUnsavedChanges(BookContext.UnsavedChanges);
 
         //if (VocabularyBook.UnsavedChanges && Program.Settings.AutoSave && !string.IsNullOrWhiteSpace(VocabularyBook.FilePath))
