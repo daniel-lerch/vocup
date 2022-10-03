@@ -24,7 +24,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
     public MainForm()
     {
         InitializeComponent();
-        ViewModel = new MainFormViewModel();
+        ViewModel = new MainFormViewModel(Program.Settings);
 
 #pragma warning disable CA1416 // Validate platform compatibility
         this.OneWayBind(ViewModel, vm => vm.Title, x => x.Text);
@@ -89,22 +89,15 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
                 interaction.SetOutput(null);
         })));
 
-        this.WhenActivated(d => d(ViewModel.SaveAndContinue.RegisterHandler(interaction =>
+        this.WhenActivated(d => d(ViewModel.SaveBeforeContinue.RegisterHandler(interaction =>
         {
             DialogResult result = MessageBox.Show(Messages.GeneralSaveChanges, Messages.GeneralSaveChangesT, MessageBoxButtons.YesNoCancel);
-
-            if (result == DialogResult.Yes)
-            {
-                interaction.SetOutput(SaveFile(false)); // Save file and return true which means to continue with the next action.
-            }
-            else if (result == DialogResult.No)
-            {
-                interaction.SetOutput(true); // Do not save file and return true.
-            }
-            else
-            {
-                interaction.SetOutput(false); // Return false to indicate the users choice to stay at the current screen.
-            }
+            
+            interaction.SetOutput(result switch {
+                DialogResult.Yes => true,
+                DialogResult.No => false,
+                _ => null,
+            });
         })));
 
         this.WhenActivated(d => d(ViewModel.Practice.RegisterHandler(interaction =>

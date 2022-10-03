@@ -30,20 +30,6 @@ public class Book : ReactiveObject
         PracticeMode = practiceMode;
         Words = words;
 
-        var unpracticedForeignLanguage = Words
-            .ToObservableChangeSet()
-            .AutoRefresh(word => word.ForeignLanguagePracticeState)
-            .Filter(word => word.ForeignLanguagePracticeState == 0)
-            .Count()
-            .ToProperty(this, "unpracticedForeignLanguage");
-
-        var unpracticedMotherTongue = Words
-            .ToObservableChangeSet()
-            .AutoRefresh(word => word.MotherTonguePracticeState)
-            .Filter(word => word.MotherTonguePracticeState == 0)
-            .Count()
-            .ToProperty(this, "unpracticedMotherTongue");
-
         unpracticed = Words
             .ToObservableChangeSet()
             .AutoRefresh(word => word.ForeignLanguagePracticeState)

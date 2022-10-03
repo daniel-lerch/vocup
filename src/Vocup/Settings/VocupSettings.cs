@@ -6,7 +6,7 @@ using Vocup.Settings.Core;
 
 namespace Vocup.Settings;
 
-public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
+public class VocupSettings : SettingsBase, IVocupSettings, ICopyable<VocupSettings>
 {
     public VocupSettings() { }
 
