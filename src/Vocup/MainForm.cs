@@ -633,7 +633,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
                 {
                     Program.TrackingService.Action("/book/new", "Book/Import");
 
-                    BookContext bookContext = new(new Book(string.Empty, string.Empty), BookFileFormat.Vhf1);
+                    BookContext bookContext = new(new Book(string.Empty, string.Empty), BookFileFormat.Vhf1, Program.Settings);
                     if (CsvFile.Instance.Import(openDialog.FileName, bookContext.Book, true, ansiEncoding))
                     {
                         bookContext.UnsavedChanges = true;

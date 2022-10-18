@@ -23,7 +23,7 @@ public class InitializeTest
         Program.CreateVhfFolder();
         Program.CreateVhrFolder();
         Book book = new("Deutsch", "Englisch");
-        BookContext bookContext = new(book, BookFileFormat.Vhf1);
+        BookContext bookContext = new(book, BookFileFormat.Vhf1, Program.Settings);
 
         new MainForm().Dispose();
         // new AboutBox().Dispose(); WPF does not work without [STAThread]

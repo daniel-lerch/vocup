@@ -3,13 +3,14 @@ using System.IO;
 using System.Threading.Tasks;
 using Vocup.IO.Vhf1;
 using Vocup.Models;
+using Vocup.Settings;
 using Vocup.Util;
 
 namespace Vocup.IO;
 
 public class BookStorage
 {
-    public async ValueTask<BookContext> LoadAsync(string path, string? vhrPath)
+    public async ValueTask<BookContext> LoadAsync(string path, string? vhrPath, IVocupSettings settings)
     {
         await default(HopToThreadPoolAwaitable);
 
@@ -18,10 +19,10 @@ public class BookStorage
         (Book book, BookFileFormat fileFormat, string? vhrCode) =
             await ReadBookAsync(stream, path, vhrPath).ConfigureAwait(false);
 
-        return new BookContext(book, fileFormat, fileStream: null, vhrCode);
+        return new BookContext(book, fileFormat, fileStream: null, vhrCode, settings);
     }
 
-    public async ValueTask<BookContext> OpenAsync(string path, string? vhrPath)
+    public async ValueTask<BookContext> OpenAsync(string path, string? vhrPath, IVocupSettings settings)
     {
         await default(HopToThreadPoolAwaitable);
 
@@ -31,7 +32,7 @@ public class BookStorage
         (Book book, BookFileFormat fileFormat, string? vhrCode) =
             await ReadBookAsync(stream, path, vhrPath).ConfigureAwait(false);
 
-        return new BookContext(book, fileFormat, stream, vhrCode);
+        return new BookContext(book, fileFormat, stream, vhrCode, settings);
     }
 
     public ValueTask SaveAsync(BookContext bookContext, string? vhrPath)

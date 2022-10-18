@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Vocup.IO;
 using Vocup.Models;
+using Vocup.Settings;
 using Xunit;
 
 namespace Vocup.Core.UnitTests.IO;
@@ -26,7 +28,7 @@ public class BookStorageTests
     public async Task TestReadVhf1()
     {
         await using BookContext bookContext =
-            await bookStorage.OpenAsync(Path.Join("Resources", "Year 11.vhf"), "Resources").ConfigureAwait(false);
+            await bookStorage.OpenAsync(Path.Join("Resources", "Year 11.vhf"), "Resources", new FakeSettings()).ConfigureAwait(false);
 
         Book book = bookContext.Book;
         Assert.NotNull(bookContext.FileFormat);
@@ -41,7 +43,7 @@ public class BookStorageTests
     public async Task TestReadVhf2()
     {
         await using BookContext bookContext =
-            await bookStorage.OpenAsync(Path.Join("Resources", "Year 12.vhf"), tempPath).ConfigureAwait(false);
+            await bookStorage.OpenAsync(Path.Join("Resources", "Year 12.vhf"), tempPath, new FakeSettings()).ConfigureAwait(false);
 
         Book book = bookContext.Book;
         Assert.NotNull(bookContext.FileFormat);
@@ -59,14 +61,14 @@ public class BookStorageTests
         Book expected = GenerateSampleVhf1Book();
         string path = Path.Combine(Path.GetTempPath(), "Vocup_751e0198-5ed8-439d-9041-efb3d594c400.vhf");
 
-        await using (BookContext sampleContext = new(expected, BookFileFormat.Vhf1)
+        await using (BookContext sampleContext = new(expected, BookFileFormat.Vhf1, new FakeSettings())
         {
             VhrCode = "o5xqm7rdg6y9fecs9ykuuckv",
             FileStream = new FileStream(path, FileMode.Create, FileAccess.ReadWrite, FileShare.Read)
         })
             await bookStorage.SaveAsync(sampleContext, tempPath).ConfigureAwait(false);
 
-        await using (BookContext bookContext = await bookStorage.OpenAsync(path, tempPath).ConfigureAwait(false))
+        await using (BookContext bookContext = await bookStorage.OpenAsync(path, tempPath, new FakeSettings()).ConfigureAwait(false))
         {
             Assert.Equal(BookFileFormat.Vhf1, bookContext.FileFormat);
             Assert.Equal("o5xqm7rdg6y9fecs9ykuuckv", bookContext.VhrCode);
@@ -84,13 +86,13 @@ public class BookStorageTests
         Book expected = GenerateSampleVhf2Book();
         string path = Path.Combine(Path.GetTempPath(), "Vocup_d3afa6cf-a041-489f-8f39-aea5ed1c0ec5.vhf");
 
-        await using (BookContext sampleContext = new(expected, BookFileFormat.Vhf2)
+        await using (BookContext sampleContext = new(expected, BookFileFormat.Vhf2, new FakeSettings())
         {
             FileStream = new FileStream(path, FileMode.Create, FileAccess.ReadWrite, FileShare.Read)
         })
             await bookStorage.SaveAsync(sampleContext, tempPath).ConfigureAwait(false);
 
-        await using (BookContext bookContext = await bookStorage.OpenAsync(path, tempPath).ConfigureAwait(false))
+        await using (BookContext bookContext = await bookStorage.OpenAsync(path, tempPath, new FakeSettings()).ConfigureAwait(false))
         {
             Assert.Equal(BookFileFormat.Vhf2, bookContext.FileFormat);
             Assert.Null(bookContext.VhrCode);
@@ -143,5 +145,13 @@ public class BookStorageTests
                 new Synonym("color", new[] { "AE" }, pratice2)
             })
         });
+    }
+
+    private class FakeSettings : IVocupSettings
+    {
+        public string VhrPath { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int MaxPracticeCount { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

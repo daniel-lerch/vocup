@@ -75,7 +75,7 @@ public class MainFormViewModel : ReactiveObject
 
     public async ValueTask OpenAsync(string path)
     {
-        BookContext = await bookStorage.OpenAsync(path, settings.VhrPath);
+        BookContext = await bookStorage.OpenAsync(path, settings.VhrPath, settings);
     }
 
     public async ValueTask<bool> SaveAsync()

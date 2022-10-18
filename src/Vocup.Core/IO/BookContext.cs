@@ -5,19 +5,23 @@ using System.IO;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 using Vocup.Models;
+using Vocup.Settings;
 
 namespace Vocup.IO;
 
 public class BookContext : ReactiveObject, IAsyncDisposable
 {
-    public BookContext(Book book, BookFileFormat fileFormat) : this(book, fileFormat, null, null) { }
+    private readonly IVocupSettings settings;
 
-    internal BookContext(Book book, BookFileFormat fileFormat, FileStream? fileStream, string? vhrCode)
+    public BookContext(Book book, BookFileFormat fileFormat, IVocupSettings settings) : this(book, fileFormat, null, null, settings) { }
+
+    internal BookContext(Book book, BookFileFormat fileFormat, FileStream? fileStream, string? vhrCode, IVocupSettings settings)
     {
         Book = book;
         FileFormat = fileFormat;
         FileStream = fileStream;
         VhrCode = vhrCode;
+        this.settings = settings;
 
         this.WhenAnyValue(x => x.FileStream).Select(x => x?.Name).ToPropertyEx(this, x => x.FilePath);
         this.WhenAnyValue(x => x.FileStream).Select(x => Path.GetFileNameWithoutExtension(x?.Name)).ToPropertyEx(this, x => x.Name);
@@ -29,6 +33,7 @@ public class BookContext : ReactiveObject, IAsyncDisposable
     [Reactive] public string? VhrCode { get; internal set; }
     [Reactive] public bool UnsavedChanges { get; set; } // TODO add change listener
     [ObservableAsProperty] public string? FilePath { get; }
+
 
     public ValueTask DisposeAsync()
     {

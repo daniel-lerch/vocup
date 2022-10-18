@@ -12,8 +12,6 @@ namespace Vocup.Models;
 
 public class Book : ReactiveObject
 {
-    private readonly ObservableAsPropertyHelper<int> unpracticed;
-
     public Book(string motherTongue, string foreignLanguage)
         : this(motherTongue, foreignLanguage, PracticeMode.AskForForeignLanguage, new ObservableCollection<Word>()) { }
 
@@ -30,7 +28,7 @@ public class Book : ReactiveObject
         PracticeMode = practiceMode;
         Words = words;
 
-        unpracticed = Words
+        Words
             .ToObservableChangeSet()
             .AutoRefresh(word => word.ForeignLanguagePracticeState)
             .AutoRefresh(word => word.MotherTonguePracticeState)
@@ -40,8 +38,35 @@ public class Book : ReactiveObject
                         word => word.ForeignLanguagePracticeState == 0 :
                         word => word.MotherTonguePracticeState == 0))
             .ToCollection() // Creating a collection may be inefficient but .Count() does not work here
-            .Select(x => x.Count) 
-            .ToProperty(this, x => x.Unpracticed);
+            .Select(x => x.Count)
+            .ToPropertyEx(this, x => x.Unpracticed);
+
+        Words
+            .ToObservableChangeSet()
+            .AutoRefresh(word => word.ForeignLanguagePracticeState)
+            .AutoRefresh(word => word.MotherTonguePracticeState)
+            .Filter(
+                this.WhenAnyValue(x => x.PracticeMode)
+                    .Select<PracticeMode, Func<Word, bool>>(practiceMode => practiceMode != PracticeMode.AskForMotherTongue ?
+                        word => word.ForeignLanguagePracticeState == 1 :
+                        word => word.MotherTonguePracticeState == 1))
+            .ToCollection() // Creating a collection may be inefficient but .Count() does not work here
+            .Select(x => x.Count)
+            .ToPropertyEx(this, x => x.WronglyPracticed);
+
+        Words
+            .ToObservableChangeSet()
+            .AutoRefresh(word => word.ForeignLanguagePracticeState)
+            .AutoRefresh(word => word.MotherTonguePracticeState)
+            .Filter(
+                this.WhenAnyValue(x => x.PracticeMode)
+                    .Select<PracticeMode, Func<Word, bool>>(practiceMode => practiceMode != PracticeMode.AskForMotherTongue ?
+                        word => word.ForeignLanguagePracticeState == 2 :
+                        word => word.MotherTonguePracticeState == 2))
+            .ToCollection() // Creating a collection may be inefficient but .Count() does not work here
+            .Select(x => x.Count)
+            .ToPropertyEx(this, x => x.CorrectlyPracticed);
+
     }
 
     [Reactive] public string MotherTongue { get; set; }
@@ -64,9 +89,9 @@ public class Book : ReactiveObject
     }
 
     // TODO implement change listeners
-    public int Unpracticed => unpracticed.Value;
-    [Obsolete] public int WronglyPracticed => 0;
-    [Obsolete] public int CorrectlyPracticed => 0;
+    [ObservableAsProperty] public int Unpracticed { get; }
+    [ObservableAsProperty] public int WronglyPracticed { get; }
+    [ObservableAsProperty] public int CorrectlyPracticed { get; }
     [Obsolete] public int FullyPracticed => 0;
     [Obsolete] public int NotFullyPracticed => 0;
 }
