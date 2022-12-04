@@ -3,11 +3,13 @@
     <TargetFramework>net7.0-windows10.0.19041.0</TargetFramework>
     <Nullable>enable</Nullable>
     <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
-    <Platforms>AnyCPU;x86;x64</Platforms>
-    <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+    <Platforms>AnyCPU;x86;x64;ARM64</Platforms>
+    <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
     <OutputType>WinExe</OutputType>
     <UseWindowsForms>true</UseWindowsForms>
     <UseWPF>true</UseWPF>
+    <!-- For ARM64 builds not to fail, satellite assemblies must be configured https://github.com/dotnet/sdk/issues/28419 -->
+    <GenerateSatelliteAssembliesForCore>true</GenerateSatelliteAssembliesForCore>
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <ApplicationDefaultFont>Microsoft Sans Serif, 8.25pt</ApplicationDefaultFont>
     <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
