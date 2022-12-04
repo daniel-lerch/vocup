@@ -27,6 +27,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{513AA9B6-F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "setup", "setup", "{2EC721A1-43D9-4567-BF3F-F2CBB7F215F5}"
 	ProjectSection(SolutionItems) = preProject
+		setup\icon_vdp.ico = setup\icon_vdp.ico
 		setup\icon_vhf.ico = setup\icon_vhf.ico
 		setup\left.bmp = setup\left.bmp
 		setup\license.txt = setup\license.txt
