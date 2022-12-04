@@ -27,6 +27,8 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         ViewModel = new MainFormViewModel(Program.Settings);
 
 #pragma warning disable CA1416 // Validate platform compatibility
+        this.Bind(ViewModel, vm => vm.SearchText, x => x.TbSearchWord.Text);
+
         this.OneWayBind(ViewModel, vm => vm.Title, x => x.Text);
 
         this.OneWayBind(ViewModel, vm => vm.BookContext, x => x.GroupBook.Enabled, context => context != null);
@@ -38,10 +40,10 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         this.OneWayBind(ViewModel, vm => vm.BookContext.Book.Words.Count, x => x.GroupSearch.Enabled, count => count > 0);
         this.OneWayBind(ViewModel, vm => vm.BookContext.Book.Words.Count, x => x.TsmiExport.Enabled, count => count > 0);
 
-        this.OneWayBind(ViewModel, vm => vm.BookContext.Book.Unpracticed, x => x.StatisticsPanel.Unpracticed);
-        this.OneWayBind(ViewModel, vm => vm.BookContext.Book.WronglyPracticed, x => x.StatisticsPanel.WronglyPracticed);
-        this.OneWayBind(ViewModel, vm => vm.BookContext.Book.CorrectlyPracticed, x => x.StatisticsPanel.CorrectlyPracticed);
-        this.OneWayBind(ViewModel, vm => vm.BookContext.Book.FullyPracticed, x => x.StatisticsPanel.FullyPracticed);
+        this.OneWayBind(ViewModel, vm => vm.Unpracticed, x => x.StatisticsPanel.Unpracticed);
+        this.OneWayBind(ViewModel, vm => vm.WronglyPracticed, x => x.StatisticsPanel.WronglyPracticed);
+        this.OneWayBind(ViewModel, vm => vm.CorrectlyPracticed, x => x.StatisticsPanel.CorrectlyPracticed);
+        this.OneWayBind(ViewModel, vm => vm.FullyPracticed, x => x.StatisticsPanel.FullyPracticed);
 
         this.BindCommand(ViewModel, vm => vm.OpenCommand, x => x.TsmiOpenBook);
         this.BindCommand(ViewModel, vm => vm.OpenCommand, x => x.TsbOpenBook);

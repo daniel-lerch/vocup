@@ -23,7 +23,7 @@ public class MainFormViewModel : ReactiveObject
 
         OpenCommand = ReactiveCommand.CreateFromTask(OpenCommandAction);
         SaveCommand = ReactiveCommand.CreateFromTask(SaveCommandAction,
-            this.WhenAnyValue(x => x.BookContext, x => x.BookContext.UnsavedChanges, (_, _) => BookContext?.UnsavedChanges ?? false));
+            this.WhenAnyValue(x => x.BookContext, x => x.BookContext!.UnsavedChanges, (_, _) => BookContext?.UnsavedChanges ?? false));
         SaveAsCommand = ReactiveCommand.CreateFromTask(SaveAsCommandAction, this.WhenAnyValue(x => x.BookContext).Select(x => x != null));
         CloseCommand = ReactiveCommand.CreateFromTask(CloseCommandAction, this.WhenAnyValue(x => x.BookContext).Select(x => x != null));
         PracticeCommand = ReactiveCommand.CreateFromTask(PracticeCommandAction, this.WhenAnyValue(x => x.BookContext.Book.Unpracticed).Select(x => x > 0));
@@ -31,7 +31,7 @@ public class MainFormViewModel : ReactiveObject
         BookSettingsCommand = ReactiveCommand.CreateFromTask(BookSettingsCommandAction, this.WhenAnyValue(x => x.BookContext).Select(x => x != null));
         PrintCommand = ReactiveCommand.CreateFromTask(PrintCommandAction, this.WhenAnyValue(x => x.BookContext.Book.Words.Count).Select(x => x > 0));
         OpenInExplorerCommand = ReactiveCommand.CreateFromTask(OpenInExplorerCommandAction,
-            this.WhenAnyValue(x => x.BookContext, x => x.BookContext.FilePath, (_, _) => BookContext?.FilePath != null));
+            this.WhenAnyValue(x => x.BookContext, x => x.BookContext!.FilePath, (_, _) => BookContext?.FilePath != null));
 
         this.WhenAnyValue(x => x.BookContext, x => x.BookContext!.FilePath, (_, _) => BookContext?.FilePath)
             .Select(x => x == null ? "Vocup" : $"Vocup - {Path.GetFileNameWithoutExtension(x)}")
@@ -47,7 +47,9 @@ public class MainFormViewModel : ReactiveObject
             .ToPropertyEx(this, x => x.FullyPracticed);
     }
 
+    // TODO: Replace this nullable property with BookViewModel to have less nullability issues.
     [Reactive] public BookContext? BookContext { get; set; }
+    [Reactive] public string SearchText { get; set; } = string.Empty;
     [ObservableAsProperty] public string Title { get; } = "Vocup";
     [ObservableAsProperty] public int Unpracticed { get; }
     [ObservableAsProperty] public int WronglyPracticed { get; }

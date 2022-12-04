@@ -26,7 +26,7 @@ public partial class PrintWordSelection : Form
 
         ListBox.BeginUpdate();
         foreach (Word word in book.Words)
-            ListBox.Items.Add($"{word.MotherTongueCombined} - {word.ForeignLanguageCombined}", true);
+            ListBox.Items.Add(new WordListItem(word), true);
         ListBox.EndUpdate();
 
         CbUnpracticed.Enabled = book.Unpracticed > 0;
@@ -106,9 +106,10 @@ public partial class PrintWordSelection : Form
     {
         ListBox.BeginUpdate();
 
-        for (int i = 0; i < book.Words.Count; i++)
+        for (int i = 0; i < ListBox.Items.Count; i++)
         {
-            if (predicate(book.Words[i]))
+            WordListItem item = (WordListItem)ListBox.Items[i];
+            if (predicate(item.Word))
             {
                 ListBox.SetItemChecked(i, value);
             }
@@ -204,4 +205,19 @@ public partial class PrintWordSelection : Form
 
         pageNumber++;
     }
+
+    private class WordListItem
+    {
+		public WordListItem(Word word)
+		{
+			Word = word;
+		}
+
+		public Word Word { get; }
+
+		public override string ToString()
+		{
+			return $"{Word.MotherTongueCombined} - {Word.ForeignLanguageCombined}";
+		}
+	}
 }
