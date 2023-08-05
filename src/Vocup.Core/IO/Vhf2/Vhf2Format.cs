@@ -4,6 +4,7 @@ using System.IO.Compression;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Vocup.Models;
+using Vocup.Settings;
 
 namespace Vocup.IO.Vhf2;
 
@@ -27,7 +28,7 @@ internal partial class Vhf2Format : BookFileFormat
         version = new Version(2, 0);
     }
 
-    internal override async ValueTask<(Book book, string? vhrCode)> ReadBookAsync(Stream stream, string? fileName, string? vhrPath)
+    internal override async ValueTask<(Book book, string? vhrCode)> ReadBookAsync(Stream stream, string? fileName, string? vhrPath, IVocupSettings settings)
     {
         try
         {
@@ -61,7 +62,7 @@ internal partial class Vhf2Format : BookFileFormat
             }
             if (jsonBook == null) throw new VhfFormatException(VhfError.InvalidJsonBook);
 
-            return (jsonBook.ToBook(), null);
+            return (jsonBook.ToBook(settings), null);
         }
         catch (InvalidDataException ex)
         {

@@ -7,27 +7,36 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reactive.Linq;
+using System.Threading;
+using Vocup.Settings;
 
 namespace Vocup.Models;
 
 public class Word : ReactiveObject
 {
+    private readonly Book book;
+    private readonly IVocupSettings settings;
+    private readonly Lazy<WordPracticeState> practiceState;
     private readonly ObservableAsPropertyHelper<string> motherTongueCombined;
     private readonly ObservableAsPropertyHelper<string> foreignLanguageCombined;
-    private readonly ObservableAsPropertyHelper<int> motherTonguePracticeState;
-    private readonly ObservableAsPropertyHelper<int> foreignLanguagePracticeState;
 
-    public Word() : this(new(), new()) { }
+    public Word(Book book, IVocupSettings settings) : this(new(), new(), book, settings) { }
 
-    public Word(IEnumerable<Synonym> motherTongue, IEnumerable<Synonym> foreignLanguage)
+    public Word(IEnumerable<Synonym> motherTongue, IEnumerable<Synonym> foreignLanguage, Book book, IVocupSettings settings)
         : this(
               new ObservableCollection<Synonym>(motherTongue),
-              new ObservableCollection<Synonym>(foreignLanguage)) { }
+              new ObservableCollection<Synonym>(foreignLanguage),
+              book,
+              settings) { }
 
-    private Word(ObservableCollection<Synonym> motherTongue, ObservableCollection<Synonym> foreignLanguage)
+    private Word(ObservableCollection<Synonym> motherTongue, ObservableCollection<Synonym> foreignLanguage, Book book, IVocupSettings settings)
     {
+        this.book = book;
+        this.settings = settings;
         MotherTongue = motherTongue;
         ForeignLanguage = foreignLanguage;
+
+        practiceState = new(() => new(this, book), LazyThreadSafetyMode.ExecutionAndPublication);
 
         motherTongueCombined = MotherTongue
             .ToObservableChangeSet()
@@ -42,50 +51,28 @@ public class Word : ReactiveObject
             .ToCollection()
             .Select(x => string.Join(", ", x.Select(s => s.Value)))
             .ToProperty(this, x => x.ForeignLanguageCombined);
-
-        motherTonguePracticeState = MotherTongue
-            .ToObservableChangeSet()
-            .AutoRefresh(synonym => synonym.PracticeState)
-            .ToCollection()
-            .Select(x => x.Min(synonym => synonym.PracticeState))
-            .ToProperty(this, x => x.MotherTonguePracticeState);
-
-        foreignLanguagePracticeState = ForeignLanguage
-            .ToObservableChangeSet()
-            .AutoRefresh(synonym => synonym.PracticeState)
-            .ToCollection()
-            .Select(x => x.Min(synonym => synonym.PracticeState))
-            .ToProperty(this, x => x.ForeignLanguagePracticeState);
     }
 
     public ObservableCollection<Synonym> MotherTongue { get; }
     public ObservableCollection<Synonym> ForeignLanguage { get; }
     [Reactive] public DateTimeOffset CreationDate { get; set; }
 
-    public override bool Equals(object? obj)
-    {
-        return obj is Word word &&
-               CreationDate.Equals(word.CreationDate) &&
-               Enumerable.SequenceEqual(MotherTongue, word.MotherTongue) &&
-               Enumerable.SequenceEqual(ForeignLanguage, word.ForeignLanguage);
-    }
+    public WordPracticeState PracticeState => practiceState.Value;
 
-    public override int GetHashCode()
-    {
-        return HashCode.Combine(CreationDate, MotherTongue, ForeignLanguage);
-    }
-
+    /// <summary>
+    /// A comma separated list of mother tongue synonyms
+    /// </summary>
     public string MotherTongueCombined => motherTongueCombined.Value;
+    /// <summary>
+    /// A comma separated list of foreign language synonyms
+    /// </summary>
     public string ForeignLanguageCombined => foreignLanguageCombined.Value;
-    public int MotherTonguePracticeState => motherTonguePracticeState.Value;
-    public int ForeignLanguagePracticeState => foreignLanguagePracticeState.Value;
 
     [Obsolete] public string MotherTongueText { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     [Obsolete] public string ForeignLangText { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     [Obsolete] public string? ForeignLangSynonym { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     [Obsolete] public string ForeignLangCombined => throw new NotImplementedException();
     [Obsolete] public int PracticeStateNumber { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    [Obsolete] public PracticeState PracticeState => throw new NotImplementedException();
     [Obsolete] public DateTime PracticeDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
     [Obsolete]
@@ -95,14 +82,14 @@ public class Word : ReactiveObject
         {
             IEnumerable<Practice> practices;
             if (copyResults)
-                practices = synonym.Practices.Select(x => new Practice { Date = x.Date, Result = x.Result });
+                practices = synonym.Practices.Select(x => new Practice(x.Date, x.Result));
             else
                 practices = Enumerable.Empty<Practice>();
 
-            return new Synonym(synonym.Value, new ObservableCollection<string>(synonym.Flags), practices);
+            return new Synonym(synonym.Value, new ObservableCollection<string>(synonym.Flags), practices, settings);
         }
 
-        return new Word(MotherTongue.Select(cloneSynonym), ForeignLanguage.Select(cloneSynonym))
+        return new Word(MotherTongue.Select(cloneSynonym), ForeignLanguage.Select(cloneSynonym), book, settings)
         {
             CreationDate = CreationDate
         };

@@ -10,7 +10,14 @@ namespace Vocup.IO;
 
 public class BookStorage
 {
-    public async ValueTask<BookContext> LoadAsync(string path, string? vhrPath, IVocupSettings settings)
+    private IVocupSettings settings;
+
+    public BookStorage(IVocupSettings settings)
+    {
+        this.settings = settings;
+    }
+
+    public async ValueTask<BookContext> LoadAsync(string path, string? vhrPath)
     {
         await default(HopToThreadPoolAwaitable);
 
@@ -22,7 +29,7 @@ public class BookStorage
         return new BookContext(book, fileFormat, fileStream: null, vhrCode, settings);
     }
 
-    public async ValueTask<BookContext> OpenAsync(string path, string? vhrPath, IVocupSettings settings)
+    public async ValueTask<BookContext> OpenAsync(string path, string? vhrPath)
     {
         await default(HopToThreadPoolAwaitable);
 
@@ -61,6 +68,17 @@ public class BookStorage
 
     protected async ValueTask<(Book book, BookFileFormat fileFormat, string? vhrCode)> ReadBookAsync(Stream stream, string? fileName, string? vhrPath)
     {
+        bool zipHeader = await StartsWithZipHeader(stream);
+
+        BookFileFormat serializer = zipHeader ? BookFileFormat.Vhf2 : BookFileFormat.Vhf1;
+
+        (Book book, string? vhrCode) = await serializer.ReadBookAsync(stream, fileName, vhrPath, settings).ConfigureAwait(false);
+
+        return (book, serializer, vhrCode);
+    }
+
+    private static async ValueTask<bool> StartsWithZipHeader(Stream stream)
+    {
         Memory<byte> buffer = new byte[4];
         bool zipHeader = await stream.ReadAsync(buffer).ConfigureAwait(false) == 4
             && buffer.Span[0] == 0x50
@@ -68,11 +86,6 @@ public class BookStorage
             && buffer.Span[2] == 0x03
             && buffer.Span[3] == 0x04;
         stream.Seek(0, SeekOrigin.Begin);
-
-        BookFileFormat serializer = zipHeader ? BookFileFormat.Vhf2 : BookFileFormat.Vhf1;
-
-        (Book book, string? vhrCode) = await serializer.ReadBookAsync(stream, fileName, vhrPath).ConfigureAwait(false);
-
-        return (book, serializer, vhrCode);
+        return zipHeader;
     }
 }

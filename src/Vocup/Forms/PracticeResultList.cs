@@ -70,7 +70,7 @@ public partial class PracticeResultList : Form
 
     private void Form_Shown(object sender, EventArgs e)
     {
-        if (book.NotFullyPracticed == 0)
+        if (book.PracticeState.NotFullyPracticed == 0)
         {
             MessageBox.Show(Messages.BookPracticeFinished, Messages.BookPracticeFinishedT, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

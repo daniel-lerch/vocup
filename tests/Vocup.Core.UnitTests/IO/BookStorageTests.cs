@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,8 +11,16 @@ namespace Vocup.Core.UnitTests.IO;
 
 public class BookStorageTests
 {
-    private readonly BookStorage bookStorage = new BookStorage();
-    private readonly string tempPath = Path.GetTempPath();
+    private readonly string tempPath;
+    private readonly IVocupSettings settings;
+    private readonly BookStorage bookStorage;
+
+    public BookStorageTests()
+    {
+        tempPath = Path.GetTempPath();
+        settings = new DefaultSettings("Resources");
+        bookStorage = new BookStorage(settings);
+    }
 
     [Fact]
     public void TestEquals()
@@ -28,7 +35,7 @@ public class BookStorageTests
     public async Task TestReadVhf1()
     {
         await using BookContext bookContext =
-            await bookStorage.OpenAsync(Path.Join("Resources", "Year 11.vhf"), "Resources", new FakeSettings()).ConfigureAwait(false);
+            await bookStorage.OpenAsync(Path.Join("Resources", "Year 11.vhf"), "Resources").ConfigureAwait(false);
 
         Book book = bookContext.Book;
         Assert.NotNull(bookContext.FileFormat);
@@ -43,7 +50,7 @@ public class BookStorageTests
     public async Task TestReadVhf2()
     {
         await using BookContext bookContext =
-            await bookStorage.OpenAsync(Path.Join("Resources", "Year 12.vhf"), tempPath, new FakeSettings()).ConfigureAwait(false);
+            await bookStorage.OpenAsync(Path.Join("Resources", "Year 12.vhf"), tempPath).ConfigureAwait(false);
 
         Book book = bookContext.Book;
         Assert.NotNull(bookContext.FileFormat);
@@ -61,14 +68,14 @@ public class BookStorageTests
         Book expected = GenerateSampleVhf1Book();
         string path = Path.Combine(Path.GetTempPath(), "Vocup_751e0198-5ed8-439d-9041-efb3d594c400.vhf");
 
-        await using (BookContext sampleContext = new(expected, BookFileFormat.Vhf1, new FakeSettings())
+        await using (BookContext sampleContext = new(expected, BookFileFormat.Vhf1, settings)
         {
             VhrCode = "o5xqm7rdg6y9fecs9ykuuckv",
             FileStream = new FileStream(path, FileMode.Create, FileAccess.ReadWrite, FileShare.Read)
         })
             await bookStorage.SaveAsync(sampleContext, tempPath).ConfigureAwait(false);
 
-        await using (BookContext bookContext = await bookStorage.OpenAsync(path, tempPath, new FakeSettings()).ConfigureAwait(false))
+        await using (BookContext bookContext = await bookStorage.OpenAsync(path, tempPath).ConfigureAwait(false))
         {
             Assert.Equal(BookFileFormat.Vhf1, bookContext.FileFormat);
             Assert.Equal("o5xqm7rdg6y9fecs9ykuuckv", bookContext.VhrCode);
@@ -86,13 +93,13 @@ public class BookStorageTests
         Book expected = GenerateSampleVhf2Book();
         string path = Path.Combine(Path.GetTempPath(), "Vocup_d3afa6cf-a041-489f-8f39-aea5ed1c0ec5.vhf");
 
-        await using (BookContext sampleContext = new(expected, BookFileFormat.Vhf2, new FakeSettings())
+        await using (BookContext sampleContext = new(expected, BookFileFormat.Vhf2, settings)
         {
             FileStream = new FileStream(path, FileMode.Create, FileAccess.ReadWrite, FileShare.Read)
         })
             await bookStorage.SaveAsync(sampleContext, tempPath).ConfigureAwait(false);
 
-        await using (BookContext bookContext = await bookStorage.OpenAsync(path, tempPath, new FakeSettings()).ConfigureAwait(false))
+        await using (BookContext bookContext = await bookStorage.OpenAsync(path, tempPath).ConfigureAwait(false))
         {
             Assert.Equal(BookFileFormat.Vhf2, bookContext.FileFormat);
             Assert.Null(bookContext.VhrCode);
@@ -106,52 +113,34 @@ public class BookStorageTests
     {
         var pratice2 = new[]
         {
-            new Practice
-            {
-                // Vocup v1 file formats do not support seconds or timezones of practices
-                Date = new DateTime(2020, 8, 19, 16, 17, 0),
-                Result = PracticeResult2.Correct
-            }
+            // Vocup v1 file formats do not support seconds or timezones of practices
+            new Practice(new DateTime(2020, 8, 19, 16, 17, 0), PracticeResult2.Correct)
         };
 
-        return new Book("Deutsch", "Englisch", PracticeMode.AskForForeignLanguage, new[]
+        var book = new Book("Deutsch", "Englisch", PracticeMode.AskForForeignLanguage);
+        book.Words.Add(new(new[] { new Synonym("Katze", settings) }, new[] { new Synonym("cat", settings) }, book, settings));
+        book.Words.Add(new(new[] { new Synonym("Farbe", settings) }, new[]
         {
-            new Word(new[] { new Synonym("Katze") }, new[] { new Synonym("cat") }),
-            new Word(new[] { new Synonym("Farbe") }, new[]
-            {
-                new Synonym("colour", Array.Empty<string>(), pratice2),
-                new Synonym("color", Array.Empty<string>(), pratice2)
-            })
-        });
+            new Synonym("colour", Array.Empty<string>(), pratice2, settings),
+            new Synonym("color", Array.Empty<string>(), pratice2, settings)
+        }, book, settings));
+        return book;
     }
-
+    
     private Book GenerateSampleVhf2Book()
     {
         var pratice2 = new[]
         {
-            new Practice
-            {
-                Date = new DateTimeOffset(2020, 8, 19, 16, 17, 13, TimeSpan.FromHours(1)),
-                Result = PracticeResult2.Correct
-            }
+            new Practice(new DateTimeOffset(2020, 8, 19, 16, 17, 13, TimeSpan.FromHours(1)), PracticeResult2.Correct)
         };
 
-        return new Book("Deutsch", "Englisch", PracticeMode.AskForForeignLanguage, new[]
+        var book = new Book("Deutsch", "Englisch", PracticeMode.AskForForeignLanguage);
+        book.Words.Add(new(new[] { new Synonym("Katze", settings) }, new[] { new Synonym("cat", settings) }, book, settings));
+        book.Words.Add(new(new[] { new Synonym("Farbe", settings) }, new[]
         {
-            new Word(new[] { new Synonym("Katze") }, new[] { new Synonym("cat") }),
-            new Word(new[] { new Synonym("Farbe") }, new[]
-            {
-                new Synonym("colour", new[] { "BE" }, pratice2),
-                new Synonym("color", new[] { "AE" }, pratice2)
-            })
-        });
-    }
-
-    private class FakeSettings : IVocupSettings
-    {
-        public string VhrPath { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int MaxPracticeCount { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
+            new Synonym("colour", new[] { "BE" }, pratice2, settings),
+            new Synonym("color", new[] { "AE" }, pratice2, settings)
+        }, book, settings));
+        return book;
     }
 }

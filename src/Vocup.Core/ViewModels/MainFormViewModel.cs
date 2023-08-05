@@ -19,14 +19,14 @@ public class MainFormViewModel : ReactiveObject
     public MainFormViewModel(IVocupSettings settings)
     {
         this.settings = settings;
-        bookStorage = new BookStorage();
+        bookStorage = new BookStorage(settings);
 
         OpenCommand = ReactiveCommand.CreateFromTask(OpenCommandAction);
         SaveCommand = ReactiveCommand.CreateFromTask(SaveCommandAction,
             this.WhenAnyValue(x => x.BookContext, x => x.BookContext!.UnsavedChanges, (_, _) => BookContext?.UnsavedChanges ?? false));
         SaveAsCommand = ReactiveCommand.CreateFromTask(SaveAsCommandAction, this.WhenAnyValue(x => x.BookContext).Select(x => x != null));
         CloseCommand = ReactiveCommand.CreateFromTask(CloseCommandAction, this.WhenAnyValue(x => x.BookContext).Select(x => x != null));
-        PracticeCommand = ReactiveCommand.CreateFromTask(PracticeCommandAction, this.WhenAnyValue(x => x.BookContext.Book.Unpracticed).Select(x => x > 0));
+        PracticeCommand = ReactiveCommand.CreateFromTask(PracticeCommandAction, this.WhenAnyValue(x => x.BookContext.Book.PracticeState.Unpracticed).Select(x => x > 0));
         CreateBookCommand = ReactiveCommand.CreateFromTask(CreateBookCommandAction);
         BookSettingsCommand = ReactiveCommand.CreateFromTask(BookSettingsCommandAction, this.WhenAnyValue(x => x.BookContext).Select(x => x != null));
         PrintCommand = ReactiveCommand.CreateFromTask(PrintCommandAction, this.WhenAnyValue(x => x.BookContext.Book.Words.Count).Select(x => x > 0));
@@ -37,13 +37,13 @@ public class MainFormViewModel : ReactiveObject
             .Select(x => x == null ? "Vocup" : $"Vocup - {Path.GetFileNameWithoutExtension(x)}")
             .ToPropertyEx(this, x => x.Title);
 
-        this.WhenAnyValue(x => x.BookContext, x => x.BookContext!.Book.Unpracticed, (_, _) => BookContext?.Book.Unpracticed ?? 0)
+        this.WhenAnyValue(x => x.BookContext, x => x.BookContext!.Book.PracticeState.Unpracticed, (_, _) => BookContext?.Book.PracticeState.Unpracticed ?? 0)
             .ToPropertyEx(this, x => x.Unpracticed);
-        this.WhenAnyValue(x => x.BookContext, x => x.BookContext!.Book.WronglyPracticed, (_, _) => BookContext?.Book.WronglyPracticed ?? 0)
+        this.WhenAnyValue(x => x.BookContext, x => x.BookContext!.Book.PracticeState.WronglyPracticed, (_, _) => BookContext?.Book.PracticeState.WronglyPracticed ?? 0)
             .ToPropertyEx(this, x => x.WronglyPracticed);
-        this.WhenAnyValue(x => x.BookContext, x => x.BookContext!.Book.CorrectlyPracticed, (_, _) => BookContext?.Book.CorrectlyPracticed ?? 0)
+        this.WhenAnyValue(x => x.BookContext, x => x.BookContext!.Book.PracticeState.CorrectlyPracticed, (_, _) => BookContext?.Book.PracticeState.CorrectlyPracticed ?? 0)
             .ToPropertyEx(this, x => x.CorrectlyPracticed);
-        this.WhenAnyValue(x => x.BookContext, x => x.BookContext!.Book.FullyPracticed, (_, _) => BookContext?.Book.FullyPracticed ?? 0)
+        this.WhenAnyValue(x => x.BookContext, x => x.BookContext!.Book.PracticeState.FullyPracticed, (_, _) => BookContext?.Book.PracticeState.FullyPracticed ?? 0)
             .ToPropertyEx(this, x => x.FullyPracticed);
     }
 
@@ -77,7 +77,7 @@ public class MainFormViewModel : ReactiveObject
 
     public async ValueTask OpenAsync(string path)
     {
-        BookContext = await bookStorage.OpenAsync(path, settings.VhrPath, settings);
+        BookContext = await bookStorage.OpenAsync(path, settings.VhrPath);
     }
 
     public async ValueTask<bool> SaveAsync()

@@ -29,10 +29,10 @@ public partial class PrintWordSelection : Form
             ListBox.Items.Add(new WordListItem(word), true);
         ListBox.EndUpdate();
 
-        CbUnpracticed.Enabled = book.Unpracticed > 0;
-        CbWronglyPracticed.Enabled = book.WronglyPracticed > 0;
-        CbCorrectlyPracticed.Enabled = book.CorrectlyPracticed > 0;
-        CbFullyPracticed.Enabled = book.FullyPracticed > 0;
+        CbUnpracticed.Enabled = book.PracticeState.Unpracticed > 0;
+        CbWronglyPracticed.Enabled = book.PracticeState.WronglyPracticed > 0;
+        CbCorrectlyPracticed.Enabled = book.PracticeState.CorrectlyPracticed > 0;
+        CbFullyPracticed.Enabled = book.PracticeState.FullyPracticed > 0;
     }
 
     private void BtnCheckAll_Click(object sender, EventArgs e)
@@ -91,10 +91,10 @@ public partial class PrintWordSelection : Form
 
         if (selection)
         {
-            SetItemsChecked(x => x.PracticeState == PracticeState.Unpracticed, CbUnpracticed.Checked);
-            SetItemsChecked(x => x.PracticeState == PracticeState.WronglyPracticed, CbWronglyPracticed.Checked);
-            SetItemsChecked(x => x.PracticeState == PracticeState.CorrectlyPracticed, CbCorrectlyPracticed.Checked);
-            SetItemsChecked(x => x.PracticeState == PracticeState.FullyPracticed, CbFullyPracticed.Checked);
+            SetItemsChecked(x => x.PracticeState.PracticeState == PracticeState.Unpracticed, CbUnpracticed.Checked);
+            SetItemsChecked(x => x.PracticeState.PracticeState == PracticeState.WronglyPracticed, CbWronglyPracticed.Checked);
+            SetItemsChecked(x => x.PracticeState.PracticeState == PracticeState.CorrectlyPracticed, CbCorrectlyPracticed.Checked);
+            SetItemsChecked(x => x.PracticeState.PracticeState == PracticeState.FullyPracticed, CbFullyPracticed.Checked);
         }
         else
         {

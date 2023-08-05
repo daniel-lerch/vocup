@@ -1,70 +1,38 @@
-﻿using DynamicData;
-using DynamicData.Binding;
-using ReactiveUI;
+﻿using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Reactive.Linq;
+using System.Threading;
+using Vocup.Settings;
 
 namespace Vocup.Models;
 
 public class Synonym : ReactiveObject
 {
-    private readonly ObservableAsPropertyHelper<int> practiceState;
+    private readonly Lazy<SynonymPracticeState> practiceState;
 
-    public Synonym(string value) : this(value, new(), new()) { }
+    public Synonym(string value, IVocupSettings settings) : this(value, new(), new(), settings) { }
 
-    public Synonym(string value, IEnumerable<string> flags, IEnumerable<Practice> practices)
+    public Synonym(string value, IEnumerable<string> flags, IEnumerable<Practice> practices, IVocupSettings settings)
         : this(
               value,
               new ObservableCollection<string>(flags),
-              new ObservableCollection<Practice>(practices)) { }
+              new ObservableCollection<Practice>(practices),
+              settings) { }
 
-    private Synonym(string value, ObservableCollection<string> flags, ObservableCollection<Practice> practices)
+    private Synonym(string value, ObservableCollection<string> flags, ObservableCollection<Practice> practices, IVocupSettings settings)
     {
         Value = value;
         Flags = flags;
         Practices = practices;
 
-        practiceState = Practices
-            .ToObservableChangeSet()
-            .AutoRefresh(practice => practice.Result)
-            .ToCollection()
-            .Select(x =>
-            {
-                int practiceState = 0;
-
-                foreach (Practice practice in x)
-                {
-                    if (practice.Result == PracticeResult2.Wrong)
-                        practiceState = 1;
-                    else if (practice.Result == PracticeResult2.Correct)
-                        practiceState = practiceState == 0 ? 2 : practiceState + 1;
-                }
-
-                return practiceState;
-            })
-            .ToProperty(this, x => x.PracticeState);
+        practiceState = new(() => new(this, settings), LazyThreadSafetyMode.ExecutionAndPublication);
     }
 
     [Reactive] public string Value { get; set; }
     public ObservableCollection<string> Flags { get; }
     public ObservableCollection<Practice> Practices { get; }
 
-    public override bool Equals(object? obj)
-    {
-        return obj is Synonym synonym &&
-               Value == synonym.Value &&
-               Enumerable.SequenceEqual(Flags, synonym.Flags) &&
-               Enumerable.SequenceEqual(Practices, synonym.Practices);
-    }
-
-    public override int GetHashCode()
-    {
-        return HashCode.Combine(Value, Flags, Practices);
-    }
-
-    public int PracticeState => practiceState.Value;
+    public SynonymPracticeState PracticeState => practiceState.Value;
 }

@@ -17,7 +17,7 @@ namespace Vocup.Models
             praticeDateColumn = ListViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(ListViewItem, ""));
 
             VocabularyWord = vocabularyWord;
-            VocabularyWord.PropertyChanged += (a0, a1) => UpdateUI();
+            VocabularyWord.PropertyChanged += (_, _) => UpdateUI();
             UpdateUI();
         }
 
@@ -39,7 +39,7 @@ namespace Vocup.Models
 
         private void UpdateUI()
         {
-            ListViewItem.ImageIndex = (int)VocabularyWord.PracticeState;
+            ListViewItem.ImageIndex = (int)VocabularyWord.PracticeState.PracticeState;
 
             motherTongueColumn.Text = VocabularyWord.MotherTongueText;
             foreignLangColumn.Text = VocabularyWord.ForeignLangCombined;

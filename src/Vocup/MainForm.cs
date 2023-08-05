@@ -592,7 +592,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
                 if (save.ShowDialog() == DialogResult.OK)
                 {
                     Cursor.Current = Cursors.WaitCursor;
-                    new BookStorage().SaveAsync(CurrentBook, save.FileName, Program.Settings.VhrPath).AsTask().GetAwaiter().GetResult();
+                    new BookStorage(Program.Settings).SaveAsync(CurrentBook, save.FileName, Program.Settings.VhrPath).AsTask().GetAwaiter().GetResult();
                     Cursor.Current = Cursors.Default;
                     CurrentBook.UnsavedChanges = false;
                     Program.Settings.LastFile = CurrentBook.FilePath;
@@ -607,7 +607,7 @@ public partial class MainForm : Form, IMainForm, IViewFor<MainFormViewModel>
         else
         {
             Cursor.Current = Cursors.WaitCursor;
-            new BookStorage().SaveAsync(CurrentBook, Program.Settings.VhrPath).AsTask().GetAwaiter().GetResult();
+            new BookStorage(Program.Settings).SaveAsync(CurrentBook, Program.Settings.VhrPath).AsTask().GetAwaiter().GetResult();
             Cursor.Current = Cursors.Default;
             CurrentBook.UnsavedChanges = false;
             Program.Settings.LastFile = CurrentBook.FilePath;

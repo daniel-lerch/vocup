@@ -18,7 +18,7 @@ public partial class PracticeCountDialog : Form
         InitializeComponent();
         this.book = book;
         PracticeList = new List<VocabularyWordPractice>();
-        Count = book.NotFullyPracticed;
+        Count = book.PracticeState.NotFullyPracticed;
     }
 
     public List<VocabularyWordPractice> PracticeList { get; }
@@ -40,9 +40,9 @@ public partial class PracticeCountDialog : Form
 
     private void Form_Load(object sender, EventArgs e)
     {
-        RbUnpracticed.Enabled = book.Unpracticed > 0;
-        RbWronglyPracticed.Enabled = book.WronglyPracticed > 0;
-        RbCorrectlyPracticed.Enabled = book.CorrectlyPracticed > 0;
+        RbUnpracticed.Enabled = book.PracticeState.Unpracticed > 0;
+        RbWronglyPracticed.Enabled = book.PracticeState.WronglyPracticed > 0;
+        RbCorrectlyPracticed.Enabled = book.PracticeState.CorrectlyPracticed > 0;
     }
 
     private void BtnCount20_Click(object sender, EventArgs e) => Finish(20);
@@ -58,25 +58,25 @@ public partial class PracticeCountDialog : Form
     private void RbAllStates_CheckedChanged(object sender, EventArgs e)
     {
         if (RbAllStates.Checked)
-            Count = book.NotFullyPracticed;
+            Count = book.PracticeState.NotFullyPracticed;
     }
 
     private void RbUnpracticed_CheckedChanged(object sender, EventArgs e)
     {
         if (RbUnpracticed.Checked)
-            Count = book.Unpracticed;
+            Count = book.PracticeState.Unpracticed;
     }
 
     private void RbWronglyPracticed_CheckedChanged(object sender, EventArgs e)
     {
         if (RbWronglyPracticed.Checked)
-            Count = book.WronglyPracticed;
+            Count = book.PracticeState.WronglyPracticed;
     }
 
     private void RbCorrectlyPracticed_CheckedChanged(object sender, EventArgs e)
     {
         if (RbCorrectlyPracticed.Checked)
-            Count = book.CorrectlyPracticed;
+            Count = book.PracticeState.CorrectlyPracticed;
     }
 
     private void Finish(int count)
@@ -84,11 +84,11 @@ public partial class PracticeCountDialog : Form
         ListCompositor<Word> compositor = new ListCompositor<Word>();
 
         IEnumerable<Word> unpracticedItems = book.Words
-            .Where(x => x.PracticeState == PracticeState.Unpracticed);
+            .Where(x => x.PracticeState.PracticeState == PracticeState.Unpracticed);
         IEnumerable<Word> wronglyPracticedItems = book.Words
-            .Where(x => x.PracticeState == PracticeState.WronglyPracticed);
+            .Where(x => x.PracticeState.PracticeState == PracticeState.WronglyPracticed);
         IEnumerable<Word> correctlyPracticedItems = book.Words
-            .Where(x => x.PracticeState == PracticeState.CorrectlyPracticed);
+            .Where(x => x.PracticeState.PracticeState == PracticeState.CorrectlyPracticed);
 
         if (RbAllDates.Checked)
         {

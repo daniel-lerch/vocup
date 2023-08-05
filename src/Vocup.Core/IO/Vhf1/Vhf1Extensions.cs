@@ -42,27 +42,16 @@ internal static class Vhf1Extensions
     {
         if (practiceStateNumber == 1)
         {
-            synonym.Practices.Add(new Practice
-            {
-                Result = PracticeResult2.Wrong,
-                Date = practiceDate
-            });
+            synonym.Practices.Add(new Practice(practiceDate, PracticeResult2.Wrong));
         }
         else if (practiceStateNumber > 1)
         {
             for (int i = 0; i < practiceStateNumber - 2; i++)
             {
-                synonym.Practices.Add(new Practice
-                {
-                    Result = PracticeResult2.Correct
-                });
+                synonym.Practices.Add(new Practice(default, PracticeResult2.Correct));
             }
 
-            synonym.Practices.Add(new Practice
-            {
-                Result = PracticeResult2.Correct,
-                Date = practiceDate
-            });
+            synonym.Practices.Add(new Practice(practiceDate, PracticeResult2.Correct));
         }
     }
 }

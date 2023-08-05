@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Vocup.Models;
+using Vocup.Settings;
 
 namespace Vocup.IO.Vhf1;
 
@@ -16,7 +17,7 @@ internal class Vhf1Format : BookFileFormat
 
     private Vhf1Format() { }
 
-    internal override async ValueTask<(Book book, string? vhrCode)> ReadBookAsync(Stream stream, string? fileName, string? vhrPath)
+    internal override async ValueTask<(Book book, string? vhrCode)> ReadBookAsync(Stream stream, string? fileName, string? vhrPath, IVocupSettings settings)
     {
         using var reader = new StringReader(await ReadAndDecryptAsync(stream).ConfigureAwait(false));
 
@@ -42,7 +43,7 @@ internal class Vhf1Format : BookFileFormat
             throw new VhfFormatException(VhfError.InvalidLanguages);
         }
 
-        var words = new List<Word>();
+        Book book = new(motherTongue, foreignLanguage);
 
         while (true)
         {
@@ -53,14 +54,15 @@ internal class Vhf1Format : BookFileFormat
             {
                 throw new VhfFormatException(VhfError.InvalidRow);
             }
-            words.Add(new Word(
-                motherTongue: new[] { new Synonym(value: columns[0]) },
+            book.Words.Add(new Word(
+                motherTongue: new[] { new Synonym(value: columns[0], settings) },
                 foreignLanguage: string.IsNullOrWhiteSpace(columns[2])
-                    ? new[] { new Synonym(value: columns[1]) }
-                    : new[] { new Synonym(value: columns[1]), new Synonym(value: columns[2]) }));
+                    ? new[] { new Synonym(value: columns[1], settings) }
+                    : new[] { new Synonym(value: columns[1], settings), new Synonym(value: columns[2], settings) },
+                book,
+                settings));
         }
 
-        Book book = new(motherTongue, foreignLanguage, words);
 
         // Read results from .vhr file
 

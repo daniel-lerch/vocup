@@ -1,23 +1,15 @@
-﻿using ReactiveUI;
-using ReactiveUI.Fody.Helpers;
-using System;
+﻿using System;
 
 namespace Vocup.Models;
 
-public class Practice : ReactiveObject
+public class Practice
 {
-    [Reactive] public DateTimeOffset Date { get; set; }
-    [Reactive] public PracticeResult2 Result { get; set; }
-
-    public override bool Equals(object? obj)
+    public Practice(DateTimeOffset date, PracticeResult2 result)
     {
-        return obj is Practice practice &&
-               Date.Equals(practice.Date) &&
-               Result == practice.Result;
+        Date = date;
+        Result = result;
     }
 
-    public override int GetHashCode()
-    {
-        return HashCode.Combine(Date, Result);
-    }
+    public DateTimeOffset Date { get; }
+    public PracticeResult2 Result { get; }
 }

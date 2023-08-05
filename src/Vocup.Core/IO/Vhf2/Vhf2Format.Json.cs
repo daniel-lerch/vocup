@@ -1,7 +1,9 @@
-﻿using System;
+﻿using DynamicData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Vocup.Models;
+using Vocup.Settings;
 
 namespace Vocup.IO.Vhf2;
 
@@ -18,13 +20,14 @@ partial class Vhf2Format
                 book.Words.Select(w => JsonWord.FromWord(w)).ToList());
         }
 
-        public Book ToBook()
+        public Book ToBook(IVocupSettings settings)
         {
-            return new Book(
+            Book book = new(
                 MotherTongue,
                 ForeignLanguage,
-                PracticeMode,
-                Words.Select(w => w.ToWord()));
+                PracticeMode);
+            book.Words.AddRange(Words.Select(w => w.ToWord(book, settings)));
+            return book;
         }
     }
     private record JsonWord(List<JsonSynonym> MotherTongue, List<JsonSynonym> ForeignLanguage, DateTimeOffset CreationDate)
@@ -37,39 +40,35 @@ partial class Vhf2Format
                 word.CreationDate);
         }
 
-        public Word ToWord()
+        public Word ToWord(Book book, IVocupSettings settings)
         {
             return new Word(
-                MotherTongue.Select(s => s.ToSynonym()),
-                ForeignLanguage.Select(s => s.ToSynonym()))
+                MotherTongue.Select(s => s.ToSynonym(settings)),
+                ForeignLanguage.Select(s => s.ToSynonym(settings)),
+                book,
+                settings)
             {
                 CreationDate = CreationDate
             };
         }
     }
-    private record JsonSynonym(string Value, List<string> Flags, List<JsonPractice> Practices)
+    private record JsonSynonym(string Value, List<string> Flags, List<Practice> Practices)
     {
         public static JsonSynonym FromSynonym(Synonym synonym)
         {
             return new JsonSynonym(
                 synonym.Value,
                 new List<string>(synonym.Flags),
-                synonym.Practices.Select(p => new JsonPractice(p.Date, p.Result)).ToList());
+                synonym.Practices.ToList());
         }
 
-        public Synonym ToSynonym()
+        public Synonym ToSynonym(IVocupSettings settings)
         {
             return new Synonym(
                 Value, 
                 Flags,
-                Practices.Select(p => p.ToPractice()));
-        }
-    }
-    private record JsonPractice(DateTimeOffset Date, PracticeResult2 Result)
-    {
-        public Practice ToPractice()
-        {
-            return new Practice { Date = Date, Result = Result };
+                Practices,
+                settings);
         }
     }
 }

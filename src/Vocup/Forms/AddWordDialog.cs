@@ -63,7 +63,7 @@ public class AddWordDialog : VocabularyWordDialog
         }
         else // No duplicates to handle
         {
-            Word word = new();
+            Word word = new(book, Program.Settings);
             Word vocabularyWord = word;
             vocabularyWord.MotherTongueText = TbMotherTongue.Text;
             vocabularyWord.ForeignLangText = TbForeignLang.Text;

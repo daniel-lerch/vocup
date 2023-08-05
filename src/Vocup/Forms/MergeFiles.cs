@@ -43,7 +43,7 @@ public partial class MergeFiles : Form
         {
             foreach (string file in addFile.FileNames)
             {
-                BookContext bookContext = new BookStorage().LoadAsync(file, Program.Settings.VhrPath, Program.Settings).AsTask().GetAwaiter().GetResult();
+                BookContext bookContext = new BookStorage(Program.Settings).LoadAsync(file, Program.Settings.VhrPath).AsTask().GetAwaiter().GetResult();
                 BookContext conflict = books.Where(x => x.FilePath.Equals(bookContext.FilePath, StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
                 if (conflict != null)
                 {
@@ -154,7 +154,7 @@ public partial class MergeFiles : Form
 
         try
         {
-            new BookStorage().SaveAsync(result, path, Program.Settings.VhrPath).AsTask().GetAwaiter().GetResult();
+            new BookStorage(Program.Settings).SaveAsync(result, path, Program.Settings.VhrPath).AsTask().GetAwaiter().GetResult();
             DialogResult = DialogResult.OK;
         }
         catch (Exception)

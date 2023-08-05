@@ -78,7 +78,7 @@ internal class CsvFile
                     {
                         if (!book.Words.Any(x => x.MotherTongueText == entry.MotherTongue && x.ForeignLangCombined == entry.ForeignLang))
                         {
-                            Word word = new();
+                            Word word = new(book, Program.Settings);
                             word.MotherTongueText = entry.MotherTongue;
                             int idx = entry.ForeignLang.LastIndexOf('=');
                             if (idx == -1)
