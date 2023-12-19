@@ -3,12 +3,11 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using System.Security.Principal;
-using System.Text;
 using System.Windows.Forms;
 using Windows.Management.Deployment;
+using Windows.Win32.Foundation;
 
 namespace Vocup.Util;
 
@@ -27,9 +26,14 @@ public static class AppInfo
     /// </summary>
     public static string SpecialCharDirectory => Path.Combine(Program.Settings.VhrPath, "specialchar");
 
-    public static Version Version { get; } = Version.Parse(
-        Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion 
-        ?? throw new ApplicationException("Assembly version is undefined"));
+    private static readonly Lazy<Version> version = new(() =>
+    {
+        string? versionString = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion
+            ?? throw new ApplicationException("Assembly version is undefined");
+        string versionPart = versionString.Split('+')[0];
+        return Version.Parse(versionPart);
+    });
+    public static Version Version => version.Value;
 
     public static Version FileVersion { get; } = new Version(1, 0);
 
@@ -41,16 +45,13 @@ public static class AppInfo
         = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyCopyrightAttribute>()?.Copyright
         ?? throw new ApplicationException("Assembly copyright information is undefined");
 
-    private static readonly Lazy<bool> isUwp = new Lazy<bool>(() =>
+    private static readonly Lazy<bool> isUwp = new(() =>
     {
         if (OperatingSystem.IsWindowsVersionAtLeast(10, 0, 10240))
         {
-            int length = 0;
-            StringBuilder sb = new StringBuilder(0);
-            GetCurrentPackageFullName(ref length, sb);
-            sb = new StringBuilder(length);
-            int result = GetCurrentPackageFullName(ref length, sb);
-            return result != APPMODEL_ERROR_NO_PACKAGE;
+            uint length = 0;
+            WIN32_ERROR status = Windows.Win32.PInvoke.GetCurrentPackageFullName(ref length, null);
+            return status != WIN32_ERROR.APPMODEL_ERROR_NO_PACKAGE;
         }
         else return false;
     });
@@ -122,9 +123,4 @@ public static class AppInfo
         version = null;
         return false;
     }
-
-    private const int APPMODEL_ERROR_NO_PACKAGE = 15700;
-
-    [DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
-    private static extern int GetCurrentPackageFullName(ref int packageFullNameLength, StringBuilder packageFullName);
 }

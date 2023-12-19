@@ -11,6 +11,8 @@ using Vocup.Models;
 using Vocup.Properties;
 using Vocup.Settings;
 using Vocup.Util;
+using Windows.Win32;
+using Windows.Win32.Foundation;
 
 namespace Vocup;
 
@@ -101,7 +103,7 @@ public static class Program
         Process? process = Process.GetProcessesByName(AppInfo.ProductName).OrderBy(x => x.StartTime).FirstOrDefault();
         if (process != null && process.MainWindowHandle != IntPtr.Zero)
         {
-            PInvoke.User32.SetForegroundWindow(process.MainWindowHandle);
+            PInvoke.SetForegroundWindow((HWND)process.MainWindowHandle);
         }
         else
         {
