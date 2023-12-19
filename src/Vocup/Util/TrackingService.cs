@@ -26,8 +26,12 @@ public class TrackingService : IAsyncDisposable
             $"Vocup/{AppInfo.Version} (Wine; Linux; {processArch}; {osArch}; {AppInfo.GetDeployment()})" :
             $"Vocup/{AppInfo.Version} (Windows NT {Environment.OSVersion.Version}; {processArch}; {osArch}; {AppInfo.GetDeployment()})";
 
+        string chUAPlatformVersion = AppInfo.GetCHUAPlatformVersion().ToString();
+
         httpClient = new HttpClient();
         httpClient.DefaultRequestHeaders.UserAgent.ParseAdd(userAgent);
+        httpClient.DefaultRequestHeaders.Add("Sec-CH-UA-Platform", "Windows");
+        httpClient.DefaultRequestHeaders.Add("Sec-CH-UA-Platform-Version", chUAPlatformVersion);
         httpClient.Timeout = TimeSpan.FromSeconds(10);
     }
 

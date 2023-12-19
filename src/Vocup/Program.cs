@@ -87,6 +87,9 @@ public static class Program
         splash.Close();
         Application.Run(form);
 
+        // After Application.Run returns, the synchronization context is broken and we need to set it to null
+        SynchronizationContext.SetSynchronizationContext(null);
+
         // Calling .GetAwaiter().GetResult() does not work for ValueTasks
         serviceScope.DisposeAsync().AsTask().GetAwaiter().GetResult();
         TrackingService.DisposeAsync().AsTask().GetAwaiter().GetResult();

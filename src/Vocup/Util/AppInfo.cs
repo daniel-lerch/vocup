@@ -6,7 +6,9 @@ using System.Reflection;
 using System.Runtime.Versioning;
 using System.Security.Principal;
 using System.Windows.Forms;
+using Windows.Foundation.Metadata;
 using Windows.Management.Deployment;
+using Windows.Win32;
 using Windows.Win32.Foundation;
 
 namespace Vocup.Util;
@@ -50,21 +52,21 @@ public static class AppInfo
         if (OperatingSystem.IsWindowsVersionAtLeast(10, 0, 10240))
         {
             uint length = 0;
-            WIN32_ERROR status = Windows.Win32.PInvoke.GetCurrentPackageFullName(ref length, null);
+            WIN32_ERROR status = PInvoke.GetCurrentPackageFullName(ref length, null);
             return status != WIN32_ERROR.APPMODEL_ERROR_NO_PACKAGE;
         }
         else return false;
     });
     public static bool IsUwp => isUwp.Value;
 
-    private static readonly Lazy<bool> isInstallation = new Lazy<bool>(() =>
+    private static readonly Lazy<bool> isInstallation = new(() =>
     {
         return TryGetVocupInstallation(out _, out string? installLocation, out _)
             && Application.StartupPath.TrimEnd('\\').Equals(installLocation.TrimEnd('\\'), StringComparison.OrdinalIgnoreCase);
     });
     public static bool IsWindowsInstallation => isInstallation.Value;
 
-    private static readonly Lazy<bool> isWine = new Lazy<bool>(() =>
+    private static readonly Lazy<bool> isWine = new(() =>
     {
         using RegistryKey hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
         using RegistryKey? wine = hklm.OpenSubKey(@"SOFTWARE\Wine", writable: false);
@@ -122,5 +124,18 @@ public static class AppInfo
         }
         version = null;
         return false;
+    }
+
+    public static int GetCHUAPlatformVersion()
+    {
+        if (OperatingSystem.IsWindowsVersionAtLeast(10, 0, 10240))
+        {
+            for (int version = 0; ; version++)
+            {
+                if (!ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", (ushort)(version + 1)))
+                    return version;
+            }
+        }
+        else return 0;
     }
 }
