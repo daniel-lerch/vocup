@@ -38,25 +38,25 @@
                 https://joshclose.github.io/CsvHelper
             </Hyperlink>
         </TextBlock>
-        <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource HeaderStyle}">Losttech Settings</TextBlock>
-        <TextBlock Grid.Row="2" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Center">Apache-2.0</TextBlock>
-        <TextBlock Grid.Row="3" Grid.ColumnSpan="2" Margin="0,0,0,8">
+        <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource HeaderStyle}">CsWin32</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Center">MIT</TextBlock>
+        <TextBlock Grid.Row="3" Grid.ColumnSpan="2">
+            <Hyperlink NavigateUri="https://github.com/dotnet/pinvoke" RequestNavigate="Hyperlink_RequestNavigate">
+                https://github.com/microsoft/CsWin32
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource HeaderStyle}">Losttech Settings</TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Center">Apache-2.0</TextBlock>
+        <TextBlock Grid.Row="5" Grid.ColumnSpan="2" Margin="0,0,0,8">
             <Hyperlink NavigateUri="https://github.com/losttech/Settings" RequestNavigate="Hyperlink_RequestNavigate">
                 https://github.com/losttech/Settings
             </Hyperlink>
         </TextBlock>
-        <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource HeaderStyle}">Office Icons</TextBlock>
-        <TextBlock Grid.Row="4" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Center">CC BY-ND 3.0</TextBlock>
-        <TextBlock Grid.Row="5" Grid.ColumnSpan="2" Margin="0,0,0,8">
+        <TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource HeaderStyle}">Office Icons</TextBlock>
+        <TextBlock Grid.Row="6" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Center">CC BY-ND 3.0</TextBlock>
+        <TextBlock Grid.Row="7" Grid.ColumnSpan="2" Margin="0,0,0,8">
             <Hyperlink NavigateUri="https://icons8.com/icons/office" RequestNavigate="Hyperlink_RequestNavigate">
                 https://icons8.com/icons/office
-            </Hyperlink>
-        </TextBlock>
-        <TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource HeaderStyle}">PInvoke</TextBlock>
-        <TextBlock Grid.Row="6" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Center">Apache-2.0</TextBlock>
-        <TextBlock Grid.Row="7" Grid.ColumnSpan="2">
-            <Hyperlink NavigateUri="https://github.com/dotnet/pinvoke" RequestNavigate="Hyperlink_RequestNavigate">
-                https://github.com/dotnet/pinvoke
             </Hyperlink>
         </TextBlock>
     </Grid>
