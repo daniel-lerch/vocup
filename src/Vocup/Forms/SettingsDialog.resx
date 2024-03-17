@@ -987,6 +987,9 @@
   <data name="CbLanguage.Items2" xml:space="preserve">
     <value>German</value>
   </data>
+  <data name="CbLanguage.Items3" xml:space="preserve">
+    <value>Dutch</value>
+  </data>
   <data name="CbLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>150, 19</value>
   </data>

@@ -37,6 +37,7 @@ public partial class SettingsDialog : Form
         {
             case "en-US": CbLanguage.SelectedIndex = 1; break;
             case "de-DE": CbLanguage.SelectedIndex = 2; break;
+            case "nl-NL": CbLanguage.SelectedIndex = 3; break;
             default: CbLanguage.SelectedIndex = 0; break; // System language
         }
 
@@ -88,6 +89,7 @@ public partial class SettingsDialog : Form
         {
             1 => "en-US",
             2 => "de-DE",
+            3 => "nl-NL",
             _ => null, // System language
         };
         if (settings.OverrideCulture != oldCulture)
