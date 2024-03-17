@@ -107,6 +107,8 @@ public partial class MainForm : Form, IMainForm
 
         using (VocabularyBookController controller = CurrentController)
         {
+            if (CurrentBook != null)
+                CurrentBook.Statistics.Reset();
             CurrentBook = null;
             CurrentController = null;
             SplitContainer.Panel2.Controls.Remove(controller.ListView);
