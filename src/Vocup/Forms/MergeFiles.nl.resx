@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>Taalbestanden samenvoegen</value>
+    <value>Woordenboeken samenvoegen</value>
   </data>
   <data name="BtnAdd.Text" xml:space="preserve">
     <value>Toevoegen</value>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AddVocabularyBooks" xml:space="preserve">
-    <value>Taalbestanden toevoegen</value>
+    <value>Woordenboeken toevoegen</value>
   </data>
   <data name="AddWord" xml:space="preserve">
     <value>Nieuw woord toevoegen</value>
@@ -141,13 +141,13 @@
     <comment>{0}: Word, {1}: Synonym</comment>
   </data>
   <data name="CreateVocabularyBook" xml:space="preserve">
-    <value>Nieuw taalbestand maken</value>
+    <value>Nieuw woordenboek maken</value>
   </data>
   <data name="EasterEgg" xml:space="preserve">
     <value>Easter egg</value>
   </data>
   <data name="EditVocabularyBook" xml:space="preserve">
-    <value>Taalbestand aanpassen</value>
+    <value>Woordenboek aanpassen</value>
   </data>
   <data name="EditWord" xml:space="preserve">
     <value>Woord aanpassen</value>
@@ -168,7 +168,7 @@
     <value>Open back-up</value>
   </data>
   <data name="OpenVocabularyBook" xml:space="preserve">
-    <value>Open taalbestand</value>
+    <value>Open woordenboek</value>
   </data>
   <data name="OverallOneWord" xml:space="preserve">
     <value>1 woord in totaal</value>
@@ -181,7 +181,7 @@
     <value>Deels goed</value>
   </data>
   <data name="SaveVocabularyBook" xml:space="preserve">
-    <value>Taalbestand opslaan</value>
+    <value>Woordenboek opslaan</value>
   </data>
   <data name="Site" xml:space="preserve">
     <value>Site</value>
@@ -200,7 +200,7 @@
     <value>Vocup back-up bestand</value>
   </data>
   <data name="VocupVocabularyBookFile" xml:space="preserve">
-    <value>Vocup taalbestand</value>
+    <value>Vocup woordenboek</value>
   </data>
   <data name="Wrong" xml:space="preserve">
     <value>Fout</value>

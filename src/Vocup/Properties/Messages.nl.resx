@@ -126,7 +126,7 @@ Hint: in de instellingen kun je configureren hoe vaak een woord goed vertaald mo
     <value>Gefeliciteerd!</value>
   </data>
   <data name="BrowseVhfPath" xml:space="preserve">
-    <value>Selecteer de standaard map voor je taalbestanden.</value>
+    <value>Selecteer de standaard map voor je woordenboeken.</value>
   </data>
   <data name="CsvExportError" xml:space="preserve">
     <value>Er is een onverwachte fout opgetreden tijdens het exporteren naar een CSV bestand. 
@@ -159,18 +159,18 @@ Zorg ervoor dat het CSV bestand geëxporteerd wordt met Excel in UTF-8 formaat. 
     <value>Ongeldige CSV header</value>
   </data>
   <data name="CsvInvalidLanguages" xml:space="preserve">
-    <value>Wil je een {0} - {1} taalbestand importeren, ondanks dat de talen niet overeenkomen?
+    <value>Wil je een {0} - {1} woordenboek importeren, ondanks dat de talen niet overeenkomen?
 Als {0} en {1} woorden zijn en geen talen, denk er dan aan om de eerste rij van het CSV bestand te vullen met je moeder taal in de linker kolom en de vreemde taal in de rechter kolom.</value>
     <comment>{0}: Source, {1}: Target</comment>
   </data>
   <data name="EditAddDuplicate" xml:space="preserve">
-    <value>Dit woord bestaat al in je taalbestand. Wil je de invoer negeren?</value>
+    <value>Dit woord bestaat al in je woordenboek. Wil je de invoer negeren?</value>
   </data>
   <data name="EditDuplicateT" xml:space="preserve">
     <value>Woord bestaat al</value>
   </data>
   <data name="EditToDuplicate" xml:space="preserve">
-    <value>Dit gewijzigde woord bestaat al in je taalbestand. Wil je dit woord verwijderen?</value>
+    <value>Dit gewijzigde woord bestaat al in je woordenboek. Wil je dit woord verwijderen?</value>
   </data>
   <data name="GeneralSaveChanges" xml:space="preserve">
     <value>Wil je de wijzigingen en/of oefenresultaten opslaan?</value>
@@ -179,13 +179,13 @@ Als {0} en {1} woorden zijn en geen talen, denk er dan aan om de eerste rij van 
     <value>Opslaan?</value>
   </data>
   <data name="LegacyVersionUninstall" xml:space="preserve">
-    <value>Er is een verouderde versie van Vocup gevonden op je computer. Dit kan problemen geven met de automatische bestandstype associatie en kan ervoor zorgen dat taalbestanden niet geopend kunnen worden. Wil je de verouderde versie deïnstalleren?</value>
+    <value>Er is een verouderde versie van Vocup gevonden op je computer. Dit kan problemen geven met de automatische bestandstype associatie en kan ervoor zorgen dat woordenboeken niet geopend kunnen worden. Wil je de verouderde versie deïnstalleren?</value>
   </data>
   <data name="LegacyVersionUninstallT" xml:space="preserve">
     <value>Incompatibele versie deïnstalleren?</value>
   </data>
   <data name="MergeOverride" xml:space="preserve">
-    <value>Een taalbestand uit hetzelfde pad is reeds ingeladen. Wil je het huidige taalbestand laden en bestaande data overschrijven?</value>
+    <value>Een woordenboek uit hetzelfde pad is reeds ingeladen. Wil je het huidige woordenboek laden en bestaande data overschrijven?</value>
   </data>
   <data name="MergeOverrideT" xml:space="preserve">
     <value>Data overschrijven?</value>
@@ -197,7 +197,7 @@ Als {0} en {1} woorden zijn en geen talen, denk er dan aan om de eerste rij van 
     <value>Vocup kon niet worden opgestart</value>
   </data>
   <data name="OpenInExplorerError" xml:space="preserve">
-    <value>Het huidige taalbestand kon niet worden geopend in Verkenner. Let op dat deze functionaliteit niet beschikbaar is op sommige besturingssystemen zoals Linux of Windows 10 S. 
+    <value>Het huidige woordenboek kon niet worden geopend in Verkenner. Let op dat deze functionaliteit niet beschikbaar is op sommige besturingssystemen zoals Linux of Windows 10 S. 
 Details: {0}</value>
     <comment>{0}: ErrorDetails</comment>
   </data>
@@ -205,7 +205,7 @@ Details: {0}</value>
     <value>Fout bij openen in Verkenner</value>
   </data>
   <data name="OpenInExplorerNotFound" xml:space="preserve">
-    <value>Taalbestand {0} bestaat niet meer.</value>
+    <value>Woordenboek {0} bestaat niet meer.</value>
     <comment>{0}: FilePath</comment>
   </data>
   <data name="OpenInExplorerNotFoundT" xml:space="preserve">
@@ -218,7 +218,7 @@ Details: {0}</value>
     <value>Nu opslaan?</value>
   </data>
   <data name="OpenUnknownFile" xml:space="preserve">
-    <value>Vocup kan bestand {0} niet openen omdat het geen taalbestand of Vocup back-up bestand is.</value>
+    <value>Vocup kan bestand {0} niet openen omdat het geen woordenboek of Vocup back-up bestand is.</value>
     <comment>{0}: FilePath</comment>
   </data>
   <data name="OpenUnknownFileT" xml:space="preserve">
@@ -278,41 +278,41 @@ Details: {0}</value>
     <value>Herstellen gereed</value>
   </data>
   <data name="VhfCorruptFile" xml:space="preserve">
-    <value>Het taalbestand is beschadigd en kon niet worden geopend.</value>
+    <value>Het woordenboek is beschadigd en kon niet worden geopend.</value>
   </data>
   <data name="VhfCorruptFileT" xml:space="preserve">
-    <value>Beschadigd taalbestand</value>
+    <value>Beschadigd woordenboek</value>
   </data>
   <data name="VhfInvalidLanguages" xml:space="preserve">
-    <value>Moedertaal en vreemde taal konden niet uit het taalbestand worden gelezen of zijn identiek aan elkaar.
+    <value>Moedertaal en vreemde taal konden niet uit het woordenboek worden gelezen of zijn identiek aan elkaar.
 Zorg ervoor dat het bestand niet leeg is.</value>
   </data>
   <data name="VhfInvalidRow" xml:space="preserve">
-    <value>Een regel in dit taalbestand is ongeldig. Hierdoor kan het bestand niet worden geopend.</value>
+    <value>Een regel in dit woordenboek is ongeldig. Hierdoor kan het bestand niet worden geopend.</value>
   </data>
   <data name="VhfInvalidVersion" xml:space="preserve">
-    <value>Het versieveld van het taalbestand kon niet worden gelezen.
+    <value>Het versieveld van het woordenboek kon niet worden gelezen.
 Controleer of het bestand niet leeg is.</value>
   </data>
   <data name="VhfInvalidVhrCode" xml:space="preserve">
-    <value>Het resultatenbestand behorend bij het taalbestand kon niet worden gelezen.
+    <value>Het resultatenbestand behorend bij het woordenboek kon niet worden gelezen.
 Controleer of het bestand niet leeg is.</value>
   </data>
   <data name="VhfMustUpdate" xml:space="preserve">
-    <value>Het taalbestand vereist een nieuwere versie van Vocup. Controleer op updates vanuit de applicatie of kijk op internet.</value>
+    <value>Het woordenboek vereist een nieuwere versie van Vocup. Controleer op updates vanuit de applicatie of kijk op internet.</value>
   </data>
   <data name="VhfMustUpdateT" xml:space="preserve">
     <value>Update vereist</value>
   </data>
   <data name="VhfPathInvalid" xml:space="preserve">
-    <value>Het geselecteerde pad is niet geschikt om taalbestanden op te slaan. Gebruik hier geen optische schijven of systeemmappen.</value>
+    <value>Het geselecteerde pad is niet geschikt om woordenboeken op te slaan. Gebruik hier geen optische schijven of systeemmappen.</value>
   </data>
   <data name="VhfPathNotFound" xml:space="preserve">
-    <value>De map voor taalbestanden was niet gevonden op {0}. Vocup zal je configuratie aanpassen naar de standaard documenten map. Je kunt deze instelling op elk moment aanpassen.</value>
+    <value>De map voor woordenboeken was niet gevonden op {0}. Vocup zal je configuratie aanpassen naar de standaard documenten map. Je kunt deze instelling op elk moment aanpassen.</value>
     <comment>{0}: Path</comment>
   </data>
   <data name="VhfPathNotFoundT" xml:space="preserve">
-    <value>Map voor taalbestanden niet gevonden</value>
+    <value>Map voor woordenboeken niet gevonden</value>
   </data>
   <data name="VhrCorruptFile" xml:space="preserve">
     <value>Het resultatenbestand is beschadigd en zal worden verwijderd. Hierdoor zal je je oefenresultaten kwijt raken.</value>
@@ -321,10 +321,10 @@ Controleer of het bestand niet leeg is.</value>
     <value>Beschadigd resultatenbestand</value>
   </data>
   <data name="VhrInvalidRowCount" xml:space="preserve">
-    <value>Het resultatenbestand match niet met het taalbestand. Alle resultaten zullen worden verwijderd.</value>
+    <value>Het resultatenbestand match niet met het woordenboek. Alle resultaten zullen worden verwijderd.</value>
   </data>
   <data name="VhrInvalidRowCountAndOtherFile" xml:space="preserve">
-    <value>Het resultatenbestand is in gebruik door een ander taalbestand. Resultaten kunnen niet worden ingeladen.</value>
+    <value>Het resultatenbestand is in gebruik door een ander woordenboek. Resultaten kunnen niet worden ingeladen.</value>
   </data>
   <data name="VhrPathInvalid" xml:space="preserve">
     <value>Het gekozen pad is niet geschikt om oefenresultaten op te slaan. Gebruik hier geen optische schijven of systeemmappen.</value>
@@ -336,10 +336,10 @@ Controleer of het bestand niet leeg is.</value>
     <value>Map voor oefenresultaten niet gevonden</value>
   </data>
   <data name="VocupFileWriteError" xml:space="preserve">
-    <value>Een taal- of resultatenbestand kon niet worden opgeslagen.</value>
+    <value>Een woordenboek of resultatenbestand kon niet worden opgeslagen.</value>
   </data>
   <data name="VocupFileWriteErrorEx" xml:space="preserve">
-    <value>Een taal- of resultatenbestand kon niet worden opgeslagen: 
+    <value>Een woordenboek of resultatenbestand kon niet worden opgeslagen: 
 {0}</value>
     <comment>{0}: ErrorDetails</comment>
   </data>

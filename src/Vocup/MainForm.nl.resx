@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="TsmiCreateBook.Text" xml:space="preserve">
-    <value>Nieuw taalbestand maken</value>
+    <value>Nieuw woordenboek maken</value>
   </data>
   <data name="TsmiOpenBook.Text" xml:space="preserve">
-    <value>Taalbestand openen...</value>
+    <value>Woordenboek openen...</value>
   </data>
   <data name="TsmiCloseBook.Text" xml:space="preserve">
-    <value>Taalbestand sluiten</value>
+    <value>Woordenboek sluiten</value>
   </data>
   <data name="TsmiSave.Text" xml:space="preserve">
     <value>Opslaan</value>
@@ -166,10 +166,10 @@
     <value>Woorden oefenen</value>
   </data>
   <data name="TsmiBookOptions.Text" xml:space="preserve">
-    <value>Taalbestand opties</value>
+    <value>Woordenboek opties</value>
   </data>
   <data name="TsmiMerge.Text" xml:space="preserve">
-    <value>Taalbestanden samenvoegen</value>
+    <value>Woordenboeken samenvoegen</value>
   </data>
   <data name="TsmiSpecialChar.Text" xml:space="preserve">
     <value>Speciale tekens beheren</value>
@@ -202,7 +202,7 @@
     <value>Oefenen</value>
   </data>
   <data name="GroupBook.Text" xml:space="preserve">
-    <value>Taalbestand:</value>
+    <value>Woordenboek:</value>
   </data>
   <data name="BtnSearchWord.Text" xml:space="preserve">
     <value>Zoeken</value>
@@ -227,19 +227,19 @@
   </data>
   <data name="LbEmptyForm.Text" xml:space="preserve">
     <value>Het is aardig leeg hier!
-Open een taalbestand of maak een nieuw bestand aan.</value>
+Open een woordenboek of maak een nieuwe aan.</value>
   </data>
   <data name="TsbCreateBook.Text" xml:space="preserve">
-    <value>Nieuw taalbestand aanmaken</value>
+    <value>Nieuw woordenboek aanmaken</value>
   </data>
   <data name="TsbOpenBook.Text" xml:space="preserve">
-    <value>Taalbestand openen</value>
+    <value>Woordenboek openen</value>
   </data>
   <data name="TsbSave.Text" xml:space="preserve">
-    <value>Taalbestand opslaan</value>
+    <value>Woordenboek opslaan</value>
   </data>
   <data name="TsbPrint.Text" xml:space="preserve">
-    <value>Taalbestand afdrukken</value>
+    <value>Woordenboek afdrukken</value>
   </data>
   <data name="TsbEvaluationInfo.Text" xml:space="preserve">
     <value>Info over de evaluatie</value>

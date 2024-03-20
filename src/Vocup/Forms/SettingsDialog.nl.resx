@@ -142,7 +142,7 @@
     <value>Akoestische feedback inschakelen</value>
   </data>
   <data name="CbAutoSave.Text" xml:space="preserve">
-    <value>Wijzigingen automatisch opslaan in taalbestand</value>
+    <value>Wijzigingen automatisch opslaan in woordenboek</value>
   </data>
   <data name="CbColumnResize.Text" xml:space="preserve">
     <value>Kolombreedtes automatisch aanpassen</value>
@@ -211,7 +211,7 @@
     <value>User interface</value>
   </data>
   <data name="GroupVhfPath.Text" xml:space="preserve">
-    <value>Map voor taalbestanden</value>
+    <value>Map voor woordenboeken</value>
   </data>
   <data name="GroupVhrPath.Text" xml:space="preserve">
     <value>Map voor resultaatbestanden</value>
@@ -238,7 +238,7 @@ voordat het als geleerd wordt gezien?</value>
     <value>Leeg scherm</value>
   </data>
   <data name="RbRecentFile.Text" xml:space="preserve">
-    <value>Laatst geopende taalbestand</value>
+    <value>Laatst geopende woordenboek</value>
   </data>
   <data name="TabGeneral.Text" xml:space="preserve">
     <value>Algemeen</value>
