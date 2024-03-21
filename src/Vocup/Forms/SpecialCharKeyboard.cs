@@ -45,7 +45,11 @@ public partial class SpecialCharKeyboard : Form
         Owner.FormClosing += Owner_FormClosing;
         Owner_MoveResize(Owner, null);
 
-        trigger.Click += (a0, a1) => DialogEnabled = true;
+        trigger.Click += (a0, a1) =>
+        {
+            DialogEnabled = true;
+            textBox.Focus();
+        };
         DialogEnabledChanged += (a0, a1) => trigger.Enabled = !DialogEnabled;
         trigger.Enabled = !DialogEnabled;
     }

@@ -385,7 +385,11 @@ public partial class PracticeDialog : Form
 
     private void TextBox_Enter(object sender, EventArgs e)
     {
-        specialCharDialog.RegisterTextBox((TextBox)sender);
+        var textbox = (TextBox)sender;
+        if (textbox != null && textbox.Enabled && !textbox.ReadOnly)
+        {
+            specialCharDialog.RegisterTextBox(textbox);
+        }
     }
 
     private void Form_FormClosing(object sender, FormClosingEventArgs e)

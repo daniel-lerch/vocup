@@ -27,6 +27,7 @@ public partial class MergeFiles : Form
         specialCharDialog = new SpecialCharKeyboard();
         specialCharDialog.Initialize(this, BtnSpecialChar);
         specialCharDialog.RegisterTextBox(TbMotherTongue);
+        BtnSpecialChar.Enabled = false;
 
         books = new List<VocabularyBook>();
     }
