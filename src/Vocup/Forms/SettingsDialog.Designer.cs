@@ -223,7 +223,8 @@
             this.CbLanguage.Items.AddRange(new object[] {
             resources.GetString("CbLanguage.Items"),
             resources.GetString("CbLanguage.Items1"),
-            resources.GetString("CbLanguage.Items2")});
+            resources.GetString("CbLanguage.Items2"),
+            resources.GetString("CbLanguage.Items3")});
             resources.ApplyResources(this.CbLanguage, "CbLanguage");
             this.CbLanguage.Name = "CbLanguage";
             // 
