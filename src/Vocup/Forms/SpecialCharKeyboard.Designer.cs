@@ -120,12 +120,42 @@
             this.ă_ro = new System.Windows.Forms.Button();
             this.â_ro_big = new System.Windows.Forms.Button();
             this.â_ro = new System.Windows.Forms.Button();
+            this.tpDutch = new System.Windows.Forms.TabPage();
+            this.û_big_nl = new System.Windows.Forms.Button();
+            this.û_nl = new System.Windows.Forms.Button();
+            this.ü_big_nl = new System.Windows.Forms.Button();
+            this.ü_nl = new System.Windows.Forms.Button();
+            this.ö_nl = new System.Windows.Forms.Button();
+            this.ö_big_nl = new System.Windows.Forms.Button();
+            this.ô_big_nl = new System.Windows.Forms.Button();
+            this.ô_nl = new System.Windows.Forms.Button();
+            this.ñ_nl = new System.Windows.Forms.Button();
+            this.ñ_big_nl = new System.Windows.Forms.Button();
+            this.î_big_nl = new System.Windows.Forms.Button();
+            this.ï_nl = new System.Windows.Forms.Button();
+            this.ï_big_nl = new System.Windows.Forms.Button();
+            this.î_nl = new System.Windows.Forms.Button();
+            this.ç_big_nl = new System.Windows.Forms.Button();
+            this.ç_nl = new System.Windows.Forms.Button();
+            this.ë_big_nl = new System.Windows.Forms.Button();
+            this.ê_nl = new System.Windows.Forms.Button();
+            this.ê_big_nl = new System.Windows.Forms.Button();
+            this.ë_nl = new System.Windows.Forms.Button();
+            this.é_big_nl = new System.Windows.Forms.Button();
+            this.è_nl = new System.Windows.Forms.Button();
+            this.è_big_nl = new System.Windows.Forms.Button();
+            this.é_nl = new System.Windows.Forms.Button();
+            this.ä_big_nl = new System.Windows.Forms.Button();
+            this.ä_nl = new System.Windows.Forms.Button();
+            this.à_big_nl = new System.Windows.Forms.Button();
+            this.à_nl = new System.Windows.Forms.Button();
             this.TcMain.SuspendLayout();
             this.TpGerman.SuspendLayout();
             this.TpFrench.SuspendLayout();
             this.TpItalian.SuspendLayout();
             this.TpSpanish.SuspendLayout();
             this.TpRomanian.SuspendLayout();
+            this.tpDutch.SuspendLayout();
             this.SuspendLayout();
             // 
             // Titel
@@ -143,6 +173,7 @@
             this.TcMain.Controls.Add(this.TpItalian);
             this.TcMain.Controls.Add(this.TpSpanish);
             this.TcMain.Controls.Add(this.TpRomanian);
+            this.TcMain.Controls.Add(this.tpDutch);
             this.TcMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TcMain.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TcMain.Location = new System.Drawing.Point(0, 0);
@@ -1167,6 +1198,327 @@
             this.â_ro.UseVisualStyleBackColor = true;
             this.â_ro.Click += new System.EventHandler(this.Button_Click);
             // 
+            // tpDutch
+            // 
+            this.tpDutch.Controls.Add(this.û_big_nl);
+            this.tpDutch.Controls.Add(this.û_nl);
+            this.tpDutch.Controls.Add(this.ü_big_nl);
+            this.tpDutch.Controls.Add(this.ü_nl);
+            this.tpDutch.Controls.Add(this.ö_nl);
+            this.tpDutch.Controls.Add(this.ö_big_nl);
+            this.tpDutch.Controls.Add(this.ô_big_nl);
+            this.tpDutch.Controls.Add(this.ô_nl);
+            this.tpDutch.Controls.Add(this.ñ_nl);
+            this.tpDutch.Controls.Add(this.ñ_big_nl);
+            this.tpDutch.Controls.Add(this.î_big_nl);
+            this.tpDutch.Controls.Add(this.ï_nl);
+            this.tpDutch.Controls.Add(this.ï_big_nl);
+            this.tpDutch.Controls.Add(this.î_nl);
+            this.tpDutch.Controls.Add(this.ç_big_nl);
+            this.tpDutch.Controls.Add(this.ç_nl);
+            this.tpDutch.Controls.Add(this.ë_big_nl);
+            this.tpDutch.Controls.Add(this.ê_nl);
+            this.tpDutch.Controls.Add(this.ê_big_nl);
+            this.tpDutch.Controls.Add(this.ë_nl);
+            this.tpDutch.Controls.Add(this.é_big_nl);
+            this.tpDutch.Controls.Add(this.è_nl);
+            this.tpDutch.Controls.Add(this.è_big_nl);
+            this.tpDutch.Controls.Add(this.é_nl);
+            this.tpDutch.Controls.Add(this.ä_big_nl);
+            this.tpDutch.Controls.Add(this.ä_nl);
+            this.tpDutch.Controls.Add(this.à_big_nl);
+            this.tpDutch.Controls.Add(this.à_nl);
+            this.tpDutch.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tpDutch.Location = new System.Drawing.Point(4, 23);
+            this.tpDutch.Name = "tpDutch";
+            this.tpDutch.Padding = new System.Windows.Forms.Padding(3);
+            this.tpDutch.Size = new System.Drawing.Size(396, 99);
+            this.tpDutch.TabIndex = 5;
+            this.tpDutch.Tag = "nl";
+            this.tpDutch.Text = "Dutch";
+            this.tpDutch.UseVisualStyleBackColor = true;
+            // 
+            // û_big_nl
+            // 
+            this.û_big_nl.Location = new System.Drawing.Point(39, 68);
+            this.û_big_nl.Name = "û_big_nl";
+            this.û_big_nl.Size = new System.Drawing.Size(25, 25);
+            this.û_big_nl.TabIndex = 26;
+            this.û_big_nl.Text = "Û";
+            this.û_big_nl.UseVisualStyleBackColor = true;
+            this.û_big_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // û_nl
+            // 
+            this.û_nl.Location = new System.Drawing.Point(8, 68);
+            this.û_nl.Name = "û_nl";
+            this.û_nl.Size = new System.Drawing.Size(25, 25);
+            this.û_nl.TabIndex = 25;
+            this.û_nl.Text = "û";
+            this.û_nl.UseVisualStyleBackColor = true;
+            this.û_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // ü_big_nl
+            // 
+            this.ü_big_nl.Location = new System.Drawing.Point(101, 68);
+            this.ü_big_nl.Name = "ü_big_nl";
+            this.ü_big_nl.Size = new System.Drawing.Size(25, 25);
+            this.ü_big_nl.TabIndex = 28;
+            this.ü_big_nl.Text = "Ü";
+            this.ü_big_nl.UseVisualStyleBackColor = true;
+            this.ü_big_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // ü_nl
+            // 
+            this.ü_nl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ü_nl.Location = new System.Drawing.Point(70, 68);
+            this.ü_nl.Name = "ü_nl";
+            this.ü_nl.Size = new System.Drawing.Size(25, 25);
+            this.ü_nl.TabIndex = 27;
+            this.ü_nl.Text = "ü";
+            this.ü_nl.UseVisualStyleBackColor = true;
+            this.ü_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // ö_nl
+            // 
+            this.ö_nl.Location = new System.Drawing.Point(318, 37);
+            this.ö_nl.Name = "ö_nl";
+            this.ö_nl.Size = new System.Drawing.Size(25, 25);
+            this.ö_nl.TabIndex = 23;
+            this.ö_nl.Text = "ö";
+            this.ö_nl.UseVisualStyleBackColor = true;
+            this.ö_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // ö_big_nl
+            // 
+            this.ö_big_nl.Location = new System.Drawing.Point(349, 37);
+            this.ö_big_nl.Name = "ö_big_nl";
+            this.ö_big_nl.Size = new System.Drawing.Size(25, 25);
+            this.ö_big_nl.TabIndex = 24;
+            this.ö_big_nl.Text = "Ö";
+            this.ö_big_nl.UseVisualStyleBackColor = true;
+            this.ö_big_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // ô_big_nl
+            // 
+            this.ô_big_nl.Location = new System.Drawing.Point(287, 37);
+            this.ô_big_nl.Name = "ô_big_nl";
+            this.ô_big_nl.Size = new System.Drawing.Size(25, 25);
+            this.ô_big_nl.TabIndex = 22;
+            this.ô_big_nl.Text = "Ô";
+            this.ô_big_nl.UseVisualStyleBackColor = true;
+            this.ô_big_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // ô_nl
+            // 
+            this.ô_nl.Location = new System.Drawing.Point(256, 37);
+            this.ô_nl.Name = "ô_nl";
+            this.ô_nl.Size = new System.Drawing.Size(25, 25);
+            this.ô_nl.TabIndex = 21;
+            this.ô_nl.Text = "ô";
+            this.ô_nl.UseVisualStyleBackColor = true;
+            this.ô_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // ñ_nl
+            // 
+            this.ñ_nl.Location = new System.Drawing.Point(194, 37);
+            this.ñ_nl.Name = "ñ_nl";
+            this.ñ_nl.Size = new System.Drawing.Size(25, 25);
+            this.ñ_nl.TabIndex = 19;
+            this.ñ_nl.Text = "ñ";
+            this.ñ_nl.UseVisualStyleBackColor = true;
+            this.ñ_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // ñ_big_nl
+            // 
+            this.ñ_big_nl.Location = new System.Drawing.Point(225, 37);
+            this.ñ_big_nl.Name = "ñ_big_nl";
+            this.ñ_big_nl.Size = new System.Drawing.Size(25, 25);
+            this.ñ_big_nl.TabIndex = 20;
+            this.ñ_big_nl.Text = "Ñ";
+            this.ñ_big_nl.UseVisualStyleBackColor = true;
+            this.ñ_big_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // î_big_nl
+            // 
+            this.î_big_nl.Location = new System.Drawing.Point(101, 37);
+            this.î_big_nl.Name = "î_big_nl";
+            this.î_big_nl.Size = new System.Drawing.Size(25, 25);
+            this.î_big_nl.TabIndex = 16;
+            this.î_big_nl.Text = "Î";
+            this.î_big_nl.UseVisualStyleBackColor = true;
+            this.î_big_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // ï_nl
+            // 
+            this.ï_nl.Location = new System.Drawing.Point(132, 37);
+            this.ï_nl.Name = "ï_nl";
+            this.ï_nl.Size = new System.Drawing.Size(25, 25);
+            this.ï_nl.TabIndex = 17;
+            this.ï_nl.Text = "ï";
+            this.ï_nl.UseVisualStyleBackColor = true;
+            this.ï_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // ï_big_nl
+            // 
+            this.ï_big_nl.Location = new System.Drawing.Point(163, 37);
+            this.ï_big_nl.Name = "ï_big_nl";
+            this.ï_big_nl.Size = new System.Drawing.Size(25, 25);
+            this.ï_big_nl.TabIndex = 18;
+            this.ï_big_nl.Text = "Ï";
+            this.ï_big_nl.UseVisualStyleBackColor = true;
+            this.ï_big_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // î_nl
+            // 
+            this.î_nl.Location = new System.Drawing.Point(70, 37);
+            this.î_nl.Name = "î_nl";
+            this.î_nl.Size = new System.Drawing.Size(25, 25);
+            this.î_nl.TabIndex = 15;
+            this.î_nl.Text = "î";
+            this.î_nl.UseVisualStyleBackColor = true;
+            this.î_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // ç_big_nl
+            // 
+            this.ç_big_nl.Location = new System.Drawing.Point(39, 37);
+            this.ç_big_nl.Name = "ç_big_nl";
+            this.ç_big_nl.Size = new System.Drawing.Size(25, 25);
+            this.ç_big_nl.TabIndex = 14;
+            this.ç_big_nl.Text = "Ç";
+            this.ç_big_nl.UseVisualStyleBackColor = true;
+            this.ç_big_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // ç_nl
+            // 
+            this.ç_nl.Location = new System.Drawing.Point(8, 37);
+            this.ç_nl.Name = "ç_nl";
+            this.ç_nl.Size = new System.Drawing.Size(25, 25);
+            this.ç_nl.TabIndex = 13;
+            this.ç_nl.Text = "ç";
+            this.ç_nl.UseVisualStyleBackColor = true;
+            this.ç_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // ë_big_nl
+            // 
+            this.ë_big_nl.Location = new System.Drawing.Point(349, 6);
+            this.ë_big_nl.Name = "ë_big_nl";
+            this.ë_big_nl.Size = new System.Drawing.Size(25, 25);
+            this.ë_big_nl.TabIndex = 12;
+            this.ë_big_nl.Text = "Ë";
+            this.ë_big_nl.UseVisualStyleBackColor = true;
+            this.ë_big_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // ê_nl
+            // 
+            this.ê_nl.Location = new System.Drawing.Point(256, 6);
+            this.ê_nl.Name = "ê_nl";
+            this.ê_nl.Size = new System.Drawing.Size(25, 25);
+            this.ê_nl.TabIndex = 9;
+            this.ê_nl.Text = "ê";
+            this.ê_nl.UseVisualStyleBackColor = true;
+            this.ê_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // ê_big_nl
+            // 
+            this.ê_big_nl.Location = new System.Drawing.Point(287, 6);
+            this.ê_big_nl.Name = "ê_big_nl";
+            this.ê_big_nl.Size = new System.Drawing.Size(25, 25);
+            this.ê_big_nl.TabIndex = 10;
+            this.ê_big_nl.Text = "Ê";
+            this.ê_big_nl.UseVisualStyleBackColor = true;
+            this.ê_big_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // ë_nl
+            // 
+            this.ë_nl.Location = new System.Drawing.Point(318, 6);
+            this.ë_nl.Name = "ë_nl";
+            this.ë_nl.Size = new System.Drawing.Size(25, 25);
+            this.ë_nl.TabIndex = 11;
+            this.ë_nl.Text = "ë";
+            this.ë_nl.UseVisualStyleBackColor = true;
+            this.ë_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // é_big_nl
+            // 
+            this.é_big_nl.Location = new System.Drawing.Point(225, 6);
+            this.é_big_nl.Name = "é_big_nl";
+            this.é_big_nl.Size = new System.Drawing.Size(25, 25);
+            this.é_big_nl.TabIndex = 8;
+            this.é_big_nl.Text = "É";
+            this.é_big_nl.UseVisualStyleBackColor = true;
+            this.é_big_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // è_nl
+            // 
+            this.è_nl.Location = new System.Drawing.Point(132, 6);
+            this.è_nl.Name = "è_nl";
+            this.è_nl.Size = new System.Drawing.Size(25, 25);
+            this.è_nl.TabIndex = 5;
+            this.è_nl.Text = "è";
+            this.è_nl.UseVisualStyleBackColor = true;
+            this.è_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // è_big_nl
+            // 
+            this.è_big_nl.Location = new System.Drawing.Point(163, 6);
+            this.è_big_nl.Name = "è_big_nl";
+            this.è_big_nl.Size = new System.Drawing.Size(25, 25);
+            this.è_big_nl.TabIndex = 6;
+            this.è_big_nl.Text = "È";
+            this.è_big_nl.UseVisualStyleBackColor = true;
+            this.è_big_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // é_nl
+            // 
+            this.é_nl.Location = new System.Drawing.Point(194, 6);
+            this.é_nl.Name = "é_nl";
+            this.é_nl.Size = new System.Drawing.Size(25, 25);
+            this.é_nl.TabIndex = 7;
+            this.é_nl.Text = "é";
+            this.é_nl.UseVisualStyleBackColor = true;
+            this.é_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // ä_big_nl
+            // 
+            this.ä_big_nl.Location = new System.Drawing.Point(101, 6);
+            this.ä_big_nl.Name = "ä_big_nl";
+            this.ä_big_nl.Size = new System.Drawing.Size(25, 25);
+            this.ä_big_nl.TabIndex = 4;
+            this.ä_big_nl.Text = "Ä";
+            this.ä_big_nl.UseVisualStyleBackColor = true;
+            this.ä_big_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // ä_nl
+            // 
+            this.ä_nl.Location = new System.Drawing.Point(70, 6);
+            this.ä_nl.Name = "ä_nl";
+            this.ä_nl.Size = new System.Drawing.Size(25, 25);
+            this.ä_nl.TabIndex = 3;
+            this.ä_nl.Text = "ä";
+            this.ä_nl.UseVisualStyleBackColor = true;
+            this.ä_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // à_big_nl
+            // 
+            this.à_big_nl.Location = new System.Drawing.Point(39, 6);
+            this.à_big_nl.Name = "à_big_nl";
+            this.à_big_nl.Size = new System.Drawing.Size(25, 25);
+            this.à_big_nl.TabIndex = 2;
+            this.à_big_nl.Text = "À";
+            this.à_big_nl.UseVisualStyleBackColor = true;
+            this.à_big_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // à_nl
+            // 
+            this.à_nl.Location = new System.Drawing.Point(8, 6);
+            this.à_nl.Name = "à_nl";
+            this.à_nl.Size = new System.Drawing.Size(25, 25);
+            this.à_nl.TabIndex = 1;
+            this.à_nl.Text = "à";
+            this.à_nl.UseVisualStyleBackColor = true;
+            this.à_nl.Click += new System.EventHandler(this.Button_Click);
+            // 
             // SpecialCharKeyboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1191,6 +1543,7 @@
             this.TpItalian.ResumeLayout(false);
             this.TpSpanish.ResumeLayout(false);
             this.TpRomanian.ResumeLayout(false);
+            this.tpDutch.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1290,8 +1643,34 @@
         private System.Windows.Forms.Button ă_ro_big;
         private System.Windows.Forms.Button ă_ro;
         private System.Windows.Forms.Button doppel_s;
-
-
-
+        private System.Windows.Forms.TabPage tpDutch;
+        private System.Windows.Forms.Button ä_big_nl;
+        private System.Windows.Forms.Button ä_nl;
+        private System.Windows.Forms.Button à_big_nl;
+        private System.Windows.Forms.Button à_nl;
+        private System.Windows.Forms.Button î_big_nl;
+        private System.Windows.Forms.Button ï_nl;
+        private System.Windows.Forms.Button ï_big_nl;
+        private System.Windows.Forms.Button î_nl;
+        private System.Windows.Forms.Button ç_big_nl;
+        private System.Windows.Forms.Button ç_nl;
+        private System.Windows.Forms.Button ë_big_nl;
+        private System.Windows.Forms.Button ê_nl;
+        private System.Windows.Forms.Button ê_big_nl;
+        private System.Windows.Forms.Button ë_nl;
+        private System.Windows.Forms.Button é_big_nl;
+        private System.Windows.Forms.Button è_nl;
+        private System.Windows.Forms.Button è_big_nl;
+        private System.Windows.Forms.Button é_nl;
+        private System.Windows.Forms.Button û_big_nl;
+        private System.Windows.Forms.Button û_nl;
+        private System.Windows.Forms.Button ü_big_nl;
+        private System.Windows.Forms.Button ü_nl;
+        private System.Windows.Forms.Button ö_nl;
+        private System.Windows.Forms.Button ö_big_nl;
+        private System.Windows.Forms.Button ô_big_nl;
+        private System.Windows.Forms.Button ô_nl;
+        private System.Windows.Forms.Button ñ_nl;
+        private System.Windows.Forms.Button ñ_big_nl;
     }
 }
