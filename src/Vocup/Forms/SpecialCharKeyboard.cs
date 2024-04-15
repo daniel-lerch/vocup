@@ -13,7 +13,8 @@ namespace Vocup.Forms;
 public partial class SpecialCharKeyboard : Form
 {
     private TextBox textBox;
-    private bool _dialogEnabled;
+    private Button trigger;
+    private bool _keyboardEnabled = true;
 
     public SpecialCharKeyboard()
     {
@@ -25,17 +26,21 @@ public partial class SpecialCharKeyboard : Form
                 page.Text = new CultureInfo(page.Tag.ToString()).DisplayName;
     }
 
-    public bool DialogEnabled
+    /// <summary>
+    /// Gets or sets whether the keyboard can be opened via its trigger.
+    /// </summary>
+    public bool KeyboardEnabled
     {
-        get => _dialogEnabled;
-        set { if (value != _dialogEnabled) { _dialogEnabled = value; OnDialogEnabledChanged(); } }
+        get => _keyboardEnabled;
+        set
+        {
+            if (value != _keyboardEnabled)
+            {
+                _keyboardEnabled = value;
+                RefreshTriggerAndVisibility();
+            }
+        }
     }
-    protected virtual void OnDialogEnabledChanged()
-    {
-        DialogEnabledChanged?.Invoke(this, EventArgs.Empty);
-        Visible = _dialogEnabled && (textBox?.Enabled ?? false);
-    }
-    public event EventHandler DialogEnabledChanged;
 
     public void Initialize(Form owner, Button trigger)
     {
@@ -43,15 +48,12 @@ public partial class SpecialCharKeyboard : Form
         Owner.Move += Owner_MoveResize;
         Owner.Resize += Owner_MoveResize;
         Owner.FormClosing += Owner_FormClosing;
-        Owner_MoveResize(Owner, null);
+        Owner_MoveResize(Owner, EventArgs.Empty);
 
-        trigger.Click += (a0, a1) =>
-        {
-            DialogEnabled = true;
-            textBox.Focus();
-        };
-        DialogEnabledChanged += (a0, a1) => trigger.Enabled = !DialogEnabled;
-        trigger.Enabled = !DialogEnabled;
+        this.trigger = trigger;
+        this.trigger.Click += Trigger_Click;
+
+        RefreshTriggerAndVisibility();
     }
 
     public void RegisterTextBox(TextBox control)
@@ -60,6 +62,15 @@ public partial class SpecialCharKeyboard : Form
             textBox.EnabledChanged -= TextBox_EnabledChanged;
         textBox = control;
         textBox.EnabledChanged += TextBox_EnabledChanged;
+
+        RefreshTriggerAndVisibility();
+    }
+
+    private void RefreshTriggerAndVisibility()
+    {
+        trigger.Enabled = KeyboardEnabled && (textBox?.Enabled ?? false) && !Visible;
+        if (Visible && (!KeyboardEnabled || textBox == null || !textBox.Enabled))
+            Hide();
     }
 
     private void Form_Load(object sender, EventArgs e)
@@ -154,14 +165,20 @@ public partial class SpecialCharKeyboard : Form
                 textBox.SelectionStart = selectionStart + button.Text.Length;
                 textBox.SelectionLength = 0;
             }
-                
+
             textBox.Focus();
         }
     }
 
+    private void Trigger_Click(object sender, EventArgs e)
+    {
+        Show();
+        textBox.Focus();
+    }
+
     private void TextBox_EnabledChanged(object sender, EventArgs e)
     {
-        Visible = _dialogEnabled && textBox.Enabled;
+        RefreshTriggerAndVisibility();
     }
 
     private void Owner_MoveResize(object sender, EventArgs e)
@@ -175,6 +192,11 @@ public partial class SpecialCharKeyboard : Form
         Program.Settings.SpecialCharTab = TcMain.SelectedTab.Tag.ToString();
     }
 
+    private void Form_VisibleChanged(object sender, EventArgs e)
+    {
+        RefreshTriggerAndVisibility();
+    }
+
     private void Form_FormClosing(object sender, FormClosingEventArgs e)
     {
         Program.Settings.SpecialCharTab = TcMain.SelectedTab.Tag.ToString();
@@ -182,7 +204,7 @@ public partial class SpecialCharKeyboard : Form
         if (e.CloseReason == CloseReason.UserClosing)
         {
             e.Cancel = true;
-            DialogEnabled = false;
+            Hide();
         }
     }
 }
