@@ -26,8 +26,7 @@ public partial class PracticeDialog : Form
 
     private bool check;
     private bool solution;
-    private Random random;
-    private PracticeMode currentPracticeMode;
+    private PracticeDirection practiceDirection;
 	
     public PracticeDialog(VocabularyBook book, List<VocabularyWordPractice> practiceList)
     {
@@ -46,7 +45,6 @@ public partial class PracticeDialog : Form
         };
 
         player = new SoundPlayer();
-        random = new Random();
 
         this.book = book;
         this.practiceList = practiceList;
@@ -157,21 +155,27 @@ public partial class PracticeDialog : Form
             TbCorrectAnswer.BackColor = SystemColors.Control;
         }
 
-        currentPracticeMode = book.PracticeMode;
-
-        if (currentPracticeMode == PracticeMode.AskForBothMixed)
+        switch (book.PracticeMode)
         {
-            if (random.Next(100) < 50)
-            {
-                currentPracticeMode = PracticeMode.AskForForeignLang;
-            }
-            else
-            {
-                currentPracticeMode = PracticeMode.AskForMotherTongue;
-            }
+            case PracticeMode.AskForForeignLang:
+                practiceDirection = PracticeDirection.MotherTongueToForeignLang;
+                break;
+            case PracticeMode.AskForMotherTongue:
+                practiceDirection = PracticeDirection.ForeignLangToMotherTongue;
+                break;
+            case PracticeMode.AskForBothMixed:
+                if (Random.Shared.Next(2) == 0)
+                {
+                    practiceDirection = PracticeDirection.MotherTongueToForeignLang;
+                }
+                else
+                {
+                    practiceDirection = PracticeDirection.ForeignLangToMotherTongue;
+                }
+                break;
         }
-    
-        if (currentPracticeMode == PracticeMode.AskForForeignLang)
+
+        if (practiceDirection == PracticeDirection.MotherTongueToForeignLang)
         {
             TbMotherTongue.Text = currentWord.MotherTongue;
             TbMotherTongue.ReadOnly = true;
@@ -227,7 +231,7 @@ public partial class PracticeDialog : Form
         string[] inputs;
         string[] results;
 
-        if (currentPracticeMode == PracticeMode.AskForForeignLang)
+        if (practiceDirection == PracticeDirection.MotherTongueToForeignLang)
         {
             if (string.IsNullOrWhiteSpace(currentWord.ForeignLangSynonym))
             {
@@ -334,7 +338,7 @@ public partial class PracticeDialog : Form
 
     private void ShowSolution()
     {
-        if (currentPracticeMode == PracticeMode.AskForForeignLang)
+        if (practiceDirection == PracticeDirection.MotherTongueToForeignLang)
         {
             if (string.IsNullOrWhiteSpace(currentWord.ForeignLangSynonym))
                 TbCorrectAnswer.Text = string.Format(Words.CorrectWasX, currentWord.ForeignLang);
@@ -374,7 +378,7 @@ public partial class PracticeDialog : Form
 
     private string GetEvaluationAnswer()
     {
-        if (currentPracticeMode == PracticeMode.AskForForeignLang)
+        if (practiceDirection == PracticeDirection.MotherTongueToForeignLang)
         {
             if (string.IsNullOrWhiteSpace(currentWord.ForeignLangSynonym))
                 return string.Format(Words.CorrectWasX, currentWord.ForeignLang);
@@ -389,7 +393,7 @@ public partial class PracticeDialog : Form
 
     private string GetWrongInput()
     {
-        if (currentPracticeMode == PracticeMode.AskForForeignLang)
+        if (practiceDirection == PracticeDirection.MotherTongueToForeignLang)
         {
             if (string.IsNullOrWhiteSpace(currentWord.ForeignLangSynonym))
                 return TbForeignLang.Text;

@@ -18,6 +18,7 @@ namespace Vocup.Models
         AskForMotherTongue = 2,
         /// <summary>
         /// The word is either displayed in the foreign language and the user has to enter the word in the mother tongue, or the other way around.
+        /// The direction is being mixed randomly per word.
         /// </summary>
         AskForBothMixed = 3
     }

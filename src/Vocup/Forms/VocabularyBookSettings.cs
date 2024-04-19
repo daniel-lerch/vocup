@@ -80,7 +80,19 @@ public partial class VocabularyBookSettings : Form
     {
         book.MotherTongue = TbMotherTongue.Text;
         book.ForeignLang = TbForeignLang.Text;
-        book.PracticeMode = RbModeAskForeignLang.Checked ? PracticeMode.AskForForeignLang : RbModeAskMotherTongue.Checked ? PracticeMode.AskForMotherTongue : PracticeMode.AskForBothMixed;
+
+        if (RbModeAskForeignLang.Checked)
+        {
+            book.PracticeMode = PracticeMode.AskForForeignLang;
+        }
+        else if (RbModeAskMotherTongue.Checked)
+        {
+            book.PracticeMode = PracticeMode.AskForMotherTongue;
+        }
+        else if (RbModeAskBothMixed.Checked)
+        {
+            book.PracticeMode = PracticeMode.AskForBothMixed;
+        }
 
         if (CbResetResults.Checked)
         {
