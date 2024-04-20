@@ -39,6 +39,7 @@
             this.LbForeignLang = new System.Windows.Forms.Label();
             this.TbForeignLang = new System.Windows.Forms.TextBox();
             this.GroupPracticeMode = new System.Windows.Forms.GroupBox();
+            this.RbModeAskBothMixed = new System.Windows.Forms.RadioButton();
             this.RbModeAskMotherTongue = new System.Windows.Forms.RadioButton();
             this.RbModeAskForeignLang = new System.Windows.Forms.RadioButton();
             this.GroupOptions.SuspendLayout();
@@ -105,11 +106,19 @@
             // 
             // GroupPracticeMode
             // 
+            this.GroupPracticeMode.Controls.Add(this.RbModeAskBothMixed);
             this.GroupPracticeMode.Controls.Add(this.RbModeAskMotherTongue);
             this.GroupPracticeMode.Controls.Add(this.RbModeAskForeignLang);
             resources.ApplyResources(this.GroupPracticeMode, "GroupPracticeMode");
             this.GroupPracticeMode.Name = "GroupPracticeMode";
             this.GroupPracticeMode.TabStop = false;
+            // 
+            // RbModeAskBothMixed
+            // 
+            resources.ApplyResources(this.RbModeAskBothMixed, "RbModeAskBothMixed");
+            this.RbModeAskBothMixed.Name = "RbModeAskBothMixed";
+            this.RbModeAskBothMixed.TabStop = true;
+            this.RbModeAskBothMixed.UseVisualStyleBackColor = true;
             // 
             // RbModeAskMotherTongue
             // 
@@ -169,5 +178,6 @@
         private System.Windows.Forms.GroupBox GroupPracticeMode;
         public System.Windows.Forms.RadioButton RbModeAskMotherTongue;
         public System.Windows.Forms.RadioButton RbModeAskForeignLang;
+        public System.Windows.Forms.RadioButton RbModeAskBothMixed;
     }
 }

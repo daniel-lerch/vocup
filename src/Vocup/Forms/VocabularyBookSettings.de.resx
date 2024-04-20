@@ -147,4 +147,7 @@
   <data name="RbModeAskMotherTongue.Text" xml:space="preserve">
     <value>Fremdsprache → Muttersprache</value>
   </data>
+  <data name="RbModeAskBothMixed.Text" xml:space="preserve">
+    <value>Beide zusammen</value>
+  </data>
 </root>

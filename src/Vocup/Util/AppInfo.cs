@@ -37,7 +37,7 @@ public static class AppInfo
     });
     public static Version Version => version.Value;
 
-    public static Version FileVersion { get; } = new Version(1, 0);
+    public static Version FileVersion { get; } = new Version(2, 0);
 
     public static string ProductName { get; }
         = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyProductAttribute>()?.Product

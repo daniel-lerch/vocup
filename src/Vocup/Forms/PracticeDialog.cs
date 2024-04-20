@@ -26,7 +26,8 @@ public partial class PracticeDialog : Form
 
     private bool check;
     private bool solution;
-
+    private PracticeDirection practiceDirection;
+	
     public PracticeDialog(VocabularyBook book, List<VocabularyWordPractice> practiceList)
     {
         InitializeComponent();
@@ -154,10 +155,31 @@ public partial class PracticeDialog : Form
             TbCorrectAnswer.BackColor = SystemColors.Control;
         }
 
-        if (book.PracticeMode == PracticeMode.AskForForeignLang)
+        switch (book.PracticeMode)
+        {
+            case PracticeMode.AskForForeignLang:
+                practiceDirection = PracticeDirection.MotherTongueToForeignLang;
+                break;
+            case PracticeMode.AskForMotherTongue:
+                practiceDirection = PracticeDirection.ForeignLangToMotherTongue;
+                break;
+            case PracticeMode.AskForBothMixed:
+                if (Random.Shared.Next(2) == 0)
+                {
+                    practiceDirection = PracticeDirection.MotherTongueToForeignLang;
+                }
+                else
+                {
+                    practiceDirection = PracticeDirection.ForeignLangToMotherTongue;
+                }
+                break;
+        }
+
+        if (practiceDirection == PracticeDirection.MotherTongueToForeignLang)
         {
             TbMotherTongue.Text = currentWord.MotherTongue;
             TbMotherTongue.ReadOnly = true;
+            TbMotherTongue.BackColor = DefaultBackColor;
             TbForeignLang.Text = "";
             TbForeignLang.ReadOnly = false;
             TbForeignLang.BackColor = Color.FromArgb(250, 250, 150);
@@ -184,6 +206,7 @@ public partial class PracticeDialog : Form
             TbMotherTongue.Text = "";
             TbMotherTongue.ReadOnly = false;
             TbForeignLang.ReadOnly = true;
+            TbForeignLang.BackColor = DefaultBackColor;
             TbForeignLangSynonym.ReadOnly = true;
             TbMotherTongue.BackColor = Color.FromArgb(250, 250, 150);
             TbMotherTongue.Select();
@@ -208,7 +231,7 @@ public partial class PracticeDialog : Form
         string[] inputs;
         string[] results;
 
-        if (book.PracticeMode == PracticeMode.AskForForeignLang)
+        if (practiceDirection == PracticeDirection.MotherTongueToForeignLang)
         {
             if (string.IsNullOrWhiteSpace(currentWord.ForeignLangSynonym))
             {
@@ -315,7 +338,7 @@ public partial class PracticeDialog : Form
 
     private void ShowSolution()
     {
-        if (book.PracticeMode == PracticeMode.AskForForeignLang)
+        if (practiceDirection == PracticeDirection.MotherTongueToForeignLang)
         {
             if (string.IsNullOrWhiteSpace(currentWord.ForeignLangSynonym))
                 TbCorrectAnswer.Text = string.Format(Words.CorrectWasX, currentWord.ForeignLang);
@@ -355,7 +378,7 @@ public partial class PracticeDialog : Form
 
     private string GetEvaluationAnswer()
     {
-        if (book.PracticeMode == PracticeMode.AskForForeignLang)
+        if (practiceDirection == PracticeDirection.MotherTongueToForeignLang)
         {
             if (string.IsNullOrWhiteSpace(currentWord.ForeignLangSynonym))
                 return string.Format(Words.CorrectWasX, currentWord.ForeignLang);
@@ -370,7 +393,7 @@ public partial class PracticeDialog : Form
 
     private string GetWrongInput()
     {
-        if (book.PracticeMode == PracticeMode.AskForForeignLang)
+        if (practiceDirection == PracticeDirection.MotherTongueToForeignLang)
         {
             if (string.IsNullOrWhiteSpace(currentWord.ForeignLangSynonym))
                 return TbForeignLang.Text;
@@ -385,11 +408,7 @@ public partial class PracticeDialog : Form
 
     private void TextBox_Enter(object sender, EventArgs e)
     {
-        var textbox = (TextBox)sender;
-        if (textbox != null && textbox.Enabled && !textbox.ReadOnly)
-        {
-            specialCharDialog.RegisterTextBox(textbox);
-        }
+        specialCharDialog.RegisterTextBox((TextBox)sender);
     }
 
     private void Form_FormClosing(object sender, FormClosingEventArgs e)
