@@ -19,4 +19,12 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Vocup\Vocup.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="Resources\2jgh9u3tuPCfYLxhhCJXGyPN.vhr">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Year 11.vhf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
