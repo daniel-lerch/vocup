@@ -52,6 +52,7 @@ public partial class MainForm : Form, IMainForm
         TsmiBookOptions.Enabled = value;
         TsmiCloseBook.Enabled = value;
         TsmiSaveAs.Enabled = value;
+	StatisticsPanel.Enabled = value;
     }
     public void VocabularyBookHasContent(bool value)
     {
@@ -107,8 +108,6 @@ public partial class MainForm : Form, IMainForm
 
         using (VocabularyBookController controller = CurrentController)
         {
-            if (CurrentBook != null)
-                CurrentBook.Statistics.Reset();
             CurrentBook = null;
             CurrentController = null;
             SplitContainer.Panel2.Controls.Remove(controller.ListView);
@@ -126,6 +125,7 @@ public partial class MainForm : Form, IMainForm
 
             // Accidentially overriding this value when the user already has chosen another file results in a stack overflow
             FileTreeView.SelectedPath = "";
+            StatisticsPanel.Reset();
         }
     }
 

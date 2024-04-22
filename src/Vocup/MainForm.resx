@@ -822,6 +822,9 @@
   <data name="&gt;&gt;GroupStatistics.Name" xml:space="preserve">
     <value>GroupStatistics</value>
   </data>
+  <data name="GroupStatistics.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;GroupStatistics.Type" xml:space="preserve">
     <value>Vocup.Controls.StatisticsPanel, Vocup, Culture=neutral, PublicKeyToken=null</value>
   </data>

@@ -76,14 +76,4 @@ public class VocabularyBookStatistics : INotifyPropertyChanged
 
         OnPropertyChanged();
     }
-
-    public void Reset()
-    {
-        Unpracticed = 0;
-        WronglyPracticed = 0;
-        CorrectlyPracticed = 0;
-        FullyPracticed = 0;
-
-        OnPropertyChanged();
-    }
 }
