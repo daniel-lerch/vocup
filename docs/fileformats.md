@@ -2,13 +2,50 @@
 
 Vocup uses different proprietary formats:
 
-| Extension | Name                            | Usage            |
-|-----------|---------------------------------|------------------|
-| .vhf      | **V**okabel**h**eft **f**ile    | Vocabulary data  |
-| .vhr      | **V**okabel**h**eft **r**esults | Practice results |
-| .vdp      |                                 | Backup file      |
+| Extension | Name                            | Usage            | Remarks |
+|-----------|---------------------------------|------------------|---------|
+| .vhf      | **V**okabel**h**eft **f**ile    | Vocabulary data  |         |
+| .vhr      | **V**okabel**h**eft **r**esults | Practice results | Not used for vhf2 files anymore |
+| .vdp      |                                 | Backup file      | Backup creation removed in Vocup 1.8.0<br>Backup restore removed in Vocup 2.0.0 |
 
-## .vhf
+## .vhf v2
+
+Since Vocup v2, _Vokabelheft files_ are ZIP archives and not encrypted anymore.
+Vocup uses the ZIP header to determine whether a .vhf file is vhf1 or vhf2.
+
+### Example
+
+`VOCUP VOCABULARY BOOK`
+```
+2.0
+```
+
+`book.2.json`
+```json
+{
+  "motherTongue": "Deutsch",
+  "foreignLanguage": "Englisch",
+  "practiceMode": "AskForForeignLanguage",
+  "words": [
+    {
+      "motherTongue": "Diskriminierung",
+      "foreignLang": "discrimination",
+      "foreignLangSynonym": null,
+      "practiceStateNumber": 0,
+      "practiceDate": ""
+    },
+    {
+      "motherTongue": "eingehend untersuchen (AE/BE)",
+      "foreignLang": "to scrutinize",
+      "foreignLangSynonym": "to scrutinise",
+      "practiceStateNumber": 1,
+      "practiceDate": "2018-04-06T23:04:21"
+    }
+  ]
+}
+```
+
+## .vhf v1
 
 *Vokabelheft files* contain the base64 encoded ciphertext of the DES encrypted inner file.
 The encryption is done with a hard-coded key and offers no security but complicates reverse engineering of the file format.
@@ -35,14 +72,14 @@ Diskriminierung#discrimination#
 eingehend untersuchen (AE/BE)#to scrutinize#to scrutinise
 Entfremdung, Distanzierung#alienation#
 entstellen#to warp#
-entt‰uscht#disappointed#crestfallen
-entwˆhnen#to wean off#
+entt√§uscht#disappointed#crestfallen
+entw√§hnen#to wean off#
 Freiheit#freedom#liberty
-Gef‰ngnisstrafe#imprisonment#jail sentence
-geh‰uft, gestapelt#piled#
+Gef√§ngnisstrafe#imprisonment#jail sentence
+geh√§uft, gestapelt#piled#
 Gewaltenteilung#system of checks and balances#
 gipfeln (in)#to culminate (in)#
-Gr¸ndungsv‰ter#Founding Fathers#
+Gr√ºndungsv√§ter#Founding Fathers#
 halbieren#to halve#
 Haltung, Einstellung#attitude#
 Handgelenk#wrist#
@@ -51,6 +88,8 @@ Haufen, Stapel#pile#
 ```
 
 ## .vhr
+
+> ‚ö†Ô∏è This file format is deprecated. Since vhf2 results are saved in the vocabulary book.
 
 Like *Vokabelheft files* *Vokabelheft result* files are DES encrypted and saved as a base64 string.
 
@@ -90,6 +129,8 @@ D:\Schule\Englisch\Vocabulary\Year 11.vhf
 ```
 
 ## .vdp
+
+> ‚ö†Ô∏è This file format is deprecated. Since Vocup 1.8.0 it is not possible to create new backups anymore. Since Vocup 2.0.0 is not possible to restore backups anymore.
 
 This format is used for Vocup Backups. It is basically a zip file using `Deflate` compression:
 ```

@@ -23,7 +23,10 @@
     <None Update="Resources\2jgh9u3tuPCfYLxhhCJXGyPN.vhr">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Resources\Year 11.vhf">
+    <None Update="Resources\Year 11 (vhf1).vhf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Year 11 (vhf2).vhf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
