@@ -408,7 +408,12 @@ public partial class PracticeDialog : Form
 
     private void TextBox_Enter(object sender, EventArgs e)
     {
-        specialCharDialog.RegisterTextBox((TextBox)sender);
+        // PracticeDialog is a special form because textboxes might be readonly and must not be registered in that case
+
+        if (sender is TextBox textBox && textBox.Enabled && !textBox.ReadOnly)
+        {
+            specialCharDialog.RegisterTextBox(textBox);
+        }
     }
 
     private void Form_FormClosing(object sender, FormClosingEventArgs e)
