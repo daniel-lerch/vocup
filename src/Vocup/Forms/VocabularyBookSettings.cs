@@ -45,6 +45,7 @@ public partial class VocabularyBookSettings : Form
         TbForeignLang.Text = book.ForeignLang;
         RbModeAskForeignLang.Checked = book.PracticeMode == PracticeMode.AskForForeignLang;
         RbModeAskMotherTongue.Checked = book.PracticeMode == PracticeMode.AskForMotherTongue;
+        RbModeAskBothMixed.Checked = book.PracticeMode == PracticeMode.AskForBothMixed;
         GroupOptions.Enabled = true;
     }
 
@@ -79,7 +80,19 @@ public partial class VocabularyBookSettings : Form
     {
         book.MotherTongue = TbMotherTongue.Text;
         book.ForeignLang = TbForeignLang.Text;
-        book.PracticeMode = RbModeAskForeignLang.Checked ? PracticeMode.AskForForeignLang : PracticeMode.AskForMotherTongue;
+
+        if (RbModeAskForeignLang.Checked)
+        {
+            book.PracticeMode = PracticeMode.AskForForeignLang;
+        }
+        else if (RbModeAskMotherTongue.Checked)
+        {
+            book.PracticeMode = PracticeMode.AskForMotherTongue;
+        }
+        else if (RbModeAskBothMixed.Checked)
+        {
+            book.PracticeMode = PracticeMode.AskForBothMixed;
+        }
 
         if (CbResetResults.Checked)
         {

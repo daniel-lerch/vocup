@@ -97,7 +97,7 @@ internal class VhfFile : VocupFile
 
         using (StringWriter writer = new StringWriter())
         {
-            writer.WriteLine("1.0");
+            writer.WriteLine("2.0");
             writer.WriteLine(book.VhrCode);
             writer.WriteLine(book.MotherTongue);
             writer.WriteLine(book.ForeignLang);

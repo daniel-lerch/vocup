@@ -103,7 +103,7 @@ public partial class MergeFiles : Form
         GroupMotherTongue.Enabled = itemsValid;
         GroupForeignTongue.Enabled = itemsValid;
         CbKeepResults.Enabled = itemsValid;
-        BtnSpecialChar.Enabled = itemsValid && !specialCharDialog.Visible;
+        specialCharDialog.KeyboardEnabled = itemsValid;
 
         if (itemsValid && textsValid)
         {

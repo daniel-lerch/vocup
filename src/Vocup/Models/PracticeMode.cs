@@ -15,7 +15,12 @@ namespace Vocup.Models
         /// <summary>
         /// The word is displayed in the foreign language and the user has to enter the word in the mother tongue.
         /// </summary>
-        AskForMotherTongue = 2
+        AskForMotherTongue = 2,
+        /// <summary>
+        /// The word is either displayed in the foreign language and the user has to enter the word in the mother tongue, or the other way around.
+        /// The direction is being mixed randomly per word.
+        /// </summary>
+        AskForBothMixed = 3
     }
 
     public static class PracticeModeHelper
@@ -23,7 +28,7 @@ namespace Vocup.Models
         public static bool IsValid(this PracticeMode mode)
         {
             int imode = (int)mode;
-            return imode >= 1 && imode <= 2;
+            return imode >= 1 && imode <= 3;
         }
     }
 }

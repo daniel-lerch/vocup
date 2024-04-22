@@ -159,6 +159,9 @@
   <data name="CbLanguage.Items2" xml:space="preserve">
     <value>Deutsch</value>
   </data>
+  <data name="CbLanguage.Items3" xml:space="preserve">
+    <value>Niederländisch</value>
+  </data>
   <data name="CbManualCheck.Text" xml:space="preserve">
     <value>Übersetzungen beim Üben selbst bewerten</value>
   </data>

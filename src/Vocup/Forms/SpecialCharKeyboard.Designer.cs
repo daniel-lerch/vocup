@@ -28,1172 +28,1525 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Titel = new System.Windows.Forms.Label();
-            this.TcMain = new System.Windows.Forms.TabControl();
-            this.TpGerman = new System.Windows.Forms.TabPage();
-            this.doppel_s = new System.Windows.Forms.Button();
-            this.ue_big = new System.Windows.Forms.Button();
-            this.ae_big = new System.Windows.Forms.Button();
-            this.oe = new System.Windows.Forms.Button();
-            this.oe_big = new System.Windows.Forms.Button();
-            this.ue = new System.Windows.Forms.Button();
-            this.ae = new System.Windows.Forms.Button();
-            this.TpFrench = new System.Windows.Forms.TabPage();
-            this.û_big = new System.Windows.Forms.Button();
-            this.ÿ = new System.Windows.Forms.Button();
-            this.ÿ_big = new System.Windows.Forms.Button();
-            this.û = new System.Windows.Forms.Button();
-            this.ù_big = new System.Windows.Forms.Button();
-            this.œ = new System.Windows.Forms.Button();
-            this.œ_big = new System.Windows.Forms.Button();
-            this.ù = new System.Windows.Forms.Button();
-            this.ô_big = new System.Windows.Forms.Button();
-            this.ô = new System.Windows.Forms.Button();
-            this.î_big = new System.Windows.Forms.Button();
-            this.ï = new System.Windows.Forms.Button();
-            this.ï_big = new System.Windows.Forms.Button();
-            this.î = new System.Windows.Forms.Button();
-            this.ë_big = new System.Windows.Forms.Button();
-            this.ê = new System.Windows.Forms.Button();
-            this.ê_big = new System.Windows.Forms.Button();
-            this.ë = new System.Windows.Forms.Button();
-            this.é_big = new System.Windows.Forms.Button();
-            this.ç_big = new System.Windows.Forms.Button();
-            this.è = new System.Windows.Forms.Button();
-            this.è_big = new System.Windows.Forms.Button();
-            this.é = new System.Windows.Forms.Button();
-            this.ç = new System.Windows.Forms.Button();
-            this.æ_big = new System.Windows.Forms.Button();
-            this.à_big = new System.Windows.Forms.Button();
-            this.â = new System.Windows.Forms.Button();
-            this.Â_big = new System.Windows.Forms.Button();
-            this.æ = new System.Windows.Forms.Button();
-            this.à = new System.Windows.Forms.Button();
-            this.TpItalian = new System.Windows.Forms.TabPage();
-            this.ú_big = new System.Windows.Forms.Button();
-            this.ù_it = new System.Windows.Forms.Button();
-            this.ù_it_big = new System.Windows.Forms.Button();
-            this.ú = new System.Windows.Forms.Button();
-            this.ó_big = new System.Windows.Forms.Button();
-            this.ò = new System.Windows.Forms.Button();
-            this.ò_big = new System.Windows.Forms.Button();
-            this.ó = new System.Windows.Forms.Button();
-            this.í_big = new System.Windows.Forms.Button();
-            this.ì = new System.Windows.Forms.Button();
-            this.Ì_big = new System.Windows.Forms.Button();
-            this.í = new System.Windows.Forms.Button();
-            this.ï_it_big = new System.Windows.Forms.Button();
-            this.ï_it = new System.Windows.Forms.Button();
-            this.é_it_big = new System.Windows.Forms.Button();
-            this.è_it = new System.Windows.Forms.Button();
-            this.è_it_big = new System.Windows.Forms.Button();
-            this.é_it = new System.Windows.Forms.Button();
-            this.à_it_big = new System.Windows.Forms.Button();
-            this.à_it = new System.Windows.Forms.Button();
-            this.TpSpanish = new System.Windows.Forms.TabPage();
-            this.um_frag = new System.Windows.Forms.Button();
-            this.umg_ausr = new System.Windows.Forms.Button();
-            this.º = new System.Windows.Forms.Button();
-            this.ú_sp_big = new System.Windows.Forms.Button();
-            this.ü_sp = new System.Windows.Forms.Button();
-            this.ª = new System.Windows.Forms.Button();
-            this.ú_sp = new System.Windows.Forms.Button();
-            this.ñ = new System.Windows.Forms.Button();
-            this.ñ_big = new System.Windows.Forms.Button();
-            this.ó_sp = new System.Windows.Forms.Button();
-            this.ó_sp_big = new System.Windows.Forms.Button();
-            this.í_sp_big = new System.Windows.Forms.Button();
-            this.í_sp = new System.Windows.Forms.Button();
-            this.á_big = new System.Windows.Forms.Button();
-            this.ç_sp = new System.Windows.Forms.Button();
-            this.é_sp = new System.Windows.Forms.Button();
-            this.é_sp_big = new System.Windows.Forms.Button();
-            this.á = new System.Windows.Forms.Button();
-            this.TpRomanian = new System.Windows.Forms.TabPage();
-            this.ţ_ro_big = new System.Windows.Forms.Button();
-            this.ţ_ro = new System.Windows.Forms.Button();
-            this.ş_ro_big = new System.Windows.Forms.Button();
-            this.ş_ro = new System.Windows.Forms.Button();
-            this.î_ro_big = new System.Windows.Forms.Button();
-            this.î_ro = new System.Windows.Forms.Button();
-            this.ă_ro_big = new System.Windows.Forms.Button();
-            this.ă_ro = new System.Windows.Forms.Button();
-            this.â_ro_big = new System.Windows.Forms.Button();
-            this.â_ro = new System.Windows.Forms.Button();
-            this.TcMain.SuspendLayout();
-            this.TpGerman.SuspendLayout();
-            this.TpFrench.SuspendLayout();
-            this.TpItalian.SuspendLayout();
-            this.TpSpanish.SuspendLayout();
-            this.TpRomanian.SuspendLayout();
-            this.SuspendLayout();
+            Titel = new System.Windows.Forms.Label();
+            TcMain = new System.Windows.Forms.TabControl();
+            TpGerman = new System.Windows.Forms.TabPage();
+            doppel_s = new System.Windows.Forms.Button();
+            ue_big = new System.Windows.Forms.Button();
+            ae_big = new System.Windows.Forms.Button();
+            oe = new System.Windows.Forms.Button();
+            oe_big = new System.Windows.Forms.Button();
+            ue = new System.Windows.Forms.Button();
+            ae = new System.Windows.Forms.Button();
+            TpFrench = new System.Windows.Forms.TabPage();
+            û_big = new System.Windows.Forms.Button();
+            ÿ = new System.Windows.Forms.Button();
+            ÿ_big = new System.Windows.Forms.Button();
+            û = new System.Windows.Forms.Button();
+            ù_big = new System.Windows.Forms.Button();
+            œ = new System.Windows.Forms.Button();
+            œ_big = new System.Windows.Forms.Button();
+            ù = new System.Windows.Forms.Button();
+            ô_big = new System.Windows.Forms.Button();
+            ô = new System.Windows.Forms.Button();
+            î_big = new System.Windows.Forms.Button();
+            ï = new System.Windows.Forms.Button();
+            ï_big = new System.Windows.Forms.Button();
+            î = new System.Windows.Forms.Button();
+            ë_big = new System.Windows.Forms.Button();
+            ê = new System.Windows.Forms.Button();
+            ê_big = new System.Windows.Forms.Button();
+            ë = new System.Windows.Forms.Button();
+            é_big = new System.Windows.Forms.Button();
+            ç_big = new System.Windows.Forms.Button();
+            è = new System.Windows.Forms.Button();
+            è_big = new System.Windows.Forms.Button();
+            é = new System.Windows.Forms.Button();
+            ç = new System.Windows.Forms.Button();
+            æ_big = new System.Windows.Forms.Button();
+            à_big = new System.Windows.Forms.Button();
+            â = new System.Windows.Forms.Button();
+            Â_big = new System.Windows.Forms.Button();
+            æ = new System.Windows.Forms.Button();
+            à = new System.Windows.Forms.Button();
+            TpItalian = new System.Windows.Forms.TabPage();
+            ú_big = new System.Windows.Forms.Button();
+            ù_it = new System.Windows.Forms.Button();
+            ù_it_big = new System.Windows.Forms.Button();
+            ú = new System.Windows.Forms.Button();
+            ó_big = new System.Windows.Forms.Button();
+            ò = new System.Windows.Forms.Button();
+            ò_big = new System.Windows.Forms.Button();
+            ó = new System.Windows.Forms.Button();
+            í_big = new System.Windows.Forms.Button();
+            ì = new System.Windows.Forms.Button();
+            Ì_big = new System.Windows.Forms.Button();
+            í = new System.Windows.Forms.Button();
+            ï_it_big = new System.Windows.Forms.Button();
+            ï_it = new System.Windows.Forms.Button();
+            é_it_big = new System.Windows.Forms.Button();
+            è_it = new System.Windows.Forms.Button();
+            è_it_big = new System.Windows.Forms.Button();
+            é_it = new System.Windows.Forms.Button();
+            à_it_big = new System.Windows.Forms.Button();
+            à_it = new System.Windows.Forms.Button();
+            TpSpanish = new System.Windows.Forms.TabPage();
+            um_frag = new System.Windows.Forms.Button();
+            umg_ausr = new System.Windows.Forms.Button();
+            º = new System.Windows.Forms.Button();
+            ú_sp_big = new System.Windows.Forms.Button();
+            ü_sp = new System.Windows.Forms.Button();
+            ª = new System.Windows.Forms.Button();
+            ú_sp = new System.Windows.Forms.Button();
+            ñ = new System.Windows.Forms.Button();
+            ñ_big = new System.Windows.Forms.Button();
+            ó_sp = new System.Windows.Forms.Button();
+            ó_sp_big = new System.Windows.Forms.Button();
+            í_sp_big = new System.Windows.Forms.Button();
+            í_sp = new System.Windows.Forms.Button();
+            á_big = new System.Windows.Forms.Button();
+            ç_sp = new System.Windows.Forms.Button();
+            é_sp = new System.Windows.Forms.Button();
+            é_sp_big = new System.Windows.Forms.Button();
+            á = new System.Windows.Forms.Button();
+            TpRomanian = new System.Windows.Forms.TabPage();
+            ţ_ro_big = new System.Windows.Forms.Button();
+            ţ_ro = new System.Windows.Forms.Button();
+            ş_ro_big = new System.Windows.Forms.Button();
+            ş_ro = new System.Windows.Forms.Button();
+            î_ro_big = new System.Windows.Forms.Button();
+            î_ro = new System.Windows.Forms.Button();
+            ă_ro_big = new System.Windows.Forms.Button();
+            ă_ro = new System.Windows.Forms.Button();
+            â_ro_big = new System.Windows.Forms.Button();
+            â_ro = new System.Windows.Forms.Button();
+            tpDutch = new System.Windows.Forms.TabPage();
+            û_big_nl = new System.Windows.Forms.Button();
+            û_nl = new System.Windows.Forms.Button();
+            ü_big_nl = new System.Windows.Forms.Button();
+            ü_nl = new System.Windows.Forms.Button();
+            ö_nl = new System.Windows.Forms.Button();
+            ö_big_nl = new System.Windows.Forms.Button();
+            ô_big_nl = new System.Windows.Forms.Button();
+            ô_nl = new System.Windows.Forms.Button();
+            ñ_nl = new System.Windows.Forms.Button();
+            ñ_big_nl = new System.Windows.Forms.Button();
+            î_big_nl = new System.Windows.Forms.Button();
+            ï_nl = new System.Windows.Forms.Button();
+            ï_big_nl = new System.Windows.Forms.Button();
+            î_nl = new System.Windows.Forms.Button();
+            ç_big_nl = new System.Windows.Forms.Button();
+            ç_nl = new System.Windows.Forms.Button();
+            ë_big_nl = new System.Windows.Forms.Button();
+            ê_nl = new System.Windows.Forms.Button();
+            ê_big_nl = new System.Windows.Forms.Button();
+            ë_nl = new System.Windows.Forms.Button();
+            é_big_nl = new System.Windows.Forms.Button();
+            è_nl = new System.Windows.Forms.Button();
+            è_big_nl = new System.Windows.Forms.Button();
+            é_nl = new System.Windows.Forms.Button();
+            ä_big_nl = new System.Windows.Forms.Button();
+            ä_nl = new System.Windows.Forms.Button();
+            à_big_nl = new System.Windows.Forms.Button();
+            à_nl = new System.Windows.Forms.Button();
+            TcMain.SuspendLayout();
+            TpGerman.SuspendLayout();
+            TpFrench.SuspendLayout();
+            TpItalian.SuspendLayout();
+            TpSpanish.SuspendLayout();
+            TpRomanian.SuspendLayout();
+            tpDutch.SuspendLayout();
+            SuspendLayout();
             // 
             // Titel
             // 
-            this.Titel.AutoSize = true;
-            this.Titel.Location = new System.Drawing.Point(3, 9);
-            this.Titel.Name = "Titel";
-            this.Titel.Size = new System.Drawing.Size(0, 13);
-            this.Titel.TabIndex = 1;
+            Titel.AutoSize = true;
+            Titel.Location = new System.Drawing.Point(3, 9);
+            Titel.Name = "Titel";
+            Titel.Size = new System.Drawing.Size(0, 13);
+            Titel.TabIndex = 1;
             // 
             // TcMain
             // 
-            this.TcMain.Controls.Add(this.TpGerman);
-            this.TcMain.Controls.Add(this.TpFrench);
-            this.TcMain.Controls.Add(this.TpItalian);
-            this.TcMain.Controls.Add(this.TpSpanish);
-            this.TcMain.Controls.Add(this.TpRomanian);
-            this.TcMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TcMain.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TcMain.Location = new System.Drawing.Point(0, 0);
-            this.TcMain.Name = "TcMain";
-            this.TcMain.SelectedIndex = 0;
-            this.TcMain.Size = new System.Drawing.Size(404, 126);
-            this.TcMain.TabIndex = 0;
-            this.TcMain.Tag = "es-ES";
+            TcMain.Controls.Add(TpGerman);
+            TcMain.Controls.Add(TpFrench);
+            TcMain.Controls.Add(TpItalian);
+            TcMain.Controls.Add(TpSpanish);
+            TcMain.Controls.Add(TpRomanian);
+            TcMain.Controls.Add(tpDutch);
+            TcMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            TcMain.Font = new System.Drawing.Font("Arial", 8.25F);
+            TcMain.Location = new System.Drawing.Point(0, 0);
+            TcMain.Name = "TcMain";
+            TcMain.SelectedIndex = 0;
+            TcMain.Size = new System.Drawing.Size(404, 126);
+            TcMain.TabIndex = 0;
+            TcMain.Tag = "es-ES";
             // 
             // TpGerman
             // 
-            this.TpGerman.AutoScroll = true;
-            this.TpGerman.Controls.Add(this.doppel_s);
-            this.TpGerman.Controls.Add(this.ue_big);
-            this.TpGerman.Controls.Add(this.ae_big);
-            this.TpGerman.Controls.Add(this.oe);
-            this.TpGerman.Controls.Add(this.oe_big);
-            this.TpGerman.Controls.Add(this.ue);
-            this.TpGerman.Controls.Add(this.ae);
-            this.TpGerman.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TpGerman.Location = new System.Drawing.Point(4, 23);
-            this.TpGerman.Name = "TpGerman";
-            this.TpGerman.Padding = new System.Windows.Forms.Padding(3);
-            this.TpGerman.Size = new System.Drawing.Size(396, 99);
-            this.TpGerman.TabIndex = 0;
-            this.TpGerman.Tag = "de";
-            this.TpGerman.Text = "German";
-            this.TpGerman.UseVisualStyleBackColor = true;
+            TpGerman.AutoScroll = true;
+            TpGerman.Controls.Add(doppel_s);
+            TpGerman.Controls.Add(ue_big);
+            TpGerman.Controls.Add(ae_big);
+            TpGerman.Controls.Add(oe);
+            TpGerman.Controls.Add(oe_big);
+            TpGerman.Controls.Add(ue);
+            TpGerman.Controls.Add(ae);
+            TpGerman.Font = new System.Drawing.Font("Arial", 9.75F);
+            TpGerman.Location = new System.Drawing.Point(4, 23);
+            TpGerman.Name = "TpGerman";
+            TpGerman.Padding = new System.Windows.Forms.Padding(3);
+            TpGerman.Size = new System.Drawing.Size(396, 99);
+            TpGerman.TabIndex = 0;
+            TpGerman.Tag = "de";
+            TpGerman.Text = "German";
+            TpGerman.UseVisualStyleBackColor = true;
             // 
             // doppel_s
             // 
-            this.doppel_s.Location = new System.Drawing.Point(194, 6);
-            this.doppel_s.Name = "doppel_s";
-            this.doppel_s.Size = new System.Drawing.Size(25, 25);
-            this.doppel_s.TabIndex = 6;
-            this.doppel_s.Text = "ß";
-            this.doppel_s.UseVisualStyleBackColor = true;
-            this.doppel_s.Click += new System.EventHandler(this.Button_Click);
+            doppel_s.Location = new System.Drawing.Point(194, 6);
+            doppel_s.Name = "doppel_s";
+            doppel_s.Size = new System.Drawing.Size(25, 25);
+            doppel_s.TabIndex = 6;
+            doppel_s.Text = "ß";
+            doppel_s.UseVisualStyleBackColor = true;
+            doppel_s.Click += Button_Click;
             // 
             // ue_big
             // 
-            this.ue_big.Location = new System.Drawing.Point(163, 6);
-            this.ue_big.Name = "ue_big";
-            this.ue_big.Size = new System.Drawing.Size(25, 25);
-            this.ue_big.TabIndex = 5;
-            this.ue_big.Text = "Ü";
-            this.ue_big.UseVisualStyleBackColor = true;
-            this.ue_big.Click += new System.EventHandler(this.Button_Click);
+            ue_big.Location = new System.Drawing.Point(163, 6);
+            ue_big.Name = "ue_big";
+            ue_big.Size = new System.Drawing.Size(25, 25);
+            ue_big.TabIndex = 5;
+            ue_big.Text = "Ü";
+            ue_big.UseVisualStyleBackColor = true;
+            ue_big.Click += Button_Click;
             // 
             // ae_big
             // 
-            this.ae_big.Location = new System.Drawing.Point(39, 6);
-            this.ae_big.Name = "ae_big";
-            this.ae_big.Size = new System.Drawing.Size(25, 25);
-            this.ae_big.TabIndex = 1;
-            this.ae_big.Text = "Ä";
-            this.ae_big.UseVisualStyleBackColor = true;
-            this.ae_big.Click += new System.EventHandler(this.Button_Click);
+            ae_big.Location = new System.Drawing.Point(39, 6);
+            ae_big.Name = "ae_big";
+            ae_big.Size = new System.Drawing.Size(25, 25);
+            ae_big.TabIndex = 1;
+            ae_big.Text = "Ä";
+            ae_big.UseVisualStyleBackColor = true;
+            ae_big.Click += Button_Click;
             // 
             // oe
             // 
-            this.oe.Location = new System.Drawing.Point(70, 6);
-            this.oe.Name = "oe";
-            this.oe.Size = new System.Drawing.Size(25, 25);
-            this.oe.TabIndex = 2;
-            this.oe.Text = "ö";
-            this.oe.UseVisualStyleBackColor = true;
-            this.oe.Click += new System.EventHandler(this.Button_Click);
+            oe.Location = new System.Drawing.Point(70, 6);
+            oe.Name = "oe";
+            oe.Size = new System.Drawing.Size(25, 25);
+            oe.TabIndex = 2;
+            oe.Text = "ö";
+            oe.UseVisualStyleBackColor = true;
+            oe.Click += Button_Click;
             // 
             // oe_big
             // 
-            this.oe_big.Location = new System.Drawing.Point(101, 6);
-            this.oe_big.Name = "oe_big";
-            this.oe_big.Size = new System.Drawing.Size(25, 25);
-            this.oe_big.TabIndex = 3;
-            this.oe_big.Text = "Ö";
-            this.oe_big.UseVisualStyleBackColor = true;
-            this.oe_big.Click += new System.EventHandler(this.Button_Click);
+            oe_big.Location = new System.Drawing.Point(101, 6);
+            oe_big.Name = "oe_big";
+            oe_big.Size = new System.Drawing.Size(25, 25);
+            oe_big.TabIndex = 3;
+            oe_big.Text = "Ö";
+            oe_big.UseVisualStyleBackColor = true;
+            oe_big.Click += Button_Click;
             // 
             // ue
             // 
-            this.ue.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ue.Location = new System.Drawing.Point(132, 6);
-            this.ue.Name = "ue";
-            this.ue.Size = new System.Drawing.Size(25, 25);
-            this.ue.TabIndex = 4;
-            this.ue.Text = "ü";
-            this.ue.UseVisualStyleBackColor = true;
-            this.ue.Click += new System.EventHandler(this.Button_Click);
+            ue.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            ue.Location = new System.Drawing.Point(132, 6);
+            ue.Name = "ue";
+            ue.Size = new System.Drawing.Size(25, 25);
+            ue.TabIndex = 4;
+            ue.Text = "ü";
+            ue.UseVisualStyleBackColor = true;
+            ue.Click += Button_Click;
             // 
             // ae
             // 
-            this.ae.Location = new System.Drawing.Point(8, 6);
-            this.ae.Name = "ae";
-            this.ae.Size = new System.Drawing.Size(25, 25);
-            this.ae.TabIndex = 0;
-            this.ae.Text = "ä";
-            this.ae.UseVisualStyleBackColor = true;
-            this.ae.Click += new System.EventHandler(this.Button_Click);
+            ae.Location = new System.Drawing.Point(8, 6);
+            ae.Name = "ae";
+            ae.Size = new System.Drawing.Size(25, 25);
+            ae.TabIndex = 0;
+            ae.Text = "ä";
+            ae.UseVisualStyleBackColor = true;
+            ae.Click += Button_Click;
             // 
             // TpFrench
             // 
-            this.TpFrench.AutoScroll = true;
-            this.TpFrench.Controls.Add(this.û_big);
-            this.TpFrench.Controls.Add(this.ÿ);
-            this.TpFrench.Controls.Add(this.ÿ_big);
-            this.TpFrench.Controls.Add(this.û);
-            this.TpFrench.Controls.Add(this.ù_big);
-            this.TpFrench.Controls.Add(this.œ);
-            this.TpFrench.Controls.Add(this.œ_big);
-            this.TpFrench.Controls.Add(this.ù);
-            this.TpFrench.Controls.Add(this.ô_big);
-            this.TpFrench.Controls.Add(this.ô);
-            this.TpFrench.Controls.Add(this.î_big);
-            this.TpFrench.Controls.Add(this.ï);
-            this.TpFrench.Controls.Add(this.ï_big);
-            this.TpFrench.Controls.Add(this.î);
-            this.TpFrench.Controls.Add(this.ë_big);
-            this.TpFrench.Controls.Add(this.ê);
-            this.TpFrench.Controls.Add(this.ê_big);
-            this.TpFrench.Controls.Add(this.ë);
-            this.TpFrench.Controls.Add(this.é_big);
-            this.TpFrench.Controls.Add(this.ç_big);
-            this.TpFrench.Controls.Add(this.è);
-            this.TpFrench.Controls.Add(this.è_big);
-            this.TpFrench.Controls.Add(this.é);
-            this.TpFrench.Controls.Add(this.ç);
-            this.TpFrench.Controls.Add(this.æ_big);
-            this.TpFrench.Controls.Add(this.à_big);
-            this.TpFrench.Controls.Add(this.â);
-            this.TpFrench.Controls.Add(this.Â_big);
-            this.TpFrench.Controls.Add(this.æ);
-            this.TpFrench.Controls.Add(this.à);
-            this.TpFrench.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TpFrench.Location = new System.Drawing.Point(4, 23);
-            this.TpFrench.Name = "TpFrench";
-            this.TpFrench.Padding = new System.Windows.Forms.Padding(3);
-            this.TpFrench.Size = new System.Drawing.Size(396, 99);
-            this.TpFrench.TabIndex = 1;
-            this.TpFrench.Tag = "fr";
-            this.TpFrench.Text = "French";
-            this.TpFrench.UseVisualStyleBackColor = true;
+            TpFrench.AutoScroll = true;
+            TpFrench.Controls.Add(û_big);
+            TpFrench.Controls.Add(ÿ);
+            TpFrench.Controls.Add(ÿ_big);
+            TpFrench.Controls.Add(û);
+            TpFrench.Controls.Add(ù_big);
+            TpFrench.Controls.Add(œ);
+            TpFrench.Controls.Add(œ_big);
+            TpFrench.Controls.Add(ù);
+            TpFrench.Controls.Add(ô_big);
+            TpFrench.Controls.Add(ô);
+            TpFrench.Controls.Add(î_big);
+            TpFrench.Controls.Add(ï);
+            TpFrench.Controls.Add(ï_big);
+            TpFrench.Controls.Add(î);
+            TpFrench.Controls.Add(ë_big);
+            TpFrench.Controls.Add(ê);
+            TpFrench.Controls.Add(ê_big);
+            TpFrench.Controls.Add(ë);
+            TpFrench.Controls.Add(é_big);
+            TpFrench.Controls.Add(ç_big);
+            TpFrench.Controls.Add(è);
+            TpFrench.Controls.Add(è_big);
+            TpFrench.Controls.Add(é);
+            TpFrench.Controls.Add(ç);
+            TpFrench.Controls.Add(æ_big);
+            TpFrench.Controls.Add(à_big);
+            TpFrench.Controls.Add(â);
+            TpFrench.Controls.Add(Â_big);
+            TpFrench.Controls.Add(æ);
+            TpFrench.Controls.Add(à);
+            TpFrench.Font = new System.Drawing.Font("Arial", 9.75F);
+            TpFrench.Location = new System.Drawing.Point(4, 23);
+            TpFrench.Name = "TpFrench";
+            TpFrench.Padding = new System.Windows.Forms.Padding(3);
+            TpFrench.Size = new System.Drawing.Size(396, 99);
+            TpFrench.TabIndex = 1;
+            TpFrench.Tag = "fr";
+            TpFrench.Text = "French";
+            TpFrench.UseVisualStyleBackColor = true;
             // 
             // û_big
             // 
-            this.û_big.Location = new System.Drawing.Point(101, 68);
-            this.û_big.Name = "û_big";
-            this.û_big.Size = new System.Drawing.Size(25, 25);
-            this.û_big.TabIndex = 28;
-            this.û_big.Text = "Û";
-            this.û_big.UseVisualStyleBackColor = true;
-            this.û_big.Click += new System.EventHandler(this.Button_Click);
+            û_big.Location = new System.Drawing.Point(101, 68);
+            û_big.Name = "û_big";
+            û_big.Size = new System.Drawing.Size(25, 25);
+            û_big.TabIndex = 28;
+            û_big.Text = "Û";
+            û_big.UseVisualStyleBackColor = true;
+            û_big.Click += Button_Click;
             // 
             // ÿ
             // 
-            this.ÿ.Location = new System.Drawing.Point(132, 68);
-            this.ÿ.Name = "ÿ";
-            this.ÿ.Size = new System.Drawing.Size(25, 25);
-            this.ÿ.TabIndex = 29;
-            this.ÿ.Text = "ÿ";
-            this.ÿ.UseVisualStyleBackColor = true;
-            this.ÿ.Click += new System.EventHandler(this.Button_Click);
+            ÿ.Location = new System.Drawing.Point(132, 68);
+            ÿ.Name = "ÿ";
+            ÿ.Size = new System.Drawing.Size(25, 25);
+            ÿ.TabIndex = 29;
+            ÿ.Text = "ÿ";
+            ÿ.UseVisualStyleBackColor = true;
+            ÿ.Click += Button_Click;
             // 
             // ÿ_big
             // 
-            this.ÿ_big.Location = new System.Drawing.Point(163, 68);
-            this.ÿ_big.Name = "ÿ_big";
-            this.ÿ_big.Size = new System.Drawing.Size(25, 25);
-            this.ÿ_big.TabIndex = 30;
-            this.ÿ_big.Text = "Ÿ";
-            this.ÿ_big.UseVisualStyleBackColor = true;
-            this.ÿ_big.Click += new System.EventHandler(this.Button_Click);
+            ÿ_big.Location = new System.Drawing.Point(163, 68);
+            ÿ_big.Name = "ÿ_big";
+            ÿ_big.Size = new System.Drawing.Size(25, 25);
+            ÿ_big.TabIndex = 30;
+            ÿ_big.Text = "Ÿ";
+            ÿ_big.UseVisualStyleBackColor = true;
+            ÿ_big.Click += Button_Click;
             // 
             // û
             // 
-            this.û.Location = new System.Drawing.Point(70, 68);
-            this.û.Name = "û";
-            this.û.Size = new System.Drawing.Size(25, 25);
-            this.û.TabIndex = 27;
-            this.û.Text = "û";
-            this.û.UseVisualStyleBackColor = true;
-            this.û.Click += new System.EventHandler(this.Button_Click);
+            û.Location = new System.Drawing.Point(70, 68);
+            û.Name = "û";
+            û.Size = new System.Drawing.Size(25, 25);
+            û.TabIndex = 27;
+            û.Text = "û";
+            û.UseVisualStyleBackColor = true;
+            û.Click += Button_Click;
             // 
             // ù_big
             // 
-            this.ù_big.Location = new System.Drawing.Point(39, 68);
-            this.ù_big.Name = "ù_big";
-            this.ù_big.Size = new System.Drawing.Size(25, 25);
-            this.ù_big.TabIndex = 26;
-            this.ù_big.Text = "Ù";
-            this.ù_big.UseVisualStyleBackColor = true;
-            this.ù_big.Click += new System.EventHandler(this.Button_Click);
+            ù_big.Location = new System.Drawing.Point(39, 68);
+            ù_big.Name = "ù_big";
+            ù_big.Size = new System.Drawing.Size(25, 25);
+            ù_big.TabIndex = 26;
+            ù_big.Text = "Ù";
+            ù_big.UseVisualStyleBackColor = true;
+            ù_big.Click += Button_Click;
             // 
             // œ
             // 
-            this.œ.Location = new System.Drawing.Point(318, 37);
-            this.œ.Name = "œ";
-            this.œ.Size = new System.Drawing.Size(25, 25);
-            this.œ.TabIndex = 23;
-            this.œ.Text = "œ";
-            this.œ.UseVisualStyleBackColor = true;
-            this.œ.Click += new System.EventHandler(this.Button_Click);
+            œ.Location = new System.Drawing.Point(318, 37);
+            œ.Name = "œ";
+            œ.Size = new System.Drawing.Size(25, 25);
+            œ.TabIndex = 23;
+            œ.Text = "œ";
+            œ.UseVisualStyleBackColor = true;
+            œ.Click += Button_Click;
             // 
             // œ_big
             // 
-            this.œ_big.Location = new System.Drawing.Point(349, 37);
-            this.œ_big.Name = "œ_big";
-            this.œ_big.Size = new System.Drawing.Size(25, 25);
-            this.œ_big.TabIndex = 24;
-            this.œ_big.Text = "Œ";
-            this.œ_big.UseVisualStyleBackColor = true;
-            this.œ_big.Click += new System.EventHandler(this.Button_Click);
+            œ_big.Location = new System.Drawing.Point(349, 37);
+            œ_big.Name = "œ_big";
+            œ_big.Size = new System.Drawing.Size(25, 25);
+            œ_big.TabIndex = 24;
+            œ_big.Text = "Œ";
+            œ_big.UseVisualStyleBackColor = true;
+            œ_big.Click += Button_Click;
             // 
             // ù
             // 
-            this.ù.Location = new System.Drawing.Point(8, 68);
-            this.ù.Name = "ù";
-            this.ù.Size = new System.Drawing.Size(25, 25);
-            this.ù.TabIndex = 25;
-            this.ù.Text = "ù";
-            this.ù.UseVisualStyleBackColor = true;
-            this.ù.Click += new System.EventHandler(this.Button_Click);
+            ù.Location = new System.Drawing.Point(8, 68);
+            ù.Name = "ù";
+            ù.Size = new System.Drawing.Size(25, 25);
+            ù.TabIndex = 25;
+            ù.Text = "ù";
+            ù.UseVisualStyleBackColor = true;
+            ù.Click += Button_Click;
             // 
             // ô_big
             // 
-            this.ô_big.Location = new System.Drawing.Point(287, 37);
-            this.ô_big.Name = "ô_big";
-            this.ô_big.Size = new System.Drawing.Size(25, 25);
-            this.ô_big.TabIndex = 22;
-            this.ô_big.Text = "Ô";
-            this.ô_big.UseVisualStyleBackColor = true;
-            this.ô_big.Click += new System.EventHandler(this.Button_Click);
+            ô_big.Location = new System.Drawing.Point(287, 37);
+            ô_big.Name = "ô_big";
+            ô_big.Size = new System.Drawing.Size(25, 25);
+            ô_big.TabIndex = 22;
+            ô_big.Text = "Ô";
+            ô_big.UseVisualStyleBackColor = true;
+            ô_big.Click += Button_Click;
             // 
             // ô
             // 
-            this.ô.Location = new System.Drawing.Point(256, 37);
-            this.ô.Name = "ô";
-            this.ô.Size = new System.Drawing.Size(25, 25);
-            this.ô.TabIndex = 21;
-            this.ô.Text = "ô";
-            this.ô.UseVisualStyleBackColor = true;
-            this.ô.Click += new System.EventHandler(this.Button_Click);
+            ô.Location = new System.Drawing.Point(256, 37);
+            ô.Name = "ô";
+            ô.Size = new System.Drawing.Size(25, 25);
+            ô.TabIndex = 21;
+            ô.Text = "ô";
+            ô.UseVisualStyleBackColor = true;
+            ô.Click += Button_Click;
             // 
             // î_big
             // 
-            this.î_big.Location = new System.Drawing.Point(163, 37);
-            this.î_big.Name = "î_big";
-            this.î_big.Size = new System.Drawing.Size(25, 25);
-            this.î_big.TabIndex = 18;
-            this.î_big.Text = "Î";
-            this.î_big.UseVisualStyleBackColor = true;
-            this.î_big.Click += new System.EventHandler(this.Button_Click);
+            î_big.Location = new System.Drawing.Point(163, 37);
+            î_big.Name = "î_big";
+            î_big.Size = new System.Drawing.Size(25, 25);
+            î_big.TabIndex = 18;
+            î_big.Text = "Î";
+            î_big.UseVisualStyleBackColor = true;
+            î_big.Click += Button_Click;
             // 
             // ï
             // 
-            this.ï.Location = new System.Drawing.Point(194, 37);
-            this.ï.Name = "ï";
-            this.ï.Size = new System.Drawing.Size(25, 25);
-            this.ï.TabIndex = 19;
-            this.ï.Text = "ï";
-            this.ï.UseVisualStyleBackColor = true;
-            this.ï.Click += new System.EventHandler(this.Button_Click);
+            ï.Location = new System.Drawing.Point(194, 37);
+            ï.Name = "ï";
+            ï.Size = new System.Drawing.Size(25, 25);
+            ï.TabIndex = 19;
+            ï.Text = "ï";
+            ï.UseVisualStyleBackColor = true;
+            ï.Click += Button_Click;
             // 
             // ï_big
             // 
-            this.ï_big.Location = new System.Drawing.Point(225, 37);
-            this.ï_big.Name = "ï_big";
-            this.ï_big.Size = new System.Drawing.Size(25, 25);
-            this.ï_big.TabIndex = 20;
-            this.ï_big.Text = "Ï";
-            this.ï_big.UseVisualStyleBackColor = true;
-            this.ï_big.Click += new System.EventHandler(this.Button_Click);
+            ï_big.Location = new System.Drawing.Point(225, 37);
+            ï_big.Name = "ï_big";
+            ï_big.Size = new System.Drawing.Size(25, 25);
+            ï_big.TabIndex = 20;
+            ï_big.Text = "Ï";
+            ï_big.UseVisualStyleBackColor = true;
+            ï_big.Click += Button_Click;
             // 
             // î
             // 
-            this.î.Location = new System.Drawing.Point(132, 37);
-            this.î.Name = "î";
-            this.î.Size = new System.Drawing.Size(25, 25);
-            this.î.TabIndex = 17;
-            this.î.Text = "î";
-            this.î.UseVisualStyleBackColor = true;
-            this.î.Click += new System.EventHandler(this.Button_Click);
+            î.Location = new System.Drawing.Point(132, 37);
+            î.Name = "î";
+            î.Size = new System.Drawing.Size(25, 25);
+            î.TabIndex = 17;
+            î.Text = "î";
+            î.UseVisualStyleBackColor = true;
+            î.Click += Button_Click;
             // 
             // ë_big
             // 
-            this.ë_big.Location = new System.Drawing.Point(101, 37);
-            this.ë_big.Name = "ë_big";
-            this.ë_big.Size = new System.Drawing.Size(25, 25);
-            this.ë_big.TabIndex = 16;
-            this.ë_big.Text = "Ë";
-            this.ë_big.UseVisualStyleBackColor = true;
-            this.ë_big.Click += new System.EventHandler(this.Button_Click);
+            ë_big.Location = new System.Drawing.Point(101, 37);
+            ë_big.Name = "ë_big";
+            ë_big.Size = new System.Drawing.Size(25, 25);
+            ë_big.TabIndex = 16;
+            ë_big.Text = "Ë";
+            ë_big.UseVisualStyleBackColor = true;
+            ë_big.Click += Button_Click;
             // 
             // ê
             // 
-            this.ê.Location = new System.Drawing.Point(8, 37);
-            this.ê.Name = "ê";
-            this.ê.Size = new System.Drawing.Size(25, 25);
-            this.ê.TabIndex = 13;
-            this.ê.Text = "ê";
-            this.ê.UseVisualStyleBackColor = true;
-            this.ê.Click += new System.EventHandler(this.Button_Click);
+            ê.Location = new System.Drawing.Point(8, 37);
+            ê.Name = "ê";
+            ê.Size = new System.Drawing.Size(25, 25);
+            ê.TabIndex = 13;
+            ê.Text = "ê";
+            ê.UseVisualStyleBackColor = true;
+            ê.Click += Button_Click;
             // 
             // ê_big
             // 
-            this.ê_big.Location = new System.Drawing.Point(39, 37);
-            this.ê_big.Name = "ê_big";
-            this.ê_big.Size = new System.Drawing.Size(25, 25);
-            this.ê_big.TabIndex = 14;
-            this.ê_big.Text = "Ê";
-            this.ê_big.UseVisualStyleBackColor = true;
-            this.ê_big.Click += new System.EventHandler(this.Button_Click);
+            ê_big.Location = new System.Drawing.Point(39, 37);
+            ê_big.Name = "ê_big";
+            ê_big.Size = new System.Drawing.Size(25, 25);
+            ê_big.TabIndex = 14;
+            ê_big.Text = "Ê";
+            ê_big.UseVisualStyleBackColor = true;
+            ê_big.Click += Button_Click;
             // 
             // ë
             // 
-            this.ë.Location = new System.Drawing.Point(70, 37);
-            this.ë.Name = "ë";
-            this.ë.Size = new System.Drawing.Size(25, 25);
-            this.ë.TabIndex = 15;
-            this.ë.Text = "ë";
-            this.ë.UseVisualStyleBackColor = true;
-            this.ë.Click += new System.EventHandler(this.Button_Click);
+            ë.Location = new System.Drawing.Point(70, 37);
+            ë.Name = "ë";
+            ë.Size = new System.Drawing.Size(25, 25);
+            ë.TabIndex = 15;
+            ë.Text = "ë";
+            ë.UseVisualStyleBackColor = true;
+            ë.Click += Button_Click;
             // 
             // é_big
             // 
-            this.é_big.Location = new System.Drawing.Point(349, 6);
-            this.é_big.Name = "é_big";
-            this.é_big.Size = new System.Drawing.Size(25, 25);
-            this.é_big.TabIndex = 12;
-            this.é_big.Text = "É";
-            this.é_big.UseVisualStyleBackColor = true;
-            this.é_big.Click += new System.EventHandler(this.Button_Click);
+            é_big.Location = new System.Drawing.Point(349, 6);
+            é_big.Name = "é_big";
+            é_big.Size = new System.Drawing.Size(25, 25);
+            é_big.TabIndex = 12;
+            é_big.Text = "É";
+            é_big.UseVisualStyleBackColor = true;
+            é_big.Click += Button_Click;
             // 
             // ç_big
             // 
-            this.ç_big.Location = new System.Drawing.Point(225, 6);
-            this.ç_big.Name = "ç_big";
-            this.ç_big.Size = new System.Drawing.Size(25, 25);
-            this.ç_big.TabIndex = 8;
-            this.ç_big.Text = "Ç";
-            this.ç_big.UseVisualStyleBackColor = true;
-            this.ç_big.Click += new System.EventHandler(this.Button_Click);
+            ç_big.Location = new System.Drawing.Point(225, 6);
+            ç_big.Name = "ç_big";
+            ç_big.Size = new System.Drawing.Size(25, 25);
+            ç_big.TabIndex = 8;
+            ç_big.Text = "Ç";
+            ç_big.UseVisualStyleBackColor = true;
+            ç_big.Click += Button_Click;
             // 
             // è
             // 
-            this.è.Location = new System.Drawing.Point(256, 6);
-            this.è.Name = "è";
-            this.è.Size = new System.Drawing.Size(25, 25);
-            this.è.TabIndex = 9;
-            this.è.Text = "è";
-            this.è.UseVisualStyleBackColor = true;
-            this.è.Click += new System.EventHandler(this.Button_Click);
+            è.Location = new System.Drawing.Point(256, 6);
+            è.Name = "è";
+            è.Size = new System.Drawing.Size(25, 25);
+            è.TabIndex = 9;
+            è.Text = "è";
+            è.UseVisualStyleBackColor = true;
+            è.Click += Button_Click;
             // 
             // è_big
             // 
-            this.è_big.Location = new System.Drawing.Point(287, 6);
-            this.è_big.Name = "è_big";
-            this.è_big.Size = new System.Drawing.Size(25, 25);
-            this.è_big.TabIndex = 10;
-            this.è_big.Text = "È";
-            this.è_big.UseVisualStyleBackColor = true;
-            this.è_big.Click += new System.EventHandler(this.Button_Click);
+            è_big.Location = new System.Drawing.Point(287, 6);
+            è_big.Name = "è_big";
+            è_big.Size = new System.Drawing.Size(25, 25);
+            è_big.TabIndex = 10;
+            è_big.Text = "È";
+            è_big.UseVisualStyleBackColor = true;
+            è_big.Click += Button_Click;
             // 
             // é
             // 
-            this.é.Location = new System.Drawing.Point(318, 6);
-            this.é.Name = "é";
-            this.é.Size = new System.Drawing.Size(25, 25);
-            this.é.TabIndex = 11;
-            this.é.Text = "é";
-            this.é.UseVisualStyleBackColor = true;
-            this.é.Click += new System.EventHandler(this.Button_Click);
+            é.Location = new System.Drawing.Point(318, 6);
+            é.Name = "é";
+            é.Size = new System.Drawing.Size(25, 25);
+            é.TabIndex = 11;
+            é.Text = "é";
+            é.UseVisualStyleBackColor = true;
+            é.Click += Button_Click;
             // 
             // ç
             // 
-            this.ç.Location = new System.Drawing.Point(194, 6);
-            this.ç.Name = "ç";
-            this.ç.Size = new System.Drawing.Size(25, 25);
-            this.ç.TabIndex = 7;
-            this.ç.Text = "ç";
-            this.ç.UseVisualStyleBackColor = true;
-            this.ç.Click += new System.EventHandler(this.Button_Click);
+            ç.Location = new System.Drawing.Point(194, 6);
+            ç.Name = "ç";
+            ç.Size = new System.Drawing.Size(25, 25);
+            ç.TabIndex = 7;
+            ç.Text = "ç";
+            ç.UseVisualStyleBackColor = true;
+            ç.Click += Button_Click;
             // 
             // æ_big
             // 
-            this.æ_big.Location = new System.Drawing.Point(163, 6);
-            this.æ_big.Name = "æ_big";
-            this.æ_big.Size = new System.Drawing.Size(25, 25);
-            this.æ_big.TabIndex = 6;
-            this.æ_big.Text = "Æ";
-            this.æ_big.UseVisualStyleBackColor = true;
-            this.æ_big.Click += new System.EventHandler(this.Button_Click);
+            æ_big.Location = new System.Drawing.Point(163, 6);
+            æ_big.Name = "æ_big";
+            æ_big.Size = new System.Drawing.Size(25, 25);
+            æ_big.TabIndex = 6;
+            æ_big.Text = "Æ";
+            æ_big.UseVisualStyleBackColor = true;
+            æ_big.Click += Button_Click;
             // 
             // à_big
             // 
-            this.à_big.Location = new System.Drawing.Point(39, 6);
-            this.à_big.Name = "à_big";
-            this.à_big.Size = new System.Drawing.Size(25, 25);
-            this.à_big.TabIndex = 2;
-            this.à_big.Text = "À";
-            this.à_big.UseVisualStyleBackColor = true;
-            this.à_big.Click += new System.EventHandler(this.Button_Click);
+            à_big.Location = new System.Drawing.Point(39, 6);
+            à_big.Name = "à_big";
+            à_big.Size = new System.Drawing.Size(25, 25);
+            à_big.TabIndex = 2;
+            à_big.Text = "À";
+            à_big.UseVisualStyleBackColor = true;
+            à_big.Click += Button_Click;
             // 
             // â
             // 
-            this.â.Location = new System.Drawing.Point(70, 6);
-            this.â.Name = "â";
-            this.â.Size = new System.Drawing.Size(25, 25);
-            this.â.TabIndex = 3;
-            this.â.Text = "â";
-            this.â.UseVisualStyleBackColor = true;
-            this.â.Click += new System.EventHandler(this.Button_Click);
+            â.Location = new System.Drawing.Point(70, 6);
+            â.Name = "â";
+            â.Size = new System.Drawing.Size(25, 25);
+            â.TabIndex = 3;
+            â.Text = "â";
+            â.UseVisualStyleBackColor = true;
+            â.Click += Button_Click;
             // 
             // Â_big
             // 
-            this.Â_big.Location = new System.Drawing.Point(101, 6);
-            this.Â_big.Name = "Â_big";
-            this.Â_big.Size = new System.Drawing.Size(25, 25);
-            this.Â_big.TabIndex = 4;
-            this.Â_big.Text = "Â";
-            this.Â_big.UseVisualStyleBackColor = true;
-            this.Â_big.Click += new System.EventHandler(this.Button_Click);
+            Â_big.Location = new System.Drawing.Point(101, 6);
+            Â_big.Name = "Â_big";
+            Â_big.Size = new System.Drawing.Size(25, 25);
+            Â_big.TabIndex = 4;
+            Â_big.Text = "Â";
+            Â_big.UseVisualStyleBackColor = true;
+            Â_big.Click += Button_Click;
             // 
             // æ
             // 
-            this.æ.Location = new System.Drawing.Point(132, 6);
-            this.æ.Name = "æ";
-            this.æ.Size = new System.Drawing.Size(25, 25);
-            this.æ.TabIndex = 5;
-            this.æ.Text = "æ";
-            this.æ.UseVisualStyleBackColor = true;
-            this.æ.Click += new System.EventHandler(this.Button_Click);
+            æ.Location = new System.Drawing.Point(132, 6);
+            æ.Name = "æ";
+            æ.Size = new System.Drawing.Size(25, 25);
+            æ.TabIndex = 5;
+            æ.Text = "æ";
+            æ.UseVisualStyleBackColor = true;
+            æ.Click += Button_Click;
             // 
             // à
             // 
-            this.à.Location = new System.Drawing.Point(8, 6);
-            this.à.Name = "à";
-            this.à.Size = new System.Drawing.Size(25, 25);
-            this.à.TabIndex = 1;
-            this.à.Text = "à";
-            this.à.UseVisualStyleBackColor = true;
-            this.à.Click += new System.EventHandler(this.Button_Click);
+            à.Location = new System.Drawing.Point(8, 6);
+            à.Name = "à";
+            à.Size = new System.Drawing.Size(25, 25);
+            à.TabIndex = 1;
+            à.Text = "à";
+            à.UseVisualStyleBackColor = true;
+            à.Click += Button_Click;
             // 
             // TpItalian
             // 
-            this.TpItalian.AutoScroll = true;
-            this.TpItalian.Controls.Add(this.ú_big);
-            this.TpItalian.Controls.Add(this.ù_it);
-            this.TpItalian.Controls.Add(this.ù_it_big);
-            this.TpItalian.Controls.Add(this.ú);
-            this.TpItalian.Controls.Add(this.ó_big);
-            this.TpItalian.Controls.Add(this.ò);
-            this.TpItalian.Controls.Add(this.ò_big);
-            this.TpItalian.Controls.Add(this.ó);
-            this.TpItalian.Controls.Add(this.í_big);
-            this.TpItalian.Controls.Add(this.ì);
-            this.TpItalian.Controls.Add(this.Ì_big);
-            this.TpItalian.Controls.Add(this.í);
-            this.TpItalian.Controls.Add(this.ï_it_big);
-            this.TpItalian.Controls.Add(this.ï_it);
-            this.TpItalian.Controls.Add(this.é_it_big);
-            this.TpItalian.Controls.Add(this.è_it);
-            this.TpItalian.Controls.Add(this.è_it_big);
-            this.TpItalian.Controls.Add(this.é_it);
-            this.TpItalian.Controls.Add(this.à_it_big);
-            this.TpItalian.Controls.Add(this.à_it);
-            this.TpItalian.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TpItalian.Location = new System.Drawing.Point(4, 23);
-            this.TpItalian.Name = "TpItalian";
-            this.TpItalian.Padding = new System.Windows.Forms.Padding(3);
-            this.TpItalian.Size = new System.Drawing.Size(396, 99);
-            this.TpItalian.TabIndex = 2;
-            this.TpItalian.Tag = "it";
-            this.TpItalian.Text = "Italian";
-            this.TpItalian.UseVisualStyleBackColor = true;
+            TpItalian.AutoScroll = true;
+            TpItalian.Controls.Add(ú_big);
+            TpItalian.Controls.Add(ù_it);
+            TpItalian.Controls.Add(ù_it_big);
+            TpItalian.Controls.Add(ú);
+            TpItalian.Controls.Add(ó_big);
+            TpItalian.Controls.Add(ò);
+            TpItalian.Controls.Add(ò_big);
+            TpItalian.Controls.Add(ó);
+            TpItalian.Controls.Add(í_big);
+            TpItalian.Controls.Add(ì);
+            TpItalian.Controls.Add(Ì_big);
+            TpItalian.Controls.Add(í);
+            TpItalian.Controls.Add(ï_it_big);
+            TpItalian.Controls.Add(ï_it);
+            TpItalian.Controls.Add(é_it_big);
+            TpItalian.Controls.Add(è_it);
+            TpItalian.Controls.Add(è_it_big);
+            TpItalian.Controls.Add(é_it);
+            TpItalian.Controls.Add(à_it_big);
+            TpItalian.Controls.Add(à_it);
+            TpItalian.Font = new System.Drawing.Font("Arial", 9.75F);
+            TpItalian.Location = new System.Drawing.Point(4, 23);
+            TpItalian.Name = "TpItalian";
+            TpItalian.Padding = new System.Windows.Forms.Padding(3);
+            TpItalian.Size = new System.Drawing.Size(396, 99);
+            TpItalian.TabIndex = 2;
+            TpItalian.Tag = "it";
+            TpItalian.Text = "Italian";
+            TpItalian.UseVisualStyleBackColor = true;
             // 
             // ú_big
             // 
-            this.ú_big.Location = new System.Drawing.Point(225, 37);
-            this.ú_big.Name = "ú_big";
-            this.ú_big.Size = new System.Drawing.Size(25, 25);
-            this.ú_big.TabIndex = 20;
-            this.ú_big.Text = "Ú";
-            this.ú_big.UseVisualStyleBackColor = true;
-            this.ú_big.Click += new System.EventHandler(this.Button_Click);
+            ú_big.Location = new System.Drawing.Point(225, 37);
+            ú_big.Name = "ú_big";
+            ú_big.Size = new System.Drawing.Size(25, 25);
+            ú_big.TabIndex = 20;
+            ú_big.Text = "Ú";
+            ú_big.UseVisualStyleBackColor = true;
+            ú_big.Click += Button_Click;
             // 
             // ù_it
             // 
-            this.ù_it.Location = new System.Drawing.Point(132, 37);
-            this.ù_it.Name = "ù_it";
-            this.ù_it.Size = new System.Drawing.Size(25, 25);
-            this.ù_it.TabIndex = 17;
-            this.ù_it.Text = "ù";
-            this.ù_it.UseVisualStyleBackColor = true;
-            this.ù_it.Click += new System.EventHandler(this.Button_Click);
+            ù_it.Location = new System.Drawing.Point(132, 37);
+            ù_it.Name = "ù_it";
+            ù_it.Size = new System.Drawing.Size(25, 25);
+            ù_it.TabIndex = 17;
+            ù_it.Text = "ù";
+            ù_it.UseVisualStyleBackColor = true;
+            ù_it.Click += Button_Click;
             // 
             // ù_it_big
             // 
-            this.ù_it_big.Location = new System.Drawing.Point(163, 37);
-            this.ù_it_big.Name = "ù_it_big";
-            this.ù_it_big.Size = new System.Drawing.Size(25, 25);
-            this.ù_it_big.TabIndex = 18;
-            this.ù_it_big.Text = "Ù";
-            this.ù_it_big.UseVisualStyleBackColor = true;
-            this.ù_it_big.Click += new System.EventHandler(this.Button_Click);
+            ù_it_big.Location = new System.Drawing.Point(163, 37);
+            ù_it_big.Name = "ù_it_big";
+            ù_it_big.Size = new System.Drawing.Size(25, 25);
+            ù_it_big.TabIndex = 18;
+            ù_it_big.Text = "Ù";
+            ù_it_big.UseVisualStyleBackColor = true;
+            ù_it_big.Click += Button_Click;
             // 
             // ú
             // 
-            this.ú.Location = new System.Drawing.Point(194, 37);
-            this.ú.Name = "ú";
-            this.ú.Size = new System.Drawing.Size(25, 25);
-            this.ú.TabIndex = 19;
-            this.ú.Text = "ú";
-            this.ú.UseVisualStyleBackColor = true;
-            this.ú.Click += new System.EventHandler(this.Button_Click);
+            ú.Location = new System.Drawing.Point(194, 37);
+            ú.Name = "ú";
+            ú.Size = new System.Drawing.Size(25, 25);
+            ú.TabIndex = 19;
+            ú.Text = "ú";
+            ú.UseVisualStyleBackColor = true;
+            ú.Click += Button_Click;
             // 
             // ó_big
             // 
-            this.ó_big.Location = new System.Drawing.Point(101, 37);
-            this.ó_big.Name = "ó_big";
-            this.ó_big.Size = new System.Drawing.Size(25, 25);
-            this.ó_big.TabIndex = 16;
-            this.ó_big.Text = "Ó";
-            this.ó_big.UseVisualStyleBackColor = true;
-            this.ó_big.Click += new System.EventHandler(this.Button_Click);
+            ó_big.Location = new System.Drawing.Point(101, 37);
+            ó_big.Name = "ó_big";
+            ó_big.Size = new System.Drawing.Size(25, 25);
+            ó_big.TabIndex = 16;
+            ó_big.Text = "Ó";
+            ó_big.UseVisualStyleBackColor = true;
+            ó_big.Click += Button_Click;
             // 
             // ò
             // 
-            this.ò.Location = new System.Drawing.Point(8, 37);
-            this.ò.Name = "ò";
-            this.ò.Size = new System.Drawing.Size(25, 25);
-            this.ò.TabIndex = 13;
-            this.ò.Text = "ò";
-            this.ò.UseVisualStyleBackColor = true;
-            this.ò.Click += new System.EventHandler(this.Button_Click);
+            ò.Location = new System.Drawing.Point(8, 37);
+            ò.Name = "ò";
+            ò.Size = new System.Drawing.Size(25, 25);
+            ò.TabIndex = 13;
+            ò.Text = "ò";
+            ò.UseVisualStyleBackColor = true;
+            ò.Click += Button_Click;
             // 
             // ò_big
             // 
-            this.ò_big.Location = new System.Drawing.Point(39, 37);
-            this.ò_big.Name = "ò_big";
-            this.ò_big.Size = new System.Drawing.Size(25, 25);
-            this.ò_big.TabIndex = 14;
-            this.ò_big.Text = "Ò";
-            this.ò_big.UseVisualStyleBackColor = true;
-            this.ò_big.Click += new System.EventHandler(this.Button_Click);
+            ò_big.Location = new System.Drawing.Point(39, 37);
+            ò_big.Name = "ò_big";
+            ò_big.Size = new System.Drawing.Size(25, 25);
+            ò_big.TabIndex = 14;
+            ò_big.Text = "Ò";
+            ò_big.UseVisualStyleBackColor = true;
+            ò_big.Click += Button_Click;
             // 
             // ó
             // 
-            this.ó.Location = new System.Drawing.Point(70, 37);
-            this.ó.Name = "ó";
-            this.ó.Size = new System.Drawing.Size(25, 25);
-            this.ó.TabIndex = 15;
-            this.ó.Text = "ó";
-            this.ó.UseVisualStyleBackColor = true;
-            this.ó.Click += new System.EventHandler(this.Button_Click);
+            ó.Location = new System.Drawing.Point(70, 37);
+            ó.Name = "ó";
+            ó.Size = new System.Drawing.Size(25, 25);
+            ó.TabIndex = 15;
+            ó.Text = "ó";
+            ó.UseVisualStyleBackColor = true;
+            ó.Click += Button_Click;
             // 
             // í_big
             // 
-            this.í_big.Location = new System.Drawing.Point(287, 6);
-            this.í_big.Name = "í_big";
-            this.í_big.Size = new System.Drawing.Size(25, 25);
-            this.í_big.TabIndex = 10;
-            this.í_big.Text = "Í";
-            this.í_big.UseVisualStyleBackColor = true;
-            this.í_big.Click += new System.EventHandler(this.Button_Click);
+            í_big.Location = new System.Drawing.Point(287, 6);
+            í_big.Name = "í_big";
+            í_big.Size = new System.Drawing.Size(25, 25);
+            í_big.TabIndex = 10;
+            í_big.Text = "Í";
+            í_big.UseVisualStyleBackColor = true;
+            í_big.Click += Button_Click;
             // 
             // ì
             // 
-            this.ì.Location = new System.Drawing.Point(194, 6);
-            this.ì.Name = "ì";
-            this.ì.Size = new System.Drawing.Size(25, 25);
-            this.ì.TabIndex = 7;
-            this.ì.Text = "ì";
-            this.ì.UseVisualStyleBackColor = true;
-            this.ì.Click += new System.EventHandler(this.Button_Click);
+            ì.Location = new System.Drawing.Point(194, 6);
+            ì.Name = "ì";
+            ì.Size = new System.Drawing.Size(25, 25);
+            ì.TabIndex = 7;
+            ì.Text = "ì";
+            ì.UseVisualStyleBackColor = true;
+            ì.Click += Button_Click;
             // 
             // Ì_big
             // 
-            this.Ì_big.Location = new System.Drawing.Point(225, 6);
-            this.Ì_big.Name = "Ì_big";
-            this.Ì_big.Size = new System.Drawing.Size(25, 25);
-            this.Ì_big.TabIndex = 8;
-            this.Ì_big.Text = "Ì";
-            this.Ì_big.UseVisualStyleBackColor = true;
-            this.Ì_big.Click += new System.EventHandler(this.Button_Click);
+            Ì_big.Location = new System.Drawing.Point(225, 6);
+            Ì_big.Name = "Ì_big";
+            Ì_big.Size = new System.Drawing.Size(25, 25);
+            Ì_big.TabIndex = 8;
+            Ì_big.Text = "Ì";
+            Ì_big.UseVisualStyleBackColor = true;
+            Ì_big.Click += Button_Click;
             // 
             // í
             // 
-            this.í.Location = new System.Drawing.Point(256, 6);
-            this.í.Name = "í";
-            this.í.Size = new System.Drawing.Size(25, 25);
-            this.í.TabIndex = 9;
-            this.í.Text = "í";
-            this.í.UseVisualStyleBackColor = true;
-            this.í.Click += new System.EventHandler(this.Button_Click);
+            í.Location = new System.Drawing.Point(256, 6);
+            í.Name = "í";
+            í.Size = new System.Drawing.Size(25, 25);
+            í.TabIndex = 9;
+            í.Text = "í";
+            í.UseVisualStyleBackColor = true;
+            í.Click += Button_Click;
             // 
             // ï_it_big
             // 
-            this.ï_it_big.Location = new System.Drawing.Point(349, 6);
-            this.ï_it_big.Name = "ï_it_big";
-            this.ï_it_big.Size = new System.Drawing.Size(25, 25);
-            this.ï_it_big.TabIndex = 12;
-            this.ï_it_big.Text = "Ï";
-            this.ï_it_big.UseVisualStyleBackColor = true;
-            this.ï_it_big.Click += new System.EventHandler(this.Button_Click);
+            ï_it_big.Location = new System.Drawing.Point(349, 6);
+            ï_it_big.Name = "ï_it_big";
+            ï_it_big.Size = new System.Drawing.Size(25, 25);
+            ï_it_big.TabIndex = 12;
+            ï_it_big.Text = "Ï";
+            ï_it_big.UseVisualStyleBackColor = true;
+            ï_it_big.Click += Button_Click;
             // 
             // ï_it
             // 
-            this.ï_it.AllowDrop = true;
-            this.ï_it.Location = new System.Drawing.Point(318, 6);
-            this.ï_it.Name = "ï_it";
-            this.ï_it.Size = new System.Drawing.Size(25, 25);
-            this.ï_it.TabIndex = 11;
-            this.ï_it.Text = "ï";
-            this.ï_it.UseVisualStyleBackColor = true;
-            this.ï_it.Click += new System.EventHandler(this.Button_Click);
+            ï_it.AllowDrop = true;
+            ï_it.Location = new System.Drawing.Point(318, 6);
+            ï_it.Name = "ï_it";
+            ï_it.Size = new System.Drawing.Size(25, 25);
+            ï_it.TabIndex = 11;
+            ï_it.Text = "ï";
+            ï_it.UseVisualStyleBackColor = true;
+            ï_it.Click += Button_Click;
             // 
             // é_it_big
             // 
-            this.é_it_big.Location = new System.Drawing.Point(163, 6);
-            this.é_it_big.Name = "é_it_big";
-            this.é_it_big.Size = new System.Drawing.Size(25, 25);
-            this.é_it_big.TabIndex = 6;
-            this.é_it_big.Text = "É";
-            this.é_it_big.UseVisualStyleBackColor = true;
-            this.é_it_big.Click += new System.EventHandler(this.Button_Click);
+            é_it_big.Location = new System.Drawing.Point(163, 6);
+            é_it_big.Name = "é_it_big";
+            é_it_big.Size = new System.Drawing.Size(25, 25);
+            é_it_big.TabIndex = 6;
+            é_it_big.Text = "É";
+            é_it_big.UseVisualStyleBackColor = true;
+            é_it_big.Click += Button_Click;
             // 
             // è_it
             // 
-            this.è_it.Location = new System.Drawing.Point(70, 6);
-            this.è_it.Name = "è_it";
-            this.è_it.Size = new System.Drawing.Size(25, 25);
-            this.è_it.TabIndex = 3;
-            this.è_it.Text = "è";
-            this.è_it.UseVisualStyleBackColor = true;
-            this.è_it.Click += new System.EventHandler(this.Button_Click);
+            è_it.Location = new System.Drawing.Point(70, 6);
+            è_it.Name = "è_it";
+            è_it.Size = new System.Drawing.Size(25, 25);
+            è_it.TabIndex = 3;
+            è_it.Text = "è";
+            è_it.UseVisualStyleBackColor = true;
+            è_it.Click += Button_Click;
             // 
             // è_it_big
             // 
-            this.è_it_big.Location = new System.Drawing.Point(101, 6);
-            this.è_it_big.Name = "è_it_big";
-            this.è_it_big.Size = new System.Drawing.Size(25, 25);
-            this.è_it_big.TabIndex = 4;
-            this.è_it_big.Text = "È";
-            this.è_it_big.UseVisualStyleBackColor = true;
-            this.è_it_big.Click += new System.EventHandler(this.Button_Click);
+            è_it_big.Location = new System.Drawing.Point(101, 6);
+            è_it_big.Name = "è_it_big";
+            è_it_big.Size = new System.Drawing.Size(25, 25);
+            è_it_big.TabIndex = 4;
+            è_it_big.Text = "È";
+            è_it_big.UseVisualStyleBackColor = true;
+            è_it_big.Click += Button_Click;
             // 
             // é_it
             // 
-            this.é_it.Location = new System.Drawing.Point(132, 6);
-            this.é_it.Name = "é_it";
-            this.é_it.Size = new System.Drawing.Size(25, 25);
-            this.é_it.TabIndex = 5;
-            this.é_it.Text = "é";
-            this.é_it.UseVisualStyleBackColor = true;
-            this.é_it.Click += new System.EventHandler(this.Button_Click);
+            é_it.Location = new System.Drawing.Point(132, 6);
+            é_it.Name = "é_it";
+            é_it.Size = new System.Drawing.Size(25, 25);
+            é_it.TabIndex = 5;
+            é_it.Text = "é";
+            é_it.UseVisualStyleBackColor = true;
+            é_it.Click += Button_Click;
             // 
             // à_it_big
             // 
-            this.à_it_big.Location = new System.Drawing.Point(39, 6);
-            this.à_it_big.Name = "à_it_big";
-            this.à_it_big.Size = new System.Drawing.Size(25, 25);
-            this.à_it_big.TabIndex = 2;
-            this.à_it_big.Text = "À";
-            this.à_it_big.UseVisualStyleBackColor = true;
-            this.à_it_big.Click += new System.EventHandler(this.Button_Click);
+            à_it_big.Location = new System.Drawing.Point(39, 6);
+            à_it_big.Name = "à_it_big";
+            à_it_big.Size = new System.Drawing.Size(25, 25);
+            à_it_big.TabIndex = 2;
+            à_it_big.Text = "À";
+            à_it_big.UseVisualStyleBackColor = true;
+            à_it_big.Click += Button_Click;
             // 
             // à_it
             // 
-            this.à_it.Location = new System.Drawing.Point(8, 6);
-            this.à_it.Name = "à_it";
-            this.à_it.Size = new System.Drawing.Size(25, 25);
-            this.à_it.TabIndex = 1;
-            this.à_it.Text = "à";
-            this.à_it.UseVisualStyleBackColor = true;
-            this.à_it.Click += new System.EventHandler(this.Button_Click);
+            à_it.Location = new System.Drawing.Point(8, 6);
+            à_it.Name = "à_it";
+            à_it.Size = new System.Drawing.Size(25, 25);
+            à_it.TabIndex = 1;
+            à_it.Text = "à";
+            à_it.UseVisualStyleBackColor = true;
+            à_it.Click += Button_Click;
             // 
             // TpSpanish
             // 
-            this.TpSpanish.AutoScroll = true;
-            this.TpSpanish.Controls.Add(this.um_frag);
-            this.TpSpanish.Controls.Add(this.umg_ausr);
-            this.TpSpanish.Controls.Add(this.º);
-            this.TpSpanish.Controls.Add(this.ú_sp_big);
-            this.TpSpanish.Controls.Add(this.ü_sp);
-            this.TpSpanish.Controls.Add(this.ª);
-            this.TpSpanish.Controls.Add(this.ú_sp);
-            this.TpSpanish.Controls.Add(this.ñ);
-            this.TpSpanish.Controls.Add(this.ñ_big);
-            this.TpSpanish.Controls.Add(this.ó_sp);
-            this.TpSpanish.Controls.Add(this.ó_sp_big);
-            this.TpSpanish.Controls.Add(this.í_sp_big);
-            this.TpSpanish.Controls.Add(this.í_sp);
-            this.TpSpanish.Controls.Add(this.á_big);
-            this.TpSpanish.Controls.Add(this.ç_sp);
-            this.TpSpanish.Controls.Add(this.é_sp);
-            this.TpSpanish.Controls.Add(this.é_sp_big);
-            this.TpSpanish.Controls.Add(this.á);
-            this.TpSpanish.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TpSpanish.Location = new System.Drawing.Point(4, 23);
-            this.TpSpanish.Name = "TpSpanish";
-            this.TpSpanish.Padding = new System.Windows.Forms.Padding(3);
-            this.TpSpanish.Size = new System.Drawing.Size(396, 99);
-            this.TpSpanish.TabIndex = 3;
-            this.TpSpanish.Tag = "es";
-            this.TpSpanish.Text = "Spanish";
-            this.TpSpanish.UseVisualStyleBackColor = true;
+            TpSpanish.AutoScroll = true;
+            TpSpanish.Controls.Add(um_frag);
+            TpSpanish.Controls.Add(umg_ausr);
+            TpSpanish.Controls.Add(º);
+            TpSpanish.Controls.Add(ú_sp_big);
+            TpSpanish.Controls.Add(ü_sp);
+            TpSpanish.Controls.Add(ª);
+            TpSpanish.Controls.Add(ú_sp);
+            TpSpanish.Controls.Add(ñ);
+            TpSpanish.Controls.Add(ñ_big);
+            TpSpanish.Controls.Add(ó_sp);
+            TpSpanish.Controls.Add(ó_sp_big);
+            TpSpanish.Controls.Add(í_sp_big);
+            TpSpanish.Controls.Add(í_sp);
+            TpSpanish.Controls.Add(á_big);
+            TpSpanish.Controls.Add(ç_sp);
+            TpSpanish.Controls.Add(é_sp);
+            TpSpanish.Controls.Add(é_sp_big);
+            TpSpanish.Controls.Add(á);
+            TpSpanish.Font = new System.Drawing.Font("Arial", 9.75F);
+            TpSpanish.Location = new System.Drawing.Point(4, 23);
+            TpSpanish.Name = "TpSpanish";
+            TpSpanish.Padding = new System.Windows.Forms.Padding(3);
+            TpSpanish.Size = new System.Drawing.Size(396, 99);
+            TpSpanish.TabIndex = 3;
+            TpSpanish.Tag = "es";
+            TpSpanish.Text = "Spanish";
+            TpSpanish.UseVisualStyleBackColor = true;
             // 
             // um_frag
             // 
-            this.um_frag.Location = new System.Drawing.Point(163, 37);
-            this.um_frag.Name = "um_frag";
-            this.um_frag.Size = new System.Drawing.Size(25, 25);
-            this.um_frag.TabIndex = 18;
-            this.um_frag.Text = "¿";
-            this.um_frag.UseVisualStyleBackColor = true;
-            this.um_frag.Click += new System.EventHandler(this.Button_Click);
+            um_frag.Location = new System.Drawing.Point(163, 37);
+            um_frag.Name = "um_frag";
+            um_frag.Size = new System.Drawing.Size(25, 25);
+            um_frag.TabIndex = 18;
+            um_frag.Text = "¿";
+            um_frag.UseVisualStyleBackColor = true;
+            um_frag.Click += Button_Click;
             // 
             // umg_ausr
             // 
-            this.umg_ausr.Location = new System.Drawing.Point(132, 37);
-            this.umg_ausr.Name = "umg_ausr";
-            this.umg_ausr.Size = new System.Drawing.Size(25, 25);
-            this.umg_ausr.TabIndex = 17;
-            this.umg_ausr.Text = "¡";
-            this.umg_ausr.UseVisualStyleBackColor = true;
-            this.umg_ausr.Click += new System.EventHandler(this.Button_Click);
+            umg_ausr.Location = new System.Drawing.Point(132, 37);
+            umg_ausr.Name = "umg_ausr";
+            umg_ausr.Size = new System.Drawing.Size(25, 25);
+            umg_ausr.TabIndex = 17;
+            umg_ausr.Text = "¡";
+            umg_ausr.UseVisualStyleBackColor = true;
+            umg_ausr.Click += Button_Click;
             // 
             // º
             // 
-            this.º.Location = new System.Drawing.Point(101, 37);
-            this.º.Name = "º";
-            this.º.Size = new System.Drawing.Size(25, 25);
-            this.º.TabIndex = 16;
-            this.º.Text = "º";
-            this.º.UseVisualStyleBackColor = true;
-            this.º.Click += new System.EventHandler(this.Button_Click);
+            º.Location = new System.Drawing.Point(101, 37);
+            º.Name = "º";
+            º.Size = new System.Drawing.Size(25, 25);
+            º.TabIndex = 16;
+            º.Text = "º";
+            º.UseVisualStyleBackColor = true;
+            º.Click += Button_Click;
             // 
             // ú_sp_big
             // 
-            this.ú_sp_big.Location = new System.Drawing.Point(8, 37);
-            this.ú_sp_big.Name = "ú_sp_big";
-            this.ú_sp_big.Size = new System.Drawing.Size(25, 25);
-            this.ú_sp_big.TabIndex = 13;
-            this.ú_sp_big.Text = "Ú";
-            this.ú_sp_big.UseVisualStyleBackColor = true;
-            this.ú_sp_big.Click += new System.EventHandler(this.Button_Click);
+            ú_sp_big.Location = new System.Drawing.Point(8, 37);
+            ú_sp_big.Name = "ú_sp_big";
+            ú_sp_big.Size = new System.Drawing.Size(25, 25);
+            ú_sp_big.TabIndex = 13;
+            ú_sp_big.Text = "Ú";
+            ú_sp_big.UseVisualStyleBackColor = true;
+            ú_sp_big.Click += Button_Click;
             // 
             // ü_sp
             // 
-            this.ü_sp.Location = new System.Drawing.Point(39, 37);
-            this.ü_sp.Name = "ü_sp";
-            this.ü_sp.Size = new System.Drawing.Size(25, 25);
-            this.ü_sp.TabIndex = 14;
-            this.ü_sp.Text = "ü";
-            this.ü_sp.UseVisualStyleBackColor = true;
-            this.ü_sp.Click += new System.EventHandler(this.Button_Click);
+            ü_sp.Location = new System.Drawing.Point(39, 37);
+            ü_sp.Name = "ü_sp";
+            ü_sp.Size = new System.Drawing.Size(25, 25);
+            ü_sp.TabIndex = 14;
+            ü_sp.Text = "ü";
+            ü_sp.UseVisualStyleBackColor = true;
+            ü_sp.Click += Button_Click;
             // 
             // ª
             // 
-            this.ª.AutoEllipsis = true;
-            this.ª.Location = new System.Drawing.Point(70, 37);
-            this.ª.Name = "ª";
-            this.ª.Size = new System.Drawing.Size(25, 25);
-            this.ª.TabIndex = 15;
-            this.ª.Text = "ª";
-            this.ª.UseVisualStyleBackColor = true;
-            this.ª.Click += new System.EventHandler(this.Button_Click);
+            ª.AutoEllipsis = true;
+            ª.Location = new System.Drawing.Point(70, 37);
+            ª.Name = "ª";
+            ª.Size = new System.Drawing.Size(25, 25);
+            ª.TabIndex = 15;
+            ª.Text = "ª";
+            ª.UseVisualStyleBackColor = true;
+            ª.Click += Button_Click;
             // 
             // ú_sp
             // 
-            this.ú_sp.Location = new System.Drawing.Point(349, 6);
-            this.ú_sp.Name = "ú_sp";
-            this.ú_sp.Size = new System.Drawing.Size(25, 25);
-            this.ú_sp.TabIndex = 12;
-            this.ú_sp.Text = "ú";
-            this.ú_sp.UseVisualStyleBackColor = true;
-            this.ú_sp.Click += new System.EventHandler(this.Button_Click);
+            ú_sp.Location = new System.Drawing.Point(349, 6);
+            ú_sp.Name = "ú_sp";
+            ú_sp.Size = new System.Drawing.Size(25, 25);
+            ú_sp.TabIndex = 12;
+            ú_sp.Text = "ú";
+            ú_sp.UseVisualStyleBackColor = true;
+            ú_sp.Click += Button_Click;
             // 
             // ñ
             // 
-            this.ñ.Location = new System.Drawing.Point(225, 6);
-            this.ñ.Name = "ñ";
-            this.ñ.Size = new System.Drawing.Size(25, 25);
-            this.ñ.TabIndex = 8;
-            this.ñ.Text = "ñ";
-            this.ñ.UseVisualStyleBackColor = true;
-            this.ñ.Click += new System.EventHandler(this.Button_Click);
+            ñ.Location = new System.Drawing.Point(225, 6);
+            ñ.Name = "ñ";
+            ñ.Size = new System.Drawing.Size(25, 25);
+            ñ.TabIndex = 8;
+            ñ.Text = "ñ";
+            ñ.UseVisualStyleBackColor = true;
+            ñ.Click += Button_Click;
             // 
             // ñ_big
             // 
-            this.ñ_big.Location = new System.Drawing.Point(256, 6);
-            this.ñ_big.Name = "ñ_big";
-            this.ñ_big.Size = new System.Drawing.Size(25, 25);
-            this.ñ_big.TabIndex = 9;
-            this.ñ_big.Text = "Ñ";
-            this.ñ_big.UseVisualStyleBackColor = true;
-            this.ñ_big.Click += new System.EventHandler(this.Button_Click);
+            ñ_big.Location = new System.Drawing.Point(256, 6);
+            ñ_big.Name = "ñ_big";
+            ñ_big.Size = new System.Drawing.Size(25, 25);
+            ñ_big.TabIndex = 9;
+            ñ_big.Text = "Ñ";
+            ñ_big.UseVisualStyleBackColor = true;
+            ñ_big.Click += Button_Click;
             // 
             // ó_sp
             // 
-            this.ó_sp.AllowDrop = true;
-            this.ó_sp.Location = new System.Drawing.Point(287, 6);
-            this.ó_sp.Name = "ó_sp";
-            this.ó_sp.Size = new System.Drawing.Size(25, 25);
-            this.ó_sp.TabIndex = 10;
-            this.ó_sp.Text = "ó";
-            this.ó_sp.UseVisualStyleBackColor = true;
-            this.ó_sp.Click += new System.EventHandler(this.Button_Click);
+            ó_sp.AllowDrop = true;
+            ó_sp.Location = new System.Drawing.Point(287, 6);
+            ó_sp.Name = "ó_sp";
+            ó_sp.Size = new System.Drawing.Size(25, 25);
+            ó_sp.TabIndex = 10;
+            ó_sp.Text = "ó";
+            ó_sp.UseVisualStyleBackColor = true;
+            ó_sp.Click += Button_Click;
             // 
             // ó_sp_big
             // 
-            this.ó_sp_big.Location = new System.Drawing.Point(318, 6);
-            this.ó_sp_big.Name = "ó_sp_big";
-            this.ó_sp_big.Size = new System.Drawing.Size(25, 25);
-            this.ó_sp_big.TabIndex = 11;
-            this.ó_sp_big.Text = "Ó";
-            this.ó_sp_big.UseVisualStyleBackColor = true;
-            this.ó_sp_big.Click += new System.EventHandler(this.Button_Click);
+            ó_sp_big.Location = new System.Drawing.Point(318, 6);
+            ó_sp_big.Name = "ó_sp_big";
+            ó_sp_big.Size = new System.Drawing.Size(25, 25);
+            ó_sp_big.TabIndex = 11;
+            ó_sp_big.Text = "Ó";
+            ó_sp_big.UseVisualStyleBackColor = true;
+            ó_sp_big.Click += Button_Click;
             // 
             // í_sp_big
             // 
-            this.í_sp_big.Location = new System.Drawing.Point(194, 6);
-            this.í_sp_big.Name = "í_sp_big";
-            this.í_sp_big.Size = new System.Drawing.Size(25, 25);
-            this.í_sp_big.TabIndex = 7;
-            this.í_sp_big.Text = "Í";
-            this.í_sp_big.UseVisualStyleBackColor = true;
-            this.í_sp_big.Click += new System.EventHandler(this.Button_Click);
+            í_sp_big.Location = new System.Drawing.Point(194, 6);
+            í_sp_big.Name = "í_sp_big";
+            í_sp_big.Size = new System.Drawing.Size(25, 25);
+            í_sp_big.TabIndex = 7;
+            í_sp_big.Text = "Í";
+            í_sp_big.UseVisualStyleBackColor = true;
+            í_sp_big.Click += Button_Click;
             // 
             // í_sp
             // 
-            this.í_sp.Location = new System.Drawing.Point(163, 6);
-            this.í_sp.Name = "í_sp";
-            this.í_sp.Size = new System.Drawing.Size(25, 25);
-            this.í_sp.TabIndex = 6;
-            this.í_sp.Text = "í";
-            this.í_sp.UseVisualStyleBackColor = true;
-            this.í_sp.Click += new System.EventHandler(this.Button_Click);
+            í_sp.Location = new System.Drawing.Point(163, 6);
+            í_sp.Name = "í_sp";
+            í_sp.Size = new System.Drawing.Size(25, 25);
+            í_sp.TabIndex = 6;
+            í_sp.Text = "í";
+            í_sp.UseVisualStyleBackColor = true;
+            í_sp.Click += Button_Click;
             // 
             // á_big
             // 
-            this.á_big.Location = new System.Drawing.Point(39, 6);
-            this.á_big.Name = "á_big";
-            this.á_big.Size = new System.Drawing.Size(25, 25);
-            this.á_big.TabIndex = 2;
-            this.á_big.Text = "Á";
-            this.á_big.UseVisualStyleBackColor = true;
-            this.á_big.Click += new System.EventHandler(this.Button_Click);
+            á_big.Location = new System.Drawing.Point(39, 6);
+            á_big.Name = "á_big";
+            á_big.Size = new System.Drawing.Size(25, 25);
+            á_big.TabIndex = 2;
+            á_big.Text = "Á";
+            á_big.UseVisualStyleBackColor = true;
+            á_big.Click += Button_Click;
             // 
             // ç_sp
             // 
-            this.ç_sp.Location = new System.Drawing.Point(70, 6);
-            this.ç_sp.Name = "ç_sp";
-            this.ç_sp.Size = new System.Drawing.Size(25, 25);
-            this.ç_sp.TabIndex = 3;
-            this.ç_sp.Text = "ç";
-            this.ç_sp.UseVisualStyleBackColor = true;
-            this.ç_sp.Click += new System.EventHandler(this.Button_Click);
+            ç_sp.Location = new System.Drawing.Point(70, 6);
+            ç_sp.Name = "ç_sp";
+            ç_sp.Size = new System.Drawing.Size(25, 25);
+            ç_sp.TabIndex = 3;
+            ç_sp.Text = "ç";
+            ç_sp.UseVisualStyleBackColor = true;
+            ç_sp.Click += Button_Click;
             // 
             // é_sp
             // 
-            this.é_sp.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.é_sp.Location = new System.Drawing.Point(101, 6);
-            this.é_sp.Name = "é_sp";
-            this.é_sp.Size = new System.Drawing.Size(25, 25);
-            this.é_sp.TabIndex = 4;
-            this.é_sp.Text = "é";
-            this.é_sp.UseVisualStyleBackColor = true;
-            this.é_sp.Click += new System.EventHandler(this.Button_Click);
+            é_sp.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            é_sp.Location = new System.Drawing.Point(101, 6);
+            é_sp.Name = "é_sp";
+            é_sp.Size = new System.Drawing.Size(25, 25);
+            é_sp.TabIndex = 4;
+            é_sp.Text = "é";
+            é_sp.UseVisualStyleBackColor = true;
+            é_sp.Click += Button_Click;
             // 
             // é_sp_big
             // 
-            this.é_sp_big.Location = new System.Drawing.Point(132, 6);
-            this.é_sp_big.Name = "é_sp_big";
-            this.é_sp_big.Size = new System.Drawing.Size(25, 25);
-            this.é_sp_big.TabIndex = 5;
-            this.é_sp_big.Text = "É";
-            this.é_sp_big.UseVisualStyleBackColor = true;
-            this.é_sp_big.Click += new System.EventHandler(this.Button_Click);
+            é_sp_big.Location = new System.Drawing.Point(132, 6);
+            é_sp_big.Name = "é_sp_big";
+            é_sp_big.Size = new System.Drawing.Size(25, 25);
+            é_sp_big.TabIndex = 5;
+            é_sp_big.Text = "É";
+            é_sp_big.UseVisualStyleBackColor = true;
+            é_sp_big.Click += Button_Click;
             // 
             // á
             // 
-            this.á.Location = new System.Drawing.Point(8, 6);
-            this.á.Name = "á";
-            this.á.Size = new System.Drawing.Size(25, 25);
-            this.á.TabIndex = 1;
-            this.á.Text = "á";
-            this.á.UseVisualStyleBackColor = true;
-            this.á.Click += new System.EventHandler(this.Button_Click);
+            á.Location = new System.Drawing.Point(8, 6);
+            á.Name = "á";
+            á.Size = new System.Drawing.Size(25, 25);
+            á.TabIndex = 1;
+            á.Text = "á";
+            á.UseVisualStyleBackColor = true;
+            á.Click += Button_Click;
             // 
             // TpRomanian
             // 
-            this.TpRomanian.AutoScroll = true;
-            this.TpRomanian.Controls.Add(this.ţ_ro_big);
-            this.TpRomanian.Controls.Add(this.ţ_ro);
-            this.TpRomanian.Controls.Add(this.ş_ro_big);
-            this.TpRomanian.Controls.Add(this.ş_ro);
-            this.TpRomanian.Controls.Add(this.î_ro_big);
-            this.TpRomanian.Controls.Add(this.î_ro);
-            this.TpRomanian.Controls.Add(this.ă_ro_big);
-            this.TpRomanian.Controls.Add(this.ă_ro);
-            this.TpRomanian.Controls.Add(this.â_ro_big);
-            this.TpRomanian.Controls.Add(this.â_ro);
-            this.TpRomanian.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TpRomanian.Location = new System.Drawing.Point(4, 23);
-            this.TpRomanian.Name = "TpRomanian";
-            this.TpRomanian.Padding = new System.Windows.Forms.Padding(3);
-            this.TpRomanian.Size = new System.Drawing.Size(396, 99);
-            this.TpRomanian.TabIndex = 4;
-            this.TpRomanian.Tag = "ro";
-            this.TpRomanian.Text = "Romanian";
-            this.TpRomanian.UseVisualStyleBackColor = true;
+            TpRomanian.AutoScroll = true;
+            TpRomanian.Controls.Add(ţ_ro_big);
+            TpRomanian.Controls.Add(ţ_ro);
+            TpRomanian.Controls.Add(ş_ro_big);
+            TpRomanian.Controls.Add(ş_ro);
+            TpRomanian.Controls.Add(î_ro_big);
+            TpRomanian.Controls.Add(î_ro);
+            TpRomanian.Controls.Add(ă_ro_big);
+            TpRomanian.Controls.Add(ă_ro);
+            TpRomanian.Controls.Add(â_ro_big);
+            TpRomanian.Controls.Add(â_ro);
+            TpRomanian.Font = new System.Drawing.Font("Arial", 9.75F);
+            TpRomanian.Location = new System.Drawing.Point(4, 23);
+            TpRomanian.Name = "TpRomanian";
+            TpRomanian.Padding = new System.Windows.Forms.Padding(3);
+            TpRomanian.Size = new System.Drawing.Size(396, 99);
+            TpRomanian.TabIndex = 4;
+            TpRomanian.Tag = "ro";
+            TpRomanian.Text = "Romanian";
+            TpRomanian.UseVisualStyleBackColor = true;
             // 
             // ţ_ro_big
             // 
-            this.ţ_ro_big.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ţ_ro_big.Location = new System.Drawing.Point(287, 6);
-            this.ţ_ro_big.Name = "ţ_ro_big";
-            this.ţ_ro_big.Size = new System.Drawing.Size(25, 25);
-            this.ţ_ro_big.TabIndex = 9;
-            this.ţ_ro_big.Text = "Ţ";
-            this.ţ_ro_big.UseVisualStyleBackColor = true;
-            this.ţ_ro_big.Click += new System.EventHandler(this.Button_Click);
+            ţ_ro_big.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            ţ_ro_big.Location = new System.Drawing.Point(287, 6);
+            ţ_ro_big.Name = "ţ_ro_big";
+            ţ_ro_big.Size = new System.Drawing.Size(25, 25);
+            ţ_ro_big.TabIndex = 9;
+            ţ_ro_big.Text = "Ţ";
+            ţ_ro_big.UseVisualStyleBackColor = true;
+            ţ_ro_big.Click += Button_Click;
             // 
             // ţ_ro
             // 
-            this.ţ_ro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ţ_ro.Location = new System.Drawing.Point(256, 6);
-            this.ţ_ro.Name = "ţ_ro";
-            this.ţ_ro.Size = new System.Drawing.Size(25, 25);
-            this.ţ_ro.TabIndex = 8;
-            this.ţ_ro.Text = "ţ";
-            this.ţ_ro.UseVisualStyleBackColor = true;
-            this.ţ_ro.Click += new System.EventHandler(this.Button_Click);
+            ţ_ro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            ţ_ro.Location = new System.Drawing.Point(256, 6);
+            ţ_ro.Name = "ţ_ro";
+            ţ_ro.Size = new System.Drawing.Size(25, 25);
+            ţ_ro.TabIndex = 8;
+            ţ_ro.Text = "ţ";
+            ţ_ro.UseVisualStyleBackColor = true;
+            ţ_ro.Click += Button_Click;
             // 
             // ş_ro_big
             // 
-            this.ş_ro_big.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ş_ro_big.Location = new System.Drawing.Point(225, 6);
-            this.ş_ro_big.Name = "ş_ro_big";
-            this.ş_ro_big.Size = new System.Drawing.Size(25, 25);
-            this.ş_ro_big.TabIndex = 7;
-            this.ş_ro_big.Text = "Ş";
-            this.ş_ro_big.UseVisualStyleBackColor = true;
-            this.ş_ro_big.Click += new System.EventHandler(this.Button_Click);
+            ş_ro_big.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            ş_ro_big.Location = new System.Drawing.Point(225, 6);
+            ş_ro_big.Name = "ş_ro_big";
+            ş_ro_big.Size = new System.Drawing.Size(25, 25);
+            ş_ro_big.TabIndex = 7;
+            ş_ro_big.Text = "Ş";
+            ş_ro_big.UseVisualStyleBackColor = true;
+            ş_ro_big.Click += Button_Click;
             // 
             // ş_ro
             // 
-            this.ş_ro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ş_ro.Location = new System.Drawing.Point(194, 6);
-            this.ş_ro.Name = "ş_ro";
-            this.ş_ro.Size = new System.Drawing.Size(25, 25);
-            this.ş_ro.TabIndex = 6;
-            this.ş_ro.Text = "ş";
-            this.ş_ro.UseVisualStyleBackColor = true;
-            this.ş_ro.Click += new System.EventHandler(this.Button_Click);
+            ş_ro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            ş_ro.Location = new System.Drawing.Point(194, 6);
+            ş_ro.Name = "ş_ro";
+            ş_ro.Size = new System.Drawing.Size(25, 25);
+            ş_ro.TabIndex = 6;
+            ş_ro.Text = "ş";
+            ş_ro.UseVisualStyleBackColor = true;
+            ş_ro.Click += Button_Click;
             // 
             // î_ro_big
             // 
-            this.î_ro_big.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.î_ro_big.Location = new System.Drawing.Point(163, 6);
-            this.î_ro_big.Name = "î_ro_big";
-            this.î_ro_big.Size = new System.Drawing.Size(25, 25);
-            this.î_ro_big.TabIndex = 5;
-            this.î_ro_big.Text = "Î";
-            this.î_ro_big.UseVisualStyleBackColor = true;
-            this.î_ro_big.Click += new System.EventHandler(this.Button_Click);
+            î_ro_big.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            î_ro_big.Location = new System.Drawing.Point(163, 6);
+            î_ro_big.Name = "î_ro_big";
+            î_ro_big.Size = new System.Drawing.Size(25, 25);
+            î_ro_big.TabIndex = 5;
+            î_ro_big.Text = "Î";
+            î_ro_big.UseVisualStyleBackColor = true;
+            î_ro_big.Click += Button_Click;
             // 
             // î_ro
             // 
-            this.î_ro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.î_ro.Location = new System.Drawing.Point(132, 6);
-            this.î_ro.Name = "î_ro";
-            this.î_ro.Size = new System.Drawing.Size(25, 25);
-            this.î_ro.TabIndex = 4;
-            this.î_ro.Text = "î";
-            this.î_ro.UseVisualStyleBackColor = true;
-            this.î_ro.Click += new System.EventHandler(this.Button_Click);
+            î_ro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            î_ro.Location = new System.Drawing.Point(132, 6);
+            î_ro.Name = "î_ro";
+            î_ro.Size = new System.Drawing.Size(25, 25);
+            î_ro.TabIndex = 4;
+            î_ro.Text = "î";
+            î_ro.UseVisualStyleBackColor = true;
+            î_ro.Click += Button_Click;
             // 
             // ă_ro_big
             // 
-            this.ă_ro_big.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ă_ro_big.Location = new System.Drawing.Point(101, 6);
-            this.ă_ro_big.Name = "ă_ro_big";
-            this.ă_ro_big.Size = new System.Drawing.Size(25, 25);
-            this.ă_ro_big.TabIndex = 3;
-            this.ă_ro_big.Text = "Ă";
-            this.ă_ro_big.UseVisualStyleBackColor = true;
-            this.ă_ro_big.Click += new System.EventHandler(this.Button_Click);
+            ă_ro_big.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            ă_ro_big.Location = new System.Drawing.Point(101, 6);
+            ă_ro_big.Name = "ă_ro_big";
+            ă_ro_big.Size = new System.Drawing.Size(25, 25);
+            ă_ro_big.TabIndex = 3;
+            ă_ro_big.Text = "Ă";
+            ă_ro_big.UseVisualStyleBackColor = true;
+            ă_ro_big.Click += Button_Click;
             // 
             // ă_ro
             // 
-            this.ă_ro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ă_ro.Location = new System.Drawing.Point(70, 6);
-            this.ă_ro.Name = "ă_ro";
-            this.ă_ro.Size = new System.Drawing.Size(25, 25);
-            this.ă_ro.TabIndex = 2;
-            this.ă_ro.Text = "ă";
-            this.ă_ro.UseVisualStyleBackColor = true;
-            this.ă_ro.Click += new System.EventHandler(this.Button_Click);
+            ă_ro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            ă_ro.Location = new System.Drawing.Point(70, 6);
+            ă_ro.Name = "ă_ro";
+            ă_ro.Size = new System.Drawing.Size(25, 25);
+            ă_ro.TabIndex = 2;
+            ă_ro.Text = "ă";
+            ă_ro.UseVisualStyleBackColor = true;
+            ă_ro.Click += Button_Click;
             // 
             // â_ro_big
             // 
-            this.â_ro_big.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.â_ro_big.Location = new System.Drawing.Point(39, 6);
-            this.â_ro_big.Name = "â_ro_big";
-            this.â_ro_big.Size = new System.Drawing.Size(25, 25);
-            this.â_ro_big.TabIndex = 1;
-            this.â_ro_big.Text = "Â";
-            this.â_ro_big.UseVisualStyleBackColor = true;
-            this.â_ro_big.Click += new System.EventHandler(this.Button_Click);
+            â_ro_big.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            â_ro_big.Location = new System.Drawing.Point(39, 6);
+            â_ro_big.Name = "â_ro_big";
+            â_ro_big.Size = new System.Drawing.Size(25, 25);
+            â_ro_big.TabIndex = 1;
+            â_ro_big.Text = "Â";
+            â_ro_big.UseVisualStyleBackColor = true;
+            â_ro_big.Click += Button_Click;
             // 
             // â_ro
             // 
-            this.â_ro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.â_ro.Location = new System.Drawing.Point(8, 6);
-            this.â_ro.Name = "â_ro";
-            this.â_ro.Size = new System.Drawing.Size(25, 25);
-            this.â_ro.TabIndex = 0;
-            this.â_ro.Text = "â";
-            this.â_ro.UseVisualStyleBackColor = true;
-            this.â_ro.Click += new System.EventHandler(this.Button_Click);
+            â_ro.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            â_ro.Location = new System.Drawing.Point(8, 6);
+            â_ro.Name = "â_ro";
+            â_ro.Size = new System.Drawing.Size(25, 25);
+            â_ro.TabIndex = 0;
+            â_ro.Text = "â";
+            â_ro.UseVisualStyleBackColor = true;
+            â_ro.Click += Button_Click;
+            // 
+            // tpDutch
+            // 
+            tpDutch.Controls.Add(û_big_nl);
+            tpDutch.Controls.Add(û_nl);
+            tpDutch.Controls.Add(ü_big_nl);
+            tpDutch.Controls.Add(ü_nl);
+            tpDutch.Controls.Add(ö_nl);
+            tpDutch.Controls.Add(ö_big_nl);
+            tpDutch.Controls.Add(ô_big_nl);
+            tpDutch.Controls.Add(ô_nl);
+            tpDutch.Controls.Add(ñ_nl);
+            tpDutch.Controls.Add(ñ_big_nl);
+            tpDutch.Controls.Add(î_big_nl);
+            tpDutch.Controls.Add(ï_nl);
+            tpDutch.Controls.Add(ï_big_nl);
+            tpDutch.Controls.Add(î_nl);
+            tpDutch.Controls.Add(ç_big_nl);
+            tpDutch.Controls.Add(ç_nl);
+            tpDutch.Controls.Add(ë_big_nl);
+            tpDutch.Controls.Add(ê_nl);
+            tpDutch.Controls.Add(ê_big_nl);
+            tpDutch.Controls.Add(ë_nl);
+            tpDutch.Controls.Add(é_big_nl);
+            tpDutch.Controls.Add(è_nl);
+            tpDutch.Controls.Add(è_big_nl);
+            tpDutch.Controls.Add(é_nl);
+            tpDutch.Controls.Add(ä_big_nl);
+            tpDutch.Controls.Add(ä_nl);
+            tpDutch.Controls.Add(à_big_nl);
+            tpDutch.Controls.Add(à_nl);
+            tpDutch.Font = new System.Drawing.Font("Arial", 9.75F);
+            tpDutch.Location = new System.Drawing.Point(4, 23);
+            tpDutch.Name = "tpDutch";
+            tpDutch.Padding = new System.Windows.Forms.Padding(3);
+            tpDutch.Size = new System.Drawing.Size(396, 99);
+            tpDutch.TabIndex = 5;
+            tpDutch.Tag = "nl";
+            tpDutch.Text = "Dutch";
+            tpDutch.UseVisualStyleBackColor = true;
+            // 
+            // û_big_nl
+            // 
+            û_big_nl.Location = new System.Drawing.Point(39, 68);
+            û_big_nl.Name = "û_big_nl";
+            û_big_nl.Size = new System.Drawing.Size(25, 25);
+            û_big_nl.TabIndex = 26;
+            û_big_nl.Text = "Û";
+            û_big_nl.UseVisualStyleBackColor = true;
+            û_big_nl.Click += Button_Click;
+            // 
+            // û_nl
+            // 
+            û_nl.Location = new System.Drawing.Point(8, 68);
+            û_nl.Name = "û_nl";
+            û_nl.Size = new System.Drawing.Size(25, 25);
+            û_nl.TabIndex = 25;
+            û_nl.Text = "û";
+            û_nl.UseVisualStyleBackColor = true;
+            û_nl.Click += Button_Click;
+            // 
+            // ü_big_nl
+            // 
+            ü_big_nl.Location = new System.Drawing.Point(101, 68);
+            ü_big_nl.Name = "ü_big_nl";
+            ü_big_nl.Size = new System.Drawing.Size(25, 25);
+            ü_big_nl.TabIndex = 28;
+            ü_big_nl.Text = "Ü";
+            ü_big_nl.UseVisualStyleBackColor = true;
+            ü_big_nl.Click += Button_Click;
+            // 
+            // ü_nl
+            // 
+            ü_nl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            ü_nl.Location = new System.Drawing.Point(70, 68);
+            ü_nl.Name = "ü_nl";
+            ü_nl.Size = new System.Drawing.Size(25, 25);
+            ü_nl.TabIndex = 27;
+            ü_nl.Text = "ü";
+            ü_nl.UseVisualStyleBackColor = true;
+            ü_nl.Click += Button_Click;
+            // 
+            // ö_nl
+            // 
+            ö_nl.Location = new System.Drawing.Point(318, 37);
+            ö_nl.Name = "ö_nl";
+            ö_nl.Size = new System.Drawing.Size(25, 25);
+            ö_nl.TabIndex = 23;
+            ö_nl.Text = "ö";
+            ö_nl.UseVisualStyleBackColor = true;
+            ö_nl.Click += Button_Click;
+            // 
+            // ö_big_nl
+            // 
+            ö_big_nl.Location = new System.Drawing.Point(349, 37);
+            ö_big_nl.Name = "ö_big_nl";
+            ö_big_nl.Size = new System.Drawing.Size(25, 25);
+            ö_big_nl.TabIndex = 24;
+            ö_big_nl.Text = "Ö";
+            ö_big_nl.UseVisualStyleBackColor = true;
+            ö_big_nl.Click += Button_Click;
+            // 
+            // ô_big_nl
+            // 
+            ô_big_nl.Location = new System.Drawing.Point(287, 37);
+            ô_big_nl.Name = "ô_big_nl";
+            ô_big_nl.Size = new System.Drawing.Size(25, 25);
+            ô_big_nl.TabIndex = 22;
+            ô_big_nl.Text = "Ô";
+            ô_big_nl.UseVisualStyleBackColor = true;
+            ô_big_nl.Click += Button_Click;
+            // 
+            // ô_nl
+            // 
+            ô_nl.Location = new System.Drawing.Point(256, 37);
+            ô_nl.Name = "ô_nl";
+            ô_nl.Size = new System.Drawing.Size(25, 25);
+            ô_nl.TabIndex = 21;
+            ô_nl.Text = "ô";
+            ô_nl.UseVisualStyleBackColor = true;
+            ô_nl.Click += Button_Click;
+            // 
+            // ñ_nl
+            // 
+            ñ_nl.Location = new System.Drawing.Point(194, 37);
+            ñ_nl.Name = "ñ_nl";
+            ñ_nl.Size = new System.Drawing.Size(25, 25);
+            ñ_nl.TabIndex = 19;
+            ñ_nl.Text = "ñ";
+            ñ_nl.UseVisualStyleBackColor = true;
+            ñ_nl.Click += Button_Click;
+            // 
+            // ñ_big_nl
+            // 
+            ñ_big_nl.Location = new System.Drawing.Point(225, 37);
+            ñ_big_nl.Name = "ñ_big_nl";
+            ñ_big_nl.Size = new System.Drawing.Size(25, 25);
+            ñ_big_nl.TabIndex = 20;
+            ñ_big_nl.Text = "Ñ";
+            ñ_big_nl.UseVisualStyleBackColor = true;
+            ñ_big_nl.Click += Button_Click;
+            // 
+            // î_big_nl
+            // 
+            î_big_nl.Location = new System.Drawing.Point(101, 37);
+            î_big_nl.Name = "î_big_nl";
+            î_big_nl.Size = new System.Drawing.Size(25, 25);
+            î_big_nl.TabIndex = 16;
+            î_big_nl.Text = "Î";
+            î_big_nl.UseVisualStyleBackColor = true;
+            î_big_nl.Click += Button_Click;
+            // 
+            // ï_nl
+            // 
+            ï_nl.Location = new System.Drawing.Point(132, 37);
+            ï_nl.Name = "ï_nl";
+            ï_nl.Size = new System.Drawing.Size(25, 25);
+            ï_nl.TabIndex = 17;
+            ï_nl.Text = "ï";
+            ï_nl.UseVisualStyleBackColor = true;
+            ï_nl.Click += Button_Click;
+            // 
+            // ï_big_nl
+            // 
+            ï_big_nl.Location = new System.Drawing.Point(163, 37);
+            ï_big_nl.Name = "ï_big_nl";
+            ï_big_nl.Size = new System.Drawing.Size(25, 25);
+            ï_big_nl.TabIndex = 18;
+            ï_big_nl.Text = "Ï";
+            ï_big_nl.UseVisualStyleBackColor = true;
+            ï_big_nl.Click += Button_Click;
+            // 
+            // î_nl
+            // 
+            î_nl.Location = new System.Drawing.Point(70, 37);
+            î_nl.Name = "î_nl";
+            î_nl.Size = new System.Drawing.Size(25, 25);
+            î_nl.TabIndex = 15;
+            î_nl.Text = "î";
+            î_nl.UseVisualStyleBackColor = true;
+            î_nl.Click += Button_Click;
+            // 
+            // ç_big_nl
+            // 
+            ç_big_nl.Location = new System.Drawing.Point(39, 37);
+            ç_big_nl.Name = "ç_big_nl";
+            ç_big_nl.Size = new System.Drawing.Size(25, 25);
+            ç_big_nl.TabIndex = 14;
+            ç_big_nl.Text = "Ç";
+            ç_big_nl.UseVisualStyleBackColor = true;
+            ç_big_nl.Click += Button_Click;
+            // 
+            // ç_nl
+            // 
+            ç_nl.Location = new System.Drawing.Point(8, 37);
+            ç_nl.Name = "ç_nl";
+            ç_nl.Size = new System.Drawing.Size(25, 25);
+            ç_nl.TabIndex = 13;
+            ç_nl.Text = "ç";
+            ç_nl.UseVisualStyleBackColor = true;
+            ç_nl.Click += Button_Click;
+            // 
+            // ë_big_nl
+            // 
+            ë_big_nl.Location = new System.Drawing.Point(349, 6);
+            ë_big_nl.Name = "ë_big_nl";
+            ë_big_nl.Size = new System.Drawing.Size(25, 25);
+            ë_big_nl.TabIndex = 12;
+            ë_big_nl.Text = "Ë";
+            ë_big_nl.UseVisualStyleBackColor = true;
+            ë_big_nl.Click += Button_Click;
+            // 
+            // ê_nl
+            // 
+            ê_nl.Location = new System.Drawing.Point(256, 6);
+            ê_nl.Name = "ê_nl";
+            ê_nl.Size = new System.Drawing.Size(25, 25);
+            ê_nl.TabIndex = 9;
+            ê_nl.Text = "ê";
+            ê_nl.UseVisualStyleBackColor = true;
+            ê_nl.Click += Button_Click;
+            // 
+            // ê_big_nl
+            // 
+            ê_big_nl.Location = new System.Drawing.Point(287, 6);
+            ê_big_nl.Name = "ê_big_nl";
+            ê_big_nl.Size = new System.Drawing.Size(25, 25);
+            ê_big_nl.TabIndex = 10;
+            ê_big_nl.Text = "Ê";
+            ê_big_nl.UseVisualStyleBackColor = true;
+            ê_big_nl.Click += Button_Click;
+            // 
+            // ë_nl
+            // 
+            ë_nl.Location = new System.Drawing.Point(318, 6);
+            ë_nl.Name = "ë_nl";
+            ë_nl.Size = new System.Drawing.Size(25, 25);
+            ë_nl.TabIndex = 11;
+            ë_nl.Text = "ë";
+            ë_nl.UseVisualStyleBackColor = true;
+            ë_nl.Click += Button_Click;
+            // 
+            // é_big_nl
+            // 
+            é_big_nl.Location = new System.Drawing.Point(225, 6);
+            é_big_nl.Name = "é_big_nl";
+            é_big_nl.Size = new System.Drawing.Size(25, 25);
+            é_big_nl.TabIndex = 8;
+            é_big_nl.Text = "É";
+            é_big_nl.UseVisualStyleBackColor = true;
+            é_big_nl.Click += Button_Click;
+            // 
+            // è_nl
+            // 
+            è_nl.Location = new System.Drawing.Point(132, 6);
+            è_nl.Name = "è_nl";
+            è_nl.Size = new System.Drawing.Size(25, 25);
+            è_nl.TabIndex = 5;
+            è_nl.Text = "è";
+            è_nl.UseVisualStyleBackColor = true;
+            è_nl.Click += Button_Click;
+            // 
+            // è_big_nl
+            // 
+            è_big_nl.Location = new System.Drawing.Point(163, 6);
+            è_big_nl.Name = "è_big_nl";
+            è_big_nl.Size = new System.Drawing.Size(25, 25);
+            è_big_nl.TabIndex = 6;
+            è_big_nl.Text = "È";
+            è_big_nl.UseVisualStyleBackColor = true;
+            è_big_nl.Click += Button_Click;
+            // 
+            // é_nl
+            // 
+            é_nl.Location = new System.Drawing.Point(194, 6);
+            é_nl.Name = "é_nl";
+            é_nl.Size = new System.Drawing.Size(25, 25);
+            é_nl.TabIndex = 7;
+            é_nl.Text = "é";
+            é_nl.UseVisualStyleBackColor = true;
+            é_nl.Click += Button_Click;
+            // 
+            // ä_big_nl
+            // 
+            ä_big_nl.Location = new System.Drawing.Point(101, 6);
+            ä_big_nl.Name = "ä_big_nl";
+            ä_big_nl.Size = new System.Drawing.Size(25, 25);
+            ä_big_nl.TabIndex = 4;
+            ä_big_nl.Text = "Ä";
+            ä_big_nl.UseVisualStyleBackColor = true;
+            ä_big_nl.Click += Button_Click;
+            // 
+            // ä_nl
+            // 
+            ä_nl.Location = new System.Drawing.Point(70, 6);
+            ä_nl.Name = "ä_nl";
+            ä_nl.Size = new System.Drawing.Size(25, 25);
+            ä_nl.TabIndex = 3;
+            ä_nl.Text = "ä";
+            ä_nl.UseVisualStyleBackColor = true;
+            ä_nl.Click += Button_Click;
+            // 
+            // à_big_nl
+            // 
+            à_big_nl.Location = new System.Drawing.Point(39, 6);
+            à_big_nl.Name = "à_big_nl";
+            à_big_nl.Size = new System.Drawing.Size(25, 25);
+            à_big_nl.TabIndex = 2;
+            à_big_nl.Text = "À";
+            à_big_nl.UseVisualStyleBackColor = true;
+            à_big_nl.Click += Button_Click;
+            // 
+            // à_nl
+            // 
+            à_nl.Location = new System.Drawing.Point(8, 6);
+            à_nl.Name = "à_nl";
+            à_nl.Size = new System.Drawing.Size(25, 25);
+            à_nl.TabIndex = 1;
+            à_nl.Text = "à";
+            à_nl.UseVisualStyleBackColor = true;
+            à_nl.Click += Button_Click;
             // 
             // SpecialCharKeyboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(404, 126);
-            this.Controls.Add(this.TcMain);
-            this.Controls.Add(this.Titel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.MaximizeBox = false;
-            this.Name = "SpecialCharKeyboard";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Special chars";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
-            this.Load += new System.EventHandler(this.Form_Load);
-            this.TcMain.ResumeLayout(false);
-            this.TpGerman.ResumeLayout(false);
-            this.TpFrench.ResumeLayout(false);
-            this.TpItalian.ResumeLayout(false);
-            this.TpSpanish.ResumeLayout(false);
-            this.TpRomanian.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoScroll = true;
+            AutoSize = true;
+            ClientSize = new System.Drawing.Size(404, 126);
+            Controls.Add(TcMain);
+            Controls.Add(Titel);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            MaximizeBox = false;
+            Name = "SpecialCharKeyboard";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            Text = "Special chars";
+            FormClosing += Form_FormClosing;
+            Load += Form_Load;
+            VisibleChanged += Form_VisibleChanged;
+            TcMain.ResumeLayout(false);
+            TpGerman.ResumeLayout(false);
+            TpFrench.ResumeLayout(false);
+            TpItalian.ResumeLayout(false);
+            TpSpanish.ResumeLayout(false);
+            TpRomanian.ResumeLayout(false);
+            tpDutch.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -1290,8 +1643,34 @@
         private System.Windows.Forms.Button ă_ro_big;
         private System.Windows.Forms.Button ă_ro;
         private System.Windows.Forms.Button doppel_s;
-
-
-
+        private System.Windows.Forms.TabPage tpDutch;
+        private System.Windows.Forms.Button ä_big_nl;
+        private System.Windows.Forms.Button ä_nl;
+        private System.Windows.Forms.Button à_big_nl;
+        private System.Windows.Forms.Button à_nl;
+        private System.Windows.Forms.Button î_big_nl;
+        private System.Windows.Forms.Button ï_nl;
+        private System.Windows.Forms.Button ï_big_nl;
+        private System.Windows.Forms.Button î_nl;
+        private System.Windows.Forms.Button ç_big_nl;
+        private System.Windows.Forms.Button ç_nl;
+        private System.Windows.Forms.Button ë_big_nl;
+        private System.Windows.Forms.Button ê_nl;
+        private System.Windows.Forms.Button ê_big_nl;
+        private System.Windows.Forms.Button ë_nl;
+        private System.Windows.Forms.Button é_big_nl;
+        private System.Windows.Forms.Button è_nl;
+        private System.Windows.Forms.Button è_big_nl;
+        private System.Windows.Forms.Button é_nl;
+        private System.Windows.Forms.Button û_big_nl;
+        private System.Windows.Forms.Button û_nl;
+        private System.Windows.Forms.Button ü_big_nl;
+        private System.Windows.Forms.Button ü_nl;
+        private System.Windows.Forms.Button ö_nl;
+        private System.Windows.Forms.Button ö_big_nl;
+        private System.Windows.Forms.Button ô_big_nl;
+        private System.Windows.Forms.Button ô_nl;
+        private System.Windows.Forms.Button ñ_nl;
+        private System.Windows.Forms.Button ñ_big_nl;
     }
 }

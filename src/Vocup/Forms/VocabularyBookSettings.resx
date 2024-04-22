@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="BtnSpecialChar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 206</value>
+    <value>12, 227</value>
   </data>
   <data name="BtnSpecialChar.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 23</value>
@@ -195,7 +195,7 @@
     <value>6</value>
   </data>
   <data name="BtnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>203, 206</value>
+    <value>203, 227</value>
   </data>
   <data name="BtnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -222,7 +222,7 @@
     <value>False</value>
   </data>
   <data name="BtnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 206</value>
+    <value>122, 227</value>
   </data>
   <data name="BtnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -347,6 +347,33 @@
   <data name="&gt;&gt;TbForeignLang.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="RbModeAskBothMixed.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RbModeAskBothMixed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 65</value>
+  </data>
+  <data name="RbModeAskBothMixed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 17</value>
+  </data>
+  <data name="RbModeAskBothMixed.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="RbModeAskBothMixed.Text" xml:space="preserve">
+    <value>Both mixed</value>
+  </data>
+  <data name="&gt;&gt;RbModeAskBothMixed.Name" xml:space="preserve">
+    <value>RbModeAskBothMixed</value>
+  </data>
+  <data name="&gt;&gt;RbModeAskBothMixed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbModeAskBothMixed.Parent" xml:space="preserve">
+    <value>GroupPracticeMode</value>
+  </data>
+  <data name="&gt;&gt;RbModeAskBothMixed.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="RbModeAskMotherTongue.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -360,7 +387,7 @@
     <value>1</value>
   </data>
   <data name="RbModeAskMotherTongue.Text" xml:space="preserve">
-    <value>Foreign language → Mother tonuge</value>
+    <value>Foreign language → Mother tongue</value>
   </data>
   <data name="&gt;&gt;RbModeAskMotherTongue.Name" xml:space="preserve">
     <value>RbModeAskMotherTongue</value>
@@ -372,7 +399,7 @@
     <value>GroupPracticeMode</value>
   </data>
   <data name="&gt;&gt;RbModeAskMotherTongue.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="RbModeAskForeignLang.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -399,13 +426,13 @@
     <value>GroupPracticeMode</value>
   </data>
   <data name="&gt;&gt;RbModeAskForeignLang.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="GroupPracticeMode.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 130</value>
   </data>
   <data name="GroupPracticeMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 70</value>
+    <value>266, 91</value>
   </data>
   <data name="GroupPracticeMode.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -432,7 +459,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>290, 241</value>
+    <value>290, 261</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
