@@ -22,21 +22,23 @@ public class BookFileFormatTests : IAsyncDisposable
     }
 
     [Fact]
-    public async Task TestReadVhf1()
+    public void TestReadVhf1()
     {
         string vhrPath = "Resources";
-        string path = Path.Join("Resources", "Year 11.vhf");
+        string path = Path.Join("Resources", "Year 11 (vhf1).vhf");
         VocabularyBook book = new();
-        await BookFileFormat.DetectAndRead(path, book, vhrPath);
+        BookFileFormat.DetectAndRead(path, book, vhrPath);
 
         Assert.Equal("Deutsch", book.MotherTongue);
         Assert.Equal("Englisch", book.ForeignLang);
         Assert.Equal(113, book.Words.Count);
+        Assert.EndsWith(path, book.FilePath);
+        Assert.Equal("2jgh9u3tuPCfYLxhhCJXGyPN", book.VhrCode);
         Assert.Equal(PracticeMode.AskForForeignLang, book.PracticeMode);
     }
 
     [Fact]
-    public async Task TestWriteReadVhf1()
+    public void TestWriteReadVhf1()
     {
         string tempPath = Path.GetTempPath();
         string path = Path.Combine(tempPath, $"Vocup_{nameof(TestWriteReadVhf1)}.vhf");
@@ -44,14 +46,17 @@ public class BookFileFormatTests : IAsyncDisposable
         expected.VhrCode = "o5xqm7rdg6y9fecs9ykuuckv";
 
         using (FileStream stream = new(path, FileMode.Create, FileAccess.Write, FileShare.None))
-            await BookFileFormat.Vhf1.Write(stream, expected, tempPath);
+            BookFileFormat.Vhf1.Write(stream, expected, tempPath);
+
+        Assert.False(string.IsNullOrEmpty(expected.FilePath));
 
         VocabularyBook actual = new();
-        await BookFileFormat.DetectAndRead(path, actual, tempPath);
+        BookFileFormat.DetectAndRead(path, actual, tempPath);
 
         Assert.Equal(expected.MotherTongue, actual.MotherTongue);
         Assert.Equal(expected.ForeignLang, actual.ForeignLang);
         Assert.Equal(expected.Words.Count, actual.Words.Count);
+        Assert.Equal(expected.FilePath, actual.FilePath);
         Assert.Equal(expected.VhrCode, actual.VhrCode);
         Assert.Equal(expected.PracticeMode, actual.PracticeMode);
 
@@ -60,40 +65,46 @@ public class BookFileFormatTests : IAsyncDisposable
     }
 
     [Fact]
-    public async Task TestReadVhf2()
+    public void TestReadVhf2()
     {
         string path = Path.Join("Resources", "Year 11 (vhf2).vhf");
         VocabularyBook book = new();
-        await BookFileFormat.DetectAndRead(path, book, "Resources");
+        BookFileFormat.DetectAndRead(path, book, "Resources");
 
         Assert.Equal("Deutsch", book.MotherTongue);
         Assert.Equal("Englisch", book.ForeignLang);
         Assert.Equal(113, book.Words.Count);
+        Assert.EndsWith(path, book.FilePath);
+        Assert.Null(book.VhrCode); // VhrCode is not used in vhf2 format
         Assert.Equal(PracticeMode.AskForForeignLang, book.PracticeMode);
     }
 
     [Fact]
-    public async Task TestWriteReadVhf2()
+    public void TestWriteReadVhf2()
     {
         string tempPath = Path.GetTempPath();
         string path = Path.Combine(tempPath, $"Vocup_{nameof(TestWriteReadVhf2)}.vhf");
         VocabularyBook expected = GenerateSampleBook();
 
         using (FileStream stream = new(path, FileMode.Create, FileAccess.Write, FileShare.None))
-            await BookFileFormat.Vhf2.Write(stream, expected);
+            BookFileFormat.Vhf2.Write(stream, expected, null!);
+
+        Assert.False(string.IsNullOrEmpty(expected.FilePath));
 
         VocabularyBook actual = new();
-        await BookFileFormat.DetectAndRead(path, actual, tempPath);
+        BookFileFormat.DetectAndRead(path, actual, tempPath);
 
         Assert.Equal(expected.MotherTongue, actual.MotherTongue);
         Assert.Equal(expected.ForeignLang, actual.ForeignLang);
         Assert.Equal(expected.Words.Count, actual.Words.Count);
+        Assert.Equal(expected.FilePath, actual.FilePath);
+        Assert.Null(actual.VhrCode); // VhrCode is not used in vhf2 format
         Assert.Equal(expected.PracticeMode, actual.PracticeMode);
 
         File.Delete(path);
     }
 
-    private VocabularyBook GenerateSampleBook()
+    private static VocabularyBook GenerateSampleBook()
     {
         VocabularyBook book = new()
         {

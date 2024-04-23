@@ -45,10 +45,10 @@ public partial class MergeFiles : Form
         {
             foreach (string file in addFile.FileNames)
             {
-                VocabularyBook book = new VocabularyBook();
-                if (!VocabularyFile.ReadVhfFile(file, book))
+                VocabularyBook book = new();
+                if (!BookFileFormat.TryDetectAndRead(file, book, Program.Settings.VhrPath))
                     continue;
-                VocabularyFile.ReadVhrFile(book);
+
                 VocabularyBook conflict = books.Where(x => x.FilePath.Equals(book.FilePath, StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
                 if (conflict != null)
                 {
@@ -124,6 +124,7 @@ public partial class MergeFiles : Form
 
     private void BtnSave_Click(object sender, EventArgs e)
     {
+        BookFileFormat format;
         string path;
 
         using (SaveFileDialog save = new SaveFileDialog
@@ -131,11 +132,12 @@ public partial class MergeFiles : Form
             Title = Words.SaveVocabularyBook,
             FileName = TbMotherTongue.Text + " - " + TbForeignLang.Text,
             InitialDirectory = Program.Settings.VhfPath,
-            Filter = Words.VocupVocabularyBookFile + " (*.vhf)|*.vhf"
+            Filter = $"{Words.VocupVocabularyBookFile} (*.vhf)|*.vhf|{Words.VocupVocabularyBookLegacy} (*.vhf)|*.vhf"
         })
         {
             if (save.ShowDialog() == DialogResult.OK)
             {
+                format = save.FilterIndex == 2 ? BookFileFormat.Vhf1 : BookFileFormat.Vhf2;
                 path = save.FileName;
             }
             else
@@ -164,10 +166,8 @@ public partial class MergeFiles : Form
 
         result.GenerateVhrCode();
 
-        if (!VocabularyFile.WriteVhfFile(path, result) ||
-            !VocabularyFile.WriteVhrFile(result))
+        if (!format.TryWrite(path, result, Program.Settings.VhrPath))
         {
-            MessageBox.Show(Messages.VocupFileWriteError, Messages.VocupFileWriteErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
             DialogResult = DialogResult.Abort;
         }
         else

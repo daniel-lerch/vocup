@@ -304,6 +304,15 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vocup vocabulary book (legacy).
+        /// </summary>
+        internal static string VocupVocabularyBookLegacy {
+            get {
+                return ResourceManager.GetString("VocupVocabularyBookLegacy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wrong.
         /// </summary>
         internal static string Wrong {

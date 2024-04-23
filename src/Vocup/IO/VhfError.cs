@@ -9,6 +9,6 @@ public enum VhfError
     InvalidRow,
     CorruptedArchive,
     UpdateRequired,
-    EmptyArchive,
+    MissingJsonBook,
     InvalidJsonBook
 }

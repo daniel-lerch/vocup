@@ -101,7 +101,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you want to save your changes before exporting a CSV file? You can save your changes later on. Vocup always exports the current version including any unsafed changes..
+        ///   Looks up a localized string similar to Do you want to save your changes before exporting a CSV file? You can save your changes later on. Vocup always exports the current version including any unsaved changes..
         /// </summary>
         internal static string CsvExportSave {
             get {
@@ -268,7 +268,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The current vocabulary book could not be opened in Explorer. Please be aware that this feature is not avalaible on some operatening systems like Linux or Windows 10 S.
+        ///   Looks up a localized string similar to The current vocabulary book could not be opened in Explorer. Please be aware that this feature is not avalaible on some operating systems like Linux or Windows 10 S.
         ///Details: {0}.
         /// </summary>
         internal static string OpenInExplorerError {
@@ -433,46 +433,6 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Vocup backup file is corrupt and could not be opened:
-        ///{0}.
-        /// </summary>
-        internal static string VdpCorruptFile {
-            get {
-                return ResourceManager.GetString("VdpCorruptFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Corrupt file.
-        /// </summary>
-        internal static string VdpCorruptFileT {
-            get {
-                return ResourceManager.GetString("VdpCorruptFileT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Summary
-        /// -  {0} File(s) restored
-        /// -  {1} File(s) skipped
-        /// -  {2} File(s) failed.
-        /// </summary>
-        internal static string VdpRestored {
-            get {
-                return ResourceManager.GetString("VdpRestored", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Recovery finished.
-        /// </summary>
-        internal static string VdpRestoredT {
-            get {
-                return ResourceManager.GetString("VdpRestoredT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The vocabulary book file is corrupt and could not be opened..
         /// </summary>
         internal static string VhfCorruptFile {
@@ -557,7 +517,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The folder for vocabulary books was not found at {0}. Vocup will replace your configuration with the default documents directory. You change that in the settings at any time..
+        ///   Looks up a localized string similar to The folder for vocabulary books was not found at {0}. Vocup will replace your configuration with the default documents directory. You can change that in the settings at any time..
         /// </summary>
         internal static string VhfPathNotFound {
             get {
@@ -575,42 +535,6 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The result file is corrupt and going to be deleted. Therefore you are going to loose your practice results..
-        /// </summary>
-        internal static string VhrCorruptFile {
-            get {
-                return ResourceManager.GetString("VhrCorruptFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Corrupt result file.
-        /// </summary>
-        internal static string VhrCorruptFileT {
-            get {
-                return ResourceManager.GetString("VhrCorruptFileT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The referenced result file does not match the current vocabulary book. All results are going to be deleted..
-        /// </summary>
-        internal static string VhrInvalidRowCount {
-            get {
-                return ResourceManager.GetString("VhrInvalidRowCount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The referenced result file is in use by another vocabulary book. Results are not going to be loaded..
-        /// </summary>
-        internal static string VhrInvalidRowCountAndOtherFile {
-            get {
-                return ResourceManager.GetString("VhrInvalidRowCountAndOtherFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The selected path for is not suitable to save practice results. Do not use optical disk drives or system folders here..
         /// </summary>
         internal static string VhrPathInvalid {
@@ -620,7 +544,7 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The folder for practice results was not found at {0}. Vocup will replace your configuration with the default application data directory. You change that in the settings at any time..
+        ///   Looks up a localized string similar to The folder for practice results was not found at {0}. Vocup will replace your configuration with the default application data directory. You can change that in the settings at any time..
         /// </summary>
         internal static string VhrPathNotFound {
             get {
@@ -638,11 +562,21 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A vocabulary book or result file could not be saved..
+        ///   Looks up a localized string similar to A vocabulary book could not be opened:
+        ///{0}.
         /// </summary>
-        internal static string VocupFileWriteError {
+        internal static string VocupFileReadError {
             get {
-                return ResourceManager.GetString("VocupFileWriteError", resourceCulture);
+                return ResourceManager.GetString("VocupFileReadError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error when opening a file.
+        /// </summary>
+        internal static string VocupFileReadErrorT {
+            get {
+                return ResourceManager.GetString("VocupFileReadErrorT", resourceCulture);
             }
         }
         
@@ -650,9 +584,9 @@ namespace Vocup.Properties {
         ///   Looks up a localized string similar to A vocabulary book or result file could not be saved:
         ///{0}.
         /// </summary>
-        internal static string VocupFileWriteErrorEx {
+        internal static string VocupFileWriteError {
             get {
-                return ResourceManager.GetString("VocupFileWriteErrorEx", resourceCulture);
+                return ResourceManager.GetString("VocupFileWriteError", resourceCulture);
             }
         }
         

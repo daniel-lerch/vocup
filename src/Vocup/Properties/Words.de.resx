@@ -202,6 +202,9 @@
   <data name="VocupVocabularyBookFile" xml:space="preserve">
     <value>Vocup Vokabelheft-Datei</value>
   </data>
+  <data name="VocupVocabularyBookLegacy" xml:space="preserve">
+    <value>Vocup Vokabelheft (veraltet)</value>
+  </data>
   <data name="Wrong" xml:space="preserve">
     <value>Falsch</value>
   </data>

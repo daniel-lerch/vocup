@@ -6,7 +6,7 @@ Vocup uses different proprietary formats:
 |-----------|---------------------------------|------------------|---------|
 | .vhf      | **V**okabel**h**eft **f**ile    | Vocabulary data  |         |
 | .vhr      | **V**okabel**h**eft **r**esults | Practice results | Not used for vhf2 files anymore |
-| .vdp      |                                 | Backup file      | Backup creation removed in Vocup 1.8.0<br>Backup restore removed in Vocup 2.0.0 |
+| .vdp      |                                 | Backup file      | Backup creation removed in Vocup 1.8.0<br>Backup restore removed in Vocup 1.9.0 |
 
 ## .vhf v2
 
@@ -130,9 +130,9 @@ D:\Schule\Englisch\Vocabulary\Year 11.vhf
 
 ## .vdp
 
-> ⚠️ This file format is deprecated. Since Vocup 1.8.0 it is not possible to create new backups anymore. Since Vocup 2.0.0 is not possible to restore backups anymore.
+> ⚠️ This file format is deprecated. Since Vocup 1.8.0 it is not possible to create new backups anymore. Since Vocup 1.9.0 is also not possible to restore backups anymore.
 
-This format is used for Vocup Backups. It is basically a zip file using `Deflate` compression:
+This format was used for Vocup Backups. It is basically a zip file using `Deflate` compression:
 ```
 *.vdp/
     chars/

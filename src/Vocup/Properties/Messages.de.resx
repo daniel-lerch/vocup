@@ -259,24 +259,6 @@ Details: {0}</value>
   <data name="UnexpectedErrorT" xml:space="preserve">
     <value>Unerwarteter Fehler</value>
   </data>
-  <data name="VdpCorruptFile" xml:space="preserve">
-    <value>Die Vocup-Datensicherung ist fehlerhaft und konnte ich geöffnet werden:
-{0}</value>
-    <comment>{0}: ErrorDetails</comment>
-  </data>
-  <data name="VdpCorruptFileT" xml:space="preserve">
-    <value>Fehlerhafte Datei</value>
-  </data>
-  <data name="VdpRestored" xml:space="preserve">
-    <value>Zusammenfassung
- -  {0} Datei(en) wiederhergestellt
- -  {1} Datei(en) übersprungen
- -  {2} Datei(en) fehlgeschlagen</value>
-    <comment>{0}: Restored, {1}: Skipped, {2}: Failed</comment>
-  </data>
-  <data name="VdpRestoredT" xml:space="preserve">
-    <value>Wiederherstellung abgeschlossen</value>
-  </data>
   <data name="VhfCorruptFile" xml:space="preserve">
     <value>Die Vokabelheftdatei ist fehlerhaft und konnte nicht geöffnet werden.</value>
   </data>
@@ -314,18 +296,6 @@ Stellen Sie sicher, dass die Datei nicht leer ist.</value>
   <data name="VhfPathNotFoundT" xml:space="preserve">
     <value>Ordner für Vokabelhefte nicht gefunden</value>
   </data>
-  <data name="VhrCorruptFile" xml:space="preserve">
-    <value>Die Ergbnisdatei ist fehlerhaft und wird gelöscht. Die Übungsergebnisse gehen deshalb verloren.</value>
-  </data>
-  <data name="VhrCorruptFileT" xml:space="preserve">
-    <value>Fehlerhafte Ergebnis-Datei</value>
-  </data>
-  <data name="VhrInvalidRowCount" xml:space="preserve">
-    <value>Die referenzierte Ergebnisdatei passt nicht zu diesem Vokabelheft. Die Ergebnisse werden gelöscht.</value>
-  </data>
-  <data name="VhrInvalidRowCountAndOtherFile" xml:space="preserve">
-    <value>Die referenzierte Ergebnisdatei wird von einem anderen Vokabelheft verwendet und passt nicht zu diesem. Daher werden keine Ergebnisse geladen.</value>
-  </data>
   <data name="VhrPathInvalid" xml:space="preserve">
     <value>Der ausgewählte Pfad ist nicht zum Speichern von Übungsergebnissen geeignet. Verwenden Sie bitte keine optischen Laufwerke oder Systemordner an dieser Stelle.</value>
   </data>
@@ -335,10 +305,15 @@ Stellen Sie sicher, dass die Datei nicht leer ist.</value>
   <data name="VhrPathNotFoundT" xml:space="preserve">
     <value>Ordner für Übungsergebnisse nicht gefunden</value>
   </data>
-  <data name="VocupFileWriteError" xml:space="preserve">
-    <value>Eine Vokabelheft- oder Ergebnisdatei konnte nicht gespeichert werden.</value>
+  <data name="VocupFileReadError" xml:space="preserve">
+    <value>Ein Vokabelheft konnte nicht geöffnet werden:
+{0}</value>
+    <comment>{0}: ErrorDetails</comment>
   </data>
-  <data name="VocupFileWriteErrorEx" xml:space="preserve">
+  <data name="VocupFileReadErrorT" xml:space="preserve">
+    <value>Fehler beim Öffnen einer Datei</value>
+  </data>
+  <data name="VocupFileWriteError" xml:space="preserve">
     <value>Eine Vokabelheft- oder Ergebnisdatei konnte nicht gespeichert werden:
 {0}</value>
     <comment>{0}: ErrorDetails</comment>

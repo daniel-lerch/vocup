@@ -4,7 +4,6 @@ using System.Globalization;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using Vocup.Models;
 
 namespace Vocup.IO.Vhf1;
@@ -15,9 +14,9 @@ public class Vhf1Format : BookFileFormat
 
     private Vhf1Format() { }
 
-    public async ValueTask Read(FileStream stream, VocabularyBook book, string vhrPath)
+    public void Read(FileStream stream, VocabularyBook book, string vhrPath)
     {
-        string decrypted = await ReadAndDecryptAsync(stream).ConfigureAwait(false);
+        string decrypted = ReadAndDecrypt(stream);
         using StringReader reader = new(decrypted);
 
         string? version = reader.ReadLine();
@@ -66,11 +65,11 @@ public class Vhf1Format : BookFileFormat
         if (!string.IsNullOrEmpty(vhrCode))
         {
             // Read results from .vhr file
-            await ReadResults(book, stream.Name, vhrCode, vhrPath).ConfigureAwait(false);
+            ReadResults(book, stream.Name, vhrCode, vhrPath);
         }
     }
 
-    public async ValueTask Write(FileStream stream, VocabularyBook book, string vhrPath)
+    public override void Write(FileStream stream, VocabularyBook book, string vhrPath)
     {
         StringBuilder content = new();
         content.AppendLine("1.0");
@@ -87,13 +86,15 @@ public class Vhf1Format : BookFileFormat
             content.AppendLine(word.ForeignLangSynonym);
         }
 
-        await EncryptAndWriteAsync(stream, content.ToString()).ConfigureAwait(false);
+        EncryptAndWrite(stream, content.ToString());
 
         if (!string.IsNullOrEmpty(book.VhrCode))
         {
             // Write results to .vhr file
-            await WriteResults(book, stream.Name, book.VhrCode, vhrPath).ConfigureAwait(false);
+            WriteResults(book, stream.Name, book.VhrCode, vhrPath);
         }
+
+        book.FilePath = stream.Name;
     }
 
     public string GenerateVhrCode()
@@ -114,12 +115,12 @@ public class Vhf1Format : BookFileFormat
         return new string(code);
     }
 
-    private async ValueTask ReadResults(VocabularyBook book, string fileName, string vhrCode, string vhrPath)
+    private void ReadResults(VocabularyBook book, string fileName, string vhrCode, string vhrPath)
     {
         try
         {
             using FileStream file = new(Path.Combine(vhrPath, vhrCode + ".vhr"), FileMode.Open, FileAccess.Read, FileShare.Read);
-            string decrypted = await ReadAndDecryptAsync(file).ConfigureAwait(false);
+            string decrypted = ReadAndDecrypt(file);
             using StringReader reader = new(decrypted);
 
             string? path = reader.ReadLine();
@@ -128,7 +129,9 @@ public class Vhf1Format : BookFileFormat
             if (string.IsNullOrWhiteSpace(path) ||
                 string.IsNullOrWhiteSpace(mode) || !int.TryParse(mode, out int imode) || !((PracticeMode)imode).IsValid())
             {
-                return; // Ignore files with invalid header
+                // Delete .vhr files with corrupt header
+                TryDeleteVhrFile(vhrCode, vhrPath);
+                return;
             }
 
             var results = new List<(int stateNumber, DateTime date)>();
@@ -140,12 +143,16 @@ public class Vhf1Format : BookFileFormat
                 string[] columns = line.Split('#');
                 if (columns.Length != 2 || !int.TryParse(columns[0], out int state) || state < 0)
                 {
+                    // Delete .vhr files with corrupt entries
+                    TryDeleteVhrFile(vhrCode, vhrPath);
                     return;
                 }
                 DateTime time = default;
                 if (!string.IsNullOrWhiteSpace(columns[1])
                     && !DateTime.TryParseExact(columns[1], "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out time))
                 {
+                    // Delete .vhr files with corrupt entries
+                    TryDeleteVhrFile(vhrCode, vhrPath);
                     return;
                 }
                 results.Add((state, time));
@@ -153,6 +160,10 @@ public class Vhf1Format : BookFileFormat
 
             if (book.Words.Count != results.Count)
             {
+                // Delete .vhr files that are not in sync anymore.
+                // This can only happen when using a cloud storage for .vhf files but not .vhr files.
+                // When using save as or by copying a file manually, a new .vhr file will be created.
+                TryDeleteVhrFile(vhrCode, vhrPath);
                 return;
             }
 
@@ -176,11 +187,12 @@ public class Vhf1Format : BookFileFormat
         }
         catch (Exception ex) when (ex is IOException || ex is VhfFormatException)
         {
-            // Practice results are useful but not necessary so we ignore file not found and all other exceptions
+            // Delete corrupt .vhr files
+            TryDeleteVhrFile(vhrCode, vhrPath);
         }
     }
 
-    private async ValueTask WriteResults(VocabularyBook book, string fileName, string vhrCode, string vhrPath)
+    private void WriteResults(VocabularyBook book, string fileName, string vhrCode, string vhrPath)
     {
         string results;
 
@@ -204,16 +216,16 @@ public class Vhf1Format : BookFileFormat
 
         string absoluteFileName = Path.Combine(vhrPath, vhrCode + ".vhr");
         using FileStream file = new(absoluteFileName, FileMode.Create, FileAccess.Write, FileShare.None);
-        await EncryptAndWriteAsync(file, results).ConfigureAwait(false);
+        EncryptAndWrite(file, results);
     }
 
-    private static async ValueTask<string> ReadAndDecryptAsync(Stream stream)
+    private static string ReadAndDecrypt(Stream stream)
     {
         try
         {
             byte[] ciphertext;
             using (StreamReader reader = new(stream, Encoding.UTF8))
-                ciphertext = Convert.FromBase64String(await reader.ReadToEndAsync().ConfigureAwait(false));
+                ciphertext = Convert.FromBase64String(reader.ReadToEnd());
 
             using MemoryStream plainstream = new();
             using DES csp = DES.Create();
@@ -231,7 +243,7 @@ public class Vhf1Format : BookFileFormat
         }
     }
 
-    private static async ValueTask EncryptAndWriteAsync(Stream stream, string content)
+    private static void EncryptAndWrite(Stream stream, string content)
     {
         byte[] buffer = Encoding.UTF8.GetBytes(content);
         using StreamWriter writer = new(stream, Encoding.UTF8);
@@ -243,6 +255,6 @@ public class Vhf1Format : BookFileFormat
         using CryptoStream plainstream = new(cipherstream, transform, CryptoStreamMode.Write);
         plainstream.Write(buffer, 0, buffer.Length);
         plainstream.FlushFinalBlock();
-        await writer.WriteAsync(Convert.ToBase64String(cipherstream.ToArray())).ConfigureAwait(false);
+        writer.Write(Convert.ToBase64String(cipherstream.ToArray()));
     }
 }

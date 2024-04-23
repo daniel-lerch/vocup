@@ -32,12 +32,6 @@ public static class Program
         // Prevents the installer from executing while the program is running
         mutex = new Mutex(initiallyOwned: true, AppInfo.ProductName, out bool createdNew);
 
-        // ApplicationConfiguration.Initialize() does not handle PerMonitorV2 correctly.
-        Application.EnableVisualStyles();
-        Application.SetCompatibleTextRenderingDefault(false);
-        Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
-        Application.SetDefaultFont(new Font("Microsoft Sans Serif", 8.25f));
-
         if (!createdNew)
         {
             // Another instance of Vocup is already running so we change the focus
@@ -45,7 +39,13 @@ public static class Program
             return;
         }
 
-        SplashScreen splash = new SplashScreen();
+        // ApplicationConfiguration.Initialize() does not handle PerMonitorV2 correctly.
+        Application.EnableVisualStyles();
+        Application.SetCompatibleTextRenderingDefault(false);
+        Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
+        Application.SetDefaultFont(new Font("Microsoft Sans Serif", 8.25f));
+
+        SplashScreen splash = new();
         splash.Show();
         Application.DoEvents();
 

@@ -5,7 +5,6 @@ using System.IO.Compression;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 using Vocup.Models;
 
 namespace Vocup.IO.Vhf2;
@@ -32,7 +31,7 @@ public class Vhf2Format : BookFileFormat
         fileVersion = new Version(2, 0);
     }
 
-    public async ValueTask Read(Stream stream, VocabularyBook book)
+    public void Read(FileStream stream, VocabularyBook book)
     {
         try
         {
@@ -45,7 +44,7 @@ public class Vhf2Format : BookFileFormat
 
             using (StreamReader reader = new(versionFile.Open(), Encoding.UTF8))
             {
-                string? line = await reader.ReadLineAsync().ConfigureAwait(false);
+                string? line = reader.ReadLine();
                 if (line == null || !Version.TryParse(line, out version))
                     throw new VhfFormatException(VhfError.InvalidVersion);
             }
@@ -53,19 +52,21 @@ public class Vhf2Format : BookFileFormat
             if (version.Major > fileVersion.Major) throw new VhfFormatException(VhfError.UpdateRequired);
 
             ZipArchiveEntry? bookFile = archive.GetEntry(bookFileName)
-                ?? throw new VhfFormatException(VhfError.EmptyArchive);
+                ?? throw new VhfFormatException(VhfError.MissingJsonBook);
 
             JsonBook jsonBook;
 
             using (Stream bookStream = bookFile.Open())
             {
-                jsonBook = await JsonSerializer.DeserializeAsync<JsonBook>(bookStream, options).ConfigureAwait(false)
+                jsonBook = JsonSerializer.Deserialize<JsonBook>(bookStream, options)
                     ?? throw new VhfFormatException(VhfError.InvalidJsonBook);
             }
 
             book.MotherTongue = jsonBook.MotherTongue;
             book.ForeignLang = jsonBook.ForeignLanguage;
             book.PracticeMode = jsonBook.PracticeMode;
+            book.FilePath = stream.Name;
+
             foreach (JsonWord jsonWord in jsonBook.Words)
             {
                 VocabularyWord word = new(jsonWord.MotherTongue, jsonWord.ForeignLang)
@@ -87,29 +88,35 @@ public class Vhf2Format : BookFileFormat
         }
     }
 
-    public async ValueTask Write(Stream stream, VocabularyBook book)
+    public override void Write(FileStream stream, VocabularyBook book, string vhrPath)
     {
-        using ZipArchive archive = new(stream, ZipArchiveMode.Create, leaveOpen: true);
-
-        ZipArchiveEntry versionFile = archive.CreateEntry(headerFileName);
-
-        using (StreamWriter writer = new(versionFile.Open(), Encoding.UTF8))
+        using (ZipArchive archive = new(stream, ZipArchiveMode.Create, leaveOpen: true))
         {
-            await writer.WriteLineAsync(fileVersion.ToString()).ConfigureAwait(false);
-            await writer.FlushAsync().ConfigureAwait(false);
+            ZipArchiveEntry versionFile = archive.CreateEntry(headerFileName);
+
+            using (StreamWriter writer = new(versionFile.Open(), Encoding.UTF8))
+            {
+                writer.WriteLine(fileVersion.ToString());
+                writer.Flush();
+            }
+
+            JsonBook jsonBook = new(book.MotherTongue, book.ForeignLang, book.PracticeMode, []);
+
+            foreach (VocabularyWord word in book.Words)
+            {
+                JsonWord jsonWord = new(word.MotherTongue, word.ForeignLang, word.ForeignLangSynonym, word.PracticeStateNumber, word.PracticeDate);
+                jsonBook.Words.Add(jsonWord);
+            }
+
+            ZipArchiveEntry bookFile = archive.CreateEntry(bookFileName);
+            using Stream bookStream = bookFile.Open();
+            JsonSerializer.Serialize(bookStream, jsonBook, options);
         }
 
-        JsonBook jsonBook = new(book.MotherTongue, book.ForeignLang, book.PracticeMode, []);
+        // Delete vhr file when migrating from vhf1 to vhf2
+        TryDeleteVhrFile(book.VhrCode, vhrPath);
 
-        foreach (VocabularyWord word in book.Words)
-        {
-            JsonWord jsonWord = new(word.MotherTongue, word.ForeignLang, word.ForeignLangSynonym, word.PracticeStateNumber, word.PracticeDate);
-            jsonBook.Words.Add(jsonWord);
-        }
-
-        ZipArchiveEntry bookFile = archive.CreateEntry(bookFileName);
-        using Stream bookStream = bookFile.Open();
-        await JsonSerializer.SerializeAsync(bookStream, jsonBook, options).ConfigureAwait(false);
+        book.FilePath = stream.Name;
     }
 
     private record JsonBook(string MotherTongue, string ForeignLanguage, PracticeMode PracticeMode, List<JsonWord> Words);

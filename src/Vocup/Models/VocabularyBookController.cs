@@ -68,8 +68,7 @@ public class VocabularyBookController : IDisposable
 
         if (VocabularyBook.UnsavedChanges && Program.Settings.AutoSave && !string.IsNullOrWhiteSpace(VocabularyBook.FilePath))
         {
-            if (VocabularyFile.WriteVhfFile(VocabularyBook.FilePath, VocabularyBook) &&
-                VocabularyFile.WriteVhrFile(VocabularyBook))
+            if (BookFileFormat.Vhf2.TryWrite(VocabularyBook.FilePath, VocabularyBook, Program.Settings.VhrPath))
             {
                 VocabularyBook.UnsavedChanges = false;
             }

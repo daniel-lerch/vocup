@@ -10,11 +10,11 @@ using System.Windows.Forms;
 using Vocup.Models;
 using Vocup.Properties;
 
-namespace Vocup.IO.Internal;
+namespace Vocup.IO;
 
-internal class CsvFile
+public static class CsvFile
 {
-    public bool Import(string path, VocabularyBook book, bool importSettings)
+    public static bool Import(string path, VocabularyBook book, bool importSettings)
     {
         try
         {
@@ -105,7 +105,7 @@ internal class CsvFile
         return false;
     }
 
-    public bool Export(string path, VocabularyBook book)
+    public static bool Export(string path, VocabularyBook book)
     {
         try
         {
