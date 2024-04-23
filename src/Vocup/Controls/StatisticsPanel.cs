@@ -57,6 +57,13 @@ namespace Vocup.Controls
                 RenewSum();
             }
         }
+        public void Reset()
+        {
+            Unpracticed = 0;
+            WronglyPracticed = 0;
+            CorrectlyPracticed = 0;
+            FullyPracticed = 0;
+        }
 
         private void RenewSum()
         {
