@@ -155,6 +155,15 @@
   <data name="Export" xml:space="preserve">
     <value>Exporteren</value>
   </data>
+  <data name="FileFormatVhf" xml:space="preserve">
+    <value>Vocup woordenboek</value>
+  </data>
+  <data name="FileFormatVhf1" xml:space="preserve">
+    <value>Vocup woordenboek v1</value>
+  </data>
+  <data name="FileFormatVhf2" xml:space="preserve">
+    <value>Vocup woordenboek v2</value>
+  </data>
   <data name="Finish" xml:space="preserve">
     <value>Klaar</value>
   </data>
@@ -198,12 +207,6 @@
   </data>
   <data name="VocupBackupFile" xml:space="preserve">
     <value>Vocup back-up bestand</value>
-  </data>
-  <data name="VocupVocabularyBookFile" xml:space="preserve">
-    <value>Vocup woordenboek</value>
-  </data>
-  <data name="VocupVocabularyBookLegacy" xml:space="preserve">
-    <value>Vocup woordenboek (verouderd)</value>
   </data>
   <data name="Wrong" xml:space="preserve">
     <value>Fout</value>

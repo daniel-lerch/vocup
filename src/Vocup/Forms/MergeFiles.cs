@@ -37,7 +37,7 @@ public partial class MergeFiles : Form
         {
             Title = Words.AddVocabularyBooks,
             InitialDirectory = Program.Settings.VhfPath,
-            Filter = Words.VocupVocabularyBookFile + " (*.vhf)|*.vhf",
+            Filter = Words.FileFormatVhf + " (*.vhf)|*.vhf",
             Multiselect = true
         };
 
@@ -132,7 +132,7 @@ public partial class MergeFiles : Form
             Title = Words.SaveVocabularyBook,
             FileName = TbMotherTongue.Text + " - " + TbForeignLang.Text,
             InitialDirectory = Program.Settings.VhfPath,
-            Filter = $"{Words.VocupVocabularyBookFile} (*.vhf)|*.vhf|{Words.VocupVocabularyBookLegacy} (*.vhf)|*.vhf"
+            Filter = $"{Words.FileFormatVhf2} (*.vhf)|*.vhf|{Words.FileFormatVhf1} (*.vhf)|*.vhf"
         })
         {
             if (save.ShowDialog() == DialogResult.OK)

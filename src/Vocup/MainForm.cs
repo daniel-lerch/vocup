@@ -578,7 +578,7 @@ public partial class MainForm : Form, IMainForm
                 Title = Words.SaveVocabularyBook,
                 FileName = CurrentBook.MotherTongue + " - " + CurrentBook.ForeignLang,
                 InitialDirectory = Program.Settings.VhfPath,
-                Filter = $"{Words.VocupVocabularyBookFile} (*.vhf)|*.vhf|{Words.VocupVocabularyBookLegacy} (*.vhf)|*.vhf"
+                Filter = $"{Words.FileFormatVhf2} (*.vhf)|*.vhf|{Words.FileFormatVhf1} (*.vhf)|*.vhf"
             };
             if (save.ShowDialog() == DialogResult.OK)
             {
@@ -616,7 +616,7 @@ public partial class MainForm : Form, IMainForm
         {
             Title = Words.OpenVocabularyBook,
             InitialDirectory = Program.Settings.VhfPath,
-            Filter = Words.VocupVocabularyBookFile + " (*.vhf)|*.vhf"
+            Filter = Words.FileFormatVhf + " (*.vhf)|*.vhf"
         };
         if (open.ShowDialog() == DialogResult.OK)
         {
