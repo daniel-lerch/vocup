@@ -14,7 +14,7 @@ public class VocabularyBook : INotifyPropertyChanged
     private string _motherTongue;
     private string _foreignLang;
     private PracticeMode _practiceMode = PracticeMode.AskForForeignLang;
-    private bool _unsafedChanges;
+    private bool _unsavedChanges;
 
     public VocabularyBook()
     {
@@ -54,8 +54,8 @@ public class VocabularyBook : INotifyPropertyChanged
     }
     public bool UnsavedChanges
     {
-        get => _unsafedChanges;
-        set { if (_unsafedChanges != value) { _unsafedChanges = value; OnPropertyChanged(); } }
+        get => _unsavedChanges;
+        set { if (_unsavedChanges != value) { _unsavedChanges = value; OnPropertyChanged(); } }
     }
     public string? Name => string.IsNullOrWhiteSpace(_filePath) ? null : Path.GetFileNameWithoutExtension(_filePath);
     public ReactiveCollection<VocabularyWord> Words { get; }
