@@ -7,7 +7,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Vocup.Models;
 
-namespace Vocup.IO.Vhf2;
+namespace Vocup.IO;
 
 public class Vhf2Format : BookFileFormat
 {

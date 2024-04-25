@@ -65,6 +65,34 @@ public class BookFileFormatTests : IAsyncDisposable
     }
 
     [Fact]
+    public void TestWriteReadVhf1_PracticeModeMixed()
+    {
+        string tempPath = Path.GetTempPath();
+        string path = Path.Combine(tempPath, $"Vocup_{nameof(TestWriteReadVhf1)}.vhf");
+        VocabularyBook original = GenerateSampleBook();
+        original.PracticeMode = PracticeMode.AskForBothMixed;
+        original.VhrCode = "ina5ucmjup2sbcioxdsrvqsu";
+
+        using (FileStream stream = new(path, FileMode.Create, FileAccess.Write, FileShare.None))
+            BookFileFormat.Vhf1.Write(stream, original, tempPath);
+
+        Assert.False(string.IsNullOrEmpty(original.FilePath));
+
+        VocabularyBook actual = new();
+        BookFileFormat.DetectAndRead(path, actual, tempPath);
+
+        Assert.Equal(original.MotherTongue, actual.MotherTongue);
+        Assert.Equal(original.ForeignLang, actual.ForeignLang);
+        Assert.Equal(original.Words.Count, actual.Words.Count);
+        Assert.Equal(original.FilePath, actual.FilePath);
+        Assert.Equal(original.VhrCode, actual.VhrCode);
+        Assert.Equal(PracticeMode.AskForForeignLang, actual.PracticeMode);
+
+        File.Delete(path);
+        File.Delete(Path.Combine(tempPath, "o5xqm7rdg6y9fecs9ykuuckv.vhr"));
+    }
+
+    [Fact]
     public void TestReadVhf2()
     {
         string path = Path.Join("Resources", "Year 11 (vhf2).vhf");

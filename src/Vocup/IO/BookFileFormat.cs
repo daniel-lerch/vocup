@@ -1,8 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Windows;
-using Vocup.IO.Vhf1;
-using Vocup.IO.Vhf2;
 using Vocup.Models;
 using Vocup.Properties;
 

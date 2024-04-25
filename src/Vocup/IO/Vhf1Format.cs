@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Vocup.Models;
 
-namespace Vocup.IO.Vhf1;
+namespace Vocup.IO;
 
 public class Vhf1Format : BookFileFormat
 {
@@ -198,8 +198,14 @@ public class Vhf1Format : BookFileFormat
 
         using (StringWriter writer = new())
         {
+            PracticeMode mode = book.PracticeMode switch
+            {
+                PracticeMode.AskForBothMixed => PracticeMode.AskForForeignLang,
+                _ => book.PracticeMode
+            };
+
             writer.WriteLine(fileName);
-            writer.Write((int)book.PracticeMode);
+            writer.Write((int)mode);
 
             foreach (VocabularyWord word in book.Words)
             {
