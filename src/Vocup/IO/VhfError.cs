@@ -7,8 +7,8 @@ public enum VhfError
     InvalidVhrCode,
     InvalidLanguages,
     InvalidRow,
-    CorruptedArchive,
     UpdateRequired,
-    MissingJsonBook,
+    CorruptedArchive,
+    InvalidHeader,
     InvalidJsonBook
 }

@@ -15,7 +15,8 @@ public abstract class BookFileFormat
     {
         try
         {
-            DetectAndRead(path, book, vhrPath);
+            if (!DetectAndRead(path, book, vhrPath))
+                MessageBox.Show(Messages.VhfCompatMode, Messages.VhfCompatModeT, MessageBoxButton.OK, MessageBoxImage.Information);
             return true;
         }
         catch (VhfFormatException ex)
@@ -39,16 +40,21 @@ public abstract class BookFileFormat
         }
     }
 
-    public static void DetectAndRead(string path, VocabularyBook book, string vhrPath)
+    public static bool DetectAndRead(string path, VocabularyBook book, string vhrPath)
     {
         //await default(HopToThreadPoolAwaitable); // Perform IO operations on a separate thread
 
         using FileStream stream = new(path, FileMode.Open, FileAccess.Read, FileShare.Read);
 
         if (StartsWithZipHeader(stream))
-            Vhf2Format.Instance.Read(stream, book);
+        {
+            return Vhf2Format.Instance.Read(stream, book);
+        }
         else
+        {
             Vhf1Format.Instance.Read(stream, book, vhrPath);
+            return true;
+        }
     }
 
     private static bool StartsWithZipHeader(Stream stream)

@@ -433,6 +433,25 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The vocabulary book file was saved by a later version of Vocup. It will be opened in compatibility mode. Not all information will be visible.
+        ///It is recommended that you update Vocup to the latest version..
+        /// </summary>
+        internal static string VhfCompatMode {
+            get {
+                return ResourceManager.GetString("VhfCompatMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compatibility mode.
+        /// </summary>
+        internal static string VhfCompatModeT {
+            get {
+                return ResourceManager.GetString("VhfCompatModeT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The vocabulary book file is corrupt and could not be opened..
         /// </summary>
         internal static string VhfCorruptFile {

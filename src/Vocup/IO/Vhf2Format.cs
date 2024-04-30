@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
-using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Vocup.Models;
@@ -14,7 +13,7 @@ public class Vhf2Format : BookFileFormat
     private const string headerFileName = "VOCUP VOCABULARY BOOK";
     private const string bookFileName = "book.2.json";
     private readonly JsonSerializerOptions options;
-    private readonly Version fileVersion;
+    private readonly Version maxSupportedFileVersion;
 
     public static Vhf2Format Instance { get; } = new();
 
@@ -28,31 +27,28 @@ public class Vhf2Format : BookFileFormat
         options.Converters.Add(new PracticeModeConverter());
         options.Converters.Add(new PracticeResultConverter());
 
-        fileVersion = new Version(2, 0);
+        maxSupportedFileVersion = new Version(2, 0);
     }
 
-    public void Read(FileStream stream, VocabularyBook book)
+    public bool Read(FileStream stream, VocabularyBook book)
     {
         try
         {
             using ZipArchive archive = new(stream, ZipArchiveMode.Read, leaveOpen: true);
 
-            ZipArchiveEntry versionFile = archive.GetEntry(headerFileName)
-                ?? throw new VhfFormatException(VhfError.InvalidVersion);
+            ZipArchiveEntry headerFile = archive.GetEntry(headerFileName)
+                ?? throw new VhfFormatException(VhfError.InvalidHeader);
 
-            Version? version;
+            Metadata metadata;
 
-            using (StreamReader reader = new(versionFile.Open(), Encoding.UTF8))
+            using (Stream headerStream = headerFile.Open())
             {
-                string? line = reader.ReadLine();
-                if (line == null || !Version.TryParse(line, out version))
-                    throw new VhfFormatException(VhfError.InvalidVersion);
+                metadata = JsonSerializer.Deserialize<Metadata>(headerStream, options)
+                    ?? throw new VhfFormatException(VhfError.InvalidHeader);
             }
 
-            if (version.Major > fileVersion.Major) throw new VhfFormatException(VhfError.UpdateRequired);
-
             ZipArchiveEntry? bookFile = archive.GetEntry(bookFileName)
-                ?? throw new VhfFormatException(VhfError.MissingJsonBook);
+                ?? throw new VhfFormatException(VhfError.UpdateRequired);
 
             JsonBook jsonBook;
 
@@ -77,6 +73,8 @@ public class Vhf2Format : BookFileFormat
                 };
                 book.Words.Add(word);
             }
+
+            return metadata.FileVersion <= maxSupportedFileVersion;
         }
         catch (InvalidDataException ex)
         {
@@ -92,12 +90,10 @@ public class Vhf2Format : BookFileFormat
     {
         using (ZipArchive archive = new(stream, ZipArchiveMode.Create, leaveOpen: true))
         {
-            ZipArchiveEntry versionFile = archive.CreateEntry(headerFileName);
-
-            using (StreamWriter writer = new(versionFile.Open(), Encoding.UTF8))
+            ZipArchiveEntry headerFile = archive.CreateEntry(headerFileName);
+            using (Stream headerStream = headerFile.Open())
             {
-                writer.WriteLine(fileVersion.ToString());
-                writer.Flush();
+                JsonSerializer.Serialize(headerStream, new Metadata(maxSupportedFileVersion), options);
             }
 
             JsonBook jsonBook = new(book.MotherTongue, book.ForeignLang, book.PracticeMode, []);
@@ -118,6 +114,8 @@ public class Vhf2Format : BookFileFormat
 
         book.FilePath = stream.Name;
     }
+
+    private record Metadata(Version FileVersion);
 
     private record JsonBook(string MotherTongue, string ForeignLanguage, PracticeMode PracticeMode, List<JsonWord> Words);
 

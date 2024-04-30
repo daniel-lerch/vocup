@@ -13,11 +13,16 @@ Vocup uses different proprietary formats:
 Since Vocup v2, _Vokabelheft files_ are ZIP archives and not encrypted anymore.
 Vocup uses the ZIP header to determine whether a .vhf file is vhf1 or vhf2.
 
+The header file makes it easier to identify a ZIP archive as a Vocup file.
+Future file formats may maintain compatibility with Vocup v2 by keeping a `book.2.json` file but also adding a `book.3.json` with breaking changes.
+
 ### Example
 
 `VOCUP VOCABULARY BOOK`
-```
-2.0
+```json
+{
+  "fileVersion": "2.0",
+}
 ```
 
 `book.2.json`

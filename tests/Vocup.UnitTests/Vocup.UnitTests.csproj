@@ -23,6 +23,21 @@
     <None Update="Resources\2jgh9u3tuPCfYLxhhCJXGyPN.vhr">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\Vhf1_InvalidBase64.vhf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Vhf1_RandomBase64.vhf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Vhf2_CompatMode.vhf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Vhf2_UpdateRequired.vhf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Vhf_Empty.vhf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\Year 11 (vhf1).vhf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

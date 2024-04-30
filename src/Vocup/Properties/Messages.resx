@@ -259,6 +259,13 @@ Details: {0}</value>
   <data name="UnexpectedErrorT" xml:space="preserve">
     <value>Unexpected error</value>
   </data>
+  <data name="VhfCompatMode" xml:space="preserve">
+    <value>The vocabulary book file was saved by a later version of Vocup. It will be opened in compatibility mode. Not all information will be visible.
+It is recommended that you update Vocup to the latest version.</value>
+  </data>
+  <data name="VhfCompatModeT" xml:space="preserve">
+    <value>Compatibility mode</value>
+  </data>
   <data name="VhfCorruptFile" xml:space="preserve">
     <value>The vocabulary book file is corrupt and could not be opened.</value>
   </data>

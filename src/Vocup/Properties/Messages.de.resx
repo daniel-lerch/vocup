@@ -259,6 +259,13 @@ Details: {0}</value>
   <data name="UnexpectedErrorT" xml:space="preserve">
     <value>Unerwarteter Fehler</value>
   </data>
+  <data name="VhfCompatMode" xml:space="preserve">
+    <value>Die Vokabeheft-Datei wurde mit einer neueren Version von Vocup gespeichert. Sie wird im Kompatibilitätsmodus geöffnet. Es werden nicht alle Informationen sichtbar sein.
+Es wird empfohlen, dass Sie Vocup auf die neueste Version aktualisieren.</value>
+  </data>
+  <data name="VhfCompatModeT" xml:space="preserve">
+    <value>Kompatibilitätsmodus</value>
+  </data>
   <data name="VhfCorruptFile" xml:space="preserve">
     <value>Die Vokabelheftdatei ist fehlerhaft und konnte nicht geöffnet werden.</value>
   </data>

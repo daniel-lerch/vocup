@@ -22,12 +22,21 @@ public class BookFileFormatTests : IAsyncDisposable
     }
 
     [Fact]
+    public void TestRead_Empty()
+    {
+        string path = Path.Join("Resources", "Vhf_Empty.vhf");
+        VocabularyBook book = new();
+        var ex = Assert.Throws<VhfFormatException>(() => BookFileFormat.DetectAndRead(path, book, "Resources"));
+        Assert.Equal(VhfError.InvalidVersion, ex.ErrorCode);
+    }
+
+    [Fact]
     public void TestReadVhf1()
     {
         string vhrPath = "Resources";
         string path = Path.Join("Resources", "Year 11 (vhf1).vhf");
         VocabularyBook book = new();
-        BookFileFormat.DetectAndRead(path, book, vhrPath);
+        Assert.True(BookFileFormat.DetectAndRead(path, book, vhrPath));
 
         Assert.Equal("Deutsch", book.MotherTongue);
         Assert.Equal("Englisch", book.ForeignLang);
@@ -35,6 +44,24 @@ public class BookFileFormatTests : IAsyncDisposable
         Assert.EndsWith(path, book.FilePath);
         Assert.Equal("2jgh9u3tuPCfYLxhhCJXGyPN", book.VhrCode);
         Assert.Equal(PracticeMode.AskForForeignLang, book.PracticeMode);
+    }
+
+    [Fact]
+    public void TestReadVhf1_InvalidBase64()
+    {
+        string path = Path.Join("Resources", "Vhf1_InvalidBase64.vhf");
+        VocabularyBook book = new();
+        var ex = Assert.Throws<VhfFormatException>(() => BookFileFormat.DetectAndRead(path, book, "Resources"));
+        Assert.Equal(VhfError.InvalidCiphertext, ex.ErrorCode);
+    }
+
+    [Fact]
+    public void TestReadVhf1_RandomBase64()
+    {
+        string path = Path.Join("Resources", "Vhf1_RandomBase64.vhf");
+        VocabularyBook book = new();
+        var ex = Assert.Throws<VhfFormatException>(() => BookFileFormat.DetectAndRead(path, book, "Resources"));
+        Assert.Equal(VhfError.InvalidCiphertext, ex.ErrorCode);
     }
 
     [Fact]
@@ -51,7 +78,7 @@ public class BookFileFormatTests : IAsyncDisposable
         Assert.False(string.IsNullOrEmpty(expected.FilePath));
 
         VocabularyBook actual = new();
-        BookFileFormat.DetectAndRead(path, actual, tempPath);
+        Assert.True(BookFileFormat.DetectAndRead(path, actual, tempPath));
 
         Assert.Equal(expected.MotherTongue, actual.MotherTongue);
         Assert.Equal(expected.ForeignLang, actual.ForeignLang);
@@ -79,7 +106,7 @@ public class BookFileFormatTests : IAsyncDisposable
         Assert.False(string.IsNullOrEmpty(original.FilePath));
 
         VocabularyBook actual = new();
-        BookFileFormat.DetectAndRead(path, actual, tempPath);
+        Assert.True(BookFileFormat.DetectAndRead(path, actual, tempPath));
 
         Assert.Equal(original.MotherTongue, actual.MotherTongue);
         Assert.Equal(original.ForeignLang, actual.ForeignLang);
@@ -97,7 +124,7 @@ public class BookFileFormatTests : IAsyncDisposable
     {
         string path = Path.Join("Resources", "Year 11 (vhf2).vhf");
         VocabularyBook book = new();
-        BookFileFormat.DetectAndRead(path, book, "Resources");
+        Assert.True(BookFileFormat.DetectAndRead(path, book, "Resources"));
 
         Assert.Equal("Deutsch", book.MotherTongue);
         Assert.Equal("Englisch", book.ForeignLang);
@@ -105,6 +132,30 @@ public class BookFileFormatTests : IAsyncDisposable
         Assert.EndsWith(path, book.FilePath);
         Assert.Null(book.VhrCode); // VhrCode is not used in vhf2 format
         Assert.Equal(PracticeMode.AskForForeignLang, book.PracticeMode);
+    }
+
+    [Fact]
+    public void TestReadVhf2_CompatMode()
+    {
+        string path = Path.Join("Resources", "Vhf2_CompatMode.vhf");
+        VocabularyBook book = new();
+        Assert.False(BookFileFormat.DetectAndRead(path, book, "Resources"));
+
+        Assert.Equal("Deutsch", book.MotherTongue);
+        Assert.Equal("Englisch", book.ForeignLang);
+        Assert.Empty(book.Words);
+        Assert.EndsWith(path, book.FilePath);
+        Assert.Null(book.VhrCode); // VhrCode is not used in vhf2 format
+        Assert.Equal(PracticeMode.AskForForeignLang, book.PracticeMode);
+    }
+
+    [Fact]
+    public void TestReadVhf2_UpdateRequired()
+    {
+        string path = Path.Join("Resources", "Vhf2_UpdateRequired.vhf");
+        VocabularyBook book = new();
+        var ex = Assert.Throws<VhfFormatException>(() => BookFileFormat.DetectAndRead(path, book, "Resources"));
+        Assert.Equal(VhfError.UpdateRequired, ex.ErrorCode);
     }
 
     [Fact]
@@ -120,7 +171,7 @@ public class BookFileFormatTests : IAsyncDisposable
         Assert.False(string.IsNullOrEmpty(expected.FilePath));
 
         VocabularyBook actual = new();
-        BookFileFormat.DetectAndRead(path, actual, tempPath);
+        Assert.True(BookFileFormat.DetectAndRead(path, actual, tempPath));
 
         Assert.Equal(expected.MotherTongue, actual.MotherTongue);
         Assert.Equal(expected.ForeignLang, actual.ForeignLang);
