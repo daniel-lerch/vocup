@@ -260,7 +260,7 @@ Details: {0}</value>
     <value>Onbekende fout</value>
   </data>
   <data name="VhfCompatMode" xml:space="preserve">
-    <value>Het woordenboekbestand werd opgeslagen door een latere versie van Vocup. Het zal geopend worden in compatibiliteitsmodus. Niet alle informatie zal zichtbaar zijn.
+    <value>Het woordenboekbestand is opgeslagen in een nieuwere versie van Vocup. Het zal geopend worden in compatibiliteitsmodus. Niet alle informatie zal zichtbaar zijn.
 Het is aanbevolen om Vocup te updaten naar de laatste versie.</value>
   </data>
   <data name="VhfCompatModeT" xml:space="preserve">
