@@ -192,6 +192,9 @@
   <data name="SaveVocabularyBook" xml:space="preserve">
     <value>Save vocabulary book</value>
   </data>
+  <data name="ShareVocabularyBook" xml:space="preserve">
+    <value>Share vocabulary book without practice results</value>
+  </data>
   <data name="Site" xml:space="preserve">
     <value>Site</value>
   </data>

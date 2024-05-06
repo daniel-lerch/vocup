@@ -69,39 +69,12 @@ public class BookFileFormatTests : IAsyncDisposable
     {
         string tempPath = Path.GetTempPath();
         string path = Path.Combine(tempPath, $"Vocup_{nameof(TestWriteReadVhf1)}.vhf");
-        VocabularyBook expected = GenerateSampleBook();
-        expected.VhrCode = "o5xqm7rdg6y9fecs9ykuuckv";
-
-        using (FileStream stream = new(path, FileMode.Create, FileAccess.Write, FileShare.None))
-            BookFileFormat.Vhf1.Write(stream, expected, tempPath);
-
-        Assert.False(string.IsNullOrEmpty(expected.FilePath));
-
-        VocabularyBook actual = new();
-        Assert.True(BookFileFormat.DetectAndRead(path, actual, tempPath));
-
-        Assert.Equal(expected.MotherTongue, actual.MotherTongue);
-        Assert.Equal(expected.ForeignLang, actual.ForeignLang);
-        Assert.Equal(expected.Words.Count, actual.Words.Count);
-        Assert.Equal(expected.FilePath, actual.FilePath);
-        Assert.Equal(expected.VhrCode, actual.VhrCode);
-        Assert.Equal(expected.PracticeMode, actual.PracticeMode);
-
-        File.Delete(path);
-        File.Delete(Path.Combine(tempPath, "o5xqm7rdg6y9fecs9ykuuckv.vhr"));
-    }
-
-    [Fact]
-    public void TestWriteReadVhf1_PracticeModeMixed()
-    {
-        string tempPath = Path.GetTempPath();
-        string path = Path.Combine(tempPath, $"Vocup_{nameof(TestWriteReadVhf1)}.vhf");
+        string vhrCode = "o5xqm7rdg6y9fecs9ykuuckv";
         VocabularyBook original = GenerateSampleBook();
-        original.PracticeMode = PracticeMode.AskForBothMixed;
-        original.VhrCode = "ina5ucmjup2sbcioxdsrvqsu";
+        original.VhrCode = vhrCode;
 
         using (FileStream stream = new(path, FileMode.Create, FileAccess.Write, FileShare.None))
-            BookFileFormat.Vhf1.Write(stream, original, tempPath);
+            BookFileFormat.Vhf1.Write(stream, original, tempPath, includeResults: true);
 
         Assert.False(string.IsNullOrEmpty(original.FilePath));
 
@@ -111,12 +84,75 @@ public class BookFileFormatTests : IAsyncDisposable
         Assert.Equal(original.MotherTongue, actual.MotherTongue);
         Assert.Equal(original.ForeignLang, actual.ForeignLang);
         Assert.Equal(original.Words.Count, actual.Words.Count);
+        Assert.Equal(original.Words[1].PracticeStateNumber, actual.Words[1].PracticeStateNumber);
+        Assert.Equal(original.Words[1].PracticeDate, actual.Words[1].PracticeDate);
+        Assert.Equal(original.FilePath, actual.FilePath);
+        Assert.Equal(original.VhrCode, actual.VhrCode);
+        Assert.Equal(original.PracticeMode, actual.PracticeMode);
+
+        File.Delete(path);
+        File.Delete(Path.Combine(tempPath, vhrCode + ".vhr"));
+    }
+
+    [Fact]
+    public void TestWriteReadVhf1_PracticeModeMixed()
+    {
+        string tempPath = Path.GetTempPath();
+        string path = Path.Combine(tempPath, $"Vocup_{nameof(TestWriteReadVhf1_PracticeModeMixed)}.vhf");
+        string vhrCode = "ina5ucmjup2sbcioxdsrvqsu";
+        VocabularyBook original = GenerateSampleBook();
+        original.PracticeMode = PracticeMode.AskForBothMixed;
+        original.VhrCode = vhrCode;
+
+        using (FileStream stream = new(path, FileMode.Create, FileAccess.Write, FileShare.None))
+            BookFileFormat.Vhf1.Write(stream, original, tempPath, includeResults: true);
+
+        Assert.False(string.IsNullOrEmpty(original.FilePath));
+
+        VocabularyBook actual = new();
+        Assert.True(BookFileFormat.DetectAndRead(path, actual, tempPath));
+
+        Assert.Equal(original.MotherTongue, actual.MotherTongue);
+        Assert.Equal(original.ForeignLang, actual.ForeignLang);
+        Assert.Equal(original.Words.Count, actual.Words.Count);
+        Assert.Equal(original.Words[1].PracticeStateNumber, actual.Words[1].PracticeStateNumber);
+        Assert.Equal(original.Words[1].PracticeDate, actual.Words[1].PracticeDate);
         Assert.Equal(original.FilePath, actual.FilePath);
         Assert.Equal(original.VhrCode, actual.VhrCode);
         Assert.Equal(PracticeMode.AskForForeignLang, actual.PracticeMode);
 
         File.Delete(path);
-        File.Delete(Path.Combine(tempPath, "o5xqm7rdg6y9fecs9ykuuckv.vhr"));
+        File.Delete(Path.Combine(tempPath, vhrCode + ".vhr"));
+    }
+
+    [Fact]
+    public void TestWriteReadVhf1_WithoutResults()
+    {
+        string tempPath = Path.GetTempPath();
+        string path = Path.Combine(tempPath, $"Vocup_{nameof(TestWriteReadVhf1_WithoutResults)}.vhf");
+        string vhrCode = "wetwjlvwhspsre4slcb01mwk";
+        VocabularyBook original = GenerateSampleBook();
+        original.VhrCode = vhrCode;
+
+        using (FileStream stream = new(path, FileMode.Create, FileAccess.Write, FileShare.None))
+            BookFileFormat.Vhf1.Write(stream, original, tempPath, includeResults: false);
+
+        Assert.False(string.IsNullOrEmpty(original.FilePath));
+
+        VocabularyBook actual = new();
+        Assert.True(BookFileFormat.DetectAndRead(path, actual, tempPath));
+
+        Assert.Equal(original.MotherTongue, actual.MotherTongue);
+        Assert.Equal(original.ForeignLang, actual.ForeignLang);
+        Assert.Equal(original.Words.Count, actual.Words.Count);
+        Assert.Equal(default, actual.Words[1].PracticeStateNumber);
+        Assert.Equal(default, actual.Words[1].PracticeDate);
+        Assert.Equal(original.FilePath, actual.FilePath);
+        Assert.Null(actual.VhrCode);
+        Assert.Equal(PracticeMode.AskForForeignLang, actual.PracticeMode);
+        Assert.False(File.Exists(Path.Combine(tempPath, vhrCode + ".vhr")));
+
+        File.Delete(path);
     }
 
     [Fact]
@@ -163,22 +199,51 @@ public class BookFileFormatTests : IAsyncDisposable
     {
         string tempPath = Path.GetTempPath();
         string path = Path.Combine(tempPath, $"Vocup_{nameof(TestWriteReadVhf2)}.vhf");
-        VocabularyBook expected = GenerateSampleBook();
+        VocabularyBook original = GenerateSampleBook();
 
         using (FileStream stream = new(path, FileMode.Create, FileAccess.Write, FileShare.None))
-            BookFileFormat.Vhf2.Write(stream, expected, null!);
+            BookFileFormat.Vhf2.Write(stream, original, vhrPath: null!, includeResults: true);
 
-        Assert.False(string.IsNullOrEmpty(expected.FilePath));
+        Assert.False(string.IsNullOrEmpty(original.FilePath));
 
         VocabularyBook actual = new();
         Assert.True(BookFileFormat.DetectAndRead(path, actual, tempPath));
 
-        Assert.Equal(expected.MotherTongue, actual.MotherTongue);
-        Assert.Equal(expected.ForeignLang, actual.ForeignLang);
-        Assert.Equal(expected.Words.Count, actual.Words.Count);
-        Assert.Equal(expected.FilePath, actual.FilePath);
+        Assert.Equal(original.MotherTongue, actual.MotherTongue);
+        Assert.Equal(original.ForeignLang, actual.ForeignLang);
+        Assert.Equal(original.Words.Count, actual.Words.Count);
+        Assert.Equal(original.Words[1].PracticeStateNumber, actual.Words[1].PracticeStateNumber);
+        Assert.Equal(original.Words[1].PracticeDate, actual.Words[1].PracticeDate);
+        Assert.Equal(original.FilePath, actual.FilePath);
         Assert.Null(actual.VhrCode); // VhrCode is not used in vhf2 format
-        Assert.Equal(expected.PracticeMode, actual.PracticeMode);
+        Assert.Equal(original.PracticeMode, actual.PracticeMode);
+
+        File.Delete(path);
+    }
+
+    [Fact]
+    public void TestWriteReadVhf2_WithoutResults()
+    {
+        string tempPath = Path.GetTempPath();
+        string path = Path.Combine(tempPath, $"Vocup_{nameof(TestWriteReadVhf2_WithoutResults)}.vhf");
+        VocabularyBook original = GenerateSampleBook();
+
+        using (FileStream stream = new(path, FileMode.Create, FileAccess.Write, FileShare.None))
+            BookFileFormat.Vhf2.Write(stream, original, vhrPath: null!, includeResults: false);
+
+        Assert.False(string.IsNullOrEmpty(original.FilePath));
+
+        VocabularyBook actual = new();
+        Assert.True(BookFileFormat.DetectAndRead(path, actual, tempPath));
+
+        Assert.Equal(original.MotherTongue, actual.MotherTongue);
+        Assert.Equal(original.ForeignLang, actual.ForeignLang);
+        Assert.Equal(original.Words.Count, actual.Words.Count);
+        Assert.Equal(default, actual.Words[1].PracticeStateNumber);
+        Assert.Equal(default, actual.Words[1].PracticeDate);
+        Assert.Equal(original.FilePath, actual.FilePath);
+        Assert.Null(actual.VhrCode); // VhrCode is not used in vhf2 format
+        Assert.Equal(original.PracticeMode, actual.PracticeMode);
 
         File.Delete(path);
     }

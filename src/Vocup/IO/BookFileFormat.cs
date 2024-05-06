@@ -73,14 +73,14 @@ public abstract class BookFileFormat
         return zipHeader;
     }
 
-    public bool TryWrite(string path, VocabularyBook book, string vhrPath)
+    public bool TryWrite(string path, VocabularyBook book, string vhrPath, bool includeResults = true)
     {
         try
         {
             //await default(HopToThreadPoolAwaitable); // Perform IO operations on a separate thread
 
             using FileStream stream = new(path, FileMode.Create, FileAccess.Write, FileShare.None);
-            Write(stream, book, vhrPath);
+            Write(stream, book, vhrPath, includeResults);
             return true;
         }
         catch (Exception ex)
@@ -90,7 +90,7 @@ public abstract class BookFileFormat
         }
     }
 
-    public abstract void Write(FileStream stream, VocabularyBook book, string vhrPath);
+    public abstract void Write(FileStream stream, VocabularyBook book, string vhrPath, bool includeResults);
 
     protected static bool TryDeleteVhrFile(string? vhrCode, string vhrPath)
     {

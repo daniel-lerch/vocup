@@ -373,6 +373,16 @@ namespace Vocup.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Share {
+            get {
+                object obj = ResourceManager.GetObject("Share", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Unpracticed {
             get {
                 object obj = ResourceManager.GetObject("Unpracticed", resourceCulture);

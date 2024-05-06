@@ -13,6 +13,7 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <ApplicationDefaultFont>Microsoft Sans Serif, 8.25pt</ApplicationDefaultFont>
     <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <ForceDesignerDpiUnaware>true</ForceDesignerDpiUnaware>
     <Description>Vocabulary training application</Description>
     <Company>VectorData</Company>
     <Copyright>Copyright © 2011 Florian Amstutz, © 2018-2023 Daniel Lerch.</Copyright>

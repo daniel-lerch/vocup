@@ -192,6 +192,9 @@
   <data name="SaveVocabularyBook" xml:space="preserve">
     <value>Vokabelheft speichern</value>
   </data>
+  <data name="ShareVocabularyBook" xml:space="preserve">
+    <value>Vokabelheft ohne Übungsergebnisse teilen</value>
+  </data>
   <data name="Site" xml:space="preserve">
     <value>Seite</value>
   </data>

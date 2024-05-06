@@ -63,6 +63,7 @@ public partial class MainForm : Form, IMainForm
         TsbPrint.Enabled = value;
 
         TsmiExport.Enabled = value;
+        TsmiShare.Enabled = value;
     }
     public void VocabularyBookPracticable(bool value)
     {
@@ -355,6 +356,38 @@ public partial class MainForm : Form, IMainForm
     private void TsmiSave_Click(object sender, EventArgs e) => SaveFile(false);
     private void TsmiSaveAs_Click(object sender, EventArgs e) => SaveFile(true);
     private void TsbSave_Click(object sender, EventArgs e) => SaveFile(false);
+
+    private void TsmiShare_Click(object sender, EventArgs e)
+    {
+        using SaveFileDialog save = new()
+        {
+            Title = Words.ShareVocabularyBook,
+            FileName = CurrentBook.MotherTongue + " - " + CurrentBook.ForeignLang,
+            InitialDirectory = Program.Settings.VhfPath,
+            Filter = $"{Words.FileFormatVhf2} (*.vhf)|*.vhf|{Words.FileFormatVhf1} (*.vhf)|*.vhf"
+        };
+        if (save.ShowDialog() == DialogResult.OK)
+        {
+            BookFileFormat format = save.FilterIndex == 2 ? BookFileFormat.Vhf1 : BookFileFormat.Vhf2;
+
+            if (format.TryWrite(save.FileName, CurrentBook, Program.Settings.VhrPath, includeResults: false))
+            {
+                try
+                {
+                    string explorer = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "explorer.exe");
+                    Process.Start(explorer, $"/select,\"{save.FileName}\"");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(string.Format(Messages.OpenInExplorerError, ex), Messages.OpenInExplorerErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        else
+        {
+            return;
+        }
+    }
 
     private void BtnPractice_Click(object sender, EventArgs e) => PracticeWords();
     private void TsmiPractice_Click(object sender, EventArgs e) => PracticeWords();

@@ -86,7 +86,7 @@ public class Vhf2Format : BookFileFormat
         }
     }
 
-    public override void Write(FileStream stream, VocabularyBook book, string vhrPath)
+    public override void Write(FileStream stream, VocabularyBook book, string vhrPath, bool includeResults)
     {
         using (ZipArchive archive = new(stream, ZipArchiveMode.Create, leaveOpen: true))
         {
@@ -100,7 +100,9 @@ public class Vhf2Format : BookFileFormat
 
             foreach (VocabularyWord word in book.Words)
             {
-                JsonWord jsonWord = new(word.MotherTongue, word.ForeignLang, word.ForeignLangSynonym, word.PracticeStateNumber, word.PracticeDate);
+                JsonWord jsonWord = includeResults
+                    ? new(word.MotherTongue, word.ForeignLang, word.ForeignLangSynonym, word.PracticeStateNumber, word.PracticeDate)
+                    : new(word.MotherTongue, word.ForeignLang, word.ForeignLangSynonym, 0, DateTime.MinValue);
                 jsonBook.Words.Add(jsonWord);
             }
 

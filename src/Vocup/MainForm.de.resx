@@ -250,4 +250,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Vocup</value>
   </data>
+  <data name="TsmiShare.Text" xml:space="preserve">
+    <value>Teilen ohne Übungsergebnisse</value>
+  </data>
 </root>

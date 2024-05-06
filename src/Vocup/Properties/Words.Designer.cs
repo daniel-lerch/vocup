@@ -277,6 +277,15 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Share vocabulary book without practice results.
+        /// </summary>
+        internal static string ShareVocabularyBook {
+            get {
+                return ResourceManager.GetString("ShareVocabularyBook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Site.
         /// </summary>
         internal static string Site {

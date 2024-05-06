@@ -69,7 +69,7 @@ public class Vhf1Format : BookFileFormat
         }
     }
 
-    public override void Write(FileStream stream, VocabularyBook book, string vhrPath)
+    public override void Write(FileStream stream, VocabularyBook book, string vhrPath, bool includeResults)
     {
         StringBuilder content = new();
         content.AppendLine("1.0");
@@ -88,7 +88,7 @@ public class Vhf1Format : BookFileFormat
 
         EncryptAndWrite(stream, content.ToString());
 
-        if (!string.IsNullOrEmpty(book.VhrCode))
+        if (includeResults && !string.IsNullOrEmpty(book.VhrCode))
         {
             // Write results to .vhr file
             WriteResults(book, stream.Name, book.VhrCode, vhrPath);
