@@ -52,7 +52,7 @@ public partial class MainForm : Form, IMainForm
         TsmiBookOptions.Enabled = value;
         TsmiCloseBook.Enabled = value;
         TsmiSaveAs.Enabled = value;
-	StatisticsPanel.Enabled = value;
+        StatisticsPanel.Enabled = value;
     }
     public void VocabularyBookHasContent(bool value)
     {
@@ -569,9 +569,7 @@ public partial class MainForm : Form, IMainForm
     {
         BookFileFormat format = BookFileFormat.Vhf2;
 
-        if (string.IsNullOrWhiteSpace(CurrentBook.FilePath) ||
-            string.IsNullOrWhiteSpace(CurrentBook.VhrCode) ||
-            saveAsNewFile)
+        if (string.IsNullOrWhiteSpace(CurrentBook.FilePath) || saveAsNewFile)
         {
             using SaveFileDialog save = new()
             {
