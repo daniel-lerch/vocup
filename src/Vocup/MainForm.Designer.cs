@@ -37,61 +37,62 @@
             System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
             System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
             System.Windows.Forms.ToolStripSeparator infoToolStripMenuItem;
-            this.MenuStrip = new Vocup.Controls.ResponsiveMenuStrip();
-            this.TsmiRootFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiCreateBook = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiOpenBook = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiCloseBook = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiSave = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiSaveAs = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiImport = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiExport = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiOpenInExplorer = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
-            this.TsmiPrint = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
-            this.TsmiExitApplication = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiRootEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiAddWord = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiEditWord = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiDeleteWord = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiRootTools = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiPractice = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiBookOptions = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiMerge = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiSpecialChar = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiSettings = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiRootHelp = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiEvaluationInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiUpdate = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.TbSearchWord = new System.Windows.Forms.TextBox();
-            this.GroupBook = new System.Windows.Forms.GroupBox();
-            this.BtnBookSettings = new Vocup.Controls.ResponsiveButton();
-            this.BtnPractice = new Vocup.Controls.ResponsiveButton();
-            this.GroupSearch = new System.Windows.Forms.GroupBox();
-            this.BtnSearchWord = new Vocup.Controls.ResponsiveButton();
-            this.GroupWord = new System.Windows.Forms.GroupBox();
-            this.BtnAddWord = new Vocup.Controls.ResponsiveButton();
-            this.BtnDeleteWord = new Vocup.Controls.ResponsiveButton();
-            this.BtnEditWord = new Vocup.Controls.ResponsiveButton();
-            this.StatusStrip = new System.Windows.Forms.StatusStrip();
-            this.StatusLbOldVersion = new System.Windows.Forms.ToolStripStatusLabel();
-            this.SideBar = new System.Windows.Forms.Panel();
-            this.GroupStatistics = new Vocup.Controls.StatisticsPanel();
-            this.SplitContainer = new Vocup.Controls.ResponsiveSplitContainer();
-            this.FileTreeView = new Vocup.Controls.FileTreeView();
-            this.LbEmptyForm = new System.Windows.Forms.Label();
-            this.ToolStrip = new Vocup.Controls.ResponsiveToolStrip();
-            this.TsbCreateBook = new System.Windows.Forms.ToolStripButton();
-            this.TsbOpenBook = new System.Windows.Forms.ToolStripButton();
-            this.TsbSave = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.TsbPrint = new System.Windows.Forms.ToolStripButton();
-            this.TsbEvaluationInfo = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.TableLayout = new System.Windows.Forms.TableLayoutPanel();
+            MenuStrip = new Controls.ResponsiveMenuStrip();
+            TsmiRootFile = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiCreateBook = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiOpenBook = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiCloseBook = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiSave = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiShare = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiImport = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiExport = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiOpenInExplorer = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
+            TsmiPrint = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            TsmiExitApplication = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiRootEdit = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiAddWord = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiEditWord = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiDeleteWord = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiRootTools = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiPractice = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiBookOptions = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiMerge = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiSpecialChar = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiSettings = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiRootHelp = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiEvaluationInfo = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiUpdate = new System.Windows.Forms.ToolStripMenuItem();
+            TsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
+            TbSearchWord = new System.Windows.Forms.TextBox();
+            GroupBook = new System.Windows.Forms.GroupBox();
+            BtnBookSettings = new Controls.ResponsiveButton();
+            BtnPractice = new Controls.ResponsiveButton();
+            GroupSearch = new System.Windows.Forms.GroupBox();
+            BtnSearchWord = new Controls.ResponsiveButton();
+            GroupWord = new System.Windows.Forms.GroupBox();
+            BtnAddWord = new Controls.ResponsiveButton();
+            BtnDeleteWord = new Controls.ResponsiveButton();
+            BtnEditWord = new Controls.ResponsiveButton();
+            StatusStrip = new System.Windows.Forms.StatusStrip();
+            StatusLbOldVersion = new System.Windows.Forms.ToolStripStatusLabel();
+            SideBar = new System.Windows.Forms.Panel();
+            GroupStatistics = new Controls.StatisticsPanel();
+            SplitContainer = new Controls.ResponsiveSplitContainer();
+            FileTreeView = new Controls.FileTreeView();
+            LbEmptyForm = new System.Windows.Forms.Label();
+            ToolStrip = new Controls.ResponsiveToolStrip();
+            TsbCreateBook = new System.Windows.Forms.ToolStripButton();
+            TsbOpenBook = new System.Windows.Forms.ToolStripButton();
+            TsbSave = new System.Windows.Forms.ToolStripButton();
+            toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            TsbPrint = new System.Windows.Forms.ToolStripButton();
+            TsbEvaluationInfo = new System.Windows.Forms.ToolStripButton();
+            toolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            TableLayout = new System.Windows.Forms.TableLayoutPanel();
             toolStripMenuItem11 = new System.Windows.Forms.ToolStripSeparator();
             toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
             toolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
@@ -100,19 +101,19 @@
             toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
             toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
             infoToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
-            this.MenuStrip.SuspendLayout();
-            this.GroupBook.SuspendLayout();
-            this.GroupSearch.SuspendLayout();
-            this.GroupWord.SuspendLayout();
-            this.StatusStrip.SuspendLayout();
-            this.SideBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SplitContainer)).BeginInit();
-            this.SplitContainer.Panel1.SuspendLayout();
-            this.SplitContainer.Panel2.SuspendLayout();
-            this.SplitContainer.SuspendLayout();
-            this.ToolStrip.SuspendLayout();
-            this.TableLayout.SuspendLayout();
-            this.SuspendLayout();
+            MenuStrip.SuspendLayout();
+            GroupBook.SuspendLayout();
+            GroupSearch.SuspendLayout();
+            GroupWord.SuspendLayout();
+            StatusStrip.SuspendLayout();
+            SideBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)SplitContainer).BeginInit();
+            SplitContainer.Panel1.SuspendLayout();
+            SplitContainer.Panel2.SuspendLayout();
+            SplitContainer.SuspendLayout();
+            ToolStrip.SuspendLayout();
+            TableLayout.SuspendLayout();
+            SuspendLayout();
             // 
             // toolStripMenuItem11
             // 
@@ -156,490 +157,452 @@
             // 
             // MenuStrip
             // 
-            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TsmiRootFile,
-            this.TsmiRootEdit,
-            this.TsmiRootTools,
-            this.TsmiRootHelp});
-            resources.ApplyResources(this.MenuStrip, "MenuStrip");
-            this.MenuStrip.Name = "MenuStrip";
+            MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { TsmiRootFile, TsmiRootEdit, TsmiRootTools, TsmiRootHelp });
+            resources.ApplyResources(MenuStrip, "MenuStrip");
+            MenuStrip.Name = "MenuStrip";
             // 
             // TsmiRootFile
             // 
-            this.TsmiRootFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TsmiCreateBook,
-            this.TsmiOpenBook,
-            this.TsmiCloseBook,
-            toolStripMenuItem11,
-            this.TsmiSave,
-            this.TsmiSaveAs,
-            toolStripMenuItem10,
-            this.TsmiImport,
-            this.TsmiExport,
-            toolStripMenuItem9,
-            this.TsmiOpenInExplorer,
-            this.toolStripMenuItem7,
-            this.TsmiPrint,
-            this.toolStripMenuItem3,
-            this.TsmiExitApplication});
-            this.TsmiRootFile.Name = "TsmiRootFile";
-            resources.ApplyResources(this.TsmiRootFile, "TsmiRootFile");
+            TsmiRootFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { TsmiCreateBook, TsmiOpenBook, TsmiCloseBook, toolStripMenuItem11, TsmiSave, TsmiSaveAs, TsmiShare, toolStripMenuItem10, TsmiImport, TsmiExport, toolStripMenuItem9, TsmiOpenInExplorer, toolStripMenuItem7, TsmiPrint, toolStripMenuItem3, TsmiExitApplication });
+            TsmiRootFile.Name = "TsmiRootFile";
+            resources.ApplyResources(TsmiRootFile, "TsmiRootFile");
             // 
             // TsmiCreateBook
             // 
-            this.TsmiCreateBook.Image = global::Vocup.Properties.Icons.File;
-            this.TsmiCreateBook.Name = "TsmiCreateBook";
-            resources.ApplyResources(this.TsmiCreateBook, "TsmiCreateBook");
-            this.TsmiCreateBook.Click += new System.EventHandler(this.TsmiCreateBook_Click);
+            TsmiCreateBook.Image = Properties.Icons.File;
+            TsmiCreateBook.Name = "TsmiCreateBook";
+            resources.ApplyResources(TsmiCreateBook, "TsmiCreateBook");
+            TsmiCreateBook.Click += TsmiCreateBook_Click;
             // 
             // TsmiOpenBook
             // 
-            this.TsmiOpenBook.Image = global::Vocup.Properties.Icons.Open;
-            this.TsmiOpenBook.Name = "TsmiOpenBook";
-            resources.ApplyResources(this.TsmiOpenBook, "TsmiOpenBook");
-            this.TsmiOpenBook.Click += new System.EventHandler(this.TsmiOpenBook_Click);
+            TsmiOpenBook.Image = Properties.Icons.Open;
+            TsmiOpenBook.Name = "TsmiOpenBook";
+            resources.ApplyResources(TsmiOpenBook, "TsmiOpenBook");
+            TsmiOpenBook.Click += TsmiOpenBook_Click;
             // 
             // TsmiCloseBook
             // 
-            resources.ApplyResources(this.TsmiCloseBook, "TsmiCloseBook");
-            this.TsmiCloseBook.Image = global::Vocup.Properties.Icons.Cancel;
-            this.TsmiCloseBook.Name = "TsmiCloseBook";
-            this.TsmiCloseBook.Click += new System.EventHandler(this.TsmiCloseBook_Click);
+            resources.ApplyResources(TsmiCloseBook, "TsmiCloseBook");
+            TsmiCloseBook.Image = Properties.Icons.Cancel;
+            TsmiCloseBook.Name = "TsmiCloseBook";
+            TsmiCloseBook.Click += TsmiCloseBook_Click;
             // 
             // TsmiSave
             // 
-            resources.ApplyResources(this.TsmiSave, "TsmiSave");
-            this.TsmiSave.Image = global::Vocup.Properties.Icons.Save;
-            this.TsmiSave.Name = "TsmiSave";
-            this.TsmiSave.Click += new System.EventHandler(this.TsmiSave_Click);
+            resources.ApplyResources(TsmiSave, "TsmiSave");
+            TsmiSave.Image = Properties.Icons.Save;
+            TsmiSave.Name = "TsmiSave";
+            TsmiSave.Click += TsmiSave_Click;
             // 
             // TsmiSaveAs
             // 
-            resources.ApplyResources(this.TsmiSaveAs, "TsmiSaveAs");
-            this.TsmiSaveAs.Image = global::Vocup.Properties.Icons.SaveAll;
-            this.TsmiSaveAs.Name = "TsmiSaveAs";
-            this.TsmiSaveAs.Click += new System.EventHandler(this.TsmiSaveAs_Click);
+            resources.ApplyResources(TsmiSaveAs, "TsmiSaveAs");
+            TsmiSaveAs.Image = Properties.Icons.SaveAll;
+            TsmiSaveAs.Name = "TsmiSaveAs";
+            TsmiSaveAs.Click += TsmiSaveAs_Click;
+            // 
+            // TsmiShare
+            // 
+            resources.ApplyResources(TsmiShare, "TsmiShare");
+            TsmiShare.Image = Properties.Icons.Share;
+            TsmiShare.Name = "TsmiShare";
+            TsmiShare.Click += TsmiShare_Click;
             // 
             // TsmiImport
             // 
-            this.TsmiImport.Image = global::Vocup.Properties.Icons.Import;
-            this.TsmiImport.Name = "TsmiImport";
-            resources.ApplyResources(this.TsmiImport, "TsmiImport");
-            this.TsmiImport.Click += new System.EventHandler(this.TsmiImport_Click);
+            TsmiImport.Image = Properties.Icons.Import;
+            TsmiImport.Name = "TsmiImport";
+            resources.ApplyResources(TsmiImport, "TsmiImport");
+            TsmiImport.Click += TsmiImport_Click;
             // 
             // TsmiExport
             // 
-            resources.ApplyResources(this.TsmiExport, "TsmiExport");
-            this.TsmiExport.Image = global::Vocup.Properties.Icons.Export;
-            this.TsmiExport.Name = "TsmiExport";
-            this.TsmiExport.Click += new System.EventHandler(this.TsmiExport_Click);
+            resources.ApplyResources(TsmiExport, "TsmiExport");
+            TsmiExport.Image = Properties.Icons.Export;
+            TsmiExport.Name = "TsmiExport";
+            TsmiExport.Click += TsmiExport_Click;
             // 
             // TsmiOpenInExplorer
             // 
-            resources.ApplyResources(this.TsmiOpenInExplorer, "TsmiOpenInExplorer");
-            this.TsmiOpenInExplorer.Image = global::Vocup.Properties.Icons.Open;
-            this.TsmiOpenInExplorer.Name = "TsmiOpenInExplorer";
-            this.TsmiOpenInExplorer.Click += new System.EventHandler(this.TsmiOpenInExplorer_Click);
+            resources.ApplyResources(TsmiOpenInExplorer, "TsmiOpenInExplorer");
+            TsmiOpenInExplorer.Image = Properties.Icons.Open;
+            TsmiOpenInExplorer.Name = "TsmiOpenInExplorer";
+            TsmiOpenInExplorer.Click += TsmiOpenInExplorer_Click;
             // 
             // toolStripMenuItem7
             // 
-            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            resources.ApplyResources(this.toolStripMenuItem7, "toolStripMenuItem7");
+            toolStripMenuItem7.Name = "toolStripMenuItem7";
+            resources.ApplyResources(toolStripMenuItem7, "toolStripMenuItem7");
             // 
             // TsmiPrint
             // 
-            resources.ApplyResources(this.TsmiPrint, "TsmiPrint");
-            this.TsmiPrint.Image = global::Vocup.Properties.Icons.Print;
-            this.TsmiPrint.Name = "TsmiPrint";
-            this.TsmiPrint.Click += new System.EventHandler(this.TsmiPrint_Click);
+            resources.ApplyResources(TsmiPrint, "TsmiPrint");
+            TsmiPrint.Image = Properties.Icons.Print;
+            TsmiPrint.Name = "TsmiPrint";
+            TsmiPrint.Click += TsmiPrint_Click;
             // 
             // toolStripMenuItem3
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
+            toolStripMenuItem3.Name = "toolStripMenuItem3";
+            resources.ApplyResources(toolStripMenuItem3, "toolStripMenuItem3");
             // 
             // TsmiExitApplication
             // 
-            this.TsmiExitApplication.Image = global::Vocup.Properties.Icons.DoorOpened;
-            this.TsmiExitApplication.Name = "TsmiExitApplication";
-            resources.ApplyResources(this.TsmiExitApplication, "TsmiExitApplication");
-            this.TsmiExitApplication.Click += new System.EventHandler(this.TsmiExitApplication_Click);
+            TsmiExitApplication.Image = Properties.Icons.DoorOpened;
+            TsmiExitApplication.Name = "TsmiExitApplication";
+            resources.ApplyResources(TsmiExitApplication, "TsmiExitApplication");
+            TsmiExitApplication.Click += TsmiExitApplication_Click;
             // 
             // TsmiRootEdit
             // 
-            this.TsmiRootEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TsmiAddWord,
-            this.TsmiEditWord,
-            this.TsmiDeleteWord});
-            this.TsmiRootEdit.Name = "TsmiRootEdit";
-            resources.ApplyResources(this.TsmiRootEdit, "TsmiRootEdit");
+            TsmiRootEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { TsmiAddWord, TsmiEditWord, TsmiDeleteWord });
+            TsmiRootEdit.Name = "TsmiRootEdit";
+            resources.ApplyResources(TsmiRootEdit, "TsmiRootEdit");
             // 
             // TsmiAddWord
             // 
-            resources.ApplyResources(this.TsmiAddWord, "TsmiAddWord");
-            this.TsmiAddWord.Image = global::Vocup.Properties.Icons.Plus;
-            this.TsmiAddWord.Name = "TsmiAddWord";
-            this.TsmiAddWord.Click += new System.EventHandler(this.TsmiAddWord_Click);
+            resources.ApplyResources(TsmiAddWord, "TsmiAddWord");
+            TsmiAddWord.Image = Properties.Icons.Plus;
+            TsmiAddWord.Name = "TsmiAddWord";
+            TsmiAddWord.Click += TsmiAddWord_Click;
             // 
             // TsmiEditWord
             // 
-            resources.ApplyResources(this.TsmiEditWord, "TsmiEditWord");
-            this.TsmiEditWord.Image = global::Vocup.Properties.Icons.Edit;
-            this.TsmiEditWord.Name = "TsmiEditWord";
-            this.TsmiEditWord.Click += new System.EventHandler(this.TsmiEditWord_Click);
+            resources.ApplyResources(TsmiEditWord, "TsmiEditWord");
+            TsmiEditWord.Image = Properties.Icons.Edit;
+            TsmiEditWord.Name = "TsmiEditWord";
+            TsmiEditWord.Click += TsmiEditWord_Click;
             // 
             // TsmiDeleteWord
             // 
-            resources.ApplyResources(this.TsmiDeleteWord, "TsmiDeleteWord");
-            this.TsmiDeleteWord.Image = global::Vocup.Properties.Icons.Delete;
-            this.TsmiDeleteWord.Name = "TsmiDeleteWord";
-            this.TsmiDeleteWord.Click += new System.EventHandler(this.TsmiDeleteWord_Click);
+            resources.ApplyResources(TsmiDeleteWord, "TsmiDeleteWord");
+            TsmiDeleteWord.Image = Properties.Icons.Delete;
+            TsmiDeleteWord.Name = "TsmiDeleteWord";
+            TsmiDeleteWord.Click += TsmiDeleteWord_Click;
             // 
             // TsmiRootTools
             // 
-            this.TsmiRootTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TsmiPractice,
-            this.TsmiBookOptions,
-            toolStripMenuItem4,
-            this.TsmiMerge,
-            toolStripMenuItem5,
-            this.TsmiSpecialChar,
-            toolStripMenuItem6,
-            this.TsmiSettings});
-            this.TsmiRootTools.Name = "TsmiRootTools";
-            resources.ApplyResources(this.TsmiRootTools, "TsmiRootTools");
+            TsmiRootTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { TsmiPractice, TsmiBookOptions, toolStripMenuItem4, TsmiMerge, toolStripMenuItem5, TsmiSpecialChar, toolStripMenuItem6, TsmiSettings });
+            TsmiRootTools.Name = "TsmiRootTools";
+            resources.ApplyResources(TsmiRootTools, "TsmiRootTools");
             // 
             // TsmiPractice
             // 
-            resources.ApplyResources(this.TsmiPractice, "TsmiPractice");
-            this.TsmiPractice.Image = global::Vocup.Properties.Icons.LightningBolt;
-            this.TsmiPractice.Name = "TsmiPractice";
-            this.TsmiPractice.Click += new System.EventHandler(this.TsmiPractice_Click);
+            resources.ApplyResources(TsmiPractice, "TsmiPractice");
+            TsmiPractice.Image = Properties.Icons.LightningBolt;
+            TsmiPractice.Name = "TsmiPractice";
+            TsmiPractice.Click += TsmiPractice_Click;
             // 
             // TsmiBookOptions
             // 
-            resources.ApplyResources(this.TsmiBookOptions, "TsmiBookOptions");
-            this.TsmiBookOptions.Image = global::Vocup.Properties.Icons.FileSettings;
-            this.TsmiBookOptions.Name = "TsmiBookOptions";
-            this.TsmiBookOptions.Click += new System.EventHandler(this.TsmiBookOptions_Click);
+            resources.ApplyResources(TsmiBookOptions, "TsmiBookOptions");
+            TsmiBookOptions.Image = Properties.Icons.FileSettings;
+            TsmiBookOptions.Name = "TsmiBookOptions";
+            TsmiBookOptions.Click += TsmiBookOptions_Click;
             // 
             // TsmiMerge
             // 
-            this.TsmiMerge.Image = global::Vocup.Properties.Icons.MergeFiles;
-            this.TsmiMerge.Name = "TsmiMerge";
-            resources.ApplyResources(this.TsmiMerge, "TsmiMerge");
-            this.TsmiMerge.Click += new System.EventHandler(this.TsmiMerge_Click);
+            TsmiMerge.Image = Properties.Icons.MergeFiles;
+            TsmiMerge.Name = "TsmiMerge";
+            resources.ApplyResources(TsmiMerge, "TsmiMerge");
+            TsmiMerge.Click += TsmiMerge_Click;
             // 
             // TsmiSpecialChar
             // 
-            this.TsmiSpecialChar.Image = global::Vocup.Properties.Icons.Alphabet;
-            this.TsmiSpecialChar.Name = "TsmiSpecialChar";
-            resources.ApplyResources(this.TsmiSpecialChar, "TsmiSpecialChar");
-            this.TsmiSpecialChar.Click += new System.EventHandler(this.TsmiSpecialChar_Click);
+            TsmiSpecialChar.Image = Properties.Icons.Alphabet;
+            TsmiSpecialChar.Name = "TsmiSpecialChar";
+            resources.ApplyResources(TsmiSpecialChar, "TsmiSpecialChar");
+            TsmiSpecialChar.Click += TsmiSpecialChar_Click;
             // 
             // TsmiSettings
             // 
-            this.TsmiSettings.Image = global::Vocup.Properties.Icons.Settings;
-            this.TsmiSettings.Name = "TsmiSettings";
-            resources.ApplyResources(this.TsmiSettings, "TsmiSettings");
-            this.TsmiSettings.Click += new System.EventHandler(this.TsmiSettings_Click);
+            TsmiSettings.Image = Properties.Icons.Settings;
+            TsmiSettings.Name = "TsmiSettings";
+            resources.ApplyResources(TsmiSettings, "TsmiSettings");
+            TsmiSettings.Click += TsmiSettings_Click;
             // 
             // TsmiRootHelp
             // 
-            this.TsmiRootHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TsmiHelp,
-            this.TsmiEvaluationInfo,
-            toolStripMenuItem8,
-            this.TsmiUpdate,
-            infoToolStripMenuItem,
-            this.TsmiAbout});
-            this.TsmiRootHelp.Name = "TsmiRootHelp";
-            resources.ApplyResources(this.TsmiRootHelp, "TsmiRootHelp");
+            TsmiRootHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { TsmiHelp, TsmiEvaluationInfo, toolStripMenuItem8, TsmiUpdate, infoToolStripMenuItem, TsmiAbout });
+            TsmiRootHelp.Name = "TsmiRootHelp";
+            resources.ApplyResources(TsmiRootHelp, "TsmiRootHelp");
             // 
             // TsmiHelp
             // 
-            this.TsmiHelp.Image = global::Vocup.Properties.Icons.Help;
-            this.TsmiHelp.Name = "TsmiHelp";
-            resources.ApplyResources(this.TsmiHelp, "TsmiHelp");
-            this.TsmiHelp.Click += new System.EventHandler(this.TsmiHelp_Click);
+            TsmiHelp.Image = Properties.Icons.Help;
+            TsmiHelp.Name = "TsmiHelp";
+            resources.ApplyResources(TsmiHelp, "TsmiHelp");
+            TsmiHelp.Click += TsmiHelp_Click;
             // 
             // TsmiEvaluationInfo
             // 
-            this.TsmiEvaluationInfo.Image = global::Vocup.Properties.Icons.Info;
-            this.TsmiEvaluationInfo.Name = "TsmiEvaluationInfo";
-            resources.ApplyResources(this.TsmiEvaluationInfo, "TsmiEvaluationInfo");
-            this.TsmiEvaluationInfo.Click += new System.EventHandler(this.TsmiEvaluationInfo_Click);
+            TsmiEvaluationInfo.Image = Properties.Icons.Info;
+            TsmiEvaluationInfo.Name = "TsmiEvaluationInfo";
+            resources.ApplyResources(TsmiEvaluationInfo, "TsmiEvaluationInfo");
+            TsmiEvaluationInfo.Click += TsmiEvaluationInfo_Click;
             // 
             // TsmiUpdate
             // 
-            this.TsmiUpdate.Image = global::Vocup.Properties.Icons.Update;
-            this.TsmiUpdate.Name = "TsmiUpdate";
-            resources.ApplyResources(this.TsmiUpdate, "TsmiUpdate");
-            this.TsmiUpdate.Click += new System.EventHandler(this.TsmiUpdate_Click);
+            TsmiUpdate.Image = Properties.Icons.Update;
+            TsmiUpdate.Name = "TsmiUpdate";
+            resources.ApplyResources(TsmiUpdate, "TsmiUpdate");
+            TsmiUpdate.Click += TsmiUpdate_Click;
             // 
             // TsmiAbout
             // 
-            this.TsmiAbout.Image = global::Vocup.Properties.Icons.Info;
-            this.TsmiAbout.Name = "TsmiAbout";
-            resources.ApplyResources(this.TsmiAbout, "TsmiAbout");
-            this.TsmiAbout.Click += new System.EventHandler(this.TsmiAbout_Click);
+            TsmiAbout.Image = Properties.Icons.Info;
+            TsmiAbout.Name = "TsmiAbout";
+            resources.ApplyResources(TsmiAbout, "TsmiAbout");
+            TsmiAbout.Click += TsmiAbout_Click;
             // 
             // TbSearchWord
             // 
-            resources.ApplyResources(this.TbSearchWord, "TbSearchWord");
-            this.TbSearchWord.Name = "TbSearchWord";
-            this.TbSearchWord.TextChanged += new System.EventHandler(this.TbSearchWord_TextChanged);
+            resources.ApplyResources(TbSearchWord, "TbSearchWord");
+            TbSearchWord.Name = "TbSearchWord";
+            TbSearchWord.TextChanged += TbSearchWord_TextChanged;
             // 
             // GroupBook
             // 
-            this.GroupBook.Controls.Add(this.BtnBookSettings);
-            this.GroupBook.Controls.Add(this.BtnPractice);
-            resources.ApplyResources(this.GroupBook, "GroupBook");
-            this.GroupBook.Name = "GroupBook";
-            this.GroupBook.TabStop = false;
+            GroupBook.Controls.Add(BtnBookSettings);
+            GroupBook.Controls.Add(BtnPractice);
+            resources.ApplyResources(GroupBook, "GroupBook");
+            GroupBook.Name = "GroupBook";
+            GroupBook.TabStop = false;
             // 
             // BtnBookSettings
             // 
-            this.BtnBookSettings.BaseImage = global::Vocup.Properties.Icons.FileSettings;
-            resources.ApplyResources(this.BtnBookSettings, "BtnBookSettings");
-            this.BtnBookSettings.Name = "BtnBookSettings";
-            this.BtnBookSettings.UseVisualStyleBackColor = true;
-            this.BtnBookSettings.Click += new System.EventHandler(this.BtnBookSettings_Click);
+            BtnBookSettings.BaseImage = Properties.Icons.FileSettings;
+            resources.ApplyResources(BtnBookSettings, "BtnBookSettings");
+            BtnBookSettings.Name = "BtnBookSettings";
+            BtnBookSettings.UseVisualStyleBackColor = true;
+            BtnBookSettings.Click += BtnBookSettings_Click;
             // 
             // BtnPractice
             // 
-            this.BtnPractice.BaseImage = global::Vocup.Properties.Icons.LightningBolt;
-            resources.ApplyResources(this.BtnPractice, "BtnPractice");
-            this.BtnPractice.Name = "BtnPractice";
-            this.BtnPractice.UseVisualStyleBackColor = true;
-            this.BtnPractice.Click += new System.EventHandler(this.BtnPractice_Click);
+            BtnPractice.BaseImage = Properties.Icons.LightningBolt;
+            resources.ApplyResources(BtnPractice, "BtnPractice");
+            BtnPractice.Name = "BtnPractice";
+            BtnPractice.UseVisualStyleBackColor = true;
+            BtnPractice.Click += BtnPractice_Click;
             // 
             // GroupSearch
             // 
-            this.GroupSearch.Controls.Add(this.TbSearchWord);
-            this.GroupSearch.Controls.Add(this.BtnSearchWord);
-            resources.ApplyResources(this.GroupSearch, "GroupSearch");
-            this.GroupSearch.Name = "GroupSearch";
-            this.GroupSearch.TabStop = false;
+            GroupSearch.Controls.Add(TbSearchWord);
+            GroupSearch.Controls.Add(BtnSearchWord);
+            resources.ApplyResources(GroupSearch, "GroupSearch");
+            GroupSearch.Name = "GroupSearch";
+            GroupSearch.TabStop = false;
             // 
             // BtnSearchWord
             // 
-            this.BtnSearchWord.BaseImage = global::Vocup.Properties.Icons.Search;
-            resources.ApplyResources(this.BtnSearchWord, "BtnSearchWord");
-            this.BtnSearchWord.Name = "BtnSearchWord";
-            this.BtnSearchWord.UseVisualStyleBackColor = true;
-            this.BtnSearchWord.Click += new System.EventHandler(this.BtnSearchWord_Click);
+            BtnSearchWord.BaseImage = Properties.Icons.Search;
+            resources.ApplyResources(BtnSearchWord, "BtnSearchWord");
+            BtnSearchWord.Name = "BtnSearchWord";
+            BtnSearchWord.UseVisualStyleBackColor = true;
+            BtnSearchWord.Click += BtnSearchWord_Click;
             // 
             // GroupWord
             // 
-            this.GroupWord.Controls.Add(this.BtnAddWord);
-            this.GroupWord.Controls.Add(this.BtnDeleteWord);
-            this.GroupWord.Controls.Add(this.BtnEditWord);
-            resources.ApplyResources(this.GroupWord, "GroupWord");
-            this.GroupWord.Name = "GroupWord";
-            this.GroupWord.TabStop = false;
+            GroupWord.Controls.Add(BtnAddWord);
+            GroupWord.Controls.Add(BtnDeleteWord);
+            GroupWord.Controls.Add(BtnEditWord);
+            resources.ApplyResources(GroupWord, "GroupWord");
+            GroupWord.Name = "GroupWord";
+            GroupWord.TabStop = false;
             // 
             // BtnAddWord
             // 
-            this.BtnAddWord.BaseImage = global::Vocup.Properties.Icons.Plus;
-            resources.ApplyResources(this.BtnAddWord, "BtnAddWord");
-            this.BtnAddWord.Name = "BtnAddWord";
-            this.BtnAddWord.UseVisualStyleBackColor = true;
-            this.BtnAddWord.Click += new System.EventHandler(this.BtnAddWord_Click);
+            BtnAddWord.BaseImage = Properties.Icons.Plus;
+            resources.ApplyResources(BtnAddWord, "BtnAddWord");
+            BtnAddWord.Name = "BtnAddWord";
+            BtnAddWord.UseVisualStyleBackColor = true;
+            BtnAddWord.Click += BtnAddWord_Click;
             // 
             // BtnDeleteWord
             // 
-            this.BtnDeleteWord.BaseImage = global::Vocup.Properties.Icons.Delete;
-            resources.ApplyResources(this.BtnDeleteWord, "BtnDeleteWord");
-            this.BtnDeleteWord.Name = "BtnDeleteWord";
-            this.BtnDeleteWord.UseVisualStyleBackColor = true;
-            this.BtnDeleteWord.Click += new System.EventHandler(this.BtnDeleteWord_Click);
+            BtnDeleteWord.BaseImage = Properties.Icons.Delete;
+            resources.ApplyResources(BtnDeleteWord, "BtnDeleteWord");
+            BtnDeleteWord.Name = "BtnDeleteWord";
+            BtnDeleteWord.UseVisualStyleBackColor = true;
+            BtnDeleteWord.Click += BtnDeleteWord_Click;
             // 
             // BtnEditWord
             // 
-            this.BtnEditWord.BaseImage = global::Vocup.Properties.Icons.Edit;
-            resources.ApplyResources(this.BtnEditWord, "BtnEditWord");
-            this.BtnEditWord.Name = "BtnEditWord";
-            this.BtnEditWord.UseVisualStyleBackColor = true;
-            this.BtnEditWord.Click += new System.EventHandler(this.BtnEditWord_Click);
+            BtnEditWord.BaseImage = Properties.Icons.Edit;
+            resources.ApplyResources(BtnEditWord, "BtnEditWord");
+            BtnEditWord.Name = "BtnEditWord";
+            BtnEditWord.UseVisualStyleBackColor = true;
+            BtnEditWord.Click += BtnEditWord_Click;
             // 
             // StatusStrip
             // 
-            this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StatusLbOldVersion});
-            resources.ApplyResources(this.StatusStrip, "StatusStrip");
-            this.StatusStrip.Name = "StatusStrip";
+            StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { StatusLbOldVersion });
+            resources.ApplyResources(StatusStrip, "StatusStrip");
+            StatusStrip.Name = "StatusStrip";
             // 
             // StatusLbOldVersion
             // 
-            this.StatusLbOldVersion.Image = global::Vocup.Properties.Icons.Warning;
-            this.StatusLbOldVersion.Name = "StatusLbOldVersion";
-            this.StatusLbOldVersion.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            resources.ApplyResources(this.StatusLbOldVersion, "StatusLbOldVersion");
-            this.StatusLbOldVersion.Click += new System.EventHandler(this.StatusLbOldVersion_Click);
+            StatusLbOldVersion.Image = Properties.Icons.Warning;
+            StatusLbOldVersion.Name = "StatusLbOldVersion";
+            StatusLbOldVersion.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            resources.ApplyResources(StatusLbOldVersion, "StatusLbOldVersion");
+            StatusLbOldVersion.Click += StatusLbOldVersion_Click;
             // 
             // SideBar
             // 
-            this.SideBar.Controls.Add(this.GroupStatistics);
-            this.SideBar.Controls.Add(this.GroupBook);
-            this.SideBar.Controls.Add(this.GroupWord);
-            this.SideBar.Controls.Add(this.GroupSearch);
-            resources.ApplyResources(this.SideBar, "SideBar");
-            this.SideBar.Name = "SideBar";
+            SideBar.Controls.Add(GroupStatistics);
+            SideBar.Controls.Add(GroupBook);
+            SideBar.Controls.Add(GroupWord);
+            SideBar.Controls.Add(GroupSearch);
+            resources.ApplyResources(SideBar, "SideBar");
+            SideBar.Name = "SideBar";
             // 
             // GroupStatistics
             // 
-            this.GroupStatistics.CorrectlyPracticed = 0;
-            this.GroupStatistics.FullyPracticed = 0;
-            resources.ApplyResources(this.GroupStatistics, "GroupStatistics");
-            this.GroupStatistics.Name = "GroupStatistics";
-            this.GroupStatistics.Unpracticed = 0;
-            this.GroupStatistics.WronglyPracticed = 0;
+            GroupStatistics.CorrectlyPracticed = 0;
+            resources.ApplyResources(GroupStatistics, "GroupStatistics");
+            GroupStatistics.FullyPracticed = 0;
+            GroupStatistics.Name = "GroupStatistics";
+            GroupStatistics.Unpracticed = 0;
+            GroupStatistics.WronglyPracticed = 0;
             // 
             // SplitContainer
             // 
-            resources.ApplyResources(this.SplitContainer, "SplitContainer");
-            this.SplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.SplitContainer.Name = "SplitContainer";
+            resources.ApplyResources(SplitContainer, "SplitContainer");
+            SplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            SplitContainer.Name = "SplitContainer";
             // 
             // SplitContainer.Panel1
             // 
-            this.SplitContainer.Panel1.Controls.Add(this.FileTreeView);
+            SplitContainer.Panel1.Controls.Add(FileTreeView);
             // 
             // SplitContainer.Panel2
             // 
-            this.SplitContainer.Panel2.Controls.Add(this.LbEmptyForm);
-            this.SplitContainer.SplitterBaseDistance = 150;
+            SplitContainer.Panel2.Controls.Add(LbEmptyForm);
+            SplitContainer.SplitterBaseDistance = 150;
             // 
             // FileTreeView
             // 
-            this.FileTreeView.BrowseButtonVisible = true;
-            resources.ApplyResources(this.FileTreeView, "FileTreeView");
-            this.FileTreeView.FileFilter = "*.vhf";
-            this.FileTreeView.Name = "FileTreeView";
-            this.FileTreeView.SelectedPath = null;
-            this.FileTreeView.FileSelected += new System.EventHandler<Vocup.Controls.FileSelectedEventArgs>(this.FileTreeView_FileSelected);
-            this.FileTreeView.BrowseClick += new System.EventHandler(this.FileTreeView_BrowseClick);
+            FileTreeView.BrowseButtonVisible = true;
+            resources.ApplyResources(FileTreeView, "FileTreeView");
+            FileTreeView.FileFilter = "*.vhf";
+            FileTreeView.Name = "FileTreeView";
+            FileTreeView.SelectedPath = null;
+            FileTreeView.FileSelected += FileTreeView_FileSelected;
+            FileTreeView.BrowseClick += FileTreeView_BrowseClick;
             // 
             // LbEmptyForm
             // 
-            this.LbEmptyForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.LbEmptyForm, "LbEmptyForm");
-            this.LbEmptyForm.Name = "LbEmptyForm";
+            LbEmptyForm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(LbEmptyForm, "LbEmptyForm");
+            LbEmptyForm.Name = "LbEmptyForm";
             // 
             // ToolStrip
             // 
-            this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TsbCreateBook,
-            this.TsbOpenBook,
-            this.TsbSave,
-            this.toolStripSeparator1,
-            this.TsbPrint,
-            this.TsbEvaluationInfo,
-            this.toolStripLabel});
-            resources.ApplyResources(this.ToolStrip, "ToolStrip");
-            this.ToolStrip.Name = "ToolStrip";
+            ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { TsbCreateBook, TsbOpenBook, TsbSave, toolStripSeparator1, TsbPrint, TsbEvaluationInfo, toolStripLabel });
+            resources.ApplyResources(ToolStrip, "ToolStrip");
+            ToolStrip.Name = "ToolStrip";
             // 
             // TsbCreateBook
             // 
-            this.TsbCreateBook.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.TsbCreateBook.Image = global::Vocup.Properties.Icons.File;
-            resources.ApplyResources(this.TsbCreateBook, "TsbCreateBook");
-            this.TsbCreateBook.Margin = new System.Windows.Forms.Padding(2, 1, 1, 1);
-            this.TsbCreateBook.Name = "TsbCreateBook";
-            this.TsbCreateBook.Click += new System.EventHandler(this.TsbCreateBook_Click);
+            TsbCreateBook.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            TsbCreateBook.Image = Properties.Icons.File;
+            resources.ApplyResources(TsbCreateBook, "TsbCreateBook");
+            TsbCreateBook.Margin = new System.Windows.Forms.Padding(2, 1, 1, 1);
+            TsbCreateBook.Name = "TsbCreateBook";
+            TsbCreateBook.Click += TsbCreateBook_Click;
             // 
             // TsbOpenBook
             // 
-            this.TsbOpenBook.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.TsbOpenBook.Image = global::Vocup.Properties.Icons.Open;
-            resources.ApplyResources(this.TsbOpenBook, "TsbOpenBook");
-            this.TsbOpenBook.Margin = new System.Windows.Forms.Padding(1);
-            this.TsbOpenBook.Name = "TsbOpenBook";
-            this.TsbOpenBook.Click += new System.EventHandler(this.TsbOpenBook_Click);
+            TsbOpenBook.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            TsbOpenBook.Image = Properties.Icons.Open;
+            resources.ApplyResources(TsbOpenBook, "TsbOpenBook");
+            TsbOpenBook.Margin = new System.Windows.Forms.Padding(1);
+            TsbOpenBook.Name = "TsbOpenBook";
+            TsbOpenBook.Click += TsbOpenBook_Click;
             // 
             // TsbSave
             // 
-            this.TsbSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.TsbSave, "TsbSave");
-            this.TsbSave.Image = global::Vocup.Properties.Icons.Save;
-            this.TsbSave.Margin = new System.Windows.Forms.Padding(1);
-            this.TsbSave.Name = "TsbSave";
-            this.TsbSave.Click += new System.EventHandler(this.TsbSave_Click);
+            TsbSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(TsbSave, "TsbSave");
+            TsbSave.Image = Properties.Icons.Save;
+            TsbSave.Margin = new System.Windows.Forms.Padding(1);
+            TsbSave.Name = "TsbSave";
+            TsbSave.Click += TsbSave_Click;
             // 
             // toolStripSeparator1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(toolStripSeparator1, "toolStripSeparator1");
             // 
             // TsbPrint
             // 
-            this.TsbPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.TsbPrint, "TsbPrint");
-            this.TsbPrint.Image = global::Vocup.Properties.Icons.Print;
-            this.TsbPrint.Margin = new System.Windows.Forms.Padding(1);
-            this.TsbPrint.Name = "TsbPrint";
-            this.TsbPrint.Click += new System.EventHandler(this.TsbPrint_Click);
+            TsbPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(TsbPrint, "TsbPrint");
+            TsbPrint.Image = Properties.Icons.Print;
+            TsbPrint.Margin = new System.Windows.Forms.Padding(1);
+            TsbPrint.Name = "TsbPrint";
+            TsbPrint.Click += TsbPrint_Click;
             // 
             // TsbEvaluationInfo
             // 
-            this.TsbEvaluationInfo.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.TsbEvaluationInfo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.TsbEvaluationInfo.Image = global::Vocup.Properties.Icons.Info;
-            resources.ApplyResources(this.TsbEvaluationInfo, "TsbEvaluationInfo");
-            this.TsbEvaluationInfo.Margin = new System.Windows.Forms.Padding(1, 1, 2, 1);
-            this.TsbEvaluationInfo.Name = "TsbEvaluationInfo";
-            this.TsbEvaluationInfo.Click += new System.EventHandler(this.TsbtnEvaluationInfo_Click);
+            TsbEvaluationInfo.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            TsbEvaluationInfo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            TsbEvaluationInfo.Image = Properties.Icons.Info;
+            resources.ApplyResources(TsbEvaluationInfo, "TsbEvaluationInfo");
+            TsbEvaluationInfo.Margin = new System.Windows.Forms.Padding(1, 1, 2, 1);
+            TsbEvaluationInfo.Name = "TsbEvaluationInfo";
+            TsbEvaluationInfo.Click += TsbtnEvaluationInfo_Click;
             // 
             // toolStripLabel
             // 
-            this.toolStripLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLabel.Margin = new System.Windows.Forms.Padding(1);
-            this.toolStripLabel.Name = "toolStripLabel";
-            resources.ApplyResources(this.toolStripLabel, "toolStripLabel");
+            toolStripLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            toolStripLabel.Margin = new System.Windows.Forms.Padding(1);
+            toolStripLabel.Name = "toolStripLabel";
+            resources.ApplyResources(toolStripLabel, "toolStripLabel");
             // 
             // TableLayout
             // 
-            resources.ApplyResources(this.TableLayout, "TableLayout");
-            this.TableLayout.Controls.Add(this.SideBar, 1, 0);
-            this.TableLayout.Controls.Add(this.SplitContainer, 0, 0);
-            this.TableLayout.Name = "TableLayout";
+            resources.ApplyResources(TableLayout, "TableLayout");
+            TableLayout.Controls.Add(SideBar, 1, 0);
+            TableLayout.Controls.Add(SplitContainer, 0, 0);
+            TableLayout.Name = "TableLayout";
             // 
             // MainForm
             // 
-            this.AcceptButton = this.BtnAddWord;
+            AcceptButton = BtnAddWord;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.TableLayout);
-            this.Controls.Add(this.StatusStrip);
-            this.Controls.Add(this.ToolStrip);
-            this.Controls.Add(this.MenuStrip);
-            this.Icon = global::Vocup.Properties.Icons.Icon;
-            this.MainMenuStrip = this.MenuStrip;
-            this.Name = "MainForm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
-            this.Load += new System.EventHandler(this.Form_Load);
-            this.Shown += new System.EventHandler(this.Form_Shown);
-            this.MenuStrip.ResumeLayout(false);
-            this.MenuStrip.PerformLayout();
-            this.GroupBook.ResumeLayout(false);
-            this.GroupSearch.ResumeLayout(false);
-            this.GroupSearch.PerformLayout();
-            this.GroupWord.ResumeLayout(false);
-            this.StatusStrip.ResumeLayout(false);
-            this.StatusStrip.PerformLayout();
-            this.SideBar.ResumeLayout(false);
-            this.SplitContainer.Panel1.ResumeLayout(false);
-            this.SplitContainer.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.SplitContainer)).EndInit();
-            this.SplitContainer.ResumeLayout(false);
-            this.ToolStrip.ResumeLayout(false);
-            this.ToolStrip.PerformLayout();
-            this.TableLayout.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Controls.Add(TableLayout);
+            Controls.Add(StatusStrip);
+            Controls.Add(ToolStrip);
+            Controls.Add(MenuStrip);
+            Icon = Properties.Icons.Icon;
+            MainMenuStrip = MenuStrip;
+            Name = "MainForm";
+            FormClosing += Form_FormClosing;
+            Load += Form_Load;
+            Shown += Form_Shown;
+            MenuStrip.ResumeLayout(false);
+            MenuStrip.PerformLayout();
+            GroupBook.ResumeLayout(false);
+            GroupSearch.ResumeLayout(false);
+            GroupSearch.PerformLayout();
+            GroupWord.ResumeLayout(false);
+            StatusStrip.ResumeLayout(false);
+            StatusStrip.PerformLayout();
+            SideBar.ResumeLayout(false);
+            SplitContainer.Panel1.ResumeLayout(false);
+            SplitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)SplitContainer).EndInit();
+            SplitContainer.ResumeLayout(false);
+            ToolStrip.ResumeLayout(false);
+            ToolStrip.PerformLayout();
+            TableLayout.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -699,6 +662,7 @@
         private Controls.FileTreeView FileTreeView;
         private System.Windows.Forms.Label LbEmptyForm;
         private System.Windows.Forms.ToolStripStatusLabel StatusLbOldVersion;
+        private System.Windows.Forms.ToolStripMenuItem TsmiShare;
     }
 }
 

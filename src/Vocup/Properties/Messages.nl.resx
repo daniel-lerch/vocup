@@ -259,23 +259,12 @@ Details: {0}</value>
   <data name="UnexpectedErrorT" xml:space="preserve">
     <value>Onbekende fout</value>
   </data>
-  <data name="VdpCorruptFile" xml:space="preserve">
-    <value>Het Vocup back-up bestand is beschadigd en kon niet worden geopend: 
-{0}</value>
-    <comment>{0}: ErrorDetails</comment>
+  <data name="VhfCompatMode" xml:space="preserve">
+    <value>Het woordenboekbestand is opgeslagen in een nieuwere versie van Vocup. Het zal geopend worden in compatibiliteitsmodus. Niet alle informatie zal zichtbaar zijn.
+Het is aanbevolen om Vocup te updaten naar de laatste versie.</value>
   </data>
-  <data name="VdpCorruptFileT" xml:space="preserve">
-    <value>Beschadigd bestand</value>
-  </data>
-  <data name="VdpRestored" xml:space="preserve">
-    <value>Samenvatting
- -  {0} bestand(en) hersteld
- -  {1} bestand(en) overgeslagen
- -  {2} bestand(en) mislukt</value>
-    <comment>{0}: Restored, {1}: Skipped, {2}: Failed</comment>
-  </data>
-  <data name="VdpRestoredT" xml:space="preserve">
-    <value>Herstellen gereed</value>
+  <data name="VhfCompatModeT" xml:space="preserve">
+    <value>Compatibiliteitsmodus</value>
   </data>
   <data name="VhfCorruptFile" xml:space="preserve">
     <value>Het woordenboek is beschadigd en kon niet worden geopend.</value>
@@ -314,18 +303,6 @@ Controleer of het bestand niet leeg is.</value>
   <data name="VhfPathNotFoundT" xml:space="preserve">
     <value>Map voor woordenboeken niet gevonden</value>
   </data>
-  <data name="VhrCorruptFile" xml:space="preserve">
-    <value>Het resultatenbestand is beschadigd en zal worden verwijderd. Hierdoor zal je je oefenresultaten kwijt raken.</value>
-  </data>
-  <data name="VhrCorruptFileT" xml:space="preserve">
-    <value>Beschadigd resultatenbestand</value>
-  </data>
-  <data name="VhrInvalidRowCount" xml:space="preserve">
-    <value>Het resultatenbestand match niet met het woordenboek. Alle resultaten zullen worden verwijderd.</value>
-  </data>
-  <data name="VhrInvalidRowCountAndOtherFile" xml:space="preserve">
-    <value>Het resultatenbestand is in gebruik door een ander woordenboek. Resultaten kunnen niet worden ingeladen.</value>
-  </data>
   <data name="VhrPathInvalid" xml:space="preserve">
     <value>Het gekozen pad is niet geschikt om oefenresultaten op te slaan. Gebruik hier geen optische schijven of systeemmappen.</value>
   </data>
@@ -335,10 +312,15 @@ Controleer of het bestand niet leeg is.</value>
   <data name="VhrPathNotFoundT" xml:space="preserve">
     <value>Map voor oefenresultaten niet gevonden</value>
   </data>
-  <data name="VocupFileWriteError" xml:space="preserve">
-    <value>Een woordenboek of resultatenbestand kon niet worden opgeslagen.</value>
+  <data name="VocupFileReadError" xml:space="preserve">
+    <value>Een woordenboek kon niet worden geopend:
+{0}</value>
+    <comment>{0}: ErrorDetails</comment>
   </data>
-  <data name="VocupFileWriteErrorEx" xml:space="preserve">
+  <data name="VocupFileReadErrorT" xml:space="preserve">
+    <value>Fout bij openen bestand</value>
+  </data>
+  <data name="VocupFileWriteError" xml:space="preserve">
     <value>Een woordenboek of resultatenbestand kon niet worden opgeslagen: 
 {0}</value>
     <comment>{0}: ErrorDetails</comment>

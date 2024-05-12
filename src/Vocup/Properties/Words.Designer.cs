@@ -169,6 +169,33 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vocup vocabulary book.
+        /// </summary>
+        internal static string FileFormatVhf {
+            get {
+                return ResourceManager.GetString("FileFormatVhf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vocup vocabulary book v1.
+        /// </summary>
+        internal static string FileFormatVhf1 {
+            get {
+                return ResourceManager.GetString("FileFormatVhf1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vocup vocabulary book v2.
+        /// </summary>
+        internal static string FileFormatVhf2 {
+            get {
+                return ResourceManager.GetString("FileFormatVhf2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Finish.
         /// </summary>
         internal static string Finish {
@@ -250,6 +277,15 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Share vocabulary book without practice results.
+        /// </summary>
+        internal static string ShareVocabularyBook {
+            get {
+                return ResourceManager.GetString("ShareVocabularyBook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Site.
         /// </summary>
         internal static string Site {
@@ -291,15 +327,6 @@ namespace Vocup.Properties {
         internal static string VocupBackupFile {
             get {
                 return ResourceManager.GetString("VocupBackupFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Vocup vocabulary book file.
-        /// </summary>
-        internal static string VocupVocabularyBookFile {
-            get {
-                return ResourceManager.GetString("VocupVocabularyBookFile", resourceCulture);
             }
         }
         

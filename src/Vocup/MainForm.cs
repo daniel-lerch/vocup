@@ -52,7 +52,7 @@ public partial class MainForm : Form, IMainForm
         TsmiBookOptions.Enabled = value;
         TsmiCloseBook.Enabled = value;
         TsmiSaveAs.Enabled = value;
-	StatisticsPanel.Enabled = value;
+        StatisticsPanel.Enabled = value;
     }
     public void VocabularyBookHasContent(bool value)
     {
@@ -63,6 +63,7 @@ public partial class MainForm : Form, IMainForm
         TsbPrint.Enabled = value;
 
         TsmiExport.Enabled = value;
+        TsmiShare.Enabled = value;
     }
     public void VocabularyBookPracticable(bool value)
     {
@@ -356,6 +357,38 @@ public partial class MainForm : Form, IMainForm
     private void TsmiSaveAs_Click(object sender, EventArgs e) => SaveFile(true);
     private void TsbSave_Click(object sender, EventArgs e) => SaveFile(false);
 
+    private void TsmiShare_Click(object sender, EventArgs e)
+    {
+        using SaveFileDialog save = new()
+        {
+            Title = Words.ShareVocabularyBook,
+            FileName = CurrentBook.MotherTongue + " - " + CurrentBook.ForeignLang,
+            InitialDirectory = Program.Settings.VhfPath,
+            Filter = $"{Words.FileFormatVhf2} (*.vhf)|*.vhf|{Words.FileFormatVhf1} (*.vhf)|*.vhf"
+        };
+        if (save.ShowDialog() == DialogResult.OK)
+        {
+            BookFileFormat format = save.FilterIndex == 2 ? BookFileFormat.Vhf1 : BookFileFormat.Vhf2;
+
+            if (format.TryWrite(save.FileName, CurrentBook, Program.Settings.VhrPath, includeResults: false))
+            {
+                try
+                {
+                    string explorer = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "explorer.exe");
+                    Process.Start(explorer, $"/select,\"{save.FileName}\"");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(string.Format(Messages.OpenInExplorerError, ex), Messages.OpenInExplorerErrorT, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        else
+        {
+            return;
+        }
+    }
+
     private void BtnPractice_Click(object sender, EventArgs e) => PracticeWords();
     private void TsmiPractice_Click(object sender, EventArgs e) => PracticeWords();
 
@@ -430,17 +463,15 @@ public partial class MainForm : Form, IMainForm
             }
         }
 
-        using (SaveFileDialog saveDialog = new SaveFileDialog
+        using SaveFileDialog saveDialog = new SaveFileDialog
         {
             Title = Words.Export,
             Filter = "CSV (*.csv)|*.csv",
             FileName = CurrentBook.Name
-        })
+        };
+        if (saveDialog.ShowDialog() == DialogResult.OK)
         {
-            if (saveDialog.ShowDialog() == DialogResult.OK)
-            {
-                VocabularyFile.ExportCsvFile(saveDialog.FileName, CurrentBook);
-            }
+            CsvFile.Export(saveDialog.FileName, CurrentBook);
         }
     }
 
@@ -496,9 +527,9 @@ public partial class MainForm : Form, IMainForm
         {
             int index = CurrentBook.Words.NextIndexOf(word =>
             {
-                return word.MotherTongue.ToUpper().Contains(search_text)
-                       || word.ForeignLang.ToUpper().Contains(search_text)
-                       || (word.ForeignLangSynonym?.ToUpper().Contains(search_text) ?? false);
+                return word.MotherTongue.Contains(search_text, StringComparison.OrdinalIgnoreCase)
+                       || word.ForeignLang.Contains(search_text, StringComparison.OrdinalIgnoreCase)
+                       || (word.ForeignLangSynonym?.Contains(search_text, StringComparison.OrdinalIgnoreCase) ?? false);
             }, lastSearchResult);
 
             if (index != -1)
@@ -540,11 +571,10 @@ public partial class MainForm : Form, IMainForm
     #region Utility methods
     public void ReadFile(string path)
     {
-        VocabularyBook book = new VocabularyBook();
+        VocabularyBook book = new();
 
-        if (VocabularyFile.ReadVhfFile(path, book))
+        if (BookFileFormat.TryDetectAndRead(path, book, Program.Settings.VhrPath))
         {
-            VocabularyFile.ReadVhrFile(book);
             book.Notify();
             LoadBook(book);
         }
@@ -570,35 +600,32 @@ public partial class MainForm : Form, IMainForm
 
     private bool SaveFile(bool saveAsNewFile)
     {
-        //Datei-Speichern-unter Dialogfeld öffnen
-        if (string.IsNullOrWhiteSpace(CurrentBook.FilePath) ||
-            string.IsNullOrWhiteSpace(CurrentBook.VhrCode) ||
-            saveAsNewFile)
+        BookFileFormat format = BookFileFormat.Vhf2;
+
+        if (string.IsNullOrWhiteSpace(CurrentBook.FilePath) || saveAsNewFile)
         {
-            using (SaveFileDialog save = new SaveFileDialog
+            using SaveFileDialog save = new()
             {
                 Title = Words.SaveVocabularyBook,
                 FileName = CurrentBook.MotherTongue + " - " + CurrentBook.ForeignLang,
                 InitialDirectory = Program.Settings.VhfPath,
-                Filter = Words.VocupVocabularyBookFile + " (*.vhf)|*.vhf"
-            })
+                Filter = $"{Words.FileFormatVhf2} (*.vhf)|*.vhf|{Words.FileFormatVhf1} (*.vhf)|*.vhf"
+            };
+            if (save.ShowDialog() == DialogResult.OK)
             {
-                if (save.ShowDialog() == DialogResult.OK)
-                {
-                    CurrentBook.FilePath = save.FileName;
-                    CurrentBook.GenerateVhrCode();
-                }
-                else
-                {
-                    return false;
-                }
+                CurrentBook.FilePath = save.FileName;
+                CurrentBook.GenerateVhrCode();
+                format = save.FilterIndex == 2 ? BookFileFormat.Vhf1 : BookFileFormat.Vhf2;
+            }
+            else
+            {
+                return false;
             }
         }
 
         Cursor.Current = Cursors.WaitCursor;
 
-        if (VocabularyFile.WriteVhfFile(CurrentBook.FilePath, CurrentBook) &&
-            VocabularyFile.WriteVhrFile(CurrentBook))
+        if (format.TryWrite(CurrentBook.FilePath, CurrentBook, Program.Settings.VhrPath))
         {
             CurrentBook.UnsavedChanges = false;
 
@@ -616,79 +643,73 @@ public partial class MainForm : Form, IMainForm
 
     private void OpenFile()
     {
-        using (OpenFileDialog open = new OpenFileDialog
+        using OpenFileDialog open = new()
         {
             Title = Words.OpenVocabularyBook,
             InitialDirectory = Program.Settings.VhfPath,
-            Filter = Words.VocupVocabularyBookFile + " (*.vhf)|*.vhf"
-        })
+            Filter = Words.FileFormatVhf + " (*.vhf)|*.vhf"
+        };
+        if (open.ShowDialog() == DialogResult.OK)
         {
-            if (open.ShowDialog() == DialogResult.OK)
+            if (CurrentBook != null)
             {
-                if (CurrentBook != null)
-                {
-                    if (UnsavedChanges && !EnsureSaved())
-                        return;
+                if (UnsavedChanges && !EnsureSaved())
+                    return;
 
-                    UnloadBook(false);
-                }
-
-                ReadFile(open.FileName);
+                UnloadBook(false);
             }
+
+            ReadFile(open.FileName);
         }
     }
 
     private void CreateBook()
     {
-        using (VocabularyBookSettings dialog = new VocabularyBookSettings(out VocabularyBook book))
+        using VocabularyBookSettings dialog = new(out VocabularyBook book);
+        if (dialog.ShowDialog() == DialogResult.OK)
         {
-            if (dialog.ShowDialog() == DialogResult.OK)
+            if (CurrentBook != null)
             {
-                if (CurrentBook != null)
-                {
-                    if (UnsavedChanges && !EnsureSaved())
-                        return;
+                if (UnsavedChanges && !EnsureSaved())
+                    return;
 
-                    UnloadBook(false);
-                }
-
-                Program.TrackingService.Action("/book/new", "Book/Create");
-
-                // VocabularyBookSettings enables notification on creation
-                LoadBook(book);
-
-                BtnAddWord.Focus();
+                UnloadBook(false);
             }
+
+            Program.TrackingService.Action("/book/new", "Book/Create");
+
+            // VocabularyBookSettings enables notification on creation
+            LoadBook(book);
+
+            BtnAddWord.Focus();
         }
     }
 
     private void ImportCsv()
     {
-        using (OpenFileDialog openDialog = new OpenFileDialog
+        using OpenFileDialog openDialog = new()
         {
             Title = Words.Import,
             Filter = $"CSV (*.csv)|*.csv"
-        })
+        };
+        if (openDialog.ShowDialog() == DialogResult.OK)
         {
-            if (openDialog.ShowDialog() == DialogResult.OK)
+            if (CurrentBook != null)
             {
-                if (CurrentBook != null)
-                {
-                    Program.TrackingService.Action("/book", "Book/Import");
+                Program.TrackingService.Action("/book", "Book/Import");
 
-                    VocabularyFile.ImportCsvFile(openDialog.FileName, CurrentBook, false);
-                }
-                else
-                {
-                    Program.TrackingService.Action("/book/new", "Book/Import");
+                CsvFile.Import(openDialog.FileName, CurrentBook, false);
+            }
+            else
+            {
+                Program.TrackingService.Action("/book/new", "Book/Import");
 
-                    VocabularyBook book = new VocabularyBook();
-                    if (VocabularyFile.ImportCsvFile(openDialog.FileName, book, true))
-                    {
-                        book.Notify();
-                        book.UnsavedChanges = true;
-                        LoadBook(book);
-                    }
+                VocabularyBook book = new VocabularyBook();
+                if (CsvFile.Import(openDialog.FileName, book, true))
+                {
+                    book.Notify();
+                    book.UnsavedChanges = true;
+                    LoadBook(book);
                 }
             }
         }
