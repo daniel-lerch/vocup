@@ -14,8 +14,8 @@ public class SettingsTests
         DirectoryInfo directory = new(Path.GetTempPath());
         string basename = "vocup_settings";
 
-        VersionedSettingsLoader<VocupSettings> loader = new(directory, basename);
-        VersionedSettings<VocupSettings> settings = await loader.LoadAsync().ConfigureAwait(false);
+        SettingsLoaderBase<VocupSettings> loader = new(directory, basename);
+        SettingsContext<VocupSettings> settings = await loader.LoadAsync();
 
         settings.Value.StartupCounter++;
         await settings.DisposeAsync();

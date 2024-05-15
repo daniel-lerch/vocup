@@ -28,7 +28,7 @@ public class JsonSerializerFactory : ISerializerFactory, IDeserializerFactory
 
     private async Task<T> Deserialize<T>(Stream input)
     {
-        return await JsonSerializer.DeserializeAsync<T>(input).ConfigureAwait(false) 
+        return await JsonSerializer.DeserializeAsync<T>(input, options).ConfigureAwait(false) 
             ?? throw new InvalidDataException("JSON deserialization returned null");
     }
 }

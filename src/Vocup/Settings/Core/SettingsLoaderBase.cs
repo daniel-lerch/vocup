@@ -9,22 +9,21 @@ using LSettings = LostTech.App.Settings;
 
 namespace Vocup.Settings.Core;
 
-public class VersionedSettingsLoader<T> where T : class, ICopyable<T>, INotifyPropertyChanged, new()
+public class SettingsLoaderBase<T> where T : class, ICopyable<T>, INotifyPropertyChanged, new()
 {
     protected DirectoryInfo directory;
-    protected string basename;
+    protected string filename;
 
-    public VersionedSettingsLoader(DirectoryInfo directory, string basename)
+    public SettingsLoaderBase(DirectoryInfo directory, string filename)
     {
         this.directory = directory;
-        this.basename = basename;
+        this.filename = filename;
     }
 
-    public async ValueTask<VersionedSettings<T>> LoadAsync()
+    public async ValueTask<SettingsContext<T>> LoadAsync()
     {
         await default(HopToThreadPoolAwaitable); // Force blocking IO to run on a background thread
         directory.Create();
-        string filename = basename + ".1.json";
 
         LSettings settings = new(directory, ClonableFreezerFactory.Instance, JsonSerializerFactory.Instance, JsonSerializerFactory.Instance);
         SettingsSet<T, T>? settingsSet = null;
@@ -36,8 +35,12 @@ public class VersionedSettingsLoader<T> where T : class, ICopyable<T>, INotifyPr
         }
         catch (Exception)
         {
-            // Delete corrupted settings file if loading failed
-            File.Delete(Path.Combine(directory.FullName, filename));
+            try
+            {
+                // Delete corrupted settings file if loading failed
+                File.Delete(Path.Combine(directory.FullName, filename));
+            }
+            catch { }
         }
         if (settingsSet is null)
         {
@@ -45,11 +48,11 @@ public class VersionedSettingsLoader<T> where T : class, ICopyable<T>, INotifyPr
             created = true;
         }
         settingsSet.Autosave = true;
-        VersionedSettings<T> result = new(settings, settingsSet);
+        SettingsContext<T> result = new(settings, settingsSet);
         if (created) 
             await OnSettingsCreated(result).ConfigureAwait(false);
         return result;
     }
 
-    protected virtual ValueTask OnSettingsCreated(VersionedSettings<T> settings) => ValueTask.CompletedTask;
+    protected virtual ValueTask OnSettingsCreated(SettingsContext<T> settings) => ValueTask.CompletedTask;
 }

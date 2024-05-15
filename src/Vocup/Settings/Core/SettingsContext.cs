@@ -6,13 +6,13 @@ using LSettings = LostTech.App.Settings;
 
 namespace Vocup.Settings.Core;
 
-public sealed class VersionedSettings<T> : IAsyncDisposable
+public sealed class SettingsContext<T> : IAsyncDisposable
     where T : class, INotifyPropertyChanged
 {
     private readonly LSettings settings;
     private readonly SettingsSet<T, T> settingsSet;
 
-    public VersionedSettings(LSettings settings, SettingsSet<T, T> settingsSet)
+    public SettingsContext(LSettings settings, SettingsSet<T, T> settingsSet)
     {
         this.settings = settings;
         this.settingsSet = settingsSet;

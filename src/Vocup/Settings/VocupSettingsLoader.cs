@@ -2,13 +2,14 @@
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Vocup.Settings.Core;
 using OldSettings = Vocup.Properties.Settings;
 
 namespace Vocup.Settings;
 
-public class VocupSettingsLoader : VersionedSettingsLoader<VocupSettings>
+public class VocupSettingsLoader : SettingsLoaderBase<VocupSettings>
 {
     public VocupSettingsLoader()
         : base(
@@ -16,51 +17,100 @@ public class VocupSettingsLoader : VersionedSettingsLoader<VocupSettings>
                 Path.Combine(
                     Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
                     "Vocup")),
-            "settings")
+            "settings.2.json")
     { }
 
-    protected override ValueTask OnSettingsCreated(VersionedSettings<VocupSettings> settings)
+    protected override async ValueTask OnSettingsCreated(SettingsContext<VocupSettings> settings)
     {
         try
         {
-            // The legacy settings are stored in a path like this:
-            // %LocalAppData%\VectorData\Vocup_Path_d34vxcazn0c55ls04bd5mjhnte2ypcjl\1.8.6.0\user.config
-
-            string? thisVersionDirectory = GetAppConfigDirectory();
-            string? thisUrlDirectory = Path.GetDirectoryName(thisVersionDirectory);
-            string? rootSettingsDirectory = Path.GetDirectoryName(thisUrlDirectory);
-
-            if (thisUrlDirectory == null)
+            if (!await MigrateJsonSettings1(settings).ConfigureAwait(false))
             {
-                Debug.WriteLine("Could not determine current user settings hash directory");
+                MigrateLegacySettings(settings);
             }
-            else if (Directory.Exists(rootSettingsDirectory))
-            {
-                if (!Directory.Exists(thisUrlDirectory))
-                    MigrateOtherAppConfigVersions(thisUrlDirectory, rootSettingsDirectory);
-
-                MigrateFromAppConfig(settings);
-            }
-
-            // If the root settings directory does not exist there are no settings to restore
         }
         catch (Exception ex)
         {
             // Loosing settings of Vocup is not a serious porblem but having Vocup repeatedly crashing at startup is a serious problem xD
             Debug.WriteLine(ex);
         }
-
-        return ValueTask.CompletedTask;
     }
 
-    private static void MigrateFromAppConfig(VersionedSettings<VocupSettings> settings)
+    private async ValueTask<bool> MigrateJsonSettings1(SettingsContext<VocupSettings> settings)
+    {
+        string path = Path.Combine(directory.FullName, "settings.1.json");
+        if (!File.Exists(path)) return false;
+
+        using FileStream stream = new(path, FileMode.Open, FileAccess.Read, FileShare.Read);
+        JsonSettings1? oldSettings = await JsonSerializer.DeserializeAsync<JsonSettings1>(stream).ConfigureAwait(false);
+        if (oldSettings == null) return false;
+
+        if (!string.IsNullOrEmpty(oldSettings.LastFile))
+            settings.Value.RecentFiles.Add(new(oldSettings.LastFile, DateTime.MinValue));
+        settings.Value.StartScreen = oldSettings.StartScreen;
+        settings.Value.AutoSave = oldSettings.AutoSave;
+        settings.Value.DisableInternetServices = oldSettings.DisableInternetServices;
+        settings.Value.LastInternetConnection = oldSettings.LastInternetConnection;
+        settings.Value.VhfPath = oldSettings.VhfPath;
+        settings.Value.VhrPath = oldSettings.VhrPath;
+        settings.Value.StartupCounter = oldSettings.StartupCounter;
+        settings.Value.ColumnResize = oldSettings.ColumnResize;
+        settings.Value.OverrideCulture = oldSettings.OverrideCulture;
+        settings.Value.PracticePercentageUnpracticed = oldSettings.PracticePercentageUnpracticed;
+        settings.Value.PracticePercentageCorrect = oldSettings.PracticePercentageCorrect;
+        settings.Value.PracticePercentageWrong = oldSettings.PracticePercentageWrong;
+        settings.Value.MaxPracticeCount = oldSettings.MaxPracticeCount;
+        settings.Value.UserEvaluates = oldSettings.UserEvaluates;
+        settings.Value.PracticeFastContinue = oldSettings.PracticeFastContinue;
+        settings.Value.PracticeSoundFeedback = oldSettings.PracticeSoundFeedback;
+        settings.Value.PracticeShowResultList = oldSettings.PracticeShowResultList;
+        settings.Value.EvaluateOptionalExpressions = oldSettings.EvaluateOptionalExpressions;
+        settings.Value.EvaluateTolerateNoSynonym = oldSettings.EvaluateTolerateNoSynonym;
+        settings.Value.EvaluateTolerateWhiteSpace = oldSettings.EvaluateTolerateWhiteSpace;
+        settings.Value.EvaluateToleratePunctuationMark = oldSettings.EvaluateToleratePunctuationMark;
+        settings.Value.EvaluateTolerateSpecialChar = oldSettings.EvaluateTolerateSpecialChar;
+        settings.Value.EvaluateTolerateArticle = oldSettings.EvaluateTolerateArticle;
+        settings.Value.MainFormBounds = oldSettings.MainFormBounds;
+        settings.Value.MainFormWindowState = oldSettings.MainFormWindowState;
+        settings.Value.MainFormSplitterDistance = oldSettings.MainFormSplitterDistance;
+        settings.Value.SpecialCharTab = oldSettings.SpecialCharTab;
+        settings.Value.PracticeDialogSize = oldSettings.PracticeDialogSize;
+        settings.Value.Version = oldSettings.Version;
+        return true;
+    }
+
+    private static void MigrateLegacySettings(SettingsContext<VocupSettings> settings)
+    {
+        // The legacy settings are stored in a path like this:
+        // %LocalAppData%\VectorData\Vocup_Path_d34vxcazn0c55ls04bd5mjhnte2ypcjl\1.8.6.0\user.config
+
+        string? thisVersionDirectory = GetAppConfigDirectory();
+        string? thisUrlDirectory = Path.GetDirectoryName(thisVersionDirectory);
+        string? rootSettingsDirectory = Path.GetDirectoryName(thisUrlDirectory);
+
+        if (thisUrlDirectory == null)
+        {
+            Debug.WriteLine("Could not determine current user settings hash directory");
+        }
+        else if (Directory.Exists(rootSettingsDirectory))
+        {
+            if (!Directory.Exists(thisUrlDirectory))
+                MigrateOtherAppConfigVersions(thisUrlDirectory, rootSettingsDirectory);
+
+            MigrateFromAppConfig(settings);
+        }
+
+        // If the root settings directory does not exist there are no settings to restore
+    }
+
+    private static void MigrateFromAppConfig(SettingsContext<VocupSettings> settings)
     {
         OldSettings.Default.Upgrade();
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
-        settings.Value.GridLines = OldSettings.Default.GridLines;
-        settings.Value.LastFile = OldSettings.Default.LastFile;
+        if (!string.IsNullOrEmpty(OldSettings.Default.LastFile))
+            settings.Value.RecentFiles.Add(new(OldSettings.Default.LastFile, DateTime.MinValue));
         settings.Value.StartScreen = OldSettings.Default.StartScreen;
         settings.Value.AutoSave = OldSettings.Default.AutoSave;
         settings.Value.DisableInternetServices = OldSettings.Default.DisableInternetServices;
@@ -74,7 +124,6 @@ public class VocupSettingsLoader : VersionedSettingsLoader<VocupSettings>
         settings.Value.PracticePercentageCorrect = OldSettings.Default.PracticePercentageCorrect;
         settings.Value.PracticePercentageWrong = OldSettings.Default.PracticePercentageWrong;
         settings.Value.MaxPracticeCount = OldSettings.Default.MaxPracticeCount;
-        settings.Value.PracticeHighlightInput = OldSettings.Default.PracticeInputBackColor != System.Drawing.SystemColors.Control;
         settings.Value.UserEvaluates = OldSettings.Default.UserEvaluates;
         settings.Value.PracticeFastContinue = OldSettings.Default.PracticeFastContinue;
         settings.Value.PracticeSoundFeedback = OldSettings.Default.PracticeSoundFeedback;

@@ -1,6 +1,8 @@
 ﻿using LostTech.App.DataBinding;
 using System;
+using System.Collections.ObjectModel;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using Vocup.Settings.Core;
 
@@ -14,8 +16,7 @@ public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
     {
         return new VocupSettings
         {
-            _gridLines = _gridLines,
-            _lastFile = _lastFile,
+            _recentFiles = new(_recentFiles.Select(x => new RecentFile(x.FileName, x.LastAccess))),
             _startScreen = _startScreen,
             _autoSave = _autoSave,
             _disableInternetServices = _disableInternetServices,
@@ -29,7 +30,6 @@ public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
             _practicePercentageCorrect = _practicePercentageCorrect,
             _practicePercentageWrong = _practicePercentageWrong,
             _maxPracticeCount = _maxPracticeCount,
-            _practiceHighlightInput = _practiceHighlightInput,
             _userEvaluates = _userEvaluates,
             _practiceFastContinue = _practiceFastContinue,
             _practiceSoundFeedback = _practiceSoundFeedback,
@@ -44,24 +44,35 @@ public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
             _mainFormWindowState = _mainFormWindowState,
             _mainFormSplitterDistance = _mainFormSplitterDistance,
             _specialCharTab = _specialCharTab,
+            _practiceDialogSize = _practiceDialogSize,
             _version = _version
         };
     }
 
-    private bool _gridLines = true;
-    [Obsolete("Grid lines cannot be switched off anymore.")]
-    public bool GridLines
+    public class RecentFile : SettingsBase
     {
-        get => _gridLines;
-        set => RaiseAndSetIfChanged(ref _gridLines, value);
+        public RecentFile(string fileName, DateTime lastAccess)
+        {
+            FileName = fileName;
+            LastAccess = lastAccess;
+        }
+
+        public string FileName { get; }
+
+        private DateTime _lastAccess;
+
+        public DateTime LastAccess
+        {
+            get => _lastAccess;
+            set => RaiseAndSetIfChanged(ref _lastAccess, value);
+        }
     }
 
-
-    private string? _lastFile;
-    public string? LastFile
+    private ObservableCollection<RecentFile> _recentFiles = [];
+    public ObservableCollection<RecentFile> RecentFiles
     {
-        get => _lastFile;
-        set => RaiseAndSetIfChanged(ref _lastFile, value);
+        get => _recentFiles;
+        set => RaiseAndSetIfChanged(ref _recentFiles, value);
     }
 
 
@@ -166,15 +177,6 @@ public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
     {
         get => _maxPracticeCount;
         set => RaiseAndSetIfChanged(ref _maxPracticeCount, value);
-    }
-
-
-    private bool _practiceHighlightInput = true;
-    [Obsolete("Highlighting of input fields cannot be switched off anymore.")]
-    public bool PracticeHighlightInput
-    {
-        get => _practiceHighlightInput;
-        set => RaiseAndSetIfChanged(ref _practiceHighlightInput, value);
     }
 
 
