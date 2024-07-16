@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_", "_", "{58EAD674-3665-45
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vocup", "src\Vocup\Vocup.csproj", "{004AE06A-96F3-4B2E-9AF4-524835814A36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vocup.WinForms", "src\Vocup.WinForms\Vocup.WinForms.csproj", "{004AE06A-96F3-4B2E-9AF4-524835814A36}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{513AA9B6-F697-45D9-B598-A96030B32541}"
 	ProjectSection(SolutionItems) = preProject

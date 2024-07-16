@@ -17,7 +17,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Vocup\Vocup.csproj" />
+    <ProjectReference Include="..\..\src\Vocup.WinForms\Vocup.WinForms.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Resources\2jgh9u3tuPCfYLxhhCJXGyPN.vhr">
