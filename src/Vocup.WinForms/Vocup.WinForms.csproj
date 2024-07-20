@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <AssemblyName>Vocup</AssemblyName>
     <RootNamespace>Vocup</RootNamespace>
     <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
@@ -26,6 +25,8 @@
     <Content Include="icon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Avalonia.Skia" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.Win32.Interoperability" Version="$(AvaloniaVersion)" />
     <PackageReference Include="CsvHelper" Version="31.0.3" />
     <PackageReference Include="LostTech.App.Settings" Version="0.5.0" />
     <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.49-beta">
@@ -35,6 +36,9 @@
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
     <!-- Force higher version because of vulnerabilities in the default version -->
     <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Vocup\Vocup.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Resources\easter_egg.vhf">

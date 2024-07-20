@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Avalonia;
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
@@ -13,6 +14,8 @@ using Vocup.Settings;
 using Vocup.Util;
 using Windows.Win32;
 using Windows.Win32.Foundation;
+
+using Application = System.Windows.Forms.Application;
 
 namespace Vocup;
 
@@ -48,6 +51,8 @@ public static class Program
         SplashScreen splash = new();
         splash.Show();
         Application.DoEvents();
+
+        AppBuilder.Configure<App>().UseWin32().UseSkia().SetupWithoutStarting();
 
         var serviceScope = InitializeServices();
 

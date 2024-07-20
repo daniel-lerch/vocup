@@ -2,9 +2,10 @@ using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using Vocup.Controls;
 using Vocup.Properties;
 using Vocup.Util;
+using Vocup.ViewModels;
+using Vocup.Views;
 
 namespace Vocup.Forms;
 
@@ -14,7 +15,7 @@ public partial class AboutBox : Form
     {
         InitializeComponent();
         Icon = Icon.FromHandle(Icons.Info.GetHicon());
-        ElementHost.Child = new LicensesControl();
+        AvaloniaControlHost.Content = new MainView { DataContext = new MainViewModel() };
     }
 
     private void AboutBox_Load(object sender, EventArgs e)
