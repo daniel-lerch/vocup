@@ -15,7 +15,7 @@ public partial class AboutBox : Form
     {
         InitializeComponent();
         Icon = Icon.FromHandle(Icons.Info.GetHicon());
-        AvaloniaControlHost.Content = new MainView { DataContext = new MainViewModel() };
+        AvaloniaControlHost.Content = new LicensesControl { DataContext = new LicensesViewModel() };
     }
 
     private void AboutBox_Load(object sender, EventArgs e)

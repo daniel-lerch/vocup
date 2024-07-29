@@ -1,0 +1,38 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Vocup.ViewModels;assembly=Vocup.Avalonia"
+             mc:Ignorable="d" d:DesignWidth="327" d:DesignHeight="244"
+             x:Class="Vocup.Views.LicensesControl"
+             x:DataType="vm:LicensesViewModel"
+             Name="control">
+  <Design.DataContext>
+    <vm:LicensesViewModel />
+  </Design.DataContext>
+
+  <UserControl.Styles>
+    <Style Selector="HyperlinkButton.link">
+      <Setter Property="CornerRadius" Value="0" />
+      <Setter Property="Padding" Value="0" />
+    </Style>
+    <Style Selector="HyperlinkButton.link:pointerover">
+      <Setter Property="Background" Value="Transparent" />
+    </Style>
+  </UserControl.Styles>
+
+  <ItemsControl ItemsSource="{Binding Components}">
+    <ItemsControl.ItemTemplate>
+      <DataTemplate>
+        <StackPanel>
+          <HyperlinkButton Classes="link" Content="{Binding Name}" Command="{Binding #control.ViewModel.NavigateToUri}" CommandParameter="{Binding Url}">
+            <ToolTip>
+              <TextBlock Text="{Binding Url}" />
+            </ToolTip>
+          </HyperlinkButton>
+          <TextBlock Text="{Binding License}" />
+        </StackPanel>
+      </DataTemplate>
+    </ItemsControl.ItemTemplate>
+  </ItemsControl>
+</UserControl>

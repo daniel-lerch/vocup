@@ -1,4 +1,5 @@
 ﻿using Avalonia;
+using Avalonia.ReactiveUI;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -52,7 +53,7 @@ public static class Program
         splash.Show();
         Application.DoEvents();
 
-        AppBuilder.Configure<App>().UseWin32().UseSkia().SetupWithoutStarting();
+        AppBuilder.Configure<App>().UseWin32().UseSkia().UseReactiveUI().SetupWithoutStarting();
 
         var serviceScope = InitializeServices();
 
