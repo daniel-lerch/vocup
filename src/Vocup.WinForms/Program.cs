@@ -53,7 +53,7 @@ public static class Program
         splash.Show();
         Application.DoEvents();
 
-        AppBuilder.Configure<App>().UseWin32().UseSkia().UseReactiveUI().SetupWithoutStarting();
+        AppBuilder.Configure<App>().UsePlatformDetect().UseReactiveUI().SetupWithoutStarting();
 
         var serviceScope = InitializeServices();
 

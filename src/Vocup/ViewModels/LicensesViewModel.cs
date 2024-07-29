@@ -23,9 +23,15 @@ public class LicensesViewModel
     public List<Component> Components { get; } = [
         new()
         {
+            Name = ".NET",
+            License = "MIT",
+            Url = "https://dotnet.microsoft.com",
+        },
+        new()
+        {
             Name = "Avalonia",
-            License = "",
-            Url = "https://avaloniaui.net"
+            License = "MIT",
+            Url = "https://avaloniaui.net",
         },
         new()
         {
@@ -50,6 +56,12 @@ public class LicensesViewModel
             Name = "Office Icons",
             License = "CC BY-ND 3.0",
             Url = "https://icons8.com/icons/office",
+        },
+        new()
+        {
+            Name = "ReactiveUI",
+            License = "MIT",
+            Url = "https://reactiveui.net",
         },
     ];
 

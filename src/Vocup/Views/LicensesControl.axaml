@@ -16,7 +16,7 @@
       <Setter Property="CornerRadius" Value="0" />
       <Setter Property="Padding" Value="0" />
     </Style>
-    <Style Selector="HyperlinkButton.link:pointerover">
+    <Style Selector="HyperlinkButton.link:pointerover /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Background" Value="Transparent" />
     </Style>
   </UserControl.Styles>
@@ -24,14 +24,18 @@
   <ItemsControl ItemsSource="{Binding Components}">
     <ItemsControl.ItemTemplate>
       <DataTemplate>
-        <StackPanel>
-          <HyperlinkButton Classes="link" Content="{Binding Name}" Command="{Binding #control.ViewModel.NavigateToUri}" CommandParameter="{Binding Url}">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <HyperlinkButton Grid.Column="0" Classes="link" Content="{Binding Name}" Command="{Binding #control.ViewModel.NavigateToUri}" CommandParameter="{Binding Url}">
             <ToolTip>
               <TextBlock Text="{Binding Url}" />
             </ToolTip>
           </HyperlinkButton>
-          <TextBlock Text="{Binding License}" />
-        </StackPanel>
+          <TextBlock Grid.Column="1" Text="{Binding License}" />
+        </Grid>
       </DataTemplate>
     </ItemsControl.ItemTemplate>
   </ItemsControl>
