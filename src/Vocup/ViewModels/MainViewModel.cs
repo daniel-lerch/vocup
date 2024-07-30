@@ -2,5 +2,5 @@
 
 public class MainViewModel : ViewModelBase
 {
-    public LicensesViewModel Licenses { get; } = new();
+    public AboutViewModel About { get; } = new();
 }
