@@ -1,30 +1,29 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 
 namespace Vocup.ViewModels;
 
 public class AboutViewModel : ViewModelBase
 {
-    public AboutViewModel()
-    {
-
-    }
+    public AboutViewModel() 
+        : this("0.0.0", "Copyright © 2011 Florian Amstutz, © 2018-present Daniel Lerch.") { }
 
     public AboutViewModel(string appVersion, string copyright)
     {
-        AppVersion = appVersion;
+        string prefix = Lang.Resources.AboutView_Version;
+        string architecture = RuntimeInformation.ProcessArchitecture.ToString().ToLowerInvariant();
+        Version = $"{prefix} {appVersion} ({architecture})";
+
         Copyright = copyright;
+
+        if (OperatingSystem.IsWindowsVersionAtLeast(10, 0, 10240))
+            MicrosoftStoreLink = "ms-windows-store://pdp/?productid=9N6W2H3QJQMM";
+        else
+            MicrosoftStoreLink = "https://www.microsoft.com/store/apps/9N6W2H3QJQMM";
     }
 
-    public string AppVersion { get; } = "0.0.0";
-    public string Version
-    {
-        get
-        {
-            string prefix = Lang.Resources.AboutView_Version;
-            string architecture = RuntimeInformation.ProcessArchitecture.ToString().ToLowerInvariant();
-            return $"{prefix} {AppVersion} ({architecture})";
-        }
-    }
-    public string Copyright { get; } = "Copyright © 2011 Florian Amstutz, © 2018-present Daniel Lerch.";
+    public string Version { get; }
+    public string Copyright { get; }
+    public string MicrosoftStoreLink { get; }
     public LicensesViewModel Licenses { get; } = new();
 }

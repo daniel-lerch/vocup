@@ -5,7 +5,7 @@
              xmlns:lang="clr-namespace:Vocup.Lang;assembly=Vocup.Avalonia"
              xmlns:views="clr-namespace:Vocup.Views;assembly=Vocup.Avalonia"
              xmlns:vm="clr-namespace:Vocup.ViewModels;assembly=Vocup.Avalonia"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
              x:Class="Vocup.Views.AboutView"
              x:DataType="vm:AboutViewModel">
   <Design.DataContext>
@@ -16,6 +16,26 @@
     <Image Source="/Assets/legacy-rectangle-logo.png" Width="248" />
     <TextBlock Text="{Binding Version}" />
     <TextBlock Text="{Binding Copyright}" />
+    <TextBlock>
+      License <InlineUIContainer>
+        <HyperlinkButton Content="AGPL-3.0" NavigateUri="https://github.com/daniel-lerch/vocup/blob/master/LICENSE" />
+      </InlineUIContainer>
+    </TextBlock>
+    <TextBlock>
+      Source Code <InlineUIContainer>
+        <HyperlinkButton Content="Vocup on GitHub" NavigateUri="https://github.com/daniel-lerch/vocup" />
+      </InlineUIContainer>
+    </TextBlock>
+    <TextBlock>
+      Download <InlineUIContainer>
+        <HyperlinkButton Content="Microsoft Store" NavigateUri="{Binding MicrosoftStoreLink}" />
+      </InlineUIContainer>
+    </TextBlock>
+    <TextBlock>
+      Mail <InlineUIContainer>
+        <HyperlinkButton Content="daniel.dev@lerchen.net" NavigateUri="mailto:daniel.dev@lerchen.net" />
+      </InlineUIContainer>
+    </TextBlock>
     <TextBlock Text="{x:Static lang:Resources.AboutView_Components}" />
     <views:LicensesControl DataContext="{Binding Licenses}" />
   </StackPanel>
