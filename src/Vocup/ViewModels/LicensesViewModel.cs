@@ -1,25 +1,9 @@
-﻿using ReactiveUI;
-using System;
-using System.Collections.Generic;
-using System.Reactive;
-using System.Reactive.Linq;
+﻿using System.Collections.Generic;
 
 namespace Vocup.ViewModels;
 
 public class LicensesViewModel
 {
-    public LicensesViewModel()
-    {
-        NavigateToUri = ReactiveCommand.Create<string>(async uri =>
-        {
-            await LaunchUri.Handle(new Uri(uri));
-        });
-    }
-
-    public ReactiveCommand<string, Unit> NavigateToUri { get; }
-
-    public Interaction<Uri, bool> LaunchUri { get; } = new();
-
     public List<Component> Components { get; } = [
         new()
         {
