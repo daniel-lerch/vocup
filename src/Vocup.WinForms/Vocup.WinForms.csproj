@@ -8,7 +8,6 @@
     <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
     <OutputType>WinExe</OutputType>
     <UseWindowsForms>true</UseWindowsForms>
-    <UseWPF>true</UseWPF>
     <!-- For ARM64 builds not to fail, satellite assemblies must be configured https://github.com/dotnet/sdk/issues/28419 -->
     <GenerateSatelliteAssembliesForCore>true</GenerateSatelliteAssembliesForCore>
     <ApplicationIcon>icon.ico</ApplicationIcon>

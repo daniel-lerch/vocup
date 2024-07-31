@@ -30,11 +30,14 @@
               <ColumnDefinition Width="*" />
               <ColumnDefinition SharedSizeGroup="B"/>
             </Grid.ColumnDefinitions>
-            <HyperlinkButton Grid.Column="0" Classes="link" Content="{Binding Name}" Command="{Binding #control.ViewModel.NavigateToUri}" CommandParameter="{Binding Url}">
-              <ToolTip>
-                <TextBlock Text="{Binding Url}" />
-              </ToolTip>
-            </HyperlinkButton>
+            <HyperlinkButton
+              Grid.Column="0"
+              Classes="link"
+              Content="{Binding Name}"
+              Command="{Binding #control.ViewModel.NavigateToUri}"
+              CommandParameter="{Binding Url}"
+              ToolTip.Tip="{Binding Url}"
+            />
             <TextBlock Grid.Column="1" Text="{Binding License}" FontSize="12" />
           </Grid>
         </Border>
