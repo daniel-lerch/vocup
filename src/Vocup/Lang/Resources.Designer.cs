@@ -70,11 +70,56 @@ namespace Vocup.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Download.
+        /// </summary>
+        public static string AboutView_Download {
+            get {
+                return ResourceManager.GetString("AboutView.Download", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to License.
+        /// </summary>
+        public static string AboutView_License {
+            get {
+                return ResourceManager.GetString("AboutView.License", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mail.
+        /// </summary>
+        public static string AboutView_Mail {
+            get {
+                return ResourceManager.GetString("AboutView.Mail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Source Code.
+        /// </summary>
+        public static string AboutView_SourceCode {
+            get {
+                return ResourceManager.GetString("AboutView.SourceCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Version.
         /// </summary>
         public static string AboutView_Version {
             get {
                 return ResourceManager.GetString("AboutView.Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vocup on GitHub.
+        /// </summary>
+        public static string AboutView_VocupOnGithub {
+            get {
+                return ResourceManager.GetString("AboutView.VocupOnGithub", resourceCulture);
             }
         }
     }

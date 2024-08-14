@@ -112,63 +112,15 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=6.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=6.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
     <value>Über Vocup</value>
   </data>
   <data name="BtnOK.Text" xml:space="preserve">
     <value>OK</value>
-  </data>
-  <data name="ColHeaderLicense.Text" xml:space="preserve">
-    <value>Lizenz</value>
-  </data>
-  <data name="ColHeaderName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="ColHeaderUrl.Text" xml:space="preserve">
-    <value>URL</value>
-  </data>
-  <data name="ColHeaderVersion.Text" xml:space="preserve">
-    <value>Version</value>
-  </data>
-  <data name="LbCopyright.Text" xml:space="preserve">
-    <value>%Copyright%</value>
-  </data>
-  <data name="LbDownload.Text" xml:space="preserve">
-    <value>Download:</value>
-  </data>
-  <data name="LbLicense.Text" xml:space="preserve">
-    <value>Lizenz:</value>
-  </data>
-  <data name="LbMail.Text" xml:space="preserve">
-    <value>E-Mail:</value>
-  </data>
-  <data name="LbVersion.Text" xml:space="preserve">
-    <value>Version {0} ({1}; {2})</value>
-  </data>
-  <data name="LbWebsite.Text" xml:space="preserve">
-    <value>Website:</value>
-  </data>
-  <data name="LlbDownload.Text" xml:space="preserve">
-    <value>Microsoft Store</value>
-  </data>
-  <data name="LlbProjectLicense.Text" xml:space="preserve">
-    <value>AGPL-3.0</value>
-  </data>
-  <data name="LlbProjectMail.Text" xml:space="preserve">
-    <value>daniel.dev@lerchen.net</value>
-  </data>
-  <data name="LlbProjectWebsite.Text" xml:space="preserve">
-    <value>Vocup auf GitHub</value>
-  </data>
-  <data name="TpComponents.Text" xml:space="preserve">
-    <value>Komponenten</value>
-  </data>
-  <data name="TpInfo.Text" xml:space="preserve">
-    <value>Info</value>
   </data>
 </root>

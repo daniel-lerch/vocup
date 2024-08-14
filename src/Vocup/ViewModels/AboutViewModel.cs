@@ -6,13 +6,13 @@ namespace Vocup.ViewModels;
 public class AboutViewModel : ViewModelBase
 {
     public AboutViewModel() 
-        : this("0.0.0", "Copyright © 2011 Florian Amstutz, © 2018-present Daniel Lerch.") { }
+        : this(new Version(), "Development", "Copyright © 2011 Florian Amstutz, © 2018-present Daniel Lerch.") { }
 
-    public AboutViewModel(string appVersion, string copyright)
+    public AboutViewModel(Version appVersion, string deployment, string copyright)
     {
         string prefix = Lang.Resources.AboutView_Version;
         string architecture = RuntimeInformation.ProcessArchitecture.ToString().ToLowerInvariant();
-        Version = $"{prefix} {appVersion} ({architecture})";
+        Version = $"{prefix} {appVersion} ({architecture}, {deployment})";
 
         Copyright = copyright;
 
