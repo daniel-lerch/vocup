@@ -21,30 +21,30 @@
     </Style>
   </UserControl.Styles>
 
-  <ItemsControl ItemsSource="{Binding Components}" Grid.IsSharedSizeScope="True">
+  <ItemsControl ItemsSource="{Binding Components}">
     <ItemsControl.ItemTemplate>
       <DataTemplate>
-        <Border Padding="4">
-          <Grid>
-            <Grid.ColumnDefinitions>
-              <ColumnDefinition SharedSizeGroup="A" />
-              <ColumnDefinition SharedSizeGroup="B"/>
-            </Grid.ColumnDefinitions>
-            <HyperlinkButton
-              Grid.Column="0"
-              Classes="link"
-              Content="{Binding Name}"
-              NavigateUri="{Binding Url}"
-              ToolTip.Tip="{Binding Url}"
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition SharedSizeGroup="A" />
+            <ColumnDefinition SharedSizeGroup="B"/>
+          </Grid.ColumnDefinitions>
+          <HyperlinkButton
+            Grid.Column="0"
+            Margin="4,4,12,4"
+            Classes="link"
+            Content="{Binding Name}"
+            NavigateUri="{Binding Url}"
+            ToolTip.Tip="{Binding Url}"
             />
-            <TextBlock
-              Grid.Column="1"
-              Text="{Binding License}"
-              FontSize="12"
-              VerticalAlignment="Bottom"
+          <TextBlock
+            Grid.Column="1"
+            Margin="12,4,4,4"
+            Text="{Binding License}"
+            FontSize="12"
+            VerticalAlignment="Bottom"
             />
-          </Grid>
-        </Border>
+        </Grid>
       </DataTemplate>
     </ItemsControl.ItemTemplate>
   </ItemsControl>

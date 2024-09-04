@@ -12,12 +12,26 @@
     <vm:AboutViewModel />
   </Design.DataContext>
 
+  <UserControl.Styles>
+    <Style Selector="Grid.properties HyperlinkButton">
+      <Setter Property="CornerRadius" Value="0" />
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="Margin" Value="12,4,4,4" />
+    </Style>
+    <Style Selector="Grid.properties HyperlinkButton:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="Grid.properties TextBlock">
+      <Setter Property="Margin" Value="4,4,12,4" />
+    </Style>
+  </UserControl.Styles>
+
   <ScrollViewer>
-    <StackPanel>
+    <StackPanel Grid.IsSharedSizeScope="True">
       <Image Source="/Assets/legacy-rectangle-logo.png" Width="248" Margin="8" />
       <TextBlock Text="{Binding Version}" FontWeight="SemiBold" TextAlignment="Center" Margin="8" />
       <TextBlock Text="{Binding Copyright}" TextAlignment="Center" TextWrapping="Wrap" Margin="8" />
-      <Grid Margin="8" HorizontalAlignment="Center">
+      <Grid Margin="4" Classes="properties" HorizontalAlignment="Center">
         <Grid.RowDefinitions>
           <RowDefinition Height="Auto" />
           <RowDefinition Height="Auto" />
@@ -25,11 +39,11 @@
           <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="Auto" />
-          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition SharedSizeGroup="A" Width="*" />
+          <ColumnDefinition SharedSizeGroup="B" Width="*" />
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" Text="{x:Static lang:Resources.AboutView_License}" />
+        <TextBlock Grid.Row="0" Margin="4" Text="{x:Static lang:Resources.AboutView_License}" />
         <HyperlinkButton Grid.Row="0" Grid.Column="1" Content="AGPL-3.0" NavigateUri="https://github.com/daniel-lerch/vocup/blob/master/LICENSE" />
         <TextBlock Grid.Row="1" Text="{x:Static lang:Resources.AboutView_SourceCode}" />
         <HyperlinkButton Grid.Row="1" Grid.Column="1" Content="{x:Static lang:Resources.AboutView_VocupOnGithub}" NavigateUri="https://github.com/daniel-lerch/vocup" />
