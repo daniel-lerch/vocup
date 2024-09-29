@@ -1,0 +1,105 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <AssemblyName>Vocup</AssemblyName>
+    <RootNamespace>Vocup</RootNamespace>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <Platforms>AnyCPU;x86;x64;ARM64</Platforms>
+    <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
+    <!-- For ARM64 builds not to fail, satellite assemblies must be configured https://github.com/dotnet/sdk/issues/28419 -->
+    <GenerateSatelliteAssembliesForCore>true</GenerateSatelliteAssembliesForCore>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationDefaultFont>Microsoft Sans Serif, 8.25pt</ApplicationDefaultFont>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <ForceDesignerDpiUnaware>true</ForceDesignerDpiUnaware>
+    <Description>Vocabulary training application</Description>
+    <Company>VectorData</Company>
+    <Copyright>Copyright © 2011 Florian Amstutz, © 2018-2024 Daniel Lerch.</Copyright>
+    <Version>2.0.0</Version>
+    <NeutralLanguage>en</NeutralLanguage>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.Win32.Interoperability" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="CsvHelper" Version="31.0.3" />
+    <PackageReference Include="LostTech.App.Settings" Version="0.5.0" />
+    <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.49-beta">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <!-- Force higher version because of vulnerabilities in the default version -->
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+    <!-- Force higher version because of vulnerabilities in the default version -->
+    <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Vocup\Vocup.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Resources\easter_egg.vhf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\help.chm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Icons.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Icons.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Properties\Icons.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Icons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Messages.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Properties\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Sounds.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Sounds.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Properties\Sounds.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Sounds.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Words.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Words.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Properties\Words.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Words.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
