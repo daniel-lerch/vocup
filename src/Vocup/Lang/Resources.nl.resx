@@ -117,10 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Über Vocup</value>
+  <data name="AboutView.Components" xml:space="preserve">
+    <value>Componenten</value>
   </data>
-  <data name="BtnOK.Text" xml:space="preserve">
-    <value>OK</value>
+  <data name="AboutView.Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="AboutView.License" xml:space="preserve">
+    <value>Licentie</value>
+  </data>
+  <data name="AboutView.Mail" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="AboutView.SourceCode" xml:space="preserve">
+    <value>Broncode</value>
+  </data>
+  <data name="AboutView.Version" xml:space="preserve">
+    <value>Versie</value>
+  </data>
+  <data name="AboutView.VocupOnGithub" xml:space="preserve">
+    <value>Vocup op GitHub</value>
   </data>
 </root>

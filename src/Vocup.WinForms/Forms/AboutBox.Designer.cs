@@ -29,202 +29,38 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
-            this.BtnOK = new System.Windows.Forms.Button();
-            this.LbVersion = new System.Windows.Forms.Label();
-            this.LbCopyright = new System.Windows.Forms.Label();
-            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.LlbDownload = new System.Windows.Forms.LinkLabel();
-            this.LlbProjectWebsite = new System.Windows.Forms.LinkLabel();
-            this.LbWebsite = new System.Windows.Forms.Label();
-            this.LbDownload = new System.Windows.Forms.Label();
-            this.LbLicense = new System.Windows.Forms.Label();
-            this.LbMail = new System.Windows.Forms.Label();
-            this.LlbProjectLicense = new System.Windows.Forms.LinkLabel();
-            this.LlbProjectMail = new System.Windows.Forms.LinkLabel();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.TpInfo = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.TpComponents = new System.Windows.Forms.TabPage();
-            this.ElementHost = new System.Windows.Forms.Integration.ElementHost();
-            this.tableLayoutPanel.SuspendLayout();
-            this.tabControl.SuspendLayout();
-            this.TpInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.TpComponents.SuspendLayout();
-            this.SuspendLayout();
+            BtnOK = new System.Windows.Forms.Button();
+            AvaloniaControlHost = new Avalonia.Win32.Interoperability.WinFormsAvaloniaControlHost();
+            SuspendLayout();
             // 
             // BtnOK
             // 
-            this.BtnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            resources.ApplyResources(this.BtnOK, "BtnOK");
-            this.BtnOK.Name = "BtnOK";
-            this.BtnOK.UseVisualStyleBackColor = true;
+            resources.ApplyResources(BtnOK, "BtnOK");
+            BtnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            BtnOK.Name = "BtnOK";
+            BtnOK.UseVisualStyleBackColor = true;
             // 
-            // LbVersion
+            // AvaloniaControlHost
             // 
-            resources.ApplyResources(this.LbVersion, "LbVersion");
-            this.LbVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.LbVersion.Name = "LbVersion";
-            // 
-            // LbCopyright
-            // 
-            resources.ApplyResources(this.LbCopyright, "LbCopyright");
-            this.LbCopyright.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.LbCopyright.Name = "LbCopyright";
-            // 
-            // tableLayoutPanel
-            // 
-            resources.ApplyResources(this.tableLayoutPanel, "tableLayoutPanel");
-            this.tableLayoutPanel.Controls.Add(this.LlbDownload, 1, 1);
-            this.tableLayoutPanel.Controls.Add(this.LlbProjectWebsite, 1, 0);
-            this.tableLayoutPanel.Controls.Add(this.LbWebsite, 0, 0);
-            this.tableLayoutPanel.Controls.Add(this.LbDownload, 0, 1);
-            this.tableLayoutPanel.Controls.Add(this.LbLicense, 0, 3);
-            this.tableLayoutPanel.Controls.Add(this.LbMail, 0, 2);
-            this.tableLayoutPanel.Controls.Add(this.LlbProjectLicense, 1, 3);
-            this.tableLayoutPanel.Controls.Add(this.LlbProjectMail, 1, 2);
-            this.tableLayoutPanel.Name = "tableLayoutPanel";
-            // 
-            // LlbDownload
-            // 
-            this.LlbDownload.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            resources.ApplyResources(this.LlbDownload, "LlbDownload");
-            this.LlbDownload.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.LlbDownload.Name = "LlbDownload";
-            this.LlbDownload.TabStop = true;
-            this.LlbDownload.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.LlbDownload.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LlbDownload_LinkClicked);
-            // 
-            // LlbProjectWebsite
-            // 
-            this.LlbProjectWebsite.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            resources.ApplyResources(this.LlbProjectWebsite, "LlbProjectWebsite");
-            this.LlbProjectWebsite.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.LlbProjectWebsite.Name = "LlbProjectWebsite";
-            this.LlbProjectWebsite.TabStop = true;
-            this.LlbProjectWebsite.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.LlbProjectWebsite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LlbProjectWebsite_LinkClicked);
-            // 
-            // LbWebsite
-            // 
-            resources.ApplyResources(this.LbWebsite, "LbWebsite");
-            this.LbWebsite.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.LbWebsite.Name = "LbWebsite";
-            // 
-            // LbDownload
-            // 
-            resources.ApplyResources(this.LbDownload, "LbDownload");
-            this.LbDownload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.LbDownload.Name = "LbDownload";
-            // 
-            // LbLicense
-            // 
-            resources.ApplyResources(this.LbLicense, "LbLicense");
-            this.LbLicense.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.LbLicense.Name = "LbLicense";
-            // 
-            // LbMail
-            // 
-            resources.ApplyResources(this.LbMail, "LbMail");
-            this.LbMail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.LbMail.Name = "LbMail";
-            // 
-            // LlbProjectLicense
-            // 
-            this.LlbProjectLicense.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            resources.ApplyResources(this.LlbProjectLicense, "LlbProjectLicense");
-            this.LlbProjectLicense.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.LlbProjectLicense.Name = "LlbProjectLicense";
-            this.LlbProjectLicense.TabStop = true;
-            this.LlbProjectLicense.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.LlbProjectLicense.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LlbProjectLicense_LinkClicked);
-            // 
-            // LlbProjectMail
-            // 
-            this.LlbProjectMail.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            resources.ApplyResources(this.LlbProjectMail, "LlbProjectMail");
-            this.LlbProjectMail.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.LlbProjectMail.Name = "LlbProjectMail";
-            this.LlbProjectMail.TabStop = true;
-            this.LlbProjectMail.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            this.LlbProjectMail.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LlbProjectMail_LinkClicked);
-            // 
-            // tabControl
-            // 
-            this.tabControl.Controls.Add(this.TpInfo);
-            this.tabControl.Controls.Add(this.TpComponents);
-            resources.ApplyResources(this.tabControl, "tabControl");
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            // 
-            // TpInfo
-            // 
-            this.TpInfo.BackColor = System.Drawing.Color.White;
-            this.TpInfo.Controls.Add(this.pictureBox1);
-            this.TpInfo.Controls.Add(this.LbVersion);
-            this.TpInfo.Controls.Add(this.LbCopyright);
-            this.TpInfo.Controls.Add(this.tableLayoutPanel);
-            resources.ApplyResources(this.TpInfo, "TpInfo");
-            this.TpInfo.Name = "TpInfo";
-            // 
-            // pictureBox1
-            // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            // 
-            // TpComponents
-            // 
-            this.TpComponents.BackColor = System.Drawing.Color.White;
-            this.TpComponents.Controls.Add(this.ElementHost);
-            resources.ApplyResources(this.TpComponents, "TpComponents");
-            this.TpComponents.Name = "TpComponents";
-            // 
-            // ElementHost
-            // 
-            resources.ApplyResources(this.ElementHost, "ElementHost");
-            this.ElementHost.Name = "ElementHost";
+            resources.ApplyResources(AvaloniaControlHost, "AvaloniaControlHost");
+            AvaloniaControlHost.Content = null;
+            AvaloniaControlHost.Name = "AvaloniaControlHost";
             // 
             // AboutBox
             // 
-            this.AcceptButton = this.BtnOK;
+            AcceptButton = BtnOK;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tabControl);
-            this.Controls.Add(this.BtnOK);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "AboutBox";
-            this.ShowInTaskbar = false;
-            this.Load += new System.EventHandler(this.AboutBox_Load);
-            this.tableLayoutPanel.ResumeLayout(false);
-            this.tableLayoutPanel.PerformLayout();
-            this.tabControl.ResumeLayout(false);
-            this.TpInfo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.TpComponents.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Controls.Add(AvaloniaControlHost);
+            Controls.Add(BtnOK);
+            MinimizeBox = false;
+            Name = "AboutBox";
+            ShowInTaskbar = false;
+            ResumeLayout(false);
         }
 
         #endregion
         private System.Windows.Forms.Button BtnOK;
-        private System.Windows.Forms.Label LbVersion;
-        private System.Windows.Forms.Label LbCopyright;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
-        private System.Windows.Forms.Label LbWebsite;
-        private System.Windows.Forms.LinkLabel LlbProjectWebsite;
-        private System.Windows.Forms.LinkLabel LlbProjectMail;
-        private System.Windows.Forms.Label LbMail;
-        private System.Windows.Forms.Label LbLicense;
-        public  System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage TpInfo;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        public  System.Windows.Forms.TabPage TpComponents;
-        private System.Windows.Forms.LinkLabel LlbProjectLicense;
-        private System.Windows.Forms.Label LbDownload;
-        private System.Windows.Forms.LinkLabel LlbDownload;
-        private System.Windows.Forms.Integration.ElementHost ElementHost;
+        private Avalonia.Win32.Interoperability.WinFormsAvaloniaControlHost AvaloniaControlHost;
     }
 }
