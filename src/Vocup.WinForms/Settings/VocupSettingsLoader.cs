@@ -46,7 +46,7 @@ public class VocupSettingsLoader : SettingsLoaderBase<VocupSettings>
         if (oldSettings == null) return false;
 
         if (!string.IsNullOrEmpty(oldSettings.LastFile))
-            settings.Value.RecentFiles.Add(new(oldSettings.LastFile, DateTime.MinValue));
+            settings.Value.RecentFiles.Add(new(oldSettings.LastFile, DateTime.MinValue, DateTime.MinValue));
         settings.Value.StartScreen = oldSettings.StartScreen;
         settings.Value.AutoSave = oldSettings.AutoSave;
         settings.Value.DisableInternetServices = oldSettings.DisableInternetServices;
@@ -110,7 +110,7 @@ public class VocupSettingsLoader : SettingsLoaderBase<VocupSettings>
 #pragma warning disable CS0618 // Type or member is obsolete
 
         if (!string.IsNullOrEmpty(OldSettings.Default.LastFile))
-            settings.Value.RecentFiles.Add(new(OldSettings.Default.LastFile, DateTime.MinValue));
+            settings.Value.RecentFiles.Add(new(OldSettings.Default.LastFile, DateTime.MinValue, DateTime.MinValue));
         settings.Value.StartScreen = OldSettings.Default.StartScreen;
         settings.Value.AutoSave = OldSettings.Default.AutoSave;
         settings.Value.DisableInternetServices = OldSettings.Default.DisableInternetServices;

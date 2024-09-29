@@ -100,7 +100,7 @@ public partial class MainForm : Form, IMainForm
 
         FileTreeView.SelectedPath = book.FilePath;
 
-        Program.Settings.LastFile = book.FilePath;
+        Program.RecentFilesService.InteractedWith(book.FilePath);
     }
     public void UnloadBook(bool fullUnload)
     {
@@ -401,7 +401,6 @@ public partial class MainForm : Form, IMainForm
             return;
 
         UnloadBook(true);
-        Program.Settings.LastFile = string.Empty;
     }
 
     private void TsmiMerge_Click(object sender, EventArgs e)
@@ -629,7 +628,7 @@ public partial class MainForm : Form, IMainForm
         {
             CurrentBook.UnsavedChanges = false;
 
-            Program.Settings.LastFile = CurrentBook.FilePath;
+            Program.RecentFilesService.InteractedWith(CurrentBook.FilePath);
 
             Cursor.Current = Cursors.Default;
             return true;

@@ -25,6 +25,7 @@ public static class Program
     private static Mutex? mutex;
 
     public static VocupSettings Settings { get; private set; } = null!;
+    public static RecentFilesService RecentFilesService { get; private set; } = null!;
     public static TrackingService TrackingService { get; private set; } = null!;
 
     /// <summary>
@@ -83,9 +84,9 @@ public static class Program
                     Messages.OpenUnknownFileT, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        else if (Settings.StartScreen == (int)StartScreen.LastFile && File.Exists(Settings.LastFile))
+        else if (Settings.StartScreen == (int)StartScreen.LastFile && RecentFilesService.TryGetMostRecent(out var mostRecent))
         {
-            form.ReadFile(Settings.LastFile);
+            form.ReadFile(mostRecent.FileName);
         }
 
         Application.DoEvents();
@@ -126,6 +127,7 @@ public static class Program
         var settings = loader.LoadAsync().AsTask().GetAwaiter().GetResult();
         Settings = settings.Value;
 
+        RecentFilesService = new RecentFilesService(Settings);
         TrackingService = new TrackingService();
 
         return settings;

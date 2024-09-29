@@ -16,7 +16,7 @@ public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
     {
         return new VocupSettings
         {
-            _recentFiles = new(_recentFiles.Select(x => new RecentFile(x.FileName, x.LastAccess))),
+            RecentFiles = new(RecentFiles.Select(x => new RecentFile(x.FileName, x.LastAccess, x.LastAvalailable))),
             _startScreen = _startScreen,
             _autoSave = _autoSave,
             _disableInternetServices = _disableInternetServices,
@@ -51,30 +51,34 @@ public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
 
     public class RecentFile : SettingsBase
     {
-        public RecentFile(string fileName, DateTime lastAccess)
+        public RecentFile(string fileName, DateTime lastAccess, DateTime lastAvailable)
         {
             FileName = fileName;
             LastAccess = lastAccess;
+            LastAvalailable = lastAvailable;
         }
 
         public string FileName { get; }
 
         private DateTime _lastAccess;
-
         public DateTime LastAccess
         {
             get => _lastAccess;
             set => RaiseAndSetIfChanged(ref _lastAccess, value);
         }
+
+        private DateTime _lastAvailable;
+        /// <summary>
+        /// Gets or sets the last time the file was available on the file system.
+        /// </summary>
+        public DateTime LastAvalailable
+        {
+            get => _lastAvailable;
+            set => RaiseAndSetIfChanged(ref _lastAvailable, value);
+        }
     }
 
-    private ObservableCollection<RecentFile> _recentFiles = [];
-    public ObservableCollection<RecentFile> RecentFiles
-    {
-        get => _recentFiles;
-        set => RaiseAndSetIfChanged(ref _recentFiles, value);
-    }
-
+    public ObservableCollection<RecentFile> RecentFiles { get; init; } = [];
 
     private int _startScreen = 1;
     public int StartScreen
