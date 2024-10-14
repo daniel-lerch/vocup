@@ -33,13 +33,13 @@ public partial class SettingsDialog : Form
         TbVhfPath.Text = settings.VhfPath;
         TbVhrPath.Text = settings.VhrPath;
 
-        switch (settings.OverrideCulture)
+        CbLanguage.SelectedIndex = settings.OverrideCulture switch
         {
-            case "en-US": CbLanguage.SelectedIndex = 1; break;
-            case "de-DE": CbLanguage.SelectedIndex = 2; break;
-            case "nl-NL": CbLanguage.SelectedIndex = 3; break;
-            default: CbLanguage.SelectedIndex = 0; break; // System language
-        }
+            "en-US" => 1,
+            "de-DE" => 2,
+            "nl-NL" => 3,
+            _ => 0,
+        };
 
         // Evaluation
         CbManualCheck.Checked = settings.UserEvaluates;
@@ -163,46 +163,50 @@ public partial class SettingsDialog : Form
 
     private void BtnVhfPath_Click(object sender, EventArgs e)
     {
-        using (FolderBrowserDialog fbd = new FolderBrowserDialog
+        using FolderBrowserDialog fbd = new()
         {
+            UseDescriptionForTitle = true,
             Description = Messages.BrowseVhfPath,
             SelectedPath = settings.VhfPath
-        })
-        {
-            if (fbd.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    // This call fails for inaccessible paths like optical disk drives
-                    _ = Directory.GetFiles(fbd.SelectedPath);
+        };
 
-                    TbVhfPath.Text = fbd.SelectedPath;
-                }
-                catch (IOException)
-                {
-                    MessageBox.Show(Messages.VhfPathInvalid, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+        if (fbd.ShowDialog() == DialogResult.OK)
+        {
+            try
+            {
+                // This call fails for inaccessible paths like optical disk drives
+                _ = Directory.GetFiles(fbd.SelectedPath);
+
+                TbVhfPath.Text = fbd.SelectedPath;
+            }
+            catch (IOException)
+            {
+                MessageBox.Show(Messages.VhfPathInvalid, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
 
     private void BtnVhrPath_Click(object sender, EventArgs e)
     {
-        using (FolderBrowserDialog fbd = new FolderBrowserDialog { SelectedPath = settings.VhrPath })
+        using FolderBrowserDialog fbd = new()
         {
-            if (fbd.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    // This call fails for inaccessible paths like optical disk drives
-                    _ = Directory.GetFiles(fbd.SelectedPath);
+            UseDescriptionForTitle = true,
+            Description = Messages.BrowseVhrPath,
+            SelectedPath = settings.VhrPath,
+        };
 
-                    TbVhrPath.Text = fbd.SelectedPath;
-                }
-                catch (IOException)
-                {
-                    MessageBox.Show(Messages.VhrPathInvalid, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+        if (fbd.ShowDialog() == DialogResult.OK)
+        {
+            try
+            {
+                // This call fails for inaccessible paths like optical disk drives
+                _ = Directory.GetFiles(fbd.SelectedPath);
+
+                TbVhrPath.Text = fbd.SelectedPath;
+            }
+            catch (IOException)
+            {
+                MessageBox.Show(Messages.VhrPathInvalid, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

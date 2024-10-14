@@ -253,30 +253,30 @@ public partial class MainForm : Form, IMainForm
 
     private void FileTreeView_BrowseClick(object sender, EventArgs e)
     {
-        using (FolderBrowserDialog dialog = new FolderBrowserDialog
+        using FolderBrowserDialog dialog = new()
         {
+            UseDescriptionForTitle = true,
             Description = Messages.BrowseVhfPath,
             SelectedPath = Program.Settings.VhfPath
-        })
-        {
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    // This call fails for inaccessible paths like optical disk drives
-                    _ = Directory.GetFiles(dialog.SelectedPath);
+        };
 
-                    // Eventually refresh tree view root path
-                    if (dialog.SelectedPath != Program.Settings.VhfPath)
-                    {
-                        Program.Settings.VhfPath = dialog.SelectedPath;
-                        FileTreeView.RootPath = dialog.SelectedPath;
-                    }
-                }
-                catch (IOException)
+        if (dialog.ShowDialog() == DialogResult.OK)
+        {
+            try
+            {
+                // This call fails for inaccessible paths like optical disk drives
+                _ = Directory.GetFiles(dialog.SelectedPath);
+
+                // Eventually refresh tree view root path
+                if (dialog.SelectedPath != Program.Settings.VhfPath)
                 {
-                    MessageBox.Show(Messages.VhfPathInvalid, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Program.Settings.VhfPath = dialog.SelectedPath;
+                    FileTreeView.RootPath = dialog.SelectedPath;
                 }
+            }
+            catch (IOException)
+            {
+                MessageBox.Show(Messages.VhfPathInvalid, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

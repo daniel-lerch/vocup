@@ -81,11 +81,20 @@ namespace Vocup.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please select the default folder for your vocabulary books..
+        ///   Looks up a localized string similar to Select the default folder for vocabulary books..
         /// </summary>
         internal static string BrowseVhfPath {
             get {
                 return ResourceManager.GetString("BrowseVhfPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select the folder for practice results.
+        /// </summary>
+        internal static string BrowseVhrPath {
+            get {
+                return ResourceManager.GetString("BrowseVhrPath", resourceCulture);
             }
         }
         
