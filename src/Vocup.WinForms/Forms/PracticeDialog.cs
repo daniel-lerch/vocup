@@ -70,7 +70,7 @@ public partial class PracticeDialog : Form
 
     private void Form_Load(object sender, EventArgs e)
     {
-        Size size = Program.Settings.PracticeDialogSize;
+        Size size = Program.Settings.PracticeDialogSize.ToSystemDrawingSize();
         if (size.Width >= MinimumSize.Width && size.Height >= MinimumSize.Height)
         {
             Size = size;
@@ -418,7 +418,7 @@ public partial class PracticeDialog : Form
 
     private void Form_FormClosing(object sender, FormClosingEventArgs e)
     {
-        Program.Settings.PracticeDialogSize = Size;
+        Program.Settings.PracticeDialogSize = Size.ToAvaloniaSize();
     }
 
     private void Form_FormClosed(object sender, FormClosedEventArgs e)

@@ -5,13 +5,14 @@ using System.Reflection;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Vocup.Settings.Core;
+using Vocup.Util;
 using OldSettings = Vocup.Properties.Settings;
 
 namespace Vocup.Settings;
 
-public class VocupSettingsLoader : SettingsLoaderBase<VocupSettings>
+public class WindowsSettingsLoader : SettingsLoaderBase<VocupSettings>
 {
-    public VocupSettingsLoader()
+    public WindowsSettingsLoader()
         : base(
             new DirectoryInfo(
                 Path.Combine(
@@ -70,11 +71,11 @@ public class VocupSettingsLoader : SettingsLoaderBase<VocupSettings>
         settings.Value.EvaluateToleratePunctuationMark = oldSettings.EvaluateToleratePunctuationMark;
         settings.Value.EvaluateTolerateSpecialChar = oldSettings.EvaluateTolerateSpecialChar;
         settings.Value.EvaluateTolerateArticle = oldSettings.EvaluateTolerateArticle;
-        settings.Value.MainFormBounds = oldSettings.MainFormBounds;
-        settings.Value.MainFormWindowState = oldSettings.MainFormWindowState;
+        settings.Value.MainFormBounds = oldSettings.MainFormBounds.ToAvaloniaRect();
+        settings.Value.MainFormWindowState = oldSettings.MainFormWindowState.ToAvaloniaWindowState();
         settings.Value.MainFormSplitterDistance = oldSettings.MainFormSplitterDistance;
         settings.Value.SpecialCharTab = oldSettings.SpecialCharTab;
-        settings.Value.PracticeDialogSize = oldSettings.PracticeDialogSize;
+        settings.Value.PracticeDialogSize = oldSettings.PracticeDialogSize.ToAvaloniaSize();
         settings.Value.Version = oldSettings.Version;
         return true;
     }
@@ -134,8 +135,8 @@ public class VocupSettingsLoader : SettingsLoaderBase<VocupSettings>
         settings.Value.EvaluateToleratePunctuationMark = OldSettings.Default.EvaluateToleratePunctuationMark;
         settings.Value.EvaluateTolerateSpecialChar = OldSettings.Default.EvaluateTolerateSpecialChar;
         settings.Value.EvaluateTolerateArticle = OldSettings.Default.EvaluateTolerateArticle;
-        settings.Value.MainFormBounds = OldSettings.Default.MainFormBounds;
-        settings.Value.MainFormWindowState = OldSettings.Default.MainFormWindowState;
+        settings.Value.MainFormBounds = OldSettings.Default.MainFormBounds.ToAvaloniaRect();
+        settings.Value.MainFormWindowState = OldSettings.Default.MainFormWindowState.ToAvaloniaWindowState();
         settings.Value.MainFormSplitterDistance = OldSettings.Default.MainFormSplitterDistance;
         settings.Value.SpecialCharTab = OldSettings.Default.SpecialCharTab;
         if (Version.TryParse(OldSettings.Default.Version, out Version? version)) settings.Value.Version = version;

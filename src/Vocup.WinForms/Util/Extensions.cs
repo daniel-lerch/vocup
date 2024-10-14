@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace Vocup.Util;
 
@@ -79,5 +80,51 @@ public static class CollectionExtensions
         }
 
         return -1;
+    }
+}
+
+public static class AvaloniaWinFormsExtensions
+{
+    public static Avalonia.Size ToAvaloniaSize(this System.Drawing.Size size)
+    {
+        return new(size.Width, size.Height);
+    }
+
+    public static System.Drawing.Size ToSystemDrawingSize(this Avalonia.Size size)
+    {
+        return new((int)size.Width, (int)size.Height);
+    }
+
+    public static Avalonia.Rect ToAvaloniaRect(this System.Drawing.Rectangle rect)
+    {
+        return new(rect.X, rect.Y, rect.Width, rect.Height);
+    }
+
+    public static System.Drawing.Rectangle ToSystemDrawingRect(this Avalonia.Rect rect)
+    {
+        return new((int)rect.X, (int)rect.Y, (int)rect.Width, (int)rect.Height);
+    }
+
+    public static Avalonia.Controls.WindowState ToAvaloniaWindowState(this FormWindowState state)
+    {
+        return state switch
+        {
+            FormWindowState.Normal => Avalonia.Controls.WindowState.Normal,
+            FormWindowState.Minimized => Avalonia.Controls.WindowState.Minimized,
+            FormWindowState.Maximized => Avalonia.Controls.WindowState.Maximized,
+            _ => throw new ArgumentOutOfRangeException(nameof(state), state, null)
+        };
+    }
+
+    public static FormWindowState ToFormWindowState(this Avalonia.Controls.WindowState state)
+    {
+        return state switch
+        {
+            Avalonia.Controls.WindowState.Normal => FormWindowState.Normal,
+            Avalonia.Controls.WindowState.Minimized => FormWindowState.Minimized,
+            Avalonia.Controls.WindowState.Maximized => FormWindowState.Maximized,
+            Avalonia.Controls.WindowState.FullScreen => FormWindowState.Maximized,
+            _ => throw new ArgumentOutOfRangeException(nameof(state), state, null)
+        };
     }
 }

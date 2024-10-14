@@ -145,9 +145,9 @@ public partial class MainForm : Form, IMainForm
 
         Rectangle logicalBounds = new(bounds.Location, bounds.Size.Multiply(96f / DeviceDpi).Round());
 
-        Program.Settings.MainFormBounds = logicalBounds;
+        Program.Settings.MainFormBounds = logicalBounds.ToAvaloniaRect();
 
-        Program.Settings.MainFormWindowState = WindowState;
+        Program.Settings.MainFormWindowState = WindowState.ToAvaloniaWindowState();
 
         Program.Settings.MainFormSplitterDistance = SplitContainer.SplitterDistance;
     }
@@ -162,11 +162,13 @@ public partial class MainForm : Form, IMainForm
     /// </summary>
     private void RestoreSettings()
     {
+        Rectangle mainFormBounds = Program.Settings.MainFormBounds.ToSystemDrawingRect();
+
         // check if stored form bound is visible on any screen
         bool isVisible = false;
         foreach (Screen screen in Screen.AllScreens)
         {
-            if (screen.Bounds.IntersectsWith(Program.Settings.MainFormBounds))
+            if (screen.Bounds.IntersectsWith(mainFormBounds))
             {
                 isVisible = true;
                 break;
@@ -181,12 +183,14 @@ public partial class MainForm : Form, IMainForm
         if (isVisible && Program.Settings.MainFormBounds != default)
         {
             // visible => restore the bounds of the main form
-            Bounds = Program.Settings.MainFormBounds;
+            Bounds = mainFormBounds;
+
+            FormWindowState windowState = Program.Settings.MainFormWindowState.ToFormWindowState();
 
             // Do not restore the window state when the form was minimzed
-            if (Program.Settings.MainFormWindowState != FormWindowState.Minimized)
+            if (windowState != FormWindowState.Minimized)
             {
-                WindowState = Program.Settings.MainFormWindowState;
+                WindowState = windowState;
             }
         }
         else

@@ -14,10 +14,7 @@ public abstract class SettingsBase : INotifyPropertyChanged
         T newValue,
         [CallerMemberName] string? propertyName = null)
     {
-        if (propertyName is null)
-        {
-            throw new ArgumentNullException(nameof(propertyName));
-        }
+        ArgumentNullException.ThrowIfNull(propertyName, nameof(propertyName));
 
         if (EqualityComparer<T>.Default.Equals(backingField, newValue))
         {

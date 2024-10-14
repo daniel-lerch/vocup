@@ -1,20 +1,19 @@
-﻿using LostTech.App.DataBinding;
+﻿using Avalonia;
+using Avalonia.Controls;
+using LostTech.App.DataBinding;
 using System;
 using System.Collections.ObjectModel;
-using System.Drawing;
 using System.Linq;
-using System.Windows.Forms;
 using Vocup.Settings.Core;
+using Vocup.Settings.Model;
 
 namespace Vocup.Settings;
 
 public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
 {
-    public VocupSettings() { }
-
     public VocupSettings Copy()
     {
-        return new VocupSettings
+        return new()
         {
             RecentFiles = new(RecentFiles.Select(x => new RecentFile(x.FileName, x.LastAccess, x.LastAvalailable))),
             _startScreen = _startScreen,
@@ -47,35 +46,6 @@ public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
             _practiceDialogSize = _practiceDialogSize,
             _version = _version
         };
-    }
-
-    public class RecentFile : SettingsBase
-    {
-        public RecentFile(string fileName, DateTime lastAccess, DateTime lastAvailable)
-        {
-            FileName = fileName;
-            LastAccess = lastAccess;
-            LastAvalailable = lastAvailable;
-        }
-
-        public string FileName { get; }
-
-        private DateTime _lastAccess;
-        public DateTime LastAccess
-        {
-            get => _lastAccess;
-            set => RaiseAndSetIfChanged(ref _lastAccess, value);
-        }
-
-        private DateTime _lastAvailable;
-        /// <summary>
-        /// Gets or sets the last time the file was available on the file system.
-        /// </summary>
-        public DateTime LastAvalailable
-        {
-            get => _lastAvailable;
-            set => RaiseAndSetIfChanged(ref _lastAvailable, value);
-        }
     }
 
     public ObservableCollection<RecentFile> RecentFiles { get; init; } = [];
@@ -266,16 +236,16 @@ public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
     #endregion
 
     #region UI state
-    private Rectangle _mainFormBounds;
-    public Rectangle MainFormBounds
+    private Rect _mainFormBounds;
+    public Rect MainFormBounds
     {
         get => _mainFormBounds;
         set => RaiseAndSetIfChanged(ref _mainFormBounds, value);
     }
 
 
-    private FormWindowState _mainFormWindowState;
-    public FormWindowState MainFormWindowState
+    private WindowState _mainFormWindowState;
+    public WindowState MainFormWindowState
     {
         get => _mainFormWindowState;
         set => RaiseAndSetIfChanged(ref _mainFormWindowState, value);

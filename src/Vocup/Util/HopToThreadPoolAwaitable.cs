@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Vocup.Util;
 
-public struct HopToThreadPoolAwaitable : INotifyCompletion
+public readonly struct HopToThreadPoolAwaitable : INotifyCompletion
 {
     public HopToThreadPoolAwaitable GetAwaiter() => this;
     public bool IsCompleted => false;

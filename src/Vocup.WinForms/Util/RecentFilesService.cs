@@ -3,6 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using Vocup.Settings;
+using Vocup.Settings.Model;
 
 namespace Vocup.Util;
 
@@ -29,13 +30,13 @@ public class RecentFilesService
         }
     }
 
-    public bool TryGetMostRecent([NotNullWhen(true)] out VocupSettings.RecentFile? recentFile)
+    public bool TryGetMostRecent([NotNullWhen(true)] out RecentFile? recentFile)
     {
         recentFile = settings.RecentFiles.OrderByDescending(x => x.LastAccess).Where(Exists).FirstOrDefault();
         return recentFile != null;
     }
 
-    private static bool Exists(VocupSettings.RecentFile recentFile)
+    private static bool Exists(RecentFile recentFile)
     {
         bool exists = File.Exists(recentFile.FileName);
         if (exists)

@@ -123,7 +123,7 @@ public static class Program
 
     public static IAsyncDisposable InitializeServices()
     {
-        var loader = new VocupSettingsLoader();
+        var loader = new WindowsSettingsLoader();
         var settings = loader.LoadAsync().AsTask().GetAwaiter().GetResult();
         Settings = settings.Value;
 
