@@ -33,6 +33,15 @@ public partial class SettingsDialog : Form
         TbVhfPath.Text = settings.VhfPath;
         TbVhrPath.Text = settings.VhrPath;
 
+#pragma warning disable WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+        CbColorTheme.SelectedIndex = settings.ColorMode switch
+        {
+            SystemColorMode.Classic => 1,
+            SystemColorMode.Dark => 2,
+            _ => 0,
+        };
+#pragma warning restore WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+
         CbLanguage.SelectedIndex = settings.OverrideCulture switch
         {
             "en-US" => 1,
@@ -84,6 +93,16 @@ public partial class SettingsDialog : Form
         settings.VhfPath = TbVhfPath.Text;
         settings.VhrPath = TbVhrPath.Text;
 
+#pragma warning disable WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+        SystemColorMode oldColorMode = settings.ColorMode;
+        settings.ColorMode = CbColorTheme.SelectedIndex switch
+        {
+            1 => SystemColorMode.Classic,
+            2 => SystemColorMode.Dark,
+            _ => SystemColorMode.System,
+        };
+#pragma warning restore WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+
         string? oldCulture = settings.OverrideCulture;
         settings.OverrideCulture = CbLanguage.SelectedIndex switch
         {
@@ -92,7 +111,7 @@ public partial class SettingsDialog : Form
             3 => "nl-NL",
             _ => null, // System language
         };
-        if (settings.OverrideCulture != oldCulture)
+        if (settings.ColorMode != oldColorMode || settings.OverrideCulture != oldCulture)
             MessageBox.Show(Messages.SettingsRestartRequired, Messages.SettingsRestartRequiredT, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         // Evaluation

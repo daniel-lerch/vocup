@@ -60,7 +60,7 @@ public static class Program
         SetCulture();
 
 #pragma warning disable WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
-        Application.SetColorMode(SystemColorMode.Dark);
+        Application.SetColorMode(Settings.ColorMode);
 #pragma warning restore WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
 
         if (!CreateVhfFolder() || !CreateVhrFolder())

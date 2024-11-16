@@ -117,122 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Instellingen</value>
+  <data name="BtnOk.Text" xml:space="preserve">
+    <value>OK</value>
   </data>
   <data name="BtnCancel.Text" xml:space="preserve">
     <value>Annuleren</value>
   </data>
-  <data name="BtnOk.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="BtnResetPracticeSelect.Text" xml:space="preserve">
-    <value>Instellingen terugzetten</value>
-  </data>
-  <data name="BtnResetStartScreen.Text" xml:space="preserve">
-    <value>Startscherm terugzetten</value>
-  </data>
-  <data name="BtnVhfPath.Text" xml:space="preserve">
-    <value>Bladeren</value>
-  </data>
-  <data name="BtnVhrPath.Text" xml:space="preserve">
-    <value>Bladeren</value>
-  </data>
-  <data name="CbAcousticFeedback.Text" xml:space="preserve">
-    <value>Akoestische feedback inschakelen</value>
-  </data>
-  <data name="CbAutoSave.Text" xml:space="preserve">
-    <value>Wijzigingen automatisch opslaan in woordenboek</value>
-  </data>
-  <data name="CbColumnResize.Text" xml:space="preserve">
-    <value>Kolombreedtes automatisch aanpassen</value>
-  </data>
-  <data name="CbDisableInternetServices.Text" xml:space="preserve">
-    <value>Internetdiensten deactiveren (niet aanbevolen)</value>
-  </data>
-  <data name="CbLanguage.Items" xml:space="preserve">
-    <value>Systeemtaal</value>
-  </data>
-  <data name="CbLanguage.Items1" xml:space="preserve">
-    <value>Engels</value>
-  </data>
-  <data name="CbLanguage.Items2" xml:space="preserve">
-    <value>Duits</value>
-  </data>
-  <data name="CbLanguage.Items3" xml:space="preserve">
-    <value>Nederlands</value>
-  </data>
-  <data name="CbManualCheck.Text" xml:space="preserve">
-    <value>Evalueer vertalingen zelf tijdens het oefenen</value>
-  </data>
-  <data name="CbOptionalExpressions.Text" xml:space="preserve">
-    <value>Tekst tussen haakjes als optioneel beschouwen</value>
-  </data>
-  <data name="CbShowPracticeResult.Text" xml:space="preserve">
-    <value>Resultaten tonen na oefenen</value>
-  </data>
-  <data name="CbSingleContinueButton.Text" xml:space="preserve">
-    <value>Knop slechts eenmaal indrukken na vertalen</value>
-  </data>
-  <data name="CbTolerateArticle.Text" xml:space="preserve">
-    <value>foute lidwoorden gebruikt zijn</value>
-  </data>
-  <data name="CbTolerateNoSynonym.Text" xml:space="preserve">
-    <value>slechts een van de twee synoniemen goed is</value>
-  </data>
-  <data name="CbToleratePunctuationMark.Text" xml:space="preserve">
-    <value>fouten met leestekens gemaakt zijn</value>
-  </data>
-  <data name="CbTolerateSpecialChar.Text" xml:space="preserve">
-    <value>fouten met speciale tekens gemaakt zijn</value>
-  </data>
-  <data name="CbTolerateWhiteSpace.Text" xml:space="preserve">
-    <value>fouten in witruimte gemaakt zijn</value>
-  </data>
-  <data name="GroupEvaluation.Text" xml:space="preserve">
-    <value>Evaluatie</value>
-  </data>
-  <data name="GroupLanguage.Text" xml:space="preserve">
-    <value>Taal</value>
-  </data>
-  <data name="GroupNearlyCorrect.Text" xml:space="preserve">
-    <value>Als "Gedeeltelijk goed" markeren als</value>
-  </data>
-  <data name="GroupSave.Text" xml:space="preserve">
-    <value>Opslaan</value>
-  </data>
   <data name="GroupStartScreen.Text" xml:space="preserve">
     <value>Startscherm</value>
   </data>
-  <data name="GroupUpdate.Text" xml:space="preserve">
-    <value>Updates</value>
-  </data>
-  <data name="GroupUserInterface.Text" xml:space="preserve">
-    <value>User interface</value>
-  </data>
-  <data name="GroupVhfPath.Text" xml:space="preserve">
-    <value>Map voor woordenboeken</value>
-  </data>
-  <data name="GroupVhrPath.Text" xml:space="preserve">
-    <value>Map voor resultaatbestanden</value>
-  </data>
-  <data name="GroupVocabularyList.Text" xml:space="preserve">
-    <value>Woordenlijst</value>
-  </data>
-  <data name="LbLanguage.Text" xml:space="preserve">
-    <value>Taal instellen</value>
-  </data>
-  <data name="LbPercentageUnpracticed.Text" xml:space="preserve">
-    <value>Welk percentage van ongeoefende woorden
-wil je hebben?</value>
-  </data>
-  <data name="LbPercentageWrongCorrect.Text" xml:space="preserve">
-    <value>Welk percentage van fout en goed beantwoorde
-woorden wil je hebben?</value>
-  </data>
-  <data name="LbPracticeCount.Text" xml:space="preserve">
-    <value>Hoe vaak moet een woord goed vertaald worden
-voordat het als geleerd wordt gezien?</value>
+  <data name="BtnResetStartScreen.Text" xml:space="preserve">
+    <value>Startscherm terugzetten</value>
   </data>
   <data name="RbEmptyStart.Text" xml:space="preserve">
     <value>Leeg scherm</value>
@@ -246,7 +141,112 @@ voordat het als geleerd wordt gezien?</value>
   <data name="TabPractice.Text" xml:space="preserve">
     <value>Oefen instellingen</value>
   </data>
+  <data name="BtnResetPracticeSelect.Text" xml:space="preserve">
+    <value>Instellingen terugzetten</value>
+  </data>
+  <data name="LbPercentageUnpracticed.Text" xml:space="preserve">
+    <value>Welk percentage van ongeoefende woorden
+wil je hebben?</value>
+  </data>
+  <data name="LbPercentageWrongCorrect.Text" xml:space="preserve">
+    <value>Welk percentage van fout en goed beantwoorde
+woorden wil je hebben?</value>
+  </data>
+  <data name="LbPracticeCount.Text" xml:space="preserve">
+    <value>Hoe vaak moet een woord goed vertaald worden
+voordat het als geleerd wordt gezien?</value>
+  </data>
   <data name="TabPracticeSelect.Text" xml:space="preserve">
     <value>Oefen samenstelling</value>
+  </data>
+  <data name="LbLanguage.Text" xml:space="preserve">
+    <value>Taal</value>
+  </data>
+  <data name="CbLanguage.Items" xml:space="preserve">
+    <value>Systeemtaal</value>
+  </data>
+  <data name="CbLanguage.Items1" xml:space="preserve">
+    <value>Engels</value>
+  </data>
+  <data name="CbLanguage.Items2" xml:space="preserve">
+    <value>Duits</value>
+  </data>
+  <data name="CbLanguage.Items3" xml:space="preserve">
+    <value>Nederlands</value>
+  </data>
+  <data name="GroupVocabularyList.Text" xml:space="preserve">
+    <value>Woordenlijst</value>
+  </data>
+  <data name="CbColumnResize.Text" xml:space="preserve">
+    <value>Kolombreedtes automatisch aanpassen</value>
+  </data>
+  <data name="GroupVhrPath.Text" xml:space="preserve">
+    <value>Map voor resultaatbestanden</value>
+  </data>
+  <data name="BtnVhrPath.Text" xml:space="preserve">
+    <value>Bladeren</value>
+  </data>
+  <data name="GroupVhfPath.Text" xml:space="preserve">
+    <value>Map voor woordenboeken</value>
+  </data>
+  <data name="BtnVhfPath.Text" xml:space="preserve">
+    <value>Bladeren</value>
+  </data>
+  <data name="GroupUpdate.Text" xml:space="preserve">
+    <value>Updates</value>
+  </data>
+  <data name="CbDisableInternetServices.Text" xml:space="preserve">
+    <value>Internetdiensten deactiveren (niet aanbevolen)</value>
+  </data>
+  <data name="GroupSave.Text" xml:space="preserve">
+    <value>Opslaan</value>
+  </data>
+  <data name="CbAutoSave.Text" xml:space="preserve">
+    <value>Wijzigingen automatisch opslaan in woordenboek</value>
+  </data>
+  <data name="GroupEvaluation.Text" xml:space="preserve">
+    <value>Evaluatie</value>
+  </data>
+  <data name="CbOptionalExpressions.Text" xml:space="preserve">
+    <value>Tekst tussen haakjes als optioneel beschouwen</value>
+  </data>
+  <data name="CbManualCheck.Text" xml:space="preserve">
+    <value>Evalueer vertalingen zelf tijdens het oefenen</value>
+  </data>
+  <data name="CbShowPracticeResult.Text" xml:space="preserve">
+    <value>Resultaten tonen na oefenen</value>
+  </data>
+  <data name="GroupPracticeUserInterface.Text" xml:space="preserve">
+    <value>User interface</value>
+  </data>
+  <data name="GroupUserInterface.Text" xml:space="preserve">
+    <value>User interface</value>
+  </data>
+  <data name="CbAcousticFeedback.Text" xml:space="preserve">
+    <value>Akoestische feedback inschakelen</value>
+  </data>
+  <data name="CbSingleContinueButton.Text" xml:space="preserve">
+    <value>Knop slechts eenmaal indrukken na vertalen</value>
+  </data>
+  <data name="GroupNearlyCorrect.Text" xml:space="preserve">
+    <value>Als "Gedeeltelijk goed" markeren als</value>
+  </data>
+  <data name="CbTolerateWhiteSpace.Text" xml:space="preserve">
+    <value>fouten in witruimte gemaakt zijn</value>
+  </data>
+  <data name="CbTolerateNoSynonym.Text" xml:space="preserve">
+    <value>slechts een van de twee synoniemen goed is</value>
+  </data>
+  <data name="CbTolerateArticle.Text" xml:space="preserve">
+    <value>foute lidwoorden gebruikt zijn</value>
+  </data>
+  <data name="CbToleratePunctuationMark.Text" xml:space="preserve">
+    <value>fouten met leestekens gemaakt zijn</value>
+  </data>
+  <data name="CbTolerateSpecialChar.Text" xml:space="preserve">
+    <value>fouten met speciale tekens gemaakt zijn</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Instellingen</value>
   </data>
 </root>
