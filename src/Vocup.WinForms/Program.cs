@@ -72,7 +72,7 @@ public static class Program
 
         if (args.Length > 0 && !string.IsNullOrWhiteSpace(args[0]))
         {
-            FileInfo info = new FileInfo(args[0]);
+            FileInfo info = new(args[0]);
             if (info.Extension == ".vhf")
             {
                 form.ReadFile(info.FullName);
@@ -189,7 +189,7 @@ public static class Program
         {
             try
             {
-                CultureInfo culture = new CultureInfo(Settings.OverrideCulture);
+                CultureInfo culture = new(Settings.OverrideCulture);
                 CultureInfo.DefaultThreadCurrentCulture = culture;
                 CultureInfo.DefaultThreadCurrentUICulture = culture;
             }
