@@ -12,7 +12,7 @@ namespace Vocup.Forms;
 public partial class VocabularyBookSettings : Form
 {
     private const string InvalidChars = "#=:\\/|<>*?\"";
-    private readonly Color redBgColor = Color.FromArgb(255, 192, 203);
+    private readonly Color InvalidInputBackColor;
     private readonly SpecialCharKeyboard specialCharDialog;
     private readonly VocabularyBook book;
 
@@ -22,6 +22,15 @@ public partial class VocabularyBookSettings : Form
         specialCharDialog = new SpecialCharKeyboard();
         specialCharDialog.Initialize(this, BtnSpecialChar);
         specialCharDialog.RegisterTextBox(TbMotherTongue);
+
+        InvalidInputBackColor = Color.FromArgb(255, 192, 203);
+
+#pragma warning disable WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+        if (Application.ColorMode == SystemColorMode.Dark)
+        {
+            InvalidInputBackColor = Color.FromArgb(127, 0, 0);
+        }
+#pragma warning restore WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
     }
 
     public VocabularyBookSettings(out VocabularyBook book) : this()
@@ -57,9 +66,9 @@ public partial class VocabularyBookSettings : Form
     private void TextBox_TextChanged(object sender, EventArgs e)
     {
         bool mValid = !TbMotherTongue.Text.ContainsAny(InvalidChars);
-        TbMotherTongue.BackColor = mValid ? Color.White : redBgColor;
+        TbMotherTongue.BackColor = mValid ? SystemColors.Window : InvalidInputBackColor;
         bool fValid = !TbForeignLang.Text.ContainsAny(InvalidChars);
-        TbForeignLang.BackColor = fValid ? Color.White : redBgColor;
+        TbForeignLang.BackColor = fValid ? SystemColors.Window : InvalidInputBackColor;
 
         if (mValid && fValid &&
             !string.IsNullOrWhiteSpace(TbMotherTongue.Text) &&

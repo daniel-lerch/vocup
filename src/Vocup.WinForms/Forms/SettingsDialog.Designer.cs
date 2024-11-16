@@ -163,7 +163,6 @@
             // 
             // TrbWrongRight
             // 
-            TrbWrongRight.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(TrbWrongRight, "TrbWrongRight");
             TrbWrongRight.Minimum = 1;
             TrbWrongRight.Name = "TrbWrongRight";
@@ -173,7 +172,6 @@
             // 
             // TrbUnknown
             // 
-            TrbUnknown.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(TrbUnknown, "TrbUnknown");
             TrbUnknown.Maximum = 8;
             TrbUnknown.Minimum = 1;
@@ -194,7 +192,7 @@
             // 
             // TabGeneral
             // 
-            TabGeneral.BackColor = System.Drawing.Color.White;
+            TabGeneral.BackColor = System.Drawing.SystemColors.Window;
             TabGeneral.Controls.Add(GroupUserInterface);
             TabGeneral.Controls.Add(GroupVocabularyList);
             TabGeneral.Controls.Add(GroupVhrPath);
@@ -327,7 +325,7 @@
             // 
             // TabPractice
             // 
-            TabPractice.BackColor = System.Drawing.Color.White;
+            TabPractice.BackColor = System.Drawing.SystemColors.Window;
             TabPractice.Controls.Add(GroupEvaluation);
             TabPractice.Controls.Add(GroupPracticeUserInterface);
             TabPractice.Controls.Add(GroupNearlyCorrect);
@@ -441,7 +439,7 @@
             // 
             // TabPracticeSelect
             // 
-            TabPracticeSelect.BackColor = System.Drawing.Color.White;
+            TabPracticeSelect.BackColor = System.Drawing.SystemColors.Window;
             TabPracticeSelect.Controls.Add(BtnResetPracticeSelect);
             TabPracticeSelect.Controls.Add(GroupSelectionMix);
             TabPracticeSelect.Controls.Add(GroupRepetitions);
@@ -569,7 +567,6 @@
             // 
             // TrbRepetitions
             // 
-            TrbRepetitions.BackColor = System.Drawing.Color.White;
             TrbRepetitions.LargeChange = 1;
             resources.ApplyResources(TrbRepetitions, "TrbRepetitions");
             TrbRepetitions.Maximum = 6;
