@@ -38,9 +38,9 @@ namespace Vocup.Forms
                 !TbForeignLangSynonym.Text.ContainsAny(InvalidChars);
 
             // Visual feedback for invalid chars.
-            TbMotherTongue.BackColor = TbMotherTongue.Text.ContainsAny(InvalidChars) ? redBgColor : Color.White;
-            TbForeignLang.BackColor = TbForeignLang.Text.ContainsAny(InvalidChars) ? redBgColor : Color.White;
-            TbForeignLangSynonym.BackColor = TbForeignLangSynonym.Text.ContainsAny(InvalidChars) ? redBgColor : Color.White;
+            TbMotherTongue.BackColor = TbMotherTongue.Text.ContainsAny(InvalidChars) ? redBgColor : SystemColors.Window;
+            TbForeignLang.BackColor = TbForeignLang.Text.ContainsAny(InvalidChars) ? redBgColor : SystemColors.Window;
+            TbForeignLangSynonym.BackColor = TbForeignLangSynonym.Text.ContainsAny(InvalidChars) ? redBgColor : SystemColors.Window;
 
             OnInputValidated(BtnContinue.Enabled);
         }
