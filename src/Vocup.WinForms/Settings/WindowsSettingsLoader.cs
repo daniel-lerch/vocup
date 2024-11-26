@@ -71,8 +71,10 @@ public class WindowsSettingsLoader : SettingsLoaderBase<VocupSettings>
         settings.Value.EvaluateToleratePunctuationMark = oldSettings.EvaluateToleratePunctuationMark;
         settings.Value.EvaluateTolerateSpecialChar = oldSettings.EvaluateTolerateSpecialChar;
         settings.Value.EvaluateTolerateArticle = oldSettings.EvaluateTolerateArticle;
-        settings.Value.MainFormBounds = oldSettings.MainFormBounds.ToAvaloniaRect();
-        settings.Value.MainFormWindowState = oldSettings.MainFormWindowState.ToAvaloniaWindowState();
+        settings.Value.WindowWidth = oldSettings.MainFormBounds.Width;
+        settings.Value.WindowHeight = oldSettings.MainFormBounds.Height;
+        settings.Value.WindowPosition = oldSettings.MainFormBounds.Location.ToAvaloniaPixelPoint();
+        settings.Value.WindowState = oldSettings.MainFormWindowState.ToAvaloniaWindowState();
         settings.Value.MainFormSplitterDistance = oldSettings.MainFormSplitterDistance;
         settings.Value.SpecialCharTab = oldSettings.SpecialCharTab;
         settings.Value.PracticeDialogSize = oldSettings.PracticeDialogSize.ToAvaloniaSize();
@@ -135,8 +137,10 @@ public class WindowsSettingsLoader : SettingsLoaderBase<VocupSettings>
         settings.Value.EvaluateToleratePunctuationMark = OldSettings.Default.EvaluateToleratePunctuationMark;
         settings.Value.EvaluateTolerateSpecialChar = OldSettings.Default.EvaluateTolerateSpecialChar;
         settings.Value.EvaluateTolerateArticle = OldSettings.Default.EvaluateTolerateArticle;
-        settings.Value.MainFormBounds = OldSettings.Default.MainFormBounds.ToAvaloniaRect();
-        settings.Value.MainFormWindowState = OldSettings.Default.MainFormWindowState.ToAvaloniaWindowState();
+        settings.Value.WindowWidth = OldSettings.Default.MainFormBounds.Width;
+        settings.Value.WindowHeight = OldSettings.Default.MainFormBounds.Height;
+        settings.Value.WindowPosition = OldSettings.Default.MainFormBounds.Location.ToAvaloniaPixelPoint();
+        settings.Value.WindowState = OldSettings.Default.MainFormWindowState.ToAvaloniaWindowState();
         settings.Value.MainFormSplitterDistance = OldSettings.Default.MainFormSplitterDistance;
         settings.Value.SpecialCharTab = OldSettings.Default.SpecialCharTab;
         if (Version.TryParse(OldSettings.Default.Version, out Version? version)) settings.Value.Version = version;

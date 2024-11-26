@@ -26,7 +26,7 @@ public class RecentFilesService
         else
         {
             recentFile.LastAccess = DateTime.Now;
-            recentFile.LastAvalailable = DateTime.Now;
+            recentFile.LastAvailable = DateTime.Now;
         }
     }
 
@@ -41,7 +41,7 @@ public class RecentFilesService
         bool exists = File.Exists(recentFile.FileName);
         if (exists)
         {
-            recentFile.LastAvalailable = DateTime.Now;
+            recentFile.LastAvailable = DateTime.Now;
         }
         return exists;
     }

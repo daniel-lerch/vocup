@@ -5,14 +5,14 @@ using System.Text.Json.Serialization;
 
 namespace Vocup.Settings.Core;
 
-public class RectJsonConverter : JsonConverter<Rect>
+public class PixelPointJsonConverter : JsonConverter<PixelPoint>
 {
-    public override Rect Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    public override PixelPoint Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         if (reader.TokenType != JsonTokenType.StartObject)
             throw new JsonException();
 
-        double x = 0, y = 0, width = 0, height = 0;
+        int x = 0, y = 0;
 
         while (reader.Read())
         {
@@ -23,22 +23,12 @@ public class RectJsonConverter : JsonConverter<Rect>
                 if (propertyName == "X")
                 {
                     reader.Read();
-                    x = reader.GetDouble();
+                    x = reader.GetInt32();
                 }
                 else if (propertyName == "Y")
                 {
                     reader.Read();
-                    y = reader.GetDouble();
-                }
-                else if (propertyName == "Width")
-                {
-                    reader.Read();
-                    width = reader.GetDouble();
-                }
-                else if (propertyName == "Height")
-                {
-                    reader.Read();
-                    height = reader.GetDouble();
+                    y = reader.GetInt32();
                 }
                 else
                 {
@@ -47,29 +37,20 @@ public class RectJsonConverter : JsonConverter<Rect>
             }
             else if (reader.TokenType == JsonTokenType.EndObject)
             {
-                return new Rect(x, y, width, height);
+                return new PixelPoint(x, y);
             }
         }
 
         throw new JsonException();
     }
 
-    public override void Write(Utf8JsonWriter writer, Rect value, JsonSerializerOptions options)
+    public override void Write(Utf8JsonWriter writer, PixelPoint value, JsonSerializerOptions options)
     {
         writer.WriteStartObject();
-
         writer.WritePropertyName("X");
         writer.WriteNumberValue(value.X);
-
         writer.WritePropertyName("Y");
         writer.WriteNumberValue(value.Y);
-
-        writer.WritePropertyName("Width");
-        writer.WriteNumberValue(value.Width);
-
-        writer.WritePropertyName("Height");
-        writer.WriteNumberValue(value.Height);
-
         writer.WriteEndObject();
     }
 }

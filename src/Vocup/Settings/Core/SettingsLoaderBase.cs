@@ -2,9 +2,11 @@
 using LostTech.App.DataBinding;
 using System;
 using System.ComponentModel;
+#if DEBUG
+using System.Diagnostics;
+#endif
 using System.IO;
 using System.Threading.Tasks;
-using Vocup.Util;
 using LSettings = LostTech.App.Settings;
 
 namespace Vocup.Settings.Core;
@@ -22,7 +24,6 @@ public class SettingsLoaderBase<T> where T : class, ICopyable<T>, INotifyPropert
 
     public async ValueTask<SettingsContext<T>> LoadAsync()
     {
-        await default(HopToThreadPoolAwaitable); // Force blocking IO to run on a background thread
         directory.Create();
 
         LSettings settings = new(directory, ClonableFreezerFactory.Instance, JsonSerializerFactory.Instance, JsonSerializerFactory.Instance);
@@ -33,7 +34,11 @@ public class SettingsLoaderBase<T> where T : class, ICopyable<T>, INotifyPropert
         {
             settingsSet = await settings.Load<T>(filename).ConfigureAwait(false);
         }
+#if DEBUG
+        catch (Exception) when (!Debugger.IsAttached)
+#else
         catch (Exception)
+#endif
         {
             try
             {
@@ -49,7 +54,7 @@ public class SettingsLoaderBase<T> where T : class, ICopyable<T>, INotifyPropert
         }
         settingsSet.Autosave = true;
         SettingsContext<T> result = new(settings, settingsSet);
-        if (created) 
+        if (created)
             await OnSettingsCreated(result).ConfigureAwait(false);
         return result;
     }

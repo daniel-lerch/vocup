@@ -95,14 +95,14 @@ public static class AvaloniaWinFormsExtensions
         return new((int)size.Width, (int)size.Height);
     }
 
-    public static Avalonia.Rect ToAvaloniaRect(this System.Drawing.Rectangle rect)
+    public static Avalonia.PixelPoint ToAvaloniaPixelPoint(this System.Drawing.Point point)
     {
-        return new(rect.X, rect.Y, rect.Width, rect.Height);
+        return new(point.X, point.Y);
     }
 
-    public static System.Drawing.Rectangle ToSystemDrawingRect(this Avalonia.Rect rect)
+    public static System.Drawing.Point ToSystemDrawingPoint(this Avalonia.PixelPoint point)
     {
-        return new((int)rect.X, (int)rect.Y, (int)rect.Width, (int)rect.Height);
+        return new(point.X, point.Y);
     }
 
     public static Avalonia.Controls.WindowState ToAvaloniaWindowState(this FormWindowState state)

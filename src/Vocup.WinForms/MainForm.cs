@@ -19,6 +19,7 @@ namespace Vocup;
 public partial class MainForm : Form, IMainForm
 {
     private int lastSearchResult;
+    private SizeF scaleFactor = new(1, 1);
 
     public MainForm()
     {
@@ -143,11 +144,12 @@ public partial class MainForm : Form, IMainForm
             _ => throw new ArgumentException($"Unknown FormWindowState {WindowState}")
         };
 
-        Rectangle logicalBounds = new(bounds.Location, bounds.Size.Multiply(96f / DeviceDpi).Round());
+        Program.Settings.WindowWidth = bounds.Width / scaleFactor.Width;
+        Program.Settings.WindowHeight = bounds.Height / scaleFactor.Height;
 
-        Program.Settings.MainFormBounds = logicalBounds.ToAvaloniaRect();
+        Program.Settings.WindowPosition = bounds.Location.ToAvaloniaPixelPoint();
 
-        Program.Settings.MainFormWindowState = WindowState.ToAvaloniaWindowState();
+        Program.Settings.WindowState = WindowState.ToAvaloniaWindowState();
 
         Program.Settings.MainFormSplitterDistance = SplitContainer.SplitterDistance;
     }
@@ -155,6 +157,8 @@ public partial class MainForm : Form, IMainForm
     protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
     {
         base.ScaleControl(factor, specified);
+
+        scaleFactor = scaleFactor.Multiply(factor);
     }
 
     /// <summary>
@@ -162,7 +166,9 @@ public partial class MainForm : Form, IMainForm
     /// </summary>
     private void RestoreSettings()
     {
-        Rectangle mainFormBounds = Program.Settings.MainFormBounds.ToSystemDrawingRect();
+        Point position = Program.Settings.WindowPosition.ToSystemDrawingPoint();
+        Size size = new((int)(Program.Settings.WindowWidth * scaleFactor.Width), (int)(Program.Settings.WindowHeight * scaleFactor.Height));
+        Rectangle mainFormBounds = new(position, size);
 
         // check if stored form bound is visible on any screen
         bool isVisible = false;
@@ -180,12 +186,12 @@ public partial class MainForm : Form, IMainForm
             SplitContainer.SplitterDistance = Program.Settings.MainFormSplitterDistance;
         }
 
-        if (isVisible && Program.Settings.MainFormBounds != default)
+        if (isVisible && mainFormBounds != default)
         {
             // visible => restore the bounds of the main form
             Bounds = mainFormBounds;
 
-            FormWindowState windowState = Program.Settings.MainFormWindowState.ToFormWindowState();
+            FormWindowState windowState = Program.Settings.WindowState.ToFormWindowState();
 
             // Do not restore the window state when the form was minimzed
             if (windowState != FormWindowState.Minimized)

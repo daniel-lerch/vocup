@@ -15,7 +15,7 @@ public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
     {
         return new()
         {
-            RecentFiles = new(RecentFiles.Select(x => new RecentFile(x.FileName, x.LastAccess, x.LastAvalailable))),
+            RecentFiles = new(RecentFiles.Select(x => new RecentFile(x.FileName, x.LastAccess, x.LastAvailable))),
             _startScreen = _startScreen,
             _autoSave = _autoSave,
             _disableInternetServices = _disableInternetServices,
@@ -39,8 +39,10 @@ public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
             _evaluateToleratePunctuationMark = _evaluateToleratePunctuationMark,
             _evaluateTolerateSpecialChar = _evaluateTolerateSpecialChar,
             _evaluateTolerateArticle = _evaluateTolerateArticle,
-            _mainFormBounds = _mainFormBounds,
-            _mainFormWindowState = _mainFormWindowState,
+            _windowWidth = _windowWidth,
+            _windowHeight = _windowHeight,
+            _windowPosition = _windowPosition,
+            _windowState = _windowState,
             _mainFormSplitterDistance = _mainFormSplitterDistance,
             _specialCharTab = _specialCharTab,
             _practiceDialogSize = _practiceDialogSize,
@@ -236,19 +238,32 @@ public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
     #endregion
 
     #region UI state
-    private Rect _mainFormBounds;
-    public Rect MainFormBounds
+    private double _windowWidth;
+    public double WindowWidth
     {
-        get => _mainFormBounds;
-        set => RaiseAndSetIfChanged(ref _mainFormBounds, value);
+        get => _windowWidth;
+        set => RaiseAndSetIfChanged(ref _windowWidth, value);
     }
 
-
-    private WindowState _mainFormWindowState;
-    public WindowState MainFormWindowState
+    private double _windowHeight;
+    public double WindowHeight
     {
-        get => _mainFormWindowState;
-        set => RaiseAndSetIfChanged(ref _mainFormWindowState, value);
+        get => _windowHeight;
+        set => RaiseAndSetIfChanged(ref _windowHeight, value);
+    }
+
+    private PixelPoint _windowPosition;
+    public PixelPoint WindowPosition
+    {
+        get => _windowPosition;
+        set => RaiseAndSetIfChanged(ref _windowPosition, value);
+    }
+
+    private WindowState _windowState;
+    public WindowState WindowState
+    {
+        get => _windowState;
+        set => RaiseAndSetIfChanged(ref _windowState, value);
     }
 
 

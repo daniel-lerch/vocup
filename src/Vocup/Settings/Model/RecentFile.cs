@@ -9,7 +9,7 @@ public class RecentFile : SettingsBase
     {
         FileName = fileName;
         LastAccess = lastAccess;
-        LastAvalailable = lastAvailable;
+        LastAvailable = lastAvailable;
     }
 
     public string FileName { get; }
@@ -25,7 +25,7 @@ public class RecentFile : SettingsBase
     /// <summary>
     /// Gets or sets the last time the file was available on the file system.
     /// </summary>
-    public DateTime LastAvalailable
+    public DateTime LastAvailable
     {
         get => _lastAvailable;
         set => RaiseAndSetIfChanged(ref _lastAvailable, value);

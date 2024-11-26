@@ -15,7 +15,7 @@ public class JsonSerializerFactory : ISerializerFactory, IDeserializerFactory
     public JsonSerializerFactory()
     {
         options = new JsonSerializerOptions { WriteIndented = true };
-        options.Converters.Add(new RectJsonConverter());
+        options.Converters.Add(new PixelPointJsonConverter());
         options.Converters.Add(new SizeJsonConverter());
     }
 
