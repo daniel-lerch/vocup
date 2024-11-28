@@ -4,17 +4,22 @@ namespace Vocup.ViewModels;
 
 public class MainViewModel : ViewModelBase
 {
-    private readonly VocupSettings? settings;
-
-    public MainViewModel()
-    {
-    }
-
     public MainViewModel(VocupSettings settings)
     {
-        this.settings = settings;
+        About = new("Development");
+        RecentFiles = new(settings.RecentFiles);
     }
 
-    public AboutViewModel About { get; } = new();
-    public RecentFilesViewModel RecentFiles => new(settings?.RecentFiles ?? []);
+    public virtual AboutViewModel About { get; }
+    public virtual RecentFilesViewModel RecentFiles { get; }
+}
+
+public class DesignMainViewModel : MainViewModel
+{
+    public DesignMainViewModel() : base(new VocupSettings())
+    {
+    }
+
+    public override AboutViewModel About { get; } = new DesignAboutViewModel();
+    public override RecentFilesViewModel RecentFiles { get; } = new DesignRecentFilesViewModel();
 }

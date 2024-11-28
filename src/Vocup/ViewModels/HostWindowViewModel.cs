@@ -45,7 +45,7 @@ public class HostWindowViewModel : ViewModelBase
         services.AddSingleton(settingsContext.Value);
         configureServices(serviceProvider, services);
 
-        MainView = new MainViewModel();
+        MainView = new MainViewModel(settingsContext.Value);
         Settings = settingsContext.Value;
     }
 }
