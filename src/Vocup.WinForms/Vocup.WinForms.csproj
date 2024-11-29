@@ -17,7 +17,7 @@
     <Description>Vocabulary training application</Description>
     <Company>VectorData</Company>
     <Copyright>Copyright © 2011 Florian Amstutz, © 2018-2024 Daniel Lerch.</Copyright>
-    <Version>2.0.0</Version>
+    <Version>2.1.0</Version>
     <NeutralLanguage>en</NeutralLanguage>
   </PropertyGroup>
   <ItemGroup>

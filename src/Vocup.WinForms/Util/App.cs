@@ -7,9 +7,10 @@ public partial class App : Vocup.App
     public override void OnFrameworkInitializationCompleted()
     {
 #pragma warning disable WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
-        RequestedThemeVariant = Application.ColorMode switch
+        RequestedThemeVariant = (Application.ColorMode, Application.SystemColorMode) switch
         {
-            SystemColorMode.Dark => Avalonia.Styling.ThemeVariant.Dark,
+            (SystemColorMode.System, SystemColorMode.Dark) => Avalonia.Styling.ThemeVariant.Dark,
+            (SystemColorMode.Dark, _) => Avalonia.Styling.ThemeVariant.Dark,
             _ => Avalonia.Styling.ThemeVariant.Light,
         };
 #pragma warning restore WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
