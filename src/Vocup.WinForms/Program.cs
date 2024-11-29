@@ -53,11 +53,16 @@ public static class Program
         splash.Show();
         Application.DoEvents();
 
-        AppBuilder.Configure<App>().UsePlatformDetect().UseReactiveUI().SetupWithoutStarting();
-
         var serviceScope = InitializeServices();
 
         SetCulture();
+
+#pragma warning disable WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+        Application.SetColorMode(Settings.ColorMode);
+#pragma warning restore WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+
+        AppBuilder.Configure<Util.App>().UsePlatformDetect().UseReactiveUI().SetupWithoutStarting();
+
         if (!CreateVhfFolder() || !CreateVhrFolder())
         {
             Application.Exit();

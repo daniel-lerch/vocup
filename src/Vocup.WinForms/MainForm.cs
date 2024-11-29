@@ -550,14 +550,13 @@ public partial class MainForm : Form, IMainForm
                 lastSearchResult = index;
             }
 
-            Color @default = Color.White;
             Color highlight = index == -1 ? Color.FromArgb(255, 192, 203) : Color.FromArgb(144, 238, 144);
 
             TbSearchWord.BackColor = highlight;
 
             await Task.Delay(500);
 
-            TbSearchWord.BackColor = @default;
+            TbSearchWord.BackColor = SystemColors.Window;
         }
     }
 
@@ -764,27 +763,27 @@ public partial class MainForm : Form, IMainForm
     {
         using PracticeCountDialog countDialog = new(CurrentBook);
 
-            if (countDialog.ShowDialog() == DialogResult.OK)
-            {
-                List<VocabularyWordPractice> practiceList = countDialog.PracticeList;
+        if (countDialog.ShowDialog() == DialogResult.OK)
+        {
+            List<VocabularyWordPractice> practiceList = countDialog.PracticeList;
 
-                CurrentController.ListView.Visible = false;
+            CurrentController.ListView.Visible = false;
 
             using (var dialog = new PracticeDialog(CurrentBook, practiceList) { Owner = this })
                 dialog.ShowDialog();
 
-                if (Program.Settings.PracticeShowResultList)
-                {
+            if (Program.Settings.PracticeShowResultList)
+            {
                 using PracticeResultList dialog = new(CurrentBook, practiceList);
                 dialog.ShowDialog();
-                }
-
-                CurrentController.ListView.Visible = true;
-                BtnAddWord.Focus();
             }
 
-            Program.TrackingService.Page("/book");
+            CurrentController.ListView.Visible = true;
+            BtnAddWord.Focus();
         }
+
+        Program.TrackingService.Page("/book");
+    }
 
     private static void EvaluationInfo()
     {

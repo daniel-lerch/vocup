@@ -93,7 +93,7 @@ public partial class SpecialCharKeyboard : Form
                         Tag = "Custom" + name,
                         Text = name,
                         AutoScroll = true,
-                        UseVisualStyleBackColor = true,
+                        BackColor = SystemColors.Window,
                         Font = new Font("Arial", 9.75f)
                     };
 

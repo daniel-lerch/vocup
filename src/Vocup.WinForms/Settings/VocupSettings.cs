@@ -24,6 +24,7 @@ public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
             _vhrPath = _vhrPath,
             _startupCounter = _startupCounter,
             _columnResize = _columnResize,
+            _colorMode = _colorMode,
             _overrideCulture = _overrideCulture,
             _practicePercentageUnpracticed = _practicePercentageUnpracticed,
             _practicePercentageCorrect = _practicePercentageCorrect,
@@ -127,6 +128,16 @@ public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
         get => _columnResize;
         set => RaiseAndSetIfChanged(ref _columnResize, value);
     }
+
+
+#pragma warning disable WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+    private SystemColorMode _colorMode = SystemColorMode.System;
+    public SystemColorMode ColorMode
+    {
+        get => _colorMode;
+        set => RaiseAndSetIfChanged(ref _colorMode, value);
+    }
+#pragma warning restore WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
 
 
     private string? _overrideCulture;
