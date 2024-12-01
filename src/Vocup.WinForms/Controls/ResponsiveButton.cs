@@ -6,13 +6,14 @@ using Vocup.Util;
 
 namespace Vocup.Controls;
 
-public class ResponsiveButton : Button
+public partial class ResponsiveButton : Button
 {
     private Image? _baseImage;
-    private Size _imageSize = new Size(16, 16);
-    private SizeF scalingFactor = new SizeF(1F, 1F);
+    private Size _imageSize = new(16, 16);
+    private SizeF scalingFactor = new(1F, 1F);
 
     [Localizable(true)]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
     public Image? BaseImage
     {
         get => _baseImage;
@@ -47,7 +48,7 @@ public class ResponsiveButton : Button
         {
             Size newSize = _imageSize.Multiply(scalingFactor).Rectify().Round();
             Image newImage = new Bitmap(newSize.Width, newSize.Height);
-            Image oldImage = Image;
+            Image? oldImage = Image;
             using (Graphics g = Graphics.FromImage(newImage))
             {
                 g.InterpolationMode = InterpolationMode.HighQualityBicubic;

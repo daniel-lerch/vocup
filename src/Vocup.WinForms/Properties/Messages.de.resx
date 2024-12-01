@@ -126,7 +126,7 @@ Tipp: Unter Optionen können Sie festlegen, wie oft eine Vokabel richtig hintere
     <value>Herzlichen Glückwunsch!</value>
   </data>
   <data name="BrowseVhfPath" xml:space="preserve">
-    <value>Bitte wählen Sie einen Ordner als Standardspeicherort für Ihre Vokabelhefte aus.</value>
+    <value>Wählen Sie den Standardordner für Vokabelhefte aus.</value>
   </data>
   <data name="CsvExportError" xml:space="preserve">
     <value>Beim Exportieren einer CSV Datei ist ein unerwarteter Fehler aufgetreten.
@@ -327,5 +327,8 @@ Stellen Sie sicher, dass die Datei nicht leer ist.</value>
   </data>
   <data name="VocupFileWriteErrorT" xml:space="preserve">
     <value>Fehler beim Speichern</value>
+  </data>
+  <data name="BrowseVhrPath" xml:space="preserve">
+    <value>Wählen Sie den Ordner für Übungserbnisse aus.</value>
   </data>
 </root>

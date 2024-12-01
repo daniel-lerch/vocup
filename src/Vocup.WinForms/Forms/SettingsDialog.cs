@@ -1,3 +1,4 @@
+using Avalonia.Platform;
 using System;
 using System.Drawing;
 using System.IO;
@@ -33,13 +34,22 @@ public partial class SettingsDialog : Form
         TbVhfPath.Text = settings.VhfPath;
         TbVhrPath.Text = settings.VhrPath;
 
-        switch (settings.OverrideCulture)
+#pragma warning disable WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+        CbColorTheme.SelectedIndex = settings.ThemeVariant switch
         {
-            case "en-US": CbLanguage.SelectedIndex = 1; break;
-            case "de-DE": CbLanguage.SelectedIndex = 2; break;
-            case "nl-NL": CbLanguage.SelectedIndex = 3; break;
-            default: CbLanguage.SelectedIndex = 0; break; // System language
-        }
+            PlatformThemeVariant.Light => 1,
+            PlatformThemeVariant.Dark => 2,
+            _ => 0,
+        };
+#pragma warning restore WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+
+        CbLanguage.SelectedIndex = settings.OverrideCulture switch
+        {
+            "en-US" => 1,
+            "de-DE" => 2,
+            "nl-NL" => 3,
+            _ => 0,
+        };
 
         // Evaluation
         CbManualCheck.Checked = settings.UserEvaluates;
@@ -84,6 +94,16 @@ public partial class SettingsDialog : Form
         settings.VhfPath = TbVhfPath.Text;
         settings.VhrPath = TbVhrPath.Text;
 
+#pragma warning disable WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+        PlatformThemeVariant? oldThemeVariant = settings.ThemeVariant;
+        settings.ThemeVariant = CbColorTheme.SelectedIndex switch
+        {
+            1 => PlatformThemeVariant.Light,
+            2 => PlatformThemeVariant.Dark,
+            _ => null,
+        };
+#pragma warning restore WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+
         string? oldCulture = settings.OverrideCulture;
         settings.OverrideCulture = CbLanguage.SelectedIndex switch
         {
@@ -92,7 +112,7 @@ public partial class SettingsDialog : Form
             3 => "nl-NL",
             _ => null, // System language
         };
-        if (settings.OverrideCulture != oldCulture)
+        if (settings.ThemeVariant != oldThemeVariant || settings.OverrideCulture != oldCulture)
             MessageBox.Show(Messages.SettingsRestartRequired, Messages.SettingsRestartRequiredT, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         // Evaluation
@@ -163,46 +183,50 @@ public partial class SettingsDialog : Form
 
     private void BtnVhfPath_Click(object sender, EventArgs e)
     {
-        using (FolderBrowserDialog fbd = new FolderBrowserDialog
+        using FolderBrowserDialog fbd = new()
         {
+            UseDescriptionForTitle = true,
             Description = Messages.BrowseVhfPath,
             SelectedPath = settings.VhfPath
-        })
-        {
-            if (fbd.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    // This call fails for inaccessible paths like optical disk drives
-                    _ = Directory.GetFiles(fbd.SelectedPath);
+        };
 
-                    TbVhfPath.Text = fbd.SelectedPath;
-                }
-                catch (IOException)
-                {
-                    MessageBox.Show(Messages.VhfPathInvalid, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+        if (fbd.ShowDialog() == DialogResult.OK)
+        {
+            try
+            {
+                // This call fails for inaccessible paths like optical disk drives
+                _ = Directory.GetFiles(fbd.SelectedPath);
+
+                TbVhfPath.Text = fbd.SelectedPath;
+            }
+            catch (IOException)
+            {
+                MessageBox.Show(Messages.VhfPathInvalid, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
 
     private void BtnVhrPath_Click(object sender, EventArgs e)
     {
-        using (FolderBrowserDialog fbd = new FolderBrowserDialog { SelectedPath = settings.VhrPath })
+        using FolderBrowserDialog fbd = new()
         {
-            if (fbd.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    // This call fails for inaccessible paths like optical disk drives
-                    _ = Directory.GetFiles(fbd.SelectedPath);
+            UseDescriptionForTitle = true,
+            Description = Messages.BrowseVhrPath,
+            SelectedPath = settings.VhrPath,
+        };
 
-                    TbVhrPath.Text = fbd.SelectedPath;
-                }
-                catch (IOException)
-                {
-                    MessageBox.Show(Messages.VhrPathInvalid, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+        if (fbd.ShowDialog() == DialogResult.OK)
+        {
+            try
+            {
+                // This call fails for inaccessible paths like optical disk drives
+                _ = Directory.GetFiles(fbd.SelectedPath);
+
+                TbVhrPath.Text = fbd.SelectedPath;
+            }
+            catch (IOException)
+            {
+                MessageBox.Show(Messages.VhrPathInvalid, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

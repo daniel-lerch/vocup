@@ -1,4 +1,5 @@
 ﻿using Avalonia;
+using Avalonia.Platform;
 using Avalonia.ReactiveUI;
 using System;
 using System.Diagnostics;
@@ -54,11 +55,21 @@ public static class Program
         splash.Show();
         Application.DoEvents();
 
-        AppBuilder.Configure<App>().UsePlatformDetect().UseReactiveUI().SetupWithoutStarting();
-
         var serviceScope = InitializeServices();
 
         SetCulture();
+
+#pragma warning disable WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+        Application.SetColorMode(Settings.ThemeVariant switch
+        {
+            PlatformThemeVariant.Light => SystemColorMode.Classic,
+            PlatformThemeVariant.Dark => SystemColorMode.Dark,
+            _ => SystemColorMode.System
+        });
+#pragma warning restore WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+
+        AppBuilder.Configure<Util.App>().UsePlatformDetect().UseReactiveUI().SetupWithoutStarting();
+
         if (!CreateVhfFolder() || !CreateVhrFolder())
         {
             Application.Exit();
@@ -73,7 +84,7 @@ public static class Program
 
         if (args.Length > 0 && !string.IsNullOrWhiteSpace(args[0]))
         {
-            FileInfo info = new FileInfo(args[0]);
+            FileInfo info = new(args[0]);
             if (info.Extension == ".vhf")
             {
                 form.ReadFile(info.FullName);
@@ -191,7 +202,7 @@ public static class Program
         {
             try
             {
-                CultureInfo culture = new CultureInfo(Settings.OverrideCulture);
+                CultureInfo culture = new(Settings.OverrideCulture);
                 CultureInfo.DefaultThreadCurrentCulture = culture;
                 CultureInfo.DefaultThreadCurrentUICulture = culture;
             }

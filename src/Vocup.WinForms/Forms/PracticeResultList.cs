@@ -10,6 +10,10 @@ namespace Vocup.Forms;
 
 public partial class PracticeResultList : Form
 {
+    private readonly Color CorrectFeedbackBackColor;
+    private readonly Color PartlyCorrectFeedbackBackColor;
+    private readonly Color WrongFeedbackBackColor;
+
     private VocabularyBook book;
     private List<VocabularyWordPractice> practiceList;
 
@@ -22,6 +26,20 @@ public partial class PracticeResultList : Form
     {
         InitializeComponent();
         Icon = Icon.FromHandle(Icons.BarChart.GetHicon());
+
+        CorrectFeedbackBackColor = Color.FromArgb(144, 238, 144);
+        PartlyCorrectFeedbackBackColor = Color.FromArgb(255, 215, 0);
+        WrongFeedbackBackColor = Color.FromArgb(255, 192, 203);
+
+#pragma warning disable WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+        if (Application.ColorMode == SystemColorMode.Dark)
+        {
+            CorrectFeedbackBackColor = Color.FromArgb(0, 100, 0);
+            PartlyCorrectFeedbackBackColor = Color.FromArgb(127, 106, 0);
+            WrongFeedbackBackColor = Color.FromArgb(127, 0, 0);
+        }
+#pragma warning restore WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+
 
         this.book = book;
         this.practiceList = practiceList;
@@ -121,9 +139,9 @@ public partial class PracticeResultList : Form
             TbPercentage.BackColor = correctRatio switch
             {
                 // Steps taken from https://de.wikipedia.org/wiki/Vorlage:Punktesystem_der_gymnasialen_Oberstufe
-                >= 0.70 => Color.FromArgb(144, 238, 144), // at least 70% -> green background
-                >= 0.45 => Color.FromArgb(255, 215, 0), // at least 45% -> yellow background
-                _ => Color.FromArgb(255, 192, 203) // less than 45% -> red background
+                >= 0.70 => CorrectFeedbackBackColor, // at least 70% -> green background
+                >= 0.45 => PartlyCorrectFeedbackBackColor, // at least 45% -> yellow background
+                _ => WrongFeedbackBackColor // less than 45% -> red background
             };
 
             TbPercentage.Text = Math.Round(correctRatio * 100) + "%";

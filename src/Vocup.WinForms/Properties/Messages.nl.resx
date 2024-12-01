@@ -328,4 +328,7 @@ Controleer of het bestand niet leeg is.</value>
   <data name="VocupFileWriteErrorT" xml:space="preserve">
     <value>Fout bij opslaan</value>
   </data>
+  <data name="BrowseVhrPath" xml:space="preserve">
+    <value>Selecteer de map voor oefenresultaten</value>
+  </data>
 </root>

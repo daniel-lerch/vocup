@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Avalonia.Platform;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Vocup.Settings.Core;
 using Vocup.Util;
 using OldSettings = Vocup.Properties.Settings;
@@ -56,6 +58,14 @@ public class WindowsSettingsLoader : SettingsLoaderBase<VocupSettings>
         settings.Value.VhrPath = oldSettings.VhrPath;
         settings.Value.StartupCounter = oldSettings.StartupCounter;
         settings.Value.ColumnResize = oldSettings.ColumnResize;
+#pragma warning disable WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+        settings.Value.ThemeVariant = oldSettings.ColorMode switch
+        {
+            SystemColorMode.Classic => PlatformThemeVariant.Light,
+            SystemColorMode.Dark => PlatformThemeVariant.Dark,
+            _ => null,
+        };
+#pragma warning restore WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
         settings.Value.OverrideCulture = oldSettings.OverrideCulture;
         settings.Value.PracticePercentageUnpracticed = oldSettings.PracticePercentageUnpracticed;
         settings.Value.PracticePercentageCorrect = oldSettings.PracticePercentageCorrect;

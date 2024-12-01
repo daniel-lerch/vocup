@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Avalonia.Platform;
+using System;
 using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -33,6 +34,7 @@ public class SettingsTests : IDisposable
 
         settings.Value.StartupCounter = 1;
         settings.Value.WindowPosition = new(10, 10);
+        settings.Value.ThemeVariant = PlatformThemeVariant.Light;
         settings.Value.PracticeDialogSize = new(.5,.5);
         settings.Value.RecentFiles.Add(new("test.txt", timestamp, timestamp));
 
@@ -46,6 +48,7 @@ public class SettingsTests : IDisposable
         Assert.NotNull(settingsValue);
         Assert.Equal(1, settingsValue.StartupCounter);
         Assert.Equal(new(10, 10), settingsValue.WindowPosition);
+        Assert.Equal(PlatformThemeVariant.Light, settingsValue.ThemeVariant);
         Assert.Equal(new(.5, .5), settingsValue.PracticeDialogSize);
         var recentFile = Assert.Single(settingsValue.RecentFiles);
 

@@ -36,7 +36,7 @@ public class EvaluatorTest
     [InlineData("anxiety; fear", "fear; anxiety")]
     public void TestInlineSynonymOrder(string result, string input)
     {
-        Assert.Equal(PracticeResult.Correct, evaluator.GetResult(new[] { result }, new[] { input }));
+        Assert.Equal(PracticeResult.Correct, evaluator.GetResult([result], [input]));
     }
 
     [Theory]
@@ -48,7 +48,7 @@ public class EvaluatorTest
     [InlineData("(to) crave (for) sth", "to crave (for) sth")] // half long, half original
     public void TestOptionalExpressions(string result, string input)
     {
-        Assert.Equal(PracticeResult.Correct, evaluator.GetResult(new[] { result }, new[] { input }));
+        Assert.Equal(PracticeResult.Correct, evaluator.GetResult([result], [input]));
     }
 
     [Theory]
@@ -59,6 +59,6 @@ public class EvaluatorTest
     [InlineData(PracticeResult.Wrong, "upset (about sth)/(that)", "upset/")]
     public void TestOptionalEdgeCases(PracticeResult expected, string result, string input)
     {
-        Assert.Equal(expected, evaluator.GetResult(new[] { result }, new[] { input }));
+        Assert.Equal(expected, evaluator.GetResult([result], [input]));
     }
 }

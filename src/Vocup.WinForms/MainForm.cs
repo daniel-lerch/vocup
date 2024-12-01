@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -31,8 +32,12 @@ public partial class MainForm : Form, IMainForm
             StatusLbOldVersion.Visible = true;
     }
 
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public VocabularyBook CurrentBook { get; private set; }
+
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public VocabularyBookController CurrentController { get; private set; }
+    
     public StatisticsPanel StatisticsPanel => GroupStatistics;
     public TextBox SearchText => TbSearchWord;
     public bool UnsavedChanges => CurrentBook?.UnsavedChanges ?? false;
@@ -89,7 +94,7 @@ public partial class MainForm : Form, IMainForm
     }
     public void LoadBook(VocabularyBook book)
     {
-        VocabularyBookController controller = new VocabularyBookController(book) { Parent = this };
+        VocabularyBookController controller = new(book) { Parent = this };
         SplitContainer.Panel2.Controls.Add(controller.ListView);
         controller.ListView.PerformLayout();
         controller.ListView.BringToFront();
@@ -263,30 +268,30 @@ public partial class MainForm : Form, IMainForm
 
     private void FileTreeView_BrowseClick(object sender, EventArgs e)
     {
-        using (FolderBrowserDialog dialog = new FolderBrowserDialog
+        using FolderBrowserDialog dialog = new()
         {
+            UseDescriptionForTitle = true,
             Description = Messages.BrowseVhfPath,
             SelectedPath = Program.Settings.VhfPath
-        })
-        {
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    // This call fails for inaccessible paths like optical disk drives
-                    _ = Directory.GetFiles(dialog.SelectedPath);
+        };
 
-                    // Eventually refresh tree view root path
-                    if (dialog.SelectedPath != Program.Settings.VhfPath)
-                    {
-                        Program.Settings.VhfPath = dialog.SelectedPath;
-                        FileTreeView.RootPath = dialog.SelectedPath;
-                    }
-                }
-                catch (IOException)
+        if (dialog.ShowDialog() == DialogResult.OK)
+        {
+            try
+            {
+                // This call fails for inaccessible paths like optical disk drives
+                _ = Directory.GetFiles(dialog.SelectedPath);
+
+                // Eventually refresh tree view root path
+                if (dialog.SelectedPath != Program.Settings.VhfPath)
                 {
-                    MessageBox.Show(Messages.VhfPathInvalid, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Program.Settings.VhfPath = dialog.SelectedPath;
+                    FileTreeView.RootPath = dialog.SelectedPath;
                 }
+            }
+            catch (IOException)
+            {
+                MessageBox.Show(Messages.VhfPathInvalid, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
@@ -300,7 +305,8 @@ public partial class MainForm : Form, IMainForm
 
     private void TsmiAbout_Click(object sender, EventArgs e)
     {
-        using (var dialog = new AboutBox()) dialog.ShowDialog();
+        using AboutBox dialog = new();
+        dialog.ShowDialog();
     }
 
     private void TsbtnEvaluationInfo_Click(object sender, EventArgs e) => EvaluationInfo();
@@ -310,7 +316,7 @@ public partial class MainForm : Form, IMainForm
     {
         string oldVhfPath = Program.Settings.VhfPath;
 
-        using (SettingsDialog optionen = new SettingsDialog(Program.Settings))
+        using (SettingsDialog optionen = new(Program.Settings))
         {
             if (optionen.ShowDialog() == DialogResult.OK)
             {
@@ -334,7 +340,8 @@ public partial class MainForm : Form, IMainForm
 
     private void TsmiSpecialChar_Click(object sender, EventArgs e)
     {
-        using (var dialog = new SpecialCharManage()) dialog.ShowDialog();
+        using SpecialCharManage dialog = new();
+        dialog.ShowDialog();
     }
 
     private async void TsmiUpdate_Click(object sender, EventArgs e)
@@ -415,7 +422,8 @@ public partial class MainForm : Form, IMainForm
 
     private void TsmiMerge_Click(object sender, EventArgs e)
     {
-        using (var dialog = new MergeFiles()) dialog.ShowDialog();
+        using MergeFiles dialog = new();
+        dialog.ShowDialog();
     }
 
     private void TsmiOpenInExplorer_Click(object sender, EventArgs e)
@@ -434,7 +442,7 @@ public partial class MainForm : Form, IMainForm
                 return;
             }
         }
-        FileInfo info = new FileInfo(CurrentBook.FilePath);
+        FileInfo info = new(CurrentBook.FilePath);
         if (info.Exists)
         {
             try
@@ -472,7 +480,7 @@ public partial class MainForm : Form, IMainForm
             }
         }
 
-        using SaveFileDialog saveDialog = new SaveFileDialog
+        using SaveFileDialog saveDialog = new()
         {
             Title = Words.Export,
             Filter = "CSV (*.csv)|*.csv",
@@ -551,14 +559,13 @@ public partial class MainForm : Form, IMainForm
                 lastSearchResult = index;
             }
 
-            Color @default = Color.White;
             Color highlight = index == -1 ? Color.FromArgb(255, 192, 203) : Color.FromArgb(144, 238, 144);
 
             TbSearchWord.BackColor = highlight;
 
             await Task.Delay(500);
 
-            TbSearchWord.BackColor = @default;
+            TbSearchWord.BackColor = SystemColors.Window;
         }
     }
 
@@ -713,7 +720,7 @@ public partial class MainForm : Form, IMainForm
             {
                 Program.TrackingService.Action("/book/new", "Book/Import");
 
-                VocabularyBook book = new VocabularyBook();
+                VocabularyBook book = new();
                 if (CsvFile.Import(openDialog.FileName, book, true))
                 {
                     book.Notify();
@@ -763,37 +770,40 @@ public partial class MainForm : Form, IMainForm
 
     private void PracticeWords()
     {
-        using (PracticeCountDialog countDialog = new PracticeCountDialog(CurrentBook))
+        using PracticeCountDialog countDialog = new(CurrentBook);
+
+        if (countDialog.ShowDialog() == DialogResult.OK)
         {
-            if (countDialog.ShowDialog() == DialogResult.OK)
+            List<VocabularyWordPractice> practiceList = countDialog.PracticeList;
+
+            CurrentController.ListView.Visible = false;
+
+            using (var dialog = new PracticeDialog(CurrentBook, practiceList) { Owner = this })
+                dialog.ShowDialog();
+
+            if (Program.Settings.PracticeShowResultList)
             {
-                List<VocabularyWordPractice> practiceList = countDialog.PracticeList;
-
-                CurrentController.ListView.Visible = false;
-
-                using (var dialog = new PracticeDialog(CurrentBook, practiceList) { Owner = this }) dialog.ShowDialog();
-
-                if (Program.Settings.PracticeShowResultList)
-                {
-                    using (var dialog = new PracticeResultList(CurrentBook, practiceList)) dialog.ShowDialog();
-                }
-
-                CurrentController.ListView.Visible = true;
-                BtnAddWord.Focus();
+                using PracticeResultList dialog = new(CurrentBook, practiceList);
+                dialog.ShowDialog();
             }
 
-            Program.TrackingService.Page("/book");
+            CurrentController.ListView.Visible = true;
+            BtnAddWord.Focus();
         }
+
+        Program.TrackingService.Page("/book");
     }
 
-    private void EvaluationInfo()
+    private static void EvaluationInfo()
     {
-        using (var dialog = new EvaluationInfoDialog()) dialog.ShowDialog();
+        using EvaluationInfoDialog dialog = new();
+        dialog.ShowDialog();
     }
 
     private void PrintFile()
     {
-        using (var dialog = new PrintWordSelection(CurrentBook)) dialog.ShowDialog();
+        using PrintWordSelection dialog = new(CurrentBook);
+        dialog.ShowDialog();
     }
     #endregion
 }

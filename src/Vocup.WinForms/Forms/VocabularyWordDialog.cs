@@ -10,7 +10,7 @@ namespace Vocup.Forms
     public partial class VocabularyWordDialog : Form
     {
         private const string InvalidChars = "#=";
-        private readonly Color redBgColor = Color.FromArgb(255, 192, 203);
+        private readonly Color InvalidInputBackColor;
         private readonly SpecialCharKeyboard specialCharDialog;
         protected readonly VocabularyBook book;
 
@@ -20,6 +20,15 @@ namespace Vocup.Forms
 
             specialCharDialog = new SpecialCharKeyboard();
             specialCharDialog.Initialize(this, BtnSpecialChar);
+
+            InvalidInputBackColor = Color.FromArgb(255, 192, 203);
+
+#pragma warning disable WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+            if (Application.ColorMode == SystemColorMode.Dark)
+            {
+                InvalidInputBackColor = Color.FromArgb(127, 0, 0);
+            }
+#pragma warning restore WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
 
             this.book = book;
             LbMotherTongue.Text = book.MotherTongue;
@@ -38,9 +47,9 @@ namespace Vocup.Forms
                 !TbForeignLangSynonym.Text.ContainsAny(InvalidChars);
 
             // Visual feedback for invalid chars.
-            TbMotherTongue.BackColor = TbMotherTongue.Text.ContainsAny(InvalidChars) ? redBgColor : Color.White;
-            TbForeignLang.BackColor = TbForeignLang.Text.ContainsAny(InvalidChars) ? redBgColor : Color.White;
-            TbForeignLangSynonym.BackColor = TbForeignLangSynonym.Text.ContainsAny(InvalidChars) ? redBgColor : Color.White;
+            TbMotherTongue.BackColor = TbMotherTongue.Text.ContainsAny(InvalidChars) ? InvalidInputBackColor : SystemColors.Window;
+            TbForeignLang.BackColor = TbForeignLang.Text.ContainsAny(InvalidChars) ? InvalidInputBackColor : SystemColors.Window;
+            TbForeignLangSynonym.BackColor = TbForeignLangSynonym.Text.ContainsAny(InvalidChars) ? InvalidInputBackColor : SystemColors.Window;
 
             OnInputValidated(BtnContinue.Enabled);
         }

@@ -14,6 +14,10 @@ namespace Vocup.Forms;
 public partial class PracticeDialog : Form
 {
     private const int userEvaluationHeight = 38;
+    private readonly Color InputHighlightBackColor;
+    private readonly Color CorrectFeedbackBackColor;
+    private readonly Color PartlyCorrectFeedbackBackColor;
+    private readonly Color WrongFeedbackBackColor;
 
     private readonly VocabularyBook book;
     private readonly List<VocabularyWordPractice> practiceList;
@@ -33,6 +37,24 @@ public partial class PracticeDialog : Form
         InitializeComponent();
 
         Icon = Icon.FromHandle(Icons.LightningBolt.GetHicon());
+
+        InputHighlightBackColor = Color.FromArgb(255, 255, 150);
+        CorrectFeedbackBackColor = Color.FromArgb(144, 238, 144);
+        PartlyCorrectFeedbackBackColor = Color.FromArgb(255, 215, 0);
+        WrongFeedbackBackColor = Color.FromArgb(255, 192, 203);
+
+#pragma warning disable WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+        if (Application.ColorMode == SystemColorMode.Dark)
+        {
+            InputHighlightBackColor = Color.FromArgb(127, 127, 75);
+            CorrectFeedbackBackColor = Color.FromArgb(0, 100, 0);
+            PartlyCorrectFeedbackBackColor = Color.FromArgb(127, 106, 0);
+            WrongFeedbackBackColor = Color.FromArgb(127, 0, 0);
+            TbCorrectCount.BackColor = Color.DarkGreen;
+            TbPartlyCorrectCount.BackColor = Color.DarkGoldenrod;
+            TbWrongCount.BackColor = Color.DarkRed;
+        }
+#pragma warning restore WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
 
         evaluator = new Evaluator
         {
@@ -182,7 +204,7 @@ public partial class PracticeDialog : Form
             TbMotherTongue.BackColor = DefaultBackColor;
             TbForeignLang.Text = "";
             TbForeignLang.ReadOnly = false;
-            TbForeignLang.BackColor = Color.FromArgb(250, 250, 150);
+            TbForeignLang.BackColor = InputHighlightBackColor;
             TbForeignLangSynonym.Text = "";
             if (string.IsNullOrWhiteSpace(currentWord.ForeignLangSynonym))
             {
@@ -192,7 +214,7 @@ public partial class PracticeDialog : Form
             else
             {
                 TbForeignLangSynonym.ReadOnly = false;
-                TbForeignLangSynonym.BackColor = Color.FromArgb(250, 250, 150);
+                TbForeignLangSynonym.BackColor = InputHighlightBackColor;
             }
             TbForeignLang.Select();
         }
@@ -208,7 +230,7 @@ public partial class PracticeDialog : Form
             TbForeignLang.ReadOnly = true;
             TbForeignLang.BackColor = DefaultBackColor;
             TbForeignLangSynonym.ReadOnly = true;
-            TbMotherTongue.BackColor = Color.FromArgb(250, 250, 150);
+            TbMotherTongue.BackColor = InputHighlightBackColor;
             TbMotherTongue.Select();
         }
 
@@ -235,19 +257,19 @@ public partial class PracticeDialog : Form
         {
             if (string.IsNullOrWhiteSpace(currentWord.ForeignLangSynonym))
             {
-                inputs = new[] { TbForeignLang.Text.Trim() };
-                results = new[] { currentWord.ForeignLang };
+                inputs = [TbForeignLang.Text.Trim()];
+                results = [currentWord.ForeignLang];
             }
             else
             {
-                inputs = new[] { TbForeignLang.Text.Trim(), TbForeignLangSynonym.Text.Trim() };
-                results = new[] { currentWord.ForeignLang, currentWord.ForeignLangSynonym };
+                inputs = [TbForeignLang.Text.Trim(), TbForeignLangSynonym.Text.Trim()];
+                results = [currentWord.ForeignLang, currentWord.ForeignLangSynonym];
             }
         }
         else // PracticeMode.AskForMotherTongue
         {
-            inputs = new[] { TbMotherTongue.Text.Trim() };
-            results = new[] { currentWord.MotherTongue };
+            inputs = [TbMotherTongue.Text.Trim()];
+            results = [currentWord.MotherTongue];
         }
 
         return evaluator.GetResult(results, inputs);
@@ -278,7 +300,7 @@ public partial class PracticeDialog : Form
             if (!Program.Settings.UserEvaluates)
             {
                 TbCorrectAnswer.Text = Words.Correct + "!";
-                TbCorrectAnswer.BackColor = Color.FromArgb(144, 238, 144);
+                TbCorrectAnswer.BackColor = CorrectFeedbackBackColor;
                 sound = Sounds.sound_correct;
             }
         }
@@ -290,7 +312,7 @@ public partial class PracticeDialog : Form
             if (!Program.Settings.UserEvaluates)
             {
                 TbCorrectAnswer.Text = $"{Words.PartlyCorrect}! ({GetEvaluationAnswer()})";
-                TbCorrectAnswer.BackColor = Color.FromArgb(255, 215, 0);
+                TbCorrectAnswer.BackColor = PartlyCorrectFeedbackBackColor;
                 sound = Sounds.sound_correct;
             }
         }
@@ -302,7 +324,7 @@ public partial class PracticeDialog : Form
             if (!Program.Settings.UserEvaluates)
             {
                 TbCorrectAnswer.Text = $"{Words.Wrong}! ({GetEvaluationAnswer()})";
-                TbCorrectAnswer.BackColor = Color.FromArgb(255, 192, 203);
+                TbCorrectAnswer.BackColor = WrongFeedbackBackColor;
                 sound = Sounds.sound_wrong;
             }
         }

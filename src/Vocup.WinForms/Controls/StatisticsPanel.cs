@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace Vocup.Controls
 {
@@ -17,6 +15,7 @@ namespace Vocup.Controls
             InitializeComponent();
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int Unpracticed
         {
             get => _unpracticed;
@@ -27,6 +26,8 @@ namespace Vocup.Controls
                 RenewSum();
             }
         }
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int WronglyPracticed
         {
             get => _wronglyPracticed;
@@ -37,6 +38,8 @@ namespace Vocup.Controls
                 RenewSum();
             }
         }
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int CorrectlyPracticed
         {
             get => _correctlyPracticed;
@@ -47,6 +50,8 @@ namespace Vocup.Controls
                 RenewSum();
             }
         }
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int FullyPracticed
         {
             get => _fullyPracticed;
@@ -57,6 +62,7 @@ namespace Vocup.Controls
                 RenewSum();
             }
         }
+
         public void Reset()
         {
             Unpracticed = 0;

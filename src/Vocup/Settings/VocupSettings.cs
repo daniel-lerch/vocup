@@ -1,5 +1,6 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Platform;
 using LostTech.App.DataBinding;
 using System;
 using System.Collections.ObjectModel;
@@ -24,6 +25,7 @@ public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
             _vhrPath = _vhrPath,
             _startupCounter = _startupCounter,
             _columnResize = _columnResize,
+            _themeVariant = _themeVariant,
             _overrideCulture = _overrideCulture,
             _practicePercentageUnpracticed = _practicePercentageUnpracticed,
             _practicePercentageCorrect = _practicePercentageCorrect,
@@ -113,6 +115,15 @@ public class VocupSettings : SettingsBase, ICopyable<VocupSettings>
     {
         get => _columnResize;
         set => RaiseAndSetIfChanged(ref _columnResize, value);
+    }
+
+
+    // Avalonia.Styling.ThemeVariant is more difficult to serialize and compare than an enum.
+    private PlatformThemeVariant? _themeVariant;
+    public PlatformThemeVariant? ThemeVariant
+    {
+        get => _themeVariant;
+        set => RaiseAndSetIfChanged(ref _themeVariant, value);
     }
 
 
