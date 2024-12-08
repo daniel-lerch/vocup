@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Vocup.WinForms (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Vocup.WinForms (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
