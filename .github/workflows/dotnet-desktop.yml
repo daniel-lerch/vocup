@@ -1,22 +1,4 @@
-# 2. Signing
-# Generate a signing certificate in the Windows Application
-# Packaging Project or add an existing signing certificate to the project.
-# Next, use PowerShell to encode the .pfx file using Base64 encoding
-# by running the following Powershell script to generate the output string:
-#
-# $pfx_cert = Get-Content '.\SigningCertificate.pfx' -Encoding Byte
-# [System.Convert]::ToBase64String($pfx_cert) | Out-File 'SigningCertificate_Encoded.txt'
-#
-# Open the output file, SigningCertificate_Encoded.txt, and copy the
-# string inside. Then, add the string to the repo as a GitHub secret
-# and name it "Base64_Encoded_Pfx."
-# For more information on how to configure your signing certificate for
-# this workflow, refer to https://github.com/microsoft/github-actions-for-desktop-apps#signing
-#
-# Finally, add the signing certificate password to the repo as a secret and name it "Pfx_Key".
-# See "Build the Windows Application Packaging project" below to see how the secret is used.
-
-name: .NET Core Desktop
+name: Windows Forms build and package
 
 on:
   push:
@@ -34,9 +16,7 @@ jobs:
 
     env:
       Solution_Name: Vocup.sln                                          # Replace with your solution name, i.e. MyWpfApp.sln.
-      Test_Project_Path: tests\Vocup.UnitTests\Vocup.UnitTests.csproj   # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
-      Wap_Project_Directory: src\Vocup.Packaging                        # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
-      Wap_Project_Path: src\Vocup.Packaging\Vocup.Packaging.wapproj     # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
+      App_Project_Directory: src\Vocup.WinForms
 
     steps:
     - name: Checkout
@@ -60,34 +40,61 @@ jobs:
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
+      if: matrix.configuration == 'Release'
       run: msbuild $env:Solution_Name /t:Restore /p:Configuration=${{ matrix.configuration }}
 
     - name: Create MSIX package (x86)
-      run: msbuild $env:App_Project_Path /p:Configuration=${{ matrix.configuration }} /p:Platform=x86 /p:GenerateAppxPackageOnBuild=true
+      if: matrix.configuration == 'Release'
+      run: msbuild $env:App_Project_Directory /p:Configuration=${{ matrix.configuration }} /p:Platform=x86 /p:GenerateAppxPackageOnBuild=true
 
     - name: Create MSIX package (x64)
-      run: msbuild $env:App_Project_Path /p:Configuration=${{ matrix.configuration }} /p:Platform=x64 /p:GenerateAppxPackageOnBuild=true
+      if: matrix.configuration == 'Release'
+      run: msbuild $env:App_Project_Directory /p:Configuration=${{ matrix.configuration }} /p:Platform=x64 /p:GenerateAppxPackageOnBuild=true
 
     - name: Create MSIX package (arm64)
-      run: msbuild $env:App_Project_Path /p:Configuration=${{ matrix.configuration }} /p:Platform=arm64 /p:GenerateAppxPackageOnBuild=true
+      if: matrix.configuration == 'Release'
+      run: msbuild $env:App_Project_Directory /p:Configuration=${{ matrix.configuration }} /p:Platform=arm64 /p:GenerateAppxPackageOnBuild=true
 
-    # Decode the base 64 encoded pfx and save the Signing_Certificate
-    #- name: Decode the pfx
-    #  if: matrix.configuration == 'Release'
-    #  run: |
-    #    $pfx_cert_byte = [System.Convert]::FromBase64String("${{ secrets.Base64_Encoded_Pfx }}")
-    #    $certificatePath = Join-Path -Path $env:Wap_Project_Directory -ChildPath GitHubActionsWorkflow.pfx
-    #    [IO.File]::WriteAllBytes("$certificatePath", $pfx_cert_byte)
+    - name: Gather MSIX files
+      id: gather
+      if: matrix.configuration == 'Release'
+      run: |
+        $gatherDirectory = Join-Path $env:App_Project_Directory "obj" "Bundle"
+        New-Item -ItemType Directory -Path $gatherDirectory | Out-Null
 
-    # Remove the pfx
-    #- name: Remove the pfx
-    #  if: matrix.configuration == 'Release'
-    #  run: Remove-Item -path $env:Wap_Project_Directory\GitHubActionsWorkflow.pfx
+        $msixFiles = Get-ChildItem -Path (Join-Path $env:App_Project_Directory "bin") -Recurse -Include Vocup.WinForms*.appx
+        $msixFiles | ForEach-Object { Copy-Item -Path $_.FullName -Destination $gatherDirectory }
+        Write-Output "Copied $($msixFiles.Count) MSIX files to $gatherDirectory"
 
-    # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
+        $version = $msixFiles[0].BaseName.Split("_")[1]
+        Write-Output "Bundle version based on MSIX file name is $version"
+
+        $bundleDirectory = Join-Path $env:App_Project_Directory "bin" "AppPackages" "Vocup.WinForms_$($version)_Test"
+        New-Item -ItemType Directory -Path $bundleDirectory | Out-Null
+
+        $symbolFiles = Get-ChildItem -Path (Join-Path $env:App_Project_Directory "bin") -Recurse -Include Vocup.WinForms*.appxsym
+        $symbolFiles | ForEach-Object { Copy-Item -Path $_.FullName -Destination $bundleDirectory }
+        Write-Output "Copied $($symbolFiles.Count) symbol files to $bundleDirectory"
+
+        $bundleFile = Join-Path $bundleDirectory "Vocup.WinForms_$($version)_x86_x64_arm64.appxbundle"
+
+        Write-Output "gather_directory=$gatherDirectory" >> $env:GITHUB_OUTPUT
+        Write-Output "bundle_directory=$bundleDirectory" >> $env:GITHUB_OUTPUT
+        Write-Output "bundle_version=$version" >> $env:GITHUB_OUTPUT
+        Write-Output "bundle_file=$bundleFile" >> $env:GITHUB_OUTPUT
+
+    - name: Create MSIX bundle
+      if: matrix.configuration == 'Release'
+      uses: LanceMcCarthy/Action-MsixBundler@v2.0.0
+      with:
+        msix-folder: ${{ steps.gather.outputs.gather_directory }}
+        msixbundle-filepath: ${{ steps.gather.outputs.bundle_file }}
+        msixbundle-version: ${{ steps.gather.outputs.bundle_version }}
+
     - name: Upload build artifacts
-      if: matrix.configuration == 'Release' && startsWith(github.ref, 'refs/tags/')
+      if: matrix.configuration == 'Release'
+      #if: matrix.configuration == 'Release' && startsWith(github.ref, 'refs/tags/')
       uses: actions/upload-artifact@v4
       with:
         name: MSIX Package
-        path: ${{ env.Wap_Project_Directory }}\AppPackages
+        path: ${{ steps.gather.outputs.path }}
