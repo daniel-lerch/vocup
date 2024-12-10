@@ -17,6 +17,7 @@ jobs:
     env:
       Solution_Name: Vocup.sln                                          # Replace with your solution name, i.e. MyWpfApp.sln.
       App_Project_Directory: src\Vocup.WinForms
+      App_Project_Name: Vocup.WinForms
 
     steps:
     - name: Checkout
@@ -57,44 +58,58 @@ jobs:
 
     - name: Gather MSIX files
       id: gather
-      if: matrix.configuration == 'Release'
+      if: matrix.configuration == 'Release' && startsWith(github.ref, 'refs/tags/')
       run: |
         $gatherDirectory = Join-Path $env:App_Project_Directory "obj" "Bundle"
         New-Item -ItemType Directory -Path $gatherDirectory | Out-Null
 
-        $msixFiles = Get-ChildItem -Path (Join-Path $env:App_Project_Directory "bin") -Recurse -Include Vocup.WinForms*.appx
+        $msixFiles = Get-ChildItem -Path (Join-Path $env:App_Project_Directory "bin") -Recurse -Include "$env:App_Project_Name*.appx"
         $msixFiles | ForEach-Object { Copy-Item -Path $_.FullName -Destination $gatherDirectory }
         Write-Output "Copied $($msixFiles.Count) MSIX files to $gatherDirectory"
 
         $version = $msixFiles[0].BaseName.Split("_")[1]
         Write-Output "Bundle version based on MSIX file name is $version"
 
-        $bundleDirectory = Join-Path $env:App_Project_Directory "bin" "AppPackages" "Vocup.WinForms_$($version)_Test"
+        $uploadDirectory = Join-Path $env:App_Project_Directory "bin" "AppPackages"
+        New-Item -ItemType Directory -Path $uploadDirectory | Out-Null
+
+        $uploadFile = Join-Path $uploadDirectory "$($env:App_Project_Name)_$($version)_x86_x64_arm64_bundle.appxupload"
+
+        $bundleDirectory = Join-Path $uploadDirectory "$($env:App_Project_Name)_$($version)_Test"
         New-Item -ItemType Directory -Path $bundleDirectory | Out-Null
 
-        $symbolFiles = Get-ChildItem -Path (Join-Path $env:App_Project_Directory "bin") -Recurse -Include Vocup.WinForms*.appxsym
+        $bundleFile = Join-Path $bundleDirectory "$($env:App_Project_Name)_$($version)_x86_x64_arm64.appxbundle"
+
+        $symbolFiles = Get-ChildItem -Path (Join-Path $env:App_Project_Directory "bin") -Recurse -Include "$env:App_Project_Name*.appxsym"
         $symbolFiles | ForEach-Object { Copy-Item -Path $_.FullName -Destination $bundleDirectory }
         Write-Output "Copied $($symbolFiles.Count) symbol files to $bundleDirectory"
-
-        $bundleFile = Join-Path $bundleDirectory "Vocup.WinForms_$($version)_x86_x64_arm64.appxbundle"
 
         Write-Output "gather_directory=$gatherDirectory" >> $env:GITHUB_OUTPUT
         Write-Output "bundle_directory=$bundleDirectory" >> $env:GITHUB_OUTPUT
         Write-Output "bundle_version=$version" >> $env:GITHUB_OUTPUT
         Write-Output "bundle_file=$bundleFile" >> $env:GITHUB_OUTPUT
+        Write-Output "upload_directory=$uploadDirectory" >> $env:GITHUB_OUTPUT
+        Write-Output "upload_file=$uploadFile" >> $env:GITHUB_OUTPUT
 
     - name: Create MSIX bundle
-      if: matrix.configuration == 'Release'
+      if: matrix.configuration == 'Release' && startsWith(github.ref, 'refs/tags/')
       uses: LanceMcCarthy/Action-MsixBundler@v2.0.0
       with:
         msix-folder: ${{ steps.gather.outputs.gather_directory }}
         msixbundle-filepath: ${{ steps.gather.outputs.bundle_file }}
         msixbundle-version: ${{ steps.gather.outputs.bundle_version }}
 
+    - name: Create MSIX upload
+      if: matrix.configuration == 'Release' && startsWith(github.ref, 'refs/tags/')
+      run: |
+        $uploadFile = "${{ steps.gather.outputs.upload_file }}"
+        $bundleDirectory = "${{ steps.gather.outputs.bundle_directory }}"
+        
+        Compress-Archive -Path "$bundleDirectory\*" -DestinationPath $uploadFile
+        
     - name: Upload build artifacts
-      if: matrix.configuration == 'Release'
-      #if: matrix.configuration == 'Release' && startsWith(github.ref, 'refs/tags/')
+      if: matrix.configuration == 'Release' && startsWith(github.ref, 'refs/tags/')
       uses: actions/upload-artifact@v4
       with:
         name: MSIX Package
-        path: ${{ steps.gather.outputs.path }}
+        path: ${{ steps.gather.outputs.upload_file }}
