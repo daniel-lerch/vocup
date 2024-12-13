@@ -186,6 +186,7 @@
             // TpGerman
             // 
             TpGerman.AutoScroll = true;
+            TpGerman.BackColor = System.Drawing.SystemColors.Window;
             TpGerman.Controls.Add(doppel_s);
             TpGerman.Controls.Add(ue_big);
             TpGerman.Controls.Add(ae_big);
@@ -201,7 +202,6 @@
             TpGerman.TabIndex = 0;
             TpGerman.Tag = "de";
             TpGerman.Text = "German";
-            TpGerman.UseVisualStyleBackColor = true;
             // 
             // doppel_s
             // 
@@ -277,6 +277,7 @@
             // TpFrench
             // 
             TpFrench.AutoScroll = true;
+            TpFrench.BackColor = System.Drawing.SystemColors.Window;
             TpFrench.Controls.Add(û_big);
             TpFrench.Controls.Add(ÿ);
             TpFrench.Controls.Add(ÿ_big);
@@ -315,7 +316,6 @@
             TpFrench.TabIndex = 1;
             TpFrench.Tag = "fr";
             TpFrench.Text = "French";
-            TpFrench.UseVisualStyleBackColor = true;
             // 
             // û_big
             // 
@@ -620,6 +620,7 @@
             // TpItalian
             // 
             TpItalian.AutoScroll = true;
+            TpItalian.BackColor = System.Drawing.SystemColors.Window;
             TpItalian.Controls.Add(ú_big);
             TpItalian.Controls.Add(ù_it);
             TpItalian.Controls.Add(ù_it_big);
@@ -648,7 +649,6 @@
             TpItalian.TabIndex = 2;
             TpItalian.Tag = "it";
             TpItalian.Text = "Italian";
-            TpItalian.UseVisualStyleBackColor = true;
             // 
             // ú_big
             // 
@@ -854,6 +854,7 @@
             // TpSpanish
             // 
             TpSpanish.AutoScroll = true;
+            TpSpanish.BackColor = System.Drawing.SystemColors.Window;
             TpSpanish.Controls.Add(um_frag);
             TpSpanish.Controls.Add(umg_ausr);
             TpSpanish.Controls.Add(º);
@@ -880,7 +881,6 @@
             TpSpanish.TabIndex = 3;
             TpSpanish.Tag = "es";
             TpSpanish.Text = "Spanish";
-            TpSpanish.UseVisualStyleBackColor = true;
             // 
             // um_frag
             // 
@@ -1068,6 +1068,7 @@
             // TpRomanian
             // 
             TpRomanian.AutoScroll = true;
+            TpRomanian.BackColor = System.Drawing.SystemColors.Window;
             TpRomanian.Controls.Add(ţ_ro_big);
             TpRomanian.Controls.Add(ţ_ro);
             TpRomanian.Controls.Add(ş_ro_big);
@@ -1086,7 +1087,6 @@
             TpRomanian.TabIndex = 4;
             TpRomanian.Tag = "ro";
             TpRomanian.Text = "Romanian";
-            TpRomanian.UseVisualStyleBackColor = true;
             // 
             // ţ_ro_big
             // 
@@ -1200,6 +1200,7 @@
             // 
             // tpDutch
             // 
+            tpDutch.BackColor = System.Drawing.SystemColors.Window;
             tpDutch.Controls.Add(û_big_nl);
             tpDutch.Controls.Add(û_nl);
             tpDutch.Controls.Add(ü_big_nl);
@@ -1236,7 +1237,6 @@
             tpDutch.TabIndex = 5;
             tpDutch.Tag = "nl";
             tpDutch.Text = "Dutch";
-            tpDutch.UseVisualStyleBackColor = true;
             // 
             // û_big_nl
             // 

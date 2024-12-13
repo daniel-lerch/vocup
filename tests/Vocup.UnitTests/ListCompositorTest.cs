@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Vocup.Util;
 using Xunit;
 
@@ -18,7 +17,7 @@ namespace Vocup.UnitTests
         public void TestAddArgumentOutOfRange()
         {
             var compositor = new ListCompositor<int>();
-            Assert.Throws<ArgumentOutOfRangeException>(() => compositor.AddSource(new List<int>(), -0.3));
+            Assert.Throws<ArgumentOutOfRangeException>(() => compositor.AddSource([], -0.3));
         }
 
         [Fact]
@@ -27,7 +26,7 @@ namespace Vocup.UnitTests
             var compositor = new ListCompositor<int>();
             Assert.Throws<ArgumentOutOfRangeException>(() => compositor.ToList(-1));
             Assert.Throws<ArgumentOutOfRangeException>(() => compositor.ToList(1));
-            compositor.AddSource(new List<int>() { 3, 4, 5, 6, 7, 8 }, 0.3);
+            compositor.AddSource([3, 4, 5, 6, 7, 8], 0.3);
             Assert.Throws<ArgumentOutOfRangeException>(() => compositor.ToList(13));
         }
     }

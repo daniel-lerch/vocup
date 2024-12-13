@@ -15,7 +15,7 @@ public class SettingsTests
         string basename = "vocup_settings";
 
         VersionedSettingsLoader<VocupSettings> loader = new(directory, basename);
-        VersionedSettings<VocupSettings> settings = await loader.LoadAsync().ConfigureAwait(false);
+        VersionedSettings<VocupSettings> settings = await loader.LoadAsync();
 
         settings.Value.StartupCounter++;
         await settings.DisposeAsync();

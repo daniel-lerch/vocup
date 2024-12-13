@@ -29,594 +29,603 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsDialog));
-            this.BtnOk = new System.Windows.Forms.Button();
-            this.BtnCancel = new System.Windows.Forms.Button();
-            this.GroupStartScreen = new System.Windows.Forms.GroupBox();
-            this.BtnResetStartScreen = new System.Windows.Forms.Button();
-            this.RbEmptyStart = new System.Windows.Forms.RadioButton();
-            this.RbRecentFile = new System.Windows.Forms.RadioButton();
-            this.TrbWrongRight = new System.Windows.Forms.TrackBar();
-            this.TrbUnknown = new System.Windows.Forms.TrackBar();
-            this.TabControlMain = new System.Windows.Forms.TabControl();
-            this.TabGeneral = new System.Windows.Forms.TabPage();
-            this.GroupLanguage = new System.Windows.Forms.GroupBox();
-            this.LbLanguage = new System.Windows.Forms.Label();
-            this.CbLanguage = new System.Windows.Forms.ComboBox();
-            this.GroupVocabularyList = new System.Windows.Forms.GroupBox();
-            this.CbColumnResize = new System.Windows.Forms.CheckBox();
-            this.GroupVhrPath = new System.Windows.Forms.GroupBox();
-            this.BtnVhrPath = new System.Windows.Forms.Button();
-            this.TbVhrPath = new System.Windows.Forms.TextBox();
-            this.GroupVhfPath = new System.Windows.Forms.GroupBox();
-            this.BtnVhfPath = new System.Windows.Forms.Button();
-            this.TbVhfPath = new System.Windows.Forms.TextBox();
-            this.GroupUpdate = new System.Windows.Forms.GroupBox();
-            this.CbDisableInternetServices = new System.Windows.Forms.CheckBox();
-            this.GroupSave = new System.Windows.Forms.GroupBox();
-            this.CbAutoSave = new System.Windows.Forms.CheckBox();
-            this.TabPractice = new System.Windows.Forms.TabPage();
-            this.GroupEvaluation = new System.Windows.Forms.GroupBox();
-            this.CbOptionalExpressions = new System.Windows.Forms.CheckBox();
-            this.CbManualCheck = new System.Windows.Forms.CheckBox();
-            this.CbShowPracticeResult = new System.Windows.Forms.CheckBox();
-            this.GroupUserInterface = new System.Windows.Forms.GroupBox();
-            this.CbAcousticFeedback = new System.Windows.Forms.CheckBox();
-            this.CbSingleContinueButton = new System.Windows.Forms.CheckBox();
-            this.GroupNearlyCorrect = new System.Windows.Forms.GroupBox();
-            this.CbTolerateWhiteSpace = new System.Windows.Forms.CheckBox();
-            this.CbTolerateNoSynonym = new System.Windows.Forms.CheckBox();
-            this.CbTolerateArticle = new System.Windows.Forms.CheckBox();
-            this.CbToleratePunctuationMark = new System.Windows.Forms.CheckBox();
-            this.CbTolerateSpecialChar = new System.Windows.Forms.CheckBox();
-            this.TabPracticeSelect = new System.Windows.Forms.TabPage();
-            this.BtnResetPracticeSelect = new System.Windows.Forms.Button();
-            this.GroupSelectionMix = new System.Windows.Forms.GroupBox();
-            this.LbWronglyPracticed = new System.Windows.Forms.Label();
-            this.LbCorrectlyPracticed = new System.Windows.Forms.Label();
-            this.LbUnpracticed = new System.Windows.Forms.Label();
-            this.LbPercentageUnpracticed = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.LbPercentageWrongCorrect = new System.Windows.Forms.Label();
-            this.GroupRepetitions = new System.Windows.Forms.GroupBox();
-            this.LbPracticeCount = new System.Windows.Forms.Label();
-            this.PnlPracticeCount = new System.Windows.Forms.Panel();
-            this.LbTrb6 = new System.Windows.Forms.Label();
-            this.LbTrb2 = new System.Windows.Forms.Label();
-            this.LbTrb5 = new System.Windows.Forms.Label();
-            this.LbTrb3 = new System.Windows.Forms.Label();
-            this.LbTrb4 = new System.Windows.Forms.Label();
-            this.TrbRepetitions = new System.Windows.Forms.TrackBar();
-            this.GroupStartScreen.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TrbWrongRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TrbUnknown)).BeginInit();
-            this.TabControlMain.SuspendLayout();
-            this.TabGeneral.SuspendLayout();
-            this.GroupLanguage.SuspendLayout();
-            this.GroupVocabularyList.SuspendLayout();
-            this.GroupVhrPath.SuspendLayout();
-            this.GroupVhfPath.SuspendLayout();
-            this.GroupUpdate.SuspendLayout();
-            this.GroupSave.SuspendLayout();
-            this.TabPractice.SuspendLayout();
-            this.GroupEvaluation.SuspendLayout();
-            this.GroupUserInterface.SuspendLayout();
-            this.GroupNearlyCorrect.SuspendLayout();
-            this.TabPracticeSelect.SuspendLayout();
-            this.GroupSelectionMix.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.GroupRepetitions.SuspendLayout();
-            this.PnlPracticeCount.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TrbRepetitions)).BeginInit();
-            this.SuspendLayout();
+            BtnOk = new System.Windows.Forms.Button();
+            BtnCancel = new System.Windows.Forms.Button();
+            GroupStartScreen = new System.Windows.Forms.GroupBox();
+            BtnResetStartScreen = new System.Windows.Forms.Button();
+            RbEmptyStart = new System.Windows.Forms.RadioButton();
+            RbRecentFile = new System.Windows.Forms.RadioButton();
+            TrbWrongRight = new System.Windows.Forms.TrackBar();
+            TrbUnknown = new System.Windows.Forms.TrackBar();
+            TabControlMain = new System.Windows.Forms.TabControl();
+            TabGeneral = new System.Windows.Forms.TabPage();
+            GroupUserInterface = new System.Windows.Forms.GroupBox();
+            CbColorTheme = new System.Windows.Forms.ComboBox();
+            LbColorTheme = new System.Windows.Forms.Label();
+            LbLanguage = new System.Windows.Forms.Label();
+            CbLanguage = new System.Windows.Forms.ComboBox();
+            GroupVocabularyList = new System.Windows.Forms.GroupBox();
+            CbColumnResize = new System.Windows.Forms.CheckBox();
+            GroupVhrPath = new System.Windows.Forms.GroupBox();
+            BtnVhrPath = new System.Windows.Forms.Button();
+            TbVhrPath = new System.Windows.Forms.TextBox();
+            GroupVhfPath = new System.Windows.Forms.GroupBox();
+            BtnVhfPath = new System.Windows.Forms.Button();
+            TbVhfPath = new System.Windows.Forms.TextBox();
+            GroupUpdate = new System.Windows.Forms.GroupBox();
+            CbDisableInternetServices = new System.Windows.Forms.CheckBox();
+            GroupSave = new System.Windows.Forms.GroupBox();
+            CbAutoSave = new System.Windows.Forms.CheckBox();
+            TabPractice = new System.Windows.Forms.TabPage();
+            GroupEvaluation = new System.Windows.Forms.GroupBox();
+            CbOptionalExpressions = new System.Windows.Forms.CheckBox();
+            CbManualCheck = new System.Windows.Forms.CheckBox();
+            CbShowPracticeResult = new System.Windows.Forms.CheckBox();
+            GroupPracticeUserInterface = new System.Windows.Forms.GroupBox();
+            CbAcousticFeedback = new System.Windows.Forms.CheckBox();
+            CbSingleContinueButton = new System.Windows.Forms.CheckBox();
+            GroupNearlyCorrect = new System.Windows.Forms.GroupBox();
+            CbTolerateWhiteSpace = new System.Windows.Forms.CheckBox();
+            CbTolerateNoSynonym = new System.Windows.Forms.CheckBox();
+            CbTolerateArticle = new System.Windows.Forms.CheckBox();
+            CbToleratePunctuationMark = new System.Windows.Forms.CheckBox();
+            CbTolerateSpecialChar = new System.Windows.Forms.CheckBox();
+            TabPracticeSelect = new System.Windows.Forms.TabPage();
+            BtnResetPracticeSelect = new System.Windows.Forms.Button();
+            GroupSelectionMix = new System.Windows.Forms.GroupBox();
+            LbWronglyPracticed = new System.Windows.Forms.Label();
+            LbCorrectlyPracticed = new System.Windows.Forms.Label();
+            LbUnpracticed = new System.Windows.Forms.Label();
+            LbPercentageUnpracticed = new System.Windows.Forms.Label();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            pictureBox3 = new System.Windows.Forms.PictureBox();
+            LbPercentageWrongCorrect = new System.Windows.Forms.Label();
+            GroupRepetitions = new System.Windows.Forms.GroupBox();
+            LbPracticeCount = new System.Windows.Forms.Label();
+            PnlPracticeCount = new System.Windows.Forms.Panel();
+            LbTrb6 = new System.Windows.Forms.Label();
+            LbTrb2 = new System.Windows.Forms.Label();
+            LbTrb5 = new System.Windows.Forms.Label();
+            LbTrb3 = new System.Windows.Forms.Label();
+            LbTrb4 = new System.Windows.Forms.Label();
+            TrbRepetitions = new System.Windows.Forms.TrackBar();
+            GroupStartScreen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)TrbWrongRight).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TrbUnknown).BeginInit();
+            TabControlMain.SuspendLayout();
+            TabGeneral.SuspendLayout();
+            GroupUserInterface.SuspendLayout();
+            GroupVocabularyList.SuspendLayout();
+            GroupVhrPath.SuspendLayout();
+            GroupVhfPath.SuspendLayout();
+            GroupUpdate.SuspendLayout();
+            GroupSave.SuspendLayout();
+            TabPractice.SuspendLayout();
+            GroupEvaluation.SuspendLayout();
+            GroupPracticeUserInterface.SuspendLayout();
+            GroupNearlyCorrect.SuspendLayout();
+            TabPracticeSelect.SuspendLayout();
+            GroupSelectionMix.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            GroupRepetitions.SuspendLayout();
+            PnlPracticeCount.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)TrbRepetitions).BeginInit();
+            SuspendLayout();
             // 
             // BtnOk
             // 
-            resources.ApplyResources(this.BtnOk, "BtnOk");
-            this.BtnOk.Name = "BtnOk";
-            this.BtnOk.UseVisualStyleBackColor = true;
-            this.BtnOk.Click += new System.EventHandler(this.BtnOk_Click);
+            resources.ApplyResources(BtnOk, "BtnOk");
+            BtnOk.Name = "BtnOk";
+            BtnOk.UseVisualStyleBackColor = true;
+            BtnOk.Click += BtnOk_Click;
             // 
             // BtnCancel
             // 
-            resources.ApplyResources(this.BtnCancel, "BtnCancel");
-            this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.UseVisualStyleBackColor = true;
+            resources.ApplyResources(BtnCancel, "BtnCancel");
+            BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            BtnCancel.Name = "BtnCancel";
+            BtnCancel.UseVisualStyleBackColor = true;
             // 
             // GroupStartScreen
             // 
-            this.GroupStartScreen.BackColor = System.Drawing.Color.Transparent;
-            this.GroupStartScreen.Controls.Add(this.BtnResetStartScreen);
-            this.GroupStartScreen.Controls.Add(this.RbEmptyStart);
-            this.GroupStartScreen.Controls.Add(this.RbRecentFile);
-            resources.ApplyResources(this.GroupStartScreen, "GroupStartScreen");
-            this.GroupStartScreen.Name = "GroupStartScreen";
-            this.GroupStartScreen.TabStop = false;
+            GroupStartScreen.BackColor = System.Drawing.Color.Transparent;
+            GroupStartScreen.Controls.Add(BtnResetStartScreen);
+            GroupStartScreen.Controls.Add(RbEmptyStart);
+            GroupStartScreen.Controls.Add(RbRecentFile);
+            resources.ApplyResources(GroupStartScreen, "GroupStartScreen");
+            GroupStartScreen.Name = "GroupStartScreen";
+            GroupStartScreen.TabStop = false;
             // 
             // BtnResetStartScreen
             // 
-            resources.ApplyResources(this.BtnResetStartScreen, "BtnResetStartScreen");
-            this.BtnResetStartScreen.Name = "BtnResetStartScreen";
-            this.BtnResetStartScreen.UseVisualStyleBackColor = true;
-            this.BtnResetStartScreen.Click += new System.EventHandler(this.BtnResetStartScreen_Click);
+            resources.ApplyResources(BtnResetStartScreen, "BtnResetStartScreen");
+            BtnResetStartScreen.Name = "BtnResetStartScreen";
+            BtnResetStartScreen.UseVisualStyleBackColor = true;
+            BtnResetStartScreen.Click += BtnResetStartScreen_Click;
             // 
             // RbEmptyStart
             // 
-            resources.ApplyResources(this.RbEmptyStart, "RbEmptyStart");
-            this.RbEmptyStart.Name = "RbEmptyStart";
-            this.RbEmptyStart.TabStop = true;
-            this.RbEmptyStart.UseVisualStyleBackColor = true;
+            resources.ApplyResources(RbEmptyStart, "RbEmptyStart");
+            RbEmptyStart.Name = "RbEmptyStart";
+            RbEmptyStart.TabStop = true;
+            RbEmptyStart.UseVisualStyleBackColor = true;
             // 
             // RbRecentFile
             // 
-            resources.ApplyResources(this.RbRecentFile, "RbRecentFile");
-            this.RbRecentFile.Checked = true;
-            this.RbRecentFile.Name = "RbRecentFile";
-            this.RbRecentFile.TabStop = true;
-            this.RbRecentFile.UseVisualStyleBackColor = true;
+            resources.ApplyResources(RbRecentFile, "RbRecentFile");
+            RbRecentFile.Checked = true;
+            RbRecentFile.Name = "RbRecentFile";
+            RbRecentFile.TabStop = true;
+            RbRecentFile.UseVisualStyleBackColor = true;
             // 
             // TrbWrongRight
             // 
-            this.TrbWrongRight.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.TrbWrongRight, "TrbWrongRight");
-            this.TrbWrongRight.Minimum = 1;
-            this.TrbWrongRight.Name = "TrbWrongRight";
-            this.TrbWrongRight.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.TrbWrongRight.Value = 5;
-            this.TrbWrongRight.ValueChanged += new System.EventHandler(this.TrbWrongRight_ValueChanged);
+            resources.ApplyResources(TrbWrongRight, "TrbWrongRight");
+            TrbWrongRight.Minimum = 1;
+            TrbWrongRight.Name = "TrbWrongRight";
+            TrbWrongRight.TickStyle = System.Windows.Forms.TickStyle.Both;
+            TrbWrongRight.Value = 5;
+            TrbWrongRight.ValueChanged += TrbWrongRight_ValueChanged;
             // 
             // TrbUnknown
             // 
-            this.TrbUnknown.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.TrbUnknown, "TrbUnknown");
-            this.TrbUnknown.Maximum = 8;
-            this.TrbUnknown.Minimum = 1;
-            this.TrbUnknown.Name = "TrbUnknown";
-            this.TrbUnknown.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.TrbUnknown.Value = 5;
-            this.TrbUnknown.ValueChanged += new System.EventHandler(this.TrbUnknown_ValueChanged);
+            resources.ApplyResources(TrbUnknown, "TrbUnknown");
+            TrbUnknown.Maximum = 8;
+            TrbUnknown.Minimum = 1;
+            TrbUnknown.Name = "TrbUnknown";
+            TrbUnknown.TickStyle = System.Windows.Forms.TickStyle.Both;
+            TrbUnknown.Value = 5;
+            TrbUnknown.ValueChanged += TrbUnknown_ValueChanged;
             // 
             // TabControlMain
             // 
-            this.TabControlMain.Controls.Add(this.TabGeneral);
-            this.TabControlMain.Controls.Add(this.TabPractice);
-            this.TabControlMain.Controls.Add(this.TabPracticeSelect);
-            resources.ApplyResources(this.TabControlMain, "TabControlMain");
-            this.TabControlMain.Name = "TabControlMain";
-            this.TabControlMain.SelectedIndex = 0;
-            this.TabControlMain.Selected += new System.Windows.Forms.TabControlEventHandler(this.TabControlMain_Selected);
+            TabControlMain.Controls.Add(TabGeneral);
+            TabControlMain.Controls.Add(TabPractice);
+            TabControlMain.Controls.Add(TabPracticeSelect);
+            resources.ApplyResources(TabControlMain, "TabControlMain");
+            TabControlMain.Name = "TabControlMain";
+            TabControlMain.SelectedIndex = 0;
+            TabControlMain.Selected += TabControlMain_Selected;
             // 
             // TabGeneral
             // 
-            this.TabGeneral.BackColor = System.Drawing.Color.White;
-            this.TabGeneral.Controls.Add(this.GroupLanguage);
-            this.TabGeneral.Controls.Add(this.GroupVocabularyList);
-            this.TabGeneral.Controls.Add(this.GroupVhrPath);
-            this.TabGeneral.Controls.Add(this.GroupVhfPath);
-            this.TabGeneral.Controls.Add(this.GroupUpdate);
-            this.TabGeneral.Controls.Add(this.GroupSave);
-            this.TabGeneral.Controls.Add(this.GroupStartScreen);
-            resources.ApplyResources(this.TabGeneral, "TabGeneral");
-            this.TabGeneral.Name = "TabGeneral";
-            // 
-            // GroupLanguage
-            // 
-            this.GroupLanguage.Controls.Add(this.LbLanguage);
-            this.GroupLanguage.Controls.Add(this.CbLanguage);
-            resources.ApplyResources(this.GroupLanguage, "GroupLanguage");
-            this.GroupLanguage.Name = "GroupLanguage";
-            this.GroupLanguage.TabStop = false;
-            // 
-            // LbLanguage
-            // 
-            resources.ApplyResources(this.LbLanguage, "LbLanguage");
-            this.LbLanguage.Name = "LbLanguage";
-            // 
-            // CbLanguage
-            // 
-            this.CbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CbLanguage.FormattingEnabled = true;
-            this.CbLanguage.Items.AddRange(new object[] {
-            resources.GetString("CbLanguage.Items"),
-            resources.GetString("CbLanguage.Items1"),
-            resources.GetString("CbLanguage.Items2"),
-            resources.GetString("CbLanguage.Items3")});
-            resources.ApplyResources(this.CbLanguage, "CbLanguage");
-            this.CbLanguage.Name = "CbLanguage";
-            // 
-            // GroupVocabularyList
-            // 
-            this.GroupVocabularyList.BackColor = System.Drawing.Color.Transparent;
-            this.GroupVocabularyList.Controls.Add(this.CbColumnResize);
-            resources.ApplyResources(this.GroupVocabularyList, "GroupVocabularyList");
-            this.GroupVocabularyList.Name = "GroupVocabularyList";
-            this.GroupVocabularyList.TabStop = false;
-            // 
-            // CbColumnResize
-            // 
-            resources.ApplyResources(this.CbColumnResize, "CbColumnResize");
-            this.CbColumnResize.Name = "CbColumnResize";
-            this.CbColumnResize.UseVisualStyleBackColor = true;
-            // 
-            // GroupVhrPath
-            // 
-            this.GroupVhrPath.Controls.Add(this.BtnVhrPath);
-            this.GroupVhrPath.Controls.Add(this.TbVhrPath);
-            resources.ApplyResources(this.GroupVhrPath, "GroupVhrPath");
-            this.GroupVhrPath.Name = "GroupVhrPath";
-            this.GroupVhrPath.TabStop = false;
-            // 
-            // BtnVhrPath
-            // 
-            resources.ApplyResources(this.BtnVhrPath, "BtnVhrPath");
-            this.BtnVhrPath.Name = "BtnVhrPath";
-            this.BtnVhrPath.UseVisualStyleBackColor = true;
-            this.BtnVhrPath.Click += new System.EventHandler(this.BtnVhrPath_Click);
-            // 
-            // TbVhrPath
-            // 
-            resources.ApplyResources(this.TbVhrPath, "TbVhrPath");
-            this.TbVhrPath.Name = "TbVhrPath";
-            this.TbVhrPath.ReadOnly = true;
-            // 
-            // GroupVhfPath
-            // 
-            this.GroupVhfPath.Controls.Add(this.BtnVhfPath);
-            this.GroupVhfPath.Controls.Add(this.TbVhfPath);
-            resources.ApplyResources(this.GroupVhfPath, "GroupVhfPath");
-            this.GroupVhfPath.Name = "GroupVhfPath";
-            this.GroupVhfPath.TabStop = false;
-            // 
-            // BtnVhfPath
-            // 
-            resources.ApplyResources(this.BtnVhfPath, "BtnVhfPath");
-            this.BtnVhfPath.Name = "BtnVhfPath";
-            this.BtnVhfPath.UseVisualStyleBackColor = true;
-            this.BtnVhfPath.Click += new System.EventHandler(this.BtnVhfPath_Click);
-            // 
-            // TbVhfPath
-            // 
-            resources.ApplyResources(this.TbVhfPath, "TbVhfPath");
-            this.TbVhfPath.Name = "TbVhfPath";
-            this.TbVhfPath.ReadOnly = true;
-            // 
-            // GroupUpdate
-            // 
-            this.GroupUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.GroupUpdate.Controls.Add(this.CbDisableInternetServices);
-            resources.ApplyResources(this.GroupUpdate, "GroupUpdate");
-            this.GroupUpdate.Name = "GroupUpdate";
-            this.GroupUpdate.TabStop = false;
-            // 
-            // CbDisableInternetServices
-            // 
-            resources.ApplyResources(this.CbDisableInternetServices, "CbDisableInternetServices");
-            this.CbDisableInternetServices.Name = "CbDisableInternetServices";
-            this.CbDisableInternetServices.UseVisualStyleBackColor = true;
-            // 
-            // GroupSave
-            // 
-            this.GroupSave.BackColor = System.Drawing.Color.Transparent;
-            this.GroupSave.Controls.Add(this.CbAutoSave);
-            resources.ApplyResources(this.GroupSave, "GroupSave");
-            this.GroupSave.Name = "GroupSave";
-            this.GroupSave.TabStop = false;
-            // 
-            // CbAutoSave
-            // 
-            resources.ApplyResources(this.CbAutoSave, "CbAutoSave");
-            this.CbAutoSave.Name = "CbAutoSave";
-            this.CbAutoSave.UseVisualStyleBackColor = true;
-            // 
-            // TabPractice
-            // 
-            this.TabPractice.BackColor = System.Drawing.Color.White;
-            this.TabPractice.Controls.Add(this.GroupEvaluation);
-            this.TabPractice.Controls.Add(this.GroupUserInterface);
-            this.TabPractice.Controls.Add(this.GroupNearlyCorrect);
-            resources.ApplyResources(this.TabPractice, "TabPractice");
-            this.TabPractice.Name = "TabPractice";
-            // 
-            // GroupEvaluation
-            // 
-            this.GroupEvaluation.Controls.Add(this.CbOptionalExpressions);
-            this.GroupEvaluation.Controls.Add(this.CbManualCheck);
-            this.GroupEvaluation.Controls.Add(this.CbShowPracticeResult);
-            resources.ApplyResources(this.GroupEvaluation, "GroupEvaluation");
-            this.GroupEvaluation.Name = "GroupEvaluation";
-            this.GroupEvaluation.TabStop = false;
-            // 
-            // CbOptionalExpressions
-            // 
-            resources.ApplyResources(this.CbOptionalExpressions, "CbOptionalExpressions");
-            this.CbOptionalExpressions.Checked = true;
-            this.CbOptionalExpressions.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CbOptionalExpressions.Name = "CbOptionalExpressions";
-            this.CbOptionalExpressions.UseVisualStyleBackColor = true;
-            // 
-            // CbManualCheck
-            // 
-            resources.ApplyResources(this.CbManualCheck, "CbManualCheck");
-            this.CbManualCheck.Name = "CbManualCheck";
-            this.CbManualCheck.UseVisualStyleBackColor = true;
-            // 
-            // CbShowPracticeResult
-            // 
-            resources.ApplyResources(this.CbShowPracticeResult, "CbShowPracticeResult");
-            this.CbShowPracticeResult.Checked = true;
-            this.CbShowPracticeResult.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CbShowPracticeResult.Name = "CbShowPracticeResult";
-            this.CbShowPracticeResult.UseVisualStyleBackColor = true;
+            TabGeneral.BackColor = System.Drawing.SystemColors.Window;
+            TabGeneral.Controls.Add(GroupUserInterface);
+            TabGeneral.Controls.Add(GroupVocabularyList);
+            TabGeneral.Controls.Add(GroupVhrPath);
+            TabGeneral.Controls.Add(GroupVhfPath);
+            TabGeneral.Controls.Add(GroupUpdate);
+            TabGeneral.Controls.Add(GroupSave);
+            TabGeneral.Controls.Add(GroupStartScreen);
+            resources.ApplyResources(TabGeneral, "TabGeneral");
+            TabGeneral.Name = "TabGeneral";
             // 
             // GroupUserInterface
             // 
-            this.GroupUserInterface.Controls.Add(this.CbAcousticFeedback);
-            this.GroupUserInterface.Controls.Add(this.CbSingleContinueButton);
-            resources.ApplyResources(this.GroupUserInterface, "GroupUserInterface");
-            this.GroupUserInterface.Name = "GroupUserInterface";
-            this.GroupUserInterface.TabStop = false;
+            GroupUserInterface.Controls.Add(CbColorTheme);
+            GroupUserInterface.Controls.Add(LbColorTheme);
+            GroupUserInterface.Controls.Add(LbLanguage);
+            GroupUserInterface.Controls.Add(CbLanguage);
+            resources.ApplyResources(GroupUserInterface, "GroupUserInterface");
+            GroupUserInterface.Name = "GroupUserInterface";
+            GroupUserInterface.TabStop = false;
+            // 
+            // CbColorTheme
+            // 
+            CbColorTheme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            CbColorTheme.FormattingEnabled = true;
+            CbColorTheme.Items.AddRange(new object[] { resources.GetString("CbColorTheme.Items"), resources.GetString("CbColorTheme.Items1"), resources.GetString("CbColorTheme.Items2") });
+            resources.ApplyResources(CbColorTheme, "CbColorTheme");
+            CbColorTheme.Name = "CbColorTheme";
+            // 
+            // LbColorTheme
+            // 
+            resources.ApplyResources(LbColorTheme, "LbColorTheme");
+            LbColorTheme.Name = "LbColorTheme";
+            // 
+            // LbLanguage
+            // 
+            resources.ApplyResources(LbLanguage, "LbLanguage");
+            LbLanguage.Name = "LbLanguage";
+            // 
+            // CbLanguage
+            // 
+            CbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            CbLanguage.FormattingEnabled = true;
+            CbLanguage.Items.AddRange(new object[] { resources.GetString("CbLanguage.Items"), resources.GetString("CbLanguage.Items1"), resources.GetString("CbLanguage.Items2"), resources.GetString("CbLanguage.Items3") });
+            resources.ApplyResources(CbLanguage, "CbLanguage");
+            CbLanguage.Name = "CbLanguage";
+            // 
+            // GroupVocabularyList
+            // 
+            GroupVocabularyList.BackColor = System.Drawing.Color.Transparent;
+            GroupVocabularyList.Controls.Add(CbColumnResize);
+            resources.ApplyResources(GroupVocabularyList, "GroupVocabularyList");
+            GroupVocabularyList.Name = "GroupVocabularyList";
+            GroupVocabularyList.TabStop = false;
+            // 
+            // CbColumnResize
+            // 
+            resources.ApplyResources(CbColumnResize, "CbColumnResize");
+            CbColumnResize.Name = "CbColumnResize";
+            CbColumnResize.UseVisualStyleBackColor = true;
+            // 
+            // GroupVhrPath
+            // 
+            GroupVhrPath.Controls.Add(BtnVhrPath);
+            GroupVhrPath.Controls.Add(TbVhrPath);
+            resources.ApplyResources(GroupVhrPath, "GroupVhrPath");
+            GroupVhrPath.Name = "GroupVhrPath";
+            GroupVhrPath.TabStop = false;
+            // 
+            // BtnVhrPath
+            // 
+            resources.ApplyResources(BtnVhrPath, "BtnVhrPath");
+            BtnVhrPath.Name = "BtnVhrPath";
+            BtnVhrPath.UseVisualStyleBackColor = true;
+            BtnVhrPath.Click += BtnVhrPath_Click;
+            // 
+            // TbVhrPath
+            // 
+            resources.ApplyResources(TbVhrPath, "TbVhrPath");
+            TbVhrPath.Name = "TbVhrPath";
+            TbVhrPath.ReadOnly = true;
+            // 
+            // GroupVhfPath
+            // 
+            GroupVhfPath.Controls.Add(BtnVhfPath);
+            GroupVhfPath.Controls.Add(TbVhfPath);
+            resources.ApplyResources(GroupVhfPath, "GroupVhfPath");
+            GroupVhfPath.Name = "GroupVhfPath";
+            GroupVhfPath.TabStop = false;
+            // 
+            // BtnVhfPath
+            // 
+            resources.ApplyResources(BtnVhfPath, "BtnVhfPath");
+            BtnVhfPath.Name = "BtnVhfPath";
+            BtnVhfPath.UseVisualStyleBackColor = true;
+            BtnVhfPath.Click += BtnVhfPath_Click;
+            // 
+            // TbVhfPath
+            // 
+            resources.ApplyResources(TbVhfPath, "TbVhfPath");
+            TbVhfPath.Name = "TbVhfPath";
+            TbVhfPath.ReadOnly = true;
+            // 
+            // GroupUpdate
+            // 
+            GroupUpdate.BackColor = System.Drawing.Color.Transparent;
+            GroupUpdate.Controls.Add(CbDisableInternetServices);
+            resources.ApplyResources(GroupUpdate, "GroupUpdate");
+            GroupUpdate.Name = "GroupUpdate";
+            GroupUpdate.TabStop = false;
+            // 
+            // CbDisableInternetServices
+            // 
+            resources.ApplyResources(CbDisableInternetServices, "CbDisableInternetServices");
+            CbDisableInternetServices.Name = "CbDisableInternetServices";
+            CbDisableInternetServices.UseVisualStyleBackColor = true;
+            // 
+            // GroupSave
+            // 
+            GroupSave.BackColor = System.Drawing.Color.Transparent;
+            GroupSave.Controls.Add(CbAutoSave);
+            resources.ApplyResources(GroupSave, "GroupSave");
+            GroupSave.Name = "GroupSave";
+            GroupSave.TabStop = false;
+            // 
+            // CbAutoSave
+            // 
+            resources.ApplyResources(CbAutoSave, "CbAutoSave");
+            CbAutoSave.Name = "CbAutoSave";
+            CbAutoSave.UseVisualStyleBackColor = true;
+            // 
+            // TabPractice
+            // 
+            TabPractice.BackColor = System.Drawing.SystemColors.Window;
+            TabPractice.Controls.Add(GroupEvaluation);
+            TabPractice.Controls.Add(GroupPracticeUserInterface);
+            TabPractice.Controls.Add(GroupNearlyCorrect);
+            resources.ApplyResources(TabPractice, "TabPractice");
+            TabPractice.Name = "TabPractice";
+            // 
+            // GroupEvaluation
+            // 
+            GroupEvaluation.Controls.Add(CbOptionalExpressions);
+            GroupEvaluation.Controls.Add(CbManualCheck);
+            GroupEvaluation.Controls.Add(CbShowPracticeResult);
+            resources.ApplyResources(GroupEvaluation, "GroupEvaluation");
+            GroupEvaluation.Name = "GroupEvaluation";
+            GroupEvaluation.TabStop = false;
+            // 
+            // CbOptionalExpressions
+            // 
+            resources.ApplyResources(CbOptionalExpressions, "CbOptionalExpressions");
+            CbOptionalExpressions.Checked = true;
+            CbOptionalExpressions.CheckState = System.Windows.Forms.CheckState.Checked;
+            CbOptionalExpressions.Name = "CbOptionalExpressions";
+            CbOptionalExpressions.UseVisualStyleBackColor = true;
+            // 
+            // CbManualCheck
+            // 
+            resources.ApplyResources(CbManualCheck, "CbManualCheck");
+            CbManualCheck.Name = "CbManualCheck";
+            CbManualCheck.UseVisualStyleBackColor = true;
+            // 
+            // CbShowPracticeResult
+            // 
+            resources.ApplyResources(CbShowPracticeResult, "CbShowPracticeResult");
+            CbShowPracticeResult.Checked = true;
+            CbShowPracticeResult.CheckState = System.Windows.Forms.CheckState.Checked;
+            CbShowPracticeResult.Name = "CbShowPracticeResult";
+            CbShowPracticeResult.UseVisualStyleBackColor = true;
+            // 
+            // GroupPracticeUserInterface
+            // 
+            GroupPracticeUserInterface.Controls.Add(CbAcousticFeedback);
+            GroupPracticeUserInterface.Controls.Add(CbSingleContinueButton);
+            resources.ApplyResources(GroupPracticeUserInterface, "GroupPracticeUserInterface");
+            GroupPracticeUserInterface.Name = "GroupPracticeUserInterface";
+            GroupPracticeUserInterface.TabStop = false;
             // 
             // CbAcousticFeedback
             // 
-            resources.ApplyResources(this.CbAcousticFeedback, "CbAcousticFeedback");
-            this.CbAcousticFeedback.Checked = true;
-            this.CbAcousticFeedback.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CbAcousticFeedback.Name = "CbAcousticFeedback";
-            this.CbAcousticFeedback.UseVisualStyleBackColor = true;
+            resources.ApplyResources(CbAcousticFeedback, "CbAcousticFeedback");
+            CbAcousticFeedback.Checked = true;
+            CbAcousticFeedback.CheckState = System.Windows.Forms.CheckState.Checked;
+            CbAcousticFeedback.Name = "CbAcousticFeedback";
+            CbAcousticFeedback.UseVisualStyleBackColor = true;
             // 
             // CbSingleContinueButton
             // 
-            resources.ApplyResources(this.CbSingleContinueButton, "CbSingleContinueButton");
-            this.CbSingleContinueButton.BackColor = System.Drawing.Color.Transparent;
-            this.CbSingleContinueButton.Name = "CbSingleContinueButton";
-            this.CbSingleContinueButton.UseVisualStyleBackColor = false;
+            resources.ApplyResources(CbSingleContinueButton, "CbSingleContinueButton");
+            CbSingleContinueButton.BackColor = System.Drawing.Color.Transparent;
+            CbSingleContinueButton.Name = "CbSingleContinueButton";
+            CbSingleContinueButton.UseVisualStyleBackColor = false;
             // 
             // GroupNearlyCorrect
             // 
-            this.GroupNearlyCorrect.Controls.Add(this.CbTolerateWhiteSpace);
-            this.GroupNearlyCorrect.Controls.Add(this.CbTolerateNoSynonym);
-            this.GroupNearlyCorrect.Controls.Add(this.CbTolerateArticle);
-            this.GroupNearlyCorrect.Controls.Add(this.CbToleratePunctuationMark);
-            this.GroupNearlyCorrect.Controls.Add(this.CbTolerateSpecialChar);
-            resources.ApplyResources(this.GroupNearlyCorrect, "GroupNearlyCorrect");
-            this.GroupNearlyCorrect.Name = "GroupNearlyCorrect";
-            this.GroupNearlyCorrect.TabStop = false;
+            GroupNearlyCorrect.Controls.Add(CbTolerateWhiteSpace);
+            GroupNearlyCorrect.Controls.Add(CbTolerateNoSynonym);
+            GroupNearlyCorrect.Controls.Add(CbTolerateArticle);
+            GroupNearlyCorrect.Controls.Add(CbToleratePunctuationMark);
+            GroupNearlyCorrect.Controls.Add(CbTolerateSpecialChar);
+            resources.ApplyResources(GroupNearlyCorrect, "GroupNearlyCorrect");
+            GroupNearlyCorrect.Name = "GroupNearlyCorrect";
+            GroupNearlyCorrect.TabStop = false;
             // 
             // CbTolerateWhiteSpace
             // 
-            resources.ApplyResources(this.CbTolerateWhiteSpace, "CbTolerateWhiteSpace");
-            this.CbTolerateWhiteSpace.Checked = true;
-            this.CbTolerateWhiteSpace.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CbTolerateWhiteSpace.Name = "CbTolerateWhiteSpace";
-            this.CbTolerateWhiteSpace.UseVisualStyleBackColor = true;
+            resources.ApplyResources(CbTolerateWhiteSpace, "CbTolerateWhiteSpace");
+            CbTolerateWhiteSpace.Checked = true;
+            CbTolerateWhiteSpace.CheckState = System.Windows.Forms.CheckState.Checked;
+            CbTolerateWhiteSpace.Name = "CbTolerateWhiteSpace";
+            CbTolerateWhiteSpace.UseVisualStyleBackColor = true;
             // 
             // CbTolerateNoSynonym
             // 
-            resources.ApplyResources(this.CbTolerateNoSynonym, "CbTolerateNoSynonym");
-            this.CbTolerateNoSynonym.Checked = true;
-            this.CbTolerateNoSynonym.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CbTolerateNoSynonym.Name = "CbTolerateNoSynonym";
-            this.CbTolerateNoSynonym.UseVisualStyleBackColor = true;
+            resources.ApplyResources(CbTolerateNoSynonym, "CbTolerateNoSynonym");
+            CbTolerateNoSynonym.Checked = true;
+            CbTolerateNoSynonym.CheckState = System.Windows.Forms.CheckState.Checked;
+            CbTolerateNoSynonym.Name = "CbTolerateNoSynonym";
+            CbTolerateNoSynonym.UseVisualStyleBackColor = true;
             // 
             // CbTolerateArticle
             // 
-            resources.ApplyResources(this.CbTolerateArticle, "CbTolerateArticle");
-            this.CbTolerateArticle.Checked = true;
-            this.CbTolerateArticle.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CbTolerateArticle.Name = "CbTolerateArticle";
-            this.CbTolerateArticle.UseVisualStyleBackColor = true;
+            resources.ApplyResources(CbTolerateArticle, "CbTolerateArticle");
+            CbTolerateArticle.Checked = true;
+            CbTolerateArticle.CheckState = System.Windows.Forms.CheckState.Checked;
+            CbTolerateArticle.Name = "CbTolerateArticle";
+            CbTolerateArticle.UseVisualStyleBackColor = true;
             // 
             // CbToleratePunctuationMark
             // 
-            resources.ApplyResources(this.CbToleratePunctuationMark, "CbToleratePunctuationMark");
-            this.CbToleratePunctuationMark.Checked = true;
-            this.CbToleratePunctuationMark.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CbToleratePunctuationMark.Name = "CbToleratePunctuationMark";
-            this.CbToleratePunctuationMark.UseVisualStyleBackColor = true;
+            resources.ApplyResources(CbToleratePunctuationMark, "CbToleratePunctuationMark");
+            CbToleratePunctuationMark.Checked = true;
+            CbToleratePunctuationMark.CheckState = System.Windows.Forms.CheckState.Checked;
+            CbToleratePunctuationMark.Name = "CbToleratePunctuationMark";
+            CbToleratePunctuationMark.UseVisualStyleBackColor = true;
             // 
             // CbTolerateSpecialChar
             // 
-            resources.ApplyResources(this.CbTolerateSpecialChar, "CbTolerateSpecialChar");
-            this.CbTolerateSpecialChar.Checked = true;
-            this.CbTolerateSpecialChar.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CbTolerateSpecialChar.Name = "CbTolerateSpecialChar";
-            this.CbTolerateSpecialChar.UseVisualStyleBackColor = true;
+            resources.ApplyResources(CbTolerateSpecialChar, "CbTolerateSpecialChar");
+            CbTolerateSpecialChar.Checked = true;
+            CbTolerateSpecialChar.CheckState = System.Windows.Forms.CheckState.Checked;
+            CbTolerateSpecialChar.Name = "CbTolerateSpecialChar";
+            CbTolerateSpecialChar.UseVisualStyleBackColor = true;
             // 
             // TabPracticeSelect
             // 
-            this.TabPracticeSelect.BackColor = System.Drawing.Color.White;
-            this.TabPracticeSelect.Controls.Add(this.BtnResetPracticeSelect);
-            this.TabPracticeSelect.Controls.Add(this.GroupSelectionMix);
-            this.TabPracticeSelect.Controls.Add(this.GroupRepetitions);
-            resources.ApplyResources(this.TabPracticeSelect, "TabPracticeSelect");
-            this.TabPracticeSelect.Name = "TabPracticeSelect";
+            TabPracticeSelect.BackColor = System.Drawing.SystemColors.Window;
+            TabPracticeSelect.Controls.Add(BtnResetPracticeSelect);
+            TabPracticeSelect.Controls.Add(GroupSelectionMix);
+            TabPracticeSelect.Controls.Add(GroupRepetitions);
+            resources.ApplyResources(TabPracticeSelect, "TabPracticeSelect");
+            TabPracticeSelect.Name = "TabPracticeSelect";
             // 
             // BtnResetPracticeSelect
             // 
-            resources.ApplyResources(this.BtnResetPracticeSelect, "BtnResetPracticeSelect");
-            this.BtnResetPracticeSelect.Name = "BtnResetPracticeSelect";
-            this.BtnResetPracticeSelect.UseVisualStyleBackColor = true;
-            this.BtnResetPracticeSelect.Click += new System.EventHandler(this.BtnResetPractice_Click);
+            resources.ApplyResources(BtnResetPracticeSelect, "BtnResetPracticeSelect");
+            BtnResetPracticeSelect.Name = "BtnResetPracticeSelect";
+            BtnResetPracticeSelect.UseVisualStyleBackColor = true;
+            BtnResetPracticeSelect.Click += BtnResetPractice_Click;
             // 
             // GroupSelectionMix
             // 
-            this.GroupSelectionMix.Controls.Add(this.LbWronglyPracticed);
-            this.GroupSelectionMix.Controls.Add(this.LbCorrectlyPracticed);
-            this.GroupSelectionMix.Controls.Add(this.LbUnpracticed);
-            this.GroupSelectionMix.Controls.Add(this.LbPercentageUnpracticed);
-            this.GroupSelectionMix.Controls.Add(this.pictureBox2);
-            this.GroupSelectionMix.Controls.Add(this.pictureBox1);
-            this.GroupSelectionMix.Controls.Add(this.pictureBox3);
-            this.GroupSelectionMix.Controls.Add(this.LbPercentageWrongCorrect);
-            this.GroupSelectionMix.Controls.Add(this.TrbUnknown);
-            this.GroupSelectionMix.Controls.Add(this.TrbWrongRight);
-            resources.ApplyResources(this.GroupSelectionMix, "GroupSelectionMix");
-            this.GroupSelectionMix.Name = "GroupSelectionMix";
-            this.GroupSelectionMix.TabStop = false;
+            GroupSelectionMix.Controls.Add(LbWronglyPracticed);
+            GroupSelectionMix.Controls.Add(LbCorrectlyPracticed);
+            GroupSelectionMix.Controls.Add(LbUnpracticed);
+            GroupSelectionMix.Controls.Add(LbPercentageUnpracticed);
+            GroupSelectionMix.Controls.Add(pictureBox2);
+            GroupSelectionMix.Controls.Add(pictureBox1);
+            GroupSelectionMix.Controls.Add(pictureBox3);
+            GroupSelectionMix.Controls.Add(LbPercentageWrongCorrect);
+            GroupSelectionMix.Controls.Add(TrbUnknown);
+            GroupSelectionMix.Controls.Add(TrbWrongRight);
+            resources.ApplyResources(GroupSelectionMix, "GroupSelectionMix");
+            GroupSelectionMix.Name = "GroupSelectionMix";
+            GroupSelectionMix.TabStop = false;
             // 
             // LbWronglyPracticed
             // 
-            resources.ApplyResources(this.LbWronglyPracticed, "LbWronglyPracticed");
-            this.LbWronglyPracticed.Name = "LbWronglyPracticed";
+            resources.ApplyResources(LbWronglyPracticed, "LbWronglyPracticed");
+            LbWronglyPracticed.Name = "LbWronglyPracticed";
             // 
             // LbCorrectlyPracticed
             // 
-            resources.ApplyResources(this.LbCorrectlyPracticed, "LbCorrectlyPracticed");
-            this.LbCorrectlyPracticed.Name = "LbCorrectlyPracticed";
+            resources.ApplyResources(LbCorrectlyPracticed, "LbCorrectlyPracticed");
+            LbCorrectlyPracticed.Name = "LbCorrectlyPracticed";
             // 
             // LbUnpracticed
             // 
-            resources.ApplyResources(this.LbUnpracticed, "LbUnpracticed");
-            this.LbUnpracticed.Name = "LbUnpracticed";
+            resources.ApplyResources(LbUnpracticed, "LbUnpracticed");
+            LbUnpracticed.Name = "LbUnpracticed";
             // 
             // LbPercentageUnpracticed
             // 
-            resources.ApplyResources(this.LbPercentageUnpracticed, "LbPercentageUnpracticed");
-            this.LbPercentageUnpracticed.Name = "LbPercentageUnpracticed";
+            resources.ApplyResources(LbPercentageUnpracticed, "LbPercentageUnpracticed");
+            LbPercentageUnpracticed.Name = "LbPercentageUnpracticed";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Vocup.Properties.Icons.WronglyPracticed;
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Image = Properties.Icons.WronglyPracticed;
+            resources.ApplyResources(pictureBox2, "pictureBox2");
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Vocup.Properties.Icons.Unpracticed;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = Properties.Icons.Unpracticed;
+            resources.ApplyResources(pictureBox1, "pictureBox1");
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.TabStop = false;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Vocup.Properties.Icons.CorrectlyPracticed;
-            resources.ApplyResources(this.pictureBox3, "pictureBox3");
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.TabStop = false;
+            pictureBox3.Image = Properties.Icons.CorrectlyPracticed;
+            resources.ApplyResources(pictureBox3, "pictureBox3");
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.TabStop = false;
             // 
             // LbPercentageWrongCorrect
             // 
-            resources.ApplyResources(this.LbPercentageWrongCorrect, "LbPercentageWrongCorrect");
-            this.LbPercentageWrongCorrect.Name = "LbPercentageWrongCorrect";
+            resources.ApplyResources(LbPercentageWrongCorrect, "LbPercentageWrongCorrect");
+            LbPercentageWrongCorrect.Name = "LbPercentageWrongCorrect";
             // 
             // GroupRepetitions
             // 
-            this.GroupRepetitions.Controls.Add(this.LbPracticeCount);
-            this.GroupRepetitions.Controls.Add(this.PnlPracticeCount);
-            resources.ApplyResources(this.GroupRepetitions, "GroupRepetitions");
-            this.GroupRepetitions.Name = "GroupRepetitions";
-            this.GroupRepetitions.TabStop = false;
+            GroupRepetitions.Controls.Add(LbPracticeCount);
+            GroupRepetitions.Controls.Add(PnlPracticeCount);
+            resources.ApplyResources(GroupRepetitions, "GroupRepetitions");
+            GroupRepetitions.Name = "GroupRepetitions";
+            GroupRepetitions.TabStop = false;
             // 
             // LbPracticeCount
             // 
-            this.LbPracticeCount.AutoEllipsis = true;
-            resources.ApplyResources(this.LbPracticeCount, "LbPracticeCount");
-            this.LbPracticeCount.Name = "LbPracticeCount";
+            LbPracticeCount.AutoEllipsis = true;
+            resources.ApplyResources(LbPracticeCount, "LbPracticeCount");
+            LbPracticeCount.Name = "LbPracticeCount";
             // 
             // PnlPracticeCount
             // 
-            this.PnlPracticeCount.Controls.Add(this.LbTrb6);
-            this.PnlPracticeCount.Controls.Add(this.LbTrb2);
-            this.PnlPracticeCount.Controls.Add(this.LbTrb5);
-            this.PnlPracticeCount.Controls.Add(this.LbTrb3);
-            this.PnlPracticeCount.Controls.Add(this.LbTrb4);
-            this.PnlPracticeCount.Controls.Add(this.TrbRepetitions);
-            resources.ApplyResources(this.PnlPracticeCount, "PnlPracticeCount");
-            this.PnlPracticeCount.Name = "PnlPracticeCount";
+            PnlPracticeCount.Controls.Add(LbTrb6);
+            PnlPracticeCount.Controls.Add(LbTrb2);
+            PnlPracticeCount.Controls.Add(LbTrb5);
+            PnlPracticeCount.Controls.Add(LbTrb3);
+            PnlPracticeCount.Controls.Add(LbTrb4);
+            PnlPracticeCount.Controls.Add(TrbRepetitions);
+            resources.ApplyResources(PnlPracticeCount, "PnlPracticeCount");
+            PnlPracticeCount.Name = "PnlPracticeCount";
             // 
             // LbTrb6
             // 
-            resources.ApplyResources(this.LbTrb6, "LbTrb6");
-            this.LbTrb6.Name = "LbTrb6";
+            resources.ApplyResources(LbTrb6, "LbTrb6");
+            LbTrb6.Name = "LbTrb6";
             // 
             // LbTrb2
             // 
-            resources.ApplyResources(this.LbTrb2, "LbTrb2");
-            this.LbTrb2.Name = "LbTrb2";
+            resources.ApplyResources(LbTrb2, "LbTrb2");
+            LbTrb2.Name = "LbTrb2";
             // 
             // LbTrb5
             // 
-            resources.ApplyResources(this.LbTrb5, "LbTrb5");
-            this.LbTrb5.Name = "LbTrb5";
+            resources.ApplyResources(LbTrb5, "LbTrb5");
+            LbTrb5.Name = "LbTrb5";
             // 
             // LbTrb3
             // 
-            resources.ApplyResources(this.LbTrb3, "LbTrb3");
-            this.LbTrb3.Name = "LbTrb3";
+            resources.ApplyResources(LbTrb3, "LbTrb3");
+            LbTrb3.Name = "LbTrb3";
             // 
             // LbTrb4
             // 
-            resources.ApplyResources(this.LbTrb4, "LbTrb4");
-            this.LbTrb4.Name = "LbTrb4";
+            resources.ApplyResources(LbTrb4, "LbTrb4");
+            LbTrb4.Name = "LbTrb4";
             // 
             // TrbRepetitions
             // 
-            this.TrbRepetitions.BackColor = System.Drawing.Color.White;
-            this.TrbRepetitions.LargeChange = 1;
-            resources.ApplyResources(this.TrbRepetitions, "TrbRepetitions");
-            this.TrbRepetitions.Maximum = 6;
-            this.TrbRepetitions.Minimum = 2;
-            this.TrbRepetitions.Name = "TrbRepetitions";
-            this.TrbRepetitions.Value = 3;
+            TrbRepetitions.LargeChange = 1;
+            resources.ApplyResources(TrbRepetitions, "TrbRepetitions");
+            TrbRepetitions.Maximum = 6;
+            TrbRepetitions.Minimum = 2;
+            TrbRepetitions.Name = "TrbRepetitions";
+            TrbRepetitions.Value = 3;
             // 
             // SettingsDialog
             // 
-            this.AcceptButton = this.BtnOk;
+            AcceptButton = BtnOk;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.BtnCancel;
-            this.Controls.Add(this.TabControlMain);
-            this.Controls.Add(this.BtnCancel);
-            this.Controls.Add(this.BtnOk);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "SettingsDialog";
-            this.ShowInTaskbar = false;
-            this.Load += new System.EventHandler(this.SettingsDialog_Load);
-            this.GroupStartScreen.ResumeLayout(false);
-            this.GroupStartScreen.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TrbWrongRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TrbUnknown)).EndInit();
-            this.TabControlMain.ResumeLayout(false);
-            this.TabGeneral.ResumeLayout(false);
-            this.GroupLanguage.ResumeLayout(false);
-            this.GroupLanguage.PerformLayout();
-            this.GroupVocabularyList.ResumeLayout(false);
-            this.GroupVocabularyList.PerformLayout();
-            this.GroupVhrPath.ResumeLayout(false);
-            this.GroupVhrPath.PerformLayout();
-            this.GroupVhfPath.ResumeLayout(false);
-            this.GroupVhfPath.PerformLayout();
-            this.GroupUpdate.ResumeLayout(false);
-            this.GroupUpdate.PerformLayout();
-            this.GroupSave.ResumeLayout(false);
-            this.GroupSave.PerformLayout();
-            this.TabPractice.ResumeLayout(false);
-            this.GroupEvaluation.ResumeLayout(false);
-            this.GroupEvaluation.PerformLayout();
-            this.GroupUserInterface.ResumeLayout(false);
-            this.GroupUserInterface.PerformLayout();
-            this.GroupNearlyCorrect.ResumeLayout(false);
-            this.GroupNearlyCorrect.PerformLayout();
-            this.TabPracticeSelect.ResumeLayout(false);
-            this.GroupSelectionMix.ResumeLayout(false);
-            this.GroupSelectionMix.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.GroupRepetitions.ResumeLayout(false);
-            this.GroupRepetitions.PerformLayout();
-            this.PnlPracticeCount.ResumeLayout(false);
-            this.PnlPracticeCount.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TrbRepetitions)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            CancelButton = BtnCancel;
+            Controls.Add(TabControlMain);
+            Controls.Add(BtnCancel);
+            Controls.Add(BtnOk);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "SettingsDialog";
+            ShowInTaskbar = false;
+            Load += SettingsDialog_Load;
+            GroupStartScreen.ResumeLayout(false);
+            GroupStartScreen.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)TrbWrongRight).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TrbUnknown).EndInit();
+            TabControlMain.ResumeLayout(false);
+            TabGeneral.ResumeLayout(false);
+            GroupUserInterface.ResumeLayout(false);
+            GroupUserInterface.PerformLayout();
+            GroupVocabularyList.ResumeLayout(false);
+            GroupVocabularyList.PerformLayout();
+            GroupVhrPath.ResumeLayout(false);
+            GroupVhrPath.PerformLayout();
+            GroupVhfPath.ResumeLayout(false);
+            GroupVhfPath.PerformLayout();
+            GroupUpdate.ResumeLayout(false);
+            GroupUpdate.PerformLayout();
+            GroupSave.ResumeLayout(false);
+            GroupSave.PerformLayout();
+            TabPractice.ResumeLayout(false);
+            GroupEvaluation.ResumeLayout(false);
+            GroupEvaluation.PerformLayout();
+            GroupPracticeUserInterface.ResumeLayout(false);
+            GroupPracticeUserInterface.PerformLayout();
+            GroupNearlyCorrect.ResumeLayout(false);
+            GroupNearlyCorrect.PerformLayout();
+            TabPracticeSelect.ResumeLayout(false);
+            GroupSelectionMix.ResumeLayout(false);
+            GroupSelectionMix.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            GroupRepetitions.ResumeLayout(false);
+            GroupRepetitions.PerformLayout();
+            PnlPracticeCount.ResumeLayout(false);
+            PnlPracticeCount.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)TrbRepetitions).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -660,7 +669,7 @@
         private System.Windows.Forms.CheckBox CbTolerateSpecialChar;
         private System.Windows.Forms.CheckBox CbToleratePunctuationMark;
         private System.Windows.Forms.CheckBox CbTolerateNoSynonym;
-        private System.Windows.Forms.GroupBox GroupUserInterface;
+        private System.Windows.Forms.GroupBox GroupPracticeUserInterface;
         private System.Windows.Forms.CheckBox CbSingleContinueButton;
         private System.Windows.Forms.CheckBox CbAcousticFeedback;
         private System.Windows.Forms.CheckBox CbManualCheck;
@@ -676,9 +685,11 @@
         private System.Windows.Forms.GroupBox GroupVocabularyList;
         private System.Windows.Forms.CheckBox CbColumnResize;
         private System.Windows.Forms.CheckBox CbTolerateWhiteSpace;
-        private System.Windows.Forms.GroupBox GroupLanguage;
+        private System.Windows.Forms.GroupBox GroupUserInterface;
         private System.Windows.Forms.Label LbLanguage;
         private System.Windows.Forms.ComboBox CbLanguage;
         private System.Windows.Forms.CheckBox CbOptionalExpressions;
+        private System.Windows.Forms.Label LbColorTheme;
+        private System.Windows.Forms.ComboBox CbColorTheme;
     }
 }

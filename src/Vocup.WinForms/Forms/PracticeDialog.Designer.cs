@@ -30,308 +30,304 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PracticeDialog));
-            this.TbForeignLangSynonym = new System.Windows.Forms.TextBox();
-            this.TbForeignLang = new System.Windows.Forms.TextBox();
-            this.TbMotherTongue = new System.Windows.Forms.TextBox();
-            this.LbForeignLangSynonym = new System.Windows.Forms.Label();
-            this.LbForeignLang = new System.Windows.Forms.Label();
-            this.LbMotherTongue = new System.Windows.Forms.Label();
-            this.GroupStatistics = new System.Windows.Forms.GroupBox();
-            this.TbWrongCount = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.TbPartlyCorrectCount = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TbCorrectCount = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TbPracticedCount = new System.Windows.Forms.TextBox();
-            this.TbUnpracticedCount = new System.Windows.Forms.TextBox();
-            this.TbPracticeCount = new System.Windows.Forms.TextBox();
-            this.PbPracticeProgress = new System.Windows.Forms.ProgressBar();
-            this.BtnCancel = new System.Windows.Forms.Button();
-            this.BtnContinue = new System.Windows.Forms.Button();
-            this.TbCorrectAnswer = new System.Windows.Forms.TextBox();
-            this.BtnSpecialChar = new System.Windows.Forms.Button();
-            this.RbPartlyCorrect = new System.Windows.Forms.RadioButton();
-            this.RbWrong = new System.Windows.Forms.RadioButton();
-            this.RbCorrect = new System.Windows.Forms.RadioButton();
-            this.GroupUserEvaluation = new System.Windows.Forms.GroupBox();
-            this.TableLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.PanelMotherTongue = new System.Windows.Forms.Panel();
-            this.PanelForeignLang = new System.Windows.Forms.Panel();
-            this.PanelForeignLangSynonym = new System.Windows.Forms.Panel();
-            this.GroupStatistics.SuspendLayout();
-            this.GroupUserEvaluation.SuspendLayout();
-            this.TableLayout.SuspendLayout();
-            this.PanelMotherTongue.SuspendLayout();
-            this.PanelForeignLang.SuspendLayout();
-            this.PanelForeignLangSynonym.SuspendLayout();
-            this.SuspendLayout();
+            TbForeignLangSynonym = new System.Windows.Forms.TextBox();
+            TbForeignLang = new System.Windows.Forms.TextBox();
+            TbMotherTongue = new System.Windows.Forms.TextBox();
+            LbForeignLangSynonym = new System.Windows.Forms.Label();
+            LbForeignLang = new System.Windows.Forms.Label();
+            LbMotherTongue = new System.Windows.Forms.Label();
+            GroupStatistics = new System.Windows.Forms.GroupBox();
+            TbWrongCount = new System.Windows.Forms.TextBox();
+            label6 = new System.Windows.Forms.Label();
+            TbPartlyCorrectCount = new System.Windows.Forms.TextBox();
+            label5 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            TbCorrectCount = new System.Windows.Forms.TextBox();
+            label3 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            TbPracticedCount = new System.Windows.Forms.TextBox();
+            TbUnpracticedCount = new System.Windows.Forms.TextBox();
+            TbPracticeCount = new System.Windows.Forms.TextBox();
+            PbPracticeProgress = new System.Windows.Forms.ProgressBar();
+            BtnCancel = new System.Windows.Forms.Button();
+            BtnContinue = new System.Windows.Forms.Button();
+            TbCorrectAnswer = new System.Windows.Forms.TextBox();
+            BtnSpecialChar = new System.Windows.Forms.Button();
+            RbPartlyCorrect = new System.Windows.Forms.RadioButton();
+            RbWrong = new System.Windows.Forms.RadioButton();
+            RbCorrect = new System.Windows.Forms.RadioButton();
+            GroupUserEvaluation = new System.Windows.Forms.GroupBox();
+            TableLayout = new System.Windows.Forms.TableLayoutPanel();
+            PanelMotherTongue = new System.Windows.Forms.Panel();
+            PanelForeignLang = new System.Windows.Forms.Panel();
+            PanelForeignLangSynonym = new System.Windows.Forms.Panel();
+            GroupStatistics.SuspendLayout();
+            GroupUserEvaluation.SuspendLayout();
+            TableLayout.SuspendLayout();
+            PanelMotherTongue.SuspendLayout();
+            PanelForeignLang.SuspendLayout();
+            PanelForeignLangSynonym.SuspendLayout();
+            SuspendLayout();
             // 
             // TbForeignLangSynonym
             // 
-            resources.ApplyResources(this.TbForeignLangSynonym, "TbForeignLangSynonym");
-            this.TbForeignLangSynonym.Name = "TbForeignLangSynonym";
-            this.TbForeignLangSynonym.Enter += new System.EventHandler(this.TextBox_Enter);
+            resources.ApplyResources(TbForeignLangSynonym, "TbForeignLangSynonym");
+            TbForeignLangSynonym.Name = "TbForeignLangSynonym";
+            TbForeignLangSynonym.Enter += TextBox_Enter;
             // 
             // TbForeignLang
             // 
-            resources.ApplyResources(this.TbForeignLang, "TbForeignLang");
-            this.TbForeignLang.Name = "TbForeignLang";
-            this.TbForeignLang.Enter += new System.EventHandler(this.TextBox_Enter);
+            resources.ApplyResources(TbForeignLang, "TbForeignLang");
+            TbForeignLang.Name = "TbForeignLang";
+            TbForeignLang.Enter += TextBox_Enter;
             // 
             // TbMotherTongue
             // 
-            resources.ApplyResources(this.TbMotherTongue, "TbMotherTongue");
-            this.TbMotherTongue.Name = "TbMotherTongue";
-            this.TbMotherTongue.Enter += new System.EventHandler(this.TextBox_Enter);
+            resources.ApplyResources(TbMotherTongue, "TbMotherTongue");
+            TbMotherTongue.Name = "TbMotherTongue";
+            TbMotherTongue.Enter += TextBox_Enter;
             // 
             // LbForeignLangSynonym
             // 
-            resources.ApplyResources(this.LbForeignLangSynonym, "LbForeignLangSynonym");
-            this.LbForeignLangSynonym.Name = "LbForeignLangSynonym";
+            resources.ApplyResources(LbForeignLangSynonym, "LbForeignLangSynonym");
+            LbForeignLangSynonym.Name = "LbForeignLangSynonym";
             // 
             // LbForeignLang
             // 
-            resources.ApplyResources(this.LbForeignLang, "LbForeignLang");
-            this.LbForeignLang.Name = "LbForeignLang";
+            resources.ApplyResources(LbForeignLang, "LbForeignLang");
+            LbForeignLang.Name = "LbForeignLang";
             // 
             // LbMotherTongue
             // 
-            resources.ApplyResources(this.LbMotherTongue, "LbMotherTongue");
-            this.LbMotherTongue.Name = "LbMotherTongue";
+            resources.ApplyResources(LbMotherTongue, "LbMotherTongue");
+            LbMotherTongue.Name = "LbMotherTongue";
             // 
             // GroupStatistics
             // 
-            resources.ApplyResources(this.GroupStatistics, "GroupStatistics");
-            this.GroupStatistics.Controls.Add(this.TbWrongCount);
-            this.GroupStatistics.Controls.Add(this.label6);
-            this.GroupStatistics.Controls.Add(this.TbPartlyCorrectCount);
-            this.GroupStatistics.Controls.Add(this.label5);
-            this.GroupStatistics.Controls.Add(this.label4);
-            this.GroupStatistics.Controls.Add(this.TbCorrectCount);
-            this.GroupStatistics.Controls.Add(this.label3);
-            this.GroupStatistics.Controls.Add(this.label2);
-            this.GroupStatistics.Controls.Add(this.label1);
-            this.GroupStatistics.Controls.Add(this.TbPracticedCount);
-            this.GroupStatistics.Controls.Add(this.TbUnpracticedCount);
-            this.GroupStatistics.Controls.Add(this.TbPracticeCount);
-            this.GroupStatistics.Controls.Add(this.PbPracticeProgress);
-            this.GroupStatistics.Name = "GroupStatistics";
-            this.GroupStatistics.TabStop = false;
+            resources.ApplyResources(GroupStatistics, "GroupStatistics");
+            GroupStatistics.Controls.Add(TbWrongCount);
+            GroupStatistics.Controls.Add(label6);
+            GroupStatistics.Controls.Add(TbPartlyCorrectCount);
+            GroupStatistics.Controls.Add(label5);
+            GroupStatistics.Controls.Add(label4);
+            GroupStatistics.Controls.Add(TbCorrectCount);
+            GroupStatistics.Controls.Add(label3);
+            GroupStatistics.Controls.Add(label2);
+            GroupStatistics.Controls.Add(label1);
+            GroupStatistics.Controls.Add(TbPracticedCount);
+            GroupStatistics.Controls.Add(TbUnpracticedCount);
+            GroupStatistics.Controls.Add(TbPracticeCount);
+            GroupStatistics.Controls.Add(PbPracticeProgress);
+            GroupStatistics.Name = "GroupStatistics";
+            GroupStatistics.TabStop = false;
             // 
             // TbWrongCount
             // 
-            this.TbWrongCount.BackColor = System.Drawing.Color.Pink;
-            this.TbWrongCount.ForeColor = System.Drawing.SystemColors.WindowText;
-            resources.ApplyResources(this.TbWrongCount, "TbWrongCount");
-            this.TbWrongCount.Name = "TbWrongCount";
-            this.TbWrongCount.ReadOnly = true;
-            this.TbWrongCount.TabStop = false;
+            TbWrongCount.BackColor = System.Drawing.Color.Pink;
+            resources.ApplyResources(TbWrongCount, "TbWrongCount");
+            TbWrongCount.Name = "TbWrongCount";
+            TbWrongCount.ReadOnly = true;
+            TbWrongCount.TabStop = false;
             // 
             // label6
             // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
+            resources.ApplyResources(label6, "label6");
+            label6.Name = "label6";
             // 
             // TbPartlyCorrectCount
             // 
-            this.TbPartlyCorrectCount.BackColor = System.Drawing.Color.Gold;
-            this.TbPartlyCorrectCount.ForeColor = System.Drawing.SystemColors.WindowText;
-            resources.ApplyResources(this.TbPartlyCorrectCount, "TbPartlyCorrectCount");
-            this.TbPartlyCorrectCount.Name = "TbPartlyCorrectCount";
-            this.TbPartlyCorrectCount.ReadOnly = true;
-            this.TbPartlyCorrectCount.TabStop = false;
+            TbPartlyCorrectCount.BackColor = System.Drawing.Color.Gold;
+            resources.ApplyResources(TbPartlyCorrectCount, "TbPartlyCorrectCount");
+            TbPartlyCorrectCount.Name = "TbPartlyCorrectCount";
+            TbPartlyCorrectCount.ReadOnly = true;
+            TbPartlyCorrectCount.TabStop = false;
             // 
             // label5
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
+            resources.ApplyResources(label5, "label5");
+            label5.Name = "label5";
             // 
             // label4
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
+            resources.ApplyResources(label4, "label4");
+            label4.Name = "label4";
             // 
             // TbCorrectCount
             // 
-            this.TbCorrectCount.BackColor = System.Drawing.Color.LightGreen;
-            this.TbCorrectCount.ForeColor = System.Drawing.SystemColors.WindowText;
-            resources.ApplyResources(this.TbCorrectCount, "TbCorrectCount");
-            this.TbCorrectCount.Name = "TbCorrectCount";
-            this.TbCorrectCount.ReadOnly = true;
-            this.TbCorrectCount.TabStop = false;
+            TbCorrectCount.BackColor = System.Drawing.Color.LightGreen;
+            resources.ApplyResources(TbCorrectCount, "TbCorrectCount");
+            TbCorrectCount.Name = "TbCorrectCount";
+            TbCorrectCount.ReadOnly = true;
+            TbCorrectCount.TabStop = false;
             // 
             // label3
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
+            resources.ApplyResources(label3, "label3");
+            label3.Name = "label3";
             // 
             // label2
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
+            resources.ApplyResources(label2, "label2");
+            label2.Name = "label2";
             // 
             // label1
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(label1, "label1");
+            label1.Name = "label1";
             // 
             // TbPracticedCount
             // 
-            resources.ApplyResources(this.TbPracticedCount, "TbPracticedCount");
-            this.TbPracticedCount.Name = "TbPracticedCount";
-            this.TbPracticedCount.ReadOnly = true;
-            this.TbPracticedCount.TabStop = false;
+            resources.ApplyResources(TbPracticedCount, "TbPracticedCount");
+            TbPracticedCount.Name = "TbPracticedCount";
+            TbPracticedCount.ReadOnly = true;
+            TbPracticedCount.TabStop = false;
             // 
             // TbUnpracticedCount
             // 
-            resources.ApplyResources(this.TbUnpracticedCount, "TbUnpracticedCount");
-            this.TbUnpracticedCount.Name = "TbUnpracticedCount";
-            this.TbUnpracticedCount.ReadOnly = true;
-            this.TbUnpracticedCount.TabStop = false;
+            resources.ApplyResources(TbUnpracticedCount, "TbUnpracticedCount");
+            TbUnpracticedCount.Name = "TbUnpracticedCount";
+            TbUnpracticedCount.ReadOnly = true;
+            TbUnpracticedCount.TabStop = false;
             // 
             // TbPracticeCount
             // 
-            resources.ApplyResources(this.TbPracticeCount, "TbPracticeCount");
-            this.TbPracticeCount.Name = "TbPracticeCount";
-            this.TbPracticeCount.ReadOnly = true;
-            this.TbPracticeCount.TabStop = false;
+            resources.ApplyResources(TbPracticeCount, "TbPracticeCount");
+            TbPracticeCount.Name = "TbPracticeCount";
+            TbPracticeCount.ReadOnly = true;
+            TbPracticeCount.TabStop = false;
             // 
             // PbPracticeProgress
             // 
-            resources.ApplyResources(this.PbPracticeProgress, "PbPracticeProgress");
-            this.PbPracticeProgress.Name = "PbPracticeProgress";
-            this.PbPracticeProgress.Step = 100;
-            this.PbPracticeProgress.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            resources.ApplyResources(PbPracticeProgress, "PbPracticeProgress");
+            PbPracticeProgress.Name = "PbPracticeProgress";
+            PbPracticeProgress.Step = 100;
+            PbPracticeProgress.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
             // BtnCancel
             // 
-            resources.ApplyResources(this.BtnCancel, "BtnCancel");
-            this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.UseVisualStyleBackColor = true;
+            resources.ApplyResources(BtnCancel, "BtnCancel");
+            BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            BtnCancel.Name = "BtnCancel";
+            BtnCancel.UseVisualStyleBackColor = true;
             // 
             // BtnContinue
             // 
-            resources.ApplyResources(this.BtnContinue, "BtnContinue");
-            this.BtnContinue.Name = "BtnContinue";
-            this.BtnContinue.UseVisualStyleBackColor = true;
-            this.BtnContinue.Click += new System.EventHandler(this.BtnContinue_Click);
+            resources.ApplyResources(BtnContinue, "BtnContinue");
+            BtnContinue.Name = "BtnContinue";
+            BtnContinue.UseVisualStyleBackColor = true;
+            BtnContinue.Click += BtnContinue_Click;
             // 
             // TbCorrectAnswer
             // 
-            this.TbCorrectAnswer.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TableLayout.SetColumnSpan(this.TbCorrectAnswer, 2);
-            resources.ApplyResources(this.TbCorrectAnswer, "TbCorrectAnswer");
-            this.TbCorrectAnswer.Name = "TbCorrectAnswer";
-            this.TbCorrectAnswer.ReadOnly = true;
-            this.TbCorrectAnswer.TabStop = false;
+            TbCorrectAnswer.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            TableLayout.SetColumnSpan(TbCorrectAnswer, 2);
+            resources.ApplyResources(TbCorrectAnswer, "TbCorrectAnswer");
+            TbCorrectAnswer.Name = "TbCorrectAnswer";
+            TbCorrectAnswer.ReadOnly = true;
+            TbCorrectAnswer.TabStop = false;
             // 
             // BtnSpecialChar
             // 
-            resources.ApplyResources(this.BtnSpecialChar, "BtnSpecialChar");
-            this.BtnSpecialChar.Name = "BtnSpecialChar";
-            this.BtnSpecialChar.UseVisualStyleBackColor = true;
+            resources.ApplyResources(BtnSpecialChar, "BtnSpecialChar");
+            BtnSpecialChar.Name = "BtnSpecialChar";
+            BtnSpecialChar.UseVisualStyleBackColor = true;
             // 
             // RbPartlyCorrect
             // 
-            resources.ApplyResources(this.RbPartlyCorrect, "RbPartlyCorrect");
-            this.RbPartlyCorrect.BackColor = System.Drawing.Color.Transparent;
-            this.RbPartlyCorrect.Name = "RbPartlyCorrect";
-            this.RbPartlyCorrect.TabStop = true;
-            this.RbPartlyCorrect.UseVisualStyleBackColor = false;
+            resources.ApplyResources(RbPartlyCorrect, "RbPartlyCorrect");
+            RbPartlyCorrect.BackColor = System.Drawing.Color.Transparent;
+            RbPartlyCorrect.Name = "RbPartlyCorrect";
+            RbPartlyCorrect.TabStop = true;
+            RbPartlyCorrect.UseVisualStyleBackColor = false;
             // 
             // RbWrong
             // 
-            resources.ApplyResources(this.RbWrong, "RbWrong");
-            this.RbWrong.BackColor = System.Drawing.Color.Transparent;
-            this.RbWrong.Name = "RbWrong";
-            this.RbWrong.TabStop = true;
-            this.RbWrong.UseVisualStyleBackColor = false;
+            resources.ApplyResources(RbWrong, "RbWrong");
+            RbWrong.BackColor = System.Drawing.Color.Transparent;
+            RbWrong.Name = "RbWrong";
+            RbWrong.TabStop = true;
+            RbWrong.UseVisualStyleBackColor = false;
             // 
             // RbCorrect
             // 
-            resources.ApplyResources(this.RbCorrect, "RbCorrect");
-            this.RbCorrect.BackColor = System.Drawing.Color.Transparent;
-            this.RbCorrect.Checked = true;
-            this.RbCorrect.Name = "RbCorrect";
-            this.RbCorrect.TabStop = true;
-            this.RbCorrect.UseVisualStyleBackColor = false;
+            resources.ApplyResources(RbCorrect, "RbCorrect");
+            RbCorrect.BackColor = System.Drawing.Color.Transparent;
+            RbCorrect.Checked = true;
+            RbCorrect.Name = "RbCorrect";
+            RbCorrect.TabStop = true;
+            RbCorrect.UseVisualStyleBackColor = false;
             // 
             // GroupUserEvaluation
             // 
-            resources.ApplyResources(this.GroupUserEvaluation, "GroupUserEvaluation");
-            this.GroupUserEvaluation.Controls.Add(this.RbCorrect);
-            this.GroupUserEvaluation.Controls.Add(this.RbWrong);
-            this.GroupUserEvaluation.Controls.Add(this.RbPartlyCorrect);
-            this.GroupUserEvaluation.Name = "GroupUserEvaluation";
-            this.GroupUserEvaluation.TabStop = false;
+            resources.ApplyResources(GroupUserEvaluation, "GroupUserEvaluation");
+            GroupUserEvaluation.Controls.Add(RbCorrect);
+            GroupUserEvaluation.Controls.Add(RbWrong);
+            GroupUserEvaluation.Controls.Add(RbPartlyCorrect);
+            GroupUserEvaluation.Name = "GroupUserEvaluation";
+            GroupUserEvaluation.TabStop = false;
             // 
             // TableLayout
             // 
-            resources.ApplyResources(this.TableLayout, "TableLayout");
-            this.TableLayout.Controls.Add(this.PanelMotherTongue, 0, 0);
-            this.TableLayout.Controls.Add(this.PanelForeignLang, 1, 0);
-            this.TableLayout.Controls.Add(this.TbCorrectAnswer, 0, 2);
-            this.TableLayout.Controls.Add(this.PanelForeignLangSynonym, 1, 1);
-            this.TableLayout.Name = "TableLayout";
+            resources.ApplyResources(TableLayout, "TableLayout");
+            TableLayout.Controls.Add(PanelMotherTongue, 0, 0);
+            TableLayout.Controls.Add(PanelForeignLang, 1, 0);
+            TableLayout.Controls.Add(TbCorrectAnswer, 0, 2);
+            TableLayout.Controls.Add(PanelForeignLangSynonym, 1, 1);
+            TableLayout.Name = "TableLayout";
             // 
             // PanelMotherTongue
             // 
-            this.PanelMotherTongue.Controls.Add(this.LbMotherTongue);
-            this.PanelMotherTongue.Controls.Add(this.TbMotherTongue);
-            resources.ApplyResources(this.PanelMotherTongue, "PanelMotherTongue");
-            this.PanelMotherTongue.Name = "PanelMotherTongue";
-            this.TableLayout.SetRowSpan(this.PanelMotherTongue, 2);
+            PanelMotherTongue.Controls.Add(LbMotherTongue);
+            PanelMotherTongue.Controls.Add(TbMotherTongue);
+            resources.ApplyResources(PanelMotherTongue, "PanelMotherTongue");
+            PanelMotherTongue.Name = "PanelMotherTongue";
+            TableLayout.SetRowSpan(PanelMotherTongue, 2);
             // 
             // PanelForeignLang
             // 
-            this.PanelForeignLang.Controls.Add(this.LbForeignLang);
-            this.PanelForeignLang.Controls.Add(this.TbForeignLang);
-            resources.ApplyResources(this.PanelForeignLang, "PanelForeignLang");
-            this.PanelForeignLang.Name = "PanelForeignLang";
+            PanelForeignLang.Controls.Add(LbForeignLang);
+            PanelForeignLang.Controls.Add(TbForeignLang);
+            resources.ApplyResources(PanelForeignLang, "PanelForeignLang");
+            PanelForeignLang.Name = "PanelForeignLang";
             // 
             // PanelForeignLangSynonym
             // 
-            this.PanelForeignLangSynonym.Controls.Add(this.TbForeignLangSynonym);
-            this.PanelForeignLangSynonym.Controls.Add(this.LbForeignLangSynonym);
-            resources.ApplyResources(this.PanelForeignLangSynonym, "PanelForeignLangSynonym");
-            this.PanelForeignLangSynonym.Name = "PanelForeignLangSynonym";
+            PanelForeignLangSynonym.Controls.Add(TbForeignLangSynonym);
+            PanelForeignLangSynonym.Controls.Add(LbForeignLangSynonym);
+            resources.ApplyResources(PanelForeignLangSynonym, "PanelForeignLangSynonym");
+            PanelForeignLangSynonym.Name = "PanelForeignLangSynonym";
             // 
             // PracticeDialog
             // 
-            this.AcceptButton = this.BtnContinue;
+            AcceptButton = BtnContinue;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.BtnCancel;
-            this.Controls.Add(this.TableLayout);
-            this.Controls.Add(this.BtnCancel);
-            this.Controls.Add(this.BtnSpecialChar);
-            this.Controls.Add(this.BtnContinue);
-            this.Controls.Add(this.GroupUserEvaluation);
-            this.Controls.Add(this.GroupStatistics);
-            this.Name = "PracticeDialog";
-            this.ShowInTaskbar = false;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_FormClosed);
-            this.Load += new System.EventHandler(this.Form_Load);
-            this.GroupStatistics.ResumeLayout(false);
-            this.GroupStatistics.PerformLayout();
-            this.GroupUserEvaluation.ResumeLayout(false);
-            this.GroupUserEvaluation.PerformLayout();
-            this.TableLayout.ResumeLayout(false);
-            this.TableLayout.PerformLayout();
-            this.PanelMotherTongue.ResumeLayout(false);
-            this.PanelMotherTongue.PerformLayout();
-            this.PanelForeignLang.ResumeLayout(false);
-            this.PanelForeignLang.PerformLayout();
-            this.PanelForeignLangSynonym.ResumeLayout(false);
-            this.PanelForeignLangSynonym.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            CancelButton = BtnCancel;
+            Controls.Add(TableLayout);
+            Controls.Add(BtnCancel);
+            Controls.Add(BtnSpecialChar);
+            Controls.Add(BtnContinue);
+            Controls.Add(GroupUserEvaluation);
+            Controls.Add(GroupStatistics);
+            Name = "PracticeDialog";
+            ShowInTaskbar = false;
+            FormClosing += Form_FormClosing;
+            FormClosed += Form_FormClosed;
+            Load += Form_Load;
+            GroupStatistics.ResumeLayout(false);
+            GroupStatistics.PerformLayout();
+            GroupUserEvaluation.ResumeLayout(false);
+            GroupUserEvaluation.PerformLayout();
+            TableLayout.ResumeLayout(false);
+            TableLayout.PerformLayout();
+            PanelMotherTongue.ResumeLayout(false);
+            PanelMotherTongue.PerformLayout();
+            PanelForeignLang.ResumeLayout(false);
+            PanelForeignLang.PerformLayout();
+            PanelForeignLangSynonym.ResumeLayout(false);
+            PanelForeignLangSynonym.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

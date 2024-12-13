@@ -1,13 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net9.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net9.0-windows10.0.22621.0</TargetFramework>
     <AssemblyName>Vocup</AssemblyName>
     <RootNamespace>Vocup</RootNamespace>
-    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
     <Platforms>AnyCPU;x86;x64;ARM64</Platforms>
     <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+    <PublishProfile>win-$(Platform).pubxml</PublishProfile>
     <OutputType>WinExe</OutputType>
     <UseWindowsForms>true</UseWindowsForms>
+    <EnableMsixTooling>true</EnableMsixTooling>
     <!-- For ARM64 builds not to fail, satellite assemblies must be configured https://github.com/dotnet/sdk/issues/28419 -->
     <GenerateSatelliteAssembliesForCore>true</GenerateSatelliteAssembliesForCore>
     <ApplicationIcon>icon.ico</ApplicationIcon>
@@ -17,12 +19,14 @@
     <Description>Vocabulary training application</Description>
     <Company>VectorData</Company>
     <Copyright>Copyright © 2011 Florian Amstutz, © 2018-2024 Daniel Lerch.</Copyright>
-    <Version>2.0.0</Version>
+    <Version>2.1.0</Version>
     <NeutralLanguage>en</NeutralLanguage>
   </PropertyGroup>
+
   <ItemGroup>
-    <Content Include="icon.ico" />
+    <ProjectReference Include="..\Vocup\Vocup.csproj" />
   </ItemGroup>
+  
   <ItemGroup>
     <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
     <PackageReference Include="Avalonia.Win32.Interoperability" Version="$(AvaloniaVersion)" />
@@ -31,6 +35,11 @@
     <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.106">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <!--<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1742" />-->
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools.MSIX" Version="1.1.20241024.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <!-- Force higher version because of vulnerabilities in the default version -->
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
     <!-- Force higher version because of vulnerabilities in the default version -->
@@ -38,8 +47,37 @@
     <!-- Force higher version because of vulnerabilities in the default version -->
     <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
   </ItemGroup>
+  
   <ItemGroup>
-    <ProjectReference Include="..\Vocup\Vocup.csproj" />
+    <Content Include="icon.ico" />
+    <Content Include="Images\LargeTile.scale-100.png" />
+    <Content Include="Images\LargeTile.scale-200.png" />
+    <Content Include="Images\LargeTile.scale-400.png" />
+    <Content Include="Images\SmallTile.scale-100.png" />
+    <Content Include="Images\SmallTile.scale-200.png" />
+    <Content Include="Images\SmallTile.scale-400.png" />
+    <Content Include="Images\SplashScreen.scale-100.png" />
+    <Content Include="Images\SplashScreen.scale-200.png" />
+    <Content Include="Images\SplashScreen.scale-400.png" />
+    <Content Include="Images\Square150x150Logo.scale-100.png" />
+    <Content Include="Images\Square150x150Logo.scale-200.png" />
+    <Content Include="Images\Square150x150Logo.scale-400.png" />
+    <Content Include="Images\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Images\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Images\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Images\Square44x44Logo.scale-100.png" />
+    <Content Include="Images\Square44x44Logo.scale-200.png" />
+    <Content Include="Images\Square44x44Logo.scale-400.png" />
+    <Content Include="Images\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Images\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Images\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Images\StoreLogo.scale-100.png" />
+    <Content Include="Images\StoreLogo.scale-200.png" />
+    <Content Include="Images\StoreLogo.scale-400.png" />
+    <Content Include="Images\VhfLogo.png" />
+    <Content Include="Images\Wide310x150Logo.scale-100.png" />
+    <Content Include="Images\Wide310x150Logo.scale-200.png" />
+    <Content Include="Images\Wide310x150Logo.scale-400.png" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Resources\easter_egg.vhf">
