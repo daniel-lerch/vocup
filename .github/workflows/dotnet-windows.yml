@@ -1,4 +1,4 @@
-name: Windows Forms build and package
+name: Windows
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
 jobs:
 
   build:
+    name: Build and package MSIX
 
     strategy:
       matrix:
@@ -25,7 +26,7 @@ jobs:
       with:
         fetch-depth: 0
 
-    # Install the .NET Core workload
+    # Install .NET SDK
     - name: Install .NET Core
       uses: actions/setup-dotnet@v4
       with:
