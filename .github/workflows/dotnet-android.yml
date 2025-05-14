@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-24.04
 
     env:
-      App_Project_Directory: src/Vocup.Android
+      App_Project_File: src/Vocup.Android/Vocup.Android.csproj
 
     steps:
     - name: Checkout
@@ -30,10 +30,10 @@ jobs:
         dotnet-version: 9.0.x
 
     - name: Restore .NET Workloads
-      run: dotnet workload restore $App_Project_Directory
+      run: dotnet workload restore $App_Project_File
 
     - name: Restore NuGet packages
-      run: dotnet restore $App_Project_Directory
+      run: dotnet restore $App_Project_File
 
     - name: Build and create APK
-      run: dotnet build --no-restore --configuration ${{ matrix.configuration }} $App_Project_Directory
+      run: dotnet build --no-restore --configuration ${{ matrix.configuration }} $App_Project_File
