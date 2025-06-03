@@ -13,6 +13,9 @@
     <vm:MainViewModel />
   </Design.DataContext>
 
-  <views:AboutView DataContext="{Binding About}" />
+  <StackPanel>
+    <TextBlock Text="{Binding FileLength}" />
+    <views:AboutView DataContext="{Binding About}" />
+  </StackPanel>
 
 </UserControl>
