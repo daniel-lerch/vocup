@@ -15,6 +15,11 @@ namespace Vocup.Android;
     ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.UiMode)]
 public class MainActivity : AvaloniaMainActivity<App>
 {
+    protected override AppBuilder CreateAppBuilder()
+    {
+        return AppBuilder.Configure(() => new App(this));
+    }
+
     protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
     {
         return base.CustomizeAppBuilder(builder)
