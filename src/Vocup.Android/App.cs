@@ -10,4 +10,9 @@ public class App : Vocup.App
     {
         this.mainActivity = mainActivity;
     }
+
+    protected override void BrowseFile()
+    {
+        mainActivity?.ShowFilePicker();
+    }
 }

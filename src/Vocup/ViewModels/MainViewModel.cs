@@ -1,4 +1,5 @@
 ﻿using ReactiveUI;
+using System.Windows.Input;
 
 namespace Vocup.ViewModels;
 
@@ -12,4 +13,6 @@ public class MainViewModel : ViewModelBase
     }
 
     public AboutViewModel About { get; } = new();
+
+    public required ICommand OpenFileCommand { get; init; }
 }

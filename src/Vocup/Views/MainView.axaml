@@ -15,6 +15,7 @@
 
   <StackPanel>
     <TextBlock Text="{Binding FileLength}" />
+    <Button Command="{Binding OpenFileCommand}" Content="Open File" />
     <views:AboutView DataContext="{Binding About}" />
   </StackPanel>
 

@@ -2,6 +2,7 @@
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
+using Android.Runtime;
 using Android.Util;
 using Avalonia;
 using Avalonia.Android;
@@ -25,6 +26,7 @@ namespace Vocup.Android;
 public class MainActivity : AvaloniaMainActivity<App>
 {
     private const string Tag = "Vocup.Android.MainActivity";
+    private const int FilePickerRequestCode = 3147;
 
     protected override AppBuilder CreateAppBuilder()
     {
@@ -48,6 +50,38 @@ public class MainActivity : AvaloniaMainActivity<App>
     {
         base.OnNewIntent(intent);
         HandleIntent(intent);
+    }
+
+    public void ShowFilePicker()
+    {
+        var intent = new Intent(Intent.ActionGetContent);
+        intent.SetType("application/octet-stream");
+        intent.AddCategory(Intent.CategoryOpenable);
+        intent.AddFlags(ActivityFlags.GrantReadUriPermission);
+        StartActivityForResult(Intent.CreateChooser(intent, "Select a file"), FilePickerRequestCode);
+    }
+
+    protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent? data)
+    {
+        base.OnActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == FilePickerRequestCode && resultCode == Result.Ok && data?.Data != null)
+        {
+            using System.IO.Stream? stream = ContentResolver?.OpenInputStream(data.Data);
+            
+            if (stream == null)
+            {
+                Log.Error(Tag, "Stream is null in OnActivityResult");
+                return;
+            }
+            if (Avalonia.Application.Current is not App app)
+            {
+                Log.Error(Tag, "App is null in OnActivityResult");
+                return;
+            }
+            Log.Debug(Tag, $"File size is {stream.Length} bytes");
+            app.OpenFile(stream);
+        }
     }
 
     private void HandleIntent(Intent? intent)

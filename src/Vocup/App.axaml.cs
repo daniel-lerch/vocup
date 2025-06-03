@@ -1,6 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using ReactiveUI;
 using System.IO;
 using Vocup.ViewModels;
 using Vocup.Views;
@@ -26,21 +27,31 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
+        mainViewModel = new MainViewModel
+        {
+            OpenFileCommand = ReactiveCommand.Create(BrowseFile)
+        };
+
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             desktop.MainWindow = new MainWindow
             {
-                DataContext = mainViewModel = new MainViewModel()
+                DataContext = mainViewModel
             };
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
             singleViewPlatform.MainView = new MainView
             {
-                DataContext = mainViewModel = new MainViewModel()
+                DataContext = mainViewModel
             };
         }
 
         base.OnFrameworkInitializationCompleted();
+    }
+
+    protected virtual void BrowseFile()
+    {
+
     }
 }
