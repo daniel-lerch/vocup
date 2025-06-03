@@ -82,6 +82,10 @@
             SideBar = new System.Windows.Forms.Panel();
             GroupStatistics = new Controls.StatisticsPanel();
             SplitContainer = new Controls.ResponsiveSplitContainer();
+            tabControl1 = new System.Windows.Forms.TabControl();
+            tabPage1 = new System.Windows.Forms.TabPage();
+            RecentFilesAvaloniaControlHost = new Avalonia.Win32.Interoperability.WinFormsAvaloniaControlHost();
+            tabPage2 = new System.Windows.Forms.TabPage();
             FileTreeView = new Controls.FileTreeView();
             LbEmptyForm = new System.Windows.Forms.Label();
             ToolStrip = new Controls.ResponsiveToolStrip();
@@ -111,6 +115,9 @@
             SplitContainer.Panel1.SuspendLayout();
             SplitContainer.Panel2.SuspendLayout();
             SplitContainer.SuspendLayout();
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
             ToolStrip.SuspendLayout();
             TableLayout.SuspendLayout();
             SuspendLayout();
@@ -460,12 +467,8 @@
             // 
             // GroupStatistics
             // 
-            GroupStatistics.CorrectlyPracticed = 0;
             resources.ApplyResources(GroupStatistics, "GroupStatistics");
-            GroupStatistics.FullyPracticed = 0;
             GroupStatistics.Name = "GroupStatistics";
-            GroupStatistics.Unpracticed = 0;
-            GroupStatistics.WronglyPracticed = 0;
             // 
             // SplitContainer
             // 
@@ -475,16 +478,43 @@
             // 
             // SplitContainer.Panel1
             // 
-            SplitContainer.Panel1.Controls.Add(FileTreeView);
+            SplitContainer.Panel1.Controls.Add(tabControl1);
             // 
             // SplitContainer.Panel2
             // 
             SplitContainer.Panel2.Controls.Add(LbEmptyForm);
             SplitContainer.SplitterBaseDistance = 150;
             // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            resources.ApplyResources(tabControl1, "tabControl1");
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Controls.Add(RecentFilesAvaloniaControlHost);
+            resources.ApplyResources(tabPage1, "tabPage1");
+            tabPage1.Name = "tabPage1";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // RecentFilesAvaloniaControlHost
+            // 
+            RecentFilesAvaloniaControlHost.Content = null;
+            resources.ApplyResources(RecentFilesAvaloniaControlHost, "RecentFilesAvaloniaControlHost");
+            RecentFilesAvaloniaControlHost.Name = "RecentFilesAvaloniaControlHost";
+            // 
+            // tabPage2
+            // 
+            tabPage2.Controls.Add(FileTreeView);
+            resources.ApplyResources(tabPage2, "tabPage2");
+            tabPage2.Name = "tabPage2";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
             // FileTreeView
             // 
-            FileTreeView.BrowseButtonVisible = true;
             resources.ApplyResources(FileTreeView, "FileTreeView");
             FileTreeView.FileFilter = "*.vhf";
             FileTreeView.Name = "FileTreeView";
@@ -598,6 +628,9 @@
             SplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)SplitContainer).EndInit();
             SplitContainer.ResumeLayout(false);
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage2.ResumeLayout(false);
             ToolStrip.ResumeLayout(false);
             ToolStrip.PerformLayout();
             TableLayout.ResumeLayout(false);
@@ -663,6 +696,10 @@
         private System.Windows.Forms.Label LbEmptyForm;
         private System.Windows.Forms.ToolStripStatusLabel StatusLbOldVersion;
         private System.Windows.Forms.ToolStripMenuItem TsmiShare;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private Avalonia.Win32.Interoperability.WinFormsAvaloniaControlHost RecentFilesAvaloniaControlHost;
     }
 }
 

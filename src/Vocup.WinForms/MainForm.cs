@@ -12,6 +12,8 @@ using Vocup.IO;
 using Vocup.Models;
 using Vocup.Properties;
 using Vocup.Util;
+using Vocup.ViewModels;
+using Vocup.Views;
 
 #nullable disable
 
@@ -25,6 +27,11 @@ public partial class MainForm : Form, IMainForm
     public MainForm()
     {
         InitializeComponent();
+
+        RecentFilesAvaloniaControlHost.Content = new RecentFilesView
+        {
+            DataContext = new RecentFilesViewModel(Program.Settings.RecentFiles)
+        };
 
         FileTreeView.RootPath = Program.Settings.VhfPath;
 

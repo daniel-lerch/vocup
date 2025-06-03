@@ -9,10 +9,11 @@
              x:DataType="vm:MainViewModel">
   <Design.DataContext>
     <vm:DesignMainViewModel />
-         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-    <vm:MainViewModel />
   </Design.DataContext>
 
-  <views:AboutView DataContext="{Binding About}" />
+  <StackPanel Orientation="Horizontal">
+    <views:RecentFilesView DataContext="{Binding RecentFiles}" />
+    <views:AboutView DataContext="{Binding About}" />
+  </StackPanel>
 
 </UserControl>
