@@ -1,4 +1,7 @@
 ﻿using ReactiveUI;
+using System.IO;
+using System.Reactive;
+using System.Reactive.Linq;
 using System.Windows.Input;
 
 namespace Vocup.ViewModels;
@@ -14,5 +17,20 @@ public class MainViewModel : ViewModelBase
 
     public AboutViewModel About { get; } = new();
 
-    public required ICommand OpenFileCommand { get; init; }
+    public Interaction<Unit, Avalonia.Platform.Storage.IStorageFile?> PickFileInteraction { get; } = new();
+
+    public ICommand OpenFileCommand { get; }
+
+    public MainViewModel()
+    {
+        OpenFileCommand = ReactiveCommand.CreateFromTask(async () =>
+        {
+            var file = await PickFileInteraction.Handle(Unit.Default);
+            if (file != null)
+            {
+                using Stream stream = await file.OpenReadAsync();
+                FileLength = stream.Length;
+            }
+        });
+    }
 }

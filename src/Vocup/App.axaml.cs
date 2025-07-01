@@ -27,10 +27,7 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
-        mainViewModel = new MainViewModel
-        {
-            OpenFileCommand = ReactiveCommand.Create(BrowseFile)
-        };
+        mainViewModel = new MainViewModel();
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
