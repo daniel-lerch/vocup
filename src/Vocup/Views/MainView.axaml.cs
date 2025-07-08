@@ -24,5 +24,11 @@ public partial class MainView : ReactiveUserControl<MainViewModel>
             else
                 interaction.SetOutput(null);
         })));
+
+        this.WhenActivated(d => d(ViewModel.FileFromUriInteraction.RegisterHandler(async interaction =>
+        {
+            var file = await TopLevel.GetTopLevel(this).StorageProvider.TryGetFileFromPathAsync(interaction.Input);
+            interaction.SetOutput(file);
+        })));
     }
 }

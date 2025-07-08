@@ -1,8 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using ReactiveUI;
-using System.IO;
+using System;
 using Vocup.ViewModels;
 using Vocup.Views;
 
@@ -17,12 +16,9 @@ public partial class App : Application
         AvaloniaXamlLoader.Load(this);
     }
 
-    public void OpenFile(Stream input)
+    public void OpenFile(Uri path)
     {
-        if (mainViewModel != null)
-        {
-            mainViewModel.FileLength = input.Length;
-        }
+        mainViewModel?.OpenFile(path);
     }
 
     public override void OnFrameworkInitializationCompleted()
@@ -45,10 +41,5 @@ public partial class App : Application
         }
 
         base.OnFrameworkInitializationCompleted();
-    }
-
-    protected virtual void BrowseFile()
-    {
-
     }
 }
