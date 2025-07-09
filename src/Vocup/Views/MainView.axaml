@@ -14,11 +14,11 @@
     <vm:MainViewModel />
   </Design.DataContext>
 
-  <StackPanel>
-    <Button Command="{Binding OpenFileCommand}" Content="Open File" />
-    <Button Command="{Binding AboutCommand}" Content="About" />
-    <TextBlock Text="{Binding ErrorMessage}" />
-    <ContentControl Content="{Binding CurrentView}" />
-  </StackPanel>
+  <Grid RowDefinitions="Auto, *" ColumnDefinitions="Auto,*">
+    <Button Command="{Binding OpenFileCommand}" Content="Open File" Grid.Row="0" Grid.Column="0" />
+    <Button Command="{Binding AboutCommand}" Content="About" Grid.Row="0" Grid.Column="1" />
+    <TextBlock Text="{Binding ErrorMessage}" Grid.Row="1" Grid.ColumnSpan="2" />
+    <ContentControl Content="{Binding CurrentView}" Grid.Row="1" Grid.ColumnSpan="2" />
+  </Grid>
 
 </UserControl>

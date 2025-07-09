@@ -12,7 +12,38 @@
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
     <vm:BookViewModel />
   </Design.DataContext>
-  
-  <TextBlock Text="{Binding FileLength}" />
+
+  <Grid RowDefinitions="Auto, *">
+    <TextBlock Text="{Binding FileLength}" Grid.Row="0" />
+    <ScrollViewer Grid.Row="1">
+      <ItemsControl ItemsSource="{Binding Words}">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+
+              <ItemsControl ItemsSource="{Binding MotherTongue}" Grid.Column="0">
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate>
+                    <TextBlock Text="{Binding}" TextWrapping="Wrap" Margin="4" />
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+              <ItemsControl ItemsSource="{Binding ForeignLanguage}" Grid.Column="1">
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate>
+                    <TextBlock Text="{Binding}" TextWrapping="Wrap" Margin="4" />
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+            </Grid>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+    </ScrollViewer>
+  </Grid>
 
 </UserControl>
