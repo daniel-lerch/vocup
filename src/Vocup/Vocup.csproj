@@ -5,6 +5,8 @@
     <LangVersion>latest</LangVersion>
     <AssemblyName>Vocup.Avalonia</AssemblyName>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <Copyright>Copyright © 2011 Florian Amstutz, © 2018-2025 Daniel Lerch.</Copyright>
+    <Version>2.1.0</Version>
   </PropertyGroup>
 
   

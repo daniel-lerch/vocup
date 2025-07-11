@@ -4,19 +4,22 @@
              xmlns:vm="clr-namespace:Vocup.ViewModels;assembly=Vocup.Avalonia"
              x:Class="Vocup.App"
              RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+  <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
-    <Application.Styles>
-        <FluentTheme />
-    </Application.Styles>
-  
-    <Application.DataTemplates>
-      <DataTemplate DataType="{x:Type vm:BookViewModel}">
-            <views:BookView />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:AboutViewModel}">
-            <views:AboutView />
-        </DataTemplate>
-    </Application.DataTemplates>
+  <Application.Styles>
+    <FluentTheme />
+  </Application.Styles>
+
+  <Application.DataTemplates>
+    <DataTemplate DataType="{x:Type vm:BookViewModel}">
+      <views:BookView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:AboutViewModel}">
+      <views:AboutView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:ErrorViewModel}">
+      <views:ErrorView />
+    </DataTemplate>
+  </Application.DataTemplates>
 
 </Application>

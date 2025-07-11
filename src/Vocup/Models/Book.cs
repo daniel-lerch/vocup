@@ -19,5 +19,12 @@ public class Book : ReactiveObject
         set => this.RaiseAndSetIfChanged(ref _foreignLanguage, value);
     }
 
+    private PracticeMode _practiceMode;
+    public PracticeMode PracticeMode
+    {
+        get => _practiceMode;
+        set => this.RaiseAndSetIfChanged(ref _practiceMode, value);
+    }
+
     public ObservableCollection<Word> Words { get; } = [];
 }

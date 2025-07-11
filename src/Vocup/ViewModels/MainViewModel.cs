@@ -1,12 +1,12 @@
 ﻿using Avalonia.Platform.Storage;
-using Avalonia.Threading;
 using ReactiveUI;
 using System;
-using System.IO;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Vocup.IO;
+using Vocup.Models;
 
 namespace Vocup.ViewModels;
 
@@ -26,7 +26,9 @@ public class MainViewModel : ViewModelBase
         set => this.RaiseAndSetIfChanged(ref _errorMessage, value);
     }
 
-    public AboutViewModel About { get; } = new();
+    public bool HandlersRegistered { get; set; }
+
+    public AboutViewModel About { get; }
 
     public Interaction<Unit, IStorageFile?> PickFileInteraction { get; } = new();
     public Interaction<Uri, IStorageFile?> FileFromUriInteraction { get; } = new();
@@ -36,20 +38,27 @@ public class MainViewModel : ViewModelBase
 
     public MainViewModel()
     {
+        About = new(deployment: "Google Play");
+
         OpenFileCommand = ReactiveCommand.CreateFromTask(async () =>
         {
             try
             {
                 var file = await PickFileInteraction.Handle(Unit.Default);
+
+                if (OperatingSystem.IsAndroid())
+                    CurrentView = new ErrorViewModel("Loading...");
+
                 if (file != null)
                 {
-                    using Stream stream = await Task.Run(file.OpenReadAsync);
-                    CurrentView = new BookViewModel { FileLength = stream.Length };
+                    Book book = new();
+                    await BookFileFormat2.DetectAndRead(file, book, null);
+                    CurrentView = new BookViewModel(book);
                 }
             }
             catch (Exception ex)
             {
-                Dispatcher.UIThread.Invoke(() => ErrorMessage = $"Error opening file: {ex.Message}");
+                CurrentView = new ErrorViewModel($"Error opening file: {ex.Message}");
             }
         });
 
@@ -61,18 +70,35 @@ public class MainViewModel : ViewModelBase
 
     public async void OpenFile(Uri path)
     {
+        if (OperatingSystem.IsAndroid())
+            CurrentView = new ErrorViewModel("Loading...");
         try
         {
-            var file = await FileFromUriInteraction.Handle(path);
+            IStorageFile? file = null;
+            // FileFromUriInteraction will be registered after view activation.
+            // Workaround: Wait up to 5 seconds for view to register interaction.
+            for (int attempt = 0; attempt < 100; attempt++)
+            {
+                try
+                {
+                    file = await FileFromUriInteraction.Handle(path);
+                    break;
+                }
+                catch (UnhandledInteractionException<Uri, IStorageFile?>)
+                {
+                    await Task.Delay(50);
+                }
+            }
             if (file != null)
             {
-                using Stream stream = await Task.Run(file.OpenReadAsync);
-                CurrentView = new BookViewModel { FileLength = stream.Length };
+                Book book = new();
+                await BookFileFormat2.DetectAndRead(file, book, null);
+                CurrentView = new BookViewModel(book);
             }
         }
         catch (Exception ex)
         {
-            Dispatcher.UIThread.Invoke(() => ErrorMessage = $"Error opening file: {ex.Message}");
+            CurrentView = new ErrorViewModel($"Error opening file: {ex.Message}");
         }
     }
 }

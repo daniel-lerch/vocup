@@ -9,7 +9,7 @@
              x:Class="Vocup.Views.AboutView"
              x:DataType="vm:AboutViewModel">
   <Design.DataContext>
-    <vm:AboutViewModel />
+    <vm:AboutDesignViewModel />
   </Design.DataContext>
 
   <UserControl.Styles>
