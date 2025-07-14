@@ -1,10 +1,25 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:views="clr-namespace:Vocup.Views;assembly=Vocup.Avalonia"
+             xmlns:vm="clr-namespace:Vocup.ViewModels;assembly=Vocup.Avalonia"
              x:Class="Vocup.App"
              RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+  <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
-    <Application.Styles>
-        <FluentTheme />
-    </Application.Styles>
+  <Application.Styles>
+    <FluentTheme />
+  </Application.Styles>
+
+  <Application.DataTemplates>
+    <DataTemplate DataType="{x:Type vm:BookViewModel}">
+      <views:BookView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:AboutViewModel}">
+      <views:AboutView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:ErrorViewModel}">
+      <views:ErrorView />
+    </DataTemplate>
+  </Application.DataTemplates>
+
 </Application>

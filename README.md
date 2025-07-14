@@ -16,6 +16,12 @@ Install Vocup for Windows 10 and Windows 11 directly from the Microsoft Store. E
 
 [<img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Get_it_from_Microsoft_Badge.svg" alt="Microsoft Store Badge" height="50px">](https://www.microsoft.com/store/apps/9N6W2H3QJQMM)
 
+### Android
+
+Install Vocup for Android directly from the Google Play Store. **Limited functionality**, only a .vhf file viewer so far.
+
+[<img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play Badge" height="50px">](https://play.google.com/store/apps/details?id=org.vocup)
+
 ### ~~Windows 7~~
 
 Windows 7 is not supported anymore. Neither by Microsoft nor by Vocup. There are no plans to reintroduce support, however you can still download and use [Vocup 1.8.7](https://github.com/daniel-lerch/vocup/releases/tag/v1.8.7).
