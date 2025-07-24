@@ -77,12 +77,12 @@ public class Vhf1Format2 : BookFileFormat2
 
         foreach (Word word in book.Words)
         {
-            content.Append(word.MotherTongue[0]);
+            content.Append(word.MotherTongue[0].Value);
             content.Append('#');
-            content.Append(word.ForeignLanguage[0]);
+            content.Append(word.ForeignLanguage[0].Value);
             content.Append('#');
             if (word.ForeignLanguage.Count > 1)
-                content.Append(word.ForeignLanguage[1]);
+                content.Append(word.ForeignLanguage[1].Value);
             content.AppendLine();
         }
 

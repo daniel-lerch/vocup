@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace Vocup.Models;
 
@@ -13,10 +14,10 @@ public class Word
 
     public Word(IEnumerable<string> motherTongue, IEnumerable<string> foreignLanguage)
     {
-        MotherTongue = new(motherTongue);
-        ForeignLanguage = new(foreignLanguage);
+        MotherTongue = new(motherTongue.Select(x => new Synonym(x)));
+        ForeignLanguage = new(foreignLanguage.Select(x => new Synonym(x)));
     }
 
-    public ObservableCollection<string> MotherTongue { get; }
-    public ObservableCollection<string> ForeignLanguage { get; }
+    public ObservableCollection<Synonym> MotherTongue { get; }
+    public ObservableCollection<Synonym> ForeignLanguage { get; }
 }

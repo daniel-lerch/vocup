@@ -106,9 +106,9 @@ public class Vhf2Format2 : BookFileFormat2
                 DateTime practiceDate = default; //= includeResults ? word.PracticeDate : DateTime.MinValue;
 
                 JsonWord jsonWord = new(
-                    word.MotherTongue[0],
-                    word.ForeignLanguage[0],
-                    word.ForeignLanguage.Count > 1 ? word.ForeignLanguage[1] : null,
+                    word.MotherTongue[0].Value,
+                    word.ForeignLanguage[0].Value,
+                    word.ForeignLanguage.Count > 1 ? word.ForeignLanguage[1].Value : null,
                     practiceStateNumber,
                     practiceDate);
 

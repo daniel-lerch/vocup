@@ -1,19 +1,41 @@
-﻿using System;
+﻿using DynamicData;
+using DynamicData.Binding;
+using ReactiveUI;
+using System;
 using System.Collections.ObjectModel;
+using System.Reactive;
 using Vocup.Models;
 
 namespace Vocup.ViewModels;
 
-public class BookViewModel : ViewModelBase
+public class BookViewModel : ViewModelBase, IDisposable
 {
-    private readonly Book _book;
+    private readonly IDisposable wordsOperation;
 
     public BookViewModel(Book book)
     {
-        _book = book ?? throw new ArgumentNullException(nameof(book));
+        _ = book ?? throw new ArgumentNullException(nameof(book));
+
+        wordsOperation = book.Words.ToObservableChangeSet()
+            .Transform(word => new WordViewModel(word.MotherTongue, word.ForeignLanguage))
+            .Bind(out _words)
+            .DisposeMany()
+            .Subscribe();
+
+        AddWord = ReactiveCommand.Create(() => book.Words.Insert(0, new Word(["Test"], ["test"])));
+        AddSynonym = ReactiveCommand.Create(() => book.Words[0].ForeignLanguage.Add(new("test")));
     }
 
-    public ObservableCollection<Word> Words => _book.Words;
+    private ReadOnlyObservableCollection<WordViewModel> _words;
+    public ReadOnlyObservableCollection<WordViewModel> Words => _words;
+
+    public ReactiveCommand<Unit, Unit> AddWord { get; }
+    public ReactiveCommand<Unit, Unit> AddSynonym { get; }
+
+    public void Dispose()
+    {
+        wordsOperation.Dispose();
+    }
 }
 
 public class BookDesignViewModel : BookViewModel
