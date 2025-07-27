@@ -18,6 +18,12 @@ public class Word
         ForeignLanguage = new(foreignLanguage.Select(x => new Synonym(x)));
     }
 
+    public Word(List<Synonym> motherTongue, List<Synonym> foreignLanguage)
+    {
+        MotherTongue = new(motherTongue);
+        ForeignLanguage = new(foreignLanguage);
+    }
+
     public ObservableCollection<Synonym> MotherTongue { get; }
     public ObservableCollection<Synonym> ForeignLanguage { get; }
 }

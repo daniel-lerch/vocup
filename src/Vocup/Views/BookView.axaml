@@ -29,14 +29,20 @@
               <ItemsControl ItemsSource="{Binding MotherTongue}" Grid.Column="0">
                 <ItemsControl.ItemTemplate>
                   <DataTemplate>
-                    <TextBlock Text="{Binding Value}" TextWrapping="Wrap" Margin="4" />
+                    <StackPanel Orientation="Horizontal">
+                      <TextBlock Text="{Binding PracticesCount}" Margin="4" />
+                      <TextBlock Text="{Binding Value}" TextWrapping="Wrap" Margin="4" />
+                    </StackPanel>
                   </DataTemplate>
                 </ItemsControl.ItemTemplate>
               </ItemsControl>
               <ItemsControl ItemsSource="{Binding ForeignLanguage}" Grid.Column="1">
                 <ItemsControl.ItemTemplate>
                   <DataTemplate>
-                    <TextBlock Text="{Binding Value}" TextWrapping="Wrap" Margin="4" />
+                    <StackPanel Orientation="Horizontal">
+                      <TextBlock Text="{Binding PracticesCount}" Margin="4" />
+                      <TextBlock Text="{Binding Value}" TextWrapping="Wrap" Margin="4" />
+                    </StackPanel>
                   </DataTemplate>
                 </ItemsControl.ItemTemplate>
               </ItemsControl>

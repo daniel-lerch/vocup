@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DynamicData;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -15,7 +18,7 @@ public class Vhf1Format2 : BookFileFormat2
 
     public async ValueTask Read(Stream stream, Book book, string? vhrPath)
     {
-        string decrypted = await ReadAndDecrypt(stream);
+        string decrypted = await ReadAndDecrypt(stream).ConfigureAwait(false);
         using StringReader reader = new(decrypted);
 
         string? version = reader.ReadLine();
@@ -60,11 +63,11 @@ public class Vhf1Format2 : BookFileFormat2
 
         //book.FilePath = stream.Name;
 
-        //if (!string.IsNullOrEmpty(vhrCode))
-        //{
-        //    // Read results from .vhr file
-        //    ReadResults(book, stream.Name, vhrCode, vhrPath);
-        //}
+        if (!string.IsNullOrEmpty(vhrPath) && !string.IsNullOrEmpty(vhrCode) && stream is FileStream fileStream)
+        {
+            // Read results from .vhr file
+            await ReadResults(book, fileStream.Name, vhrCode, vhrPath).ConfigureAwait(false);
+        }
     }
 
     protected override async ValueTask Write(Stream stream, Book book, string vhrPath, bool includeResults)
@@ -115,13 +118,12 @@ public class Vhf1Format2 : BookFileFormat2
         return new string(code);
     }
 
-    /*
-    private void ReadResults(Book book, string fileName, string vhrCode, string vhrPath)
+    private async ValueTask ReadResults(Book book, string fileName, string vhrCode, string vhrPath)
     {
         try
         {
             using FileStream file = new(Path.Combine(vhrPath, vhrCode + ".vhr"), FileMode.Open, FileAccess.Read, FileShare.Read);
-            string decrypted = ReadAndDecrypt(file);
+            string decrypted = await ReadAndDecrypt(file).ConfigureAwait(false);
             using StringReader reader = new(decrypted);
 
             string? path = reader.ReadLine();
@@ -181,7 +183,14 @@ public class Vhf1Format2 : BookFileFormat2
             for (int i = 0; i < book.Words.Count; i++)
             {
                 Word word = book.Words[i];
-                (word.PracticeStateNumber, word.PracticeDate) = results[i];
+                foreach (Synonym motherTongue in word.MotherTongue)
+                {
+                    motherTongue.Practices.AddRange(GeneratePracticeHistory(results[i].stateNumber, results[i].date, book.PracticeMode != PracticeMode.AskForForeignLang));
+                }
+                foreach (Synonym foreignLanguage in word.ForeignLanguage)
+                {
+                    foreignLanguage.Practices.AddRange(GeneratePracticeHistory(results[i].stateNumber, results[i].date, book.PracticeMode != PracticeMode.AskForMotherTongue));
+                }
             }
 
             //book.VhrCode = vhrCode;
@@ -193,6 +202,7 @@ public class Vhf1Format2 : BookFileFormat2
         }
     }
 
+    /*
     private void WriteResults(Book book, string fileName, string vhrCode, string vhrPath)
     {
         string results;

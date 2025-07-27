@@ -1,5 +1,6 @@
 ﻿using Avalonia.Platform.Storage;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using Vocup.Models;
@@ -63,5 +64,26 @@ public abstract class BookFileFormat2
         catch { }
 
         return false;
+    }
+
+    protected static List<Practice> GeneratePracticeHistory(int practiceStateNumber, DateTime practiceDate, bool coveredByPracticeMode)
+    {
+        if (practiceStateNumber <= 0 || !coveredByPracticeMode)
+        {
+            return [];
+        }
+        else if (practiceStateNumber == 1)
+        {
+            return [new Practice(practiceDate, PracticeResult2.Wrong)];
+        }
+        else
+        {
+            List<Practice> practices = new(capacity: practiceStateNumber - 1);
+            for (int i = 0; i < practiceStateNumber - 1; i++)
+            {
+                practices.Add(new Practice(practiceDate, PracticeResult2.Correct));
+            }
+            return practices;
+        }
     }
 }

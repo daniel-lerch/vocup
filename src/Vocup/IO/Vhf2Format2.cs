@@ -66,13 +66,20 @@ public class Vhf2Format2 : BookFileFormat2
 
             foreach (JsonWord jsonWord in jsonBook.Words)
             {
-                Word word;
-                if (string.IsNullOrWhiteSpace(jsonWord.ForeignLangSynonym))
-                    word = new([jsonWord.MotherTongue], [jsonWord.ForeignLang]);
-                else
-                    word = new([jsonWord.MotherTongue], [jsonWord.ForeignLang, jsonWord.ForeignLangSynonym]);
+                List<Synonym> motherTongue = [new Synonym(
+                    jsonWord.MotherTongue,
+                    GeneratePracticeHistory(jsonWord.PracticeStateNumber, jsonWord.PracticeDate, jsonBook.PracticeMode != PracticeMode.AskForForeignLang))];
 
-                book.Words.Add(word);
+                List<Synonym> foreignLanguage = [new Synonym(
+                    jsonWord.ForeignLang,
+                    GeneratePracticeHistory(jsonWord.PracticeStateNumber, jsonWord.PracticeDate, jsonBook.PracticeMode != PracticeMode.AskForMotherTongue))];
+
+                if (!string.IsNullOrWhiteSpace(jsonWord.ForeignLangSynonym))
+                    foreignLanguage.Add(new Synonym(
+                        jsonWord.ForeignLangSynonym,
+                        GeneratePracticeHistory(jsonWord.PracticeStateNumber, jsonWord.PracticeDate, jsonBook.PracticeMode != PracticeMode.AskForMotherTongue)));
+
+                book.Words.Add(new(motherTongue, foreignLanguage));
             }
 
             //return metadata.FileVersion <= maxSupportedFileVersion;
