@@ -6,7 +6,11 @@
         xmlns:views="clr-namespace:Vocup.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Vocup.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
         Icon="/Assets/square-logo.ico"
         Title="Vocup">
-        <views:MainView />
+  <Design.DataContext>
+    <vm:MainViewModel />
+  </Design.DataContext>
+  <views:MainView DataContext="{Binding}" />
 </Window>
