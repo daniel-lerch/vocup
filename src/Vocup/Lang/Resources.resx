@@ -138,4 +138,7 @@
   <data name="AboutView.VocupOnGithub" xml:space="preserve">
     <value>Vocup on GitHub</value>
   </data>
+  <data name="VhfFileType" xml:space="preserve">
+    <value>Vocup vocabulary book</value>
+  </data>
 </root>

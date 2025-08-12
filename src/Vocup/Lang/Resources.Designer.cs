@@ -122,5 +122,14 @@ namespace Vocup.Lang {
                 return ResourceManager.GetString("AboutView.VocupOnGithub", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vocup vocabulary book.
+        /// </summary>
+        public static string VhfFileType {
+            get {
+                return ResourceManager.GetString("VhfFileType", resourceCulture);
+            }
+        }
     }
 }
