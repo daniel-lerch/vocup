@@ -11,20 +11,24 @@ public class WordViewModel : ViewModelBase, IDisposable
     private readonly IDisposable motherTongueOperation;
     private readonly IDisposable foreignLanguageOperation;
 
-    public WordViewModel(ObservableCollection<Synonym> motherTongue, ObservableCollection<Synonym> foreignLanguage)
+    public WordViewModel(BookViewModel parent, ObservableCollection<Synonym> motherTongue, ObservableCollection<Synonym> foreignLanguage)
     {
+        Book = parent;
+
         motherTongueOperation = motherTongue.ToObservableChangeSet()
-            .Transform(s => new SynonymViewModel(s))
+            .Transform(s => new SynonymViewModel(this, s))
             .Bind(out _motherTongue)
             .DisposeMany()
             .Subscribe();
 
         foreignLanguageOperation = foreignLanguage.ToObservableChangeSet()
-            .Transform(s => new SynonymViewModel(s))
+            .Transform(s => new SynonymViewModel(this, s))
             .Bind(out _foreignLanguage)
             .DisposeMany()
             .Subscribe();
     }
+
+    public BookViewModel Book { get; }
 
     private ReadOnlyObservableCollection<SynonymViewModel> _motherTongue;
     public ReadOnlyObservableCollection<SynonymViewModel> MotherTongue => _motherTongue;

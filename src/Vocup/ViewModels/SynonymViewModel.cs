@@ -14,15 +14,17 @@ public class SynonymViewModel : ViewModelBase, IDisposable
     private readonly ObservableAsPropertyHelper<string> valueHelper;
     private readonly ObservableAsPropertyHelper<double> practiceStateHelper;
 
-    public SynonymViewModel(Synonym parent)
+    public SynonymViewModel(WordViewModel parent, Synonym synonym)
     {
-        valueHelper = parent.WhenAnyValue(s => s.Value).ToProperty(this, s => s.Value);
-        practiceStateHelper = parent.Practices.ToObservableChangeSet()
+        Word = parent;
+        valueHelper = synonym.WhenAnyValue(s => s.Value).ToProperty(this, s => s.Value);
+        practiceStateHelper = synonym.Practices.ToObservableChangeSet()
             .ToCollection()
             .Select(GetPracticeState)
             .ToProperty(this, s => s.PracticeState, initialValue: 0.0);
     }
 
+    public WordViewModel Word { get; }
     public string Value => valueHelper.Value;
     public double PracticeState => practiceStateHelper.Value;
 

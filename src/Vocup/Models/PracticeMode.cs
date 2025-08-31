@@ -2,6 +2,8 @@
 
 public enum PracticeMode
 {
+    // Do not rename values (JSON serialization)
+
     /// <summary>
     /// The word is displayed in the mother tongue and the user has to enter the word in the foreign language.
     /// </summary>

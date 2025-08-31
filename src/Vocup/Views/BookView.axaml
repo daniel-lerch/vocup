@@ -16,6 +16,7 @@
 
   <UserControl.Resources>
     <views:PracticeStateToBrushConverter x:Key="PracticeStateToBrushConverter" />
+    <views:PracticeModeToVisibilityConverter x:Key="PracticeModeToVisibilityConverter" />
   </UserControl.Resources>
 
   <Grid RowDefinitions="Auto, *" ColumnDefinitions="Auto, *">
@@ -36,7 +37,8 @@
                   <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                       <Ellipse Width="8" Height="8" VerticalAlignment="Center"
-                               Fill="{Binding PracticeState, Converter={StaticResource PracticeStateToBrushConverter}}" />
+                               Fill="{Binding PracticeState, Converter={StaticResource PracticeStateToBrushConverter}}"
+                               IsVisible="{Binding Word.Book.PracticeMode, Converter={StaticResource PracticeModeToVisibilityConverter}, ConverterParameter=AskForMotherTongue}" />
                       <TextBlock Text="{Binding Value}" TextWrapping="Wrap" Margin="4" />
                     </StackPanel>
                   </DataTemplate>
@@ -47,7 +49,8 @@
                   <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                       <Ellipse Width="8" Height="8" VerticalAlignment="Center" 
-                               Fill="{Binding PracticeState, Converter={StaticResource PracticeStateToBrushConverter}}" />
+                               Fill="{Binding PracticeState, Converter={StaticResource PracticeStateToBrushConverter}}"
+                               IsVisible="{Binding Word.Book.PracticeMode, Converter={StaticResource PracticeModeToVisibilityConverter}, ConverterParameter=AskForForeignLang}" />
                       <TextBlock Text="{Binding Value}" TextWrapping="Wrap" Margin="4" />
                     </StackPanel>
                   </DataTemplate>
