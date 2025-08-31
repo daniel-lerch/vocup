@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:Vocup.ViewModels;assembly=Vocup.Avalonia"
+             xmlns:views="clr-namespace:Vocup.Views;assembly=Vocup.Avalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Vocup.Views.BookView"
              x:DataType="vm:BookViewModel">
@@ -12,6 +13,10 @@
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
     <vm:BookDesignViewModel />
   </Design.DataContext>
+
+  <UserControl.Resources>
+    <views:PracticeStateToBrushConverter x:Key="PracticeStateToBrushConverter" />
+  </UserControl.Resources>
 
   <Grid RowDefinitions="Auto, *" ColumnDefinitions="Auto, *">
     <Button Grid.Row="0" Command="{Binding AddWord}">Add Word</Button>
@@ -30,7 +35,8 @@
                 <ItemsControl.ItemTemplate>
                   <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                      <TextBlock Text="{Binding PracticeState}" Margin="4" />
+                      <Ellipse Width="8" Height="8" VerticalAlignment="Center"
+                               Fill="{Binding PracticeState, Converter={StaticResource PracticeStateToBrushConverter}}" />
                       <TextBlock Text="{Binding Value}" TextWrapping="Wrap" Margin="4" />
                     </StackPanel>
                   </DataTemplate>
@@ -40,7 +46,8 @@
                 <ItemsControl.ItemTemplate>
                   <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                      <TextBlock Text="{Binding PracticeState}" Margin="4" />
+                      <Ellipse Width="8" Height="8" VerticalAlignment="Center" 
+                               Fill="{Binding PracticeState, Converter={StaticResource PracticeStateToBrushConverter}}" />
                       <TextBlock Text="{Binding Value}" TextWrapping="Wrap" Margin="4" />
                     </StackPanel>
                   </DataTemplate>
