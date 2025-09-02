@@ -19,11 +19,11 @@ public abstract class BookFileFormat2
 
         if (await StartsWithZipHeader(stream).ConfigureAwait(false))
         {
-            await Vhf2Format2.Instance.Read(stream, book).ConfigureAwait(false);
+            await Vhf2Format2.Instance.Read(file, stream, book).ConfigureAwait(false);
         }
         else
         {
-            await Vhf1Format2.Instance.Read(stream, book, vhrPath).ConfigureAwait(false);
+            await Vhf1Format2.Instance.Read(file, stream, book, vhrPath).ConfigureAwait(false);
         }
     }
 
@@ -43,7 +43,7 @@ public abstract class BookFileFormat2
         return zipHeader;
     }
 
-    protected abstract ValueTask Write(Stream stream, Book book, string vhrPath, bool includeResults);
+    public abstract ValueTask Write(IStorageFile file, Stream stream, Book book, string vhrPath, bool includeResults);
 
     protected static bool TryDeleteVhrFile(string? vhrCode, string vhrPath)
     {

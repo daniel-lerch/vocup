@@ -1,4 +1,5 @@
-﻿using DynamicData;
+﻿using Avalonia.Platform.Storage;
+using DynamicData;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -16,7 +17,7 @@ public class Vhf1Format2 : BookFileFormat2
 
     private Vhf1Format2() { }
 
-    public async ValueTask Read(Stream stream, Book book, string? vhrPath)
+    public async ValueTask Read(IStorageFile file, Stream stream, Book book, string? vhrPath)
     {
         string decrypted = await ReadAndDecrypt(stream).ConfigureAwait(false);
         using StringReader reader = new(decrypted);
@@ -61,7 +62,8 @@ public class Vhf1Format2 : BookFileFormat2
                 book.Words.Add(new([columns[0]], [columns[1], columns[2]]));
         }
 
-        //book.FilePath = stream.Name;
+        book.PracticeMode = PracticeMode.AskForForeignLang; // Default practice mode, may be overwritten when reading results
+        book.File = file;
 
         if (!string.IsNullOrEmpty(vhrPath) && !string.IsNullOrEmpty(vhrCode) && stream is FileStream fileStream)
         {
@@ -70,11 +72,11 @@ public class Vhf1Format2 : BookFileFormat2
         }
     }
 
-    protected override async ValueTask Write(Stream stream, Book book, string vhrPath, bool includeResults)
+    public override async ValueTask Write(IStorageFile file, Stream stream, Book book, string vhrPath, bool includeResults)
     {
         StringBuilder content = new();
         content.AppendLine("1.0");
-        content.AppendLine(); //content.AppendLine(book.VhrCode);
+        content.AppendLine(book.VhrCode);
         content.AppendLine(book.MotherTongue);
         content.AppendLine(book.ForeignLanguage);
 
@@ -91,13 +93,14 @@ public class Vhf1Format2 : BookFileFormat2
 
         await EncryptAndWrite(stream, content.ToString());
 
-        //if (includeResults && !string.IsNullOrEmpty(book.VhrCode))
-        //{
-        //    // Write results to .vhr file
-        //    WriteResults(book, stream.Name, book.VhrCode, vhrPath);
-        //}
+        if (includeResults && !string.IsNullOrEmpty(book.VhrCode))
+        {
+            // Write results to .vhr file
+            string path = file.TryGetLocalPath() ?? throw new NotSupportedException("Unable to get the path of 'file'");
+            await WriteResults(book, path, book.VhrCode, vhrPath);
+        }
 
-        //book.FilePath = stream.Name;
+        book.File = file;
     }
 
     public string GenerateVhrCode()
@@ -193,7 +196,7 @@ public class Vhf1Format2 : BookFileFormat2
                 }
             }
 
-            //book.VhrCode = vhrCode;
+            book.VhrCode = vhrCode;
         }
         catch (Exception ex) when (ex is IOException || ex is VhfFormatException)
         {
@@ -202,8 +205,7 @@ public class Vhf1Format2 : BookFileFormat2
         }
     }
 
-    /*
-    private void WriteResults(Book book, string fileName, string vhrCode, string vhrPath)
+    private async ValueTask WriteResults(Book book, string fileName, string vhrCode, string vhrPath)
     {
         string results;
 
@@ -222,10 +224,11 @@ public class Vhf1Format2 : BookFileFormat2
             {
                 writer.WriteLine();
 
-                writer.Write(word.PracticeStateNumber);
+                writer.Write(word.GetPracticeStateNumber(book.PracticeMode));
                 writer.Write('#');
-                if (word.PracticeDate != default)
-                    writer.Write(word.PracticeDate.ToString("dd.MM.yyyy HH:mm"));
+                DateTimeOffset lastPracticeDate = word.GetLastPracticeDate(book.PracticeMode);
+                if (lastPracticeDate != default)
+                    writer.Write(lastPracticeDate.ToString("dd.MM.yyyy HH:mm"));
             }
 
             results = writer.ToString();
@@ -233,9 +236,8 @@ public class Vhf1Format2 : BookFileFormat2
 
         string absoluteFileName = Path.Combine(vhrPath, vhrCode + ".vhr");
         using FileStream file = new(absoluteFileName, FileMode.Create, FileAccess.Write, FileShare.None);
-        EncryptAndWrite(file, results);
+        await EncryptAndWrite(file, results);
     }
-    */
 
     private static async ValueTask<string> ReadAndDecrypt(Stream stream)
     {

@@ -51,6 +51,9 @@ public class SynonymViewModel : ViewModelBase, IDisposable
             counter++;
         }
 
+        if (counter == 1)
+            return -1.0; // No practices
+
         for (; counter <= lastN; counter++)
         {
             // Assume 0.0 for missing practices

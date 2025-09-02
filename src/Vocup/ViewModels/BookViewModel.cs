@@ -53,7 +53,8 @@ public class BookDesignViewModel : BookViewModel
         Book book = new()
         {
             MotherTongue = "German",
-            ForeignLanguage = "English"
+            ForeignLanguage = "English",
+            PracticeMode = PracticeMode.AskForForeignLang,
         };
         book.Words.Add(new Word(["Apfel"], ["apple"]));
         book.Words.Add(new Word(["Banane"], ["banana"]));

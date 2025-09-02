@@ -11,6 +11,8 @@ public class PracticeStateToBrushConverter : IValueConverter
     {
         if (value is double doubleValue)
         {
+            if (doubleValue == -1.0) // No practices
+                return Brushes.Gray;
             byte red = (byte)(255 * (1.0 - doubleValue));
             byte green = (byte)(255 * doubleValue);
             return new SolidColorBrush(Color.FromRgb(red, green, 0));
