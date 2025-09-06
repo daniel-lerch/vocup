@@ -1,4 +1,5 @@
-﻿using ReactiveUI;
+﻿using Avalonia.Platform.Storage;
+using ReactiveUI;
 using System.Collections.ObjectModel;
 
 namespace Vocup.Models;
@@ -24,6 +25,20 @@ public class Book : ReactiveObject
     {
         get => _practiceMode;
         set => this.RaiseAndSetIfChanged(ref _practiceMode, value);
+    }
+
+    private IStorageFile? _file;
+    public IStorageFile? File
+    {
+        get => _file;
+        set => this.RaiseAndSetIfChanged(ref _file, value);
+    }
+
+    private string? _vhrCode;
+    public string? VhrCode
+    {
+        get => _vhrCode;
+        set => this.RaiseAndSetIfChanged(ref _vhrCode, value);
     }
 
     public ObservableCollection<Word> Words { get; } = [];

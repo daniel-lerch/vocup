@@ -1,5 +1,6 @@
 ﻿using Avalonia.Platform.Storage;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using Vocup.Models;
@@ -18,11 +19,11 @@ public abstract class BookFileFormat2
 
         if (await StartsWithZipHeader(stream).ConfigureAwait(false))
         {
-            await Vhf2Format2.Instance.Read(stream, book).ConfigureAwait(false);
+            await Vhf2Format2.Instance.Read(file, stream, book).ConfigureAwait(false);
         }
         else
         {
-            await Vhf1Format2.Instance.Read(stream, book, vhrPath).ConfigureAwait(false);
+            await Vhf1Format2.Instance.Read(file, stream, book, vhrPath).ConfigureAwait(false);
         }
     }
 
@@ -42,7 +43,7 @@ public abstract class BookFileFormat2
         return zipHeader;
     }
 
-    protected abstract ValueTask Write(Stream stream, Book book, string vhrPath, bool includeResults);
+    public abstract ValueTask Write(IStorageFile file, Stream stream, Book book, string vhrPath, bool includeResults);
 
     protected static bool TryDeleteVhrFile(string? vhrCode, string vhrPath)
     {
@@ -63,5 +64,26 @@ public abstract class BookFileFormat2
         catch { }
 
         return false;
+    }
+
+    protected static List<Practice> GeneratePracticeHistory(int practiceStateNumber, DateTime practiceDate, bool coveredByPracticeMode)
+    {
+        if (practiceStateNumber <= 0 || !coveredByPracticeMode)
+        {
+            return [];
+        }
+        else if (practiceStateNumber == 1)
+        {
+            return [new Practice(practiceDate, PracticeResult2.Wrong)];
+        }
+        else
+        {
+            List<Practice> practices = new(capacity: practiceStateNumber - 1);
+            for (int i = 0; i < practiceStateNumber - 1; i++)
+            {
+                practices.Add(new Practice(practiceDate, PracticeResult2.Correct));
+            }
+            return practices;
+        }
     }
 }

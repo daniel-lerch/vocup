@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Avalonia.Platform.Storage;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
@@ -31,7 +32,7 @@ public class Vhf2Format2 : BookFileFormat2
         maxSupportedFileVersion = new Version(2, 0);
     }
 
-    public ValueTask Read(Stream stream, Book book)
+    public ValueTask Read(IStorageFile file, Stream stream, Book book)
     {
         try
         {
@@ -62,17 +63,24 @@ public class Vhf2Format2 : BookFileFormat2
             book.MotherTongue = jsonBook.MotherTongue;
             book.ForeignLanguage = jsonBook.ForeignLanguage;
             book.PracticeMode = jsonBook.PracticeMode;
-            //book.FilePath = stream.Name;
+            book.File = file;
 
             foreach (JsonWord jsonWord in jsonBook.Words)
             {
-                Word word;
-                if (string.IsNullOrWhiteSpace(jsonWord.ForeignLangSynonym))
-                    word = new([jsonWord.MotherTongue], [jsonWord.ForeignLang]);
-                else
-                    word = new([jsonWord.MotherTongue], [jsonWord.ForeignLang, jsonWord.ForeignLangSynonym]);
+                List<Synonym> motherTongue = [new Synonym(
+                    jsonWord.MotherTongue,
+                    GeneratePracticeHistory(jsonWord.PracticeStateNumber, jsonWord.PracticeDate, jsonBook.PracticeMode != PracticeMode.AskForForeignLang))];
 
-                book.Words.Add(word);
+                List<Synonym> foreignLanguage = [new Synonym(
+                    jsonWord.ForeignLang,
+                    GeneratePracticeHistory(jsonWord.PracticeStateNumber, jsonWord.PracticeDate, jsonBook.PracticeMode != PracticeMode.AskForMotherTongue))];
+
+                if (!string.IsNullOrWhiteSpace(jsonWord.ForeignLangSynonym))
+                    foreignLanguage.Add(new Synonym(
+                        jsonWord.ForeignLangSynonym,
+                        GeneratePracticeHistory(jsonWord.PracticeStateNumber, jsonWord.PracticeDate, jsonBook.PracticeMode != PracticeMode.AskForMotherTongue)));
+
+                book.Words.Add(new(motherTongue, foreignLanguage));
             }
 
             //return metadata.FileVersion <= maxSupportedFileVersion;
@@ -88,7 +96,7 @@ public class Vhf2Format2 : BookFileFormat2
         }
     }
 
-    protected override ValueTask Write(Stream stream, Book book, string vhrPath, bool includeResults)
+    public override ValueTask Write(IStorageFile file, Stream stream, Book book, string vhrPath, bool includeResults)
     {
         using (ZipArchive archive = new(stream, ZipArchiveMode.Create, leaveOpen: true))
         {
@@ -102,13 +110,13 @@ public class Vhf2Format2 : BookFileFormat2
 
             foreach (Word word in book.Words)
             {
-                int practiceStateNumber = 0; //= includeResults ? word.PracticeStateNumber : 0;
-                DateTime practiceDate = default; //= includeResults ? word.PracticeDate : DateTime.MinValue;
+                int practiceStateNumber = includeResults ? word.GetPracticeStateNumber(book.PracticeMode) : 0;
+                DateTime practiceDate = includeResults ? word.GetLastPracticeDate(book.PracticeMode).LocalDateTime : DateTime.MinValue;
 
                 JsonWord jsonWord = new(
-                    word.MotherTongue[0],
-                    word.ForeignLanguage[0],
-                    word.ForeignLanguage.Count > 1 ? word.ForeignLanguage[1] : null,
+                    word.MotherTongue[0].Value,
+                    word.ForeignLanguage[0].Value,
+                    word.ForeignLanguage.Count > 1 ? word.ForeignLanguage[1].Value : null,
                     practiceStateNumber,
                     practiceDate);
 
@@ -120,12 +128,12 @@ public class Vhf2Format2 : BookFileFormat2
             JsonSerializer.Serialize(bookStream, jsonBook, options);
         }
 
-        return ValueTask.CompletedTask;
-
         // Delete vhr file when migrating from vhf1 to vhf2
-        //TryDeleteVhrFile(book.VhrCode, vhrPath);
+        TryDeleteVhrFile(book.VhrCode, vhrPath);
 
-        //book.FilePath = stream.Name;
+        book.File = file;
+
+        return ValueTask.CompletedTask;
     }
 
     private record Metadata(Version FileVersion);

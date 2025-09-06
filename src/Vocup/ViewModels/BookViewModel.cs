@@ -1,19 +1,47 @@
-﻿using System;
+﻿using DynamicData;
+using DynamicData.Binding;
+using ReactiveUI;
+using System;
 using System.Collections.ObjectModel;
+using System.Reactive;
 using Vocup.Models;
 
 namespace Vocup.ViewModels;
 
-public class BookViewModel : ViewModelBase
+public class BookViewModel : ViewModelBase, IDisposable
 {
-    private readonly Book _book;
+    private readonly IDisposable wordsOperation;
+    private readonly ObservableAsPropertyHelper<PracticeMode> practiceModeHelper;
 
     public BookViewModel(Book book)
     {
-        _book = book ?? throw new ArgumentNullException(nameof(book));
+        _ = book ?? throw new ArgumentNullException(nameof(book));
+
+        wordsOperation = book.Words.ToObservableChangeSet()
+            .Transform(word => new WordViewModel(this, word.MotherTongue, word.ForeignLanguage))
+            .Bind(out _words)
+            .DisposeMany()
+            .Subscribe();
+
+        practiceModeHelper = book.WhenAnyValue(b => b.PracticeMode)
+            .ToProperty(this, vm => vm.PracticeMode);
+
+        AddWord = ReactiveCommand.Create(() => book.Words.Insert(0, new Word(["Test"], ["test"])));
+        AddSynonym = ReactiveCommand.Create(() => book.Words[0].ForeignLanguage.Add(new("test")));
     }
 
-    public ObservableCollection<Word> Words => _book.Words;
+    private ReadOnlyObservableCollection<WordViewModel> _words;
+    public ReadOnlyObservableCollection<WordViewModel> Words => _words;
+    public PracticeMode PracticeMode => practiceModeHelper.Value;
+
+    public ReactiveCommand<Unit, Unit> AddWord { get; }
+    public ReactiveCommand<Unit, Unit> AddSynonym { get; }
+
+    public void Dispose()
+    {
+        wordsOperation.Dispose();
+        practiceModeHelper.Dispose();
+    }
 }
 
 public class BookDesignViewModel : BookViewModel
@@ -25,7 +53,8 @@ public class BookDesignViewModel : BookViewModel
         Book book = new()
         {
             MotherTongue = "German",
-            ForeignLanguage = "English"
+            ForeignLanguage = "English",
+            PracticeMode = PracticeMode.AskForForeignLang,
         };
         book.Words.Add(new Word(["Apfel"], ["apple"]));
         book.Words.Add(new Word(["Banane"], ["banana"]));
