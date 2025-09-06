@@ -224,9 +224,9 @@ public class Vhf1Format2 : BookFileFormat2
             {
                 writer.WriteLine();
 
-                writer.Write(word.GetPracticeStateNumber(book.PracticeMode));
+                writer.Write(word.GetPracticeStateNumber(mode));
                 writer.Write('#');
-                DateTimeOffset lastPracticeDate = word.GetLastPracticeDate(book.PracticeMode);
+                DateTimeOffset lastPracticeDate = word.GetLastPracticeDate(mode);
                 if (lastPracticeDate != default)
                     writer.Write(lastPracticeDate.ToString("dd.MM.yyyy HH:mm"));
             }

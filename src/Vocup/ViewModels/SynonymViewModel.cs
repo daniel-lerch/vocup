@@ -21,7 +21,7 @@ public class SynonymViewModel : ViewModelBase, IDisposable
         practiceStateHelper = synonym.Practices.ToObservableChangeSet()
             .ToCollection()
             .Select(GetPracticeState)
-            .ToProperty(this, s => s.PracticeState, initialValue: 0.0);
+            .ToProperty(this, s => s.PracticeState, initialValue: -1.0);
     }
 
     public WordViewModel Word { get; }

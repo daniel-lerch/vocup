@@ -102,8 +102,10 @@ public class BookFileFormat2Tests
         Assert.Equal(original.MotherTongue, actual.MotherTongue);
         Assert.Equal(original.ForeignLanguage, actual.ForeignLanguage);
         Assert.Equal(original.Words.Count, actual.Words.Count);
-        //Assert.Equal(original.Words[1].PracticeStateNumber, actual.Words[1].PracticeStateNumber);
-        //Assert.Equal(original.Words[1].PracticeDate, actual.Words[1].PracticeDate);
+        Assert.Equal(original.Words[1].ForeignLanguage[0].Practices[0].Result, actual.Words[1].ForeignLanguage[0].Practices[0].Result);
+        Assert.Equal(original.Words[1].ForeignLanguage[0].Practices[0].Date, actual.Words[1].ForeignLanguage[0].Practices[0].Date);
+        Assert.Equal(original.Words[1].ForeignLanguage[1].Practices[0].Result, actual.Words[1].ForeignLanguage[1].Practices[0].Result);
+        Assert.Equal(original.Words[1].ForeignLanguage[1].Practices[0].Date, actual.Words[1].ForeignLanguage[1].Practices[0].Date);
         Assert.NotNull(actual.File);
         Assert.Equal(original.File.Path, actual.File.Path);
         Assert.Equal(original.VhrCode, actual.VhrCode);
@@ -139,8 +141,10 @@ public class BookFileFormat2Tests
         Assert.Equal(original.MotherTongue, actual.MotherTongue);
         Assert.Equal(original.ForeignLanguage, actual.ForeignLanguage);
         Assert.Equal(original.Words.Count, actual.Words.Count);
-        //Assert.Equal(original.Words[1].PracticeStateNumber, actual.Words[1].PracticeStateNumber);
-        //Assert.Equal(original.Words[1].PracticeDate, actual.Words[1].PracticeDate);
+        Assert.Equal(original.Words[1].ForeignLanguage[0].Practices[0].Result, actual.Words[1].ForeignLanguage[0].Practices[0].Result);
+        Assert.Equal(original.Words[1].ForeignLanguage[0].Practices[0].Date, actual.Words[1].ForeignLanguage[0].Practices[0].Date);
+        Assert.Equal(original.Words[1].ForeignLanguage[1].Practices[0].Result, actual.Words[1].ForeignLanguage[1].Practices[0].Result);
+        Assert.Equal(original.Words[1].ForeignLanguage[1].Practices[0].Date, actual.Words[1].ForeignLanguage[1].Practices[0].Date);
         Assert.NotNull(actual.File);
         Assert.Equal(original.File.Path, actual.File.Path);
         Assert.Equal(original.VhrCode, actual.VhrCode);
@@ -175,8 +179,8 @@ public class BookFileFormat2Tests
         Assert.Equal(original.MotherTongue, actual.MotherTongue);
         Assert.Equal(original.ForeignLanguage, actual.ForeignLanguage);
         Assert.Equal(original.Words.Count, actual.Words.Count);
-        //Assert.Equal(default, actual.Words[1].PracticeStateNumber);
-        //Assert.Equal(default, actual.Words[1].PracticeDate);
+        Assert.Empty(actual.Words[1].ForeignLanguage[0].Practices);
+        Assert.Empty(actual.Words[1].ForeignLanguage[1].Practices);
         Assert.NotNull(actual.File);
         Assert.Equal(original.File.Path, actual.File.Path);
         Assert.Null(actual.VhrCode);
@@ -254,8 +258,10 @@ public class BookFileFormat2Tests
         Assert.Equal(original.MotherTongue, actual.MotherTongue);
         Assert.Equal(original.ForeignLanguage, actual.ForeignLanguage);
         Assert.Equal(original.Words.Count, actual.Words.Count);
-        //Assert.Equal(original.Words[1].PracticeStateNumber, actual.Words[1].PracticeStateNumber);
-        //Assert.Equal(original.Words[1].PracticeDate, actual.Words[1].PracticeDate);
+        Assert.Equal(original.Words[1].ForeignLanguage[0].Practices[0].Result, actual.Words[1].ForeignLanguage[0].Practices[0].Result);
+        Assert.Equal(original.Words[1].ForeignLanguage[0].Practices[0].Date, actual.Words[1].ForeignLanguage[0].Practices[0].Date);
+        Assert.Equal(original.Words[1].ForeignLanguage[1].Practices[0].Result, actual.Words[1].ForeignLanguage[1].Practices[0].Result);
+        Assert.Equal(original.Words[1].ForeignLanguage[1].Practices[0].Date, actual.Words[1].ForeignLanguage[1].Practices[0].Date);
         Assert.NotNull(actual.File);
         Assert.Equal(original.File.Path, actual.File.Path);
         Assert.Null(actual.VhrCode); // VhrCode is not used in vhf2 format
@@ -287,8 +293,8 @@ public class BookFileFormat2Tests
         Assert.Equal(original.MotherTongue, actual.MotherTongue);
         Assert.Equal(original.ForeignLanguage, actual.ForeignLanguage);
         Assert.Equal(original.Words.Count, actual.Words.Count);
-        //Assert.Equal(default, actual.Words[1].PracticeStateNumber);
-        //Assert.Equal(default, actual.Words[1].PracticeDate);
+        Assert.Empty(actual.Words[1].ForeignLanguage[0].Practices);
+        Assert.Empty(actual.Words[1].ForeignLanguage[1].Practices);
         Assert.NotNull(actual.File);
         Assert.Equal(original.File.Path, actual.File.Path);
         Assert.Null(actual.VhrCode); // VhrCode is not used in vhf2 format
