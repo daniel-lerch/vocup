@@ -31,14 +31,14 @@ public class SynonymViewModel : ViewModelBase, IDisposable
     private static double GetPracticeState(IReadOnlyCollection<Practice> practices)
     {
         // Zipf's law weighted average for the last 5 practices
-        int lastN = 5;
+        int maxPracticesToConsider = 5;
 
-        double values = 0.0, weights = 0.0;
-        int counter = 1;
+        double weightedSum = 0.0, sumOfWeights = 0.0;
+        int practicePosition = 1;
 
-        foreach (Practice practice in practices.Reverse().Take(lastN))
+        foreach (Practice practice in practices.Reverse().Take(maxPracticesToConsider))
         {
-            double weight = 1.0 / counter;
+            double weight = 1.0 / practicePosition;
             double result = practice.Result switch
             {
                 PracticeResult2.Correct => 1.0,
@@ -46,21 +46,21 @@ public class SynonymViewModel : ViewModelBase, IDisposable
                 PracticeResult2.Wrong => 0.0,
                 _ => throw new ArgumentOutOfRangeException(null, practice.Result, "Invalid practice result")
             };
-            values += result * weight;
-            weights += weight;
-            counter++;
+            weightedSum += result * weight;
+            sumOfWeights += weight;
+            practicePosition++;
         }
 
-        if (counter == 1)
+        if (practicePosition == 1)
             return -1.0; // No practices
 
-        for (; counter <= lastN; counter++)
+        for (; practicePosition <= maxPracticesToConsider; practicePosition++)
         {
             // Assume 0.0 for missing practices
-            weights += 1.0 / counter;
+            sumOfWeights += 1.0 / practicePosition;
         }
 
-        return values / weights;
+        return weightedSum / sumOfWeights;
     }
 
     public void Dispose()

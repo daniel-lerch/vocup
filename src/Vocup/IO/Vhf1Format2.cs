@@ -186,8 +186,11 @@ public class Vhf1Format2 : BookFileFormat2
             for (int i = 0; i < book.Words.Count; i++)
             {
                 Word word = book.Words[i];
+
+                // Same practice history for all synonyms. Using the same references is fine as they are immutable.
                 var motherTonguePracticeHistory = GeneratePracticeHistory(results[i].stateNumber, results[i].date, book.PracticeMode != PracticeMode.AskForForeignLang);
                 var foreignLanguagePracticeHistory = GeneratePracticeHistory(results[i].stateNumber, results[i].date, book.PracticeMode != PracticeMode.AskForMotherTongue);
+                
                 foreach (Synonym motherTongue in word.MotherTongue)
                 {
                     motherTongue.Practices.AddRange(motherTonguePracticeHistory);
