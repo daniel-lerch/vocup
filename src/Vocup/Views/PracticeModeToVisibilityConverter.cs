@@ -17,7 +17,7 @@ public class PracticeModeToVisibilityConverter : IValueConverter
 
         return (practiceMode, parameterMode) switch
         {
-            (_, PracticeMode.AskForBothMixed) => true, // I cannot think of a use case to pass AsForBothMixed as parameter
+            (_, PracticeMode.AskForBothMixed) => true, // I cannot think of a use case to pass AskForBothMixed as parameter
             (PracticeMode.AskForBothMixed, _) => true,
             (PracticeMode.AskForForeignLang, PracticeMode.AskForForeignLang) => true,
             (PracticeMode.AskForMotherTongue, PracticeMode.AskForMotherTongue) => true,
