@@ -37,7 +37,7 @@
             System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
             System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
             System.Windows.Forms.ToolStripSeparator infoToolStripMenuItem;
-            MenuStrip = new Controls.ResponsiveMenuStrip();
+            MenuStrip = new Vocup.Controls.ResponsiveMenuStrip();
             TsmiRootFile = new System.Windows.Forms.ToolStripMenuItem();
             TsmiCreateBook = new System.Windows.Forms.ToolStripMenuItem();
             TsmiOpenBook = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,22 +69,22 @@
             TsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
             TbSearchWord = new System.Windows.Forms.TextBox();
             GroupBook = new System.Windows.Forms.GroupBox();
-            BtnBookSettings = new Controls.ResponsiveButton();
-            BtnPractice = new Controls.ResponsiveButton();
+            BtnBookSettings = new Vocup.Controls.ResponsiveButton();
+            BtnPractice = new Vocup.Controls.ResponsiveButton();
             GroupSearch = new System.Windows.Forms.GroupBox();
-            BtnSearchWord = new Controls.ResponsiveButton();
+            BtnSearchWord = new Vocup.Controls.ResponsiveButton();
             GroupWord = new System.Windows.Forms.GroupBox();
-            BtnAddWord = new Controls.ResponsiveButton();
-            BtnDeleteWord = new Controls.ResponsiveButton();
-            BtnEditWord = new Controls.ResponsiveButton();
+            BtnAddWord = new Vocup.Controls.ResponsiveButton();
+            BtnDeleteWord = new Vocup.Controls.ResponsiveButton();
+            BtnEditWord = new Vocup.Controls.ResponsiveButton();
             StatusStrip = new System.Windows.Forms.StatusStrip();
             StatusLbOldVersion = new System.Windows.Forms.ToolStripStatusLabel();
             SideBar = new System.Windows.Forms.Panel();
-            GroupStatistics = new Controls.StatisticsPanel();
-            SplitContainer = new Controls.ResponsiveSplitContainer();
-            FileTreeView = new Controls.FileTreeView();
+            GroupStatistics = new Vocup.Controls.StatisticsPanel();
+            SplitContainer = new Vocup.Controls.ResponsiveSplitContainer();
+            FileTreeView = new Vocup.Controls.FileTreeView();
             LbEmptyForm = new System.Windows.Forms.Label();
-            ToolStrip = new Controls.ResponsiveToolStrip();
+            ToolStrip = new Vocup.Controls.ResponsiveToolStrip();
             TsbCreateBook = new System.Windows.Forms.ToolStripButton();
             TsbOpenBook = new System.Windows.Forms.ToolStripButton();
             TsbSave = new System.Windows.Forms.ToolStripButton();
@@ -460,12 +460,8 @@
             // 
             // GroupStatistics
             // 
-            GroupStatistics.CorrectlyPracticed = 0;
             resources.ApplyResources(GroupStatistics, "GroupStatistics");
-            GroupStatistics.FullyPracticed = 0;
             GroupStatistics.Name = "GroupStatistics";
-            GroupStatistics.Unpracticed = 0;
-            GroupStatistics.WronglyPracticed = 0;
             // 
             // SplitContainer
             // 
@@ -583,6 +579,7 @@
             MainMenuStrip = MenuStrip;
             Name = "MainForm";
             FormClosing += Form_FormClosing;
+            FormClosed += Form_FormClosed;
             Load += Form_Load;
             Shown += Form_Shown;
             MenuStrip.ResumeLayout(false);

@@ -239,6 +239,11 @@ public partial class MainForm : Form, IMainForm
         }
     }
 
+    private void Form_FormClosed(object sender, FormClosedEventArgs e)
+    {
+        Program.TrackingService.DisposeAsync().AsTask().GetAwaiter().GetResult();
+    }
+
     private void FileTreeView_FileSelected(object sender, FileSelectedEventArgs e)
     {
         if (CurrentBook != null)

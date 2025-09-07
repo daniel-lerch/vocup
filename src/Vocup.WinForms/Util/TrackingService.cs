@@ -77,8 +77,8 @@ public class TrackingService : IAsyncDisposable
                 ["apiv"] = "1"
             };
             var uriBuilder = new UriBuilder("https://vocup.org/api/analytics/record");
-            uriBuilder.Query = await new FormUrlEncodedContent(query).ReadAsStringAsync();
-            HttpResponseMessage response = await httpClient.PostAsync(uriBuilder.Uri, new ByteArrayContent(Array.Empty<byte>()));
+            uriBuilder.Query = await new FormUrlEncodedContent(query).ReadAsStringAsync().ConfigureAwait(false);
+            HttpResponseMessage response = await httpClient.PostAsync(uriBuilder.Uri, new ByteArrayContent([])).ConfigureAwait(false);
             if (!response.IsSuccessStatusCode)
             {
                 Debug.WriteLine("Server replied with {0} {1}", response.StatusCode, response.ReasonPhrase);

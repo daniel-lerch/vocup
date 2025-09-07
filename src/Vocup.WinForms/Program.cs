@@ -98,12 +98,13 @@ public static class Program
         splash.Close();
         Application.Run(form);
 
+        // TrackingService is disposed in MainForm.FormClosing because disposing it here often caused the application to get stuck and not exit.
+
         // After Application.Run returns, the synchronization context is broken and we need to set it to null
         SynchronizationContext.SetSynchronizationContext(null);
 
         // Calling .GetAwaiter().GetResult() does not work for ValueTasks
         serviceScope.DisposeAsync().AsTask().GetAwaiter().GetResult();
-        TrackingService.DisposeAsync().AsTask().GetAwaiter().GetResult();
     }
 
     public static void ReleaseMutex()

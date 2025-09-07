@@ -18,4 +18,9 @@ public partial class AboutBox : Form
             DataContext = new AboutViewModel(AppInfo.GetDeployment())
         };
     }
+
+    private void AboutBox_Load(object sender, System.EventArgs e)
+    {
+        Program.TrackingService.Page("/about");
+    }
 }

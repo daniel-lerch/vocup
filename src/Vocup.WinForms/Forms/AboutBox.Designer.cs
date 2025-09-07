@@ -56,6 +56,7 @@
             MinimizeBox = false;
             Name = "AboutBox";
             ShowInTaskbar = false;
+            Load += AboutBox_Load;
             ResumeLayout(false);
         }
 
