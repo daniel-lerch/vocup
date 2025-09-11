@@ -4,13 +4,19 @@
     <TargetFramework>net9.0-android</TargetFramework>
     <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
     <ApplicationId>org.vocup</ApplicationId>
-    <ApplicationVersion>1</ApplicationVersion>
-    <ApplicationDisplayVersion>2.1</ApplicationDisplayVersion>
+    <ApplicationVersion>2</ApplicationVersion>
+    <ApplicationDisplayVersion>2.2</ApplicationDisplayVersion>
     <AndroidPackageFormat>apk</AndroidPackageFormat>
     <AndroidEnableProfiledAot>False</AndroidEnableProfiledAot>
     <AndroidUseAapt2>True</AndroidUseAapt2>
     <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
     <AndroidPackageFormat>aab</AndroidPackageFormat>
+    <!-- Enable for release builds -->
+    <AndroidKeyStore>False</AndroidKeyStore>
+    <AndroidSigningKeyStore>vocup-android.jks</AndroidSigningKeyStore>
+    <AndroidSigningKeyAlias>vocup-android</AndroidSigningKeyAlias>
+    <AndroidSigningStorePass>***</AndroidSigningStorePass>
+    <AndroidSigningKeyPass>***</AndroidSigningKeyPass>
   </PropertyGroup>
 
   <ItemGroup>
