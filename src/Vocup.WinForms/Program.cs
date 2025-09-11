@@ -43,11 +43,7 @@ public static class Program
             return;
         }
 
-        // ApplicationConfiguration.Initialize() does not handle PerMonitorV2 correctly.
-        Application.EnableVisualStyles();
-        Application.SetCompatibleTextRenderingDefault(false);
-        Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
-        Application.SetDefaultFont(new Font("Microsoft Sans Serif", 8.25f));
+        ApplicationConfiguration.Initialize();
 
         SplashScreen splash = new();
         splash.Show();

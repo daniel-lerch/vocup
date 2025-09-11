@@ -14,7 +14,9 @@
     <GenerateSatelliteAssembliesForCore>true</GenerateSatelliteAssembliesForCore>
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <ApplicationDefaultFont>Microsoft Sans Serif, 8.25pt</ApplicationDefaultFont>
-    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <!-- PerMonitorV2 has too many bugs, e.g. https://github.com/dotnet/winforms/issues/10958
+         In .NET 10 RC 1 it has only gotten worse and Avalonia's Windows Forms integration doesn't support it either. -->
+    <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
     <ForceDesignerDpiUnaware>true</ForceDesignerDpiUnaware>
     <Description>Vocabulary training application</Description>
     <Company>VectorData</Company>
@@ -26,7 +28,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Vocup\Vocup.csproj" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
     <PackageReference Include="Avalonia.Win32.Interoperability" Version="$(AvaloniaVersion)" />
@@ -47,7 +49,7 @@
     <!-- Force higher version because of vulnerabilities in the default version -->
     <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <Content Include="icon.ico" />
     <Content Include="Images\LargeTile.scale-100.png" />
