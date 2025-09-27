@@ -32,7 +32,7 @@ public partial class PracticeResultList : Form
         WrongFeedbackBackColor = Color.FromArgb(255, 192, 203);
 
 #pragma warning disable WFO5001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
-        if (Application.ColorMode == SystemColorMode.Dark)
+        if (Application.ColorMode == SystemColorMode.Dark || (Application.ColorMode == SystemColorMode.System && Application.SystemColorMode == SystemColorMode.Dark))
         {
             CorrectFeedbackBackColor = Color.FromArgb(0, 100, 0);
             PartlyCorrectFeedbackBackColor = Color.FromArgb(127, 106, 0);
