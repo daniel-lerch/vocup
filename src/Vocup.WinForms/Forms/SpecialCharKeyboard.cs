@@ -97,11 +97,18 @@ public partial class SpecialCharKeyboard : Form
                         Font = new Font("Arial", 9.75f)
                     };
 
+                    float factorX, factorY;
+                    using (Graphics g = CreateGraphics())
+                    {
+                        factorX = g.DpiX / 96f;
+                        factorY = g.DpiY / 96f;
+                    }
+
                     int index = 0;
                     int itemsPerLine = 12;
-                    Point offset = new(8, 6);
-                    Point space = new(6, 6);
-                    Size size = new(25, 25);
+                    Point offset = new((int)(8 * factorX), (int)(6 * factorY));
+                    Point space = new((int)(6 * factorX), (int)(6 * factorY));
+                    Size size = new((int)(25 * factorX), (int)(25 * factorY));
 
                     while (!reader.EndOfStream)
                     {
