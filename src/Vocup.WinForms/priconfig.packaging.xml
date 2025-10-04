@@ -1,0 +1,8 @@
+﻿<packaging>
+  <!-- 
+    Include localization files directly in the app package: 
+    https://learn.microsoft.com/en-us/windows/uwp/app-resources/build-resources-into-app-package#option-1-use-priconfigpackagingxml-to-build-resources-into-your-app-package
+  -->
+  <autoResourcePackage qualifier="Scale" />
+  <autoResourcePackage qualifier="DXFeatureLevel" />
+</packaging>
