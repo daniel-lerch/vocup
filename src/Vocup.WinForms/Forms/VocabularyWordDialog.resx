@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="BtnContinue.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -145,7 +145,7 @@
     <value>BtnContinue</value>
   </data>
   <data name="&gt;&gt;BtnContinue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnContinue.Parent" xml:space="preserve">
     <value>$this</value>
@@ -172,7 +172,7 @@
     <value>BtnCancel</value>
   </data>
   <data name="&gt;&gt;BtnCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnCancel.Parent" xml:space="preserve">
     <value>$this</value>
@@ -184,13 +184,13 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="TbForeignLangSynonym.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9.75pt</value>
+    <value>Arial, 11pt</value>
   </data>
   <data name="TbForeignLangSynonym.Location" type="System.Drawing.Point, System.Drawing">
     <value>164, 45</value>
   </data>
   <data name="TbForeignLangSynonym.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>250, 24</value>
   </data>
   <data name="TbForeignLangSynonym.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -199,7 +199,7 @@
     <value>TbForeignLangSynonym</value>
   </data>
   <data name="&gt;&gt;TbForeignLangSynonym.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbForeignLangSynonym.Parent" xml:space="preserve">
     <value>GroupForeignLang</value>
@@ -211,13 +211,13 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="TbForeignLang.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9.75pt</value>
+    <value>Arial, 11pt</value>
   </data>
   <data name="TbForeignLang.Location" type="System.Drawing.Point, System.Drawing">
     <value>164, 19</value>
   </data>
   <data name="TbForeignLang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>250, 24</value>
   </data>
   <data name="TbForeignLang.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -226,7 +226,7 @@
     <value>TbForeignLang</value>
   </data>
   <data name="&gt;&gt;TbForeignLang.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbForeignLang.Parent" xml:space="preserve">
     <value>GroupForeignLang</value>
@@ -253,7 +253,7 @@
     <value>LbForeignLang</value>
   </data>
   <data name="&gt;&gt;LbForeignLang.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbForeignLang.Parent" xml:space="preserve">
     <value>GroupForeignLang</value>
@@ -283,7 +283,7 @@
     <value>CbResetResults</value>
   </data>
   <data name="&gt;&gt;CbResetResults.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CbResetResults.Parent" xml:space="preserve">
     <value>GroupOptions</value>
@@ -310,7 +310,7 @@
     <value>LbSynonym</value>
   </data>
   <data name="&gt;&gt;LbSynonym.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbSynonym.Parent" xml:space="preserve">
     <value>GroupForeignLang</value>
@@ -340,7 +340,7 @@
     <value>GroupOptions</value>
   </data>
   <data name="&gt;&gt;GroupOptions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupOptions.Parent" xml:space="preserve">
     <value>$this</value>
@@ -364,7 +364,7 @@
     <value>BtnSpecialChar</value>
   </data>
   <data name="&gt;&gt;BtnSpecialChar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnSpecialChar.Parent" xml:space="preserve">
     <value>$this</value>
@@ -391,7 +391,7 @@
     <value>GroupForeignLang</value>
   </data>
   <data name="&gt;&gt;GroupForeignLang.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupForeignLang.Parent" xml:space="preserve">
     <value>$this</value>
@@ -403,13 +403,13 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="TbMotherTongue.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 9.75pt</value>
+    <value>Arial, 11pt</value>
   </data>
   <data name="TbMotherTongue.Location" type="System.Drawing.Point, System.Drawing">
     <value>164, 24</value>
   </data>
   <data name="TbMotherTongue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>250, 24</value>
   </data>
   <data name="TbMotherTongue.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -418,7 +418,7 @@
     <value>TbMotherTongue</value>
   </data>
   <data name="&gt;&gt;TbMotherTongue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TbMotherTongue.Parent" xml:space="preserve">
     <value>GroupMotherTongue</value>
@@ -448,7 +448,7 @@
     <value>LbMotherTongue</value>
   </data>
   <data name="&gt;&gt;LbMotherTongue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;LbMotherTongue.Parent" xml:space="preserve">
     <value>GroupMotherTongue</value>
@@ -475,7 +475,7 @@
     <value>GroupMotherTongue</value>
   </data>
   <data name="&gt;&gt;GroupMotherTongue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupMotherTongue.Parent" xml:space="preserve">
     <value>$this</value>
@@ -505,6 +505,6 @@
     <value>VocabularyWordDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

@@ -29,132 +29,132 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VocabularyWordDialog));
-            this.BtnContinue = new System.Windows.Forms.Button();
-            this.BtnCancel = new System.Windows.Forms.Button();
-            this.TbForeignLangSynonym = new System.Windows.Forms.TextBox();
-            this.TbForeignLang = new System.Windows.Forms.TextBox();
-            this.LbForeignLang = new System.Windows.Forms.Label();
-            this.CbResetResults = new System.Windows.Forms.CheckBox();
-            this.LbSynonym = new System.Windows.Forms.Label();
-            this.GroupOptions = new System.Windows.Forms.GroupBox();
-            this.BtnSpecialChar = new System.Windows.Forms.Button();
-            this.GroupForeignLang = new System.Windows.Forms.GroupBox();
-            this.TbMotherTongue = new System.Windows.Forms.TextBox();
-            this.LbMotherTongue = new System.Windows.Forms.Label();
-            this.GroupMotherTongue = new System.Windows.Forms.GroupBox();
-            this.GroupOptions.SuspendLayout();
-            this.GroupForeignLang.SuspendLayout();
-            this.GroupMotherTongue.SuspendLayout();
-            this.SuspendLayout();
+            BtnContinue = new System.Windows.Forms.Button();
+            BtnCancel = new System.Windows.Forms.Button();
+            TbForeignLangSynonym = new System.Windows.Forms.TextBox();
+            TbForeignLang = new System.Windows.Forms.TextBox();
+            LbForeignLang = new System.Windows.Forms.Label();
+            CbResetResults = new System.Windows.Forms.CheckBox();
+            LbSynonym = new System.Windows.Forms.Label();
+            GroupOptions = new System.Windows.Forms.GroupBox();
+            BtnSpecialChar = new System.Windows.Forms.Button();
+            GroupForeignLang = new System.Windows.Forms.GroupBox();
+            TbMotherTongue = new System.Windows.Forms.TextBox();
+            LbMotherTongue = new System.Windows.Forms.Label();
+            GroupMotherTongue = new System.Windows.Forms.GroupBox();
+            GroupOptions.SuspendLayout();
+            GroupForeignLang.SuspendLayout();
+            GroupMotherTongue.SuspendLayout();
+            SuspendLayout();
             // 
             // BtnContinue
             // 
-            resources.ApplyResources(this.BtnContinue, "BtnContinue");
-            this.BtnContinue.Name = "BtnContinue";
-            this.BtnContinue.UseVisualStyleBackColor = true;
-            this.BtnContinue.Click += new System.EventHandler(this.BtnContinue_Click);
+            resources.ApplyResources(BtnContinue, "BtnContinue");
+            BtnContinue.Name = "BtnContinue";
+            BtnContinue.UseVisualStyleBackColor = true;
+            BtnContinue.Click += BtnContinue_Click;
             // 
             // BtnCancel
             // 
-            resources.ApplyResources(this.BtnCancel, "BtnCancel");
-            this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.UseVisualStyleBackColor = true;
-            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
+            resources.ApplyResources(BtnCancel, "BtnCancel");
+            BtnCancel.Name = "BtnCancel";
+            BtnCancel.UseVisualStyleBackColor = true;
+            BtnCancel.Click += BtnCancel_Click;
             // 
             // TbForeignLangSynonym
             // 
-            resources.ApplyResources(this.TbForeignLangSynonym, "TbForeignLangSynonym");
-            this.TbForeignLangSynonym.Name = "TbForeignLangSynonym";
-            this.TbForeignLangSynonym.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
-            this.TbForeignLangSynonym.Enter += new System.EventHandler(this.TextBox_Enter);
+            resources.ApplyResources(TbForeignLangSynonym, "TbForeignLangSynonym");
+            TbForeignLangSynonym.Name = "TbForeignLangSynonym";
+            TbForeignLangSynonym.TextChanged += TextBox_TextChanged;
+            TbForeignLangSynonym.Enter += TextBox_Enter;
             // 
             // TbForeignLang
             // 
-            resources.ApplyResources(this.TbForeignLang, "TbForeignLang");
-            this.TbForeignLang.Name = "TbForeignLang";
-            this.TbForeignLang.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
-            this.TbForeignLang.Enter += new System.EventHandler(this.TextBox_Enter);
+            resources.ApplyResources(TbForeignLang, "TbForeignLang");
+            TbForeignLang.Name = "TbForeignLang";
+            TbForeignLang.TextChanged += TextBox_TextChanged;
+            TbForeignLang.Enter += TextBox_Enter;
             // 
             // LbForeignLang
             // 
-            resources.ApplyResources(this.LbForeignLang, "LbForeignLang");
-            this.LbForeignLang.Name = "LbForeignLang";
+            resources.ApplyResources(LbForeignLang, "LbForeignLang");
+            LbForeignLang.Name = "LbForeignLang";
             // 
             // CbResetResults
             // 
-            resources.ApplyResources(this.CbResetResults, "CbResetResults");
-            this.CbResetResults.Name = "CbResetResults";
-            this.CbResetResults.UseVisualStyleBackColor = true;
+            resources.ApplyResources(CbResetResults, "CbResetResults");
+            CbResetResults.Name = "CbResetResults";
+            CbResetResults.UseVisualStyleBackColor = true;
             // 
             // LbSynonym
             // 
-            resources.ApplyResources(this.LbSynonym, "LbSynonym");
-            this.LbSynonym.Name = "LbSynonym";
+            resources.ApplyResources(LbSynonym, "LbSynonym");
+            LbSynonym.Name = "LbSynonym";
             // 
             // GroupOptions
             // 
-            resources.ApplyResources(this.GroupOptions, "GroupOptions");
-            this.GroupOptions.Controls.Add(this.CbResetResults);
-            this.GroupOptions.Name = "GroupOptions";
-            this.GroupOptions.TabStop = false;
+            resources.ApplyResources(GroupOptions, "GroupOptions");
+            GroupOptions.Controls.Add(CbResetResults);
+            GroupOptions.Name = "GroupOptions";
+            GroupOptions.TabStop = false;
             // 
             // BtnSpecialChar
             // 
-            resources.ApplyResources(this.BtnSpecialChar, "BtnSpecialChar");
-            this.BtnSpecialChar.Name = "BtnSpecialChar";
-            this.BtnSpecialChar.UseVisualStyleBackColor = true;
+            resources.ApplyResources(BtnSpecialChar, "BtnSpecialChar");
+            BtnSpecialChar.Name = "BtnSpecialChar";
+            BtnSpecialChar.UseVisualStyleBackColor = true;
             // 
             // GroupForeignLang
             // 
-            resources.ApplyResources(this.GroupForeignLang, "GroupForeignLang");
-            this.GroupForeignLang.Controls.Add(this.TbForeignLang);
-            this.GroupForeignLang.Controls.Add(this.TbForeignLangSynonym);
-            this.GroupForeignLang.Controls.Add(this.LbSynonym);
-            this.GroupForeignLang.Controls.Add(this.LbForeignLang);
-            this.GroupForeignLang.Name = "GroupForeignLang";
-            this.GroupForeignLang.TabStop = false;
+            resources.ApplyResources(GroupForeignLang, "GroupForeignLang");
+            GroupForeignLang.Controls.Add(TbForeignLang);
+            GroupForeignLang.Controls.Add(TbForeignLangSynonym);
+            GroupForeignLang.Controls.Add(LbSynonym);
+            GroupForeignLang.Controls.Add(LbForeignLang);
+            GroupForeignLang.Name = "GroupForeignLang";
+            GroupForeignLang.TabStop = false;
             // 
             // TbMotherTongue
             // 
-            resources.ApplyResources(this.TbMotherTongue, "TbMotherTongue");
-            this.TbMotherTongue.BackColor = System.Drawing.SystemColors.Window;
-            this.TbMotherTongue.Name = "TbMotherTongue";
-            this.TbMotherTongue.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
-            this.TbMotherTongue.Enter += new System.EventHandler(this.TextBox_Enter);
+            resources.ApplyResources(TbMotherTongue, "TbMotherTongue");
+            TbMotherTongue.BackColor = System.Drawing.SystemColors.Window;
+            TbMotherTongue.Name = "TbMotherTongue";
+            TbMotherTongue.TextChanged += TextBox_TextChanged;
+            TbMotherTongue.Enter += TextBox_Enter;
             // 
             // LbMotherTongue
             // 
-            resources.ApplyResources(this.LbMotherTongue, "LbMotherTongue");
-            this.LbMotherTongue.Name = "LbMotherTongue";
+            resources.ApplyResources(LbMotherTongue, "LbMotherTongue");
+            LbMotherTongue.Name = "LbMotherTongue";
             // 
             // GroupMotherTongue
             // 
-            resources.ApplyResources(this.GroupMotherTongue, "GroupMotherTongue");
-            this.GroupMotherTongue.Controls.Add(this.LbMotherTongue);
-            this.GroupMotherTongue.Controls.Add(this.TbMotherTongue);
-            this.GroupMotherTongue.Name = "GroupMotherTongue";
-            this.GroupMotherTongue.TabStop = false;
+            resources.ApplyResources(GroupMotherTongue, "GroupMotherTongue");
+            GroupMotherTongue.Controls.Add(LbMotherTongue);
+            GroupMotherTongue.Controls.Add(TbMotherTongue);
+            GroupMotherTongue.Name = "GroupMotherTongue";
+            GroupMotherTongue.TabStop = false;
             // 
             // VocabularyWordDialog
             // 
-            this.AcceptButton = this.BtnContinue;
+            AcceptButton = BtnContinue;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.BtnSpecialChar);
-            this.Controls.Add(this.GroupOptions);
-            this.Controls.Add(this.GroupMotherTongue);
-            this.Controls.Add(this.GroupForeignLang);
-            this.Controls.Add(this.BtnCancel);
-            this.Controls.Add(this.BtnContinue);
-            this.Name = "VocabularyWordDialog";
-            this.ShowInTaskbar = false;
-            this.GroupOptions.ResumeLayout(false);
-            this.GroupOptions.PerformLayout();
-            this.GroupForeignLang.ResumeLayout(false);
-            this.GroupForeignLang.PerformLayout();
-            this.GroupMotherTongue.ResumeLayout(false);
-            this.GroupMotherTongue.PerformLayout();
-            this.ResumeLayout(false);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Controls.Add(BtnSpecialChar);
+            Controls.Add(GroupOptions);
+            Controls.Add(GroupMotherTongue);
+            Controls.Add(GroupForeignLang);
+            Controls.Add(BtnCancel);
+            Controls.Add(BtnContinue);
+            Name = "VocabularyWordDialog";
+            ShowInTaskbar = false;
+            GroupOptions.ResumeLayout(false);
+            GroupOptions.PerformLayout();
+            GroupForeignLang.ResumeLayout(false);
+            GroupForeignLang.PerformLayout();
+            GroupMotherTongue.ResumeLayout(false);
+            GroupMotherTongue.PerformLayout();
+            ResumeLayout(false);
 
         }
 
