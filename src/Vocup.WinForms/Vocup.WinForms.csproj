@@ -10,7 +10,8 @@
     <OutputType>WinExe</OutputType>
     <UseWindowsForms>true</UseWindowsForms>
     <EnableMsixTooling>true</EnableMsixTooling>
-    <!-- For ARM64 builds not to fail, satellite assemblies must be configured https://github.com/dotnet/sdk/issues/28419 -->
+    <!-- Include localization files directly in the app package: https://learn.microsoft.com/en-us/windows/uwp/app-resources/build-resources-into-app-package -->
+    <AppxBundleAutoResourcePackageQualifiers>Scale|DXFeatureLevel</AppxBundleAutoResourcePackageQualifiers>
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <ApplicationDefaultFont>Microsoft Sans Serif, 8.25pt</ApplicationDefaultFont>
     <!-- PerMonitorV2 has too many bugs, e.g. https://github.com/dotnet/winforms/issues/10958
