@@ -35,5 +35,32 @@ jobs:
     - name: Restore NuGet packages
       run: dotnet restore $App_Project_File
 
-    - name: Build and create APK
-      run: dotnet build --no-restore --configuration ${{ matrix.configuration }} $App_Project_File
+    - name: Decode Keystore
+      run: |
+        echo "${{ secrets.BASE64_ENCODED_JKS }}" | base64 --decode > src/Vocup.Android/vocup-android.jks
+
+    - name: Build and create AAB
+      if: matrix.configuration == 'Debug'
+      run: |
+        dotnet build \
+          --no-restore \
+          --configuration ${{ matrix.configuration }} \
+          $App_Project_File
+    
+    - name: Build and create signed AAB
+      if: matrix.configuration == 'Release'
+      run: |
+        dotnet build \
+          --no-restore \
+          --configuration ${{ matrix.configuration }} \
+          -p:AndroidKeyStore=True \
+          -p:AndroidSigningStorePass=${{ secrets.JKS_PASSWORD }} \
+          -p:AndroidSigningKeyPass=${{ secrets.JKS_PASSWORD }} \
+          $App_Project_File
+
+    - name: Upload build artifacts
+      if: matrix.configuration == 'Release' && startsWith(github.ref, 'refs/tags/')
+      uses: actions/upload-artifact@v4
+      with:
+        name: AAB
+        path: src/Vocup.Android/bin/Release/net9.0-android/org.vocup-Signed.aab
