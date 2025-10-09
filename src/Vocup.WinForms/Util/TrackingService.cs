@@ -74,7 +74,12 @@ public class TrackingService : IAsyncDisposable
 #endif
                 ["url"] = "https://app.vocup.org" + url,
                 ["action_name"] = actionName,
-                ["apiv"] = "1"
+                ["apiv"] = "1",
+                ["dimension1"] = AppInfo.Version.ToString(),
+                ["dimension2"] = RuntimeInformation.ProcessArchitecture.ToString().ToLowerInvariant(),
+                ["dimension3"] = AppInfo.GetDeployment(),
+                ["dimension4"] = Environment.OSVersion.Version.ToString(),
+                ["dimension6"] = RuntimeInformation.OSArchitecture.ToString().ToLowerInvariant(),
             };
             var uriBuilder = new UriBuilder("https://vocup.org/api/analytics/record");
             uriBuilder.Query = await new FormUrlEncodedContent(query).ReadAsStringAsync().ConfigureAwait(false);
