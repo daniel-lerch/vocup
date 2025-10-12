@@ -19,15 +19,6 @@ public class MainViewModel : ViewModelBase
         set => this.RaiseAndSetIfChanged(ref _currentView, value);
     }
 
-    private string _errorMessage = string.Empty;
-    public string ErrorMessage
-    {
-        get => _errorMessage;
-        set => this.RaiseAndSetIfChanged(ref _errorMessage, value);
-    }
-
-    public bool HandlersRegistered { get; set; }
-
     public AboutViewModel About { get; }
 
     public Interaction<Unit, IStorageFile?> PickFileInteraction { get; } = new();
