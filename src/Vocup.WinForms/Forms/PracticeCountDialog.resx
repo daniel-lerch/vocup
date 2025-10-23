@@ -135,7 +135,7 @@
     <value>BtnCount20</value>
   </data>
   <data name="&gt;&gt;BtnCount20.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnCount20.Parent" xml:space="preserve">
     <value>GroupCount</value>
@@ -159,7 +159,7 @@
     <value>BtnCountAll</value>
   </data>
   <data name="&gt;&gt;BtnCountAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnCountAll.Parent" xml:space="preserve">
     <value>GroupCount</value>
@@ -183,7 +183,7 @@
     <value>BtnCount40</value>
   </data>
   <data name="&gt;&gt;BtnCount40.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnCount40.Parent" xml:space="preserve">
     <value>GroupCount</value>
@@ -207,7 +207,7 @@
     <value>BtnCount30</value>
   </data>
   <data name="&gt;&gt;BtnCount30.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnCount30.Parent" xml:space="preserve">
     <value>GroupCount</value>
@@ -224,7 +224,7 @@
   <data name="NudCount.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="NudCount.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -232,7 +232,7 @@
     <value>NudCount</value>
   </data>
   <data name="&gt;&gt;NudCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;NudCount.Parent" xml:space="preserve">
     <value>GroupCount</value>
@@ -262,7 +262,7 @@
     <value>BtnCountCustom</value>
   </data>
   <data name="&gt;&gt;BtnCountCustom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BtnCountCustom.Parent" xml:space="preserve">
     <value>GroupCount</value>
@@ -292,7 +292,7 @@
     <value>RbUnpracticed</value>
   </data>
   <data name="&gt;&gt;RbUnpracticed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RbUnpracticed.Parent" xml:space="preserve">
     <value>GroupState</value>
@@ -319,7 +319,7 @@
     <value>RbWronglyPracticed</value>
   </data>
   <data name="&gt;&gt;RbWronglyPracticed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RbWronglyPracticed.Parent" xml:space="preserve">
     <value>GroupState</value>
@@ -346,7 +346,7 @@
     <value>RbCorrectlyPracticed</value>
   </data>
   <data name="&gt;&gt;RbCorrectlyPracticed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RbCorrectlyPracticed.Parent" xml:space="preserve">
     <value>GroupState</value>
@@ -361,7 +361,7 @@
     <value>6, 19</value>
   </data>
   <data name="RbAllStates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 17</value>
+    <value>72, 17</value>
   </data>
   <data name="RbAllStates.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -373,7 +373,7 @@
     <value>RbAllStates</value>
   </data>
   <data name="&gt;&gt;RbAllStates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RbAllStates.Parent" xml:space="preserve">
     <value>GroupState</value>
@@ -388,7 +388,7 @@
     <value>6, 42</value>
   </data>
   <data name="RbEarlierPracticed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 17</value>
+    <value>132, 17</value>
   </data>
   <data name="RbEarlierPracticed.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -400,13 +400,13 @@
     <value>RbEarlierPracticed</value>
   </data>
   <data name="&gt;&gt;RbEarlierPracticed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RbEarlierPracticed.Parent" xml:space="preserve">
     <value>GroupPriority</value>
   </data>
   <data name="&gt;&gt;RbEarlierPracticed.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="RbLaterPracticed.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -427,13 +427,13 @@
     <value>RbLaterPracticed</value>
   </data>
   <data name="&gt;&gt;RbLaterPracticed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RbLaterPracticed.Parent" xml:space="preserve">
     <value>GroupPriority</value>
   </data>
   <data name="&gt;&gt;RbLaterPracticed.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="RbAllDates.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -454,13 +454,13 @@
     <value>RbAllDates</value>
   </data>
   <data name="&gt;&gt;RbAllDates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RbAllDates.Parent" xml:space="preserve">
     <value>GroupPriority</value>
   </data>
   <data name="&gt;&gt;RbAllDates.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="pictureBox3.Location" type="System.Drawing.Point, System.Drawing">
     <value>214, 89</value>
@@ -478,7 +478,7 @@
     <value>pictureBox3</value>
   </data>
   <data name="&gt;&gt;pictureBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox3.Parent" xml:space="preserve">
     <value>GroupState</value>
@@ -502,7 +502,7 @@
     <value>pictureBox2</value>
   </data>
   <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
     <value>GroupState</value>
@@ -526,7 +526,7 @@
     <value>pictureBox1</value>
   </data>
   <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
     <value>GroupState</value>
@@ -550,7 +550,7 @@
     <value>GroupState</value>
   </data>
   <data name="&gt;&gt;GroupState.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupState.Parent" xml:space="preserve">
     <value>$this</value>
@@ -558,11 +558,65 @@
   <data name="&gt;&gt;GroupState.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="RbLaterCreated.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RbLaterCreated.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 111</value>
+  </data>
+  <data name="RbLaterCreated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 17</value>
+  </data>
+  <data name="RbLaterCreated.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="RbLaterCreated.Text" xml:space="preserve">
+    <value>Newest words</value>
+  </data>
+  <data name="&gt;&gt;RbLaterCreated.Name" xml:space="preserve">
+    <value>RbLaterCreated</value>
+  </data>
+  <data name="&gt;&gt;RbLaterCreated.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbLaterCreated.Parent" xml:space="preserve">
+    <value>GroupPriority</value>
+  </data>
+  <data name="&gt;&gt;RbLaterCreated.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="RbEarlierCreated.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="RbEarlierCreated.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 88</value>
+  </data>
+  <data name="RbEarlierCreated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 17</value>
+  </data>
+  <data name="RbEarlierCreated.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="RbEarlierCreated.Text" xml:space="preserve">
+    <value>Oldest words</value>
+  </data>
+  <data name="&gt;&gt;RbEarlierCreated.Name" xml:space="preserve">
+    <value>RbEarlierCreated</value>
+  </data>
+  <data name="&gt;&gt;RbEarlierCreated.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RbEarlierCreated.Parent" xml:space="preserve">
+    <value>GroupPriority</value>
+  </data>
+  <data name="&gt;&gt;RbEarlierCreated.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="GroupPriority.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 130</value>
   </data>
   <data name="GroupPriority.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 89</value>
+    <value>280, 135</value>
   </data>
   <data name="GroupPriority.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -574,7 +628,7 @@
     <value>GroupPriority</value>
   </data>
   <data name="&gt;&gt;GroupPriority.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupPriority.Parent" xml:space="preserve">
     <value>$this</value>
@@ -583,7 +637,7 @@
     <value>0</value>
   </data>
   <data name="GroupCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 225</value>
+    <value>12, 271</value>
   </data>
   <data name="GroupCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 130</value>
@@ -598,7 +652,7 @@
     <value>GroupCount</value>
   </data>
   <data name="&gt;&gt;GroupCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GroupCount.Parent" xml:space="preserve">
     <value>$this</value>
@@ -606,14 +660,14 @@
   <data name="&gt;&gt;GroupCount.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>304, 366</value>
+    <value>304, 412</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
@@ -622,6 +676,6 @@
     <value>PracticeCountDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

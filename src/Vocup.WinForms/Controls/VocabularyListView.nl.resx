@@ -117,13 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="motherTongueColumn.Text" xml:space="preserve">
+    <value>Moedertaal</value>
+  </data>
   <data name="foreignLangColumn.Text" xml:space="preserve">
     <value>Vreemde taal</value>
   </data>
   <data name="lastPracticedColumn.Text" xml:space="preserve">
     <value>Laatst geoefend</value>
   </data>
-  <data name="motherTongueColumn.Text" xml:space="preserve">
-    <value>Moedertaal</value>
+  <data name="creationTimeColumn.Text" xml:space="preserve">
+    <value>Opgesteld</value>
   </data>
 </root>

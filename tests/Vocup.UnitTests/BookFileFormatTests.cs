@@ -214,6 +214,7 @@ public class BookFileFormatTests : IAsyncDisposable
         Assert.Equal(original.Words.Count, actual.Words.Count);
         Assert.Equal(original.Words[1].PracticeStateNumber, actual.Words[1].PracticeStateNumber);
         Assert.Equal(original.Words[1].PracticeDate, actual.Words[1].PracticeDate);
+        Assert.Equal(original.Words[1].CreationTime, actual.Words[1].CreationTime);
         Assert.Equal(original.FilePath, actual.FilePath);
         Assert.Null(actual.VhrCode); // VhrCode is not used in vhf2 format
         Assert.Equal(original.PracticeMode, actual.PracticeMode);
@@ -241,6 +242,7 @@ public class BookFileFormatTests : IAsyncDisposable
         Assert.Equal(original.Words.Count, actual.Words.Count);
         Assert.Equal(default, actual.Words[1].PracticeStateNumber);
         Assert.Equal(default, actual.Words[1].PracticeDate);
+        Assert.Equal(original.Words[1].CreationTime, actual.Words[1].CreationTime);
         Assert.Equal(original.FilePath, actual.FilePath);
         Assert.Null(actual.VhrCode); // VhrCode is not used in vhf2 format
         Assert.Equal(original.PracticeMode, actual.PracticeMode);
@@ -262,7 +264,8 @@ public class BookFileFormatTests : IAsyncDisposable
             ForeignLangSynonym = "color",
             PracticeStateNumber = 2,
             // Vocup v1 file formats do not support seconds or timezones of practices
-            PracticeDate = new DateTime(2020, 8, 19, 16, 17, 0)
+            PracticeDate = new DateTime(2025, 10, 23, 12, 54, 0),
+            CreationTime = new DateTime(2020, 8, 19, 16, 17, 5),
         });
         return book;
     }

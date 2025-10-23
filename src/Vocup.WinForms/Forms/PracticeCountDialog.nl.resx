@@ -120,35 +120,29 @@
   <data name="BtnCount20.Text" xml:space="preserve">
     <value>20 woorden</value>
   </data>
-  <data name="BtnCount30.Text" xml:space="preserve">
-    <value>30 woorden</value>
+  <data name="BtnCountAll.Text" xml:space="preserve">
+    <value>Alle woorden ({0})</value>
   </data>
   <data name="BtnCount40.Text" xml:space="preserve">
     <value>40 woorden</value>
   </data>
-  <data name="BtnCountAll.Text" xml:space="preserve">
-    <value>Alle woorden ({0})</value>
+  <data name="BtnCount30.Text" xml:space="preserve">
+    <value>30 woorden</value>
   </data>
   <data name="BtnCountCustom.Text" xml:space="preserve">
     <value>Woorden</value>
   </data>
-  <data name="GroupCount.Text" xml:space="preserve">
-    <value>Hoeveel woorden wil je oefenen?</value>
+  <data name="RbUnpracticed.Text" xml:space="preserve">
+    <value>Woorden die nog niet geoefend zijn</value>
   </data>
-  <data name="GroupPriority.Text" xml:space="preserve">
-    <value>Welke woorden hebben prioriteit?</value>
-  </data>
-  <data name="GroupState.Text" xml:space="preserve">
-    <value>Welke woorden wil je oefenen?</value>
-  </data>
-  <data name="RbAllDates.Text" xml:space="preserve">
-    <value>Alle (gemixt)</value>
-  </data>
-  <data name="RbAllStates.Text" xml:space="preserve">
-    <value>Alle (gemixt)</value>
+  <data name="RbWronglyPracticed.Text" xml:space="preserve">
+    <value>Woorden die fout beantwoord zijn</value>
   </data>
   <data name="RbCorrectlyPracticed.Text" xml:space="preserve">
     <value>Woorden die goed beantwoord zijn</value>
+  </data>
+  <data name="RbAllStates.Text" xml:space="preserve">
+    <value>Alle (gemixt)</value>
   </data>
   <data name="RbEarlierPracticed.Text" xml:space="preserve">
     <value>Woorden die eerder geoefend zijn</value>
@@ -156,10 +150,22 @@
   <data name="RbLaterPracticed.Text" xml:space="preserve">
     <value>Woorden die recentelijk geoefend zijn</value>
   </data>
-  <data name="RbUnpracticed.Text" xml:space="preserve">
-    <value>Woorden die nog niet geoefend zijn</value>
+  <data name="RbAllDates.Text" xml:space="preserve">
+    <value>Alle (gemixt)</value>
   </data>
-  <data name="RbWronglyPracticed.Text" xml:space="preserve">
-    <value>Woorden die fout beantwoord zijn</value>
+  <data name="GroupState.Text" xml:space="preserve">
+    <value>Welke woorden wil je oefenen?</value>
+  </data>
+  <data name="RbLaterCreated.Text" xml:space="preserve">
+    <value>Nieuwste woordenschat</value>
+  </data>
+  <data name="RbEarlierCreated.Text" xml:space="preserve">
+    <value>Oudste woorden</value>
+  </data>
+  <data name="GroupPriority.Text" xml:space="preserve">
+    <value>Welke woorden hebben prioriteit?</value>
+  </data>
+  <data name="GroupCount.Text" xml:space="preserve">
+    <value>Hoeveel woorden wil je oefenen?</value>
   </data>
 </root>

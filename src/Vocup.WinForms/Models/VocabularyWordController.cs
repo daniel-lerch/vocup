@@ -8,6 +8,7 @@ namespace Vocup.Models
         private readonly ListViewItem.ListViewSubItem motherTongueColumn;
         private readonly ListViewItem.ListViewSubItem foreignLangColumn;
         private readonly ListViewItem.ListViewSubItem praticeDateColumn;
+        private readonly ListViewItem.ListViewSubItem creationTimeColumn;
 
         public VocabularyWordController(VocabularyWord vocabularyWord)
         {
@@ -15,6 +16,7 @@ namespace Vocup.Models
             motherTongueColumn = ListViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(ListViewItem, ""));
             foreignLangColumn = ListViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(ListViewItem, ""));
             praticeDateColumn = ListViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(ListViewItem, ""));
+            creationTimeColumn = ListViewItem.SubItems.Add(new ListViewItem.ListViewSubItem(ListViewItem, ""));
 
             VocabularyWord = vocabularyWord;
             VocabularyWord.PropertyChanged += (a0, a1) => UpdateUI();
@@ -43,10 +45,16 @@ namespace Vocup.Models
 
             motherTongueColumn.Text = VocabularyWord.MotherTongue;
             foreignLangColumn.Text = VocabularyWord.ForeignLangText;
+
             if (VocabularyWord.PracticeDate == default)
                 praticeDateColumn.Text = "";
             else
                 praticeDateColumn.Text = $"{VocabularyWord.PracticeDate.ToShortDateString()} {VocabularyWord.PracticeDate.ToShortTimeString()}";
+
+            if (VocabularyWord.CreationTime == default)
+                creationTimeColumn.Text = "";
+            else
+                creationTimeColumn.Text = $"{VocabularyWord.CreationTime.ToShortDateString()} {VocabularyWord.CreationTime.ToShortTimeString()}";
         }
     }
 }

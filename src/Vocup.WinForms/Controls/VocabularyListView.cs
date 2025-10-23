@@ -5,24 +5,25 @@ using System.Drawing;
 using System.Windows.Forms;
 using Vocup.Util;
 
-#nullable disable
-
 namespace Vocup.Controls;
 
 public partial class VocabularyListView : UserControl
 {
     private Size _imageBaseSize = new Size(16, 16);
     private readonly int initialWidthImage = 20;
-    private readonly int initialWidthLastPracticed = 120;
+    private readonly int initialWidthLastPracticed = 100;
+    private readonly int initialWidthCreationTime = 100;
 
     private SizeF scalingFactor = new SizeF(1F, 1F);
     private int scaledWidthImage;
     private int scaledWidthLastPracticed;
+    private int scaledWidthCreationTime;
 
     public VocabularyListView()
     {
         scaledWidthImage = initialWidthImage;
         scaledWidthLastPracticed = initialWidthLastPracticed;
+        scaledWidthCreationTime = initialWidthCreationTime;
 
         InitializeComponent();
 
@@ -46,7 +47,7 @@ public partial class VocabularyListView : UserControl
 
     public ListView.ListViewItemCollection Items => MainListView.Items;
     public ListView.SelectedListViewItemCollection SelectedItems => MainListView.SelectedItems;
-    public ListViewItem SelectedItem => SelectedItems.Count > 0 ? SelectedItems[0] : null;
+    public ListViewItem? SelectedItem => SelectedItems.Count > 0 ? SelectedItems[0] : null;
 
     [DefaultValue("")]
     public string MotherTongue
@@ -62,19 +63,21 @@ public partial class VocabularyListView : UserControl
         set => foreignLangColumn.Text = value;
     }
 
-    public event ListViewItemSelectionChangedEventHandler ItemSelectionChanged;
+    public event ListViewItemSelectionChangedEventHandler? ItemSelectionChanged;
 
     protected override void ScaleControl(SizeF factor, BoundsSpecified specified)
     {
         scalingFactor = scalingFactor.Multiply(factor);
         scaledWidthImage = (int)Math.Round(initialWidthImage * scalingFactor.Width);
         scaledWidthLastPracticed = (int)Math.Round(initialWidthLastPracticed * scalingFactor.Width);
+        scaledWidthCreationTime = (int)Math.Round(initialWidthCreationTime * scalingFactor.Width);
 
         imageColumn.Width = scaledWidthImage;
         // Here we don't save defaults and therefore directly scale with factor.
         motherTongueColumn.Width = (int)Math.Round(motherTongueColumn.Width * factor.Width);
         foreignLangColumn.Width = (int)Math.Round(foreignLangColumn.Width * factor.Width);
         lastPracticedColumn.Width = scaledWidthLastPracticed;
+        creationTimeColumn.Width = scaledWidthCreationTime;
 
         ScaleImageList();
 
@@ -91,14 +94,14 @@ public partial class VocabularyListView : UserControl
 
     private void ScaleImageList()
     {
-        ImageList old = MainListView.SmallImageList;
+        ImageList? old = MainListView.SmallImageList;
         MainListView.SmallImageList = IconImageList.Scale(_imageBaseSize.Multiply(scalingFactor).Rectify().Round());
         old?.Dispose();
     }
 
     private void MainListView_ColumnClick(object sender, ColumnClickEventArgs e)
     {
-        Sorter sorter = (Sorter)MainListView.ListViewItemSorter;
+        Sorter sorter = (Sorter)MainListView.ListViewItemSorter!;
         if (sorter.Column == e.Column)
         {
             if (sorter.SortOrder == SortOrder.Ascending)
@@ -129,6 +132,11 @@ public partial class VocabularyListView : UserControl
             e.Cancel = true;
             e.NewWidth = scaledWidthLastPracticed;
         }
+        else if (e.ColumnIndex == 4)
+        {
+            e.Cancel = true;
+            e.NewWidth = scaledWidthCreationTime;
+        }
     }
 
     // Prevents the ListView component from changing these columns on resize
@@ -142,6 +150,10 @@ public partial class VocabularyListView : UserControl
         {
             lastPracticedColumn.Width = scaledWidthLastPracticed;
         }
+        else if (e.ColumnIndex == 4)
+        {
+            creationTimeColumn.Width = scaledWidthCreationTime;
+        }
     }
 
     private void MainListView_Resize(object sender, EventArgs e)
@@ -149,13 +161,21 @@ public partial class VocabularyListView : UserControl
         if (Program.Settings.ColumnResize)
         {
             int include = SystemInformation.VerticalScrollBarWidth + MainListView.Columns.Count;
-            int width = (MainListView.Width - imageColumn.Width - lastPracticedColumn.Width - include) / 2;
+            int availableWidth = MainListView.Width - imageColumn.Width - include;
+            
+            float listViewWidth = MainListView.Width / scalingFactor.Width;
+            if (listViewWidth > 400)
+                availableWidth -= lastPracticedColumn.Width; // Keep last practiced column if enough space
+            if (listViewWidth > 500)
+                availableWidth -= creationTimeColumn.Width; // Keep creation time column if enough space
+
+            int width = availableWidth / 2;
             motherTongueColumn.Width = width;
             foreignLangColumn.Width = width;
         }
     }
 
-    private void MainListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+    private void MainListView_ItemSelectionChanged(object? sender, ListViewItemSelectionChangedEventArgs e)
     {
         ItemSelectionChanged?.Invoke(sender, e);
     }
@@ -166,9 +186,9 @@ public partial class VocabularyListView : UserControl
 
         public int Column { get; set; }
 
-        public int Compare(object x, object y)
+        public int Compare(object? x, object? y)
         {
-            if (SortOrder == SortOrder.None)
+            if (SortOrder == SortOrder.None || x == null || y == null)
                 return 0;
 
             switch (Column)
@@ -179,13 +199,9 @@ public partial class VocabularyListView : UserControl
                 case 2:
                     return Inv(((ListViewItem)x).SubItems[Column].Text.CompareTo(((ListViewItem)y).SubItems[Column].Text));
                 case 3:
-                    string left = ((ListViewItem)x).SubItems[3].Text;
-                    string right = ((ListViewItem)y).SubItems[3].Text;
-                    if (!DateTime.TryParse(left, out DateTime leftTime))
-                        leftTime = DateTime.MinValue;
-                    if (!DateTime.TryParse(right, out DateTime rightTime))
-                        rightTime = DateTime.MinValue;
-                    return Inv(leftTime.CompareTo(rightTime));
+                    return Inv(CompareDates(x, y, 3));
+                case 4:
+                    return Inv(CompareDates(x, y, 4));
                 default:
                     throw new NotImplementedException();
             }
@@ -197,6 +213,18 @@ public partial class VocabularyListView : UserControl
                 return ascending;
             else
                 return -ascending;
+        }
+
+        private int CompareDates(object x, object y, int index)
+        {
+            string left = ((ListViewItem)x).SubItems[index].Text;
+            string right = ((ListViewItem)y).SubItems[index].Text;
+
+            if (!DateTime.TryParse(left, out DateTime leftTime))
+                leftTime = DateTime.MinValue;
+            if (!DateTime.TryParse(right, out DateTime rightTime))
+                rightTime = DateTime.MinValue;
+            return leftTime.CompareTo(rightTime);
         }
     }
 }
