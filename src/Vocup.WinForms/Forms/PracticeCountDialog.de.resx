@@ -120,35 +120,29 @@
   <data name="BtnCount20.Text" xml:space="preserve">
     <value>20 Vokabeln</value>
   </data>
-  <data name="BtnCount30.Text" xml:space="preserve">
-    <value>30 Vokabeln</value>
+  <data name="BtnCountAll.Text" xml:space="preserve">
+    <value>Alle Vokabeln ({0})</value>
   </data>
   <data name="BtnCount40.Text" xml:space="preserve">
     <value>40 Vokabeln</value>
   </data>
-  <data name="BtnCountAll.Text" xml:space="preserve">
-    <value>Alle Vokabeln ({0})</value>
+  <data name="BtnCount30.Text" xml:space="preserve">
+    <value>30 Vokabeln</value>
   </data>
   <data name="BtnCountCustom.Text" xml:space="preserve">
     <value>Vokabeln</value>
   </data>
-  <data name="GroupCount.Text" xml:space="preserve">
-    <value>Wie viele Vokabeln möchten Sie üben?</value>
+  <data name="RbUnpracticed.Text" xml:space="preserve">
+    <value>Vokabeln, die noch nie geübt wurden</value>
   </data>
-  <data name="GroupPriority.Text" xml:space="preserve">
-    <value>Welche Vokabeln haben beim Üben Priorität?</value>
-  </data>
-  <data name="GroupState.Text" xml:space="preserve">
-    <value>Welche Vokabeln möchten Sie üben?</value>
-  </data>
-  <data name="RbAllDates.Text" xml:space="preserve">
-    <value>Alle (gemischt)</value>
-  </data>
-  <data name="RbAllStates.Text" xml:space="preserve">
-    <value>Alle (gemischt)</value>
+  <data name="RbWronglyPracticed.Text" xml:space="preserve">
+    <value>Vokabeln, die falsch geübt wurden</value>
   </data>
   <data name="RbCorrectlyPracticed.Text" xml:space="preserve">
     <value>Vokabeln, die richtig geübt wurden</value>
+  </data>
+  <data name="RbAllStates.Text" xml:space="preserve">
+    <value>Alle (gemischt)</value>
   </data>
   <data name="RbEarlierPracticed.Text" xml:space="preserve">
     <value>Vokabeln, die am längsten nicht mehr geübt wurden</value>
@@ -156,10 +150,22 @@
   <data name="RbLaterPracticed.Text" xml:space="preserve">
     <value>Vokabeln, die kürzlich geübt wurden</value>
   </data>
-  <data name="RbUnpracticed.Text" xml:space="preserve">
-    <value>Vokabeln, die noch nie geübt wurden</value>
+  <data name="RbAllDates.Text" xml:space="preserve">
+    <value>Alle (gemischt)</value>
   </data>
-  <data name="RbWronglyPracticed.Text" xml:space="preserve">
-    <value>Vokabeln, die falsch geübt wurden</value>
+  <data name="GroupState.Text" xml:space="preserve">
+    <value>Welche Vokabeln möchten Sie üben?</value>
+  </data>
+  <data name="RbLaterCreated.Text" xml:space="preserve">
+    <value>Neueste Vokabeln</value>
+  </data>
+  <data name="RbEarlierCreated.Text" xml:space="preserve">
+    <value>Älteste Vokabeln</value>
+  </data>
+  <data name="GroupPriority.Text" xml:space="preserve">
+    <value>Welche Vokabeln haben beim Üben Priorität?</value>
+  </data>
+  <data name="GroupCount.Text" xml:space="preserve">
+    <value>Wie viele Vokabeln möchten Sie üben?</value>
   </data>
 </root>

@@ -29,221 +29,231 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PracticeCountDialog));
-            this.BtnCount20 = new System.Windows.Forms.Button();
-            this.BtnCountAll = new System.Windows.Forms.Button();
-            this.BtnCount40 = new System.Windows.Forms.Button();
-            this.BtnCount30 = new System.Windows.Forms.Button();
-            this.NudCount = new System.Windows.Forms.NumericUpDown();
-            this.BtnCountCustom = new System.Windows.Forms.Button();
-            this.RbUnpracticed = new System.Windows.Forms.RadioButton();
-            this.RbWronglyPracticed = new System.Windows.Forms.RadioButton();
-            this.RbCorrectlyPracticed = new System.Windows.Forms.RadioButton();
-            this.RbAllStates = new System.Windows.Forms.RadioButton();
-            this.RbEarlierPracticed = new System.Windows.Forms.RadioButton();
-            this.RbLaterPracticed = new System.Windows.Forms.RadioButton();
-            this.RbAllDates = new System.Windows.Forms.RadioButton();
-            this.GroupState = new System.Windows.Forms.GroupBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.GroupPriority = new System.Windows.Forms.GroupBox();
-            this.GroupCount = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.NudCount)).BeginInit();
-            this.GroupState.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.GroupPriority.SuspendLayout();
-            this.GroupCount.SuspendLayout();
-            this.SuspendLayout();
+            BtnCount20 = new System.Windows.Forms.Button();
+            BtnCountAll = new System.Windows.Forms.Button();
+            BtnCount40 = new System.Windows.Forms.Button();
+            BtnCount30 = new System.Windows.Forms.Button();
+            NudCount = new System.Windows.Forms.NumericUpDown();
+            BtnCountCustom = new System.Windows.Forms.Button();
+            RbUnpracticed = new System.Windows.Forms.RadioButton();
+            RbWronglyPracticed = new System.Windows.Forms.RadioButton();
+            RbCorrectlyPracticed = new System.Windows.Forms.RadioButton();
+            RbAllStates = new System.Windows.Forms.RadioButton();
+            RbEarlierPracticed = new System.Windows.Forms.RadioButton();
+            RbLaterPracticed = new System.Windows.Forms.RadioButton();
+            RbAllDates = new System.Windows.Forms.RadioButton();
+            GroupState = new System.Windows.Forms.GroupBox();
+            pictureBox3 = new System.Windows.Forms.PictureBox();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            GroupPriority = new System.Windows.Forms.GroupBox();
+            GroupCount = new System.Windows.Forms.GroupBox();
+            RbEarlierCreated = new System.Windows.Forms.RadioButton();
+            RbLaterCreated = new System.Windows.Forms.RadioButton();
+            ((System.ComponentModel.ISupportInitialize)NudCount).BeginInit();
+            GroupState.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            GroupPriority.SuspendLayout();
+            GroupCount.SuspendLayout();
+            SuspendLayout();
             // 
             // BtnCount20
             // 
-            resources.ApplyResources(this.BtnCount20, "BtnCount20");
-            this.BtnCount20.Name = "BtnCount20";
-            this.BtnCount20.UseVisualStyleBackColor = true;
-            this.BtnCount20.Click += new System.EventHandler(this.BtnCount20_Click);
+            resources.ApplyResources(BtnCount20, "BtnCount20");
+            BtnCount20.Name = "BtnCount20";
+            BtnCount20.UseVisualStyleBackColor = true;
+            BtnCount20.Click += BtnCount20_Click;
             // 
             // BtnCountAll
             // 
-            resources.ApplyResources(this.BtnCountAll, "BtnCountAll");
-            this.BtnCountAll.Name = "BtnCountAll";
-            this.BtnCountAll.UseVisualStyleBackColor = true;
-            this.BtnCountAll.Click += new System.EventHandler(this.BtnCountAll_Click);
+            resources.ApplyResources(BtnCountAll, "BtnCountAll");
+            BtnCountAll.Name = "BtnCountAll";
+            BtnCountAll.UseVisualStyleBackColor = true;
+            BtnCountAll.Click += BtnCountAll_Click;
             // 
             // BtnCount40
             // 
-            resources.ApplyResources(this.BtnCount40, "BtnCount40");
-            this.BtnCount40.Name = "BtnCount40";
-            this.BtnCount40.UseVisualStyleBackColor = true;
-            this.BtnCount40.Click += new System.EventHandler(this.BtnCount40_Click);
+            resources.ApplyResources(BtnCount40, "BtnCount40");
+            BtnCount40.Name = "BtnCount40";
+            BtnCount40.UseVisualStyleBackColor = true;
+            BtnCount40.Click += BtnCount40_Click;
             // 
             // BtnCount30
             // 
-            resources.ApplyResources(this.BtnCount30, "BtnCount30");
-            this.BtnCount30.Name = "BtnCount30";
-            this.BtnCount30.UseVisualStyleBackColor = true;
-            this.BtnCount30.Click += new System.EventHandler(this.BtnCount30_Click);
+            resources.ApplyResources(BtnCount30, "BtnCount30");
+            BtnCount30.Name = "BtnCount30";
+            BtnCount30.UseVisualStyleBackColor = true;
+            BtnCount30.Click += BtnCount30_Click;
             // 
             // NudCount
             // 
-            resources.ApplyResources(this.NudCount, "NudCount");
-            this.NudCount.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.NudCount.Name = "NudCount";
-            this.NudCount.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            resources.ApplyResources(NudCount, "NudCount");
+            NudCount.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            NudCount.Name = "NudCount";
+            NudCount.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // BtnCountCustom
             // 
-            resources.ApplyResources(this.BtnCountCustom, "BtnCountCustom");
-            this.BtnCountCustom.Name = "BtnCountCustom";
-            this.BtnCountCustom.UseVisualStyleBackColor = true;
-            this.BtnCountCustom.Click += new System.EventHandler(this.BtnCountCustom_Click);
+            resources.ApplyResources(BtnCountCustom, "BtnCountCustom");
+            BtnCountCustom.Name = "BtnCountCustom";
+            BtnCountCustom.UseVisualStyleBackColor = true;
+            BtnCountCustom.Click += BtnCountCustom_Click;
             // 
             // RbUnpracticed
             // 
-            resources.ApplyResources(this.RbUnpracticed, "RbUnpracticed");
-            this.RbUnpracticed.Name = "RbUnpracticed";
-            this.RbUnpracticed.TabStop = true;
-            this.RbUnpracticed.UseVisualStyleBackColor = true;
-            this.RbUnpracticed.CheckedChanged += new System.EventHandler(this.RbUnpracticed_CheckedChanged);
+            resources.ApplyResources(RbUnpracticed, "RbUnpracticed");
+            RbUnpracticed.Name = "RbUnpracticed";
+            RbUnpracticed.TabStop = true;
+            RbUnpracticed.UseVisualStyleBackColor = true;
+            RbUnpracticed.CheckedChanged += RbUnpracticed_CheckedChanged;
             // 
             // RbWronglyPracticed
             // 
-            resources.ApplyResources(this.RbWronglyPracticed, "RbWronglyPracticed");
-            this.RbWronglyPracticed.Name = "RbWronglyPracticed";
-            this.RbWronglyPracticed.TabStop = true;
-            this.RbWronglyPracticed.UseVisualStyleBackColor = true;
-            this.RbWronglyPracticed.CheckedChanged += new System.EventHandler(this.RbWronglyPracticed_CheckedChanged);
+            resources.ApplyResources(RbWronglyPracticed, "RbWronglyPracticed");
+            RbWronglyPracticed.Name = "RbWronglyPracticed";
+            RbWronglyPracticed.TabStop = true;
+            RbWronglyPracticed.UseVisualStyleBackColor = true;
+            RbWronglyPracticed.CheckedChanged += RbWronglyPracticed_CheckedChanged;
             // 
             // RbCorrectlyPracticed
             // 
-            resources.ApplyResources(this.RbCorrectlyPracticed, "RbCorrectlyPracticed");
-            this.RbCorrectlyPracticed.Name = "RbCorrectlyPracticed";
-            this.RbCorrectlyPracticed.TabStop = true;
-            this.RbCorrectlyPracticed.UseVisualStyleBackColor = true;
-            this.RbCorrectlyPracticed.CheckedChanged += new System.EventHandler(this.RbCorrectlyPracticed_CheckedChanged);
+            resources.ApplyResources(RbCorrectlyPracticed, "RbCorrectlyPracticed");
+            RbCorrectlyPracticed.Name = "RbCorrectlyPracticed";
+            RbCorrectlyPracticed.TabStop = true;
+            RbCorrectlyPracticed.UseVisualStyleBackColor = true;
+            RbCorrectlyPracticed.CheckedChanged += RbCorrectlyPracticed_CheckedChanged;
             // 
             // RbAllStates
             // 
-            resources.ApplyResources(this.RbAllStates, "RbAllStates");
-            this.RbAllStates.Checked = true;
-            this.RbAllStates.Name = "RbAllStates";
-            this.RbAllStates.TabStop = true;
-            this.RbAllStates.UseVisualStyleBackColor = true;
-            this.RbAllStates.CheckedChanged += new System.EventHandler(this.RbAllStates_CheckedChanged);
+            resources.ApplyResources(RbAllStates, "RbAllStates");
+            RbAllStates.Checked = true;
+            RbAllStates.Name = "RbAllStates";
+            RbAllStates.TabStop = true;
+            RbAllStates.UseVisualStyleBackColor = true;
+            RbAllStates.CheckedChanged += RbAllStates_CheckedChanged;
             // 
             // RbEarlierPracticed
             // 
-            resources.ApplyResources(this.RbEarlierPracticed, "RbEarlierPracticed");
-            this.RbEarlierPracticed.Name = "RbEarlierPracticed";
-            this.RbEarlierPracticed.TabStop = true;
-            this.RbEarlierPracticed.UseVisualStyleBackColor = true;
+            resources.ApplyResources(RbEarlierPracticed, "RbEarlierPracticed");
+            RbEarlierPracticed.Name = "RbEarlierPracticed";
+            RbEarlierPracticed.TabStop = true;
+            RbEarlierPracticed.UseVisualStyleBackColor = true;
             // 
             // RbLaterPracticed
             // 
-            resources.ApplyResources(this.RbLaterPracticed, "RbLaterPracticed");
-            this.RbLaterPracticed.Name = "RbLaterPracticed";
-            this.RbLaterPracticed.TabStop = true;
-            this.RbLaterPracticed.UseVisualStyleBackColor = true;
+            resources.ApplyResources(RbLaterPracticed, "RbLaterPracticed");
+            RbLaterPracticed.Name = "RbLaterPracticed";
+            RbLaterPracticed.TabStop = true;
+            RbLaterPracticed.UseVisualStyleBackColor = true;
             // 
             // RbAllDates
             // 
-            resources.ApplyResources(this.RbAllDates, "RbAllDates");
-            this.RbAllDates.Checked = true;
-            this.RbAllDates.Name = "RbAllDates";
-            this.RbAllDates.TabStop = true;
-            this.RbAllDates.UseVisualStyleBackColor = true;
+            resources.ApplyResources(RbAllDates, "RbAllDates");
+            RbAllDates.Checked = true;
+            RbAllDates.Name = "RbAllDates";
+            RbAllDates.TabStop = true;
+            RbAllDates.UseVisualStyleBackColor = true;
             // 
             // GroupState
             // 
-            this.GroupState.Controls.Add(this.pictureBox3);
-            this.GroupState.Controls.Add(this.pictureBox2);
-            this.GroupState.Controls.Add(this.pictureBox1);
-            this.GroupState.Controls.Add(this.RbAllStates);
-            this.GroupState.Controls.Add(this.RbUnpracticed);
-            this.GroupState.Controls.Add(this.RbWronglyPracticed);
-            this.GroupState.Controls.Add(this.RbCorrectlyPracticed);
-            resources.ApplyResources(this.GroupState, "GroupState");
-            this.GroupState.Name = "GroupState";
-            this.GroupState.TabStop = false;
+            GroupState.Controls.Add(pictureBox3);
+            GroupState.Controls.Add(pictureBox2);
+            GroupState.Controls.Add(pictureBox1);
+            GroupState.Controls.Add(RbAllStates);
+            GroupState.Controls.Add(RbUnpracticed);
+            GroupState.Controls.Add(RbWronglyPracticed);
+            GroupState.Controls.Add(RbCorrectlyPracticed);
+            resources.ApplyResources(GroupState, "GroupState");
+            GroupState.Name = "GroupState";
+            GroupState.TabStop = false;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Vocup.Properties.Icons.CorrectlyPracticed;
-            resources.ApplyResources(this.pictureBox3, "pictureBox3");
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.TabStop = false;
+            pictureBox3.Image = Properties.Icons.CorrectlyPracticed;
+            resources.ApplyResources(pictureBox3, "pictureBox3");
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Vocup.Properties.Icons.WronglyPracticed;
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Image = Properties.Icons.WronglyPracticed;
+            resources.ApplyResources(pictureBox2, "pictureBox2");
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Vocup.Properties.Icons.Unpracticed;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = Properties.Icons.Unpracticed;
+            resources.ApplyResources(pictureBox1, "pictureBox1");
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.TabStop = false;
             // 
             // GroupPriority
             // 
-            this.GroupPriority.BackColor = System.Drawing.Color.Transparent;
-            this.GroupPriority.Controls.Add(this.RbEarlierPracticed);
-            this.GroupPriority.Controls.Add(this.RbLaterPracticed);
-            this.GroupPriority.Controls.Add(this.RbAllDates);
-            resources.ApplyResources(this.GroupPriority, "GroupPriority");
-            this.GroupPriority.Name = "GroupPriority";
-            this.GroupPriority.TabStop = false;
+            GroupPriority.BackColor = System.Drawing.Color.Transparent;
+            GroupPriority.Controls.Add(RbLaterCreated);
+            GroupPriority.Controls.Add(RbEarlierCreated);
+            GroupPriority.Controls.Add(RbEarlierPracticed);
+            GroupPriority.Controls.Add(RbLaterPracticed);
+            GroupPriority.Controls.Add(RbAllDates);
+            resources.ApplyResources(GroupPriority, "GroupPriority");
+            GroupPriority.Name = "GroupPriority";
+            GroupPriority.TabStop = false;
             // 
             // GroupCount
             // 
-            this.GroupCount.Controls.Add(this.BtnCount20);
-            this.GroupCount.Controls.Add(this.BtnCountAll);
-            this.GroupCount.Controls.Add(this.NudCount);
-            this.GroupCount.Controls.Add(this.BtnCount30);
-            this.GroupCount.Controls.Add(this.BtnCountCustom);
-            this.GroupCount.Controls.Add(this.BtnCount40);
-            resources.ApplyResources(this.GroupCount, "GroupCount");
-            this.GroupCount.Name = "GroupCount";
-            this.GroupCount.TabStop = false;
+            GroupCount.Controls.Add(BtnCount20);
+            GroupCount.Controls.Add(BtnCountAll);
+            GroupCount.Controls.Add(NudCount);
+            GroupCount.Controls.Add(BtnCount30);
+            GroupCount.Controls.Add(BtnCountCustom);
+            GroupCount.Controls.Add(BtnCount40);
+            resources.ApplyResources(GroupCount, "GroupCount");
+            GroupCount.Name = "GroupCount";
+            GroupCount.TabStop = false;
+            // 
+            // RbEarlierCreated
+            // 
+            resources.ApplyResources(RbEarlierCreated, "RbEarlierCreated");
+            RbEarlierCreated.Name = "RbEarlierCreated";
+            RbEarlierCreated.TabStop = true;
+            RbEarlierCreated.UseVisualStyleBackColor = true;
+            // 
+            // RbLaterCreated
+            // 
+            resources.ApplyResources(RbLaterCreated, "RbLaterCreated");
+            RbLaterCreated.Name = "RbLaterCreated";
+            RbLaterCreated.TabStop = true;
+            RbLaterCreated.UseVisualStyleBackColor = true;
             // 
             // PracticeCountDialog
             // 
-            this.AcceptButton = this.BtnCount20;
+            AcceptButton = BtnCount20;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.GroupPriority);
-            this.Controls.Add(this.GroupCount);
-            this.Controls.Add(this.GroupState);
-            this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "PracticeCountDialog";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.Load += new System.EventHandler(this.Form_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.NudCount)).EndInit();
-            this.GroupState.ResumeLayout(false);
-            this.GroupState.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.GroupPriority.ResumeLayout(false);
-            this.GroupPriority.PerformLayout();
-            this.GroupCount.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Controls.Add(GroupPriority);
+            Controls.Add(GroupCount);
+            Controls.Add(GroupState);
+            DoubleBuffered = true;
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "PracticeCountDialog";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            Load += Form_Load;
+            ((System.ComponentModel.ISupportInitialize)NudCount).EndInit();
+            GroupState.ResumeLayout(false);
+            GroupState.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            GroupPriority.ResumeLayout(false);
+            GroupPriority.PerformLayout();
+            GroupCount.ResumeLayout(false);
+            ResumeLayout(false);
 
         }
 
@@ -268,5 +278,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.RadioButton RbLaterCreated;
+        private System.Windows.Forms.RadioButton RbEarlierCreated;
     }
 }

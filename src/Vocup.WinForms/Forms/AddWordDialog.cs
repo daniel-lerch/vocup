@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Vocup.Models;
 using Vocup.Properties;
@@ -65,7 +66,8 @@ public class AddWordDialog : VocabularyWordDialog
         {
             book.Words.Add(new VocabularyWord(TbMotherTongue.Text, TbForeignLang.Text)
             {
-                ForeignLangSynonym = string.IsNullOrWhiteSpace(TbForeignLangSynonym.Text) ? null : TbForeignLangSynonym.Text
+                ForeignLangSynonym = string.IsNullOrWhiteSpace(TbForeignLangSynonym.Text) ? null : TbForeignLangSynonym.Text,
+                CreationTime = DateTime.Now,
             });
 
             firstInput = false;

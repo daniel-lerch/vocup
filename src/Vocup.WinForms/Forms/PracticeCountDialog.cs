@@ -109,6 +109,18 @@ public partial class PracticeCountDialog : Form
             wronglyPracticedItems = wronglyPracticedItems.OrderByDescending(x => x.PracticeDate);
             correctlyPracticedItems = correctlyPracticedItems.OrderByDescending(x => x.PracticeDate);
         }
+        else if (RbEarlierCreated.Checked)
+        {
+            unpracticedItems = unpracticedItems.OrderBy(x => x.CreationTime);
+            wronglyPracticedItems = wronglyPracticedItems.OrderBy(x => x.CreationTime);
+            correctlyPracticedItems = correctlyPracticedItems.OrderBy(x => x.CreationTime);
+        }
+        else if (RbLaterCreated.Checked)
+        {
+            unpracticedItems = unpracticedItems.OrderByDescending(x => x.CreationTime);
+            wronglyPracticedItems = wronglyPracticedItems.OrderByDescending(x => x.CreationTime);
+            correctlyPracticedItems = correctlyPracticedItems.OrderByDescending(x => x.CreationTime);
+        }
 
         if (RbAllStates.Checked)
         {

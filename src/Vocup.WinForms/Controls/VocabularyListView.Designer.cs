@@ -28,67 +28,68 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VocabularyListView));
-            this.MainListView = new System.Windows.Forms.ListView();
-            this.imageColumn = new System.Windows.Forms.ColumnHeader();
-            this.motherTongueColumn = new System.Windows.Forms.ColumnHeader();
-            this.foreignLangColumn = new System.Windows.Forms.ColumnHeader();
-            this.lastPracticedColumn = new System.Windows.Forms.ColumnHeader();
-            this.IconImageList = new System.Windows.Forms.ImageList(this.components);
-            this.SuspendLayout();
+            MainListView = new System.Windows.Forms.ListView();
+            imageColumn = new System.Windows.Forms.ColumnHeader();
+            motherTongueColumn = new System.Windows.Forms.ColumnHeader();
+            foreignLangColumn = new System.Windows.Forms.ColumnHeader();
+            lastPracticedColumn = new System.Windows.Forms.ColumnHeader();
+            creationTimeColumn = new System.Windows.Forms.ColumnHeader();
+            IconImageList = new System.Windows.Forms.ImageList(components);
+            SuspendLayout();
             // 
             // MainListView
             // 
-            this.MainListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.imageColumn,
-            this.motherTongueColumn,
-            this.foreignLangColumn,
-            this.lastPracticedColumn});
-            resources.ApplyResources(this.MainListView, "MainListView");
-            this.MainListView.FullRowSelect = true;
-            this.MainListView.GridLines = true;
-            this.MainListView.MultiSelect = false;
-            this.MainListView.Name = "MainListView";
-            this.MainListView.UseCompatibleStateImageBehavior = false;
-            this.MainListView.View = System.Windows.Forms.View.Details;
-            this.MainListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.MainListView_ColumnClick);
-            this.MainListView.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.MainListView_ColumnWidthChanging);
-            this.MainListView.Resize += new System.EventHandler(this.MainListView_Resize);
+            MainListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { imageColumn, motherTongueColumn, foreignLangColumn, lastPracticedColumn, creationTimeColumn });
+            resources.ApplyResources(MainListView, "MainListView");
+            MainListView.FullRowSelect = true;
+            MainListView.GridLines = true;
+            MainListView.MultiSelect = false;
+            MainListView.Name = "MainListView";
+            MainListView.UseCompatibleStateImageBehavior = false;
+            MainListView.View = System.Windows.Forms.View.Details;
+            MainListView.ColumnClick += MainListView_ColumnClick;
+            MainListView.ColumnWidthChanging += MainListView_ColumnWidthChanging;
+            MainListView.Resize += MainListView_Resize;
             // 
             // imageColumn
             // 
-            resources.ApplyResources(this.imageColumn, "imageColumn");
+            resources.ApplyResources(imageColumn, "imageColumn");
             // 
             // motherTongueColumn
             // 
-            resources.ApplyResources(this.motherTongueColumn, "motherTongueColumn");
+            resources.ApplyResources(motherTongueColumn, "motherTongueColumn");
             // 
             // foreignLangColumn
             // 
-            resources.ApplyResources(this.foreignLangColumn, "foreignLangColumn");
+            resources.ApplyResources(foreignLangColumn, "foreignLangColumn");
             // 
             // lastPracticedColumn
             // 
-            resources.ApplyResources(this.lastPracticedColumn, "lastPracticedColumn");
+            resources.ApplyResources(lastPracticedColumn, "lastPracticedColumn");
+            // 
+            // creationTimeColumn
+            // 
+            resources.ApplyResources(creationTimeColumn, "creationTimeColumn");
             // 
             // IconImageList
             // 
-            this.IconImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.IconImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("IconImageList.ImageStream")));
-            this.IconImageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.IconImageList.Images.SetKeyName(0, "0.png");
-            this.IconImageList.Images.SetKeyName(1, "1.png");
-            this.IconImageList.Images.SetKeyName(2, "2.png");
-            this.IconImageList.Images.SetKeyName(3, "3.png");
+            IconImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            IconImageList.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("IconImageList.ImageStream");
+            IconImageList.TransparentColor = System.Drawing.Color.Transparent;
+            IconImageList.Images.SetKeyName(0, "0.png");
+            IconImageList.Images.SetKeyName(1, "1.png");
+            IconImageList.Images.SetKeyName(2, "2.png");
+            IconImageList.Images.SetKeyName(3, "3.png");
             // 
             // VocabularyListView
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.MainListView);
-            this.Name = "VocabularyListView";
-            this.ResumeLayout(false);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Controls.Add(MainListView);
+            Name = "VocabularyListView";
+            ResumeLayout(false);
 
         }
 
@@ -100,5 +101,6 @@
         private System.Windows.Forms.ColumnHeader foreignLangColumn;
         private System.Windows.Forms.ColumnHeader lastPracticedColumn;
         private System.Windows.Forms.ImageList IconImageList;
+        private System.Windows.Forms.ColumnHeader creationTimeColumn;
     }
 }
