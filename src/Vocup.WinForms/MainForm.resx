@@ -307,7 +307,7 @@
     <value>F5</value>
   </data>
   <data name="TsmiAddWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="TsmiAddWord.Text" xml:space="preserve">
     <value>Add new word</value>
@@ -319,7 +319,7 @@
     <value>Ctrl+R</value>
   </data>
   <data name="TsmiEditWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="TsmiEditWord.Text" xml:space="preserve">
     <value>Edit word</value>
@@ -327,11 +327,8 @@
   <data name="TsmiDeleteWord.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="TsmiDeleteWord.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Del</value>
-  </data>
   <data name="TsmiDeleteWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="TsmiDeleteWord.Text" xml:space="preserve">
     <value>Delete word</value>
