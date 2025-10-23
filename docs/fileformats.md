@@ -16,12 +16,14 @@ Vocup uses the ZIP header to determine whether a .vhf file is vhf1 or vhf2.
 The header file makes it easier to identify a ZIP archive as a Vocup file.
 Future file formats may maintain compatibility with Vocup v2 by keeping a `book.2.json` file but also adding a `book.3.json` with breaking changes.
 
+`words[].creationTime` (DateTime) was added in file version 2.1.
+
 ### Example
 
 `VOCUP VOCABULARY BOOK`
 ```json
 {
-  "fileVersion": "2.0",
+  "fileVersion": "2.1",
 }
 ```
 
@@ -37,14 +39,16 @@ Future file formats may maintain compatibility with Vocup v2 by keeping a `book.
       "foreignLang": "discrimination",
       "foreignLangSynonym": null,
       "practiceStateNumber": 0,
-      "practiceDate": ""
+      "practiceDate": "",
+      "creationTime": "2018-04-06T13:05:21"
     },
     {
       "motherTongue": "eingehend untersuchen (AE/BE)",
       "foreignLang": "to scrutinize",
       "foreignLangSynonym": "to scrutinise",
       "practiceStateNumber": 1,
-      "practiceDate": "2018-04-06T23:04:21"
+      "practiceDate": "2018-04-06T23:04:21",
+      "creationTime": "2018-04-06T13:05:41"
     }
   ]
 }

@@ -27,7 +27,7 @@ public class Vhf2Format : BookFileFormat
         options.Converters.Add(new PracticeModeConverter());
         options.Converters.Add(new PracticeResultConverter());
 
-        maxSupportedFileVersion = new Version(2, 0);
+        maxSupportedFileVersion = new Version(2, 1);
     }
 
     public bool Read(FileStream stream, VocabularyBook book)
@@ -69,7 +69,8 @@ public class Vhf2Format : BookFileFormat
                 {
                     ForeignLangSynonym = jsonWord.ForeignLangSynonym,
                     PracticeStateNumber = jsonWord.PracticeStateNumber,
-                    PracticeDate = jsonWord.PracticeDate
+                    PracticeDate = jsonWord.PracticeDate,
+                    CreationTime = jsonWord.CreationTime,
                 };
                 book.Words.Add(word);
             }
@@ -101,8 +102,8 @@ public class Vhf2Format : BookFileFormat
             foreach (VocabularyWord word in book.Words)
             {
                 JsonWord jsonWord = includeResults
-                    ? new(word.MotherTongue, word.ForeignLang, word.ForeignLangSynonym, word.PracticeStateNumber, word.PracticeDate)
-                    : new(word.MotherTongue, word.ForeignLang, word.ForeignLangSynonym, 0, DateTime.MinValue);
+                    ? new(word.MotherTongue, word.ForeignLang, word.ForeignLangSynonym, word.PracticeStateNumber, word.PracticeDate, word.CreationTime)
+                    : new(word.MotherTongue, word.ForeignLang, word.ForeignLangSynonym, 0, DateTime.MinValue, word.CreationTime);
                 jsonBook.Words.Add(jsonWord);
             }
 
@@ -121,7 +122,7 @@ public class Vhf2Format : BookFileFormat
 
     private record JsonBook(string MotherTongue, string ForeignLanguage, PracticeMode PracticeMode, List<JsonWord> Words);
 
-    private record JsonWord(string MotherTongue, string ForeignLang, string? ForeignLangSynonym, int PracticeStateNumber, DateTime PracticeDate);
+    private record JsonWord(string MotherTongue, string ForeignLang, string? ForeignLangSynonym, int PracticeStateNumber, DateTime PracticeDate, DateTime CreationTime = default);
 
     private class PracticeModeConverter : JsonConverter<PracticeMode>
     {
