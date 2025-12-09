@@ -16,9 +16,10 @@ jobs:
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
 
     env:
-      Solution_Name: Vocup.sln                                          # Replace with your solution name, i.e. MyWpfApp.sln.
+      Solution_Name: Vocup.slnx                                         # Replace with your solution name, i.e. MyWpfApp.sln.
       App_Project_Directory: src\Vocup.WinForms
       App_Project_Name: Vocup.WinForms
+      Test_Project_Directory: tests\Vocup.UnitTests
 
     steps:
     - name: Checkout
@@ -30,7 +31,7 @@ jobs:
     - name: Install .NET Core
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 9.0.x
+        dotnet-version: 10.0.x
 
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
     - name: Setup MSBuild.exe
@@ -38,12 +39,12 @@ jobs:
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
-      run: dotnet test --configuration ${{ matrix.configuration }} --arch x64
+      run: dotnet test --configuration ${{ matrix.configuration }} --arch x64 $env:Test_Project_Directory
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
       if: matrix.configuration == 'Release'
-      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=${{ matrix.configuration }}
+      run: msbuild $env:App_Project_Directory /t:Restore /p:Configuration=${{ matrix.configuration }}
 
     - name: Create MSIX package (x86)
       if: matrix.configuration == 'Release'

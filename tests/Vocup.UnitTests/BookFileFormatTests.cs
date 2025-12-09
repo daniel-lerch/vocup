@@ -7,18 +7,26 @@ using Xunit;
 
 namespace Vocup.UnitTests;
 
-public class BookFileFormatTests : IAsyncDisposable
+public class InitializeServicesFixture : IAsyncDisposable
 {
     private readonly IAsyncDisposable disposable;
-
-    public BookFileFormatTests()
+    public InitializeServicesFixture()
     {
         disposable = Program.InitializeServices();
     }
-
     public ValueTask DisposeAsync()
     {
         return disposable.DisposeAsync();
+    }
+}
+
+public class BookFileFormatTests : IClassFixture<InitializeServicesFixture>
+{
+    private readonly InitializeServicesFixture fixture;
+
+    public BookFileFormatTests(InitializeServicesFixture fixture)
+    {
+        this.fixture = fixture;
     }
 
     [Fact]

@@ -3,6 +3,7 @@ using Avalonia.Headless.XUnit;
 using Avalonia.Platform.Storage;
 using System;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Vocup.IO;
 using Vocup.Models;
@@ -81,7 +82,7 @@ public class BookFileFormat2Tests
     public async Task TestWriteReadVhf1()
     {
         string tempPath = Path.GetTempPath();
-        string path = Path.Combine(tempPath, $"Vocup_{nameof(TestWriteReadVhf1)}.vhf");
+        string path = GetTempFilePath();
         string vhrCode = "o5xqm7rdg6y9fecs9ykuuckv";
         Book original = GenerateSampleBook();
         original.VhrCode = vhrCode;
@@ -119,7 +120,7 @@ public class BookFileFormat2Tests
     public async Task TestWriteReadVhf1_PracticeModeMixed()
     {
         string tempPath = Path.GetTempPath();
-        string path = Path.Combine(tempPath, $"Vocup_{nameof(TestWriteReadVhf1_PracticeModeMixed)}.vhf");
+        string path = GetTempFilePath();
         string vhrCode = "ina5ucmjup2sbcioxdsrvqsu";
         Book original = GenerateSampleBook();
         original.PracticeMode = PracticeMode.AskForBothMixed;
@@ -158,7 +159,7 @@ public class BookFileFormat2Tests
     public async Task TestWriteReadVhf1_WithoutResults()
     {
         string tempPath = Path.GetTempPath();
-        string path = Path.Combine(tempPath, $"Vocup_{nameof(TestWriteReadVhf1_WithoutResults)}.vhf");
+        string path = GetTempFilePath();
         string vhrCode = "wetwjlvwhspsre4slcb01mwk";
         Book original = GenerateSampleBook();
         original.VhrCode = vhrCode;
@@ -239,7 +240,7 @@ public class BookFileFormat2Tests
     public async Task TestWriteReadVhf2()
     {
         string tempPath = Path.GetTempPath();
-        string path = Path.Combine(tempPath, $"Vocup_{nameof(TestWriteReadVhf2)}.vhf");
+        string path = GetTempFilePath();
         Book original = GenerateSampleBook();
 
         IStorageFile file;
@@ -274,7 +275,7 @@ public class BookFileFormat2Tests
     public async Task TestWriteReadVhf2_WithoutResults()
     {
         string tempPath = Path.GetTempPath();
-        string path = Path.Combine(tempPath, $"Vocup_{nameof(TestWriteReadVhf2_WithoutResults)}.vhf");
+        string path = GetTempFilePath();
         Book original = GenerateSampleBook();
 
         IStorageFile file;
@@ -322,5 +323,12 @@ public class BookFileFormat2Tests
             synonym.Practices.Add(new(practiceDate, PracticeResult2.Correct));
         }
         return book;
+    }
+
+    private static string GetTempFilePath([CallerMemberName] string? testName = null)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(testName);
+        string tempPath = Path.GetTempPath();
+        return Path.Combine(tempPath, $"Vocup_{nameof(BookFileFormat2Tests)}_{testName}.vhf");
     }
 }
