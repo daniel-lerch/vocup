@@ -1,0 +1,47 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/docs/">
+    <File Path="docs/architecture.md" />
+    <File Path="docs/competitors.md" />
+    <File Path="docs/fileformats.md" />
+    <File Path="docs/install-on-linux.md" />
+    <File Path="docs/privacy.md" />
+  </Folder>
+  <Folder Name="/setup/">
+    <File Path="setup/icon_vhf.ico" />
+    <File Path="setup/left.bmp" />
+    <File Path="setup/license.txt" />
+    <File Path="setup/setup_icon.ico" />
+    <File Path="setup/top.bmp" />
+    <File Path="setup/vocup.iss" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Vocup.Android/Vocup.Android.csproj">
+      <Deploy />
+    </Project>
+    <Project Path="src/Vocup.Desktop/Vocup.Desktop.csproj" />
+    <Project Path="src/Vocup.WinForms/Vocup.WinForms.csproj">
+      <Platform Solution="*|ARM64" Project="ARM64" />
+      <Platform Solution="*|x64" Project="x64" />
+      <Platform Solution="*|x86" Project="x86" />
+    </Project>
+    <Project Path="src/Vocup/Vocup.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Vocup.UnitTests/Vocup.UnitTests.csproj">
+      <Platform Solution="*|ARM64" Project="ARM64" />
+      <Platform Solution="*|x64" Project="x64" />
+      <Platform Solution="*|x86" Project="x86" />
+    </Project>
+  </Folder>
+  <Folder Name="/_/">
+    <File Path="build.ps1" />
+    <File Path="Directory.Build.props" />
+    <File Path="README.md" />
+  </Folder>
+</Solution>

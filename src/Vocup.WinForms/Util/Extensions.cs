@@ -52,11 +52,6 @@ public static class CollectionExtensions
         }
     }
 
-    public static IOrderedEnumerable<T> Shuffle<T>(this IEnumerable<T> enumerable)
-    {
-        return enumerable.OrderBy(x => Random.Shared.Next());
-    }
-
     public static int NextIndexOf<T>(this IList<T> collection, Predicate<T> predicate, int previousIndex)
     {
         int first, last;
