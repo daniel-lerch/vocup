@@ -307,7 +307,7 @@
     <value>F5</value>
   </data>
   <data name="TsmiAddWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>170, 22</value>
   </data>
   <data name="TsmiAddWord.Text" xml:space="preserve">
     <value>Add new word</value>
@@ -319,7 +319,7 @@
     <value>Ctrl+R</value>
   </data>
   <data name="TsmiEditWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>170, 22</value>
   </data>
   <data name="TsmiEditWord.Text" xml:space="preserve">
     <value>Edit word</value>
@@ -328,7 +328,7 @@
     <value>False</value>
   </data>
   <data name="TsmiDeleteWord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>170, 22</value>
   </data>
   <data name="TsmiDeleteWord.Text" xml:space="preserve">
     <value>Delete word</value>
@@ -1166,7 +1166,7 @@ Just open a vocabulary book or create a new one.</value>
     <value>784, 561</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 600</value>
+    <value>600, 400</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

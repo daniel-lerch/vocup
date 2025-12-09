@@ -186,7 +186,8 @@ public partial class MainForm : Form, IMainForm
         if (isVisible && Program.Settings.MainFormBounds != default)
         {
             // visible => restore the bounds of the main form
-            Bounds = Program.Settings.MainFormBounds;
+            Rectangle logicalBounds = Program.Settings.MainFormBounds;
+            Bounds = new(logicalBounds.Location, logicalBounds.Size.Multiply(DeviceDpi / 96f).Round());
 
             // Do not restore the window state when the form was minimzed
             if (Program.Settings.MainFormWindowState != FormWindowState.Minimized)

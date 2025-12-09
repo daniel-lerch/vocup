@@ -1,6 +1,6 @@
 ﻿using Avalonia.Controls;
-using Avalonia.ReactiveUI;
 using ReactiveUI;
+using ReactiveUI.Avalonia;
 using Vocup.ViewModels;
 
 namespace Vocup.Views;
