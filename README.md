@@ -24,7 +24,7 @@ Install Vocup for Android directly from the Google Play Store. **Limited functio
 
 ### macOS
 
-Vocup is going to support macOS in the future [#18](https://github.com/daniel-lerch/vocup/issues/18). 
+Vocup is going to support macOS in the future [#18](https://github.com/daniel-lerch/vocup/issues/18).
 
 ### iOS
 
