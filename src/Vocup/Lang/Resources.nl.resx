@@ -120,6 +120,9 @@
   <data name="AboutView.Components" xml:space="preserve">
     <value>Componenten</value>
   </data>
+  <data name="AboutView.Donate" xml:space="preserve">
+    <value>Doneer</value>
+  </data>
   <data name="AboutView.Download" xml:space="preserve">
     <value>Download</value>
   </data>
