@@ -19,14 +19,20 @@ public class MainViewModel : ViewModelBase
         set => this.RaiseAndSetIfChanged(ref _currentView, value);
     }
 
-    private string _errorMessage = string.Empty;
-    public string ErrorMessage
+    private BookViewModel? _book;
+    public BookViewModel? Book
     {
-        get => _errorMessage;
-        set => this.RaiseAndSetIfChanged(ref _errorMessage, value);
+        get => _book;
+        set => this.RaiseAndSetIfChanged(ref _book, value);
     }
 
-    public bool HandlersRegistered { get; set; }
+    private bool _isPaneOpen = true;
+    public bool IsPaneOpen
+    {
+        get => _isPaneOpen;
+        set => this.RaiseAndSetIfChanged(ref _isPaneOpen, value);
+    }
+
 
     public AboutViewModel About { get; }
 
@@ -35,6 +41,7 @@ public class MainViewModel : ViewModelBase
 
     public ICommand OpenFileCommand { get; }
     public ICommand AboutCommand { get; }
+    public ICommand TogglePaneCommand { get; }
 
     public MainViewModel()
     {
@@ -60,11 +67,19 @@ public class MainViewModel : ViewModelBase
             {
                 CurrentView = new ErrorViewModel($"Error opening file: {ex.Message}");
             }
+
+            IsPaneOpen = false;
         });
 
         AboutCommand = ReactiveCommand.Create(() =>
         {
             CurrentView = About;
+            IsPaneOpen = false;
+        });
+
+        TogglePaneCommand = ReactiveCommand.Create(() =>
+        {
+            IsPaneOpen = !IsPaneOpen;
         });
     }
 
