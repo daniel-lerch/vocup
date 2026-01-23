@@ -17,7 +17,7 @@
 	<UserControl.Resources>
 		<ResourceDictionary>
 			<views:DoubleLessOrEqualConverter x:Key="DoubleLessOrEqualConverter" />
-			
+
 			<!--
 			Theme Variant specific styles only work through resources:
 			https://github.com/AvaloniaUI/Avalonia/discussions/20444
@@ -51,14 +51,27 @@
 
 		</SplitView.Styles>
 		<SplitView.Pane>
-			<Grid RowDefinitions="Auto, *, Auto" ColumnDefinitions="Auto" Margin="4">
-				<Button Command="{Binding OpenFileCommand}" Grid.Row="0" Grid.Column="0">
+			<Grid RowDefinitions="Auto, Auto, *, Auto" ColumnDefinitions="Auto" Margin="4">
+				<Button Command="{Binding TogglePaneCommand}">
+					<Button.Styles>
+						<Style Selector="SplitView:not(.toggleable) Button">
+							<Setter Property="IsVisible" Value="False" />
+						</Style>
+					</Button.Styles>
+					<Svg Path="/Assets/bars-solid-full.svg" Width="16" Height="16" />
+				</Button>
+				<Button Command="{Binding OpenFileCommand}" Grid.Row="1">
 					<StackPanel Orientation="Horizontal" Spacing="8">
 						<Svg Path="/Assets/file-regular-full.svg" Width="16" Height="16" />
 						<TextBlock Text="Open Book" VerticalAlignment="Center" />
 					</StackPanel>
 				</Button>
-				<Button Command="{Binding AboutCommand}" Content="About" Grid.Row="2" Grid.Column="0" />
+				<Button Command="{Binding AboutCommand}" Grid.Row="3">
+					<StackPanel Orientation="Horizontal" Spacing="8">
+						<Svg Path="/Assets/circle-info-solid-full.svg" Width="16" Height="16" />
+						<TextBlock Text="About" VerticalAlignment="Center" />
+					</StackPanel>
+				</Button>
 			</Grid>
 		</SplitView.Pane>
 
