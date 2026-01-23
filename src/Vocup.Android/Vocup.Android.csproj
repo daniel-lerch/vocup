@@ -28,7 +28,7 @@
   <ItemGroup>
     <PackageReference Include="Avalonia.Android" Version="$(AvaloniaVersion)" />
     <PackageReference Include="SkiaSharp" Version="3.119.1" />
-    <PackageReference Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.2.0" />
+    <PackageReference Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.2.0.1" />
   </ItemGroup>
 
   <ItemGroup>
