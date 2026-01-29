@@ -31,6 +31,12 @@ public class LicensesViewModel
         },
         new()
         {
+            Name = "FontAwesome Icons",
+            License = "CC BY 4.0",
+            Url = "https://fontawesome.com/",
+        },
+        new()
+        {
             Name = "Losttech Settings",
             License = "Apache-2.0",
             Url = "https://github.com/losttech/Settings",
