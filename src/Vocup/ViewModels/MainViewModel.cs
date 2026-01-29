@@ -19,13 +19,6 @@ public class MainViewModel : ViewModelBase
         set => this.RaiseAndSetIfChanged(ref _currentView, value);
     }
 
-    private BookViewModel? _book;
-    public BookViewModel? Book
-    {
-        get => _book;
-        set => this.RaiseAndSetIfChanged(ref _book, value);
-    }
-
     private bool _isPaneOpen = true;
     public bool IsPaneOpen
     {
