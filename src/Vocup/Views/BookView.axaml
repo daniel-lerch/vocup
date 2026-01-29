@@ -1,62 +1,65 @@
 <UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:vm="clr-namespace:Vocup.ViewModels;assembly=Vocup.Avalonia"
-             xmlns:views="clr-namespace:Vocup.Views;assembly=Vocup.Avalonia"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
-             x:Class="Vocup.Views.BookView"
-             x:DataType="vm:BookViewModel">
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="clr-namespace:Vocup.ViewModels;assembly=Vocup.Avalonia"
+			 xmlns:views="clr-namespace:Vocup.Views;assembly=Vocup.Avalonia"
+			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+			 x:Class="Vocup.Views.BookView"
+			 x:DataType="vm:BookViewModel">
 
-  <Design.DataContext>
-    <!-- This only sets the DataContext for the previewer in an IDE,
-         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-    <vm:BookDesignViewModel />
-  </Design.DataContext>
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+		to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<vm:BookDesignViewModel />
+	</Design.DataContext>
 
-  <UserControl.Resources>
-    <views:PracticeStateToBrushConverter x:Key="PracticeStateToBrushConverter" />
-    <views:PracticeModeToVisibilityConverter x:Key="PracticeModeToVisibilityConverter" />
-  </UserControl.Resources>
+	<UserControl.Resources>
+		<views:PracticeStateToBrushConverter x:Key="PracticeStateToBrushConverter" />
+		<views:PracticeModeToVisibilityConverter x:Key="PracticeModeToVisibilityConverter" />
+	</UserControl.Resources>
 
-  <ScrollViewer>
-    <ItemsControl ItemsSource="{Binding Words}">
-      <ItemsControl.ItemTemplate>
-        <DataTemplate>
-          <Grid>
-            <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="*" />
-              <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+	<Grid RowDefinitions="Auto, *">
+		<Button Margin="4">Practice</Button>
+		<ScrollViewer Grid.Row="1">
+			<ItemsControl ItemsSource="{Binding Words}">
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
 
-            <ItemsControl ItemsSource="{Binding MotherTongue}" Grid.Column="0">
-              <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                  <DockPanel>
-                    <Ellipse Width="8" Height="8" VerticalAlignment="Center" DockPanel.Dock="Left"
-                             Fill="{Binding PracticeState, Converter={StaticResource PracticeStateToBrushConverter}}"
-                             IsVisible="{Binding Word.Book.PracticeMode, Converter={StaticResource PracticeModeToVisibilityConverter}, ConverterParameter=AskForMotherTongue}" />
-                    <TextBlock Text="{Binding Value}" TextWrapping="Wrap" Margin="4" />
-                  </DockPanel>
-                </DataTemplate>
-              </ItemsControl.ItemTemplate>
-            </ItemsControl>
-            <ItemsControl ItemsSource="{Binding ForeignLanguage}" Grid.Column="1">
-              <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                  <DockPanel>
-                    <Ellipse Width="8" Height="8" VerticalAlignment="Center" DockPanel.Dock="Left"
-                             Fill="{Binding PracticeState, Converter={StaticResource PracticeStateToBrushConverter}}"
-                             IsVisible="{Binding Word.Book.PracticeMode, Converter={StaticResource PracticeModeToVisibilityConverter}, ConverterParameter=AskForForeignLang}" />
-                    <TextBlock Text="{Binding Value}" TextWrapping="Wrap" Margin="4" />
-                  </DockPanel>
-                </DataTemplate>
-              </ItemsControl.ItemTemplate>
-            </ItemsControl>
-          </Grid>
-        </DataTemplate>
-      </ItemsControl.ItemTemplate>
-    </ItemsControl>
-  </ScrollViewer>
+							<ItemsControl ItemsSource="{Binding MotherTongue}" Grid.Column="0">
+								<ItemsControl.ItemTemplate>
+									<DataTemplate>
+										<DockPanel>
+											<Ellipse Width="8" Height="8" VerticalAlignment="Center" DockPanel.Dock="Left"
+													 Fill="{Binding PracticeState, Converter={StaticResource PracticeStateToBrushConverter}}"
+													 IsVisible="{Binding Word.Book.PracticeMode, Converter={StaticResource PracticeModeToVisibilityConverter}, ConverterParameter=AskForMotherTongue}" />
+											<TextBlock Text="{Binding Value}" TextWrapping="Wrap" Margin="4" />
+										</DockPanel>
+									</DataTemplate>
+								</ItemsControl.ItemTemplate>
+							</ItemsControl>
+							<ItemsControl ItemsSource="{Binding ForeignLanguage}" Grid.Column="1">
+								<ItemsControl.ItemTemplate>
+									<DataTemplate>
+										<DockPanel>
+											<Ellipse Width="8" Height="8" VerticalAlignment="Center" DockPanel.Dock="Left"
+													 Fill="{Binding PracticeState, Converter={StaticResource PracticeStateToBrushConverter}}"
+													 IsVisible="{Binding Word.Book.PracticeMode, Converter={StaticResource PracticeModeToVisibilityConverter}, ConverterParameter=AskForForeignLang}" />
+											<TextBlock Text="{Binding Value}" TextWrapping="Wrap" Margin="4" />
+										</DockPanel>
+									</DataTemplate>
+								</ItemsControl.ItemTemplate>
+							</ItemsControl>
+						</Grid>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</ScrollViewer>
+	</Grid>
 
 </UserControl>
