@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using System;
+using Avalonia.Platform.Storage;
 using Vocup.ViewModels;
 using Vocup.Views;
 
@@ -16,9 +16,9 @@ public partial class App : Application
         AvaloniaXamlLoader.Load(this);
     }
 
-    public void OpenFile(Uri path)
+    public void OpenFile(IStorageFile file)
     {
-        mainViewModel?.OpenFile(path);
+        mainViewModel?.OpenFile(file);
     }
 
     public override void OnFrameworkInitializationCompleted()

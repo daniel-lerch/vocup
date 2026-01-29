@@ -1,10 +1,10 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Content.PM;
-using Android.OS;
-using Avalonia;
 using Avalonia.Android;
-using ReactiveUI.Avalonia;
+using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Platform.Storage;
+using System.Linq;
 
 namespace Vocup.Android;
 
@@ -21,35 +21,19 @@ namespace Vocup.Android;
     DataSchemes = ["file", "content"],
     DataMimeType = "application/octet-stream",
     DataPathPattern = ".*\\.vhf")]
-public class MainActivity : AvaloniaMainActivity<App>
+public class MainActivity : AvaloniaMainActivity
 {
-    protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
+    public MainActivity()
     {
-        return base.CustomizeAppBuilder(builder)
-            .WithInterFont()
-            .UseReactiveUI();
+        ((IAvaloniaActivity)this).Activated += HandleIntent;
     }
-
-    protected override void OnCreate(Bundle? savedInstanceState)
+    private static void HandleIntent(object? sender, ActivatedEventArgs e)
     {
-        base.OnCreate(savedInstanceState);
-        HandleIntent(Intent);
-    }
-
-    protected override void OnNewIntent(Intent? intent)
-    {
-        base.OnNewIntent(intent);
-        HandleIntent(intent);
-    }
-
-    private static void HandleIntent(Intent? intent)
-    {
-        if (intent?.Action == Intent.ActionView && intent.Data != null && Avalonia.Application.Current is App app)
+        if (e is FileActivatedEventArgs fileActivated && Avalonia.Application.Current is App app)
         {
-            string? uri = intent.Data.ToString();
-            if (uri != null)
+            if (fileActivated.Files.FirstOrDefault() is IStorageFile file)
             {
-                app.OpenFile(new(uri));
+                app.OpenFile(file);
             }
         }
     }
