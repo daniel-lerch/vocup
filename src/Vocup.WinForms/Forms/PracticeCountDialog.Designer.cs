@@ -43,15 +43,18 @@
             RbLaterPracticed = new System.Windows.Forms.RadioButton();
             RbAllDates = new System.Windows.Forms.RadioButton();
             GroupState = new System.Windows.Forms.GroupBox();
+            pictureBox4 = new System.Windows.Forms.PictureBox();
+            RbFullyPracticed = new System.Windows.Forms.RadioButton();
             pictureBox3 = new System.Windows.Forms.PictureBox();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             GroupPriority = new System.Windows.Forms.GroupBox();
-            GroupCount = new System.Windows.Forms.GroupBox();
-            RbEarlierCreated = new System.Windows.Forms.RadioButton();
             RbLaterCreated = new System.Windows.Forms.RadioButton();
+            RbEarlierCreated = new System.Windows.Forms.RadioButton();
+            GroupCount = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)NudCount).BeginInit();
             GroupState.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -158,6 +161,8 @@
             // 
             // GroupState
             // 
+            GroupState.Controls.Add(pictureBox4);
+            GroupState.Controls.Add(RbFullyPracticed);
             GroupState.Controls.Add(pictureBox3);
             GroupState.Controls.Add(pictureBox2);
             GroupState.Controls.Add(pictureBox1);
@@ -168,6 +173,21 @@
             resources.ApplyResources(GroupState, "GroupState");
             GroupState.Name = "GroupState";
             GroupState.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = Properties.Icons.FullyPracticed;
+            resources.ApplyResources(pictureBox4, "pictureBox4");
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.TabStop = false;
+            // 
+            // RbFullyPracticed
+            // 
+            resources.ApplyResources(RbFullyPracticed, "RbFullyPracticed");
+            RbFullyPracticed.Name = "RbFullyPracticed";
+            RbFullyPracticed.TabStop = true;
+            RbFullyPracticed.UseVisualStyleBackColor = true;
+            RbFullyPracticed.CheckedChanged += RbFullyPracticed_CheckedChanged;
             // 
             // pictureBox3
             // 
@@ -202,6 +222,20 @@
             GroupPriority.Name = "GroupPriority";
             GroupPriority.TabStop = false;
             // 
+            // RbLaterCreated
+            // 
+            resources.ApplyResources(RbLaterCreated, "RbLaterCreated");
+            RbLaterCreated.Name = "RbLaterCreated";
+            RbLaterCreated.TabStop = true;
+            RbLaterCreated.UseVisualStyleBackColor = true;
+            // 
+            // RbEarlierCreated
+            // 
+            resources.ApplyResources(RbEarlierCreated, "RbEarlierCreated");
+            RbEarlierCreated.Name = "RbEarlierCreated";
+            RbEarlierCreated.TabStop = true;
+            RbEarlierCreated.UseVisualStyleBackColor = true;
+            // 
             // GroupCount
             // 
             GroupCount.Controls.Add(BtnCount20);
@@ -213,20 +247,6 @@
             resources.ApplyResources(GroupCount, "GroupCount");
             GroupCount.Name = "GroupCount";
             GroupCount.TabStop = false;
-            // 
-            // RbEarlierCreated
-            // 
-            resources.ApplyResources(RbEarlierCreated, "RbEarlierCreated");
-            RbEarlierCreated.Name = "RbEarlierCreated";
-            RbEarlierCreated.TabStop = true;
-            RbEarlierCreated.UseVisualStyleBackColor = true;
-            // 
-            // RbLaterCreated
-            // 
-            resources.ApplyResources(RbLaterCreated, "RbLaterCreated");
-            RbLaterCreated.Name = "RbLaterCreated";
-            RbLaterCreated.TabStop = true;
-            RbLaterCreated.UseVisualStyleBackColor = true;
             // 
             // PracticeCountDialog
             // 
@@ -247,6 +267,7 @@
             ((System.ComponentModel.ISupportInitialize)NudCount).EndInit();
             GroupState.ResumeLayout(false);
             GroupState.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -265,10 +286,6 @@
         public System.Windows.Forms.Button BtnCount30;
         public System.Windows.Forms.NumericUpDown NudCount;
         public System.Windows.Forms.Button BtnCountCustom;
-        public System.Windows.Forms.RadioButton RbUnpracticed;
-        public System.Windows.Forms.RadioButton RbWronglyPracticed;
-        public System.Windows.Forms.RadioButton RbCorrectlyPracticed;
-        public System.Windows.Forms.RadioButton RbAllStates;
         public System.Windows.Forms.RadioButton RbEarlierPracticed;
         public System.Windows.Forms.RadioButton RbLaterPracticed;
         public System.Windows.Forms.RadioButton RbAllDates;
@@ -280,5 +297,11 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.RadioButton RbLaterCreated;
         private System.Windows.Forms.RadioButton RbEarlierCreated;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.RadioButton RbFullyPracticed;
+        private System.Windows.Forms.RadioButton RbUnpracticed;
+        private System.Windows.Forms.RadioButton RbWronglyPracticed;
+        private System.Windows.Forms.RadioButton RbCorrectlyPracticed;
+        private System.Windows.Forms.RadioButton RbAllStates;
     }
 }
