@@ -3,7 +3,6 @@ using ReactiveUI;
 using System;
 using System.Reactive;
 using System.Reactive.Linq;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Vocup.IO;
 using Vocup.Models;
@@ -30,7 +29,6 @@ public class MainViewModel : ViewModelBase
     public AboutViewModel About { get; }
 
     public Interaction<Unit, IStorageFile?> PickFileInteraction { get; } = new();
-    public Interaction<Uri, IStorageFile?> FileFromUriInteraction { get; } = new();
 
     public ICommand OpenFileCommand { get; }
     public ICommand AboutCommand { get; }
@@ -76,33 +74,15 @@ public class MainViewModel : ViewModelBase
         });
     }
 
-    public async void OpenFile(Uri path)
+    public async void OpenFile(IStorageFile file)
     {
         if (OperatingSystem.IsAndroid())
             CurrentView = new ErrorViewModel("Loading...");
         try
         {
-            IStorageFile? file = null;
-            // FileFromUriInteraction will be registered after view activation.
-            // Workaround: Wait up to 5 seconds for view to register interaction.
-            for (int attempt = 0; attempt < 100; attempt++)
-            {
-                try
-                {
-                    file = await FileFromUriInteraction.Handle(path);
-                    break;
-                }
-                catch (UnhandledInteractionException<Uri, IStorageFile?>)
-                {
-                    await Task.Delay(50);
-                }
-            }
-            if (file != null)
-            {
-                Book book = new();
-                await BookFileFormat2.DetectAndRead(file, book, null);
-                CurrentView = new BookViewModel(book);
-            }
+            Book book = new();
+            await BookFileFormat2.DetectAndRead(file, book, null);
+            CurrentView = new BookViewModel(book);
         }
         catch (Exception ex)
         {
