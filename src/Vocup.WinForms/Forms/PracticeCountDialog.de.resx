@@ -153,6 +153,9 @@
   <data name="RbAllDates.Text" xml:space="preserve">
     <value>Alle (gemischt)</value>
   </data>
+  <data name="RbFullyPracticed.Text" xml:space="preserve">
+    <value>Vollständig geübte Vokabeln</value>
+  </data>
   <data name="GroupState.Text" xml:space="preserve">
     <value>Welche Vokabeln möchten Sie üben?</value>
   </data>

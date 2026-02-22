@@ -86,7 +86,6 @@ public class VocabularyBookController : IDisposable
         Parent.StatisticsPanel.FullyPracticed = VocabularyBook.Statistics.FullyPracticed;
 
         Parent.VocabularyBookHasContent(VocabularyBook.Words.Count > 0);
-        Parent.VocabularyBookPracticable(VocabularyBook.Statistics.NotFullyPracticed > 0);
     }
 
     private void OnSelectionChanged(object sender, EventArgs e)

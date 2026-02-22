@@ -18,7 +18,7 @@ public partial class PracticeCountDialog : Form
         InitializeComponent();
         this.book = book;
         PracticeList = new List<VocabularyWordPractice>();
-        Count = book.Statistics.NotFullyPracticed;
+        Count = book.Words.Count;
     }
 
     public List<VocabularyWordPractice> PracticeList { get; }
@@ -43,6 +43,7 @@ public partial class PracticeCountDialog : Form
         RbUnpracticed.Enabled = book.Statistics.Unpracticed > 0;
         RbWronglyPracticed.Enabled = book.Statistics.WronglyPracticed > 0;
         RbCorrectlyPracticed.Enabled = book.Statistics.CorrectlyPracticed > 0;
+        RbFullyPracticed.Enabled = book.Statistics.FullyPracticed > 0;
     }
 
     private void BtnCount20_Click(object sender, EventArgs e) => Finish(20);
@@ -58,7 +59,7 @@ public partial class PracticeCountDialog : Form
     private void RbAllStates_CheckedChanged(object sender, EventArgs e)
     {
         if (RbAllStates.Checked)
-            Count = book.Statistics.NotFullyPracticed;
+            Count = book.Words.Count;
     }
 
     private void RbUnpracticed_CheckedChanged(object sender, EventArgs e)
@@ -79,6 +80,12 @@ public partial class PracticeCountDialog : Form
             Count = book.Statistics.CorrectlyPracticed;
     }
 
+    private void RbFullyPracticed_CheckedChanged(object sender, EventArgs e)
+    {
+        if (RbFullyPracticed.Checked)
+            Count = book.Statistics.FullyPracticed;
+    }
+
     private void Finish(int count)
     {
         ListCompositor<VocabularyWord> compositor = new ListCompositor<VocabularyWord>();
@@ -89,6 +96,8 @@ public partial class PracticeCountDialog : Form
             .Where(x => x.PracticeState == PracticeState.WronglyPracticed);
         IEnumerable<VocabularyWord> correctlyPracticedItems = book.Words
             .Where(x => x.PracticeState == PracticeState.CorrectlyPracticed);
+        IEnumerable<VocabularyWord> fullyPracticedItems = book.Words
+            .Where(x => x.PracticeState == PracticeState.FullyPracticed);
 
         if (RbAllDates.Checked)
         {
@@ -96,30 +105,35 @@ public partial class PracticeCountDialog : Form
             unpracticedItems = unpracticedItems.Shuffle();
             wronglyPracticedItems = wronglyPracticedItems.Shuffle();
             correctlyPracticedItems = correctlyPracticedItems.Shuffle();
+            fullyPracticedItems = fullyPracticedItems.Shuffle();
         }
         if (RbEarlierPracticed.Checked)
         {
             unpracticedItems = unpracticedItems.OrderBy(x => x.PracticeDate);
             wronglyPracticedItems = wronglyPracticedItems.OrderBy(x => x.PracticeDate);
             correctlyPracticedItems = correctlyPracticedItems.OrderBy(x => x.PracticeDate);
+            fullyPracticedItems = fullyPracticedItems.OrderBy(x => x.PracticeDate);
         }
         else if (RbLaterPracticed.Checked)
         {
             unpracticedItems = unpracticedItems.OrderByDescending(x => x.PracticeDate);
             wronglyPracticedItems = wronglyPracticedItems.OrderByDescending(x => x.PracticeDate);
             correctlyPracticedItems = correctlyPracticedItems.OrderByDescending(x => x.PracticeDate);
+            fullyPracticedItems = fullyPracticedItems.OrderByDescending(x => x.PracticeDate);
         }
         else if (RbEarlierCreated.Checked)
         {
             unpracticedItems = unpracticedItems.OrderBy(x => x.CreationTime);
             wronglyPracticedItems = wronglyPracticedItems.OrderBy(x => x.CreationTime);
             correctlyPracticedItems = correctlyPracticedItems.OrderBy(x => x.CreationTime);
+            fullyPracticedItems = fullyPracticedItems.OrderBy(x => x.CreationTime);
         }
         else if (RbLaterCreated.Checked)
         {
             unpracticedItems = unpracticedItems.OrderByDescending(x => x.CreationTime);
             wronglyPracticedItems = wronglyPracticedItems.OrderByDescending(x => x.CreationTime);
             correctlyPracticedItems = correctlyPracticedItems.OrderByDescending(x => x.CreationTime);
+            fullyPracticedItems = fullyPracticedItems.OrderByDescending(x => x.CreationTime);
         }
 
         if (RbAllStates.Checked)
@@ -132,6 +146,8 @@ public partial class PracticeCountDialog : Form
 
             compositor.AddSource(correctlyPracticedItems.ToList(),
                 count * Program.Settings.PracticePercentageCorrect / 100d);
+
+            compositor.AddSource(fullyPracticedItems.ToList(), 0.0001); // Percentage must be greater than 0
         }
         else if (RbUnpracticed.Checked)
         {
@@ -144,6 +160,10 @@ public partial class PracticeCountDialog : Form
         else if (RbCorrectlyPracticed.Checked)
         {
             compositor.AddSource(correctlyPracticedItems.ToList(), 1d);
+        }
+        else if (RbFullyPracticed.Checked)
+        {
+            compositor.AddSource(fullyPracticedItems.ToList(), 1d);
         }
 
         List<VocabularyWord> resultList = compositor.ToList(count);

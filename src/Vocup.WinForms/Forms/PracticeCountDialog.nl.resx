@@ -153,6 +153,9 @@
   <data name="RbAllDates.Text" xml:space="preserve">
     <value>Alle (gemixt)</value>
   </data>
+  <data name="RbFullyPracticed.Text" xml:space="preserve">
+    <value>Volledig geoefende woordenschat</value>
+  </data>
   <data name="GroupState.Text" xml:space="preserve">
     <value>Welke woorden wil je oefenen?</value>
   </data>

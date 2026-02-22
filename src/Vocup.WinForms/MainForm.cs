@@ -69,9 +69,7 @@ public partial class MainForm : Form, IMainForm
 
         TsmiExport.Enabled = value;
         TsmiShare.Enabled = value;
-    }
-    public void VocabularyBookPracticable(bool value)
-    {
+
         BtnPractice.Enabled = value;
         TsmiPractice.Enabled = value;
     }
@@ -124,7 +122,6 @@ public partial class MainForm : Form, IMainForm
             VocabularyBookLoaded(false);
             VocabularyWordSelected(false);
             VocabularyBookHasContent(false);
-            VocabularyBookPracticable(false);
             VocabularyBookHasFilePath(false);
             VocabularyBookUnsavedChanges(false);
             VocabularyBookName(null);
