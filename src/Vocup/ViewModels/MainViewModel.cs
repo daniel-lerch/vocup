@@ -47,6 +47,8 @@ public class MainViewModel : ViewModelBase
                 if (OperatingSystem.IsAndroid())
                     CurrentView = new ErrorViewModel("Loading...");
 
+                IsPaneOpen = false;
+
                 if (file != null)
                 {
                     Book book = new();
@@ -57,9 +59,8 @@ public class MainViewModel : ViewModelBase
             catch (Exception ex)
             {
                 CurrentView = new ErrorViewModel($"Error opening file: {ex.Message}");
+                IsPaneOpen = false;
             }
-
-            IsPaneOpen = false;
         });
 
         AboutCommand = ReactiveCommand.Create(() =>
@@ -78,6 +79,9 @@ public class MainViewModel : ViewModelBase
     {
         if (OperatingSystem.IsAndroid())
             CurrentView = new ErrorViewModel("Loading...");
+
+        IsPaneOpen = false;
+
         try
         {
             Book book = new();
