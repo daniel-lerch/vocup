@@ -23,3 +23,14 @@ public class PracticeWordViewModel
     public IReadOnlyList<string> ReferenceSynonyms { get; }
     public IReadOnlyList<PracticeSynonymViewModel> InputSynonyms { get; }
 }
+
+public class PracticeWordDesignViewModel : PracticeWordViewModel
+{
+    public PracticeWordDesignViewModel() : base(
+        new Word(
+            motherTongue: ["Affäre", "Verhältnis"],
+            foreignLanguage: ["fling", "affair"]
+        ),
+        PracticeDirection.AskForForeignLanguage)
+    { }
+}
