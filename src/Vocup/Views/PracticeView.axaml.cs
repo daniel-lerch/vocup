@@ -1,8 +1,6 @@
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
 
-namespace Vocup;
+namespace Vocup.Views;
 
 public partial class PracticeView : UserControl
 {

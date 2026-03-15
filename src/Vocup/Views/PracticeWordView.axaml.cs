@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace Vocup;
+namespace Vocup.Views;
 
 public partial class PracticeWordView : UserControl
 {

@@ -4,7 +4,7 @@ using Vocup.Models;
 
 namespace Vocup.ViewModels;
 
-public class PracticeWordViewModel
+public class PracticeWordViewModel : ViewModelBase
 {
     public PracticeWordViewModel(Word word, PracticeDirection direction)
     {

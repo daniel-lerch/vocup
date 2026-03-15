@@ -20,7 +20,7 @@
 	</UserControl.Resources>
 
 	<Grid RowDefinitions="Auto, *">
-		<Button Margin="4">Practice</Button>
+		<Button Command="{Binding Practice}" Margin="4">Practice</Button>
 		<ScrollViewer Grid.Row="1">
 			<ItemsControl ItemsSource="{Binding Words}">
 				<ItemsControl.ItemTemplate>

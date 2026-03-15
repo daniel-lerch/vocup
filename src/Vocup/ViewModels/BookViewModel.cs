@@ -26,16 +26,14 @@ public class BookViewModel : ViewModelBase, IDisposable
         practiceModeHelper = book.WhenAnyValue(b => b.PracticeMode)
             .ToProperty(this, vm => vm.PracticeMode);
 
-        AddWord = ReactiveCommand.Create(() => book.Words.Insert(0, new Word(["Test"], ["test"])));
-        AddSynonym = ReactiveCommand.Create(() => book.Words[0].ForeignLanguage.Add(new("test")));
+        Practice = ReactiveCommand.Create(() => book.Words.Insert(0, new Word(["Test"], ["test"])));
     }
 
     private ReadOnlyObservableCollection<WordViewModel> _words;
     public ReadOnlyObservableCollection<WordViewModel> Words => _words;
     public PracticeMode PracticeMode => practiceModeHelper.Value;
 
-    public ReactiveCommand<Unit, Unit> AddWord { get; }
-    public ReactiveCommand<Unit, Unit> AddSynonym { get; }
+    public ReactiveCommand<Unit, Unit> Practice { get; }
 
     public void Dispose()
     {

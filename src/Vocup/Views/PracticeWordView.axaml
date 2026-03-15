@@ -4,7 +4,7 @@
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:vm="clr-namespace:Vocup.ViewModels;assembly=Vocup.Avalonia"
 			 mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400"
-			 x:Class="Vocup.PracticeWordView"
+			 x:Class="Vocup.Views.PracticeWordView"
 			 x:DataType="vm:PracticeWordViewModel">
 
 	<Design.DataContext>
