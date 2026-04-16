@@ -1,11 +1,9 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Content.PM;
-using Avalonia;
 using Avalonia.Android;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Platform.Storage;
-using ReactiveUI.Avalonia;
 using System.Linq;
 
 namespace Vocup.Android;
@@ -15,26 +13,18 @@ namespace Vocup.Android;
     Theme = "@style/MyTheme.NoActionBar",
     Icon = "@drawable/icon",
     MainLauncher = true,
-    // Avalonia only supports single instance https://github.com/AvaloniaUI/Avalonia/issues/17943
-    LaunchMode = LaunchMode.SingleInstance,
+    LaunchMode = LaunchMode.SingleInstance, // We open new tabs for new actions instead of new activities
     ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.UiMode)]
 [IntentFilter(["android.intent.action.VIEW"],
     Categories = [Intent.CategoryDefault, Intent.CategoryBrowsable],
     DataSchemes = ["file", "content"],
     DataMimeType = "application/octet-stream",
     DataPathPattern = ".*\\.vhf")]
-public class MainActivity : AvaloniaMainActivity<App>
+public class MainActivity
 {
     public MainActivity()
     {
         ((IAvaloniaActivity)this).Activated += HandleIntent;
-    }
-
-    protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
-    {
-        return base.CustomizeAppBuilder(builder)
-            .WithInterFont()
-            .UseReactiveUI(rxuiBuilder => { });
     }
 
     private static void HandleIntent(object? sender, ActivatedEventArgs e)
