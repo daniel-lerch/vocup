@@ -9,6 +9,7 @@
     <PublishProfile>win-$(Platform).pubxml</PublishProfile>
     <OutputType>WinExe</OutputType>
     <UseWindowsForms>true</UseWindowsForms>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
     <EnableMsixTooling>true</EnableMsixTooling>
     <!-- Include localization files directly in the app package: https://learn.microsoft.com/en-us/windows/uwp/app-resources/build-resources-into-app-package -->
     <AppxBundleAutoResourcePackageQualifiers>Scale|DXFeatureLevel</AppxBundleAutoResourcePackageQualifiers>
@@ -38,7 +39,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <!--<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1742" />-->
-    <PackageReference Include="Microsoft.Windows.SDK.BuildTools.MSIX" Version="1.7.260316102">
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools.MSIX" Version="1.7.260425100">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
