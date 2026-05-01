@@ -20,7 +20,7 @@ namespace Vocup.Android;
     DataSchemes = ["file", "content"],
     DataMimeType = "application/octet-stream",
     DataPathPattern = ".*\\.vhf")]
-public class MainActivity
+public class MainActivity : AvaloniaMainActivity
 {
     public MainActivity()
     {
