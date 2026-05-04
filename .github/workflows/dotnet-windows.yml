@@ -36,7 +36,7 @@ jobs:
       uses: microsoft/setup-WinAppCli@v0.1
 
     - name: Restore NuGet packages
-      run: dotnet restore $env:Solution_Name
+      run: dotnet restore $env:Test_Project_Directory
 
       # Execute all unit tests in the solution
     - name: Execute unit tests
