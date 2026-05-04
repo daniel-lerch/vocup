@@ -36,7 +36,7 @@ jobs:
       uses: microsoft/setup-WinAppCli@v0.1
 
     - name: Restore NuGet packages
-      run: dotnet restore --configuration ${{ matrix.configuration }} $env:Solution_Name
+      run: dotnet restore $env:Solution_Name
 
       # Execute all unit tests in the solution
     - name: Execute unit tests
@@ -44,23 +44,24 @@ jobs:
 
     - name: Build x64
       if: matrix.configuration == 'Release'
-      run: dotnet publish -c ${{ matrix.configuration }} -r win-x64 /p:PublishReadyToRun=true
+      run: dotnet publish -c ${{ matrix.configuration }} -r win-x64 /p:PublishReadyToRun=true $env:App_Project_Directory
 
     - name: Create MSIX package (x64)
       if: matrix.configuration == 'Release'
-      run: winapp pack # TODO add path and manifest
+      run: winapp pack src\Vocup.WinForms\bin\Release\net10.0-windows10.0.26100.0\win-x64\publish --manifest src\Vocup.WinForms\Package.appxmanifest
 
     - name: Build arm64
       if: matrix.configuration == 'Release'
-      run: dotnet publish -c ${{ matrix.configuration }} -r win-arm64 /p:PublishReadyToRun=true
+      run: dotnet publish -c ${{ matrix.configuration }} -r win-arm64 /p:PublishReadyToRun=true $env:App_Project_Directory
+
 
     - name: Create MSIX package (arm64)
       if: matrix.configuration == 'Release'
-      run: winapp pack # TODO add path and manifest
+      run: winapp pack src\Vocup.WinForms\bin\Release\net10.0-windows10.0.26100.0\win-arm64\publish --manifest src\Vocup.WinForms\Package.appxmanifest
 
     - name: Gather MSIX files
       id: gather
-      if: matrix.configuration == 'Release' && startsWith(github.ref, 'refs/tags/')
+      if: matrix.configuration == 'Release' #&& startsWith(github.ref, 'refs/tags/')
       run: |
         $gatherDirectory = Join-Path $env:App_Project_Directory "obj" "Bundle"
         New-Item -ItemType Directory -Path $gatherDirectory | Out-Null
@@ -94,7 +95,7 @@ jobs:
         Write-Output "upload_file=$uploadFile" >> $env:GITHUB_OUTPUT
 
     - name: Create MSIX bundle
-      if: matrix.configuration == 'Release' && startsWith(github.ref, 'refs/tags/')
+      if: matrix.configuration == 'Release' #&& startsWith(github.ref, 'refs/tags/')
       uses: LanceMcCarthy/Action-MsixBundler@v2.0.0
       with:
         msix-folder: ${{ steps.gather.outputs.gather_directory }}
@@ -103,7 +104,7 @@ jobs:
         sdk-version: '10.0.26100.0' # Default 10.0.19041.0 does not work anymore in September 2025
 
     - name: Create MSIX upload
-      if: matrix.configuration == 'Release' && startsWith(github.ref, 'refs/tags/')
+      if: matrix.configuration == 'Release' #&& startsWith(github.ref, 'refs/tags/')
       run: |
         $uploadFile = "${{ steps.gather.outputs.upload_file }}"
         $bundleDirectory = "${{ steps.gather.outputs.bundle_directory }}"
@@ -111,7 +112,7 @@ jobs:
         Compress-Archive -Path "$bundleDirectory\*" -DestinationPath $uploadFile
         
     - name: Upload build artifacts
-      if: matrix.configuration == 'Release' && startsWith(github.ref, 'refs/tags/')
+      if: matrix.configuration == 'Release' #&& startsWith(github.ref, 'refs/tags/')
       uses: actions/upload-artifact@v7
       with:
         name: MSIX Package
