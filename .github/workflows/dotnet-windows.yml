@@ -63,7 +63,7 @@ jobs:
       id: gather
       if: matrix.configuration == 'Release' #&& startsWith(github.ref, 'refs/tags/')
       run: |
-        $msixFiles = Get-ChildItem -Depth 1 -Include "$env:App_Package_Name*.appx"
+        $msixFiles = Get-ChildItem -Depth 1 -Include "$env:App_Package_Name*.msix"
         Write-Output "Found MSIX files: $msixFiles"
         $version = $msixFiles[0].BaseName.Split("_")[1]
         Write-Output "Bundle version based on MSIX file name is $version"
@@ -71,12 +71,12 @@ jobs:
         $uploadDirectory = Join-Path $env:App_Project_Directory "bin" "AppPackages"
         New-Item -ItemType Directory -Path $uploadDirectory | Out-Null
 
-        $uploadFile = Join-Path $uploadDirectory "$($env:App_Package_Name)_$($version)_x86_x64_arm64_bundle.appxupload"
+        $uploadFile = Join-Path $uploadDirectory "$($env:App_Package_Name)_$($version)_x86_x64_arm64_bundle.msixupload"
 
         $bundleDirectory = Join-Path $uploadDirectory "$($env:App_Package_Name)_$($version)_Test"
         New-Item -ItemType Directory -Path $bundleDirectory | Out-Null
 
-        $bundleFile = Join-Path $bundleDirectory "$($env:App_Package_Name)_$($version)_x86_x64_arm64.appxbundle"
+        $bundleFile = Join-Path $bundleDirectory "$($env:App_Package_Name)_$($version)_x86_x64_arm64.msixbundle"
 
         Write-Output "bundle_directory=$bundleDirectory" >> $env:GITHUB_OUTPUT
         Write-Output "bundle_version=$version" >> $env:GITHUB_OUTPUT
