@@ -19,7 +19,7 @@ jobs:
       Solution_Name: Vocup.slnx                                         # Replace with your solution name, i.e. MyWpfApp.sln.
       App_Project_Directory: src\Vocup.WinForms
       App_Project_Name: Vocup.WinForms
-      Test_Project_Directory: tests\Vocup.UnitTests
+      Test_Project_Directory: tests\Vocup.WinForms.UnitTests
 
     steps:
     - name: Checkout
