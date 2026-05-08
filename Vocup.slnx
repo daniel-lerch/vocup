@@ -33,7 +33,8 @@
     <Project Path="src/Vocup/Vocup.csproj" />
   </Folder>
   <Folder Name="/tests/">
-    <Project Path="tests/Vocup.UnitTests/Vocup.UnitTests.csproj">
+    <Project Path="tests/Vocup.UnitTests/Vocup.UnitTests.csproj" />
+    <Project Path="tests/Vocup.WinForms.UnitTests/Vocup.WinForms.UnitTests.csproj">
       <Platform Solution="*|ARM64" Project="ARM64" />
       <Platform Solution="*|x64" Project="x64" />
       <Platform Solution="*|x86" Project="x86" />
