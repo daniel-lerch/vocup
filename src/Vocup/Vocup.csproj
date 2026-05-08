@@ -7,6 +7,7 @@
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
     <Copyright>Copyright © 2011 Florian Amstutz, © 2018-2025 Daniel Lerch.</Copyright>
     <Version>2.3.0</Version>
+    <IsAotCompatible>true</IsAotCompatible>
   </PropertyGroup>
 
   
@@ -16,7 +17,13 @@
     <PackageReference Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersion)" />
     <!--Condition below is needed to remove AvaloniaUI.DiagnosticsSupport package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="AvaloniaUI.DiagnosticsSupport" Version="2.1.1" />
-    <PackageReference Include="ReactiveUI.Avalonia" Version="11.4.3" />
+    <PackageReference Include="DynamicData" Version="9.4.31" />
+    <!--<PackageReference Include="ReactiveUI.Avalonia" Version="11.4.3" />-->
+    <PackageReference Include="ReactiveUI.Binding" Version="3.2.1" />
+    <PackageReference Include="ReactiveUI.SourceGenerators" Version="2.6.30">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Svg.Controls.Skia.Avalonia" Version="11.3.9.2" />
   </ItemGroup>
 

@@ -1,6 +1,7 @@
 ﻿using DynamicData;
 using DynamicData.Binding;
-using ReactiveUI;
+using ReactiveUI.Binding;
+using ReactiveUI.SourceGenerators;
 using System;
 using System.Collections.ObjectModel;
 using System.Reactive;
@@ -8,14 +9,15 @@ using Vocup.Models;
 
 namespace Vocup.ViewModels;
 
-public class BookViewModel : ViewModelBase, IDisposable
+public partial class BookViewModel : ViewModelBase, IDisposable
 {
     private readonly IDisposable wordsOperation;
     private readonly ObservableAsPropertyHelper<PracticeMode> practiceModeHelper;
+    private readonly Book book;
 
     public BookViewModel(Book book)
     {
-        _ = book ?? throw new ArgumentNullException(nameof(book));
+        this.book = book ?? throw new ArgumentNullException(nameof(book));
 
         wordsOperation = book.Words.ToObservableChangeSet()
             .Transform(word => new WordViewModel(this, word.MotherTongue, word.ForeignLanguage))
@@ -26,16 +28,25 @@ public class BookViewModel : ViewModelBase, IDisposable
         practiceModeHelper = book.WhenAnyValue(b => b.PracticeMode)
             .ToProperty(this, vm => vm.PracticeMode);
 
-        AddWord = ReactiveCommand.Create(() => book.Words.Insert(0, new Word(["Test"], ["test"])));
-        AddSynonym = ReactiveCommand.Create(() => book.Words[0].ForeignLanguage.Add(new("test")));
+        //AddWord = ReactiveCommand.Create(() => book.Words.Insert(0, new Word(["Test"], ["test"])));
+        //AddSynonym = ReactiveCommand.Create(() => book.Words[0].ForeignLanguage.Add(new("test")));
     }
 
     private ReadOnlyObservableCollection<WordViewModel> _words;
     public ReadOnlyObservableCollection<WordViewModel> Words => _words;
     public PracticeMode PracticeMode => practiceModeHelper.Value;
 
-    public ReactiveCommand<Unit, Unit> AddWord { get; }
-    public ReactiveCommand<Unit, Unit> AddSynonym { get; }
+    [ReactiveCommand]
+    private void AddWord()
+    {
+        book.Words.Insert(0, new Word(["Test"], ["test"]));
+    }
+
+    [ReactiveCommand]
+    private void AddSynonym()
+    {
+        book.Words[0].ForeignLanguage.Add(new("test"));
+    }
 
     public void Dispose()
     {
