@@ -45,7 +45,7 @@ jobs:
 
     - name: Build x64
       if: matrix.configuration == 'Release'
-      run: dotnet publish -c ${{ matrix.configuration }} -r win-x64 /p:PublishReadyToRun=true $env:App_Project_Directory
+      run: dotnet publish -c ${{ matrix.configuration }} -r win-x64 --sc /p:PublishReadyToRun=true $env:App_Project_Directory
 
     - name: Create MSIX package (x64)
       if: matrix.configuration == 'Release'
@@ -53,7 +53,7 @@ jobs:
 
     - name: Build arm64
       if: matrix.configuration == 'Release'
-      run: dotnet publish -c ${{ matrix.configuration }} -r win-arm64 /p:PublishReadyToRun=true $env:App_Project_Directory
+      run: dotnet publish -c ${{ matrix.configuration }} -r win-arm64 --sc /p:PublishReadyToRun=true $env:App_Project_Directory
 
     - name: Create MSIX package (arm64)
       if: matrix.configuration == 'Release'
@@ -73,22 +73,15 @@ jobs:
         $version = $msixFiles[0].BaseName.Split("_")[1]
         Write-Output "Bundle version based on MSIX file name is $version"
 
-        $uploadDirectory = Join-Path $env:App_Project_Directory "bin" "AppPackages"
-        New-Item -ItemType Directory -Path $uploadDirectory | Out-Null
-
-        $uploadFile = Join-Path $uploadDirectory "$($env:App_Package_Name)_$($version)_x86_x64_arm64_bundle.msixupload"
-
-        $bundleDirectory = Join-Path $uploadDirectory "$($env:App_Package_Name)_$($version)_Test"
+        $bundleDirectory = Join-Path $env:App_Project_Directory "bin" "AppPackages"
         New-Item -ItemType Directory -Path $bundleDirectory | Out-Null
 
-        $bundleFile = Join-Path $bundleDirectory "$($env:App_Package_Name)_$($version)_x86_x64_arm64.msixbundle"
+        $bundleFile = Join-Path $bundleDirectory "$($env:App_Package_Name)_$($version)_x64_arm64.msixbundle"
 
         Write-Output "gather_directory=$gatherDirectory" >> $env:GITHUB_OUTPUT
         Write-Output "bundle_directory=$bundleDirectory" >> $env:GITHUB_OUTPUT
         Write-Output "bundle_version=$version" >> $env:GITHUB_OUTPUT
         Write-Output "bundle_file=$bundleFile" >> $env:GITHUB_OUTPUT
-        Write-Output "upload_directory=$uploadDirectory" >> $env:GITHUB_OUTPUT
-        Write-Output "upload_file=$uploadFile" >> $env:GITHUB_OUTPUT
 
     - name: Create MSIX bundle
       if: matrix.configuration == 'Release' #&& startsWith(github.ref, 'refs/tags/')
@@ -99,17 +92,9 @@ jobs:
         msixbundle-version: ${{ steps.gather.outputs.bundle_version }}
         sdk-version: '10.0.26100.0' # Default 10.0.19041.0 does not work anymore in September 2025
 
-    - name: Create MSIX upload
-      if: matrix.configuration == 'Release' #&& startsWith(github.ref, 'refs/tags/')
-      run: |
-        $uploadFile = "${{ steps.gather.outputs.upload_file }}"
-        $bundleDirectory = "${{ steps.gather.outputs.bundle_directory }}"
-        
-        Compress-Archive -Path "$bundleDirectory\*" -DestinationPath $uploadFile
-        
     - name: Upload build artifacts
       if: matrix.configuration == 'Release' #&& startsWith(github.ref, 'refs/tags/')
       uses: actions/upload-artifact@v7
       with:
         name: MSIX Package
-        path: ${{ steps.gather.outputs.upload_file }}
+        path: ${{ steps.gather.outputs.bundle_file }}
