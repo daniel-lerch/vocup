@@ -20,7 +20,7 @@ jobs:
       App_Project_Directory: src\Vocup.WinForms
       App_Project_Name: Vocup.WinForms
       App_Package_Name: 9961VectorData.Vocup
-      Test_Project_Directory: tests\Vocup.UnitTests
+      Test_Project_Directory: tests\Vocup.WinForms.UnitTests
 
     steps:
     - name: Checkout

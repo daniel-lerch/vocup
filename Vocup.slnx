@@ -24,6 +24,7 @@
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/Vocup.UnitTests/Vocup.UnitTests.csproj" />
+    <Project Path="tests/Vocup.WinForms.UnitTests/Vocup.WinForms.UnitTests.csproj" />
   </Folder>
   <Folder Name="/_/">
     <File Path="build.ps1" />

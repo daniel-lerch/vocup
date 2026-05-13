@@ -16,6 +16,7 @@ jobs:
 
     env:
       App_Project_File: src/Vocup.Android/Vocup.Android.csproj
+      Test_Project_File: tests/Vocup.UnitTests/Vocup.UnitTests.csproj
 
     steps:
     - name: Checkout
@@ -34,6 +35,9 @@ jobs:
 
     - name: Restore NuGet packages
       run: dotnet restore $App_Project_File
+
+    - name: Execute unit tests
+      run: dotnet test --configuration ${{ matrix.configuration }} $Test_Project_File
 
     - name: Decode Keystore
       run: |
