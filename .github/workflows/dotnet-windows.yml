@@ -18,7 +18,6 @@ jobs:
     env:
       Solution_Name: Vocup.slnx                                         # Replace with your solution name, i.e. MyWpfApp.sln.
       App_Project_Directory: src\Vocup.WinForms
-      App_Project_Name: Vocup.WinForms
       App_Package_Name: 9961VectorData.Vocup
       Test_Project_Directory: tests\Vocup.WinForms.UnitTests
 
@@ -39,8 +38,7 @@ jobs:
     - name: Restore NuGet packages
       run: dotnet restore $env:Test_Project_Directory
 
-      # Execute all unit tests in the solution
-    - name: Execute unit tests
+    - name: Execute WinForms unit tests
       run: dotnet test --configuration ${{ matrix.configuration }} $env:Test_Project_Directory
 
     - name: Build x64
@@ -69,7 +67,7 @@ jobs:
         $msixFiles = Get-ChildItem -Depth 1 -Include "$env:App_Package_Name*.msix"
         $msixFiles | ForEach-Object { Copy-Item -Path $_.FullName -Destination $gatherDirectory }
         Write-Output "Copied $($msixFiles.Count) MSIX files to $gatherDirectory"
-        
+
         $version = $msixFiles[0].BaseName.Split("_")[1]
         Write-Output "Bundle version based on MSIX file name is $version"
 
