@@ -1,10 +1,4 @@
 <Solution>
-  <Configurations>
-    <Platform Name="Any CPU" />
-    <Platform Name="ARM64" />
-    <Platform Name="x64" />
-    <Platform Name="x86" />
-  </Configurations>
   <Folder Name="/docs/">
     <File Path="docs/architecture.md" />
     <File Path="docs/competitors.md" />
@@ -25,19 +19,12 @@
       <Deploy />
     </Project>
     <Project Path="src/Vocup.Desktop/Vocup.Desktop.csproj" />
-    <Project Path="src/Vocup.WinForms/Vocup.WinForms.csproj">
-      <Platform Solution="*|ARM64" Project="ARM64" />
-      <Platform Solution="*|x64" Project="x64" />
-      <Platform Solution="*|x86" Project="x86" />
-    </Project>
+    <Project Path="src/Vocup.WinForms/Vocup.WinForms.csproj" />
     <Project Path="src/Vocup/Vocup.csproj" />
   </Folder>
   <Folder Name="/tests/">
-    <Project Path="tests/Vocup.UnitTests/Vocup.UnitTests.csproj">
-      <Platform Solution="*|ARM64" Project="ARM64" />
-      <Platform Solution="*|x64" Project="x64" />
-      <Platform Solution="*|x86" Project="x86" />
-    </Project>
+    <Project Path="tests/Vocup.UnitTests/Vocup.UnitTests.csproj" />
+    <Project Path="tests/Vocup.WinForms.UnitTests/Vocup.WinForms.UnitTests.csproj" />
   </Folder>
   <Folder Name="/_/">
     <File Path="build.ps1" />
