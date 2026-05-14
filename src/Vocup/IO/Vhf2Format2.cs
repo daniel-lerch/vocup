@@ -10,25 +10,16 @@ using Vocup.Models;
 
 namespace Vocup.IO;
 
-public class Vhf2Format2 : BookFileFormat2
+public partial class Vhf2Format2 : BookFileFormat2
 {
     private const string headerFileName = "VOCUP VOCABULARY BOOK";
     private const string bookFileName = "book.2.json";
-    private readonly JsonSerializerOptions options;
     private readonly Version maxSupportedFileVersion;
 
     public static Vhf2Format2 Instance { get; } = new();
 
     private Vhf2Format2()
     {
-        options = new JsonSerializerOptions
-        {
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            WriteIndented = true
-        };
-        options.Converters.Add(new PracticeModeConverter());
-        //options.Converters.Add(new PracticeResultConverter());
-
         maxSupportedFileVersion = new Version(2, 0);
     }
 
@@ -45,7 +36,7 @@ public class Vhf2Format2 : BookFileFormat2
 
             using (Stream headerStream = headerFile.Open())
             {
-                metadata = JsonSerializer.Deserialize<Metadata>(headerStream, options)
+                metadata = JsonSerializer.Deserialize(headerStream, SourceGenerationContext.Default.Metadata)
                     ?? throw new VhfFormatException(VhfError.InvalidHeader);
             }
 
@@ -56,7 +47,7 @@ public class Vhf2Format2 : BookFileFormat2
 
             using (Stream bookStream = bookFile.Open())
             {
-                jsonBook = JsonSerializer.Deserialize<JsonBook>(bookStream, options)
+                jsonBook = JsonSerializer.Deserialize(bookStream, SourceGenerationContext.Default.JsonBook)
                     ?? throw new VhfFormatException(VhfError.InvalidJsonBook);
             }
 
@@ -103,7 +94,7 @@ public class Vhf2Format2 : BookFileFormat2
             ZipArchiveEntry headerFile = archive.CreateEntry(headerFileName);
             using (Stream headerStream = headerFile.Open())
             {
-                JsonSerializer.Serialize(headerStream, new Metadata(maxSupportedFileVersion), options);
+                JsonSerializer.Serialize(headerStream, new Metadata(maxSupportedFileVersion), SourceGenerationContext.Default.Metadata);
             }
 
             JsonBook jsonBook = new(book.MotherTongue, book.ForeignLanguage, book.PracticeMode, []);
@@ -125,7 +116,7 @@ public class Vhf2Format2 : BookFileFormat2
 
             ZipArchiveEntry bookFile = archive.CreateEntry(bookFileName);
             using Stream bookStream = bookFile.Open();
-            JsonSerializer.Serialize(bookStream, jsonBook, options);
+            JsonSerializer.Serialize(bookStream, jsonBook, SourceGenerationContext.Default.JsonBook);
         }
 
         // Delete vhr file when migrating from vhf1 to vhf2
@@ -171,4 +162,14 @@ public class Vhf2Format2 : BookFileFormat2
         }
     }
     */
+
+    [JsonSourceGenerationOptions(
+        PropertyNamingPolicy = JsonKnownNamingPolicy.CamelCase,
+        WriteIndented = true,
+        Converters = [typeof(PracticeModeConverter)])]
+    [JsonSerializable(typeof(Metadata))]
+    [JsonSerializable(typeof(JsonBook))]
+    private partial class SourceGenerationContext : JsonSerializerContext
+    {
+    }
 }
