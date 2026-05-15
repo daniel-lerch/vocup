@@ -1,5 +1,6 @@
 using Avalonia.Headless.XUnit;
 using System.Linq;
+using System.Threading.Tasks;
 using Vocup.Models;
 using Vocup.ViewModels;
 using Xunit;
@@ -9,7 +10,7 @@ namespace Vocup.UnitTests;
 public class BookViewModelTests
 {
     [AvaloniaFact]
-    public void FiltersBySearchText()
+    public async Task FiltersBySearchText()
     {
         Book book = new()
         {
@@ -23,19 +24,23 @@ public class BookViewModelTests
 
         using BookViewModel viewModel = new(book);
 
+        await Task.Delay(150);
         Assert.Equal(3, viewModel.Words.Count);
 
         viewModel.SearchText = "app";
+        await Task.Delay(150);
 
         Assert.Single(viewModel.Words);
         Assert.Equal("Apfel", viewModel.Words.Single().MotherTongue.Single().Value);
 
         viewModel.SearchText = "RNE";
+        await Task.Delay(150);
 
         Assert.Single(viewModel.Words);
         Assert.Equal("Birne", viewModel.Words.Single().MotherTongue.Single().Value);
 
         viewModel.SearchText = "xyz";
+        await Task.Delay(150);
 
         Assert.Empty(viewModel.Words);
     }
