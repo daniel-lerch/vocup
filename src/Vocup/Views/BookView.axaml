@@ -19,44 +19,47 @@
     <views:PracticeModeToVisibilityConverter x:Key="PracticeModeToVisibilityConverter" />
   </UserControl.Resources>
 
-  <ScrollViewer>
-    <ItemsControl ItemsSource="{Binding Words}">
-      <ItemsControl.ItemTemplate>
-        <DataTemplate>
-          <Grid>
-            <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="*" />
-              <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+  <DockPanel>
+    <TextBox DockPanel.Dock="Top" Margin="4" PlaceholderText="Search" Text="{Binding SearchText}" />
+    <ScrollViewer>
+      <ItemsControl ItemsSource="{Binding Words}">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
 
-            <ItemsControl ItemsSource="{Binding MotherTongue}" Grid.Column="0">
-              <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                  <DockPanel>
-                    <Ellipse Width="8" Height="8" VerticalAlignment="Center" DockPanel.Dock="Left"
-                             Fill="{Binding PracticeState, Converter={StaticResource PracticeStateToBrushConverter}}"
-                             IsVisible="{Binding Word.Book.PracticeMode, Converter={StaticResource PracticeModeToVisibilityConverter}, ConverterParameter=AskForMotherTongue}" />
-                    <TextBlock Text="{Binding Value}" TextWrapping="Wrap" Margin="4" />
-                  </DockPanel>
-                </DataTemplate>
-              </ItemsControl.ItemTemplate>
-            </ItemsControl>
-            <ItemsControl ItemsSource="{Binding ForeignLanguage}" Grid.Column="1">
-              <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                  <DockPanel>
-                    <Ellipse Width="8" Height="8" VerticalAlignment="Center" DockPanel.Dock="Left"
-                             Fill="{Binding PracticeState, Converter={StaticResource PracticeStateToBrushConverter}}"
-                             IsVisible="{Binding Word.Book.PracticeMode, Converter={StaticResource PracticeModeToVisibilityConverter}, ConverterParameter=AskForForeignLang}" />
-                    <TextBlock Text="{Binding Value}" TextWrapping="Wrap" Margin="4" />
-                  </DockPanel>
-                </DataTemplate>
-              </ItemsControl.ItemTemplate>
-            </ItemsControl>
-          </Grid>
-        </DataTemplate>
-      </ItemsControl.ItemTemplate>
-    </ItemsControl>
-  </ScrollViewer>
+              <ItemsControl ItemsSource="{Binding MotherTongue}" Grid.Column="0">
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate>
+                    <DockPanel>
+                      <Ellipse Width="8" Height="8" VerticalAlignment="Center" DockPanel.Dock="Left"
+                               Fill="{Binding PracticeState, Converter={StaticResource PracticeStateToBrushConverter}}"
+                               IsVisible="{Binding Word.Book.PracticeMode, Converter={StaticResource PracticeModeToVisibilityConverter}, ConverterParameter=AskForMotherTongue}" />
+                      <TextBlock Text="{Binding Value}" TextWrapping="Wrap" Margin="4" />
+                    </DockPanel>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+              <ItemsControl ItemsSource="{Binding ForeignLanguage}" Grid.Column="1">
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate>
+                    <DockPanel>
+                      <Ellipse Width="8" Height="8" VerticalAlignment="Center" DockPanel.Dock="Left"
+                               Fill="{Binding PracticeState, Converter={StaticResource PracticeStateToBrushConverter}}"
+                               IsVisible="{Binding Word.Book.PracticeMode, Converter={StaticResource PracticeModeToVisibilityConverter}, ConverterParameter=AskForForeignLang}" />
+                      <TextBlock Text="{Binding Value}" TextWrapping="Wrap" Margin="4" />
+                    </DockPanel>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+            </Grid>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+    </ScrollViewer>
+  </DockPanel>
 
 </UserControl>

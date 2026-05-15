@@ -3,7 +3,10 @@ using DynamicData.Binding;
 using ReactiveUI;
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Reactive;
+using System.Reactive.Concurrency;
+using System.Reactive.Linq;
 using Vocup.Models;
 
 namespace Vocup.ViewModels;
@@ -17,7 +20,13 @@ public class BookViewModel : ViewModelBase, IDisposable
     {
         _ = book ?? throw new ArgumentNullException(nameof(book));
 
+        var filter = this.WhenAnyValue(vm => vm.SearchText)
+            // This filter operation is inefficient so we throttle it to keep the application responsive.
+            .Throttle(TimeSpan.FromMilliseconds(100), Scheduler.Default)
+            .Select(searchText => BuildFilter(searchText));
+
         wordsOperation = book.Words.ToObservableChangeSet()
+            .Filter(filter)
             .Transform(word => new WordViewModel(this, word.MotherTongue, word.ForeignLanguage))
             .Bind(out _words)
             .DisposeMany()
@@ -34,6 +43,13 @@ public class BookViewModel : ViewModelBase, IDisposable
     public ReadOnlyObservableCollection<WordViewModel> Words => _words;
     public PracticeMode PracticeMode => practiceModeHelper.Value;
 
+    private string? _searchText;
+    public string? SearchText
+    {
+        get => _searchText;
+        set => this.RaiseAndSetIfChanged(ref _searchText, value);
+    }
+
     public ReactiveCommand<Unit, Unit> AddWord { get; }
     public ReactiveCommand<Unit, Unit> AddSynonym { get; }
 
@@ -41,6 +57,15 @@ public class BookViewModel : ViewModelBase, IDisposable
     {
         wordsOperation.Dispose();
         practiceModeHelper.Dispose();
+    }
+
+    private static Func<Word, bool> BuildFilter(string? searchText)
+    {
+        if (string.IsNullOrWhiteSpace(searchText))
+            return _ => true;
+
+        return word => word.MotherTongue.Any(s => s.Value.Contains(searchText, StringComparison.OrdinalIgnoreCase))
+            || word.ForeignLanguage.Any(s => s.Value.Contains(searchText, StringComparison.OrdinalIgnoreCase));
     }
 }
 
