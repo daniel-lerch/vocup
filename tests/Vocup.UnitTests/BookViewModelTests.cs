@@ -1,4 +1,5 @@
 using Avalonia.Headless.XUnit;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Vocup.Models;
@@ -12,6 +13,8 @@ public class BookViewModelTests
     [AvaloniaFact]
     public async Task FiltersBySearchText()
     {
+        Assert.SkipUnless(OperatingSystem.IsWindows(), "Avalonia headless tests fail on Linux: https://github.com/avaloniaui/avalonia/issues/21332");
+
         Book book = new()
         {
             MotherTongue = "German",
