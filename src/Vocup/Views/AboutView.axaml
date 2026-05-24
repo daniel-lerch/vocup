@@ -2,9 +2,9 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 xmlns:lang="clr-namespace:Vocup.Lang;assembly=Vocup.Avalonia"
-			 xmlns:views="clr-namespace:Vocup.Views;assembly=Vocup.Avalonia"
-			 xmlns:vm="clr-namespace:Vocup.ViewModels;assembly=Vocup.Avalonia"
+			 xmlns:lang="using:Vocup.Lang"
+			 xmlns:views="using:Vocup.Views"
+			 xmlns:vm="using:Vocup.ViewModels"
 			 mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="450"
 			 x:Class="Vocup.Views.AboutView"
 			 x:DataType="vm:AboutViewModel">

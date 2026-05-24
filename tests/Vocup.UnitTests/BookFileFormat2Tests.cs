@@ -17,6 +17,8 @@ public class BookFileFormat2Tests
 
     public BookFileFormat2Tests()
     {
+        Assert.SkipUnless(OperatingSystem.IsWindows(), "Avalonia headless tests fail on Linux: https://github.com/avaloniaui/avalonia/issues/21332");
+
         topLevel = new Window();
     }
 
