@@ -38,6 +38,22 @@ Windows 7 is not supported anymore. Neither by Microsoft nor by Vocup. There are
 
 Linux is not supported anymore. However, you can still download Vocup 1.8.7 or build more recent versions on your own. See the [Linux installation guide](docs/install-on-linux.md) for more details.
 
-## Contribute
+## Development
 
 I am more than happy to accept pull requests for Vocup. Please open an issue before to discuss your intended changes.
+
+### Prerequisites
+
+Visual Studio 2026
+- .NET 10.0 SDK
+- .NET MAUI Workload
+- Avalonia Extension
+
+Visual Studio Code
+- .NET 10.0 SDK
+- C# Dev Kit
+- Avalonia Extension
+- Android SDK Command-line Tools (latest)
+- Android SDK Platform-Tools
+- Android SDK Build-Tools 36
+- Android SDK Platform 36
