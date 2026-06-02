@@ -8,10 +8,6 @@ jobs:
   build:
     name: Build and create APK
 
-    strategy:
-      matrix:
-        configuration: [Debug, Release]
-
     runs-on: ubuntu-24.04
 
     env:
@@ -37,34 +33,25 @@ jobs:
       run: dotnet restore $App_Project_File
 
     - name: Execute unit tests
-      run: dotnet test --configuration ${{ matrix.configuration }} $Test_Project_File
+      run: dotnet test $Test_Project_File
 
     - name: Decode Keystore
       run: |
         echo "${{ secrets.BASE64_ENCODED_JKS }}" | base64 --decode > src/Vocup.Android/vocup-android.jks
 
-    - name: Build and create AAB
-      if: matrix.configuration == 'Debug'
-      run: |
-        dotnet build \
-          --no-restore \
-          --configuration ${{ matrix.configuration }} \
-          $App_Project_File
-    
     - name: Build and create signed AAB
-      if: matrix.configuration == 'Release'
       run: |
         dotnet build \
           --no-restore \
-          --configuration ${{ matrix.configuration }} \
+          --configuration Release \
           -p:AndroidKeyStore=True \
           -p:AndroidSigningStorePass=${{ secrets.JKS_PASSWORD }} \
           -p:AndroidSigningKeyPass=${{ secrets.JKS_PASSWORD }} \
           $App_Project_File
 
     - name: Upload build artifacts
-      if: matrix.configuration == 'Release' && startsWith(github.ref, 'refs/tags/')
+      #if: startsWith(github.ref, 'refs/tags/')
       uses: actions/upload-artifact@v7
       with:
-        name: AAB
         path: src/Vocup.Android/bin/Release/net10.0-android/org.vocup-Signed.aab
+        archive: false
