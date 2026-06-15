@@ -23,7 +23,7 @@ public class BookViewModel : ViewModelBase, IDisposable
         var filter = this.WhenAnyValue(vm => vm.SearchText)
             // This filter operation is inefficient so we throttle it to keep the application responsive.
             .Throttle(TimeSpan.FromMilliseconds(100), Scheduler.Default)
-            .Select(searchText => BuildFilter(searchText));
+            .Select(BuildFilter);
 
         wordsOperation = book.Words.ToObservableChangeSet()
             .Filter(filter)

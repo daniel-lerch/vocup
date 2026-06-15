@@ -93,4 +93,24 @@ public class MainViewModel : ViewModelBase
             CurrentView = new ErrorViewModel($"Error opening file: {ex.Message}");
         }
     }
+
+    public async void OpenFile(string filePath, IStorageProvider storageProvider)
+    {
+        try
+        {
+            IStorageFile? file = await storageProvider.TryGetFileFromPathAsync(filePath);
+            if (file == null)
+            {
+                CurrentView = new ErrorViewModel($"File not found: {filePath}");
+            }
+            else
+            {
+                OpenFile(file);
+            }
+        }
+        catch (Exception ex)
+        {
+            CurrentView = new ErrorViewModel($"Error opening file: {ex.Message}");
+        }
+    }
 }
