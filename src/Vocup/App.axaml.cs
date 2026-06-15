@@ -2,6 +2,7 @@
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
+using System.Linq;
 using Vocup.ViewModels;
 using Vocup.Views;
 
@@ -34,6 +35,11 @@ public partial class App : Application
             {
                 DataContext = mainViewModel
             };
+
+            if (desktop.Args?.FirstOrDefault() is string filePath)
+            {
+                mainViewModel.OpenFile(filePath, desktop.MainWindow.StorageProvider);
+            }
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
