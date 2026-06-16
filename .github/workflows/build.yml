@@ -5,7 +5,7 @@ on:
 
 jobs:
   android:
-    name: Android build and create APK
+    name: Android build and create AAB
 
     runs-on: ubuntu-24.04
 
