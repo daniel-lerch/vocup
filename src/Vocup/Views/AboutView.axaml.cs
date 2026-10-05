@@ -1,9 +1,8 @@
-﻿using ReactiveUI.Avalonia;
-using Vocup.ViewModels;
+﻿using Avalonia.Controls;
 
 namespace Vocup.Views;
 
-public partial class AboutView : ReactiveUserControl<AboutViewModel>
+public partial class AboutView : UserControl
 {
     public AboutView()
     {

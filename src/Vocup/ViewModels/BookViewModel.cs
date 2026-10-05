@@ -1,11 +1,13 @@
 ﻿using DynamicData;
 using DynamicData.Binding;
-using ReactiveUI.Binding;
-using ReactiveUI.SourceGenerators;
+using ReactiveUI;
 using System;
 using System.Collections.ObjectModel;
-using System.Reactive;
+using System.Linq;
 using Vocup.Models;
+// Importing the whole ReactiveUI.Primitives namespace makes Subscribe() ambiguous with System.Reactive (used by DynamicData)
+using static ReactiveUI.Primitives.LinqExtensions;
+using RxVoid = ReactiveUI.Primitives.RxVoid;
 
 namespace Vocup.ViewModels;
 
@@ -19,7 +21,15 @@ public partial class BookViewModel : ViewModelBase, IDisposable
     {
         this.book = book ?? throw new ArgumentNullException(nameof(book));
 
+        var filter = this.WhenAnyValue(vm => vm.SearchText)
+            // This filter operation is inefficient so we throttle it to keep the application responsive.
+            .Throttle(TimeSpan.FromMilliseconds(100), RxSchedulers.TaskpoolScheduler)
+            .Select(BuildFilter)
+            // DynamicData updates the bound collection on the thread the filter is emitted on.
+            .ObserveOn(RxSchedulers.MainThreadScheduler);
+
         wordsOperation = book.Words.ToObservableChangeSet()
+            .Filter(filter)
             .Transform(word => new WordViewModel(this, word.MotherTongue, word.ForeignLanguage))
             .Bind(out _words)
             .DisposeMany()
@@ -28,30 +38,37 @@ public partial class BookViewModel : ViewModelBase, IDisposable
         practiceModeHelper = book.WhenAnyValue(b => b.PracticeMode)
             .ToProperty(this, vm => vm.PracticeMode);
 
-        //AddWord = ReactiveCommand.Create(() => book.Words.Insert(0, new Word(["Test"], ["test"])));
-        //AddSynonym = ReactiveCommand.Create(() => book.Words[0].ForeignLanguage.Add(new("test")));
+        AddWord = ReactiveCommand.Create(() => book.Words.Insert(0, new Word(["Test"], ["test"])));
+        AddSynonym = ReactiveCommand.Create(() => book.Words[0].ForeignLanguage.Add(new("test")));
     }
 
     private ReadOnlyObservableCollection<WordViewModel> _words;
     public ReadOnlyObservableCollection<WordViewModel> Words => _words;
     public PracticeMode PracticeMode => practiceModeHelper.Value;
 
-    [ReactiveCommand]
-    private void AddWord()
+    private string? _searchText;
+    public string? SearchText
     {
-        book.Words.Insert(0, new Word(["Test"], ["test"]));
+        get => _searchText;
+        set => this.RaiseAndSetIfChanged(ref _searchText, value);
     }
 
-    [ReactiveCommand]
-    private void AddSynonym()
-    {
-        book.Words[0].ForeignLanguage.Add(new("test"));
-    }
+    public ReactiveCommand<RxVoid, RxVoid> AddWord { get; }
+    public ReactiveCommand<RxVoid, RxVoid> AddSynonym { get; }
 
     public void Dispose()
     {
         wordsOperation.Dispose();
         practiceModeHelper.Dispose();
+    }
+
+    private static Func<Word, bool> BuildFilter(string? searchText)
+    {
+        if (string.IsNullOrWhiteSpace(searchText))
+            return _ => true;
+
+        return word => word.MotherTongue.Any(s => s.Value.Contains(searchText, StringComparison.OrdinalIgnoreCase))
+            || word.ForeignLanguage.Any(s => s.Value.Contains(searchText, StringComparison.OrdinalIgnoreCase));
     }
 }
 
