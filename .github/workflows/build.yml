@@ -84,10 +84,10 @@ jobs:
       run: dotnet test $Test_Project_File
 
     - name: Build x64
-      run: dotnet publish -c Release -r linux-x64 --sc -p:PublishReadyToRun=true $App_Project_File
+      run: dotnet publish -c Release -r linux-x64 --sc -p:PublishAot=true $App_Project_File
     
     - name: Build arm64
-      run: dotnet publish -c Release -r linux-arm64 --sc -p:PublishReadyToRun=true $App_Project_File
+      run: dotnet publish -c Release -r linux-arm64 --sc -p:PublishAot=true $App_Project_File
 
     - name: Upload x64 artifacts
       if: startsWith(github.ref, 'refs/tags/')
