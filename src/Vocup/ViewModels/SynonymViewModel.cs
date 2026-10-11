@@ -1,10 +1,10 @@
 ﻿using DynamicData;
 using DynamicData.Binding;
 using ReactiveUI;
+using ReactiveUI.Primitives;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reactive.Linq;
 using Vocup.Models;
 
 namespace Vocup.ViewModels;
