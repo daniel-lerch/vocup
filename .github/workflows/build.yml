@@ -79,10 +79,27 @@ jobs:
 
     - name: Install Linux ARM64 NativeAOT toolchain
       run: |
+        # Restrict all pre-existing APT sources to the native amd64 architecture.
+        # Otherwise, after adding arm64 below, apt would also try to download arm64
+        # package indexes from third-party repositories that do not provide them.
+        # deb822 (.sources) files: force "Architectures: amd64".
         sudo find /etc/apt/sources.list.d -type f -name '*.sources' -print0 \
           | sudo xargs -0 -r sed -i -e '/^Architectures:/d' -e '/^Types:/a Architectures: amd64'
+        # One-line (.list) files: restrict every entry to [arch=amd64] while keeping
+        # existing options such as signed-by. Blindly prepending "[arch=amd64] " to
+        # entries that already have an options list (e.g. the runner's
+        # microsoft-prod.list: "deb [arch=amd64,arm64,armhf signed-by=...] ...")
+        # corrupts them and makes apt fail with "Malformed entry ... (URI parse)".
         sudo find /etc/apt/sources.list.d -type f -name '*.list' -print0 \
-          | sudo xargs -0 -r sed -i -E 's/^(deb|deb-src) /\1 [arch=amd64] /'
+          | sudo xargs -0 -r sed -i -E \
+            -e '/^(deb|deb-src) \[/ { s/(arch=)[^] ]*/\1amd64/g; /arch=/! s/^(deb|deb-src) \[([^]]*)\]/\1 [arch=amd64 \2]/; }' \
+            -e '/^(deb|deb-src) [^[]/ s/^(deb|deb-src) /\1 [arch=amd64] /'
+        if [ -f /etc/apt/sources.list ]; then
+          sudo sed -i -E \
+            -e '/^(deb|deb-src) \[/ { s/(arch=)[^] ]*/\1amd64/g; /arch=/! s/^(deb|deb-src) \[([^]]*)\]/\1 [arch=amd64 \2]/; }' \
+            -e '/^(deb|deb-src) [^[]/ s/^(deb|deb-src) /\1 [arch=amd64] /' \
+            /etc/apt/sources.list
+        fi
         sudo dpkg --add-architecture arm64
         . /etc/os-release
         sudo tee /etc/apt/sources.list.d/ubuntu-arm64.sources > /dev/null <<EOF
