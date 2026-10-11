@@ -77,17 +77,38 @@ jobs:
       with:
         dotnet-version: 10.0.x
 
+    - name: Install Linux ARM64 NativeAOT toolchain
+      run: |
+        sudo dpkg --add-architecture arm64
+        . /etc/os-release
+        sudo tee /etc/apt/sources.list.d/ubuntu-arm64.sources > /dev/null <<EOF
+        Types: deb
+        URIs: http://ports.ubuntu.com/ubuntu-ports
+        Suites: ${VERSION_CODENAME} ${VERSION_CODENAME}-updates ${VERSION_CODENAME}-security
+        Components: main restricted universe multiverse
+        Architectures: arm64
+        Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+        EOF
+        sudo apt-get update
+        sudo apt-get install --no-install-recommends -y \
+          clang \
+          llvm \
+          binutils-aarch64-linux-gnu \
+          gcc-aarch64-linux-gnu \
+          libc6-dev-arm64-cross \
+          zlib1g-dev:arm64
+
     - name: Restore NuGet packages
-      run: dotnet restore $App_Project_File
+      run: dotnet restore $App_Project_File -p:RuntimeIdentifiers="linux-x64;linux-arm64"
 
     - name: Execute unit tests
       run: dotnet test $Test_Project_File
 
     - name: Build x64
-      run: dotnet publish -c Release -r linux-x64 --sc -p:PublishAot=true $App_Project_File
+      run: dotnet publish --no-restore -c Release -r linux-x64 --sc -p:PublishAot=true $App_Project_File
     
     - name: Build arm64
-      run: dotnet publish -c Release -r linux-arm64 --sc -p:PublishAot=true $App_Project_File
+      run: dotnet publish --no-restore -c Release -r linux-arm64 --sc -p:PublishAot=true $App_Project_File
 
     - name: Upload x64 artifacts
       if: startsWith(github.ref, 'refs/tags/')
