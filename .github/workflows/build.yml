@@ -56,8 +56,102 @@ jobs:
         archive: false
 
 
-  linux:
-    name: Linux build
+# ---------------------------------------------------------------------------
+# Original Linux job: x64 and ARM64 builds on an x64 runner (ARM64 via cross-
+# compilation toolchain). Commented out to compare against building ARM64
+# natively on an ARM64 runner (see the linux-x64 and linux-arm64 jobs below).
+# ---------------------------------------------------------------------------
+#   linux:
+#     name: Linux build
+#
+#     runs-on: ubuntu-24.04
+#
+#     env:
+#       App_Project_File: src/Vocup.Desktop/Vocup.Desktop.csproj
+#       Test_Project_File: tests/Vocup.UnitTests/Vocup.UnitTests.csproj
+#
+#     steps:
+#     - name: Checkout
+#       uses: actions/checkout@v6
+#       with:
+#         fetch-depth: 0
+#
+#     # Install .NET SDK
+#     - name: Install .NET Core
+#       uses: actions/setup-dotnet@v5
+#       with:
+#         dotnet-version: 10.0.x
+#
+#     - name: Install Linux ARM64 NativeAOT toolchain
+#       run: |
+#         # Restrict all pre-existing APT sources to the native amd64 architecture.
+#         # Otherwise, after adding arm64 below, apt would also try to download arm64
+#         # package indexes from third-party repositories that do not provide them.
+#         # deb822 (.sources) files: force "Architectures: amd64".
+#         sudo find /etc/apt/sources.list.d -type f -name '*.sources' -print0 \
+#           | sudo xargs -0 -r sed -i -e '/^Architectures:/d' -e '/^Types:/a Architectures: amd64'
+#         # One-line (.list) files: restrict every entry to [arch=amd64] while keeping
+#         # existing options such as signed-by. Blindly prepending "[arch=amd64] " to
+#         # entries that already have an options list (e.g. the runner's
+#         # microsoft-prod.list: "deb [arch=amd64,arm64,armhf signed-by=...] ...")
+#         # corrupts them and makes apt fail with "Malformed entry ... (URI parse)".
+#         sudo find /etc/apt/sources.list.d -type f -name '*.list' -print0 \
+#           | sudo xargs -0 -r sed -i -E \
+#             -e '/^(deb|deb-src) \[/ { s/(arch=)[^] ]*/\1amd64/g; /arch=/! s/^(deb|deb-src) \[([^]]*)\]/\1 [arch=amd64 \2]/; }' \
+#             -e '/^(deb|deb-src) [^[]/ s/^(deb|deb-src) /\1 [arch=amd64] /'
+#         if [ -f /etc/apt/sources.list ]; then
+#           sudo sed -i -E \
+#             -e '/^(deb|deb-src) \[/ { s/(arch=)[^] ]*/\1amd64/g; /arch=/! s/^(deb|deb-src) \[([^]]*)\]/\1 [arch=amd64 \2]/; }' \
+#             -e '/^(deb|deb-src) [^[]/ s/^(deb|deb-src) /\1 [arch=amd64] /' \
+#             /etc/apt/sources.list
+#         fi
+#         sudo dpkg --add-architecture arm64
+#         . /etc/os-release
+#         sudo tee /etc/apt/sources.list.d/ubuntu-arm64.sources > /dev/null <<EOF
+#         Types: deb
+#         URIs: http://ports.ubuntu.com/ubuntu-ports
+#         Suites: ${VERSION_CODENAME} ${VERSION_CODENAME}-updates ${VERSION_CODENAME}-security
+#         Components: main restricted universe multiverse
+#         Architectures: arm64
+#         Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+#         EOF
+#         sudo apt-get update
+#         sudo apt-get install --no-install-recommends -y \
+#           clang \
+#           llvm \
+#           binutils-aarch64-linux-gnu \
+#           gcc-aarch64-linux-gnu \
+#           libc6-dev-arm64-cross \
+#           zlib1g-dev:arm64
+#
+#     - name: Restore NuGet packages
+#       run: dotnet restore $App_Project_File
+#
+#     - name: Execute unit tests
+#       run: dotnet test $Test_Project_File
+#
+#     - name: Build x64
+#       run: dotnet publish -c Release -r linux-x64 --sc -p:PublishAot=true $App_Project_File
+#
+#     - name: Build arm64
+#       run: dotnet publish -c Release -r linux-arm64 --sc -p:PublishAot=true $App_Project_File
+#
+#     - name: Upload x64 artifacts
+#       if: startsWith(github.ref, 'refs/tags/')
+#       uses: actions/upload-artifact@v7
+#       with:
+#         name: vocup-linux-x64.zip
+#         path: src/Vocup.Desktop/bin/Release/net10.0/linux-x64/publish
+#
+#     - name: Upload arm64 artifacts
+#       if: startsWith(github.ref, 'refs/tags/')
+#       uses: actions/upload-artifact@v7
+#       with:
+#         name: vocup-linux-arm64.zip
+#         path: src/Vocup.Desktop/bin/Release/net10.0/linux-arm64/publish
+
+  linux-x64:
+    name: Linux x64 build and test
 
     runs-on: ubuntu-24.04
 
@@ -77,48 +171,6 @@ jobs:
       with:
         dotnet-version: 10.0.x
 
-    - name: Install Linux ARM64 NativeAOT toolchain
-      run: |
-        # Restrict all pre-existing APT sources to the native amd64 architecture.
-        # Otherwise, after adding arm64 below, apt would also try to download arm64
-        # package indexes from third-party repositories that do not provide them.
-        # deb822 (.sources) files: force "Architectures: amd64".
-        sudo find /etc/apt/sources.list.d -type f -name '*.sources' -print0 \
-          | sudo xargs -0 -r sed -i -e '/^Architectures:/d' -e '/^Types:/a Architectures: amd64'
-        # One-line (.list) files: restrict every entry to [arch=amd64] while keeping
-        # existing options such as signed-by. Blindly prepending "[arch=amd64] " to
-        # entries that already have an options list (e.g. the runner's
-        # microsoft-prod.list: "deb [arch=amd64,arm64,armhf signed-by=...] ...")
-        # corrupts them and makes apt fail with "Malformed entry ... (URI parse)".
-        sudo find /etc/apt/sources.list.d -type f -name '*.list' -print0 \
-          | sudo xargs -0 -r sed -i -E \
-            -e '/^(deb|deb-src) \[/ { s/(arch=)[^] ]*/\1amd64/g; /arch=/! s/^(deb|deb-src) \[([^]]*)\]/\1 [arch=amd64 \2]/; }' \
-            -e '/^(deb|deb-src) [^[]/ s/^(deb|deb-src) /\1 [arch=amd64] /'
-        if [ -f /etc/apt/sources.list ]; then
-          sudo sed -i -E \
-            -e '/^(deb|deb-src) \[/ { s/(arch=)[^] ]*/\1amd64/g; /arch=/! s/^(deb|deb-src) \[([^]]*)\]/\1 [arch=amd64 \2]/; }' \
-            -e '/^(deb|deb-src) [^[]/ s/^(deb|deb-src) /\1 [arch=amd64] /' \
-            /etc/apt/sources.list
-        fi
-        sudo dpkg --add-architecture arm64
-        . /etc/os-release
-        sudo tee /etc/apt/sources.list.d/ubuntu-arm64.sources > /dev/null <<EOF
-        Types: deb
-        URIs: http://ports.ubuntu.com/ubuntu-ports
-        Suites: ${VERSION_CODENAME} ${VERSION_CODENAME}-updates ${VERSION_CODENAME}-security
-        Components: main restricted universe multiverse
-        Architectures: arm64
-        Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
-        EOF
-        sudo apt-get update
-        sudo apt-get install --no-install-recommends -y \
-          clang \
-          llvm \
-          binutils-aarch64-linux-gnu \
-          gcc-aarch64-linux-gnu \
-          libc6-dev-arm64-cross \
-          zlib1g-dev:arm64
-
     - name: Restore NuGet packages
       run: dotnet restore $App_Project_File
 
@@ -128,15 +180,39 @@ jobs:
     - name: Build x64
       run: dotnet publish -c Release -r linux-x64 --sc -p:PublishAot=true $App_Project_File
 
-    - name: Build arm64
-      run: dotnet publish -c Release -r linux-arm64 --sc -p:PublishAot=true $App_Project_File
-
     - name: Upload x64 artifacts
       if: startsWith(github.ref, 'refs/tags/')
       uses: actions/upload-artifact@v7
       with:
         name: vocup-linux-x64.zip
         path: src/Vocup.Desktop/bin/Release/net10.0/linux-x64/publish
+
+  linux-arm64:
+    name: Linux ARM64 build
+
+    # Native ARM64 runner: no cross-compilation toolchain required.
+    runs-on: ubuntu-24.04-arm
+
+    env:
+      App_Project_File: src/Vocup.Desktop/Vocup.Desktop.csproj
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v6
+      with:
+        fetch-depth: 0
+
+    # Install .NET SDK
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v5
+      with:
+        dotnet-version: 10.0.x
+
+    - name: Restore NuGet packages
+      run: dotnet restore $App_Project_File
+
+    - name: Build arm64
+      run: dotnet publish -c Release -r linux-arm64 --sc -p:PublishAot=true $App_Project_File
 
     - name: Upload arm64 artifacts
       if: startsWith(github.ref, 'refs/tags/')
