@@ -120,7 +120,9 @@ jobs:
           zlib1g-dev:arm64
 
     - name: Restore NuGet packages
-      run: dotnet restore $App_Project_File -p:RuntimeIdentifiers=linux-x64%3Blinux-arm64
+      run: |
+        dotnet restore $App_Project_File -r linux-x64
+        dotnet restore $App_Project_File -r linux-arm64
 
     - name: Execute unit tests
       run: dotnet test $Test_Project_File
