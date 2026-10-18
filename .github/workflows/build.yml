@@ -120,18 +120,16 @@ jobs:
           zlib1g-dev:arm64
 
     - name: Restore NuGet packages
-      run: |
-        dotnet restore $App_Project_File -r linux-x64
-        dotnet restore $App_Project_File -r linux-arm64
+      run: dotnet restore $App_Project_File
 
     - name: Execute unit tests
       run: dotnet test $Test_Project_File
 
     - name: Build x64
-      run: dotnet publish --no-restore -c Release -r linux-x64 --sc -p:PublishAot=true $App_Project_File
-    
+      run: dotnet publish -c Release -r linux-x64 --sc -p:PublishAot=true $App_Project_File
+
     - name: Build arm64
-      run: dotnet publish --no-restore -c Release -r linux-arm64 --sc -p:PublishAot=true $App_Project_File
+      run: dotnet publish -c Release -r linux-arm64 --sc -p:PublishAot=true $App_Project_File
 
     - name: Upload x64 artifacts
       if: startsWith(github.ref, 'refs/tags/')
