@@ -4,26 +4,37 @@ using ReactiveUI;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Reactive;
-using System.Reactive.Concurrency;
-using System.Reactive.Linq;
 using Vocup.Models;
 
 namespace Vocup.ViewModels;
 
-public class BookViewModel : ViewModelBase, IDisposable
+// Imported after the namespace line to take priority over System.ObservableExtensions.Subscribe() from System.Reactive,
+// which DynamicData still depends on. Move it back up once DynamicData uses ReactiveUI.Primitives:
+// https://github.com/reactivemarbles/DynamicData/pull/1116
+using ReactiveUI.Primitives;
+using ReactiveUI.Primitives.Concurrency;
+
+public partial class BookViewModel : ViewModelBase, IDisposable
 {
+    public static readonly TimeSpan SearchThrottle = TimeSpan.FromMilliseconds(100);
+
     private readonly IDisposable wordsOperation;
     private readonly ObservableAsPropertyHelper<PracticeMode> practiceModeHelper;
+    private readonly Book book;
 
-    public BookViewModel(Book book)
+    /// <param name="book">The book to display.</param>
+    /// <param name="taskpoolScheduler">Scheduler for throttling the search. Defaults to <see cref="RxSchedulers.TaskpoolScheduler"/>.</param>
+    /// <param name="mainThreadScheduler">Scheduler for updating <see cref="Words"/>. Defaults to <see cref="RxSchedulers.MainThreadScheduler"/>.</param>
+    public BookViewModel(Book book, ISequencer? taskpoolScheduler = null, ISequencer? mainThreadScheduler = null)
     {
-        _ = book ?? throw new ArgumentNullException(nameof(book));
+        this.book = book ?? throw new ArgumentNullException(nameof(book));
 
         var filter = this.WhenAnyValue(vm => vm.SearchText)
             // This filter operation is inefficient so we throttle it to keep the application responsive.
-            .Throttle(TimeSpan.FromMilliseconds(100), Scheduler.Default)
-            .Select(searchText => BuildFilter(searchText));
+            .Throttle(SearchThrottle, taskpoolScheduler ?? RxSchedulers.TaskpoolScheduler)
+            .Select(BuildFilter)
+            // DynamicData updates the bound collection on the thread the filter is emitted on.
+            .ObserveOn(mainThreadScheduler ?? RxSchedulers.MainThreadScheduler);
 
         wordsOperation = book.Words.ToObservableChangeSet()
             .Filter(filter)
@@ -50,8 +61,8 @@ public class BookViewModel : ViewModelBase, IDisposable
         set => this.RaiseAndSetIfChanged(ref _searchText, value);
     }
 
-    public ReactiveCommand<Unit, Unit> AddWord { get; }
-    public ReactiveCommand<Unit, Unit> AddSynonym { get; }
+    public ReactiveCommand<RxVoid, RxVoid> AddWord { get; }
+    public ReactiveCommand<RxVoid, RxVoid> AddSynonym { get; }
 
     public void Dispose()
     {

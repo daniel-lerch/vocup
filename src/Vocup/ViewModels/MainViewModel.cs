@@ -1,8 +1,7 @@
 ﻿using Avalonia.Platform.Storage;
 using ReactiveUI;
+using ReactiveUI.Primitives;
 using System;
-using System.Reactive;
-using System.Reactive.Linq;
 using System.Windows.Input;
 using Vocup.IO;
 using Vocup.Models;
@@ -28,7 +27,7 @@ public class MainViewModel : ViewModelBase
 
     public AboutViewModel About { get; }
 
-    public Interaction<Unit, IStorageFile?> PickFileInteraction { get; } = new();
+    public Interaction<RxVoid, IStorageFile?> PickFileInteraction { get; } = new();
 
     public ICommand OpenFileCommand { get; }
     public ICommand AboutCommand { get; }
@@ -42,7 +41,7 @@ public class MainViewModel : ViewModelBase
         {
             try
             {
-                var file = await PickFileInteraction.Handle(Unit.Default);
+                var file = await PickFileInteraction.Handle(RxVoid.Default);
 
                 if (OperatingSystem.IsAndroid())
                     CurrentView = new ErrorViewModel("Loading...");

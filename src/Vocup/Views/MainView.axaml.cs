@@ -1,11 +1,11 @@
 ﻿using Avalonia.Controls;
 using ReactiveUI;
-using ReactiveUI.Avalonia;
+using ReactiveUI.Binding;
 using Vocup.ViewModels;
 
 namespace Vocup.Views;
 
-public partial class MainView : ReactiveUserControl<MainViewModel>
+public partial class MainView : UserControl, IViewFor<MainViewModel>
 {
     public MainView()
     {
@@ -26,6 +26,20 @@ public partial class MainView : ReactiveUserControl<MainViewModel>
                 interaction.SetOutput(files[0]);
             else
                 interaction.SetOutput(null);
-        })));
+        })),
+        // Passing the view model observable selects the trim and AOT safe overload
+        this.WhenAnyValue(v => v.DataContext));
+    }
+
+    public MainViewModel? ViewModel
+    {
+        get => DataContext as MainViewModel;
+        set => DataContext = value;
+    }
+
+    object? IViewFor.ViewModel
+    {
+        get => ViewModel;
+        set => ViewModel = (MainViewModel?)value;
     }
 }
